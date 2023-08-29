@@ -130,7 +130,11 @@ namespace AgRecords.View
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
+            // Get the user account data from the database using the user ID
+            UserAccount user = userController.GetUserAccountById(txtBoxUserId.Text);
 
+            UserPasswordView userPasswordView = new UserPasswordView(user);
+            userPasswordView.ShowDialog();
         }
 
         //image to byte converter

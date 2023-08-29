@@ -15,6 +15,8 @@ namespace AgRecords.Controller
         private UserView userView;
         private UserAddView userAddView;
         private UserEditView userEditView;
+        private UserPasswordView userPasswordView;
+
         private UserModel userModel;
         private Boolean isDone = false; //for processing CRUD operations
 
@@ -34,6 +36,12 @@ namespace AgRecords.Controller
         public UserController(UserEditView userEditView)
         {
             this.userEditView = userEditView;
+            userModel = new UserModel();
+        }
+
+        public UserController(UserPasswordView userPasswordView)
+        {
+            this.userPasswordView = userPasswordView;
             userModel = new UserModel();
         }
 
@@ -222,6 +230,59 @@ namespace AgRecords.Controller
                 return false;
             }
 
+        }
+
+        public Boolean UpdateUserPassword(string userId, string userPassword, string confirmUserPassword)
+        {
+            try
+            {
+                UserAccount user = new UserAccount()
+                {
+                    userId = userId,
+                    userPassword = userPassword
+                };
+
+                if (user.userPassword == "")
+                {
+                    MessageBox.Show("Password is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (confirmUserPassword == "")
+                {
+                    MessageBox.Show("Please confirm the password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (user.userPassword != confirmUserPassword)
+                {
+                    MessageBox.Show("Password do not match.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (user.userPassword != "" && confirmUserPassword != "" && user.userPassword == confirmUserPassword)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to update your password?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes) //proceed to updating the user
+                    {
+                        if (userModel.UpdateUserPassword(user))
+                        {
+                            MessageBox.Show("Account password updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            isDone = true;
+                        }
+                    }
+                    else //cancel updating
+                    {
+
+                    }
+                }
+
+                // Return true to indicate a successful operation
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Update Password Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
         }
 
         public UserAccount GetUserAccountById(string userId)

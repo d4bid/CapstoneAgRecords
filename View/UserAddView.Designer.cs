@@ -54,6 +54,7 @@
             picBoxUser = new PictureBox();
             groupBox2 = new GroupBox();
             openFileDialog1 = new OpenFileDialog();
+            lblPasswordStrength = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
             SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblPasswordStrength);
             groupBox1.Controls.Add(txtBoxUserId);
             groupBox1.Controls.Add(txtBoxContact);
             groupBox1.Controls.Add(txtBoxPassword);
@@ -301,6 +303,15 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblPasswordStrength
+            // 
+            lblPasswordStrength.AutoSize = true;
+            lblPasswordStrength.Location = new Point(204, 153);
+            lblPasswordStrength.Name = "lblPasswordStrength";
+            lblPasswordStrength.Size = new Size(139, 15);
+            lblPasswordStrength.TabIndex = 21;
+            lblPasswordStrength.Text = "Password must contain...";
+            // 
             // UserAddView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -347,5 +358,6 @@
         private ComboBox comboBoxStatus;
         private OpenFileDialog openFileDialog1;
         private TextBox txtBoxUserId;
+        private Label lblPasswordStrength;
     }
 }

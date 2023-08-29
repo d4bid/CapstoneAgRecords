@@ -30,9 +30,9 @@
         {
             groupBox2 = new GroupBox();
             groupBox1 = new GroupBox();
+            btnChangePassword = new Button();
             txtBoxUserId = new TextBox();
             txtBoxContact = new TextBox();
-            txtBoxPassword = new TextBox();
             txtBoxUsername = new TextBox();
             txtBoxLastName = new TextBox();
             txtBoxFirstName = new TextBox();
@@ -42,7 +42,6 @@
             label9 = new Label();
             button1 = new Button();
             label8 = new Label();
-            label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -54,7 +53,6 @@
             btnCancel = new Button();
             btnSave = new Button();
             openFileDialog1 = new OpenFileDialog();
-            btnChangePassword = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
             SuspendLayout();
@@ -73,7 +71,6 @@
             groupBox1.Controls.Add(btnChangePassword);
             groupBox1.Controls.Add(txtBoxUserId);
             groupBox1.Controls.Add(txtBoxContact);
-            groupBox1.Controls.Add(txtBoxPassword);
             groupBox1.Controls.Add(txtBoxUsername);
             groupBox1.Controls.Add(txtBoxLastName);
             groupBox1.Controls.Add(txtBoxFirstName);
@@ -83,7 +80,6 @@
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -99,6 +95,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "User Information";
             // 
+            // btnChangePassword
+            // 
+            btnChangePassword.Location = new Point(632, 67);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.Size = new Size(121, 47);
+            btnChangePassword.TabIndex = 21;
+            btnChangePassword.Text = "Change Password";
+            btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.Click += btnChangePassword_Click;
+            // 
             // txtBoxUserId
             // 
             txtBoxUserId.Location = new Point(567, 14);
@@ -113,13 +119,6 @@
             txtBoxContact.Name = "txtBoxContact";
             txtBoxContact.Size = new Size(121, 23);
             txtBoxContact.TabIndex = 19;
-            // 
-            // txtBoxPassword
-            // 
-            txtBoxPassword.Location = new Point(204, 127);
-            txtBoxPassword.Name = "txtBoxPassword";
-            txtBoxPassword.Size = new Size(100, 23);
-            txtBoxPassword.TabIndex = 18;
             // 
             // txtBoxUsername
             // 
@@ -195,15 +194,6 @@
             label8.Size = new Size(60, 15);
             label8.TabIndex = 9;
             label8.Text = "Username";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(134, 131);
-            label7.Name = "label7";
-            label7.Size = new Size(57, 15);
-            label7.TabIndex = 8;
-            label7.Text = "Password";
             // 
             // label6
             // 
@@ -304,16 +294,6 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnChangePassword
-            // 
-            btnChangePassword.Location = new Point(632, 67);
-            btnChangePassword.Name = "btnChangePassword";
-            btnChangePassword.Size = new Size(121, 47);
-            btnChangePassword.TabIndex = 21;
-            btnChangePassword.Text = "Change Password";
-            btnChangePassword.UseVisualStyleBackColor = true;
-            btnChangePassword.Click += btnChangePassword_Click;
-            // 
             // UserEditView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,7 +318,6 @@
         private GroupBox groupBox1;
         private TextBox txtBoxUserId;
         private TextBox txtBoxContact;
-        private TextBox txtBoxPassword;
         private TextBox txtBoxUsername;
         private TextBox txtBoxLastName;
         private TextBox txtBoxFirstName;
@@ -348,7 +327,6 @@
         private Label label9;
         private Button button1;
         private Label label8;
-        private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;

@@ -206,6 +206,30 @@ namespace AgRecords.Model
             }
         }
 
+        //update user password
+        public Boolean UpdateUserPassword(UserAccount user)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_change_password(@userId, @userPassword)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@userId", user.userId);
+                    command.Parameters.AddWithValue("@userPassword", user.userPassword);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error updating user password: " + ex.Message, ex);
+            }
+        }
+
 
 
     }
