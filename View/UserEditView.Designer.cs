@@ -53,12 +53,33 @@
             btnCancel = new Button();
             btnSave = new Button();
             openFileDialog1 = new OpenFileDialog();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            groupBox3 = new GroupBox();
+            groupBox4 = new GroupBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
+            groupBox5 = new GroupBox();
+            checkBox7 = new CheckBox();
+            checkBox8 = new CheckBox();
+            checkBox9 = new CheckBox();
+            checkBox10 = new CheckBox();
+            checkBox11 = new CheckBox();
+            groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(groupBox5);
+            groupBox2.Controls.Add(groupBox4);
+            groupBox2.Controls.Add(groupBox3);
             groupBox2.Location = new Point(12, 204);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(776, 181);
@@ -107,7 +128,7 @@
             // 
             // txtBoxUserId
             // 
-            txtBoxUserId.Location = new Point(567, 14);
+            txtBoxUserId.Location = new Point(461, 16);
             txtBoxUserId.Name = "txtBoxUserId";
             txtBoxUserId.ReadOnly = true;
             txtBoxUserId.Size = new Size(121, 23);
@@ -200,9 +221,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(410, 19);
             label6.Name = "label6";
-            label6.Size = new Size(151, 15);
+            label6.Size = new Size(41, 15);
             label6.TabIndex = 7;
-            label6.Text = "UserID (decide, hide or not)";
+            label6.Text = "UserID";
             // 
             // label5
             // 
@@ -294,6 +315,165 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(15, 22);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(51, 19);
+            checkBox1.TabIndex = 0;
+            checkBox1.Tag = "1";
+            checkBox1.Text = "View";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(15, 47);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(48, 19);
+            checkBox2.TabIndex = 1;
+            checkBox2.Tag = "2";
+            checkBox2.Text = "Add";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(15, 72);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(46, 19);
+            checkBox3.TabIndex = 2;
+            checkBox3.Tag = "3";
+            checkBox3.Text = "Edit";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(checkBox10);
+            groupBox3.Controls.Add(checkBox1);
+            groupBox3.Controls.Add(checkBox3);
+            groupBox3.Controls.Add(checkBox2);
+            groupBox3.Location = new Point(19, 36);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(90, 128);
+            groupBox3.TabIndex = 3;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "RSBSA";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(checkBox11);
+            groupBox4.Controls.Add(checkBox4);
+            groupBox4.Controls.Add(checkBox5);
+            groupBox4.Controls.Add(checkBox6);
+            groupBox4.Location = new Point(134, 36);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(90, 128);
+            groupBox4.TabIndex = 4;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Letters";
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(15, 22);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(51, 19);
+            checkBox4.TabIndex = 0;
+            checkBox4.Tag = "8";
+            checkBox4.Text = "View";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(15, 72);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(46, 19);
+            checkBox5.TabIndex = 2;
+            checkBox5.Tag = "10";
+            checkBox5.Text = "Edit";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(15, 47);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(48, 19);
+            checkBox6.TabIndex = 1;
+            checkBox6.Tag = "9";
+            checkBox6.Text = "Add";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(checkBox7);
+            groupBox5.Controls.Add(checkBox8);
+            groupBox5.Controls.Add(checkBox9);
+            groupBox5.Location = new Point(257, 36);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(90, 128);
+            groupBox5.TabIndex = 5;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Users";
+            // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Location = new Point(15, 22);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(51, 19);
+            checkBox7.TabIndex = 0;
+            checkBox7.Tag = "5";
+            checkBox7.Text = "View";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            checkBox8.AutoSize = true;
+            checkBox8.Location = new Point(15, 72);
+            checkBox8.Name = "checkBox8";
+            checkBox8.Size = new Size(46, 19);
+            checkBox8.TabIndex = 2;
+            checkBox8.Tag = "7";
+            checkBox8.Text = "Edit";
+            checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            checkBox9.AutoSize = true;
+            checkBox9.Location = new Point(15, 47);
+            checkBox9.Name = "checkBox9";
+            checkBox9.Size = new Size(48, 19);
+            checkBox9.TabIndex = 1;
+            checkBox9.Tag = "6";
+            checkBox9.Text = "Add";
+            checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            checkBox10.AutoSize = true;
+            checkBox10.Location = new Point(15, 97);
+            checkBox10.Name = "checkBox10";
+            checkBox10.Size = new Size(51, 19);
+            checkBox10.TabIndex = 3;
+            checkBox10.Tag = "4";
+            checkBox10.Text = "Print";
+            checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            checkBox11.AutoSize = true;
+            checkBox11.Location = new Point(15, 97);
+            checkBox11.Name = "checkBox11";
+            checkBox11.Size = new Size(51, 19);
+            checkBox11.TabIndex = 4;
+            checkBox11.Tag = "11";
+            checkBox11.Text = "Print";
+            checkBox11.UseVisualStyleBackColor = true;
+            // 
             // UserEditView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -306,9 +486,16 @@
             Name = "UserEditView";
             Text = "UserEditView";
             Load += UserEditView_Load;
+            groupBox2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -339,5 +526,19 @@
         private Button btnSave;
         private OpenFileDialog openFileDialog1;
         private Button btnChangePassword;
+        private GroupBox groupBox5;
+        private CheckBox checkBox7;
+        private CheckBox checkBox8;
+        private CheckBox checkBox9;
+        private GroupBox groupBox4;
+        private CheckBox checkBox4;
+        private CheckBox checkBox5;
+        private CheckBox checkBox6;
+        private GroupBox groupBox3;
+        private CheckBox checkBox1;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private CheckBox checkBox11;
+        private CheckBox checkBox10;
     }
 }
