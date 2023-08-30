@@ -25,6 +25,8 @@ namespace AgRecords.View
             InitializeComponent();
             this.Padding = new Padding(borderSize); //Border size
             this.BackColor = Color.FromArgb(5, 93, 96); //Border color
+
+            SubmenuDesign();
         }
 
         //FORM STYLE
@@ -141,6 +143,33 @@ namespace AgRecords.View
             }
         }
 
+        //Submenu
+        private void SubmenuDesign()
+        {
+            panelCropsSubMenu.Visible = false;
+        }
+
+        //Hide Submenu
+
+        private void HideSubMenu()
+        {
+            if (panelCropsSubMenu.Visible == true)
+                panelCropsSubMenu.Visible = false;
+        }
+
+        //Show Submenu
+
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+
         private void CollapseMenu()
         {
             //collapse menu
@@ -180,7 +209,9 @@ namespace AgRecords.View
             if (senderBtn != null)
             {
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(5, 93, 96);
+                currentBtn.BackColor = Color.FromArgb(255, 221, 100);
+                currentBtn.ForeColor = Color.FromArgb(0, 35, 76);
+                currentBtn.IconColor = Color.FromArgb(0, 35, 76);
             }
         }
 
@@ -188,7 +219,9 @@ namespace AgRecords.View
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(16, 133, 117);
+                currentBtn.BackColor = Color.FromArgb(43, 121, 223);
+                currentBtn.ForeColor = Color.FromArgb(255, 255, 255);
+                currentBtn.IconColor = Color.FromArgb(255, 255, 255);
             }
         }
 
@@ -224,7 +257,7 @@ namespace AgRecords.View
                 picUserPhoto.Image = null;
             }
 
-            lblUserName.Text = user.username;
+            lblUserName.Text = user.userFirstname + " " + user.userLastname;
             lblUserRole.Text = user.userRole;
         }
 
@@ -273,7 +306,13 @@ namespace AgRecords.View
 
             // add the pbLogo to the panelDesktop
             pbLogo.Image = Properties.Resources.logo2;
+            pbLogoSolano.Image = Properties.Resources.logo2;
+            pbLogoDa.Image = Properties.Resources.logo2;
             panelDesktop.Controls.Add(pbLogo);
+            panelDesktop.Controls.Add(pbLogoSolano);
+            panelDesktop.Controls.Add(pbLogoDa);
+
+            HideSubMenu();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -288,11 +327,69 @@ namespace AgRecords.View
             }
         }
 
+        private void btnDashoard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRSBSA_Click(object sender, EventArgs e)
+        {
+            RsbsaView rsbsaView = new RsbsaView(panelDesktop);
+            //userView.formRefresh();
+            rsbsaView.TopLevel = false;
+            rsbsaView.FormBorderStyle = FormBorderStyle.None;
+            rsbsaView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(rsbsaView);
+            rsbsaView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new RsbsaView(panelDesktop));
+            lblTitle.Text = "RSBSA";
+
+            HideSubMenu();
+        }
+
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            this.Close();
-            UserView userView = new UserView();
+            UserView userView = new UserView(panelDesktop);
+            //userView.formRefresh();
+            userView.TopLevel = false;
+            userView.FormBorderStyle = FormBorderStyle.None;
+            userView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(userView);
             userView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new UserView(panelDesktop));
+            lblTitle.Text = "User Accounts";
+
+            HideSubMenu();
         }
+
+        private void btnCrops_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelCropsSubMenu);
+        }
+
+        //private void btnCrops_Click(object sender, EventArgs e)
+        //{
+        //    ShowSubMenu(panelCropsSubMenu);
+        //}
+
+        //private void btnRice_Click(object sender, EventArgs e)
+        //{
+        //    HideSubMenu();
+        //}
+
+        //private void btnUsers_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //    UserView userView = new UserView();
+        //    userView.Show();
+        //}
     }
 }

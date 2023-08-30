@@ -15,10 +15,13 @@ namespace AgRecords.View
     public partial class UserView : Form
     {
         private UserController userController;
+        private Panel parentPanel;
 
-        public UserView()
+        public UserView(Control parentControl)
         {
             InitializeComponent();
+
+            this.parentPanel = parentControl as Panel;
             userController = new UserController(this);
         }
 
@@ -30,8 +33,15 @@ namespace AgRecords.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Close();
             UserAddView userAddView = new UserAddView();
+            userAddView.FormClosed += UserAddView_FormClosed;
+
+            userAddView.TopLevel = false;
+            userAddView.FormBorderStyle = FormBorderStyle.None;
+            userAddView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(userAddView);
             userAddView.Show();
         }
 
@@ -54,6 +64,20 @@ namespace AgRecords.View
                 this.Close();
 
             }
+        }
+
+        // Methods
+
+        private void UserAddView_FormClosed(object sender, EventArgs e)
+        {
+            UserView userView = new UserView(parentPanel);
+            userView.TopLevel = false;
+            userView.FormBorderStyle = FormBorderStyle.None;
+            userView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(userView);
+            userView.Show();
         }
     }
 }

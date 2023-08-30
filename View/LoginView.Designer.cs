@@ -86,7 +86,7 @@
             label3.ForeColor = Color.FromArgb(16, 133, 117);
             label3.Location = new Point(40, 10);
             label3.Name = "label3";
-            label3.Size = new Size(64, 16);
+            label3.Size = new Size(82, 19);
             label3.TabIndex = 43;
             label3.Text = "AgRecords";
             // 
@@ -111,7 +111,7 @@
             label4.ForeColor = Color.FromArgb(148, 145, 145);
             label4.Location = new Point(7, 477);
             label4.Name = "label4";
-            label4.Size = new Size(61, 15);
+            label4.Size = new Size(72, 17);
             label4.TabIndex = 13;
             label4.Text = "Version 1.0";
             // 
@@ -136,7 +136,7 @@
             panelRight.Dock = DockStyle.Left;
             panelRight.Location = new Point(386, 0);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(372, 500);
+            panelRight.Size = new Size(415, 500);
             panelRight.TabIndex = 1;
             // 
             // btnShowPass
@@ -146,7 +146,7 @@
             btnShowPass.FlatAppearance.MouseOverBackColor = Color.White;
             btnShowPass.FlatStyle = FlatStyle.Flat;
             btnShowPass.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            btnShowPass.IconColor = Color.FromArgb(5, 93, 96);
+            btnShowPass.IconColor = Color.FromArgb(43, 121, 223);
             btnShowPass.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnShowPass.IconSize = 30;
             btnShowPass.Location = new Point(339, 308);
@@ -163,7 +163,7 @@
             btnHidePass.FlatAppearance.MouseOverBackColor = Color.White;
             btnHidePass.FlatStyle = FlatStyle.Flat;
             btnHidePass.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-            btnHidePass.IconColor = Color.FromArgb(5, 93, 96);
+            btnHidePass.IconColor = Color.FromArgb(43, 121, 223);
             btnHidePass.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHidePass.IconSize = 30;
             btnHidePass.Location = new Point(339, 308);
@@ -194,7 +194,7 @@
             lblError.ImageAlign = ContentAlignment.MiddleLeft;
             lblError.Location = new Point(46, 343);
             lblError.Name = "lblError";
-            lblError.Size = new Size(201, 16);
+            lblError.Size = new Size(241, 20);
             lblError.TabIndex = 39;
             lblError.Text = "Incorrect username or password.";
             lblError.Visible = false;
@@ -203,10 +203,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(16, 133, 117);
+            label2.ForeColor = Color.FromArgb(43, 121, 223);
             label2.Location = new Point(133, 148);
             label2.Name = "label2";
-            label2.Size = new Size(138, 17);
+            label2.Size = new Size(170, 20);
             label2.TabIndex = 38;
             label2.Text = "Login to your account";
             // 
@@ -214,17 +214,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(16, 133, 117);
+            label1.ForeColor = Color.FromArgb(43, 121, 223);
             label1.Location = new Point(161, 117);
             label1.Name = "label1";
-            label1.Size = new Size(95, 22);
+            label1.Size = new Size(114, 26);
             label1.TabIndex = 37;
             label1.Text = "Welcome";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = Color.FromArgb(16, 133, 117);
+            btnLogin.BackColor = Color.FromArgb(43, 121, 223);
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
@@ -255,10 +255,10 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Microsoft Sans Serif", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPassword.ForeColor = Color.FromArgb(16, 133, 117);
+            lblPassword.ForeColor = Color.FromArgb(43, 121, 223);
             lblPassword.Location = new Point(45, 274);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(69, 17);
+            lblPassword.Size = new Size(89, 22);
             lblPassword.TabIndex = 33;
             lblPassword.Text = "Password";
             // 
@@ -266,10 +266,10 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Microsoft Sans Serif", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsername.ForeColor = Color.FromArgb(16, 133, 117);
+            lblUsername.ForeColor = Color.FromArgb(43, 121, 223);
             lblUsername.Location = new Point(45, 193);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(73, 17);
+            lblUsername.Size = new Size(92, 22);
             lblUsername.TabIndex = 32;
             lblUsername.Text = "Username";
             // 
@@ -280,7 +280,7 @@
             txtPassword.Location = new Point(48, 303);
             txtPassword.Margin = new Padding(5, 3, 3, 3);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(321, 23);
+            txtPassword.Size = new Size(321, 27);
             txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -291,21 +291,21 @@
             txtUsername.Location = new Point(48, 222);
             txtUsername.Margin = new Padding(5, 3, 3, 3);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(321, 23);
+            txtUsername.Size = new Size(321, 27);
             txtUsername.TabIndex = 1;
             // 
             // btnMin
             // 
             btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMin.BackColor = Color.White;
+            btnMin.BackColor = SystemColors.Window;
             btnMin.FlatAppearance.BorderSize = 0;
             btnMin.FlatStyle = FlatStyle.Flat;
             btnMin.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnMin.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            btnMin.IconColor = Color.FromArgb(5, 93, 96);
+            btnMin.IconColor = Color.FromArgb(43, 121, 223);
             btnMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMin.IconSize = 15;
-            btnMin.Location = new Point(305, 4);
+            btnMin.Location = new Point(348, 4);
             btnMin.Name = "btnMin";
             btnMin.Size = new Size(30, 20);
             btnMin.TabIndex = 16;
@@ -315,15 +315,15 @@
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExit.BackColor = Color.White;
+            btnExit.BackColor = SystemColors.Window;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            btnExit.IconColor = Color.FromArgb(5, 93, 96);
+            btnExit.IconColor = Color.FromArgb(43, 121, 223);
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnExit.IconSize = 15;
-            btnExit.Location = new Point(338, 4);
+            btnExit.Location = new Point(381, 4);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(30, 20);
             btnExit.TabIndex = 15;
@@ -333,7 +333,7 @@
             // LoginView
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 500);
             Controls.Add(panelRight);

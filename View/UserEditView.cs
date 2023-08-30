@@ -17,6 +17,7 @@ namespace AgRecords.View
     {
         private byte[] userPhoto; // store the selected image as a byte array
         private UserController userController;
+        public event EventHandler FormClosed;
 
         public UserEditView(UserAccount user)
         {
@@ -71,10 +72,8 @@ namespace AgRecords.View
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            UserView userView = new UserView();
-            userView.Show();
             this.Close();
-
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
 
         public void getUserPhoto() //method - get user photo
@@ -122,8 +121,7 @@ namespace AgRecords.View
             {
                 //MessageBox.Show("User added successfully.", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-                UserView userView = new UserView();
-                userView.Show();
+                FormClosed?.Invoke(this, EventArgs.Empty);
             }
 
         }
