@@ -388,17 +388,13 @@ namespace AgRecords.View
             ShowSubMenu(panelCropsSubMenu);
         }
 
-        private void btnRice_Click(object sender, EventArgs e)
+        private void btnLetters_Click(object sender, EventArgs e)
         {
-            CropsRiceView cropsRiceView = new CropsRiceView(panelDesktop);
-            //userView.formRefresh();
-            cropsRiceView.TopLevel = false;
-            cropsRiceView.FormBorderStyle = FormBorderStyle.None;
-            cropsRiceView.Dock = DockStyle.Fill;
+            LettersView lettersView = new LettersView();
+            lettersView.Show();
+            this.Close();
+        }
 
-            panelDesktop.Controls.Clear();
-            panelDesktop.Controls.Add(cropsRiceView);
-            cropsRiceView.Show();
 
             ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
             OpenChildForm(new CropsRiceView(panelDesktop));

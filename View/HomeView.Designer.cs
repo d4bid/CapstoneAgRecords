@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
-            btnLetters = new FontAwesome.Sharp.IconButton();
             btnUsers = new FontAwesome.Sharp.IconButton();
             panelCropsSubMenu = new Panel();
             btnVegetable = new FontAwesome.Sharp.IconButton();
@@ -63,7 +62,6 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = Color.FromArgb(43, 121, 223);
-            panelMenu.Controls.Add(btnLetters);
             panelMenu.Controls.Add(btnUsers);
             panelMenu.Controls.Add(panelCropsSubMenu);
             panelMenu.Controls.Add(btnCrops);
@@ -77,30 +75,6 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(284, 565);
             panelMenu.TabIndex = 0;
-            // 
-            // btnLetters
-            // 
-            btnLetters.Dock = DockStyle.Top;
-            btnLetters.FlatAppearance.BorderSize = 0;
-            btnLetters.FlatStyle = FlatStyle.Flat;
-            btnLetters.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLetters.ForeColor = Color.White;
-            btnLetters.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-            btnLetters.IconColor = Color.White;
-            btnLetters.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLetters.IconSize = 32;
-            btnLetters.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLetters.Location = new Point(0, 404);
-            btnLetters.Name = "btnLetters";
-            btnLetters.Padding = new Padding(11, 0, 0, 0);
-            btnLetters.Size = new Size(284, 45);
-            btnLetters.TabIndex = 17;
-            btnLetters.Tag = "Letters";
-            btnLetters.Text = "Letters";
-            btnLetters.TextAlign = ContentAlignment.MiddleLeft;
-            btnLetters.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLetters.UseVisualStyleBackColor = true;
-            btnLetters.Click += btnLetters_Click;
             // 
             // btnUsers
             // 
@@ -515,6 +489,5 @@
         public FontAwesome.Sharp.IconButton btnVegetable;
         public FontAwesome.Sharp.IconButton btnCorn;
         public FontAwesome.Sharp.IconButton btnUsers;
-        public FontAwesome.Sharp.IconButton btnLetters;
     }
 }
