@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
-            btnUsers = new FontAwesome.Sharp.IconButton();
             btnLetters = new FontAwesome.Sharp.IconButton();
+            btnUsers = new FontAwesome.Sharp.IconButton();
             panelCropsSubMenu = new Panel();
             btnVegetable = new FontAwesome.Sharp.IconButton();
             btnCorn = new FontAwesome.Sharp.IconButton();
@@ -79,31 +79,6 @@
             panelMenu.Size = new Size(325, 753);
             panelMenu.TabIndex = 0;
             // 
-            // btnUsers
-            // 
-            btnUsers.Dock = DockStyle.Top;
-            btnUsers.FlatAppearance.BorderSize = 0;
-            btnUsers.FlatStyle = FlatStyle.Flat;
-            btnUsers.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnUsers.ForeColor = Color.White;
-            btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
-            btnUsers.IconColor = Color.White;
-            btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnUsers.IconSize = 32;
-            btnUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsers.Location = new Point(0, 538);
-            btnUsers.Margin = new Padding(3, 4, 3, 4);
-            btnUsers.Name = "btnUsers";
-            btnUsers.Padding = new Padding(13, 0, 0, 0);
-            btnUsers.Size = new Size(325, 60);
-            btnUsers.TabIndex = 16;
-            btnUsers.Tag = "Users";
-            btnUsers.Text = "Users";
-            btnUsers.TextAlign = ContentAlignment.MiddleLeft;
-            btnUsers.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnUsers.UseVisualStyleBackColor = true;
-            btnUsers.Click += btnUsers_Click;
-            // 
             // btnLetters
             // 
             btnLetters.Dock = DockStyle.Top;
@@ -128,6 +103,31 @@
             btnLetters.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnLetters.UseVisualStyleBackColor = true;
             btnLetters.Click += btnLetters_Click;
+            // 
+            // btnUsers
+            // 
+            btnUsers.Dock = DockStyle.Top;
+            btnUsers.FlatAppearance.BorderSize = 0;
+            btnUsers.FlatStyle = FlatStyle.Flat;
+            btnUsers.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsers.ForeColor = Color.White;
+            btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            btnUsers.IconColor = Color.White;
+            btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUsers.IconSize = 32;
+            btnUsers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUsers.Location = new Point(0, 538);
+            btnUsers.Margin = new Padding(3, 4, 3, 4);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Padding = new Padding(13, 0, 0, 0);
+            btnUsers.Size = new Size(325, 60);
+            btnUsers.TabIndex = 16;
+            btnUsers.Tag = "Users";
+            btnUsers.Text = "Users";
+            btnUsers.TextAlign = ContentAlignment.MiddleLeft;
+            btnUsers.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUsers.UseVisualStyleBackColor = true;
+            btnUsers.Click += btnUsers_Click;
             // 
             // panelCropsSubMenu
             // 
@@ -215,7 +215,6 @@
             btnRice.TextAlign = ContentAlignment.MiddleLeft;
             btnRice.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRice.UseVisualStyleBackColor = true;
-            btnRice.Click += btnRice_Click;
             // 
             // btnCrops
             // 
@@ -535,5 +534,6 @@
         public FontAwesome.Sharp.IconButton btnVegetable;
         public FontAwesome.Sharp.IconButton btnCorn;
         public FontAwesome.Sharp.IconButton btnUsers;
+        public FontAwesome.Sharp.IconButton btnLetters;
     }
 }

@@ -388,21 +388,6 @@ namespace AgRecords.View
             ShowSubMenu(panelCropsSubMenu);
         }
 
-        private void btnLetters_Click(object sender, EventArgs e)
-        {
-            LettersView lettersView = new LettersView();
-            lettersView.Show();
-            this.Close();
-        }
-
-
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new CropsRiceView(panelDesktop));
-            lblTitle.Text = "Crops > Rice";
-
-            HideSubMenu();
-        }
-
         private void btnCorn_Click(object sender, EventArgs e)
         {
 
@@ -427,9 +412,10 @@ namespace AgRecords.View
 
             ActivateButton(sender, Color.FromArgb(43, 121, 223));
             OpenChildForm(new LettersView(panelDesktop));
-            lblTitle.Text = "Letters Accounts";
+            lblTitle.Text = "Letters";
 
             HideSubMenu();
+
         }
     }
 }
