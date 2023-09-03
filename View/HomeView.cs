@@ -372,6 +372,14 @@ namespace AgRecords.View
             ShowSubMenu(panelCropsSubMenu);
         }
 
+        private void btnLetters_Click(object sender, EventArgs e)
+        {
+            LettersView lettersView = new LettersView();
+            lettersView.Show();
+            this.Close();
+        }
+
+
         //private void btnCrops_Click(object sender, EventArgs e)
         //{
         //    ShowSubMenu(panelCropsSubMenu);
