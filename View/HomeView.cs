@@ -296,21 +296,18 @@ namespace AgRecords.View
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            DisableButton();
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-                panelDesktop.Controls.Clear();
-            }
-            lblTitle.Text = "Home";
+            MainView mainView = new MainView(panelDesktop);
+            mainView.TopLevel = false;
+            mainView.FormBorderStyle = FormBorderStyle.None;
+            mainView.Dock = DockStyle.Fill;
 
-            // add the pbLogo to the panelDesktop
-            pbLogo.Image = Properties.Resources.logo2;
-            pbLogoSolano.Image = Properties.Resources.logo2;
-            pbLogoDa.Image = Properties.Resources.logo2;
-            panelDesktop.Controls.Add(pbLogo);
-            panelDesktop.Controls.Add(pbLogoSolano);
-            panelDesktop.Controls.Add(pbLogoDa);
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(mainView);
+            mainView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new RsbsaView(panelDesktop));
+            lblTitle.Text = "Home";
 
             HideSubMenu();
         }

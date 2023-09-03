@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace AgRecords.View
 {
-    public partial class RsbsaAddView : Form
+    public partial class MainView : Form
     {
-        public RsbsaAddView()
+        private Panel parentPanel;
+
+        public MainView(Control parentControl)
         {
             InitializeComponent();
+
+            this.parentPanel = parentControl as Panel;
         }
     }
 }

@@ -42,9 +42,10 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(btnAdd);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1115, 85);
+            panel1.Padding = new Padding(0, 0, 0, 10);
+            panel1.Size = new Size(1139, 90);
             panel1.TabIndex = 20;
             // 
             // btnAdd
@@ -55,7 +56,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(954, 21);
+            btnAdd.Location = new Point(988, 27);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(139, 39);
@@ -89,13 +90,13 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(52, 74, 95);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvRsbsa.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvRsbsa.Location = new Point(12, 107);
+            dgvRsbsa.Location = new Point(0, 99);
             dgvRsbsa.Name = "dgvRsbsa";
             dgvRsbsa.ReadOnly = true;
             dgvRsbsa.RowHeadersVisible = false;
             dgvRsbsa.RowHeadersWidth = 51;
             dgvRsbsa.RowTemplate.Height = 25;
-            dgvRsbsa.Size = new Size(1115, 500);
+            dgvRsbsa.Size = new Size(1139, 520);
             dgvRsbsa.TabIndex = 19;
             // 
             // RsbsaView
@@ -104,8 +105,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1139, 619);
-            Controls.Add(panel1);
             Controls.Add(dgvRsbsa);
+            Controls.Add(panel1);
             Name = "RsbsaView";
             Text = "RsbsaView";
             Load += RsbsaView_Load;

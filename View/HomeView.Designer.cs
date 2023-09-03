@@ -49,22 +49,13 @@
             lblUserRole = new Label();
             lblUserName = new Label();
             lblTitle = new Label();
-            panel1 = new Panel();
             panelDesktop = new Panel();
-            pbLogo = new PictureBox();
-            pbLogoSolano = new PictureBox();
-            pbLogoDa = new PictureBox();
-            label1 = new Label();
             panelMenu.SuspendLayout();
             panelCropsSubMenu.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
             panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserPhoto).BeginInit();
-            panelDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbLogoSolano).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbLogoDa).BeginInit();
             SuspendLayout();
             // 
             // panelMenu
@@ -227,7 +218,7 @@
             btnRSBSA.FlatStyle = FlatStyle.Flat;
             btnRSBSA.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnRSBSA.ForeColor = Color.White;
-            btnRSBSA.IconChar = FontAwesome.Sharp.IconChar.Drum;
+            btnRSBSA.IconChar = FontAwesome.Sharp.IconChar.File;
             btnRSBSA.IconColor = Color.White;
             btnRSBSA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRSBSA.IconSize = 32;
@@ -348,7 +339,7 @@
             panelTitleBar.Location = new Point(325, 0);
             panelTitleBar.Margin = new Padding(3, 4, 3, 4);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1157, 80);
+            panelTitleBar.Size = new Size(1157, 87);
             panelTitleBar.TabIndex = 1;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
@@ -358,7 +349,7 @@
             picUserPhoto.BackgroundImage = Properties.Resources.profile;
             picUserPhoto.BackgroundImageLayout = ImageLayout.Zoom;
             picUserPhoto.BorderStyle = BorderStyle.FixedSingle;
-            picUserPhoto.Location = new Point(899, 19);
+            picUserPhoto.Location = new Point(895, 25);
             picUserPhoto.Name = "picUserPhoto";
             picUserPhoto.Size = new Size(55, 55);
             picUserPhoto.SizeMode = PictureBoxSizeMode.Zoom;
@@ -425,7 +416,7 @@
             lblUserRole.AutoSize = true;
             lblUserRole.Font = new Font("Century Gothic", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
             lblUserRole.ForeColor = Color.FromArgb(43, 121, 223);
-            lblUserRole.Location = new Point(967, 52);
+            lblUserRole.Location = new Point(963, 58);
             lblUserRole.Name = "lblUserRole";
             lblUserRole.Size = new Size(46, 16);
             lblUserRole.TabIndex = 22;
@@ -437,7 +428,7 @@
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblUserName.ForeColor = Color.FromArgb(43, 121, 223);
-            lblUserName.Location = new Point(967, 31);
+            lblUserName.Location = new Point(963, 37);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(54, 18);
             lblUserName.TabIndex = 21;
@@ -446,83 +437,24 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.ForeColor = Color.FromArgb(148, 145, 145);
-            lblTitle.Location = new Point(18, 33);
+            lblTitle.Font = new Font("Roboto Condensed", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitle.ForeColor = Color.FromArgb(0, 35, 76);
+            lblTitle.Location = new Point(18, 28);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(69, 23);
+            lblTitle.Size = new Size(66, 30);
             lblTitle.TabIndex = 20;
             lblTitle.Text = "Home";
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(325, 80);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1157, 7);
-            panel1.TabIndex = 2;
-            // 
             // panelDesktop
             // 
-            panelDesktop.BackColor = Color.FromArgb(239, 239, 239, 239);
-            panelDesktop.Controls.Add(label1);
-            panelDesktop.Controls.Add(pbLogoDa);
-            panelDesktop.Controls.Add(pbLogoSolano);
-            panelDesktop.Controls.Add(pbLogo);
+            panelDesktop.BackColor = Color.FromArgb(239, 239, 239);
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(325, 87);
             panelDesktop.Margin = new Padding(3, 4, 3, 4);
             panelDesktop.Name = "panelDesktop";
+            panelDesktop.Padding = new Padding(10, 10, 15, 15);
             panelDesktop.Size = new Size(1157, 666);
             panelDesktop.TabIndex = 3;
-            // 
-            // pbLogo
-            // 
-            pbLogo.Anchor = AnchorStyles.None;
-            pbLogo.BackgroundImage = Properties.Resources.logo2;
-            pbLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            pbLogo.Location = new Point(607, 85);
-            pbLogo.Name = "pbLogo";
-            pbLogo.Size = new Size(500, 500);
-            pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            pbLogo.TabIndex = 2;
-            pbLogo.TabStop = false;
-            // 
-            // pbLogoSolano
-            // 
-            pbLogoSolano.Anchor = AnchorStyles.None;
-            pbLogoSolano.BackgroundImage = Properties.Resources.logo2;
-            pbLogoSolano.BackgroundImageLayout = ImageLayout.Zoom;
-            pbLogoSolano.Location = new Point(53, 123);
-            pbLogoSolano.Name = "pbLogoSolano";
-            pbLogoSolano.Size = new Size(200, 200);
-            pbLogoSolano.SizeMode = PictureBoxSizeMode.Zoom;
-            pbLogoSolano.TabIndex = 3;
-            pbLogoSolano.TabStop = false;
-            // 
-            // pbLogoDa
-            // 
-            pbLogoDa.Anchor = AnchorStyles.None;
-            pbLogoDa.BackgroundImage = Properties.Resources.logo2;
-            pbLogoDa.BackgroundImageLayout = ImageLayout.Zoom;
-            pbLogoDa.Location = new Point(289, 123);
-            pbLogoDa.Name = "pbLogoDa";
-            pbLogoDa.Size = new Size(200, 200);
-            pbLogoDa.SizeMode = PictureBoxSizeMode.Zoom;
-            pbLogoDa.TabIndex = 4;
-            pbLogoDa.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Roboto Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(53, 373);
-            label1.Name = "label1";
-            label1.Size = new Size(87, 20);
-            label1.TabIndex = 5;
-            label1.Text = "This is a text.";
             // 
             // HomeView
             // 
@@ -530,10 +462,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1482, 753);
             Controls.Add(panelDesktop);
-            Controls.Add(panel1);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1000, 700);
             Name = "HomeView";
             Text = "HomeView";
             Load += HomeView_Load;
@@ -545,11 +477,6 @@
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picUserPhoto).EndInit();
-            panelDesktop.ResumeLayout(false);
-            panelDesktop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbLogoSolano).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbLogoDa).EndInit();
             ResumeLayout(false);
         }
 
@@ -559,7 +486,6 @@
         private Panel panelTitleBar;
         public FontAwesome.Sharp.IconButton btnDashoard;
         private Panel panel2;
-        private Panel panel1;
         public FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnMin;
         private FontAwesome.Sharp.IconButton btnMax;
@@ -571,7 +497,6 @@
         private FontAwesome.Sharp.IconButton btnMenu;
         private PictureBox btnHome;
         private Panel panelDesktop;
-        private PictureBox pbLogo;
         public FontAwesome.Sharp.IconButton btnRSBSA;
         public FontAwesome.Sharp.IconButton btnCrops;
         private Panel panelCropsSubMenu;
@@ -579,8 +504,5 @@
         public FontAwesome.Sharp.IconButton btnVegetable;
         public FontAwesome.Sharp.IconButton btnCorn;
         public FontAwesome.Sharp.IconButton btnUsers;
-        private PictureBox pbLogoDa;
-        private PictureBox pbLogoSolano;
-        private Label label1;
     }
 }

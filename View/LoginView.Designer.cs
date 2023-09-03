@@ -133,10 +133,10 @@
             panelRight.Controls.Add(txtUsername);
             panelRight.Controls.Add(btnMin);
             panelRight.Controls.Add(btnExit);
-            panelRight.Dock = DockStyle.Left;
-            panelRight.Location = new Point(386, 0);
+            panelRight.Dock = DockStyle.Right;
+            panelRight.Location = new Point(387, 0);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(415, 500);
+            panelRight.Size = new Size(413, 500);
             panelRight.TabIndex = 1;
             // 
             // btnShowPass
@@ -305,7 +305,7 @@
             btnMin.IconColor = Color.FromArgb(43, 121, 223);
             btnMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMin.IconSize = 15;
-            btnMin.Location = new Point(348, 4);
+            btnMin.Location = new Point(346, 4);
             btnMin.Name = "btnMin";
             btnMin.Size = new Size(30, 20);
             btnMin.TabIndex = 16;
@@ -323,7 +323,7 @@
             btnExit.IconColor = Color.FromArgb(43, 121, 223);
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnExit.IconSize = 15;
-            btnExit.Location = new Point(381, 4);
+            btnExit.Location = new Point(379, 4);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(30, 20);
             btnExit.TabIndex = 15;
@@ -335,6 +335,7 @@
             AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 500);
             Controls.Add(panelRight);
             Controls.Add(panelLeft);

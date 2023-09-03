@@ -60,8 +60,15 @@ namespace AgRecords.View
                 UserAccount user = userController.GetUserAccountById(userId);
 
                 UserEditView userEditView = new UserEditView(user);
+                userEditView.FormClosed += UserEditView_FormClosed;
+
+                userEditView.TopLevel = false;
+                userEditView.FormBorderStyle = FormBorderStyle.None;
+                userEditView.Dock = DockStyle.Fill;
+
+                parentPanel.Controls.Clear();
+                parentPanel.Controls.Add(userEditView);
                 userEditView.Show();
-                this.Close();
 
             }
         }
@@ -69,6 +76,18 @@ namespace AgRecords.View
         // Methods
 
         private void UserAddView_FormClosed(object sender, EventArgs e)
+        {
+            UserView userView = new UserView(parentPanel);
+            userView.TopLevel = false;
+            userView.FormBorderStyle = FormBorderStyle.None;
+            userView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(userView);
+            userView.Show();
+        }
+
+        private void UserEditView_FormClosed(object sender, EventArgs e)
         {
             UserView userView = new UserView(parentPanel);
             userView.TopLevel = false;
