@@ -185,6 +185,7 @@
             btnRice.TextAlign = ContentAlignment.MiddleLeft;
             btnRice.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRice.UseVisualStyleBackColor = true;
+            btnRice.Click += btnRice_Click;
             // 
             // btnCrops
             // 

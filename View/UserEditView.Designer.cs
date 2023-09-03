@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
+            groupBox5 = new GroupBox();
+            checkBox7 = new CheckBox();
+            checkBox8 = new CheckBox();
+            checkBox9 = new CheckBox();
+            groupBox4 = new GroupBox();
+            checkBox11 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
+            groupBox3 = new GroupBox();
+            checkBox10 = new CheckBox();
+            checkBox1 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
             groupBox1 = new GroupBox();
             btnChangePassword = new Button();
             txtBoxUserId = new TextBox();
@@ -53,26 +67,12 @@
             btnCancel = new Button();
             btnSave = new Button();
             openFileDialog1 = new OpenFileDialog();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            groupBox3 = new GroupBox();
-            groupBox4 = new GroupBox();
-            checkBox4 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox6 = new CheckBox();
-            groupBox5 = new GroupBox();
-            checkBox7 = new CheckBox();
-            checkBox8 = new CheckBox();
-            checkBox9 = new CheckBox();
-            checkBox10 = new CheckBox();
-            checkBox11 = new CheckBox();
             groupBox2.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
-            groupBox3.SuspendLayout();
-            groupBox4.SuspendLayout();
-            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox2
@@ -80,12 +80,190 @@
             groupBox2.Controls.Add(groupBox5);
             groupBox2.Controls.Add(groupBox4);
             groupBox2.Controls.Add(groupBox3);
-            groupBox2.Location = new Point(12, 204);
+            groupBox2.Location = new Point(14, 272);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(776, 181);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(887, 241);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             groupBox2.Text = "User Permissions";
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(checkBox7);
+            groupBox5.Controls.Add(checkBox8);
+            groupBox5.Controls.Add(checkBox9);
+            groupBox5.Location = new Point(294, 48);
+            groupBox5.Margin = new Padding(3, 4, 3, 4);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Padding = new Padding(3, 4, 3, 4);
+            groupBox5.Size = new Size(103, 171);
+            groupBox5.TabIndex = 5;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Users";
+            // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Location = new Point(17, 29);
+            checkBox7.Margin = new Padding(3, 4, 3, 4);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(63, 24);
+            checkBox7.TabIndex = 0;
+            checkBox7.Tag = "5";
+            checkBox7.Text = "View";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            checkBox8.AutoSize = true;
+            checkBox8.Location = new Point(17, 96);
+            checkBox8.Margin = new Padding(3, 4, 3, 4);
+            checkBox8.Name = "checkBox8";
+            checkBox8.Size = new Size(57, 24);
+            checkBox8.TabIndex = 2;
+            checkBox8.Tag = "7";
+            checkBox8.Text = "Edit";
+            checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            checkBox9.AutoSize = true;
+            checkBox9.Location = new Point(17, 63);
+            checkBox9.Margin = new Padding(3, 4, 3, 4);
+            checkBox9.Name = "checkBox9";
+            checkBox9.Size = new Size(59, 24);
+            checkBox9.TabIndex = 1;
+            checkBox9.Tag = "6";
+            checkBox9.Text = "Add";
+            checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(checkBox11);
+            groupBox4.Controls.Add(checkBox4);
+            groupBox4.Controls.Add(checkBox5);
+            groupBox4.Controls.Add(checkBox6);
+            groupBox4.Location = new Point(153, 48);
+            groupBox4.Margin = new Padding(3, 4, 3, 4);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(3, 4, 3, 4);
+            groupBox4.Size = new Size(103, 171);
+            groupBox4.TabIndex = 4;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Letters";
+            // 
+            // checkBox11
+            // 
+            checkBox11.AutoSize = true;
+            checkBox11.Location = new Point(17, 129);
+            checkBox11.Margin = new Padding(3, 4, 3, 4);
+            checkBox11.Name = "checkBox11";
+            checkBox11.Size = new Size(61, 24);
+            checkBox11.TabIndex = 4;
+            checkBox11.Tag = "11";
+            checkBox11.Text = "Print";
+            checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(17, 29);
+            checkBox4.Margin = new Padding(3, 4, 3, 4);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(63, 24);
+            checkBox4.TabIndex = 0;
+            checkBox4.Tag = "8";
+            checkBox4.Text = "View";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(17, 96);
+            checkBox5.Margin = new Padding(3, 4, 3, 4);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(57, 24);
+            checkBox5.TabIndex = 2;
+            checkBox5.Tag = "10";
+            checkBox5.Text = "Edit";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(17, 63);
+            checkBox6.Margin = new Padding(3, 4, 3, 4);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(59, 24);
+            checkBox6.TabIndex = 1;
+            checkBox6.Tag = "9";
+            checkBox6.Text = "Add";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(checkBox10);
+            groupBox3.Controls.Add(checkBox1);
+            groupBox3.Controls.Add(checkBox3);
+            groupBox3.Controls.Add(checkBox2);
+            groupBox3.Location = new Point(22, 48);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(103, 171);
+            groupBox3.TabIndex = 3;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "RSBSA";
+            // 
+            // checkBox10
+            // 
+            checkBox10.AutoSize = true;
+            checkBox10.Location = new Point(17, 129);
+            checkBox10.Margin = new Padding(3, 4, 3, 4);
+            checkBox10.Name = "checkBox10";
+            checkBox10.Size = new Size(61, 24);
+            checkBox10.TabIndex = 3;
+            checkBox10.Tag = "4";
+            checkBox10.Text = "Print";
+            checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(17, 29);
+            checkBox1.Margin = new Padding(3, 4, 3, 4);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(63, 24);
+            checkBox1.TabIndex = 0;
+            checkBox1.Tag = "1";
+            checkBox1.Text = "View";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(17, 96);
+            checkBox3.Margin = new Padding(3, 4, 3, 4);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(57, 24);
+            checkBox3.TabIndex = 2;
+            checkBox3.Tag = "3";
+            checkBox3.Text = "Edit";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(17, 63);
+            checkBox2.Margin = new Padding(3, 4, 3, 4);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(59, 24);
+            checkBox2.TabIndex = 1;
+            checkBox2.Tag = "2";
+            checkBox2.Text = "Add";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -109,18 +287,21 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnBrowse);
             groupBox1.Controls.Add(picBoxUser);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(14, 16);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(776, 181);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(887, 241);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "User Information";
             // 
             // btnChangePassword
             // 
-            btnChangePassword.Location = new Point(632, 67);
+            btnChangePassword.Location = new Point(722, 89);
+            btnChangePassword.Margin = new Padding(3, 4, 3, 4);
             btnChangePassword.Name = "btnChangePassword";
-            btnChangePassword.Size = new Size(121, 47);
+            btnChangePassword.Size = new Size(138, 63);
             btnChangePassword.TabIndex = 21;
             btnChangePassword.Text = "Change Password";
             btnChangePassword.UseVisualStyleBackColor = true;
@@ -128,81 +309,90 @@
             // 
             // txtBoxUserId
             // 
-            txtBoxUserId.Location = new Point(461, 16);
+            txtBoxUserId.Location = new Point(527, 21);
+            txtBoxUserId.Margin = new Padding(3, 4, 3, 4);
             txtBoxUserId.Name = "txtBoxUserId";
             txtBoxUserId.ReadOnly = true;
-            txtBoxUserId.Size = new Size(121, 23);
+            txtBoxUserId.Size = new Size(138, 27);
             txtBoxUserId.TabIndex = 20;
             // 
             // txtBoxContact
             // 
-            txtBoxContact.Location = new Point(461, 75);
+            txtBoxContact.Location = new Point(527, 100);
+            txtBoxContact.Margin = new Padding(3, 4, 3, 4);
             txtBoxContact.Name = "txtBoxContact";
-            txtBoxContact.Size = new Size(121, 23);
+            txtBoxContact.Size = new Size(138, 27);
             txtBoxContact.TabIndex = 19;
             // 
             // txtBoxUsername
             // 
-            txtBoxUsername.Location = new Point(204, 91);
+            txtBoxUsername.Location = new Point(233, 121);
+            txtBoxUsername.Margin = new Padding(3, 4, 3, 4);
             txtBoxUsername.Name = "txtBoxUsername";
             txtBoxUsername.ReadOnly = true;
-            txtBoxUsername.Size = new Size(100, 23);
+            txtBoxUsername.Size = new Size(114, 27);
             txtBoxUsername.TabIndex = 17;
             // 
             // txtBoxLastName
             // 
-            txtBoxLastName.Location = new Point(204, 49);
+            txtBoxLastName.Location = new Point(233, 65);
+            txtBoxLastName.Margin = new Padding(3, 4, 3, 4);
             txtBoxLastName.Name = "txtBoxLastName";
-            txtBoxLastName.Size = new Size(100, 23);
+            txtBoxLastName.Size = new Size(114, 27);
             txtBoxLastName.TabIndex = 16;
             // 
             // txtBoxFirstName
             // 
-            txtBoxFirstName.Location = new Point(204, 19);
+            txtBoxFirstName.Location = new Point(233, 25);
+            txtBoxFirstName.Margin = new Padding(3, 4, 3, 4);
             txtBoxFirstName.Name = "txtBoxFirstName";
-            txtBoxFirstName.Size = new Size(100, 23);
+            txtBoxFirstName.Size = new Size(114, 27);
             txtBoxFirstName.TabIndex = 15;
             // 
             // comboBoxRole
             // 
             comboBoxRole.FormattingEnabled = true;
-            comboBoxRole.Location = new Point(461, 133);
+            comboBoxRole.Location = new Point(527, 177);
+            comboBoxRole.Margin = new Padding(3, 4, 3, 4);
             comboBoxRole.Name = "comboBoxRole";
-            comboBoxRole.Size = new Size(121, 23);
+            comboBoxRole.Size = new Size(138, 28);
             comboBoxRole.TabIndex = 14;
             // 
             // comboBoxStatus
             // 
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-            comboBoxStatus.Location = new Point(461, 104);
+            comboBoxStatus.Location = new Point(527, 139);
+            comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
             comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(121, 23);
+            comboBoxStatus.Size = new Size(138, 28);
             comboBoxStatus.TabIndex = 13;
             // 
             // comboBoxGender
             // 
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxGender.Location = new Point(461, 45);
+            comboBoxGender.Location = new Point(527, 60);
+            comboBoxGender.Margin = new Padding(3, 4, 3, 4);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(121, 23);
+            comboBoxGender.Size = new Size(138, 28);
             comboBoxGender.TabIndex = 12;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(410, 135);
+            label9.Location = new Point(469, 180);
             label9.Name = "label9";
-            label9.Size = new Size(30, 15);
+            label9.Size = new Size(39, 20);
             label9.TabIndex = 11;
             label9.Text = "Role";
             // 
             // button1
             // 
-            button1.Location = new Point(505, 55);
+            button1.Location = new Point(577, 73);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(8, 8);
+            button1.Size = new Size(9, 11);
             button1.TabIndex = 10;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
@@ -210,71 +400,72 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(134, 99);
+            label8.Location = new Point(153, 132);
             label8.Name = "label8";
-            label8.Size = new Size(60, 15);
+            label8.Size = new Size(75, 20);
             label8.TabIndex = 9;
             label8.Text = "Username";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(410, 19);
+            label6.Location = new Point(469, 25);
             label6.Name = "label6";
-            label6.Size = new Size(41, 15);
+            label6.Size = new Size(53, 20);
             label6.TabIndex = 7;
             label6.Text = "UserID";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(410, 48);
+            label5.Location = new Point(469, 64);
             label5.Name = "label5";
-            label5.Size = new Size(45, 15);
+            label5.Size = new Size(57, 20);
             label5.TabIndex = 6;
             label5.Text = "Gender";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(410, 80);
+            label4.Location = new Point(469, 107);
             label4.Name = "label4";
-            label4.Size = new Size(49, 15);
+            label4.Size = new Size(60, 20);
             label4.TabIndex = 5;
             label4.Text = "Contact";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(410, 107);
+            label3.Location = new Point(469, 143);
             label3.Name = "label3";
-            label3.Size = new Size(39, 15);
+            label3.Size = new Size(49, 20);
             label3.TabIndex = 4;
             label3.Text = "Status";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(134, 51);
+            label2.Location = new Point(153, 68);
             label2.Name = "label2";
-            label2.Size = new Size(63, 15);
+            label2.Size = new Size(79, 20);
             label2.TabIndex = 3;
             label2.Text = "Last Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(134, 22);
+            label1.Location = new Point(153, 29);
             label1.Name = "label1";
-            label1.Size = new Size(64, 15);
+            label1.Size = new Size(80, 20);
             label1.TabIndex = 2;
             label1.Text = "First Name";
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(6, 131);
+            btnBrowse.Location = new Point(7, 175);
+            btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(112, 29);
+            btnBrowse.Size = new Size(128, 39);
             btnBrowse.TabIndex = 1;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = true;
@@ -283,9 +474,10 @@
             // picBoxUser
             // 
             picBoxUser.BorderStyle = BorderStyle.FixedSingle;
-            picBoxUser.Location = new Point(6, 22);
+            picBoxUser.Location = new Point(7, 29);
+            picBoxUser.Margin = new Padding(3, 4, 3, 4);
             picBoxUser.Name = "picBoxUser";
-            picBoxUser.Size = new Size(112, 103);
+            picBoxUser.Size = new Size(128, 137);
             picBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxUser.TabIndex = 0;
             picBoxUser.TabStop = false;
@@ -293,9 +485,10 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(667, 391);
+            btnCancel.Location = new Point(762, 521);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(121, 47);
+            btnCancel.Size = new Size(138, 63);
             btnCancel.TabIndex = 5;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -303,9 +496,10 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(540, 391);
+            btnSave.Location = new Point(617, 521);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(121, 47);
+            btnSave.Size = new Size(138, 63);
             btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -315,187 +509,30 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(15, 22);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(51, 19);
-            checkBox1.TabIndex = 0;
-            checkBox1.Tag = "1";
-            checkBox1.Text = "View";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(15, 47);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(48, 19);
-            checkBox2.TabIndex = 1;
-            checkBox2.Tag = "2";
-            checkBox2.Text = "Add";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(15, 72);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(46, 19);
-            checkBox3.TabIndex = 2;
-            checkBox3.Tag = "3";
-            checkBox3.Text = "Edit";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(checkBox10);
-            groupBox3.Controls.Add(checkBox1);
-            groupBox3.Controls.Add(checkBox3);
-            groupBox3.Controls.Add(checkBox2);
-            groupBox3.Location = new Point(19, 36);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(90, 128);
-            groupBox3.TabIndex = 3;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "RSBSA";
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(checkBox11);
-            groupBox4.Controls.Add(checkBox4);
-            groupBox4.Controls.Add(checkBox5);
-            groupBox4.Controls.Add(checkBox6);
-            groupBox4.Location = new Point(134, 36);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(90, 128);
-            groupBox4.TabIndex = 4;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Letters";
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(15, 22);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(51, 19);
-            checkBox4.TabIndex = 0;
-            checkBox4.Tag = "8";
-            checkBox4.Text = "View";
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(15, 72);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(46, 19);
-            checkBox5.TabIndex = 2;
-            checkBox5.Tag = "10";
-            checkBox5.Text = "Edit";
-            checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(15, 47);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(48, 19);
-            checkBox6.TabIndex = 1;
-            checkBox6.Tag = "9";
-            checkBox6.Text = "Add";
-            checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(checkBox7);
-            groupBox5.Controls.Add(checkBox8);
-            groupBox5.Controls.Add(checkBox9);
-            groupBox5.Location = new Point(257, 36);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(90, 128);
-            groupBox5.TabIndex = 5;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Users";
-            // 
-            // checkBox7
-            // 
-            checkBox7.AutoSize = true;
-            checkBox7.Location = new Point(15, 22);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(51, 19);
-            checkBox7.TabIndex = 0;
-            checkBox7.Tag = "5";
-            checkBox7.Text = "View";
-            checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            checkBox8.AutoSize = true;
-            checkBox8.Location = new Point(15, 72);
-            checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(46, 19);
-            checkBox8.TabIndex = 2;
-            checkBox8.Tag = "7";
-            checkBox8.Text = "Edit";
-            checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            checkBox9.AutoSize = true;
-            checkBox9.Location = new Point(15, 47);
-            checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(48, 19);
-            checkBox9.TabIndex = 1;
-            checkBox9.Tag = "6";
-            checkBox9.Text = "Add";
-            checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            checkBox10.AutoSize = true;
-            checkBox10.Location = new Point(15, 97);
-            checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(51, 19);
-            checkBox10.TabIndex = 3;
-            checkBox10.Tag = "4";
-            checkBox10.Text = "Print";
-            checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            checkBox11.AutoSize = true;
-            checkBox11.Location = new Point(15, 97);
-            checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(51, 19);
-            checkBox11.TabIndex = 4;
-            checkBox11.Tag = "11";
-            checkBox11.Text = "Print";
-            checkBox11.UseVisualStyleBackColor = true;
-            // 
             // UserEditView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(1139, 619);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserEditView";
             Text = "UserEditView";
             Load += UserEditView_Load;
             groupBox2.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).EndInit();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 

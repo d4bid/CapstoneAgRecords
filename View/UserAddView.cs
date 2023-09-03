@@ -27,6 +27,11 @@ namespace AgRecords.View
 
         private void UserAddView_Load(object sender, EventArgs e)
         {
+            formRefresh();
+        }
+
+        public void formRefresh()
+        {
             //populate combobox for roles 
             DataTable rolesTable = userController.GetAllRoles();
             comboBoxRole.DataSource = rolesTable;
@@ -40,45 +45,12 @@ namespace AgRecords.View
 
             //generate new userID
             txtBoxUserId.Text = userController.GenerateNewUserID();
-        }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            getUserPhoto();
-        }
+            // Hide error label
+            lblPasswordStrength.Visible = false;
 
-        private void picBoxUser_Click(object sender, EventArgs e)
-        {
-            getUserPhoto();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormClosed?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Image userImg = null;
-
-            //get the image in the picturebox
-            if (picBoxUser.Image != null)
-            {
-                userImg = picBoxUser.Image;
-
-                // Convert the Image to bytes
-                userPhoto = ImageToByteArray(userImg);
-            }
-
-            if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, comboBoxGender.Text, txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto, txtBoxUsername.Text, txtBoxPassword.Text))
-            {
-                //if success, return to user view
-                this.Close();
-                FormClosed?.Invoke(this, EventArgs.Empty);
-            }
-
-
+            // Disabled control
+            txtBoxUserId.Enabled = false;
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -114,6 +86,45 @@ namespace AgRecords.View
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            getUserPhoto();
+        }
+
+        private void picBoxUser_Click(object sender, EventArgs e)
+        {
+            getUserPhoto();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Image userImg = null;
+
+            //get the image in the picturebox
+            if (picBoxUser.Image != null)
+            {
+                userImg = picBoxUser.Image;
+
+                // Convert the Image to bytes
+                userPhoto = ImageToByteArray(userImg);
+            }
+
+            if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, comboBoxGender.Text,
+                    txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto, txtBoxUsername.Text,
+                    txtBoxPassword.Text))
+            {
+                //if success, return to user view
+                this.Close();
+                FormClosed?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

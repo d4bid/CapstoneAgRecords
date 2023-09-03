@@ -39,7 +39,6 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(52, 314);
@@ -50,7 +49,6 @@
             // 
             // pbLogoDa
             // 
-            pbLogoDa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbLogoDa.BackgroundImage = Properties.Resources.logoDa;
             pbLogoDa.BackgroundImageLayout = ImageLayout.Zoom;
             pbLogoDa.Location = new Point(312, 69);
@@ -62,7 +60,6 @@
             // 
             // pbLogoSolano
             // 
-            pbLogoSolano.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbLogoSolano.BackgroundImage = Properties.Resources.logoSolano;
             pbLogoSolano.BackgroundImageLayout = ImageLayout.Zoom;
             pbLogoSolano.Location = new Point(52, 69);
@@ -75,6 +72,7 @@
             // pbLogo
             // 
             pbLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pbLogo.BackColor = Color.FromArgb(43, 121, 223);
             pbLogo.BackgroundImage = Properties.Resources.logo2;
             pbLogo.BackgroundImageLayout = ImageLayout.Zoom;
             pbLogo.Location = new Point(606, 69);

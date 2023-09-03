@@ -67,13 +67,14 @@
             // picBoxUser
             // 
             picBoxUser.BorderStyle = BorderStyle.FixedSingle;
-            picBoxUser.Location = new Point(7, 31);
+            picBoxUser.Location = new Point(16, 42);
             picBoxUser.Margin = new Padding(3, 4, 3, 4);
             picBoxUser.Name = "picBoxUser";
             picBoxUser.Size = new Size(150, 150);
             picBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxUser.TabIndex = 0;
             picBoxUser.TabStop = false;
+            picBoxUser.Click += picBoxUser_Click;
             // 
             // groupBox3
             // 
@@ -85,7 +86,7 @@
             groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(txtBoxUserId);
             groupBox3.Controls.Add(label6);
-            groupBox3.Font = new Font("Roboto Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(12, 286);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
@@ -98,74 +99,77 @@
             // lblPasswordStrength
             // 
             lblPasswordStrength.AutoSize = true;
-            lblPasswordStrength.Font = new Font("Roboto Condensed Light", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPasswordStrength.Location = new Point(109, 184);
+            lblPasswordStrength.Font = new Font("Roboto Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPasswordStrength.ForeColor = Color.FromArgb(207, 92, 96);
+            lblPasswordStrength.Location = new Point(124, 186);
             lblPasswordStrength.Name = "lblPasswordStrength";
-            lblPasswordStrength.Size = new Size(263, 18);
+            lblPasswordStrength.Size = new Size(311, 20);
             lblPasswordStrength.TabIndex = 27;
-            lblPasswordStrength.Text = "Password must be 8-16 characters with at least one";
+            lblPasswordStrength.Text = "Password must be 8-16 characters with at least \none uppercase letter, lowercase letter, \nnumber, and special character.";
             // 
             // txtBoxPassword
             // 
-            txtBoxPassword.BackColor = Color.FromArgb(239, 239, 239);
+            txtBoxPassword.BackColor = Color.White;
             txtBoxPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxPassword.Location = new Point(109, 149);
+            txtBoxPassword.Location = new Point(127, 149);
             txtBoxPassword.Margin = new Padding(3, 4, 3, 4);
             txtBoxPassword.Name = "txtBoxPassword";
-            txtBoxPassword.Size = new Size(305, 30);
+            txtBoxPassword.Size = new Size(305, 31);
             txtBoxPassword.TabIndex = 26;
             // 
             // txtBoxUsername
             // 
-            txtBoxUsername.BackColor = Color.FromArgb(239, 239, 239);
+            txtBoxUsername.BackColor = Color.White;
             txtBoxUsername.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxUsername.Location = new Point(109, 101);
+            txtBoxUsername.Location = new Point(127, 101);
             txtBoxUsername.Margin = new Padding(3, 4, 3, 4);
             txtBoxUsername.Name = "txtBoxUsername";
-            txtBoxUsername.Size = new Size(305, 30);
+            txtBoxUsername.Size = new Size(305, 31);
             txtBoxUsername.TabIndex = 25;
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(16, 109);
             label8.Name = "label8";
-            label8.Size = new Size(77, 23);
+            label8.Size = new Size(93, 22);
             label8.TabIndex = 24;
             label8.Text = "Username";
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(16, 152);
             label7.Name = "label7";
-            label7.Size = new Size(73, 23);
+            label7.Size = new Size(89, 22);
             label7.TabIndex = 23;
             label7.Text = "Password";
             // 
             // txtBoxUserId
             // 
-            txtBoxUserId.BackColor = Color.FromArgb(239, 239, 239);
+            txtBoxUserId.BackColor = Color.White;
             txtBoxUserId.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxUserId.Location = new Point(109, 40);
+            txtBoxUserId.Location = new Point(127, 40);
             txtBoxUserId.Margin = new Padding(3, 4, 3, 4);
             txtBoxUserId.Name = "txtBoxUserId";
             txtBoxUserId.ReadOnly = true;
-            txtBoxUserId.Size = new Size(305, 30);
+            txtBoxUserId.Size = new Size(305, 31);
             txtBoxUserId.TabIndex = 22;
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(16, 43);
             label6.Name = "label6";
-            label6.Size = new Size(54, 23);
+            label6.Size = new Size(64, 22);
             label6.TabIndex = 21;
             label6.Text = "UserID";
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(txtBoxContact);
             groupBox1.Controls.Add(txtBoxLastName);
             groupBox1.Controls.Add(txtBoxFirstName);
@@ -180,7 +184,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnBrowse);
             groupBox1.Controls.Add(picBoxUser);
-            groupBox1.Font = new Font("Roboto Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 13);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -192,120 +196,132 @@
             // 
             // txtBoxContact
             // 
-            txtBoxContact.BackColor = Color.FromArgb(239, 239, 239);
+            txtBoxContact.BackColor = Color.White;
             txtBoxContact.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxContact.Location = new Point(272, 193);
+            txtBoxContact.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxContact.Location = new Point(297, 204);
             txtBoxContact.Margin = new Padding(3, 4, 3, 4);
             txtBoxContact.Name = "txtBoxContact";
-            txtBoxContact.Size = new Size(305, 30);
+            txtBoxContact.Size = new Size(305, 29);
             txtBoxContact.TabIndex = 19;
             // 
             // txtBoxLastName
             // 
-            txtBoxLastName.BackColor = Color.FromArgb(239, 239, 239);
+            txtBoxLastName.BackColor = Color.White;
             txtBoxLastName.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxLastName.Location = new Point(272, 75);
+            txtBoxLastName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxLastName.Location = new Point(297, 86);
             txtBoxLastName.Margin = new Padding(3, 4, 3, 4);
             txtBoxLastName.Name = "txtBoxLastName";
-            txtBoxLastName.Size = new Size(305, 30);
+            txtBoxLastName.Size = new Size(305, 29);
             txtBoxLastName.TabIndex = 16;
             // 
             // txtBoxFirstName
             // 
             txtBoxFirstName.BackColor = Color.White;
             txtBoxFirstName.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxFirstName.Location = new Point(272, 35);
+            txtBoxFirstName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxFirstName.Location = new Point(297, 46);
             txtBoxFirstName.Margin = new Padding(3, 4, 3, 4);
             txtBoxFirstName.Name = "txtBoxFirstName";
-            txtBoxFirstName.Size = new Size(305, 30);
+            txtBoxFirstName.Size = new Size(305, 29);
             txtBoxFirstName.TabIndex = 15;
             // 
             // comboBoxRole
             // 
             comboBoxRole.BackColor = Color.FromArgb(239, 239, 239);
             comboBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxRole.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxRole.FormattingEnabled = true;
-            comboBoxRole.Location = new Point(753, 73);
+            comboBoxRole.Location = new Point(762, 84);
             comboBoxRole.Margin = new Padding(3, 4, 3, 4);
             comboBoxRole.Name = "comboBoxRole";
-            comboBoxRole.Size = new Size(305, 31);
+            comboBoxRole.Size = new Size(305, 30);
             comboBoxRole.TabIndex = 14;
             // 
             // comboBoxStatus
             // 
             comboBoxStatus.BackColor = Color.FromArgb(239, 239, 239);
             comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxStatus.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-            comboBoxStatus.Location = new Point(753, 34);
+            comboBoxStatus.Location = new Point(762, 45);
             comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
             comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(305, 31);
+            comboBoxStatus.Size = new Size(305, 30);
             comboBoxStatus.TabIndex = 13;
             // 
             // comboBoxGender
             // 
             comboBoxGender.BackColor = Color.FromArgb(239, 239, 239);
             comboBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxGender.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxGender.Location = new Point(272, 140);
+            comboBoxGender.Location = new Point(297, 151);
             comboBoxGender.Margin = new Padding(3, 4, 3, 4);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(305, 31);
+            comboBoxGender.Size = new Size(305, 30);
             comboBoxGender.TabIndex = 12;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(690, 77);
+            label9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(699, 88);
             label9.Name = "label9";
-            label9.Size = new Size(40, 23);
+            label9.Size = new Size(45, 22);
             label9.TabIndex = 11;
             label9.Text = "Role";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(179, 143);
+            label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(188, 154);
             label5.Name = "label5";
-            label5.Size = new Size(57, 23);
+            label5.Size = new Size(68, 22);
             label5.TabIndex = 6;
             label5.Text = "Gender";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(179, 196);
+            label4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(188, 207);
             label4.Name = "label4";
-            label4.Size = new Size(61, 23);
+            label4.Size = new Size(73, 22);
             label4.TabIndex = 5;
             label4.Text = "Contact";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(690, 40);
+            label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(699, 51);
             label3.Name = "label3";
-            label3.Size = new Size(52, 23);
+            label3.Size = new Size(62, 22);
             label3.TabIndex = 4;
             label3.Text = "Status";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(179, 77);
+            label2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(188, 88);
             label2.Name = "label2";
-            label2.Size = new Size(81, 23);
+            label2.Size = new Size(98, 22);
             label2.TabIndex = 3;
             label2.Text = "Last Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(179, 38);
+            label1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(188, 49);
             label1.Name = "label1";
-            label1.Size = new Size(82, 23);
+            label1.Size = new Size(98, 22);
             label1.TabIndex = 2;
             label1.Text = "First Name";
             // 
@@ -315,13 +331,14 @@
             btnBrowse.FlatAppearance.BorderSize = 0;
             btnBrowse.FlatStyle = FlatStyle.Flat;
             btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(7, 189);
+            btnBrowse.Location = new Point(16, 200);
             btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(150, 39);
             btnBrowse.TabIndex = 1;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = false;
+            btnBrowse.Click += btnBrowse_Click;
             // 
             // btnCancel
             // 
@@ -337,11 +354,12 @@
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.White;
-            groupBox2.Font = new Font("Roboto Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(547, 286);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
@@ -365,6 +383,7 @@
             btnSave.TabIndex = 5;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // UserAddView
             // 

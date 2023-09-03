@@ -185,6 +185,8 @@ namespace AgRecords.View
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
                 }
+
+                HideSubMenu();
             }
             //expand menu
             else
@@ -305,11 +307,9 @@ namespace AgRecords.View
             panelDesktop.Controls.Add(mainView);
             mainView.Show();
 
-            ActivateButton(sender, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new RsbsaView(panelDesktop));
+            DisableButton();
+            OpenChildForm(new MainView(panelDesktop));
             lblTitle.Text = "Home";
-
-            HideSubMenu();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -369,18 +369,43 @@ namespace AgRecords.View
 
         private void btnCrops_Click(object sender, EventArgs e)
         {
+            // Check if the menu is collapsed
+            if (panelMenu.Width < 200)
+            {
+                // Expand the menu
+                panelMenu.Width = 300;
+                btnHome.Visible = true;
+                btnMenu.Dock = DockStyle.None;
+                btnMenu.Location = new Point(254, 1);
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+            }
+
             ShowSubMenu(panelCropsSubMenu);
         }
 
-        //private void btnCrops_Click(object sender, EventArgs e)
-        //{
-        //    ShowSubMenu(panelCropsSubMenu);
-        //}
+        private void btnRice_Click(object sender, EventArgs e)
+        {
+            CropsRiceView cropsRiceView = new CropsRiceView(panelDesktop);
+            //userView.formRefresh();
+            cropsRiceView.TopLevel = false;
+            cropsRiceView.FormBorderStyle = FormBorderStyle.None;
+            cropsRiceView.Dock = DockStyle.Fill;
 
-        //private void btnRice_Click(object sender, EventArgs e)
-        //{
-        //    HideSubMenu();
-        //}
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(cropsRiceView);
+            cropsRiceView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CropsRiceView(panelDesktop));
+            lblTitle.Text = "Crops > Rice";
+
+            HideSubMenu();
+        }
 
         //private void btnUsers_Click(object sender, EventArgs e)
         //{

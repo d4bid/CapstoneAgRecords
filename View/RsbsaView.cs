@@ -13,7 +13,6 @@ namespace AgRecords.View
 {
     public partial class RsbsaView : Form
     {
-        private UserController userController;
         private Panel parentPanel;
 
         public RsbsaView(Control parentControl)
