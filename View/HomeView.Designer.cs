@@ -535,6 +535,5 @@
         public FontAwesome.Sharp.IconButton btnVegetable;
         public FontAwesome.Sharp.IconButton btnCorn;
         public FontAwesome.Sharp.IconButton btnUsers;
-        public FontAwesome.Sharp.IconButton btnLetters;
     }
 }
