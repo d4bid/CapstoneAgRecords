@@ -12,9 +12,26 @@ namespace AgRecords.View
 {
     public partial class LettersView : Form
     {
-        public LettersView()
+        private Panel parentPanel;
+
+        public LettersView(Control parentControl)
         {
             InitializeComponent();
+            this.parentPanel = parentControl as Panel;
+        }
+
+        // Methods
+
+        private void LettersAddView_FormClosed(object sender, EventArgs e)
+        {
+            LettersView lettersView = new LettersView(parentPanel);
+            lettersView.TopLevel = false;
+            lettersView.FormBorderStyle = FormBorderStyle.None;
+            lettersView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(lettersView);
+            lettersView.Show();
         }
 
         private void LettersView_Load(object sender, EventArgs e)
@@ -25,8 +42,15 @@ namespace AgRecords.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             LettersAddView lettersAddView = new LettersAddView();
+            lettersAddView.FormClosed += LettersAddView_FormClosed;
+
+            lettersAddView.TopLevel = false;
+            lettersAddView.FormBorderStyle = FormBorderStyle.None;
+            lettersAddView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(lettersAddView);
             lettersAddView.Show();
-            this.Close();
         }
     }
 }

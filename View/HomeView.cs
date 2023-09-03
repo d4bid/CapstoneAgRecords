@@ -407,11 +407,33 @@ namespace AgRecords.View
             HideSubMenu();
         }
 
-        //private void btnUsers_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //    UserView userView = new UserView();
-        //    userView.Show();
-        //}
+        private void btnCorn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVegetable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLetters_Click(object sender, EventArgs e)
+        {
+            LettersView lettersView = new LettersView(panelDesktop);
+            //userView.formRefresh();
+            lettersView.TopLevel = false;
+            lettersView.FormBorderStyle = FormBorderStyle.None;
+            lettersView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(lettersView);
+            lettersView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new LettersView(panelDesktop));
+            lblTitle.Text = "Letters Accounts";
+
+            HideSubMenu();
+        }
     }
 }

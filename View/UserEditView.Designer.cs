@@ -80,6 +80,7 @@
             groupBox2.Controls.Add(groupBox5);
             groupBox2.Controls.Add(groupBox4);
             groupBox2.Controls.Add(groupBox3);
+            groupBox2.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(14, 272);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
@@ -94,6 +95,7 @@
             groupBox5.Controls.Add(checkBox7);
             groupBox5.Controls.Add(checkBox8);
             groupBox5.Controls.Add(checkBox9);
+            groupBox5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox5.Location = new Point(294, 48);
             groupBox5.Margin = new Padding(3, 4, 3, 4);
             groupBox5.Name = "groupBox5";
@@ -109,7 +111,7 @@
             checkBox7.Location = new Point(17, 29);
             checkBox7.Margin = new Padding(3, 4, 3, 4);
             checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(63, 24);
+            checkBox7.Size = new Size(71, 26);
             checkBox7.TabIndex = 0;
             checkBox7.Tag = "5";
             checkBox7.Text = "View";
@@ -121,7 +123,7 @@
             checkBox8.Location = new Point(17, 96);
             checkBox8.Margin = new Padding(3, 4, 3, 4);
             checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(57, 24);
+            checkBox8.Size = new Size(62, 26);
             checkBox8.TabIndex = 2;
             checkBox8.Tag = "7";
             checkBox8.Text = "Edit";
@@ -133,7 +135,7 @@
             checkBox9.Location = new Point(17, 63);
             checkBox9.Margin = new Padding(3, 4, 3, 4);
             checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(59, 24);
+            checkBox9.Size = new Size(64, 26);
             checkBox9.TabIndex = 1;
             checkBox9.Tag = "6";
             checkBox9.Text = "Add";
@@ -145,6 +147,7 @@
             groupBox4.Controls.Add(checkBox4);
             groupBox4.Controls.Add(checkBox5);
             groupBox4.Controls.Add(checkBox6);
+            groupBox4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox4.Location = new Point(153, 48);
             groupBox4.Margin = new Padding(3, 4, 3, 4);
             groupBox4.Name = "groupBox4";
@@ -160,7 +163,7 @@
             checkBox11.Location = new Point(17, 129);
             checkBox11.Margin = new Padding(3, 4, 3, 4);
             checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(61, 24);
+            checkBox11.Size = new Size(69, 26);
             checkBox11.TabIndex = 4;
             checkBox11.Tag = "11";
             checkBox11.Text = "Print";
@@ -172,7 +175,7 @@
             checkBox4.Location = new Point(17, 29);
             checkBox4.Margin = new Padding(3, 4, 3, 4);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(63, 24);
+            checkBox4.Size = new Size(71, 26);
             checkBox4.TabIndex = 0;
             checkBox4.Tag = "8";
             checkBox4.Text = "View";
@@ -184,7 +187,7 @@
             checkBox5.Location = new Point(17, 96);
             checkBox5.Margin = new Padding(3, 4, 3, 4);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(57, 24);
+            checkBox5.Size = new Size(62, 26);
             checkBox5.TabIndex = 2;
             checkBox5.Tag = "10";
             checkBox5.Text = "Edit";
@@ -196,7 +199,7 @@
             checkBox6.Location = new Point(17, 63);
             checkBox6.Margin = new Padding(3, 4, 3, 4);
             checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(59, 24);
+            checkBox6.Size = new Size(64, 26);
             checkBox6.TabIndex = 1;
             checkBox6.Tag = "9";
             checkBox6.Text = "Add";
@@ -208,6 +211,7 @@
             groupBox3.Controls.Add(checkBox1);
             groupBox3.Controls.Add(checkBox3);
             groupBox3.Controls.Add(checkBox2);
+            groupBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(22, 48);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
@@ -223,7 +227,7 @@
             checkBox10.Location = new Point(17, 129);
             checkBox10.Margin = new Padding(3, 4, 3, 4);
             checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(61, 24);
+            checkBox10.Size = new Size(69, 26);
             checkBox10.TabIndex = 3;
             checkBox10.Tag = "4";
             checkBox10.Text = "Print";
@@ -235,7 +239,7 @@
             checkBox1.Location = new Point(17, 29);
             checkBox1.Margin = new Padding(3, 4, 3, 4);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(63, 24);
+            checkBox1.Size = new Size(71, 26);
             checkBox1.TabIndex = 0;
             checkBox1.Tag = "1";
             checkBox1.Text = "View";
@@ -247,7 +251,7 @@
             checkBox3.Location = new Point(17, 96);
             checkBox3.Margin = new Padding(3, 4, 3, 4);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(57, 24);
+            checkBox3.Size = new Size(62, 26);
             checkBox3.TabIndex = 2;
             checkBox3.Tag = "3";
             checkBox3.Text = "Edit";
@@ -259,7 +263,7 @@
             checkBox2.Location = new Point(17, 63);
             checkBox2.Margin = new Padding(3, 4, 3, 4);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(59, 24);
+            checkBox2.Size = new Size(64, 26);
             checkBox2.TabIndex = 1;
             checkBox2.Tag = "2";
             checkBox2.Text = "Add";
@@ -287,7 +291,8 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnBrowse);
             groupBox1.Controls.Add(picBoxUser);
-            groupBox1.Location = new Point(14, 16);
+            groupBox1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(12, 13);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
@@ -309,81 +314,82 @@
             // 
             // txtBoxUserId
             // 
-            txtBoxUserId.Location = new Point(527, 21);
+            txtBoxUserId.Location = new Point(539, 20);
             txtBoxUserId.Margin = new Padding(3, 4, 3, 4);
             txtBoxUserId.Name = "txtBoxUserId";
             txtBoxUserId.ReadOnly = true;
-            txtBoxUserId.Size = new Size(138, 27);
+            txtBoxUserId.Size = new Size(138, 31);
             txtBoxUserId.TabIndex = 20;
             // 
             // txtBoxContact
             // 
-            txtBoxContact.Location = new Point(527, 100);
+            txtBoxContact.Location = new Point(539, 99);
             txtBoxContact.Margin = new Padding(3, 4, 3, 4);
             txtBoxContact.Name = "txtBoxContact";
-            txtBoxContact.Size = new Size(138, 27);
+            txtBoxContact.Size = new Size(138, 31);
             txtBoxContact.TabIndex = 19;
             // 
             // txtBoxUsername
             // 
-            txtBoxUsername.Location = new Point(233, 121);
+            txtBoxUsername.Location = new Point(256, 121);
             txtBoxUsername.Margin = new Padding(3, 4, 3, 4);
             txtBoxUsername.Name = "txtBoxUsername";
             txtBoxUsername.ReadOnly = true;
-            txtBoxUsername.Size = new Size(114, 27);
+            txtBoxUsername.Size = new Size(114, 31);
             txtBoxUsername.TabIndex = 17;
             // 
             // txtBoxLastName
             // 
-            txtBoxLastName.Location = new Point(233, 65);
+            txtBoxLastName.Location = new Point(256, 65);
             txtBoxLastName.Margin = new Padding(3, 4, 3, 4);
             txtBoxLastName.Name = "txtBoxLastName";
-            txtBoxLastName.Size = new Size(114, 27);
+            txtBoxLastName.Size = new Size(114, 31);
             txtBoxLastName.TabIndex = 16;
             // 
             // txtBoxFirstName
             // 
-            txtBoxFirstName.Location = new Point(233, 25);
+            txtBoxFirstName.Location = new Point(256, 25);
             txtBoxFirstName.Margin = new Padding(3, 4, 3, 4);
             txtBoxFirstName.Name = "txtBoxFirstName";
-            txtBoxFirstName.Size = new Size(114, 27);
+            txtBoxFirstName.Size = new Size(114, 31);
             txtBoxFirstName.TabIndex = 15;
             // 
             // comboBoxRole
             // 
             comboBoxRole.FormattingEnabled = true;
-            comboBoxRole.Location = new Point(527, 177);
+            comboBoxRole.Location = new Point(539, 176);
             comboBoxRole.Margin = new Padding(3, 4, 3, 4);
             comboBoxRole.Name = "comboBoxRole";
-            comboBoxRole.Size = new Size(138, 28);
+            comboBoxRole.Size = new Size(138, 32);
             comboBoxRole.TabIndex = 14;
             // 
             // comboBoxStatus
             // 
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-            comboBoxStatus.Location = new Point(527, 139);
+            comboBoxStatus.Location = new Point(539, 138);
             comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
             comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(138, 28);
+            comboBoxStatus.Size = new Size(138, 32);
             comboBoxStatus.TabIndex = 13;
             // 
             // comboBoxGender
             // 
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxGender.Location = new Point(527, 60);
+            comboBoxGender.Location = new Point(539, 59);
             comboBoxGender.Margin = new Padding(3, 4, 3, 4);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(138, 28);
+            comboBoxGender.Size = new Size(138, 32);
             comboBoxGender.TabIndex = 12;
             // 
             // label9
             // 
             label9.AutoSize = true;
+            label9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(469, 180);
             label9.Name = "label9";
-            label9.Size = new Size(39, 20);
+            label9.Size = new Size(45, 22);
             label9.TabIndex = 11;
             label9.Text = "Role";
             // 
@@ -400,63 +406,70 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(153, 132);
             label8.Name = "label8";
-            label8.Size = new Size(75, 20);
+            label8.Size = new Size(93, 22);
             label8.TabIndex = 9;
             label8.Text = "Username";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(469, 25);
             label6.Name = "label6";
-            label6.Size = new Size(53, 20);
+            label6.Size = new Size(64, 22);
             label6.TabIndex = 7;
             label6.Text = "UserID";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(469, 64);
             label5.Name = "label5";
-            label5.Size = new Size(57, 20);
+            label5.Size = new Size(68, 22);
             label5.TabIndex = 6;
             label5.Text = "Gender";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(469, 107);
             label4.Name = "label4";
-            label4.Size = new Size(60, 20);
+            label4.Size = new Size(73, 22);
             label4.TabIndex = 5;
             label4.Text = "Contact";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(469, 143);
             label3.Name = "label3";
-            label3.Size = new Size(49, 20);
+            label3.Size = new Size(62, 22);
             label3.TabIndex = 4;
             label3.Text = "Status";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(153, 68);
             label2.Name = "label2";
-            label2.Size = new Size(79, 20);
+            label2.Size = new Size(98, 22);
             label2.TabIndex = 3;
             label2.Text = "Last Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(153, 29);
             label1.Name = "label1";
-            label1.Size = new Size(80, 20);
+            label1.Size = new Size(98, 22);
             label1.TabIndex = 2;
             label1.Text = "First Name";
             // 

@@ -119,12 +119,5 @@ namespace AgRecords.View
                 }
             }
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            LettersView lettersView = new LettersView();
-            lettersView.Show();
-            this.Close();
-        }
     }
 }
