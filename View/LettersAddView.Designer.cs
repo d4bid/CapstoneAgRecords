@@ -41,40 +41,47 @@
             btnRemove = new Button();
             btnCancel = new Button();
             btnSave = new Button();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            panel1 = new Panel();
+            label3 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // labelLetterId
             // 
             labelLetterId.AutoSize = true;
-            labelLetterId.Location = new Point(46, 19);
+            labelLetterId.Location = new Point(53, 25);
             labelLetterId.Name = "labelLetterId";
-            labelLetterId.Size = new Size(51, 15);
+            labelLetterId.Size = new Size(66, 20);
             labelLetterId.TabIndex = 0;
             labelLetterId.Text = "Letter ID";
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(46, 51);
+            labelTitle.Location = new Point(53, 68);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(29, 15);
+            labelTitle.Size = new Size(38, 20);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Title";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 86);
+            label1.Location = new Point(53, 115);
             label1.Name = "label1";
-            label1.Size = new Size(31, 15);
+            label1.Size = new Size(40, 20);
             label1.TabIndex = 2;
             label1.Text = "Type";
             // 
             // txtBoxTitle
             // 
-            txtBoxTitle.Location = new Point(118, 51);
+            txtBoxTitle.Location = new Point(135, 68);
+            txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
-            txtBoxTitle.Size = new Size(100, 23);
+            txtBoxTitle.Size = new Size(114, 27);
             txtBoxTitle.TabIndex = 3;
             // 
             // comboBoxType
@@ -82,9 +89,10 @@
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Ingoing", "Outgoing" });
-            comboBoxType.Location = new Point(120, 90);
+            comboBoxType.Location = new Point(137, 120);
+            comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(121, 23);
+            comboBoxType.Size = new Size(138, 28);
             comboBoxType.TabIndex = 4;
             // 
             // openFileDialog1
@@ -94,9 +102,10 @@
             // listView1
             // 
             listView1.LargeImageList = imageList1;
-            listView1.Location = new Point(12, 153);
+            listView1.Location = new Point(16, 322);
+            listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
-            listView1.Size = new Size(776, 200);
+            listView1.Size = new Size(886, 265);
             listView1.SmallImageList = imageList1;
             listView1.TabIndex = 5;
             listView1.UseCompatibleStateImageBehavior = false;
@@ -110,9 +119,10 @@
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(546, 103);
+            btnBrowse.Location = new Point(626, 255);
+            btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(118, 44);
+            btnBrowse.Size = new Size(135, 59);
             btnBrowse.TabIndex = 6;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = true;
@@ -120,9 +130,10 @@
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(670, 103);
+            btnRemove.Location = new Point(768, 255);
+            btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(118, 44);
+            btnRemove.Size = new Size(135, 59);
             btnRemove.TabIndex = 7;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = true;
@@ -130,27 +141,81 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(670, 359);
+            btnCancel.Location = new Point(768, 597);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(118, 44);
+            btnCancel.Size = new Size(135, 59);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(546, 359);
+            btnSave.Location = new Point(626, 597);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(118, 44);
+            btnSave.Size = new Size(135, 59);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(53, 165);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Tags";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(135, 165);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(306, 27);
+            textBox1.TabIndex = 11;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(iconButton1);
+            panel1.Controls.Add(label3);
+            panel1.Location = new Point(500, 164);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(101, 28);
+            panel1.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(15, 3);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 20);
+            label3.TabIndex = 0;
+            label3.Text = "label3";
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            iconButton1.IconColor = Color.FromArgb(43, 121, 223);
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 20;
+            iconButton1.Location = new Point(63, 4);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(29, 23);
+            iconButton1.TabIndex = 1;
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
             // LettersAddView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 687);
+            Controls.Add(panel1);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Controls.Add(btnRemove);
@@ -161,9 +226,12 @@
             Controls.Add(label1);
             Controls.Add(labelTitle);
             Controls.Add(labelLetterId);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LettersAddView";
             Text = "LettersAddView";
             Load += LettersAddView_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -182,5 +250,10 @@
         private Button btnCancel;
         private ImageList imageList1;
         private Button btnSave;
+        private Label label2;
+        private TextBox textBox1;
+        private Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private Label label3;
     }
 }

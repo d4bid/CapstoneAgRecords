@@ -417,5 +417,24 @@ namespace AgRecords.View
             HideSubMenu();
 
         }
+
+        private void btnRice_Click(object sender, EventArgs e)
+        {
+            CropsRiceView cropsRiceView = new CropsRiceView(panelDesktop);
+            //userView.formRefresh();
+            cropsRiceView.TopLevel = false;
+            cropsRiceView.FormBorderStyle = FormBorderStyle.None;
+            cropsRiceView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(cropsRiceView);
+            cropsRiceView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CropsRiceView(panelDesktop));
+            lblTitle.Text = "Crops \u23F5y Rice";
+
+            HideSubMenu();
+        }
     }
 }

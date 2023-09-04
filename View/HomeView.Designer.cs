@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
-            btnLetters = new FontAwesome.Sharp.IconButton();
             btnUsers = new FontAwesome.Sharp.IconButton();
+            btnLetters = new FontAwesome.Sharp.IconButton();
             panelCropsSubMenu = new Panel();
             btnVegetable = new FontAwesome.Sharp.IconButton();
             btnCorn = new FontAwesome.Sharp.IconButton();
@@ -79,37 +79,12 @@
             panelMenu.Size = new Size(325, 753);
             panelMenu.TabIndex = 0;
             // 
-            // btnLetters
-            // 
-            btnLetters.Dock = DockStyle.Top;
-            btnLetters.FlatAppearance.BorderSize = 0;
-            btnLetters.FlatStyle = FlatStyle.Flat;
-            btnLetters.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLetters.ForeColor = Color.White;
-            btnLetters.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-            btnLetters.IconColor = Color.White;
-            btnLetters.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLetters.IconSize = 32;
-            btnLetters.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLetters.Location = new Point(0, 478);
-            btnLetters.Margin = new Padding(3, 4, 3, 4);
-            btnLetters.Name = "btnLetters";
-            btnLetters.Padding = new Padding(13, 0, 0, 0);
-            btnLetters.Size = new Size(325, 60);
-            btnLetters.TabIndex = 17;
-            btnLetters.Tag = "Letters";
-            btnLetters.Text = "Letters";
-            btnLetters.TextAlign = ContentAlignment.MiddleLeft;
-            btnLetters.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLetters.UseVisualStyleBackColor = true;
-            btnLetters.Click += btnLetters_Click;
-            // 
             // btnUsers
             // 
             btnUsers.Dock = DockStyle.Top;
             btnUsers.FlatAppearance.BorderSize = 0;
             btnUsers.FlatStyle = FlatStyle.Flat;
-            btnUsers.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsers.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsers.ForeColor = Color.White;
             btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
             btnUsers.IconColor = Color.White;
@@ -129,6 +104,31 @@
             btnUsers.UseVisualStyleBackColor = true;
             btnUsers.Click += btnUsers_Click;
             // 
+            // btnLetters
+            // 
+            btnLetters.Dock = DockStyle.Top;
+            btnLetters.FlatAppearance.BorderSize = 0;
+            btnLetters.FlatStyle = FlatStyle.Flat;
+            btnLetters.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLetters.ForeColor = Color.White;
+            btnLetters.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            btnLetters.IconColor = Color.White;
+            btnLetters.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLetters.IconSize = 32;
+            btnLetters.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLetters.Location = new Point(0, 478);
+            btnLetters.Margin = new Padding(3, 4, 3, 4);
+            btnLetters.Name = "btnLetters";
+            btnLetters.Padding = new Padding(13, 0, 0, 0);
+            btnLetters.Size = new Size(325, 60);
+            btnLetters.TabIndex = 17;
+            btnLetters.Tag = "Letters";
+            btnLetters.Text = "Letters";
+            btnLetters.TextAlign = ContentAlignment.MiddleLeft;
+            btnLetters.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLetters.UseVisualStyleBackColor = true;
+            btnLetters.Click += btnLetters_Click;
+            // 
             // panelCropsSubMenu
             // 
             panelCropsSubMenu.BackColor = Color.FromArgb(38, 109, 200);
@@ -136,7 +136,7 @@
             panelCropsSubMenu.Controls.Add(btnCorn);
             panelCropsSubMenu.Controls.Add(btnRice);
             panelCropsSubMenu.Dock = DockStyle.Top;
-            panelCropsSubMenu.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            panelCropsSubMenu.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             panelCropsSubMenu.Location = new Point(0, 329);
             panelCropsSubMenu.Name = "panelCropsSubMenu";
             panelCropsSubMenu.Size = new Size(325, 149);
@@ -147,7 +147,7 @@
             btnVegetable.Dock = DockStyle.Top;
             btnVegetable.FlatAppearance.BorderSize = 0;
             btnVegetable.FlatStyle = FlatStyle.Flat;
-            btnVegetable.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVegetable.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnVegetable.ForeColor = Color.White;
             btnVegetable.IconChar = FontAwesome.Sharp.IconChar.None;
             btnVegetable.IconColor = Color.White;
@@ -172,7 +172,7 @@
             btnCorn.Dock = DockStyle.Top;
             btnCorn.FlatAppearance.BorderSize = 0;
             btnCorn.FlatStyle = FlatStyle.Flat;
-            btnCorn.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCorn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCorn.ForeColor = Color.White;
             btnCorn.IconChar = FontAwesome.Sharp.IconChar.None;
             btnCorn.IconColor = Color.White;
@@ -197,7 +197,7 @@
             btnRice.Dock = DockStyle.Top;
             btnRice.FlatAppearance.BorderSize = 0;
             btnRice.FlatStyle = FlatStyle.Flat;
-            btnRice.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRice.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnRice.ForeColor = Color.White;
             btnRice.IconChar = FontAwesome.Sharp.IconChar.None;
             btnRice.IconColor = Color.White;
@@ -215,13 +215,14 @@
             btnRice.TextAlign = ContentAlignment.MiddleLeft;
             btnRice.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRice.UseVisualStyleBackColor = true;
+            btnRice.Click += btnRice_Click;
             // 
             // btnCrops
             // 
             btnCrops.Dock = DockStyle.Top;
             btnCrops.FlatAppearance.BorderSize = 0;
             btnCrops.FlatStyle = FlatStyle.Flat;
-            btnCrops.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrops.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCrops.ForeColor = Color.White;
             btnCrops.IconChar = FontAwesome.Sharp.IconChar.WheatAwn;
             btnCrops.IconColor = Color.White;
@@ -246,7 +247,7 @@
             btnRSBSA.Dock = DockStyle.Top;
             btnRSBSA.FlatAppearance.BorderSize = 0;
             btnRSBSA.FlatStyle = FlatStyle.Flat;
-            btnRSBSA.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRSBSA.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnRSBSA.ForeColor = Color.White;
             btnRSBSA.IconChar = FontAwesome.Sharp.IconChar.File;
             btnRSBSA.IconColor = Color.White;
@@ -271,7 +272,7 @@
             btnLogout.Dock = DockStyle.Bottom;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.White;
             btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             btnLogout.IconColor = Color.White;
@@ -296,7 +297,7 @@
             btnDashoard.Dock = DockStyle.Top;
             btnDashoard.FlatAppearance.BorderSize = 0;
             btnDashoard.FlatStyle = FlatStyle.Flat;
-            btnDashoard.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDashoard.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnDashoard.ForeColor = Color.White;
             btnDashoard.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
             btnDashoard.IconColor = Color.White;
@@ -467,11 +468,11 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Roboto Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.FromArgb(0, 35, 76);
             lblTitle.Location = new Point(18, 28);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(65, 30);
+            lblTitle.Size = new Size(78, 29);
             lblTitle.TabIndex = 20;
             lblTitle.Text = "Home";
             // 

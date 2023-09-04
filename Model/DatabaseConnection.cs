@@ -9,7 +9,7 @@ namespace AgRecords.Model
         // Connect to MySql
         private MySqlConnection connection;
 
-        public DatabaseConnection(string server = "localhost", string database = "agrecords_db", string username = "root", string password = "")
+        public DatabaseConnection(string server = "localhost", string database = "agrecords_db", string username = "root", string password = "root")
         {
             string connectionString = $"server={server};database={database};uid={username};pwd={password};";
             connection = new MySqlConnection(connectionString);
