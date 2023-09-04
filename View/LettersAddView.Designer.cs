@@ -46,7 +46,11 @@
             panel1 = new Panel();
             label3 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            label4 = new Label();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // labelLetterId
@@ -180,7 +184,7 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(500, 164);
+            panel1.Location = new Point(135, 214);
             panel1.Name = "panel1";
             panel1.Size = new Size(101, 28);
             panel1.TabIndex = 12;
@@ -208,11 +212,45 @@
             iconButton1.TabIndex = 1;
             iconButton1.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(iconButton2);
+            panel2.Controls.Add(label4);
+            panel2.Location = new Point(242, 213);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(101, 28);
+            panel2.TabIndex = 13;
+            // 
+            // iconButton2
+            // 
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            iconButton2.IconColor = Color.FromArgb(43, 121, 223);
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.Location = new Point(63, 4);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(29, 23);
+            iconButton2.TabIndex = 1;
+            iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(15, 3);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 20);
+            label4.TabIndex = 0;
+            label4.Text = "label4";
+            // 
             // LettersAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 687);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -232,6 +270,8 @@
             Load += LettersAddView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -255,5 +295,8 @@
         private Panel panel1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label3;
+        private Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private Label label4;
     }
 }
