@@ -28,18 +28,29 @@ namespace AgRecords.Controller
             letterModel = new LetterModel();
         }
 
-        public string GenerateNewLetterID()
+        public void GenerateNewLetterID()
         {
             try
             {
-                return letterModel.GenerateLetterId();
+                lettersAddView.GenerateNewLetterId(letterModel.GenerateLetterId());
 
             }
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "ID Generation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
-                return null;
+        public void LoadTagSuggestions()
+        {
+            try
+            {
+                lettersAddView.LoadPredefinedTags(letterModel.LoadTagSuggestions());
+
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Tags failed to load.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

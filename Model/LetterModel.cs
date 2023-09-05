@@ -41,5 +41,33 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error generating letter ID: " + ex.Message, ex);
             }
         }
+
+        //get all predefined tags
+        public List<string> LoadTagSuggestions()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    List<string> tagSuggestions = new List<string>();
+                    MySqlCommand command = new MySqlCommand("SELECT `tagName` FROM vw_get_all_tags;", db.GetConnection());
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string tagName = reader.GetString("tagName");
+                            tagSuggestions.Add(tagName);
+                        }
+                    }
+                    return tagSuggestions;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading tag suggestions: " + ex.Message, ex);
+            }
+        }
+
     }
 }

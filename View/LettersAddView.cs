@@ -26,11 +26,7 @@ namespace AgRecords.View
 
         private void LettersAddView_Load(object sender, EventArgs e)
         {
-            //set initial value of combobox
-            comboBoxType.SelectedIndex = 0;
-
-            //generate new letterID
-            labelLetterId.Text = letterController.GenerateNewLetterID();
+            formRefresh();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -206,6 +202,40 @@ namespace AgRecords.View
                 txtBoxTags.Clear();
             }
             return true;
+        }
+
+        public void formRefresh()
+        {
+            //set initial value of combobox
+            comboBoxType.SelectedIndex = 0;
+
+            //generate new letterId
+            letterController.GenerateNewLetterID();
+
+            //load predefined tags
+            letterController.LoadTagSuggestions();
+        }
+
+        public void LoadPredefinedTags(List<string> tagList)
+        {
+            //// Clear any existing items in the autocomplete source
+            //txtBoxTags.AutoCompleteCustomSource.Clear();
+
+            //// Add the items from the tagList to the autocomplete source
+            //txtBoxTags.AutoCompleteCustomSource.AddRange(tagList.ToArray());
+
+            //// Enable autocomplete mode for your textbox
+            //txtBoxTags.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //txtBoxTags.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            //// Allow free-form user input
+            //txtBoxTags.AutoCompleteCustomSource.Add(txtBoxTags.Text);
+        }
+
+
+        public void GenerateNewLetterId(string letterId)
+        {
+            labelLetterId.Text = letterId;
         }
 
     }
