@@ -35,57 +35,55 @@
             txtBoxTitle = new TextBox();
             comboBoxType = new ComboBox();
             openFileDialog1 = new OpenFileDialog();
-            listView1 = new ListView();
+            listViewLetters = new ListView();
             imageList1 = new ImageList(components);
             btnBrowse = new Button();
             btnRemove = new Button();
             btnCancel = new Button();
             btnSave = new Button();
             label2 = new Label();
-            textBox1 = new TextBox();
-            panel1 = new Panel();
-            label3 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            panel2 = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            label4 = new Label();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            txtBoxTags = new TextBox();
+            txtBoxTo = new TextBox();
+            label5 = new Label();
+            txtBoxFrom = new TextBox();
+            label6 = new Label();
+            txtBoxDescription = new TextBox();
+            label7 = new Label();
+            flowLayoutPanelTags = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // labelLetterId
             // 
             labelLetterId.AutoSize = true;
-            labelLetterId.Location = new Point(53, 25);
+            labelLetterId.Location = new Point(46, 19);
             labelLetterId.Name = "labelLetterId";
-            labelLetterId.Size = new Size(66, 20);
+            labelLetterId.Size = new Size(51, 15);
             labelLetterId.TabIndex = 0;
             labelLetterId.Text = "Letter ID";
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(53, 68);
+            labelTitle.Location = new Point(46, 51);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(38, 20);
+            labelTitle.Size = new Size(29, 15);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Title";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(53, 115);
+            label1.Location = new Point(46, 86);
             label1.Name = "label1";
-            label1.Size = new Size(40, 20);
+            label1.Size = new Size(31, 15);
             label1.TabIndex = 2;
             label1.Text = "Type";
             // 
             // txtBoxTitle
             // 
-            txtBoxTitle.Location = new Point(135, 68);
-            txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
+            txtBoxTitle.Location = new Point(118, 51);
             txtBoxTitle.Name = "txtBoxTitle";
-            txtBoxTitle.Size = new Size(114, 27);
+            txtBoxTitle.Size = new Size(123, 23);
             txtBoxTitle.TabIndex = 3;
             // 
             // comboBoxType
@@ -93,27 +91,25 @@
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Ingoing", "Outgoing" });
-            comboBoxType.Location = new Point(137, 120);
-            comboBoxType.Margin = new Padding(3, 4, 3, 4);
+            comboBoxType.Location = new Point(120, 90);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(138, 28);
+            comboBoxType.Size = new Size(121, 23);
             comboBoxType.TabIndex = 4;
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // listView1
+            // listViewLetters
             // 
-            listView1.LargeImageList = imageList1;
-            listView1.Location = new Point(16, 322);
-            listView1.Margin = new Padding(3, 4, 3, 4);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(886, 265);
-            listView1.SmallImageList = imageList1;
-            listView1.TabIndex = 5;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.KeyDown += listView1_KeyDown;
+            listViewLetters.LargeImageList = imageList1;
+            listViewLetters.Location = new Point(14, 261);
+            listViewLetters.Name = "listViewLetters";
+            listViewLetters.Size = new Size(776, 200);
+            listViewLetters.SmallImageList = imageList1;
+            listViewLetters.TabIndex = 5;
+            listViewLetters.UseCompatibleStateImageBehavior = false;
+            listViewLetters.KeyDown += listView1_KeyDown;
             // 
             // imageList1
             // 
@@ -123,10 +119,9 @@
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(626, 255);
-            btnBrowse.Margin = new Padding(3, 4, 3, 4);
+            btnBrowse.Location = new Point(291, 467);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(135, 59);
+            btnBrowse.Size = new Size(118, 44);
             btnBrowse.TabIndex = 6;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = true;
@@ -134,10 +129,9 @@
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(768, 255);
-            btnRemove.Margin = new Padding(3, 4, 3, 4);
+            btnRemove.Location = new Point(415, 467);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(135, 59);
+            btnRemove.Size = new Size(118, 44);
             btnRemove.TabIndex = 7;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = true;
@@ -145,20 +139,18 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(768, 597);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Location = new Point(672, 467);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(135, 59);
+            btnCancel.Size = new Size(118, 44);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(626, 597);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Location = new Point(548, 467);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(135, 59);
+            btnSave.Size = new Size(118, 44);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -166,112 +158,106 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(53, 165);
+            label2.Location = new Point(46, 124);
             label2.Name = "label2";
-            label2.Size = new Size(38, 20);
+            label2.Size = new Size(30, 15);
             label2.TabIndex = 10;
             label2.Text = "Tags";
             // 
-            // textBox1
+            // txtBoxTags
             // 
-            textBox1.Location = new Point(135, 165);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(306, 27);
-            textBox1.TabIndex = 11;
+            txtBoxTags.Location = new Point(118, 124);
+            txtBoxTags.Margin = new Padding(3, 2, 3, 2);
+            txtBoxTags.Name = "txtBoxTags";
+            txtBoxTags.Size = new Size(268, 23);
+            txtBoxTags.TabIndex = 11;
+            txtBoxTags.KeyPress += txtBoxTags_KeyPress;
             // 
-            // panel1
+            // txtBoxTo
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(iconButton1);
-            panel1.Controls.Add(label3);
-            panel1.Location = new Point(135, 214);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(101, 28);
-            panel1.TabIndex = 12;
+            txtBoxTo.Location = new Point(380, 48);
+            txtBoxTo.Name = "txtBoxTo";
+            txtBoxTo.Size = new Size(100, 23);
+            txtBoxTo.TabIndex = 15;
             // 
-            // label3
+            // label5
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(15, 3);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 0;
-            label3.Text = "label3";
+            label5.AutoSize = true;
+            label5.Location = new Point(345, 51);
+            label5.Name = "label5";
+            label5.Size = new Size(19, 15);
+            label5.TabIndex = 14;
+            label5.Text = "To";
             // 
-            // iconButton1
+            // txtBoxFrom
             // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            iconButton1.IconColor = Color.FromArgb(43, 121, 223);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 20;
-            iconButton1.Location = new Point(63, 4);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(29, 23);
-            iconButton1.TabIndex = 1;
-            iconButton1.UseVisualStyleBackColor = true;
+            txtBoxFrom.Location = new Point(380, 78);
+            txtBoxFrom.Name = "txtBoxFrom";
+            txtBoxFrom.Size = new Size(100, 23);
+            txtBoxFrom.TabIndex = 17;
             // 
-            // panel2
+            // label6
             // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(iconButton2);
-            panel2.Controls.Add(label4);
-            panel2.Location = new Point(242, 213);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(101, 28);
-            panel2.TabIndex = 13;
+            label6.AutoSize = true;
+            label6.Location = new Point(345, 81);
+            label6.Name = "label6";
+            label6.Size = new Size(35, 15);
+            label6.TabIndex = 16;
+            label6.Text = "From";
             // 
-            // iconButton2
+            // txtBoxDescription
             // 
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            iconButton2.IconColor = Color.FromArgb(43, 121, 223);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 20;
-            iconButton2.Location = new Point(63, 4);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(29, 23);
-            iconButton2.TabIndex = 1;
-            iconButton2.UseVisualStyleBackColor = true;
+            txtBoxDescription.Location = new Point(605, 51);
+            txtBoxDescription.Multiline = true;
+            txtBoxDescription.Name = "txtBoxDescription";
+            txtBoxDescription.Size = new Size(153, 73);
+            txtBoxDescription.TabIndex = 19;
             // 
-            // label4
+            // label7
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(15, 3);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 0;
-            label4.Text = "label4";
+            label7.AutoSize = true;
+            label7.Location = new Point(605, 33);
+            label7.Name = "label7";
+            label7.Size = new Size(67, 15);
+            label7.TabIndex = 18;
+            label7.Text = "Description";
+            // 
+            // flowLayoutPanelTags
+            // 
+            flowLayoutPanelTags.AutoScroll = true;
+            flowLayoutPanelTags.Location = new Point(46, 152);
+            flowLayoutPanelTags.Name = "flowLayoutPanelTags";
+            flowLayoutPanelTags.Size = new Size(742, 60);
+            flowLayoutPanelTags.TabIndex = 21;
             // 
             // LettersAddView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 687);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(800, 515);
+            Controls.Add(flowLayoutPanelTags);
+            Controls.Add(txtBoxDescription);
+            Controls.Add(label7);
+            Controls.Add(txtBoxFrom);
+            Controls.Add(label6);
+            Controls.Add(txtBoxTo);
+            Controls.Add(label5);
+            Controls.Add(txtBoxTags);
             Controls.Add(label2);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Controls.Add(btnRemove);
             Controls.Add(btnBrowse);
-            Controls.Add(listView1);
+            Controls.Add(listViewLetters);
             Controls.Add(comboBoxType);
             Controls.Add(txtBoxTitle);
             Controls.Add(label1);
             Controls.Add(labelTitle);
             Controls.Add(labelLetterId);
-            Margin = new Padding(3, 4, 3, 4);
+            KeyPreview = true;
             Name = "LettersAddView";
             Text = "LettersAddView";
             Load += LettersAddView_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -284,19 +270,20 @@
         private TextBox txtBoxTitle;
         private ComboBox comboBoxType;
         private OpenFileDialog openFileDialog1;
-        private ListView listView1;
+        private ListView listViewLetters;
         private Button btnBrowse;
         private Button btnRemove;
         private Button btnCancel;
         private ImageList imageList1;
         private Button btnSave;
         private Label label2;
-        private TextBox textBox1;
-        private Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label3;
-        private Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private Label label4;
+        private TextBox txtBoxTags;
+        private TextBox txtBoxTo;
+        private Label label5;
+        private TextBox txtBoxFrom;
+        private Label label6;
+        private TextBox txtBoxDescription;
+        private Label label7;
+        private FlowLayoutPanel flowLayoutPanelTags;
     }
 }
