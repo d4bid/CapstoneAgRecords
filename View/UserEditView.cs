@@ -60,21 +60,7 @@ namespace AgRecords.View
 
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            getUserPhoto();
-        }
-
-        private void picBoxUser_Click(object sender, EventArgs e)
-        {
-            getUserPhoto();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormClosed?.Invoke(this, EventArgs.Empty);
-        }
+        // METHODS
 
         public void getUserPhoto() //method - get user photo
         {
@@ -103,6 +89,37 @@ namespace AgRecords.View
             }
         }
 
+        //image to byte converter
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); // You can change the format as needed
+                return ms.ToArray();
+            }
+        }
+
+        // TRIGGERS
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            getUserPhoto();
+        }
+
+        private void picBoxUser_Click(object sender, EventArgs e)
+        {
+            getUserPhoto();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            // Get the user account data from the database using the user ID
+            UserAccount user = userController.GetUserAccountById(txtBoxUserId.Text);
+
+            UserPasswordView userPasswordView = new UserPasswordView(user);
+            userPasswordView.ShowDialog();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             Image userImg = null;
@@ -123,28 +140,12 @@ namespace AgRecords.View
                 this.Close();
                 FormClosed?.Invoke(this, EventArgs.Empty);
             }
-
         }
 
-        private void btnChangePassword_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            // Get the user account data from the database using the user ID
-            UserAccount user = userController.GetUserAccountById(txtBoxUserId.Text);
-
-            UserPasswordView userPasswordView = new UserPasswordView(user);
-            userPasswordView.ShowDialog();
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
-
-        //image to byte converter
-        private byte[] ImageToByteArray(Image image)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); // You can change the format as needed
-                return ms.ToArray();
-            }
-        }
-
-
     }
 }

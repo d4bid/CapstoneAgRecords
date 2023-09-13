@@ -147,6 +147,7 @@ namespace AgRecords.View
         private void SubmenuDesign()
         {
             panelCropsSubMenu.Visible = false;
+            panelReportsSubMenu.Visible = false;
         }
 
         //Hide Submenu
@@ -155,6 +156,8 @@ namespace AgRecords.View
         {
             if (panelCropsSubMenu.Visible == true)
                 panelCropsSubMenu.Visible = false;
+            if (panelReportsSubMenu.Visible == true)
+                panelReportsSubMenu.Visible = false;
         }
 
         //Show Submenu
@@ -271,6 +274,19 @@ namespace AgRecords.View
         private void HomeView_Load(object sender, EventArgs e)
         {
             AdjustForm();
+
+            MainView mainView = new MainView(panelDesktop);
+            mainView.TopLevel = false;
+            mainView.FormBorderStyle = FormBorderStyle.None;
+            mainView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(mainView);
+            mainView.Show();
+
+            DisableButton();
+            OpenChildForm(new MainView(panelDesktop));
+            lblTitle.Text = "Home";
         }
 
         private void HomeView_Resize(object sender, EventArgs e)
@@ -388,16 +404,6 @@ namespace AgRecords.View
             ShowSubMenu(panelCropsSubMenu);
         }
 
-        private void btnCorn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnVegetable_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLetters_Click(object sender, EventArgs e)
         {
             LettersView lettersView = new LettersView(panelDesktop);
@@ -434,6 +440,52 @@ namespace AgRecords.View
             OpenChildForm(new CropsRiceView(panelDesktop));
             lblTitle.Text = "Crops \u23F5y Rice";
 
+            HideSubMenu();
+        }
+
+        private void btnCorn_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnVegetable_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnDamages_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            // Check if the menu is collapsed
+            if (panelMenu.Width < 200)
+            {
+                // Expand the menu
+                panelMenu.Width = 300;
+                btnHome.Visible = true;
+                btnMenu.Dock = DockStyle.None;
+                btnMenu.Location = new Point(254, 1);
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+            }
+
+            ShowSubMenu(panelReportsSubMenu);
+        }
+
+        private void btnReportsRsbsa_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsCrops_Click(object sender, EventArgs e)
+        {
             HideSubMenu();
         }
     }

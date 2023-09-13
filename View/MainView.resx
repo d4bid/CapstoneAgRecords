@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>A vibrant and dynamic community that envisioned to achieve 
+agricultural self sufficiency and agro-industrialization through 
+climate change resilient technology esulting to sustained 
+employment opportunities amd increased household incomes 
+for progressive and sustainable living.</value>
+  </data>
 </root>

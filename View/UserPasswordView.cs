@@ -24,17 +24,17 @@ namespace AgRecords.View
             InitializeComponent();
         }
 
+        private void UserPasswordView_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (userController.UpdateUserPassword(ID, txtBoxPassword.Text, txtBoxConfirmPassword.Text))
             {
                 this.Close();
             }
-        }
-
-        private void UserPasswordView_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
