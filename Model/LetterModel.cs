@@ -30,7 +30,7 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error loading letters: " + ex.Message, ex);
             }
         }
-
+    
         //generate new Letter ID
         public string GenerateLetterId()
         {
