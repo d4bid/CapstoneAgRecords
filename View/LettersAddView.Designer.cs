@@ -55,45 +55,47 @@
             // labelLetterId
             // 
             labelLetterId.AutoSize = true;
-            labelLetterId.Location = new Point(46, 19);
+            labelLetterId.Location = new Point(53, 25);
             labelLetterId.Name = "labelLetterId";
-            labelLetterId.Size = new Size(51, 15);
+            labelLetterId.Size = new Size(66, 20);
             labelLetterId.TabIndex = 0;
             labelLetterId.Text = "Letter ID";
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(46, 51);
+            labelTitle.Location = new Point(53, 68);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(29, 15);
+            labelTitle.Size = new Size(38, 20);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Title";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 86);
+            label1.Location = new Point(53, 115);
             label1.Name = "label1";
-            label1.Size = new Size(31, 15);
+            label1.Size = new Size(40, 20);
             label1.TabIndex = 2;
             label1.Text = "Type";
             // 
             // txtBoxTitle
             // 
-            txtBoxTitle.Location = new Point(118, 51);
+            txtBoxTitle.Location = new Point(135, 68);
+            txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
-            txtBoxTitle.Size = new Size(123, 23);
+            txtBoxTitle.Size = new Size(140, 27);
             txtBoxTitle.TabIndex = 3;
             // 
             // comboBoxType
             // 
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.FormattingEnabled = true;
-            comboBoxType.Items.AddRange(new object[] { "Ingoing", "Outgoing" });
-            comboBoxType.Location = new Point(120, 90);
+            comboBoxType.Items.AddRange(new object[] { "Incoming", "Outgoing", "Internal", "External" });
+            comboBoxType.Location = new Point(137, 120);
+            comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(121, 23);
+            comboBoxType.Size = new Size(138, 28);
             comboBoxType.TabIndex = 4;
             // 
             // openFileDialog1
@@ -103,9 +105,10 @@
             // listViewLetters
             // 
             listViewLetters.LargeImageList = imageList1;
-            listViewLetters.Location = new Point(14, 261);
+            listViewLetters.Location = new Point(16, 348);
+            listViewLetters.Margin = new Padding(3, 4, 3, 4);
             listViewLetters.Name = "listViewLetters";
-            listViewLetters.Size = new Size(776, 200);
+            listViewLetters.Size = new Size(886, 265);
             listViewLetters.SmallImageList = imageList1;
             listViewLetters.TabIndex = 5;
             listViewLetters.UseCompatibleStateImageBehavior = false;
@@ -119,9 +122,10 @@
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(291, 467);
+            btnBrowse.Location = new Point(333, 623);
+            btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(118, 44);
+            btnBrowse.Size = new Size(135, 59);
             btnBrowse.TabIndex = 6;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = true;
@@ -129,9 +133,10 @@
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(415, 467);
+            btnRemove.Location = new Point(474, 623);
+            btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(118, 44);
+            btnRemove.Size = new Size(135, 59);
             btnRemove.TabIndex = 7;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = true;
@@ -139,9 +144,10 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(672, 467);
+            btnCancel.Location = new Point(768, 623);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(118, 44);
+            btnCancel.Size = new Size(135, 59);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -149,9 +155,10 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(548, 467);
+            btnSave.Location = new Point(626, 623);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(118, 44);
+            btnSave.Size = new Size(135, 59);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -160,83 +167,86 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(46, 124);
+            label2.Location = new Point(53, 165);
             label2.Name = "label2";
-            label2.Size = new Size(30, 15);
+            label2.Size = new Size(38, 20);
             label2.TabIndex = 10;
             label2.Text = "Tags";
             // 
             // txtBoxTags
             // 
-            txtBoxTags.Location = new Point(118, 124);
-            txtBoxTags.Margin = new Padding(3, 2, 3, 2);
+            txtBoxTags.Location = new Point(135, 165);
             txtBoxTags.Name = "txtBoxTags";
-            txtBoxTags.Size = new Size(268, 23);
+            txtBoxTags.Size = new Size(306, 27);
             txtBoxTags.TabIndex = 11;
             txtBoxTags.KeyPress += txtBoxTags_KeyPress;
             // 
             // txtBoxTo
             // 
-            txtBoxTo.Location = new Point(380, 48);
+            txtBoxTo.Location = new Point(434, 64);
+            txtBoxTo.Margin = new Padding(3, 4, 3, 4);
             txtBoxTo.Name = "txtBoxTo";
-            txtBoxTo.Size = new Size(100, 23);
+            txtBoxTo.Size = new Size(114, 27);
             txtBoxTo.TabIndex = 15;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(345, 51);
+            label5.Location = new Point(394, 68);
             label5.Name = "label5";
-            label5.Size = new Size(19, 15);
+            label5.Size = new Size(25, 20);
             label5.TabIndex = 14;
             label5.Text = "To";
             // 
             // txtBoxFrom
             // 
-            txtBoxFrom.Location = new Point(380, 78);
+            txtBoxFrom.Location = new Point(434, 104);
+            txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
             txtBoxFrom.Name = "txtBoxFrom";
-            txtBoxFrom.Size = new Size(100, 23);
+            txtBoxFrom.Size = new Size(114, 27);
             txtBoxFrom.TabIndex = 17;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(345, 81);
+            label6.Location = new Point(394, 108);
             label6.Name = "label6";
-            label6.Size = new Size(35, 15);
+            label6.Size = new Size(43, 20);
             label6.TabIndex = 16;
             label6.Text = "From";
             // 
             // txtBoxDescription
             // 
-            txtBoxDescription.Location = new Point(605, 51);
+            txtBoxDescription.Location = new Point(691, 68);
+            txtBoxDescription.Margin = new Padding(3, 4, 3, 4);
             txtBoxDescription.Multiline = true;
             txtBoxDescription.Name = "txtBoxDescription";
-            txtBoxDescription.Size = new Size(153, 73);
+            txtBoxDescription.Size = new Size(174, 96);
             txtBoxDescription.TabIndex = 19;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(605, 33);
+            label7.Location = new Point(691, 44);
             label7.Name = "label7";
-            label7.Size = new Size(67, 15);
+            label7.Size = new Size(85, 20);
             label7.TabIndex = 18;
             label7.Text = "Description";
             // 
             // flowLayoutPanelTags
             // 
             flowLayoutPanelTags.AutoScroll = true;
-            flowLayoutPanelTags.Location = new Point(46, 152);
+            flowLayoutPanelTags.Location = new Point(53, 203);
+            flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanelTags.Name = "flowLayoutPanelTags";
-            flowLayoutPanelTags.Size = new Size(742, 60);
+            flowLayoutPanelTags.Size = new Size(848, 80);
             flowLayoutPanelTags.TabIndex = 21;
             // 
             // LettersAddView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 515);
+            ClientSize = new Size(914, 687);
             Controls.Add(flowLayoutPanelTags);
             Controls.Add(txtBoxDescription);
             Controls.Add(label7);
@@ -257,6 +267,7 @@
             Controls.Add(labelTitle);
             Controls.Add(labelLetterId);
             KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LettersAddView";
             Text = "LettersAddView";
             Load += LettersAddView_Load;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,14 @@ namespace AgRecords.View
 {
     public partial class LettersView : Form
     {
+        private LetterController letterController;
         private Panel parentPanel;
+
 
         public LettersView(Control parentControl)
         {
             InitializeComponent();
+            letterController = new LetterController(this);
             this.parentPanel = parentControl as Panel;
         }
 
@@ -36,7 +40,13 @@ namespace AgRecords.View
 
         private void LettersView_Load(object sender, EventArgs e)
         {
+            FormRefresh();
+        }
 
+        public void FormRefresh()
+        {
+            DataTable letterTable = letterController.LoadLetterView();
+            dgvLetters.DataSource = letterTable;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

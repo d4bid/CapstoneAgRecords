@@ -2,6 +2,7 @@
 using AgRecords.View;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,22 @@ namespace AgRecords.Controller
             {
                 MessageBox.Show(ex.Message, "ID Generation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        public DataTable LoadLetterView()
+        {
+            try
+            {
+                DataTable lettersTable = letterModel.LoadLettersDataGrid();
+                return lettersTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Letters Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
         }
 
         public bool AddLetter(string letterId, string letterTitle, string letterType, string letterDescription, List<TagItem> letterTags, string letterTo, string letterFrom, Dictionary<string, Image> imageDictionary)

@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
             btnAdd = new Button();
             panel1 = new Panel();
+            dgvLetters = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
             SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.Location = new Point(0, 99);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1139, 522);
-            flowLayoutPanel1.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -50,7 +41,7 @@
             btnAdd.BackColor = Color.FromArgb(43, 121, 223);
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(988, 27);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
@@ -72,26 +63,40 @@
             panel1.Size = new Size(1139, 90);
             panel1.TabIndex = 21;
             // 
+            // dgvLetters
+            // 
+            dgvLetters.AllowUserToAddRows = false;
+            dgvLetters.AllowUserToDeleteRows = false;
+            dgvLetters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLetters.Dock = DockStyle.Bottom;
+            dgvLetters.Location = new Point(0, 96);
+            dgvLetters.Name = "dgvLetters";
+            dgvLetters.ReadOnly = true;
+            dgvLetters.RowHeadersWidth = 51;
+            dgvLetters.RowTemplate.Height = 29;
+            dgvLetters.Size = new Size(1139, 523);
+            dgvLetters.TabIndex = 22;
+            // 
             // LettersView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1139, 619);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(dgvLetters);
             Controls.Add(panel1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "LettersView";
             Text = "LettersView";
             Load += LettersView_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvLetters).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
         private Button btnAdd;
         private Panel panel1;
+        private DataGridView dgvLetters;
     }
 }

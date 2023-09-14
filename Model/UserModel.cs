@@ -34,7 +34,7 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error adding new user: " + ex.Message, ex);
+                throw new ApplicationException("Error loading users: " + ex.Message, ex);
             }
         }
 

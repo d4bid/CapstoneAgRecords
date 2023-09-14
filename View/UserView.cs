@@ -27,6 +27,11 @@ namespace AgRecords.View
 
         private void UserView_Load(object sender, EventArgs e)
         {
+            FormRefresh();
+        }
+
+        public void FormRefresh()
+        {
             DataTable userTable = userController.LoadUserView();
             dgvUsers.DataSource = userTable;
         }
