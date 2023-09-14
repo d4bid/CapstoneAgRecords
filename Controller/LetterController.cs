@@ -106,17 +106,28 @@ namespace AgRecords.Controller
                     MessageBox.Show("At least three tags is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (pages.Count < 1)
+                else if (imageDictionary.Count < 1)
                 {
                     MessageBox.Show("Letter photos is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (letter.letterTitle != "" && letter.letterDescription != "" && letter.letterTo != "" && letter.letterFrom != "" && concatenatedTags.ToString().Count(c => c == ',') > 2 && pages.Count > 0)
+                else if (letter.letterTitle != "" && letter.letterDescription != "" && letter.letterTo != "" && letter.letterFrom != "")
                 {
                     DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes) //proceed to saving the letter
                     {
                         if (letterModel.AddNewLetter(letter, concatenatedTags))
                         {
+                            //foreach here, iterate using the dictionary, save only the image
+                            int pageNumber = 1;
+                            foreach (var kvp in imageDictionary)
+                            {
+                                Image pageImage = kvp.Value;
+
+                                // Call the AddLetterPage method for each image
+                                letterModel.AddLetterPage(letter.letterId, pageNumber.ToString(), pageImage);
+
+                                pageNumber++; // Increment the page number
+                            }
 
                             MessageBox.Show("Letter saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isDone = true;

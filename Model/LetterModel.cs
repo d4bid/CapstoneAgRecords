@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,7 +75,7 @@ namespace AgRecords.Model
         }
 
         //add new letter page
-        public Boolean AddLetterPage(string letterId, string pageNumber, byte[] pageImage)
+        public Boolean AddLetterPage(string letterId, string pageNumber, Image pageImage)
         {
             try
             {
@@ -86,7 +87,16 @@ namespace AgRecords.Model
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@letterId", letterId);
                     command.Parameters.AddWithValue("@pageNumber", pageNumber);
-                    command.Parameters.AddWithValue("@pageImage", pageImage);
+
+                    // Convert the Image to a byte array
+                    byte[] imageBytes;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pageImage.Save(ms, ImageFormat.Jpeg); // Replace with the appropriate image format
+                        imageBytes = ms.ToArray();
+                    }
+
+                    command.Parameters.AddWithValue("@pageImage", imageBytes);
 
                     command.ExecuteNonQuery();
                     return true;

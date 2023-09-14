@@ -84,7 +84,6 @@ namespace AgRecords.View
         }
 
 
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
             // To remove an item(s) in the listView using button
