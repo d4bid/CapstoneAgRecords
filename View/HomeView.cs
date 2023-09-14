@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AgRecords.View
 {
@@ -20,6 +21,10 @@ namespace AgRecords.View
         private IconButton currentBtn;
         private Form currentChildForm;
 
+        //for accessing the username of the current user
+        public static HomeView Instance;
+        public Label fullName;
+
         public HomeView()
         {
             InitializeComponent();
@@ -27,6 +32,10 @@ namespace AgRecords.View
             this.BackColor = Color.FromArgb(5, 93, 96); //Border color
 
             SubmenuDesign();
+
+            //for accessing the username of the current user
+            Instance = this;
+            fullName = lblUserName;
         }
 
         //FORM STYLE

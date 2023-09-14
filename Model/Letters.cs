@@ -10,18 +10,18 @@ namespace AgRecords.Model
     {
         //Letters Table
         public string letterId { get; set; }
+        public string userId { get; set; }
         public string letterTitle { get; set; }
         public string letterType { get; set; }
-        public string userId { get; set; }
+        public string letterDescription { get; set; }
+        public string letterTags { get; set; }
+        public string letterTo{ get; set; }
+        public string letterFrom{ get; set; }
 
         //Pages Table
         public string pageId { get; set; }
-        public string tagId { get; set; }
-        public string recentTagId { get; set; }
         public string pageNumber { get; set; }
         public byte[] pageImage { get; set; }
 
-        //Tags Table
-        public string tagName { get; set; }
     }
 }

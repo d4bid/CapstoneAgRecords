@@ -127,6 +127,30 @@ namespace AgRecords.Model
             }
         }
 
+        // Find userID by full name
+        public string FindUserIDByFullName(string fullName)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_findUserIdByFullName(@fullname)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@fullname", fullName);
+
+                    // Execute the query and retrieve the result as a string
+                    string userId = command.ExecuteScalar() as string;
+
+                    return userId;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error finding user ID by full name: " + ex.Message, ex);
+            }
+        }
 
         //update user account
         public Boolean UpdateUserAccount(UserAccount user)

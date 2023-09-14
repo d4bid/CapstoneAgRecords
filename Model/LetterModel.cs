@@ -42,30 +42,60 @@ namespace AgRecords.Model
             }
         }
 
-        //get all predefined tags
-        public List<string> LoadTagSuggestions()
+        //add new letter
+        public Boolean AddNewLetter(Letters letter, StringBuilder concatenatedTags)
         {
             try
             {
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
                     db.Open();
-                    List<string> tagSuggestions = new List<string>();
-                    MySqlCommand command = new MySqlCommand("SELECT `tagName` FROM vw_get_all_tags;", db.GetConnection());
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string tagName = reader.GetString("tagName");
-                            tagSuggestions.Add(tagName);
-                        }
-                    }
-                    return tagSuggestions;
+
+                    string query = "CALL sp_addNewLetter(@letterId, @userId, @letterTitle, @letterType, @letterDescription, @letterTags, @letterTo, @letterFrom)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letter.letterId);
+                    command.Parameters.AddWithValue("@userId", letter.userId);
+                    command.Parameters.AddWithValue("@letterTitle", letter.letterTitle);
+                    command.Parameters.AddWithValue("@letterType", letter.letterType);
+                    command.Parameters.AddWithValue("@letterDescription", letter.letterDescription);
+                    command.Parameters.AddWithValue("@letterTags", concatenatedTags);
+                    command.Parameters.AddWithValue("@letterTo", letter.letterTo);
+                    command.Parameters.AddWithValue("@letterFrom", letter.letterFrom);
+
+                    command.ExecuteNonQuery();
+                    return true;
                 }
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading tag suggestions: " + ex.Message, ex);
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new letter: " + ex.Message, ex);
+            }
+        }
+
+        //add new letter page
+        public Boolean AddLetterPage(string letterId, string pageNumber, byte[] pageImage)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_addNewLetterPage(@letterId, @pageNumber, @pageImage)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letterId);
+                    command.Parameters.AddWithValue("@pageNumber", pageNumber);
+                    command.Parameters.AddWithValue("@pageImage", pageImage);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new letter page: " + ex.Message, ex);
             }
         }
 

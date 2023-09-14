@@ -9,14 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace AgRecords.View
 {
     public partial class LettersAddView : Form
     {
         private LetterController letterController;
-        private HashSet<string> addedImages = new HashSet<string>(); // Instantiate inside the event handler.
         private List<TagItem> tagItems = new List<TagItem>();
+        private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
+
+        private string fullName = HomeView.Instance.fullName.Text;
+
 
         public LettersAddView()
         {
@@ -45,20 +49,20 @@ namespace AgRecords.View
                         // Get the file name.
                         string fileName = Path.GetFileName(filePath);
 
-                        // Check if the image is already in the addedImages collection.
-                        if (!addedImages.Contains(fileName))
+                        // Check if the image is already in the imageDictionary.
+                        if (!imageDictionary.ContainsKey(fileName))
                         {
                             // Load the image and add it to the ImageList with a unique key (use the file name as the key).
                             Image image = Image.FromFile(filePath);
                             imageList1.Images.Add(fileName, image);
 
+                            // Add the file name and image to the dictionary.
+                            imageDictionary.Add(fileName, image);
+
                             // Add the file name to the ListView along with the image key.
                             ListViewItem item = new ListViewItem(fileName);
                             item.ImageKey = fileName; // Set the ImageKey to associate the image.
                             listViewLetters.Items.Add(item);
-
-                            // Update the addedImages collection.
-                            addedImages.Add(fileName);
                         }
                         else
                         {
@@ -92,9 +96,13 @@ namespace AgRecords.View
                 // Remove the item from the ListView.
                 listViewLetters.Items.Remove(item);
 
-                // Remove the corresponding entry from addedImages.
-                addedImages.Remove(fileName);
-
+                // Remove the corresponding image from imageDictionary.
+                if (imageDictionary.ContainsKey(fileName))
+                {
+                    Image removedImage = imageDictionary[fileName];
+                    removedImage.Dispose(); // Dispose of the image to free up resources.
+                    imageDictionary.Remove(fileName);
+                }
             }
         }
 
@@ -111,12 +119,17 @@ namespace AgRecords.View
                     // Remove the item from the ListView.
                     listViewLetters.Items.Remove(item);
 
-                    // Remove the corresponding entry from addedImages.
-                    addedImages.Remove(fileName);
-
+                    // Remove the corresponding image from imageDictionary.
+                    if (imageDictionary.ContainsKey(fileName))
+                    {
+                        Image removedImage = imageDictionary[fileName];
+                        removedImage.Dispose(); // Dispose of the image to free up resources.
+                        imageDictionary.Remove(fileName);
+                    }
                 }
             }
         }
+
 
         private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -146,7 +159,7 @@ namespace AgRecords.View
                 label.Text = tagText;
                 label.AutoSize = true;
                 label.Dock = DockStyle.Left;
-                label.TextAlign = ContentAlignment.MiddleCenter;
+                //label.TextAlign = ContentAlignment.MiddleCenter;
 
                 // Create a button for removing the tag
                 Button removeButton = new Button();
@@ -212,31 +225,27 @@ namespace AgRecords.View
             //generate new letterId
             letterController.GenerateNewLetterID();
 
-            //load predefined tags
-            letterController.LoadTagSuggestions();
         }
-
-        public void LoadPredefinedTags(List<string> tagList)
-        {
-            //// Clear any existing items in the autocomplete source
-            //txtBoxTags.AutoCompleteCustomSource.Clear();
-
-            //// Add the items from the tagList to the autocomplete source
-            //txtBoxTags.AutoCompleteCustomSource.AddRange(tagList.ToArray());
-
-            //// Enable autocomplete mode for your textbox
-            //txtBoxTags.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //txtBoxTags.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            //// Allow free-form user input
-            //txtBoxTags.AutoCompleteCustomSource.Add(txtBoxTags.Text);
-        }
-
 
         public void GenerateNewLetterId(string letterId)
         {
             labelLetterId.Text = letterId;
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (letterController.AddLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
+                txtBoxDescription.Text, tagItems, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary))
+            {
+                ////if success, return to user view
+                //this.Close();
+                //FormClosed?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtBoxDescription.Text = fullName;
+        }
     }
 }
