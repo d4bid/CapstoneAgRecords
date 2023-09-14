@@ -48,6 +48,7 @@ namespace AgRecords.View
 
             // Hide error label
             lblPasswordStrength.Visible = false;
+            lblConfirmPassword.Visible = false;
 
             // Disabled control
             txtBoxUserId.Enabled = false;

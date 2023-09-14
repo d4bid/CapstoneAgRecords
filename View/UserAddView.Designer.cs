@@ -70,7 +70,7 @@
             lblPasswordStrength = new Label();
             label10 = new Label();
             txtBoxConfirmPassword = new TextBox();
-            label11 = new Label();
+            lblConfirmPassword = new Label();
             groupBox3 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
             groupBox1.SuspendLayout();
@@ -624,23 +624,23 @@
             txtBoxConfirmPassword.Size = new Size(375, 31);
             txtBoxConfirmPassword.TabIndex = 29;
             // 
-            // label11
+            // lblConfirmPassword
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label11.AutoSize = true;
-            label11.Font = new Font("Roboto Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(207, 92, 96);
-            label11.Location = new Point(133, 283);
-            label11.Name = "label11";
-            label11.Size = new Size(157, 20);
-            label11.TabIndex = 30;
-            label11.Text = "Passwords do not match.";
+            lblConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblConfirmPassword.AutoSize = true;
+            lblConfirmPassword.Font = new Font("Roboto Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblConfirmPassword.ForeColor = Color.FromArgb(207, 92, 96);
+            lblConfirmPassword.Location = new Point(133, 283);
+            lblConfirmPassword.Name = "lblConfirmPassword";
+            lblConfirmPassword.Size = new Size(157, 20);
+            lblConfirmPassword.TabIndex = 30;
+            lblConfirmPassword.Text = "Passwords do not match.";
             // 
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             groupBox3.BackColor = Color.White;
-            groupBox3.Controls.Add(label11);
+            groupBox3.Controls.Add(lblConfirmPassword);
             groupBox3.Controls.Add(txtBoxConfirmPassword);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(lblPasswordStrength);
@@ -720,7 +720,7 @@
         private Label lblPasswordStrength;
         private Label label10;
         private TextBox txtBoxConfirmPassword;
-        private Label label11;
+        private Label lblConfirmPassword;
         private GroupBox groupBox3;
         private GroupBox groupBox5;
         private CheckBox checkBox7;

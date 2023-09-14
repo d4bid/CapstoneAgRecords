@@ -55,47 +55,53 @@
             // labelLetterId
             // 
             labelLetterId.AutoSize = true;
-            labelLetterId.Location = new Point(53, 25);
+            labelLetterId.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLetterId.Location = new Point(12, 9);
             labelLetterId.Name = "labelLetterId";
-            labelLetterId.Size = new Size(66, 20);
+            labelLetterId.Size = new Size(79, 22);
             labelLetterId.TabIndex = 0;
             labelLetterId.Text = "Letter ID";
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(53, 68);
+            labelTitle.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTitle.Location = new Point(12, 44);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(38, 20);
+            labelTitle.Size = new Size(45, 22);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Title";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(53, 115);
+            label1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 84);
             label1.Name = "label1";
-            label1.Size = new Size(40, 20);
+            label1.Size = new Size(49, 22);
             label1.TabIndex = 2;
             label1.Text = "Type";
             // 
             // txtBoxTitle
             // 
-            txtBoxTitle.Location = new Point(135, 68);
+            txtBoxTitle.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxTitle.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxTitle.Location = new Point(115, 41);
             txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
-            txtBoxTitle.Size = new Size(140, 27);
+            txtBoxTitle.Size = new Size(458, 29);
             txtBoxTitle.TabIndex = 3;
             // 
             // comboBoxType
             // 
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxType.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Incoming", "Outgoing", "Internal", "External" });
-            comboBoxType.Location = new Point(137, 120);
+            comboBoxType.Location = new Point(115, 85);
             comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(138, 28);
+            comboBoxType.Size = new Size(458, 30);
             comboBoxType.TabIndex = 4;
             // 
             // openFileDialog1
@@ -105,10 +111,10 @@
             // listViewLetters
             // 
             listViewLetters.LargeImageList = imageList1;
-            listViewLetters.Location = new Point(16, 348);
+            listViewLetters.Location = new Point(12, 272);
             listViewLetters.Margin = new Padding(3, 4, 3, 4);
             listViewLetters.Name = "listViewLetters";
-            listViewLetters.Size = new Size(886, 265);
+            listViewLetters.Size = new Size(1069, 265);
             listViewLetters.SmallImageList = imageList1;
             listViewLetters.TabIndex = 5;
             listViewLetters.UseCompatibleStateImageBehavior = false;
@@ -122,32 +128,46 @@
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(333, 623);
+            btnBrowse.BackColor = Color.FromArgb(43, 121, 223);
+            btnBrowse.FlatAppearance.BorderSize = 0;
+            btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBrowse.ForeColor = Color.White;
+            btnBrowse.Location = new Point(12, 549);
             btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(135, 59);
+            btnBrowse.Size = new Size(135, 44);
             btnBrowse.TabIndex = 6;
             btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(474, 623);
+            btnRemove.BackColor = Color.FromArgb(43, 121, 223);
+            btnRemove.FlatAppearance.BorderSize = 0;
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRemove.ForeColor = Color.White;
+            btnRemove.Location = new Point(153, 549);
             btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(135, 59);
+            btnRemove.Size = new Size(135, 44);
             btnRemove.TabIndex = 7;
             btnRemove.Text = "Remove";
-            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(768, 623);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
+            btnCancel.FlatAppearance.BorderSize = 2;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.Location = new Point(946, 549);
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(135, 59);
+            btnCancel.Size = new Size(135, 44);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -155,98 +175,115 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(626, 623);
+            btnSave.BackColor = Color.FromArgb(43, 121, 223);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(805, 549);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(135, 59);
+            btnSave.Size = new Size(135, 44);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(53, 165);
+            label2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 128);
             label2.Name = "label2";
-            label2.Size = new Size(38, 20);
+            label2.Size = new Size(49, 22);
             label2.TabIndex = 10;
             label2.Text = "Tags";
             // 
             // txtBoxTags
             // 
-            txtBoxTags.Location = new Point(135, 165);
+            txtBoxTags.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxTags.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxTags.Location = new Point(115, 125);
             txtBoxTags.Name = "txtBoxTags";
-            txtBoxTags.Size = new Size(306, 27);
+            txtBoxTags.Size = new Size(458, 29);
             txtBoxTags.TabIndex = 11;
             txtBoxTags.KeyPress += txtBoxTags_KeyPress;
             // 
             // txtBoxTo
             // 
-            txtBoxTo.Location = new Point(434, 64);
+            txtBoxTo.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxTo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxTo.Location = new Point(714, 41);
             txtBoxTo.Margin = new Padding(3, 4, 3, 4);
             txtBoxTo.Name = "txtBoxTo";
-            txtBoxTo.Size = new Size(114, 27);
+            txtBoxTo.Size = new Size(367, 29);
             txtBoxTo.TabIndex = 15;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(394, 68);
+            label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(656, 45);
             label5.Name = "label5";
-            label5.Size = new Size(25, 20);
+            label5.Size = new Size(30, 22);
             label5.TabIndex = 14;
             label5.Text = "To";
             // 
             // txtBoxFrom
             // 
-            txtBoxFrom.Location = new Point(434, 104);
+            txtBoxFrom.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxFrom.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxFrom.Location = new Point(714, 83);
             txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
             txtBoxFrom.Name = "txtBoxFrom";
-            txtBoxFrom.Size = new Size(114, 27);
+            txtBoxFrom.Size = new Size(367, 29);
             txtBoxFrom.TabIndex = 17;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(394, 108);
+            label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(656, 85);
             label6.Name = "label6";
-            label6.Size = new Size(43, 20);
+            label6.Size = new Size(52, 22);
             label6.TabIndex = 16;
             label6.Text = "From";
             // 
             // txtBoxDescription
             // 
-            txtBoxDescription.Location = new Point(691, 68);
+            txtBoxDescription.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxDescription.Location = new Point(656, 153);
             txtBoxDescription.Margin = new Padding(3, 4, 3, 4);
             txtBoxDescription.Multiline = true;
             txtBoxDescription.Name = "txtBoxDescription";
-            txtBoxDescription.Size = new Size(174, 96);
+            txtBoxDescription.Size = new Size(425, 97);
             txtBoxDescription.TabIndex = 19;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(691, 44);
+            label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(656, 127);
             label7.Name = "label7";
-            label7.Size = new Size(85, 20);
+            label7.Size = new Size(100, 22);
             label7.TabIndex = 18;
             label7.Text = "Description";
             // 
             // flowLayoutPanelTags
             // 
             flowLayoutPanelTags.AutoScroll = true;
-            flowLayoutPanelTags.Location = new Point(53, 203);
+            flowLayoutPanelTags.Location = new Point(12, 170);
             flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanelTags.Name = "flowLayoutPanelTags";
-            flowLayoutPanelTags.Size = new Size(848, 80);
+            flowLayoutPanelTags.Size = new Size(561, 80);
             flowLayoutPanelTags.TabIndex = 21;
             // 
             // LettersAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 687);
+            BackColor = Color.White;
+            ClientSize = new Size(1096, 611);
             Controls.Add(flowLayoutPanelTags);
             Controls.Add(txtBoxDescription);
             Controls.Add(label7);

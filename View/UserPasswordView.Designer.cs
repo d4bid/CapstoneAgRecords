@@ -151,8 +151,10 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "UserPasswordView";
-            Text = "UserPasswordView";
+            StartPosition = FormStartPosition.CenterParent;
             Load += UserPasswordView_Load;
             ResumeLayout(false);
             PerformLayout();

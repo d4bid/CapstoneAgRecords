@@ -447,13 +447,27 @@ namespace AgRecords.View
 
             ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
             OpenChildForm(new CropsRiceView(panelDesktop));
-            lblTitle.Text = "Crops \u23F5y Rice";
+            lblTitle.Text = "Crops \u23F5 Rice";
 
             HideSubMenu();
         }
 
         private void btnCorn_Click(object sender, EventArgs e)
         {
+            CropsCornView cropsCornView = new CropsCornView(panelDesktop);
+            //userView.formRefresh();
+            cropsCornView.TopLevel = false;
+            cropsCornView.FormBorderStyle = FormBorderStyle.None;
+            cropsCornView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(cropsCornView);
+            cropsCornView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CropsCornView(panelDesktop));
+            lblTitle.Text = "Crops \u23F5 Corn";
+
             HideSubMenu();
         }
 
