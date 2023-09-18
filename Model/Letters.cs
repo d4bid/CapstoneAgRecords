@@ -17,11 +17,5 @@ namespace AgRecords.Model
         public string letterTags { get; set; }
         public string letterTo{ get; set; }
         public string letterFrom{ get; set; }
-
-        //Pages Table
-        public string pageId { get; set; }
-        public string pageNumber { get; set; }
-        public byte[] pageImage { get; set; }
-
     }
 }

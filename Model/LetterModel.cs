@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -96,7 +97,7 @@ namespace AgRecords.Model
         }
 
         //add new letter page
-        public Boolean AddLetterPage(string letterId, string pageNumber, Image pageImage)
+        public Boolean AddLetterPage(string letterId, string pageNumber, Image pageImage, string pageFileName)
         {
             try
             {
@@ -104,10 +105,11 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addNewLetterPage(@letterId, @pageNumber, @pageImage)";
+                    string query = "CALL sp_addNewLetterPage(@letterId, @pageNumber, @pageImage, @pageFileName)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@letterId", letterId);
                     command.Parameters.AddWithValue("@pageNumber", pageNumber);
+                    command.Parameters.AddWithValue("@pageFileName", pageFileName);
 
                     // Convert the Image to a byte array
                     byte[] imageBytes;
@@ -129,6 +131,86 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error adding new letter page: " + ex.Message, ex);
             }
         }
+
+        public Letters GetLetterInfoByLetterId(string letterId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getLetterById(@letterId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letterId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    Letters letter = null;
+
+                    if (reader.Read())
+                    {
+                        letter = new Letters();
+                        letter.letterId = reader["letterId"].ToString();
+                        letter.letterTitle = reader["letterTitle"].ToString();
+                        letter.letterType = reader["letterType"].ToString();
+                        letter.letterDescription = reader["letterDescription"].ToString();
+                        letter.letterTags = reader["letterTags"].ToString();
+                        letter.letterTo = reader["letterTo"].ToString();
+                        letter.letterFrom = reader["letterFrom"].ToString();
+
+                    }
+
+                    reader.Close();
+                    return letter;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting letter info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public LettersPages GetLetterPagesByLetterId(string letterId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getLetterPagesById(@letterId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letterId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    LettersPages letterPages = new LettersPages();
+
+                    while (reader.Read())
+                    {
+                        string pageFileName = reader["pageFileName"].ToString();
+                        byte[] pageImageBytes = (byte[])reader["pageImage"];
+
+                        // Convert the byte array to a System.Drawing.Image
+                        using (MemoryStream ms = new MemoryStream(pageImageBytes))
+                        {
+                            Image pageImage = Image.FromStream(ms);
+
+                            // Add the pageFileName and pageImage to the imageDictionary
+                            letterPages.imageDictionary.Add(pageFileName, pageImage);
+                        }
+                    }
+
+                    reader.Close();
+                    return letterPages;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting letter pages by ID: " + ex.Message, ex);
+            }
+        }
+
 
     }
 }

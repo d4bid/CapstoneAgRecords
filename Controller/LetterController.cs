@@ -13,6 +13,8 @@ namespace AgRecords.Controller
     {
         private LettersView lettersView;
         private LettersAddView lettersAddView;
+        private LettersEditView lettersEditView;
+
 
         private LetterModel letterModel;
         UserModel userModel = new UserModel();
@@ -30,6 +32,12 @@ namespace AgRecords.Controller
         public LetterController(LettersAddView lettersAddView)
         {
             this.lettersAddView = lettersAddView;
+            letterModel = new LetterModel();
+        }
+
+        public LetterController(LettersEditView lettersEditView)
+        {
+            this.lettersEditView = lettersEditView;
             letterModel = new LetterModel();
         }
 
@@ -139,9 +147,10 @@ namespace AgRecords.Controller
                             foreach (var kvp in imageDictionary)
                             {
                                 Image pageImage = kvp.Value;
+                                string pageFileName = kvp.Key;
 
                                 // Call the AddLetterPage method for each image
-                                letterModel.AddLetterPage(letter.letterId, pageNumber.ToString(), pageImage);
+                                letterModel.AddLetterPage(letter.letterId, pageNumber.ToString(), pageImage, pageFileName);
 
                                 pageNumber++; // Increment the page number
                             }
@@ -176,6 +185,34 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Finding User ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public Letters GetLetterInfoByLetterId(string letterId)
+        {
+            try
+            {
+                return letterModel.GetLetterInfoByLetterId(letterId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Letter Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public LettersPages GetLetterPagesByLetterId(string letterId)
+        {
+            try
+            {
+                return letterModel.GetLetterPagesByLetterId(letterId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Letter Pages Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return null;
             }

@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,6 +62,31 @@ namespace AgRecords.View
             parentPanel.Controls.Clear();
             parentPanel.Controls.Add(lettersAddView);
             lettersAddView.Show();
+        }
+
+        private void dgvLetters_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the user clicked on a cell in a row, not on the header row
+            if (e.RowIndex >= 0)
+            {
+                // Get the selected row
+                DataGridViewRow row = dgvLetters.Rows[e.RowIndex];
+
+                // Get the user ID from the first cell of the row
+                string userId = row.Cells[0].Value.ToString();
+
+                if (userId != null)
+                {
+                    // Get the user account data from the database using the user ID
+                    Letters letters = letterController.GetLetterInfoByLetterId(userId);
+                    LettersPages lettersPages = letterController.GetLetterPagesByLetterId(userId);
+
+                    LettersEditView lettersEditView = new LettersEditView(letters, lettersPages);
+                    lettersEditView.Show();
+                    this.Close();
+                }
+            }
+            
         }
     }
 }
