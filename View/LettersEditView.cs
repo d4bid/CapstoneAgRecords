@@ -16,7 +16,7 @@ namespace AgRecords.View
     public partial class LettersEditView : Form
     {
         private LetterController letterController;
-        private Dictionary<string, Image> pagesDictionary = new Dictionary<string, Image>();
+        private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
         private List<TagItem> tagItems = new List<TagItem>();
         private List<string> letterTags = new List<string>();
         private int controlHeight = 20;
@@ -75,14 +75,14 @@ namespace AgRecords.View
                 }
 
                 // Store the key-value pair in your pagesDictionary
-                if (!pagesDictionary.ContainsKey(fileName))
+                if (!imageDictionary.ContainsKey(fileName))
                 {
-                    pagesDictionary.Add(fileName, image);
+                    imageDictionary.Add(fileName, image);
                 }
                 else
                 {
                     // If the key already exists, update the value (image)
-                    pagesDictionary[fileName] = image;
+                    imageDictionary[fileName] = image;
                 }
             }
 
@@ -113,11 +113,11 @@ namespace AgRecords.View
                 listViewLetters.Items.Remove(item);
 
                 // Remove the corresponding image from imageDictionary.
-                if (pagesDictionary.ContainsKey(fileName))
+                if (imageDictionary.ContainsKey(fileName))
                 {
-                    Image removedImage = pagesDictionary[fileName];
+                    Image removedImage = imageDictionary[fileName];
                     removedImage.Dispose(); // Dispose of the image to free up resources.
-                    pagesDictionary.Remove(fileName);
+                    imageDictionary.Remove(fileName);
                 }
             }
         }
@@ -136,23 +136,13 @@ namespace AgRecords.View
                     listViewLetters.Items.Remove(item);
 
                     // Remove the corresponding image from imageDictionary.
-                    if (pagesDictionary.ContainsKey(fileName))
+                    if (imageDictionary.ContainsKey(fileName))
                     {
-                        Image removedImage = pagesDictionary[fileName];
+                        Image removedImage = imageDictionary[fileName];
                         removedImage.Dispose(); // Dispose of the image to free up resources.
-                        pagesDictionary.Remove(fileName);
+                        imageDictionary.Remove(fileName);
                     }
                 }
-            }
-        }
-
-        private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //setting the e.Handled to true removes the 'ding' sound
-            e.Handled = false;
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = RegisterTag(txtBoxTags.Text.Trim());
             }
         }
 
@@ -219,6 +209,82 @@ namespace AgRecords.View
             txtBoxTags.Clear();
 
             return true;
+        }
+
+        private void txtBoxTags_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //setting the e.Handled to true removes the 'ding' sound
+            e.Handled = false;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = RegisterTag(txtBoxTags.Text.Trim());
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (letterController.UpdateLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
+                txtBoxDescription.Text, letterTags, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary))
+            {
+                ////if success, return to user view
+                //this.Close();
+                //FormClosed?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Multiselect = true;
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif|All Files|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    List<string> potentialDuplicates = new List<string>(); // Track potential duplicates.
+
+                    foreach (string filePath in openFileDialog.FileNames)
+                    {
+                        // Get the file name.
+                        string fileName = Path.GetFileName(filePath);
+
+                        // Check if the image is already in the imageDictionary.
+                        if (!imageDictionary.ContainsKey(fileName))
+                        {
+                            // Load the image and add it to the ImageList with a unique key (use the file name as the key).
+                            Image image = Image.FromFile(filePath);
+                            imageList1.Images.Add(fileName, image);
+
+                            // Add the file name and image to the dictionary.
+                            imageDictionary.Add(fileName, image);
+
+                            // Add the file name to the ListView along with the image key.
+                            ListViewItem item = new ListViewItem(fileName);
+                            item.ImageKey = fileName; // Set the ImageKey to associate the image.
+                            listViewLetters.Items.Add(item);
+                        }
+                        else
+                        {
+                            // Add potential duplicate file name to the list.
+                            potentialDuplicates.Add(fileName);
+                        }
+                    }
+
+                    // Check if there are potential duplicates and display them in a single message box.
+                    if (potentialDuplicates.Count > 0)
+                    {
+                        string duplicatesMessage = $"The following images are potential duplicates and were not added:\n\n";
+                        duplicatesMessage += string.Join("\n", potentialDuplicates);
+
+                        MessageBox.Show(duplicatesMessage, "Potential Duplicate Images", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
         }
     }
 }

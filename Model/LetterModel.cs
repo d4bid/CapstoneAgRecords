@@ -31,7 +31,7 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error loading letters: " + ex.Message, ex);
             }
         }
-    
+
         //generate new Letter ID
         public string GenerateLetterId()
         {
@@ -211,6 +211,57 @@ namespace AgRecords.Model
             }
         }
 
+        public Boolean UpdateLetter(Letters letter, StringBuilder concatenatedTags)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_updateLetter(@letterId, @letterTitle, @letterType, @letterDescription, @letterTags, @letterTo, @letterFrom)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letter.letterId);
+                    command.Parameters.AddWithValue("@letterTitle", letter.letterTitle);
+                    command.Parameters.AddWithValue("@letterType", letter.letterType);
+                    command.Parameters.AddWithValue("@letterDescription", letter.letterDescription);
+                    command.Parameters.AddWithValue("@letterTags", concatenatedTags);
+                    command.Parameters.AddWithValue("@letterTo", letter.letterTo);
+                    command.Parameters.AddWithValue("@letterFrom", letter.letterFrom);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error updating letter: " + ex.Message, ex);
+            }
+        }
+
+        public Boolean DeleteLetterPageById(string letterId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_deleteLetterPageById(@letterId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letterId);
+
+                    // Execute the command to delete the letter page
+                    command.ExecuteNonQuery();
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error deleting letter page by ID: " + ex.Message, ex);
+            }
+        }
 
     }
 }
