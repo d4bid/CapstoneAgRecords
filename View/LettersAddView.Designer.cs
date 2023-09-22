@@ -115,6 +115,7 @@
             listViewLetters.SmallImageList = imageList1;
             listViewLetters.TabIndex = 5;
             listViewLetters.UseCompatibleStateImageBehavior = false;
+            listViewLetters.DoubleClick += listViewLetters_DoubleClick;
             listViewLetters.KeyDown += listView1_KeyDown;
             // 
             // imageList1

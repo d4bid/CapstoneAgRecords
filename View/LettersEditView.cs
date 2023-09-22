@@ -287,5 +287,23 @@ namespace AgRecords.View
                 }
             }
         }
+
+        private void listViewLetters_DoubleClick(object sender, EventArgs e)
+        {
+            if (listViewLetters.SelectedItems.Count > 0)
+            {
+                string selectedImageKey = listViewLetters.SelectedItems[0].ImageKey;
+                if (imageDictionary.ContainsKey(selectedImageKey))
+                {
+                    Image selectedImage = imageDictionary[selectedImageKey];
+
+                    // Create and show the ImageDisplayForm.
+                    using (var imageDisplayView = new ImageDisplayView(selectedImage))
+                    {
+                        imageDisplayView.ShowDialog();
+                    }
+                }
+            }
+        }
     }
 }
