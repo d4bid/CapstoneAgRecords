@@ -263,5 +263,39 @@ namespace AgRecords.Model
             }
         }
 
+        public Boolean UpdateLetterPage(string letterId, string pageNumber, Image pageImage, string pageFileName)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    // Convert the Image to a byte array
+                    byte[] imageBytes = null;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pageImage.Save(ms, ImageFormat.Png);
+                        imageBytes = ms.ToArray();
+                    }
+
+                    string query = "CALL sp_addNewLetterPage(@letterId, @pageNumber, @pageImage, @pageFileName)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@letterId", letterId);
+                    command.Parameters.AddWithValue("@pageNumber", pageNumber);
+                    command.Parameters.AddWithValue("@pageFileName", pageFileName);
+                    command.Parameters.AddWithValue("@pageImage", imageBytes);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error updating letter page: " + ex.Message, ex);
+            }
+        }
+
     }
 }

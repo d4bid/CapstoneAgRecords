@@ -244,9 +244,10 @@ namespace AgRecords.Controller
                     DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes) //proceed to saving the letter
                     {
+                        letterModel.DeleteLetterPageById(letter.letterId);
+
                         if (letterModel.UpdateLetter(letter, concatenatedTags))
                         {
-                            letterModel.DeleteLetterPageById(letter.letterId);
                             //foreach here, iterate using the dictionary, save only the image
                             int pageNumber = 1;
                             foreach (var kvp in imageDictionary)
@@ -255,7 +256,7 @@ namespace AgRecords.Controller
                                 string pageFileName = kvp.Key;
 
                                 // Call the AddLetterPage method for each image
-                                letterModel.AddLetterPage(letter.letterId, pageNumber.ToString(), pageImage, pageFileName);
+                                letterModel.UpdateLetterPage(letter.letterId, pageNumber.ToString(), pageImage, pageFileName);
 
                                 pageNumber++; // Increment the page number
                             }

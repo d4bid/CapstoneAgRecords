@@ -43,16 +43,17 @@ namespace AgRecords.View
                 RegisterTag(tagText);
             }
 
-            //to restore photos
+            // To restore photos
             foreach (var kvp in lettersPages.imageDictionary)
             {
                 string fileName = kvp.Key;
-                Image image = kvp.Value;
+                Image originalImage = kvp.Value;
+                Image clonedImage = (Image)originalImage.Clone(); // Clone the original image to avoid conflicts
 
                 // Check if the image is already in the imageList1
                 if (!imageList1.Images.ContainsKey(fileName))
                 {
-                    imageList1.Images.Add(fileName, image);
+                    imageList1.Images.Add(fileName, clonedImage);
                 }
 
                 // Check if the ListViewItem with the same fileName already exists in the listViewLetters
@@ -74,18 +75,18 @@ namespace AgRecords.View
                     listViewLetters.Items.Add(item);
                 }
 
-                // Store the key-value pair in your pagesDictionary
+                // Store the key-value pair in your imageDictionary
                 if (!imageDictionary.ContainsKey(fileName))
                 {
-                    imageDictionary.Add(fileName, image);
+                    imageDictionary.Add(fileName, clonedImage);
                 }
                 else
                 {
-                    // If the key already exists, update the value (image)
-                    imageDictionary[fileName] = image;
+                    // If the key already exists, remove the existing image and update with the new one
+                    imageDictionary.Remove(fileName);
+                    imageDictionary.Add(fileName, clonedImage);
                 }
             }
-
         }
 
         private Image ImageFromByteArray(byte[] byteArray)
