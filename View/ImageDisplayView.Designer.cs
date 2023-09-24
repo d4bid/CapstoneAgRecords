@@ -36,22 +36,24 @@
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(572, 582);
+            pictureBox1.Size = new Size(654, 776);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // ImageDisplayView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(572, 582);
+            ClientSize = new Size(654, 776);
             Controls.Add(pictureBox1);
             KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ImageDisplayView";
-            Text = "ImageDisplayView";
+            Text = "Letter Page";
             Load += ImageDisplayView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

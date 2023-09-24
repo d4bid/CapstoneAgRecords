@@ -39,6 +39,18 @@ namespace AgRecords.View
             lettersView.Show();
         }
 
+        private void LettersEditView_FormClosed(object sender, EventArgs e)
+        {
+            LettersView lettersView = new LettersView(parentPanel);
+            lettersView.TopLevel = false;
+            lettersView.FormBorderStyle = FormBorderStyle.None;
+            lettersView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(lettersView);
+            lettersView.Show();
+        }
+
         private void LettersView_Load(object sender, EventArgs e)
         {
             FormRefresh();
@@ -82,11 +94,17 @@ namespace AgRecords.View
                     LettersPages lettersPages = letterController.GetLetterPagesByLetterId(userId);
 
                     LettersEditView lettersEditView = new LettersEditView(letters, lettersPages);
+                    lettersEditView.FormClosed += LettersEditView_FormClosed;
+
+                    lettersEditView.TopLevel = false;
+                    lettersEditView.FormBorderStyle = FormBorderStyle.None;
+                    lettersEditView.Dock = DockStyle.Fill;
+
+                    parentPanel.Controls.Clear();
+                    parentPanel.Controls.Add(lettersEditView);
                     lettersEditView.Show();
-                    this.Close();
                 }
             }
-            
         }
     }
 }

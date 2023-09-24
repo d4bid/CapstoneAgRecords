@@ -29,7 +29,7 @@ namespace AgRecords.View
         {
             InitializeComponent();
             this.Padding = new Padding(borderSize); //Border size
-            this.BackColor = Color.FromArgb(5, 93, 96); //Border color
+            this.BackColor = Color.FromArgb(43, 121, 223); //Border color
 
             SubmenuDesign();
 

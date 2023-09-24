@@ -29,6 +29,17 @@ namespace AgRecords.View
 
         }
 
+        public void PasswordStrengthInvalid()
+        {
+            lblPasswordStrength.Visible = true;
+        }
+
+        public void PasswordNotMatch()
+        {
+            lblPasswordStrength.Visible = false;
+            lblConfirmPassword.Visible = true;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (userController.UpdateUserPassword(ID, txtBoxPassword.Text, txtBoxConfirmPassword.Text))

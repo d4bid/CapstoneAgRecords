@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -90,7 +91,7 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddUser(string userId, string userFirstName, string userLastName, string userGender, string userContact, string userActive, string userRole, byte[] userPhoto, string username, string userPassword)
+        public bool AddUser(string userId, string userFirstName, string userLastName, string userGender, string userContact, string userActive, string userRole, byte[] userPhoto, string username, string userPassword, string confirmPassword)
         {
             try
             {
@@ -140,19 +141,33 @@ namespace AgRecords.Controller
                 }
                 else if (user.userPhoto != null && user.userFirstname != "" && user.userLastname != "" && user.userContact != "" && user.username != "" && user.userPassword != "")
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to register this user?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes) //proceed to adding the new user
+                    if (Regex.IsMatch(user.userPassword, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$"))
                     {
-                        if (userModel.AddUserAccount(user))
+                        if (user.userPassword == confirmPassword) 
                         {
-                            MessageBox.Show("Account created succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            isDone = true;
+                            DialogResult result = MessageBox.Show("Are you sure you want to register this user?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            if (result == DialogResult.Yes) //proceed to adding the new user
+                            {
+                                if (userModel.AddUserAccount(user))
+                                {
+                                    MessageBox.Show("Account created succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    isDone = true;
+                                }
+                            }
+                            else //cancel adding
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            userAddView.PasswordNotMatch();
                         }
                     }
-                    else //cancel adding
+                    else
                     {
-                        
-                    }
+                        userAddView.PasswordStrengthInvalid();
+                    }   
                 }
 
                 // Return true to indicate a successful operation
@@ -252,25 +267,34 @@ namespace AgRecords.Controller
                     MessageBox.Show("Please confirm the password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userPassword != confirmUserPassword)
+                else if (user.userPassword != "" && confirmUserPassword != "")
                 {
-                    MessageBox.Show("Password do not match.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (user.userPassword != "" && confirmUserPassword != "" && user.userPassword == confirmUserPassword)
-                {
-                    DialogResult result = MessageBox.Show("Are you sure you want to update your password?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes) //proceed to updating the user
+                    if (Regex.IsMatch(user.userPassword, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$"))
                     {
-                        if (userModel.UpdateUserPassword(user))
+                        if (user.userPassword == confirmUserPassword)
                         {
-                            MessageBox.Show("Account password updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            isDone = true;
+                            DialogResult result = MessageBox.Show("Are you sure you want to update your password?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            if (result == DialogResult.Yes) //proceed to updating the user
+                            {
+                                if (userModel.UpdateUserPassword(user))
+                                {
+                                    MessageBox.Show("Account password updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    isDone = true;
+                                }
+                            }
+                            else //cancel updating
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            userPasswordView.PasswordNotMatch();
                         }
                     }
-                    else //cancel updating
+                    else
                     {
-
+                        userPasswordView.PasswordStrengthInvalid();
                     }
                 }
 

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,10 +28,10 @@ namespace AgRecords.View
 
         private void UserAddView_Load(object sender, EventArgs e)
         {
-            formRefresh();
+            FormRefresh();
         }
 
-        public void formRefresh()
+        public void FormRefresh()
         {
             //populate combobox for roles 
             DataTable rolesTable = userController.GetAllRoles();
@@ -52,6 +53,17 @@ namespace AgRecords.View
 
             // Disabled control
             txtBoxUserId.Enabled = false;
+        }
+
+        public void PasswordStrengthInvalid()
+        {
+            lblPasswordStrength.Visible = true;
+        }
+
+        public void PasswordNotMatch()
+        {
+            lblPasswordStrength.Visible = false;
+            lblConfirmPassword.Visible = true;
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -114,7 +126,7 @@ namespace AgRecords.View
 
             if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, comboBoxGender.Text,
                     txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto, txtBoxUsername.Text,
-                    txtBoxPassword.Text))
+                    txtBoxPassword.Text, txtBoxConfirmPassword.Text))
             {
                 //if success, return to user view
                 this.Close();

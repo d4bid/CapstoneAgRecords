@@ -61,6 +61,7 @@
             dgvUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvUsers.BackgroundColor = Color.White;
+            dgvUsers.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
             dataGridViewCellStyle1.Font = new Font("Roboto Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -78,12 +79,14 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvUsers.GridColor = Color.FromArgb(239, 239, 239);
             dgvUsers.Location = new Point(0, 99);
             dgvUsers.Name = "dgvUsers";
             dgvUsers.ReadOnly = true;
             dgvUsers.RowHeadersVisible = false;
             dgvUsers.RowHeadersWidth = 51;
             dgvUsers.RowTemplate.Height = 25;
+            dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsers.Size = new Size(1139, 520);
             dgvUsers.TabIndex = 20;
             dgvUsers.CellDoubleClick += dgvUsers_CellDoubleClick;

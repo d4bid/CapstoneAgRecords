@@ -35,14 +35,14 @@
             btnCancel = new Button();
             btnSave = new Button();
             lblPasswordStrength = new Label();
-            label11 = new Label();
+            lblConfirmPassword = new Label();
             SuspendLayout();
             // 
             // txtBoxConfirmPassword
             // 
             txtBoxConfirmPassword.BorderStyle = BorderStyle.FixedSingle;
             txtBoxConfirmPassword.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxConfirmPassword.Location = new Point(33, 197);
+            txtBoxConfirmPassword.Location = new Point(33, 178);
             txtBoxConfirmPassword.Margin = new Padding(3, 4, 3, 4);
             txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
             txtBoxConfirmPassword.Size = new Size(378, 29);
@@ -72,7 +72,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(33, 171);
+            label7.Location = new Point(33, 152);
             label7.Name = "label7";
             label7.Size = new Size(157, 22);
             label7.TabIndex = 22;
@@ -86,7 +86,7 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(281, 305);
+            btnCancel.Location = new Point(281, 286);
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(130, 40);
@@ -103,7 +103,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(145, 305);
+            btnSave.Location = new Point(145, 286);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
@@ -124,25 +124,25 @@
             lblPasswordStrength.TabIndex = 29;
             lblPasswordStrength.Text = "Password must be 8-16 characters with at least one uppercase \nletter, lowercase letter, number, and special character.";
             // 
-            // label11
+            // lblConfirmPassword
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label11.AutoSize = true;
-            label11.Font = new Font("Roboto Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(207, 92, 96);
-            label11.Location = new Point(33, 241);
-            label11.Name = "label11";
-            label11.Size = new Size(157, 20);
-            label11.TabIndex = 31;
-            label11.Text = "Passwords do not match.";
+            lblConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblConfirmPassword.AutoSize = true;
+            lblConfirmPassword.Font = new Font("Roboto Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblConfirmPassword.ForeColor = Color.FromArgb(207, 92, 96);
+            lblConfirmPassword.Location = new Point(33, 222);
+            lblConfirmPassword.Name = "lblConfirmPassword";
+            lblConfirmPassword.Size = new Size(157, 20);
+            lblConfirmPassword.TabIndex = 31;
+            lblConfirmPassword.Text = "Passwords do not match.";
             // 
             // UserPasswordView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(441, 371);
-            Controls.Add(label11);
+            ClientSize = new Size(441, 350);
+            Controls.Add(lblConfirmPassword);
             Controls.Add(lblPasswordStrength);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
@@ -168,6 +168,6 @@
         private Button btnCancel;
         private Button btnSave;
         private Label lblPasswordStrength;
-        private Label label11;
+        private Label lblConfirmPassword;
     }
 }

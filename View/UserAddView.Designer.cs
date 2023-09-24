@@ -589,6 +589,7 @@
             txtBoxPassword.Name = "txtBoxPassword";
             txtBoxPassword.Size = new Size(375, 31);
             txtBoxPassword.TabIndex = 26;
+            txtBoxPassword.UseSystemPasswordChar = true;
             // 
             // lblPasswordStrength
             // 
@@ -623,6 +624,7 @@
             txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
             txtBoxConfirmPassword.Size = new Size(375, 31);
             txtBoxConfirmPassword.TabIndex = 29;
+            txtBoxConfirmPassword.UseSystemPasswordChar = true;
             // 
             // lblConfirmPassword
             // 
