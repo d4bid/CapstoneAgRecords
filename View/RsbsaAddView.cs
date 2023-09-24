@@ -28,6 +28,8 @@ namespace AgRecords.View
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
+
+            numericUpDown1.Value = 1;
         }
 
         // Buttons/Tab
@@ -85,6 +87,26 @@ namespace AgRecords.View
         private void RsbsaAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+        }
+
+        //for farm parcel
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            int numberOfControls = (int)numericUpDown1.Value;
+
+            flowLayoutPanelParcels.Controls.Clear();
+
+            for (int i = 0; i < numberOfControls; i++)
+            {
+                // Create an instance of your custom UserControl
+                FarmLandControl farmLandControl = new FarmLandControl();
+
+                // Set properties of the UserControl as needed
+                farmLandControl.labelParcelNo.Text = "Parcel #" + (i + 1);
+
+                // Add the UserControl to the parent control (e.g., Panel)
+                flowLayoutPanelParcels.Controls.Add(farmLandControl);
+            }
         }
     }
 }
