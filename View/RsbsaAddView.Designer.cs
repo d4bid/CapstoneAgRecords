@@ -253,7 +253,7 @@
             panelPersonalInfo.Dock = DockStyle.Top;
             panelPersonalInfo.Location = new Point(0, 190);
             panelPersonalInfo.Name = "panelPersonalInfo";
-            panelPersonalInfo.Size = new Size(1519, 730);
+            panelPersonalInfo.Size = new Size(1540, 730);
             panelPersonalInfo.TabIndex = 13;
             // 
             // panelFarmProfile
@@ -268,7 +268,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1519, 730);
+            panelFarmProfile.Size = new Size(1540, 626);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -278,7 +278,7 @@
             panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1519, 730);
+            panelFarmLand.Size = new Size(1540, 253);
             panelFarmLand.TabIndex = 52;
             // 
             // groupBox23
@@ -1879,7 +1879,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1519, 125);
+            panel4.Size = new Size(1540, 125);
             panel4.TabIndex = 18;
             // 
             // groupBox1
@@ -1984,7 +1984,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 125);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1519, 65);
+            panel1.Size = new Size(1540, 65);
             panel1.TabIndex = 19;
             // 
             // panelColorDoc
@@ -2085,7 +2085,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.White;
-            ClientSize = new Size(1540, 845);
+            ClientSize = new Size(1540, 921);
             Controls.Add(panelPersonalInfo);
             Controls.Add(panel1);
             Controls.Add(panel4);
