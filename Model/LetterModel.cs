@@ -74,7 +74,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addNewLetter(@letterId, @userId, @letterTitle, @letterType, @letterDescription, @letterTags, @letterTo, @letterFrom)";
+                    string query = "CALL sp_addNewLetter(@letterId, @userId, @letterTitle, @letterType, @letterDescription, @letterTags, @letterTo, @letterFrom, @letterDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@letterId", letter.letterId);
                     command.Parameters.AddWithValue("@userId", letter.userId);
@@ -84,6 +84,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@letterTags", concatenatedTags);
                     command.Parameters.AddWithValue("@letterTo", letter.letterTo);
                     command.Parameters.AddWithValue("@letterFrom", letter.letterFrom);
+                    command.Parameters.AddWithValue("@letterDate", letter.letterDate);
 
                     command.ExecuteNonQuery();
                     return true;
@@ -157,7 +158,7 @@ namespace AgRecords.Model
                         letter.letterTags = reader["letterTags"].ToString();
                         letter.letterTo = reader["letterTo"].ToString();
                         letter.letterFrom = reader["letterFrom"].ToString();
-
+                        letter.letterDate = DateTime.Parse(reader["letterDate"].ToString());
                     }
 
                     reader.Close();
@@ -219,7 +220,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_updateLetter(@letterId, @letterTitle, @letterType, @letterDescription, @letterTags, @letterTo, @letterFrom)";
+                    string query = "CALL sp_updateLetter(@letterId, @letterTitle, @letterType, @letterDescription, @letterTags, @letterTo, @letterFrom, @letterDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@letterId", letter.letterId);
                     command.Parameters.AddWithValue("@letterTitle", letter.letterTitle);
@@ -228,6 +229,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@letterTags", concatenatedTags);
                     command.Parameters.AddWithValue("@letterTo", letter.letterTo);
                     command.Parameters.AddWithValue("@letterFrom", letter.letterFrom);
+                    command.Parameters.AddWithValue("@letterDate", letter.letterDate);
 
                     command.ExecuteNonQuery();
                     return true;

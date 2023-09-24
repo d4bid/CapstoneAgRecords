@@ -21,8 +21,6 @@ namespace AgRecords.View
         private List<string> letterTags = new List<string>();
         private int controlHeight = 20;
 
-
-
         public LettersEditView(Letters letters, LettersPages lettersPages)
         {
             letterController = new LetterController(this);
@@ -34,6 +32,7 @@ namespace AgRecords.View
             txtBoxDescription.Text = letters.letterDescription;
             txtBoxFrom.Text = letters.letterFrom;
             txtBoxTo.Text = letters.letterTo;
+            dateTimePicker1.Value = letters.letterDate;
 
             //to restore tags
             string[] tagsArray = letters.letterTags.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
@@ -230,7 +229,7 @@ namespace AgRecords.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (letterController.UpdateLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
-                txtBoxDescription.Text, letterTags, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary))
+                txtBoxDescription.Text, letterTags, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary, dateTimePicker1.Value.Date))
             {
                 ////if success, return to user view
                 //this.Close();

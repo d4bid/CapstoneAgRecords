@@ -70,7 +70,7 @@ namespace AgRecords.Controller
 
         }
 
-        public bool AddLetter(string letterId, string letterTitle, string letterType, string letterDescription, List<TagItem> letterTags, string letterTo, string letterFrom, Dictionary<string, Image> imageDictionary)
+        public bool AddLetter(string letterId, string letterTitle, string letterType, string letterDescription, List<TagItem> letterTags, string letterTo, string letterFrom, Dictionary<string, Image> imageDictionary, DateTime letterDate)
         {
             try
             {
@@ -103,7 +103,8 @@ namespace AgRecords.Controller
                     letterType = letterType,
                     letterDescription = letterDescription,
                     letterTo = letterTo,
-                    letterFrom = letterFrom
+                    letterFrom = letterFrom,
+                    letterDate = letterDate
                 };
 
                 if (letter.letterTitle == "")
@@ -176,7 +177,7 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool UpdateLetter(string letterId, string letterTitle, string letterType, string letterDescription, List<string> letterTags, string letterTo, string letterFrom, Dictionary<string, Image> imageDictionary)
+        public bool UpdateLetter(string letterId, string letterTitle, string letterType, string letterDescription, List<string> letterTags, string letterTo, string letterFrom, Dictionary<string, Image> imageDictionary, DateTime letterDate)
         {
             try
             {
@@ -207,7 +208,9 @@ namespace AgRecords.Controller
                     letterType = letterType,
                     letterDescription = letterDescription,
                     letterTo = letterTo,
-                    letterFrom = letterFrom
+                    letterFrom = letterFrom,
+                    letterDate = letterDate
+
                 };
 
                 if (letter.letterTitle == "")

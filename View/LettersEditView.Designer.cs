@@ -50,6 +50,8 @@
             labelTitle = new Label();
             labelLetterId = new Label();
             openFileDialog1 = new OpenFileDialog();
+            label3 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // flowLayoutPanelTags
@@ -269,11 +271,33 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(575, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(39, 18);
+            label3.TabIndex = 42;
+            label3.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Checked = false;
+            dateTimePicker1.CustomFormat = "";
+            dateTimePicker1.Location = new Point(626, 4);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 41;
+            dateTimePicker1.Value = new DateTime(2023, 9, 24, 9, 14, 0, 0);
+            // 
             // LettersEditView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(959, 458);
+            Controls.Add(label3);
+            Controls.Add(dateTimePicker1);
             Controls.Add(flowLayoutPanelTags);
             Controls.Add(txtBoxDescription);
             Controls.Add(label7);
@@ -324,5 +348,7 @@
         private Label labelLetterId;
         private ImageList imageList1;
         private OpenFileDialog openFileDialog1;
+        private Label label3;
+        private DateTimePicker dateTimePicker1;
     }
 }
