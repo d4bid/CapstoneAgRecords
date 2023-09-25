@@ -203,6 +203,7 @@
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(469, 29);
             txtBoxTags.TabIndex = 27;
+            txtBoxTags.KeyPress += txtBoxTags_KeyPress;
             // 
             // label2
             // 

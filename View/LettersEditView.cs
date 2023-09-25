@@ -20,6 +20,7 @@ namespace AgRecords.View
         private List<TagItem> tagItems = new List<TagItem>();
         private List<string> letterTags = new List<string>();
         private int controlHeight = 20;
+        public event EventHandler FormClosed;
 
         public LettersEditView(Letters letters, LettersPages lettersPages)
         {
@@ -231,9 +232,8 @@ namespace AgRecords.View
             if (letterController.UpdateLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
                 txtBoxDescription.Text, letterTags, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary, dateTimePicker1.Value.Date))
             {
-                ////if success, return to user view
-                //this.Close();
-                //FormClosed?.Invoke(this, EventArgs.Empty);
+                this.Close();
+                FormClosed?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -287,6 +287,11 @@ namespace AgRecords.View
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
+        }
 
         private void listViewLetters_DoubleClick(object sender, EventArgs e)
         {

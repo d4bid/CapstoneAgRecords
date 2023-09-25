@@ -21,6 +21,8 @@ namespace AgRecords.View
 
         private string fullName = HomeView.Instance.fullName.Text;
 
+        public event EventHandler FormClosed;
+
 
         public LettersAddView()
         {
@@ -130,17 +132,6 @@ namespace AgRecords.View
             }
         }
 
-
-        private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //setting the e.Handled to true removes the 'ding' sound
-            e.Handled = false;
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = registerTag();
-            }
-        }
-
         private Boolean registerTag()
         {
             string tagText = txtBoxTags.Text.Trim();
@@ -240,15 +231,15 @@ namespace AgRecords.View
             if (letterController.AddLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
                 txtBoxDescription.Text, tagItems, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary, dateTimePicker1.Value.Date))
             {
-                ////if success, return to user view
-                //this.Close();
-                //FormClosed?.Invoke(this, EventArgs.Empty);
+                this.Close();
+                FormClosed?.Invoke(this, EventArgs.Empty);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtBoxDescription.Text = fullName;
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
 
         private void listViewLetters_DoubleClick(object sender, EventArgs e)
@@ -266,6 +257,16 @@ namespace AgRecords.View
                         imageDisplayView.ShowDialog();
                     }
                 }
+            }
+        }
+
+        private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //setting the e.Handled to true removes the 'ding' sound
+            e.Handled = false;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = registerTag();
             }
         }
     }
