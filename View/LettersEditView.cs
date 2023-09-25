@@ -287,6 +287,7 @@ namespace AgRecords.View
             }
         }
 
+
         private void listViewLetters_DoubleClick(object sender, EventArgs e)
         {
             if (listViewLetters.SelectedItems.Count > 0)
