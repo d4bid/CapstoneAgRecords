@@ -50,7 +50,7 @@
             // 
             // pbLogo
             // 
-            pbLogo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pbLogo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pbLogo.BackColor = Color.FromArgb(43, 121, 223);
             pbLogo.BackgroundImage = Properties.Resources.logo2;
             pbLogo.BackgroundImageLayout = ImageLayout.Zoom;
@@ -66,20 +66,20 @@
             pbMap.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbMap.BackgroundImage = Properties.Resources.map1;
             pbMap.BackgroundImageLayout = ImageLayout.Stretch;
-            pbMap.Location = new Point(767, 12);
+            pbMap.Location = new Point(775, 12);
             pbMap.Name = "pbMap";
-            pbMap.Size = new Size(542, 406);
+            pbMap.Size = new Size(668, 406);
             pbMap.TabIndex = 13;
             pbMap.TabStop = false;
             // 
             // panelNotif
             // 
-            panelNotif.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            panelNotif.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNotif.BorderStyle = BorderStyle.FixedSingle;
             panelNotif.Controls.Add(label5);
-            panelNotif.Location = new Point(767, 437);
+            panelNotif.Location = new Point(775, 437);
             panelNotif.Name = "panelNotif";
-            panelNotif.Size = new Size(542, 396);
+            panelNotif.Size = new Size(668, 396);
             panelNotif.TabIndex = 14;
             // 
             // label5
@@ -94,6 +94,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -174,7 +175,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1321, 845);
+            ClientSize = new Size(1455, 845);
             Controls.Add(panel1);
             Controls.Add(panelNotif);
             Controls.Add(pbMap);

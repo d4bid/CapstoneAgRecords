@@ -24,9 +24,15 @@ namespace AgRecords.View
             InitializeComponent();
         }
 
+        public void FormRefresh()
+        {
+            lblPasswordStrength.Visible = false;
+            lblConfirmPassword.Visible = false;
+        }
+
         private void UserPasswordView_Load(object sender, EventArgs e)
         {
-
+            FormRefresh();
         }
 
         public void PasswordStrengthInvalid()

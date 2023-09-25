@@ -1,6 +1,6 @@
 ﻿namespace AgRecords.View
 {
-    partial class ImageDisplayView
+    partial class UserPhotoView
     {
         /// <summary>
         /// Required designer variable.
@@ -38,24 +38,20 @@
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(654, 776);
+            pictureBox1.Size = new Size(482, 453);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
+            pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // ImageDisplayView
+            // UserPhotoView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            ClientSize = new Size(654, 776);
+            ClientSize = new Size(482, 453);
             Controls.Add(pictureBox1);
-            KeyPreview = true;
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "ImageDisplayView";
+            Name = "UserPhotoView";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Letter Page";
-            Load += ImageDisplayView_Load;
+            Text = "User Profile";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }

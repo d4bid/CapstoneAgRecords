@@ -1,4 +1,6 @@
-﻿namespace AgRecords.View
+﻿using System.Windows.Forms;
+
+namespace AgRecords.View
 {
     partial class UserView
     {
@@ -66,6 +68,7 @@
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
             dataGridViewCellStyle1.Font = new Font("Roboto Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
@@ -73,7 +76,7 @@
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);

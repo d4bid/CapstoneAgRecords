@@ -108,7 +108,16 @@ namespace AgRecords.View
 
         private void picBoxUser_Click(object sender, EventArgs e)
         {
-            getUserPhoto();
+            if (picBoxUser.Image != null)
+            {
+                Image selectedImage = picBoxUser.Image;
+
+                // Create and show the ImageDisplayForm.
+                using (var userPhotoView = new UserPhotoView(selectedImage))
+                {
+                    userPhotoView.ShowDialog();
+                }
+            }    
         }
 
         private void btnSave_Click(object sender, EventArgs e)

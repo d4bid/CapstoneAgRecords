@@ -36,6 +36,14 @@
             imageList1 = new ImageList(components);
             openFileDialog1 = new OpenFileDialog();
             groupBox3 = new GroupBox();
+            label3 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            txtBoxDescription = new TextBox();
+            label7 = new Label();
+            txtBoxFrom = new TextBox();
+            label6 = new Label();
+            txtBoxTo = new TextBox();
+            label5 = new Label();
             groupBox2 = new GroupBox();
             flowLayoutPanelTags = new FlowLayoutPanel();
             txtBoxTags = new TextBox();
@@ -47,14 +55,6 @@
             groupBox1 = new GroupBox();
             labelLetterId = new Label();
             listViewLetters = new ListView();
-            label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            txtBoxDescription = new TextBox();
-            label7 = new Label();
-            txtBoxFrom = new TextBox();
-            label6 = new Label();
-            txtBoxTo = new TextBox();
-            label5 = new Label();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -150,6 +150,96 @@
             groupBox3.Size = new Size(479, 329);
             groupBox3.TabIndex = 34;
             groupBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(12, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 22);
+            label3.TabIndex = 39;
+            label3.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Checked = false;
+            dateTimePicker1.Location = new Point(88, 17);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(378, 29);
+            dateTimePicker1.TabIndex = 38;
+            dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
+            // 
+            // txtBoxDescription
+            // 
+            txtBoxDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtBoxDescription.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxDescription.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxDescription.Location = new Point(16, 209);
+            txtBoxDescription.Margin = new Padding(3, 4, 3, 4);
+            txtBoxDescription.Multiline = true;
+            txtBoxDescription.Name = "txtBoxDescription";
+            txtBoxDescription.Size = new Size(450, 103);
+            txtBoxDescription.TabIndex = 37;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(12, 175);
+            label7.Name = "label7";
+            label7.Size = new Size(100, 22);
+            label7.TabIndex = 36;
+            label7.Text = "Description";
+            // 
+            // txtBoxFrom
+            // 
+            txtBoxFrom.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtBoxFrom.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxFrom.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxFrom.Location = new Point(87, 126);
+            txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
+            txtBoxFrom.Name = "txtBoxFrom";
+            txtBoxFrom.Size = new Size(379, 29);
+            txtBoxFrom.TabIndex = 35;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(12, 128);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 22);
+            label6.TabIndex = 34;
+            label6.Text = "From";
+            // 
+            // txtBoxTo
+            // 
+            txtBoxTo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtBoxTo.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxTo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxTo.Location = new Point(87, 79);
+            txtBoxTo.Margin = new Padding(3, 4, 3, 4);
+            txtBoxTo.Name = "txtBoxTo";
+            txtBoxTo.Size = new Size(379, 29);
+            txtBoxTo.TabIndex = 33;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(12, 81);
+            label5.Name = "label5";
+            label5.Size = new Size(30, 22);
+            label5.TabIndex = 32;
+            label5.Text = "To";
             // 
             // groupBox2
             // 
@@ -268,96 +358,7 @@
             listViewLetters.SmallImageList = imageList1;
             listViewLetters.TabIndex = 32;
             listViewLetters.UseCompatibleStateImageBehavior = false;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(12, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 22);
-            label3.TabIndex = 39;
-            label3.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Checked = false;
-            dateTimePicker1.Location = new Point(88, 17);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(378, 29);
-            dateTimePicker1.TabIndex = 38;
-            dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
-            // 
-            // txtBoxDescription
-            // 
-            txtBoxDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtBoxDescription.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxDescription.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxDescription.Location = new Point(16, 209);
-            txtBoxDescription.Margin = new Padding(3, 4, 3, 4);
-            txtBoxDescription.Multiline = true;
-            txtBoxDescription.Name = "txtBoxDescription";
-            txtBoxDescription.Size = new Size(450, 103);
-            txtBoxDescription.TabIndex = 37;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(12, 175);
-            label7.Name = "label7";
-            label7.Size = new Size(100, 22);
-            label7.TabIndex = 36;
-            label7.Text = "Description";
-            // 
-            // txtBoxFrom
-            // 
-            txtBoxFrom.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtBoxFrom.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxFrom.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxFrom.Location = new Point(87, 126);
-            txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
-            txtBoxFrom.Name = "txtBoxFrom";
-            txtBoxFrom.Size = new Size(379, 29);
-            txtBoxFrom.TabIndex = 35;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(12, 128);
-            label6.Name = "label6";
-            label6.Size = new Size(52, 22);
-            label6.TabIndex = 34;
-            label6.Text = "From";
-            // 
-            // txtBoxTo
-            // 
-            txtBoxTo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtBoxTo.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxTo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxTo.Location = new Point(87, 79);
-            txtBoxTo.Margin = new Padding(3, 4, 3, 4);
-            txtBoxTo.Name = "txtBoxTo";
-            txtBoxTo.Size = new Size(379, 29);
-            txtBoxTo.TabIndex = 33;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(12, 81);
-            label5.Name = "label5";
-            label5.Size = new Size(30, 22);
-            label5.TabIndex = 32;
-            label5.Text = "To";
+            listViewLetters.DoubleClick += listViewLetters_DoubleClick;
             // 
             // LettersEditView
             // 

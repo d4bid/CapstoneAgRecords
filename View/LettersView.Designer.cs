@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             btnAdd = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            dgvLetters = new DataGridView();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            txtBoxSearch = new TextBox();
+            dgvLetters = new DataGridView();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
             SuspendLayout();
             // 
             // btnAdd
@@ -62,6 +63,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnAdd);
             panel1.Dock = DockStyle.Top;
@@ -75,21 +77,35 @@
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(iconPictureBox1);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtBoxSearch);
             panel2.Location = new Point(22, 31);
             panel2.Name = "panel2";
             panel2.Size = new Size(342, 30);
             panel2.TabIndex = 2;
             // 
-            // textBox1
+            // iconPictureBox1
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(27, 4);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search";
-            textBox1.Size = new Size(314, 22);
-            textBox1.TabIndex = 0;
+            iconPictureBox1.BackColor = Color.White;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 25;
+            iconPictureBox1.Location = new Point(-1, 4);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(25, 25);
+            iconPictureBox1.TabIndex = 3;
+            iconPictureBox1.TabStop = false;
+            // 
+            // txtBoxSearch
+            // 
+            txtBoxSearch.BorderStyle = BorderStyle.None;
+            txtBoxSearch.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBoxSearch.Location = new Point(27, 4);
+            txtBoxSearch.Name = "txtBoxSearch";
+            txtBoxSearch.PlaceholderText = "Search";
+            txtBoxSearch.Size = new Size(314, 22);
+            txtBoxSearch.TabIndex = 0;
             // 
             // dgvLetters
             // 
@@ -100,24 +116,24 @@
             dgvLetters.BackgroundColor = Color.White;
             dgvLetters.BorderStyle = BorderStyle.None;
             dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvLetters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvLetters.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvLetters.DefaultCellStyle = dataGridViewCellStyle6;
             dgvLetters.GridColor = Color.FromArgb(239, 239, 239);
             dgvLetters.Location = new Point(0, 97);
             dgvLetters.Name = "dgvLetters";
@@ -130,19 +146,15 @@
             dgvLetters.TabIndex = 22;
             dgvLetters.CellDoubleClick += dgvLetters_CellDoubleClick;
             // 
-            // iconPictureBox1
+            // comboBox1
             // 
-            iconPictureBox1.BackColor = Color.White;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 20;
-            iconPictureBox1.Location = new Point(3, 7);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(25, 25);
-            iconPictureBox1.TabIndex = 3;
-            iconPictureBox1.TabStop = false;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(382, 31);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(170, 30);
+            comboBox1.TabIndex = 0;
             // 
             // LettersView
             // 
@@ -159,8 +171,8 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLetters).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLetters).EndInit();
             ResumeLayout(false);
         }
 
@@ -169,7 +181,8 @@
         private Panel panel1;
         private DataGridView dgvLetters;
         private Panel panel2;
-        private TextBox textBox1;
+        private TextBox txtBoxSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private ComboBox comboBox1;
     }
 }
