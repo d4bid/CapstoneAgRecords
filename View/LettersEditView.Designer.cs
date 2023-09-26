@@ -55,7 +55,6 @@
             label6 = new Label();
             txtBoxTo = new TextBox();
             label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -168,7 +167,7 @@
             txtBoxTags.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBoxTags.Location = new Point(86, 117);
             txtBoxTags.Name = "txtBoxTags";
-            txtBoxTags.Size = new Size(469, 29);
+            txtBoxTags.Size = new Size(469, 28);
             txtBoxTags.TabIndex = 3;
             // 
             // label2
@@ -200,7 +199,7 @@
             txtBoxTitle.Location = new Point(86, 23);
             txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
-            txtBoxTitle.Size = new Size(469, 29);
+            txtBoxTitle.Size = new Size(469, 28);
             txtBoxTitle.TabIndex = 1;
             // 
             // label1
@@ -277,9 +276,8 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(90, 24);
+            dateTimePicker1.Location = new Point(90, 20);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(376, 29);
             dateTimePicker1.TabIndex = 4;
@@ -326,7 +324,7 @@
             txtBoxFrom.Location = new Point(90, 126);
             txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
             txtBoxFrom.Name = "txtBoxFrom";
-            txtBoxFrom.Size = new Size(376, 29);
+            txtBoxFrom.Size = new Size(376, 28);
             txtBoxFrom.TabIndex = 6;
             // 
             // label6
@@ -348,7 +346,7 @@
             txtBoxTo.Location = new Point(90, 79);
             txtBoxTo.Margin = new Padding(3, 4, 3, 4);
             txtBoxTo.Name = "txtBoxTo";
-            txtBoxTo.Size = new Size(376, 29);
+            txtBoxTo.Size = new Size(376, 28);
             txtBoxTo.TabIndex = 5;
             // 
             // label5
@@ -361,18 +359,6 @@
             label5.Size = new Size(32, 22);
             label5.TabIndex = 32;
             label5.Text = "To";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Checked = false;
-            dateTimePicker1.Location = new Point(90, 20);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(375, 28);
-            dateTimePicker1.TabIndex = 40;
-            dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
             // 
             // LettersEditView
             // 
