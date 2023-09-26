@@ -10,18 +10,14 @@ using System.Windows.Forms;
 
 namespace AgRecords.View
 {
-    public partial class MainView : Form
+    public partial class RSBSAtry : Form
     {
-        private Panel parentPanel;
-
-        public MainView(Control parentControl)
+        public RSBSAtry()
         {
             InitializeComponent();
-
-            this.parentPanel = parentControl as Panel;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void RSBSAtry_Load(object sender, EventArgs e)
         {
 
         }

@@ -179,6 +179,7 @@
             label4 = new Label();
             txtSurname = new TextBox();
             panel4 = new Panel();
+            btnSave = new Button();
             groupBox1 = new GroupBox();
             label3 = new Label();
             rbEtUpdating = new RadioButton();
@@ -313,7 +314,7 @@
             textBox11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox11.Location = new Point(805, 59);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(349, 24);
+            textBox11.Size = new Size(349, 28);
             textBox11.TabIndex = 13;
             // 
             // label42
@@ -322,7 +323,7 @@
             label42.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label42.Location = new Point(805, 28);
             label42.Name = "label42";
-            label42.Size = new Size(36, 18);
+            label42.Size = new Size(44, 22);
             label42.TabIndex = 12;
             label42.Text = "(P3)";
             // 
@@ -332,7 +333,7 @@
             textBox7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox7.Location = new Point(421, 61);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(349, 24);
+            textBox7.Size = new Size(349, 28);
             textBox7.TabIndex = 11;
             // 
             // label47
@@ -341,7 +342,7 @@
             label47.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label47.Location = new Point(421, 30);
             label47.Name = "label47";
-            label47.Size = new Size(36, 18);
+            label47.Size = new Size(44, 22);
             label47.TabIndex = 10;
             label47.Text = "(P2)";
             // 
@@ -351,7 +352,7 @@
             textBox10.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox10.Location = new Point(20, 61);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(349, 24);
+            textBox10.Size = new Size(349, 28);
             textBox10.TabIndex = 9;
             // 
             // label48
@@ -360,7 +361,7 @@
             label48.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label48.Location = new Point(20, 30);
             label48.Name = "label48";
-            label48.Size = new Size(36, 18);
+            label48.Size = new Size(44, 22);
             label48.TabIndex = 8;
             label48.Text = "(P1)";
             // 
@@ -382,7 +383,7 @@
             numericUpDown1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDown1.Location = new Point(21, 61);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(222, 24);
+            numericUpDown1.Size = new Size(222, 28);
             numericUpDown1.TabIndex = 40;
             numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
@@ -392,7 +393,7 @@
             label46.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label46.Location = new Point(20, 30);
             label46.Name = "label46";
-            label46.Size = new Size(142, 18);
+            label46.Size = new Size(169, 22);
             label46.TabIndex = 8;
             label46.Text = "No. of Farm Parcels";
             // 
@@ -417,7 +418,7 @@
             label44.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label44.Location = new Point(481, 30);
             label44.Name = "label44";
-            label44.Size = new Size(100, 18);
+            label44.Size = new Size(114, 22);
             label44.TabIndex = 10;
             label44.Text = "Non-Farming";
             // 
@@ -427,7 +428,7 @@
             textBox8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox8.Location = new Point(481, 61);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(405, 25);
+            textBox8.Size = new Size(405, 29);
             textBox8.TabIndex = 9;
             // 
             // label45
@@ -436,7 +437,7 @@
             label45.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label45.Location = new Point(20, 30);
             label45.Name = "label45";
-            label45.Size = new Size(64, 18);
+            label45.Size = new Size(76, 22);
             label45.TabIndex = 8;
             label45.Text = "Farming";
             // 
@@ -446,7 +447,7 @@
             textBox9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox9.Location = new Point(20, 61);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(408, 25);
+            textBox9.Size = new Size(408, 29);
             textBox9.TabIndex = 7;
             // 
             // groupBox20
@@ -473,7 +474,7 @@
             textBox6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox6.Location = new Point(50, 393);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(242, 25);
+            textBox6.Size = new Size(242, 29);
             textBox6.TabIndex = 48;
             // 
             // checkBox25
@@ -482,7 +483,7 @@
             checkBox25.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox25.Location = new Point(16, 352);
             checkBox25.Name = "checkBox25";
-            checkBox25.Size = new Size(182, 22);
+            checkBox25.Size = new Size(211, 26);
             checkBox25.TabIndex = 47;
             checkBox25.Text = "Others, please specify:";
             checkBox25.UseVisualStyleBackColor = true;
@@ -493,7 +494,7 @@
             checkBox24.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox24.Location = new Point(16, 275);
             checkBox24.Name = "checkBox24";
-            checkBox24.Size = new Size(242, 40);
+            checkBox24.Size = new Size(276, 48);
             checkBox24.TabIndex = 39;
             checkBox24.Text = "Participated in any agricultural \nactivity/program";
             checkBox24.TextAlign = ContentAlignment.TopLeft;
@@ -505,7 +506,7 @@
             checkBox23.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox23.Location = new Point(16, 204);
             checkBox23.Name = "checkBox23";
-            checkBox23.Size = new Size(248, 40);
+            checkBox23.Size = new Size(286, 48);
             checkBox23.TabIndex = 38;
             checkBox23.Text = "Attending/Attended non-formal \nagrifishery related course";
             checkBox23.TextAlign = ContentAlignment.TopLeft;
@@ -517,7 +518,7 @@
             checkBox27.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox27.Location = new Point(15, 139);
             checkBox27.Name = "checkBox27";
-            checkBox27.Size = new Size(214, 40);
+            checkBox27.Size = new Size(251, 48);
             checkBox27.TabIndex = 37;
             checkBox27.Text = "Attending/Attended formal \nagrifishery related course";
             checkBox27.TextAlign = ContentAlignment.TopLeft;
@@ -529,7 +530,7 @@
             checkBox28.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox28.Location = new Point(16, 95);
             checkBox28.Name = "checkBox28";
-            checkBox28.Size = new Size(220, 22);
+            checkBox28.Size = new Size(252, 26);
             checkBox28.TabIndex = 36;
             checkBox28.Text = "Part of a farming household";
             checkBox28.UseVisualStyleBackColor = true;
@@ -540,7 +541,7 @@
             label41.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label41.Location = new Point(16, 44);
             label41.Name = "label41";
-            label41.Size = new Size(149, 18);
+            label41.Size = new Size(172, 22);
             label41.TabIndex = 13;
             label41.Text = "Type of Involvement";
             // 
@@ -569,7 +570,7 @@
             checkBox22.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox22.Location = new Point(16, 275);
             checkBox22.Name = "checkBox22";
-            checkBox22.Size = new Size(117, 22);
+            checkBox22.Size = new Size(134, 26);
             checkBox22.TabIndex = 47;
             checkBox22.Text = "Fish Vending";
             checkBox22.UseVisualStyleBackColor = true;
@@ -580,7 +581,7 @@
             textBox5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox5.Location = new Point(49, 363);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 25);
+            textBox5.Size = new Size(214, 29);
             textBox5.TabIndex = 46;
             // 
             // checkBox17
@@ -589,7 +590,7 @@
             checkBox17.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox17.Location = new Point(15, 322);
             checkBox17.Name = "checkBox17";
-            checkBox17.Size = new Size(182, 22);
+            checkBox17.Size = new Size(211, 26);
             checkBox17.TabIndex = 45;
             checkBox17.Text = "Others, please specify:";
             checkBox17.UseVisualStyleBackColor = true;
@@ -600,7 +601,7 @@
             checkBox18.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox18.Location = new Point(16, 231);
             checkBox18.Name = "checkBox18";
-            checkBox18.Size = new Size(138, 22);
+            checkBox18.Size = new Size(157, 26);
             checkBox18.TabIndex = 42;
             checkBox18.Text = "Fish Processing";
             checkBox18.UseVisualStyleBackColor = true;
@@ -611,7 +612,7 @@
             checkBox19.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox19.Location = new Point(15, 184);
             checkBox19.Name = "checkBox19";
-            checkBox19.Size = new Size(88, 22);
+            checkBox19.Size = new Size(102, 26);
             checkBox19.TabIndex = 38;
             checkBox19.Text = "Gleaning";
             checkBox19.UseVisualStyleBackColor = true;
@@ -622,7 +623,7 @@
             checkBox20.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox20.Location = new Point(15, 139);
             checkBox20.Name = "checkBox20";
-            checkBox20.Size = new Size(110, 22);
+            checkBox20.Size = new Size(129, 26);
             checkBox20.TabIndex = 37;
             checkBox20.Text = "Aquaculture";
             checkBox20.UseVisualStyleBackColor = true;
@@ -633,7 +634,7 @@
             checkBox21.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox21.Location = new Point(16, 95);
             checkBox21.Name = "checkBox21";
-            checkBox21.Size = new Size(113, 22);
+            checkBox21.Size = new Size(133, 26);
             checkBox21.TabIndex = 36;
             checkBox21.Text = "Fish Capture";
             checkBox21.UseVisualStyleBackColor = true;
@@ -644,7 +645,7 @@
             label40.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label40.Location = new Point(16, 44);
             label40.Name = "label40";
-            label40.Size = new Size(170, 18);
+            label40.Size = new Size(193, 22);
             label40.TabIndex = 13;
             label40.Text = "Type of Fishing Activity";
             // 
@@ -672,7 +673,7 @@
             textBox4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.Location = new Point(52, 321);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 25);
+            textBox4.Size = new Size(214, 29);
             textBox4.TabIndex = 46;
             // 
             // checkBox12
@@ -681,7 +682,7 @@
             checkBox12.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox12.Location = new Point(15, 276);
             checkBox12.Name = "checkBox12";
-            checkBox12.Size = new Size(182, 22);
+            checkBox12.Size = new Size(211, 26);
             checkBox12.TabIndex = 45;
             checkBox12.Text = "Others, please specify:";
             checkBox12.UseVisualStyleBackColor = true;
@@ -692,7 +693,7 @@
             checkBox13.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox13.Location = new Point(16, 231);
             checkBox13.Name = "checkBox13";
-            checkBox13.Size = new Size(102, 22);
+            checkBox13.Size = new Size(119, 26);
             checkBox13.TabIndex = 42;
             checkBox13.Text = "Harvesting";
             checkBox13.UseVisualStyleBackColor = true;
@@ -703,7 +704,7 @@
             checkBox14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox14.Location = new Point(15, 184);
             checkBox14.Name = "checkBox14";
-            checkBox14.Size = new Size(101, 22);
+            checkBox14.Size = new Size(117, 26);
             checkBox14.TabIndex = 38;
             checkBox14.Text = "Cultivation";
             checkBox14.UseVisualStyleBackColor = true;
@@ -714,7 +715,7 @@
             checkBox15.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox15.Location = new Point(15, 139);
             checkBox15.Name = "checkBox15";
-            checkBox15.Size = new Size(187, 22);
+            checkBox15.Size = new Size(213, 26);
             checkBox15.TabIndex = 37;
             checkBox15.Text = "Planting/Transplanting";
             checkBox15.UseVisualStyleBackColor = true;
@@ -725,7 +726,7 @@
             checkBox16.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox16.Location = new Point(16, 95);
             checkBox16.Name = "checkBox16";
-            checkBox16.Size = new Size(145, 22);
+            checkBox16.Size = new Size(169, 26);
             checkBox16.TabIndex = 36;
             checkBox16.Text = "Land Preparation";
             checkBox16.UseVisualStyleBackColor = true;
@@ -736,7 +737,7 @@
             label43.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label43.Location = new Point(16, 44);
             label43.Name = "label43";
-            label43.Size = new Size(97, 18);
+            label43.Size = new Size(110, 22);
             label43.TabIndex = 13;
             label43.Text = "Kind of Work";
             // 
@@ -769,7 +770,7 @@
             label39.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label39.Location = new Point(52, 432);
             label39.Name = "label39";
-            label39.Size = new Size(107, 18);
+            label39.Size = new Size(124, 22);
             label39.TabIndex = 47;
             label39.Text = "please specify";
             // 
@@ -779,7 +780,7 @@
             textBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.Location = new Point(52, 462);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 25);
+            textBox3.Size = new Size(214, 29);
             textBox3.TabIndex = 46;
             // 
             // checkBox11
@@ -788,7 +789,7 @@
             checkBox11.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox11.Location = new Point(13, 400);
             checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(80, 22);
+            checkBox11.Size = new Size(91, 26);
             checkBox11.TabIndex = 45;
             checkBox11.Text = "Poultry,";
             checkBox11.UseVisualStyleBackColor = true;
@@ -799,7 +800,7 @@
             label38.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label38.Location = new Point(52, 324);
             label38.Name = "label38";
-            label38.Size = new Size(107, 18);
+            label38.Size = new Size(124, 22);
             label38.TabIndex = 44;
             label38.Text = "please specify";
             // 
@@ -809,7 +810,7 @@
             textBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(52, 354);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 25);
+            textBox2.Size = new Size(214, 29);
             textBox2.TabIndex = 43;
             // 
             // checkBox10
@@ -818,7 +819,7 @@
             checkBox10.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox10.Location = new Point(13, 292);
             checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(96, 22);
+            checkBox10.Size = new Size(112, 26);
             checkBox10.TabIndex = 42;
             checkBox10.Text = "Livestock,";
             checkBox10.UseVisualStyleBackColor = true;
@@ -829,7 +830,7 @@
             label37.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label37.Location = new Point(54, 216);
             label37.Name = "label37";
-            label37.Size = new Size(107, 18);
+            label37.Size = new Size(124, 22);
             label37.TabIndex = 41;
             label37.Text = "please specify";
             // 
@@ -839,7 +840,7 @@
             textBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(54, 246);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 25);
+            textBox1.Size = new Size(214, 29);
             textBox1.TabIndex = 40;
             // 
             // checkBox9
@@ -848,7 +849,7 @@
             checkBox9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox9.Location = new Point(15, 184);
             checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(110, 22);
+            checkBox9.Size = new Size(128, 26);
             checkBox9.TabIndex = 38;
             checkBox9.Text = "Other crops,";
             checkBox9.UseVisualStyleBackColor = true;
@@ -859,7 +860,7 @@
             checkBox8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox8.Location = new Point(15, 139);
             checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(59, 22);
+            checkBox8.Size = new Size(70, 26);
             checkBox8.TabIndex = 37;
             checkBox8.Text = "Corn";
             checkBox8.UseVisualStyleBackColor = true;
@@ -870,7 +871,7 @@
             checkBox7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox7.Location = new Point(16, 95);
             checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(57, 22);
+            checkBox7.Size = new Size(66, 26);
             checkBox7.TabIndex = 36;
             checkBox7.Text = "Rice";
             checkBox7.UseVisualStyleBackColor = true;
@@ -881,7 +882,7 @@
             label54.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label54.Location = new Point(16, 44);
             label54.Name = "label54";
-            label54.Size = new Size(175, 18);
+            label54.Size = new Size(202, 22);
             label54.TabIndex = 13;
             label54.Text = "Type of Farming Activity";
             // 
@@ -906,7 +907,7 @@
             checkBox5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox5.Location = new Point(747, 35);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(98, 22);
+            checkBox5.Size = new Size(114, 26);
             checkBox5.TabIndex = 37;
             checkBox5.Text = "FisherFolk";
             checkBox5.UseVisualStyleBackColor = true;
@@ -917,7 +918,7 @@
             checkBox6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox6.Location = new Point(1038, 35);
             checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(99, 22);
+            checkBox6.Size = new Size(114, 26);
             checkBox6.TabIndex = 36;
             checkBox6.Text = "Agri Youth";
             checkBox6.UseVisualStyleBackColor = true;
@@ -928,7 +929,7 @@
             checkBox4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox4.Location = new Point(17, 35);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(74, 22);
+            checkBox4.Size = new Size(90, 26);
             checkBox4.TabIndex = 35;
             checkBox4.Text = "Farmer";
             checkBox4.UseVisualStyleBackColor = true;
@@ -939,7 +940,7 @@
             checkBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.Location = new Point(337, 35);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(165, 22);
+            checkBox1.Size = new Size(198, 26);
             checkBox1.TabIndex = 34;
             checkBox1.Text = "Farmworker/Laborer";
             checkBox1.UseVisualStyleBackColor = true;
@@ -965,7 +966,7 @@
             txtEcContact.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtEcContact.Location = new Point(12, 134);
             txtEcContact.Name = "txtEcContact";
-            txtEcContact.Size = new Size(443, 25);
+            txtEcContact.Size = new Size(443, 29);
             txtEcContact.TabIndex = 29;
             // 
             // label36
@@ -974,7 +975,7 @@
             label36.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label36.Location = new Point(14, 103);
             label36.Name = "label36";
-            label36.Size = new Size(120, 18);
+            label36.Size = new Size(142, 22);
             label36.TabIndex = 28;
             label36.Text = "Contact Number";
             // 
@@ -984,7 +985,7 @@
             txtEcName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtEcName.Location = new Point(14, 61);
             txtEcName.Name = "txtEcName";
-            txtEcName.Size = new Size(441, 25);
+            txtEcName.Size = new Size(441, 29);
             txtEcName.TabIndex = 27;
             // 
             // label35
@@ -993,7 +994,7 @@
             label35.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label35.Location = new Point(16, 30);
             label35.Name = "label35";
-            label35.Size = new Size(273, 18);
+            label35.Size = new Size(315, 22);
             label35.TabIndex = 6;
             label35.Text = "Person to Notify in Case of Emergency";
             // 
@@ -1016,7 +1017,7 @@
             txtAss.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAss.Location = new Point(163, 61);
             txtAss.Name = "txtAss";
-            txtAss.Size = new Size(615, 25);
+            txtAss.Size = new Size(615, 29);
             txtAss.TabIndex = 14;
             // 
             // txtMemberAss
@@ -1025,7 +1026,7 @@
             txtMemberAss.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMemberAss.Location = new Point(16, 27);
             txtMemberAss.Name = "txtMemberAss";
-            txtMemberAss.Size = new Size(366, 22);
+            txtMemberAss.Size = new Size(429, 26);
             txtMemberAss.TabIndex = 33;
             txtMemberAss.Text = "Member of any Farmers Association/ Cooperative";
             txtMemberAss.UseVisualStyleBackColor = true;
@@ -1036,7 +1037,7 @@
             label28.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label28.Location = new Point(37, 62);
             label28.Name = "label28";
-            label28.Size = new Size(103, 18);
+            label28.Size = new Size(120, 22);
             label28.TabIndex = 33;
             label28.Text = "If yes, Specify";
             // 
@@ -1061,7 +1062,7 @@
             txtGovIdNum.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(436, 60);
             txtGovIdNum.Name = "txtGovIdNum";
-            txtGovIdNum.Size = new Size(342, 25);
+            txtGovIdNum.Size = new Size(342, 29);
             txtGovIdNum.TabIndex = 34;
             // 
             // label26
@@ -1070,7 +1071,7 @@
             label26.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label26.Location = new Point(436, 27);
             label26.Name = "label26";
-            label26.Size = new Size(81, 18);
+            label26.Size = new Size(96, 22);
             label26.TabIndex = 35;
             label26.Text = "ID Number";
             // 
@@ -1080,7 +1081,7 @@
             txtGovIdType.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtGovIdType.Location = new Point(204, 60);
             txtGovIdType.Name = "txtGovIdType";
-            txtGovIdType.Size = new Size(214, 25);
+            txtGovIdType.Size = new Size(214, 29);
             txtGovIdType.TabIndex = 14;
             // 
             // chGovId
@@ -1089,7 +1090,7 @@
             chGovId.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chGovId.Location = new Point(16, 27);
             chGovId.Name = "chGovId";
-            chGovId.Size = new Size(164, 22);
+            chGovId.Size = new Size(192, 26);
             chGovId.TabIndex = 33;
             chGovId.Text = "With Government ID";
             chGovId.UseVisualStyleBackColor = true;
@@ -1100,7 +1101,7 @@
             label27.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label27.Location = new Point(16, 63);
             label27.Name = "label27";
-            label27.Size = new Size(158, 18);
+            label27.Size = new Size(182, 22);
             label27.TabIndex = 33;
             label27.Text = "If yes, specify ID Type";
             // 
@@ -1123,7 +1124,7 @@
             txtIp.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtIp.Location = new Point(142, 61);
             txtIp.Name = "txtIp";
-            txtIp.Size = new Size(207, 25);
+            txtIp.Size = new Size(207, 29);
             txtIp.TabIndex = 14;
             // 
             // chMemberIp
@@ -1132,7 +1133,7 @@
             chMemberIp.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chMemberIp.Location = new Point(16, 27);
             chMemberIp.Name = "chMemberIp";
-            chMemberIp.Size = new Size(250, 22);
+            chMemberIp.Size = new Size(288, 26);
             chMemberIp.TabIndex = 33;
             chMemberIp.Text = "Member of an Indigenous Group";
             chMemberIp.UseVisualStyleBackColor = true;
@@ -1143,7 +1144,7 @@
             label25.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label25.Location = new Point(16, 63);
             label25.Name = "label25";
-            label25.Size = new Size(103, 18);
+            label25.Size = new Size(120, 22);
             label25.TabIndex = 33;
             label25.Text = "If yes, Specify";
             // 
@@ -1175,7 +1176,7 @@
             label34.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label34.Location = new Point(162, 135);
             label34.Name = "label34";
-            label34.Size = new Size(95, 18);
+            label34.Size = new Size(108, 22);
             label34.TabIndex = 43;
             label34.Text = "Relationship";
             // 
@@ -1185,7 +1186,7 @@
             txtHouseHeadRs.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtHouseHeadRs.Location = new Point(280, 133);
             txtHouseHeadRs.Name = "txtHouseHeadRs";
-            txtHouseHeadRs.Size = new Size(288, 25);
+            txtHouseHeadRs.Size = new Size(288, 29);
             txtHouseHeadRs.TabIndex = 42;
             // 
             // chHouseHead
@@ -1194,7 +1195,7 @@
             chHouseHead.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chHouseHead.Location = new Point(20, 31);
             chHouseHead.Name = "chHouseHead";
-            chHouseHead.Size = new Size(143, 22);
+            chHouseHead.Size = new Size(165, 26);
             chHouseHead.TabIndex = 41;
             chHouseHead.Text = "Household Head";
             chHouseHead.UseVisualStyleBackColor = true;
@@ -1205,7 +1206,7 @@
             label32.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label32.Location = new Point(20, 211);
             label32.Name = "label32";
-            label32.Size = new Size(244, 18);
+            label32.Size = new Size(280, 22);
             label32.TabIndex = 40;
             label32.Text = "No. of Living Household Members";
             // 
@@ -1215,7 +1216,7 @@
             nudNoLivingHouseMem.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudNoLivingHouseMem.Location = new Point(21, 242);
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
-            nudNoLivingHouseMem.Size = new Size(279, 25);
+            nudNoLivingHouseMem.Size = new Size(279, 29);
             nudNoLivingHouseMem.TabIndex = 39;
             // 
             // label31
@@ -1224,7 +1225,7 @@
             label31.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label31.Location = new Point(325, 211);
             label31.Name = "label31";
-            label31.Size = new Size(87, 18);
+            label31.Size = new Size(102, 22);
             label31.TabIndex = 38;
             label31.Text = "No. of Male";
             // 
@@ -1234,7 +1235,7 @@
             nudHouseNoMale.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudHouseNoMale.Location = new Point(326, 242);
             nudHouseNoMale.Name = "nudHouseNoMale";
-            nudHouseNoMale.Size = new Size(104, 25);
+            nudHouseNoMale.Size = new Size(104, 29);
             nudHouseNoMale.TabIndex = 37;
             // 
             // label30
@@ -1243,7 +1244,7 @@
             label30.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label30.Location = new Point(462, 211);
             label30.Name = "label30";
-            label30.Size = new Size(103, 18);
+            label30.Size = new Size(122, 22);
             label30.TabIndex = 36;
             label30.Text = "No. of Female";
             // 
@@ -1253,7 +1254,7 @@
             nudHouseFemale.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudHouseFemale.Location = new Point(464, 242);
             nudHouseFemale.Name = "nudHouseFemale";
-            nudHouseFemale.Size = new Size(120, 25);
+            nudHouseFemale.Size = new Size(120, 29);
             nudHouseFemale.TabIndex = 35;
             // 
             // txtHouseHeadName
@@ -1262,7 +1263,7 @@
             txtHouseHeadName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtHouseHeadName.Location = new Point(280, 61);
             txtHouseHeadName.Name = "txtHouseHeadName";
-            txtHouseHeadName.Size = new Size(288, 25);
+            txtHouseHeadName.Size = new Size(288, 29);
             txtHouseHeadName.TabIndex = 11;
             // 
             // label29
@@ -1271,7 +1272,7 @@
             label29.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label29.Location = new Point(20, 62);
             label29.Name = "label29";
-            label29.Size = new Size(218, 18);
+            label29.Size = new Size(250, 22);
             label29.TabIndex = 34;
             label29.Text = "If no, name of household head";
             // 
@@ -1293,7 +1294,7 @@
             checkBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox3.Location = new Point(20, 62);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(137, 22);
+            checkBox3.Size = new Size(157, 26);
             checkBox3.TabIndex = 35;
             checkBox3.Text = "4P's Beneficiary";
             checkBox3.UseVisualStyleBackColor = true;
@@ -1304,7 +1305,7 @@
             checkBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox2.Location = new Point(20, 29);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(177, 22);
+            checkBox2.Size = new Size(202, 26);
             checkBox2.TabIndex = 34;
             checkBox2.Text = "Person with Disability";
             checkBox2.UseVisualStyleBackColor = true;
@@ -1327,7 +1328,7 @@
             label24.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label24.Location = new Point(14, 30);
             label24.Name = "label24";
-            label24.Size = new Size(186, 18);
+            label24.Size = new Size(215, 22);
             label24.TabIndex = 33;
             label24.Text = "Highest Formal Education";
             // 
@@ -1338,7 +1339,7 @@
             cbHighestEduc.Items.AddRange(new object[] { "Pre-school", "Elementary", "High School (non K-12)", "Junior High School (K-12)", "Senior High School (K-12)", "College", "Vocational", "Post-graduate", "None" });
             cbHighestEduc.Location = new Point(14, 60);
             cbHighestEduc.Name = "cbHighestEduc";
-            cbHighestEduc.Size = new Size(392, 25);
+            cbHighestEduc.Size = new Size(392, 30);
             cbHighestEduc.TabIndex = 32;
             // 
             // groupBox9
@@ -1359,7 +1360,7 @@
             txtMaidenMother.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaidenMother.Location = new Point(14, 61);
             txtMaidenMother.Name = "txtMaidenMother";
-            txtMaidenMother.Size = new Size(302, 25);
+            txtMaidenMother.Size = new Size(302, 29);
             txtMaidenMother.TabIndex = 27;
             // 
             // label23
@@ -1368,7 +1369,7 @@
             label23.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label23.Location = new Point(16, 30);
             label23.Name = "label23";
-            label23.Size = new Size(167, 18);
+            label23.Size = new Size(196, 22);
             label23.TabIndex = 6;
             label23.Text = "Mother's Maiden Name";
             // 
@@ -1390,7 +1391,7 @@
             label33.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label33.Location = new Point(16, 30);
             label33.Name = "label33";
-            label33.Size = new Size(65, 18);
+            label33.Size = new Size(73, 22);
             label33.TabIndex = 33;
             label33.Text = "Religion";
             // 
@@ -1400,7 +1401,7 @@
             cbReligion.Items.AddRange(new object[] { "Christianity", "Islam" });
             cbReligion.Location = new Point(14, 61);
             cbReligion.Name = "cbReligion";
-            cbReligion.Size = new Size(302, 25);
+            cbReligion.Size = new Size(302, 30);
             cbReligion.TabIndex = 32;
             // 
             // groupBox8
@@ -1423,7 +1424,7 @@
             cbCivilStatus.Items.AddRange(new object[] { "Single", "Married", "Widowed", "Separated" });
             cbCivilStatus.Location = new Point(16, 60);
             cbCivilStatus.Name = "cbCivilStatus";
-            cbCivilStatus.Size = new Size(300, 25);
+            cbCivilStatus.Size = new Size(300, 30);
             cbCivilStatus.TabIndex = 33;
             // 
             // label14
@@ -1432,7 +1433,7 @@
             label14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label14.Location = new Point(16, 102);
             label14.Name = "label14";
-            label14.Size = new Size(191, 18);
+            label14.Size = new Size(223, 22);
             label14.TabIndex = 27;
             label14.Text = "Name of Spouse if Married";
             // 
@@ -1442,7 +1443,7 @@
             txtSpouseName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtSpouseName.Location = new Point(16, 133);
             txtSpouseName.Name = "txtSpouseName";
-            txtSpouseName.Size = new Size(300, 25);
+            txtSpouseName.Size = new Size(300, 29);
             txtSpouseName.TabIndex = 26;
             // 
             // label22
@@ -1451,7 +1452,7 @@
             label22.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label22.Location = new Point(16, 30);
             label22.Name = "label22";
-            label22.Size = new Size(85, 18);
+            label22.Size = new Size(99, 22);
             label22.TabIndex = 13;
             label22.Text = "Civil Status";
             // 
@@ -1476,7 +1477,7 @@
             label13.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(227, 30);
             label13.Name = "label13";
-            label13.Size = new Size(126, 18);
+            label13.Size = new Size(147, 22);
             label13.TabIndex = 27;
             label13.Text = "Landline Number";
             // 
@@ -1486,7 +1487,7 @@
             txtLandNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtLandNo.Location = new Point(227, 59);
             txtLandNo.Name = "txtLandNo";
-            txtLandNo.Size = new Size(218, 25);
+            txtLandNo.Size = new Size(218, 29);
             txtLandNo.TabIndex = 26;
             // 
             // txtMobNo
@@ -1495,7 +1496,7 @@
             txtMobNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMobNo.Location = new Point(16, 60);
             txtMobNo.Name = "txtMobNo";
-            txtMobNo.Size = new Size(188, 25);
+            txtMobNo.Size = new Size(188, 29);
             txtMobNo.TabIndex = 18;
             // 
             // label11
@@ -1504,7 +1505,7 @@
             label11.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label11.Location = new Point(16, 30);
             label11.Name = "label11";
-            label11.Size = new Size(114, 18);
+            label11.Size = new Size(133, 22);
             label11.TabIndex = 13;
             label11.Text = "Mobile Number";
             // 
@@ -1531,7 +1532,7 @@
             label10.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(621, 30);
             label10.Name = "label10";
-            label10.Size = new Size(62, 18);
+            label10.Size = new Size(73, 22);
             label10.TabIndex = 13;
             label10.Text = "Country";
             // 
@@ -1541,7 +1542,7 @@
             txtBirthCountry.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthCountry.Location = new Point(621, 61);
             txtBirthCountry.Name = "txtBirthCountry";
-            txtBirthCountry.Size = new Size(365, 25);
+            txtBirthCountry.Size = new Size(365, 29);
             txtBirthCountry.TabIndex = 12;
             // 
             // label8
@@ -1550,7 +1551,7 @@
             label8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(304, 30);
             label8.Name = "label8";
-            label8.Size = new Size(69, 18);
+            label8.Size = new Size(79, 22);
             label8.TabIndex = 10;
             label8.Text = "Province";
             // 
@@ -1560,7 +1561,7 @@
             txtBirthProvince.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthProvince.Location = new Point(304, 61);
             txtBirthProvince.Name = "txtBirthProvince";
-            txtBirthProvince.Size = new Size(300, 25);
+            txtBirthProvince.Size = new Size(300, 29);
             txtBirthProvince.TabIndex = 9;
             // 
             // label15
@@ -1569,7 +1570,7 @@
             label15.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label15.Location = new Point(20, 30);
             label15.Name = "label15";
-            label15.Size = new Size(93, 18);
+            label15.Size = new Size(106, 22);
             label15.TabIndex = 8;
             label15.Text = "Municipality";
             // 
@@ -1579,7 +1580,7 @@
             txtBirthMunicipality.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthMunicipality.Location = new Point(20, 61);
             txtBirthMunicipality.Name = "txtBirthMunicipality";
-            txtBirthMunicipality.Size = new Size(267, 25);
+            txtBirthMunicipality.Size = new Size(267, 29);
             txtBirthMunicipality.TabIndex = 7;
             // 
             // groupBox5
@@ -1599,7 +1600,7 @@
             dtpBirthDate.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpBirthDate.Location = new Point(14, 61);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(302, 25);
+            dtpBirthDate.Size = new Size(302, 29);
             dtpBirthDate.TabIndex = 13;
             // 
             // label12
@@ -1608,7 +1609,7 @@
             label12.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(16, 30);
             label12.Name = "label12";
-            label12.Size = new Size(94, 18);
+            label12.Size = new Size(109, 22);
             label12.TabIndex = 6;
             label12.Text = "Date of Birth";
             // 
@@ -1632,7 +1633,7 @@
             comboBox1.Items.AddRange(new object[] { "Male", "Female" });
             comboBox1.Location = new Point(15, 59);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(137, 25);
+            comboBox1.Size = new Size(137, 30);
             comboBox1.TabIndex = 31;
             // 
             // label21
@@ -1641,7 +1642,7 @@
             label21.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label21.Location = new Point(15, 29);
             label21.Name = "label21";
-            label21.Size = new Size(33, 18);
+            label21.Size = new Size(40, 22);
             label21.TabIndex = 13;
             label21.Text = "Sex";
             // 
@@ -1674,7 +1675,7 @@
             label9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(1597, 30);
             label9.Name = "label9";
-            label9.Size = new Size(57, 18);
+            label9.Size = new Size(65, 22);
             label9.TabIndex = 29;
             label9.Text = "Region";
             // 
@@ -1684,7 +1685,7 @@
             txtAddRegion.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddRegion.Location = new Point(1597, 61);
             txtAddRegion.Name = "txtAddRegion";
-            txtAddRegion.Size = new Size(177, 25);
+            txtAddRegion.Size = new Size(177, 29);
             txtAddRegion.TabIndex = 28;
             txtAddRegion.Text = "2";
             // 
@@ -1694,7 +1695,7 @@
             label16.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label16.Location = new Point(1283, 29);
             label16.Name = "label16";
-            label16.Size = new Size(69, 18);
+            label16.Size = new Size(79, 22);
             label16.TabIndex = 27;
             label16.Text = "Province";
             // 
@@ -1704,7 +1705,7 @@
             txtAddProvince.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddProvince.Location = new Point(1283, 60);
             txtAddProvince.Name = "txtAddProvince";
-            txtAddProvince.Size = new Size(300, 25);
+            txtAddProvince.Size = new Size(300, 29);
             txtAddProvince.TabIndex = 26;
             txtAddProvince.Text = "Nueva Vizcaya";
             // 
@@ -1714,7 +1715,7 @@
             label17.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label17.Location = new Point(966, 30);
             label17.Name = "label17";
-            label17.Size = new Size(93, 18);
+            label17.Size = new Size(106, 22);
             label17.TabIndex = 25;
             label17.Text = "Municipality";
             // 
@@ -1724,7 +1725,7 @@
             txtAddMunicipality.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddMunicipality.Location = new Point(966, 61);
             txtAddMunicipality.Name = "txtAddMunicipality";
-            txtAddMunicipality.Size = new Size(300, 25);
+            txtAddMunicipality.Size = new Size(300, 29);
             txtAddMunicipality.TabIndex = 24;
             txtAddMunicipality.Text = "Solano";
             // 
@@ -1736,7 +1737,7 @@
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             cbAddBrgy.Location = new Point(649, 60);
             cbAddBrgy.Name = "cbAddBrgy";
-            cbAddBrgy.Size = new Size(300, 25);
+            cbAddBrgy.Size = new Size(300, 30);
             cbAddBrgy.TabIndex = 23;
             // 
             // label18
@@ -1745,7 +1746,7 @@
             label18.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label18.Location = new Point(649, 30);
             label18.Name = "label18";
-            label18.Size = new Size(73, 18);
+            label18.Size = new Size(86, 22);
             label18.TabIndex = 22;
             label18.Text = "Barangay";
             // 
@@ -1755,7 +1756,7 @@
             label19.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label19.Location = new Point(332, 30);
             label19.Name = "label19";
-            label19.Size = new Size(148, 18);
+            label19.Size = new Size(172, 22);
             label19.TabIndex = 20;
             label19.Text = "Street/Sition/Subdv.";
             // 
@@ -1765,7 +1766,7 @@
             txtAddStreet.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddStreet.Location = new Point(332, 61);
             txtAddStreet.Name = "txtAddStreet";
-            txtAddStreet.Size = new Size(300, 25);
+            txtAddStreet.Size = new Size(300, 29);
             txtAddStreet.TabIndex = 19;
             // 
             // label20
@@ -1774,7 +1775,7 @@
             label20.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label20.Location = new Point(16, 30);
             label20.Name = "label20";
-            label20.Size = new Size(198, 18);
+            label20.Size = new Size(227, 22);
             label20.TabIndex = 18;
             label20.Text = "House/Lot/Bldg. No./Purok";
             // 
@@ -1784,7 +1785,7 @@
             txtAddPurok.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddPurok.Location = new Point(16, 60);
             txtAddPurok.Name = "txtAddPurok";
-            txtAddPurok.Size = new Size(300, 25);
+            txtAddPurok.Size = new Size(300, 29);
             txtAddPurok.TabIndex = 17;
             // 
             // groupBox2
@@ -1812,7 +1813,7 @@
             label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(966, 30);
             label7.Name = "label7";
-            label7.Size = new Size(120, 18);
+            label7.Size = new Size(141, 22);
             label7.TabIndex = 12;
             label7.Text = "Extension Name";
             // 
@@ -1822,7 +1823,7 @@
             txtExtname.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtExtname.Location = new Point(966, 61);
             txtExtname.Name = "txtExtname";
-            txtExtname.Size = new Size(151, 25);
+            txtExtname.Size = new Size(151, 29);
             txtExtname.TabIndex = 11;
             // 
             // label6
@@ -1831,7 +1832,7 @@
             label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(649, 30);
             label6.Name = "label6";
-            label6.Size = new Size(99, 18);
+            label6.Size = new Size(117, 22);
             label6.TabIndex = 10;
             label6.Text = "Middle Name";
             // 
@@ -1841,7 +1842,7 @@
             txtMiddlename.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMiddlename.Location = new Point(649, 61);
             txtMiddlename.Name = "txtMiddlename";
-            txtMiddlename.Size = new Size(300, 25);
+            txtMiddlename.Size = new Size(300, 29);
             txtMiddlename.TabIndex = 9;
             // 
             // label5
@@ -1850,7 +1851,7 @@
             label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(332, 30);
             label5.Name = "label5";
-            label5.Size = new Size(82, 18);
+            label5.Size = new Size(98, 22);
             label5.TabIndex = 8;
             label5.Text = "First Name";
             // 
@@ -1860,7 +1861,7 @@
             txtFirstname.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtFirstname.Location = new Point(332, 61);
             txtFirstname.Name = "txtFirstname";
-            txtFirstname.Size = new Size(300, 25);
+            txtFirstname.Size = new Size(300, 29);
             txtFirstname.TabIndex = 7;
             // 
             // label4
@@ -1869,7 +1870,7 @@
             label4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(16, 30);
             label4.Name = "label4";
-            label4.Size = new Size(69, 18);
+            label4.Size = new Size(83, 22);
             label4.TabIndex = 6;
             label4.Text = "Surname";
             // 
@@ -1879,17 +1880,34 @@
             txtSurname.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtSurname.Location = new Point(16, 61);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(300, 25);
+            txtSurname.Size = new Size(300, 29);
             txtSurname.TabIndex = 0;
             // 
             // panel4
             // 
+            panel4.Controls.Add(btnSave);
             panel4.Controls.Add(groupBox1);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(1540, 125);
             panel4.TabIndex = 18;
+            // 
+            // btnSave
+            // 
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSave.BackColor = Color.FromArgb(43, 121, 223);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(1389, 42);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(139, 39);
+            btnSave.TabIndex = 10;
+            btnSave.Text = "Add";
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -1915,7 +1933,7 @@
             label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(773, 30);
             label3.Name = "label3";
-            label3.Size = new Size(136, 18);
+            label3.Size = new Size(161, 22);
             label3.TabIndex = 6;
             label3.Text = "Reference Number";
             // 
@@ -1925,7 +1943,7 @@
             rbEtUpdating.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             rbEtUpdating.Location = new Point(102, 65);
             rbEtUpdating.Name = "rbEtUpdating";
-            rbEtUpdating.Size = new Size(89, 22);
+            rbEtUpdating.Size = new Size(103, 26);
             rbEtUpdating.TabIndex = 5;
             rbEtUpdating.TabStop = true;
             rbEtUpdating.Text = "Updating";
@@ -1937,7 +1955,7 @@
             label2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(278, 30);
             label2.Name = "label2";
-            label2.Size = new Size(134, 18);
+            label2.Size = new Size(159, 22);
             label2.TabIndex = 4;
             label2.Text = "Date Administered";
             // 
@@ -1947,7 +1965,7 @@
             rbEtNew.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             rbEtNew.Location = new Point(20, 65);
             rbEtNew.Name = "rbEtNew";
-            rbEtNew.Size = new Size(56, 22);
+            rbEtNew.Size = new Size(68, 26);
             rbEtNew.TabIndex = 3;
             rbEtNew.TabStop = true;
             rbEtNew.Text = "New";
@@ -1958,7 +1976,7 @@
             dtDateAdm.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtDateAdm.Location = new Point(278, 61);
             dtDateAdm.Name = "dtDateAdm";
-            dtDateAdm.Size = new Size(407, 25);
+            dtDateAdm.Size = new Size(407, 29);
             dtDateAdm.TabIndex = 2;
             // 
             // label1
@@ -1967,7 +1985,7 @@
             label1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(16, 30);
             label1.Name = "label1";
-            label1.Size = new Size(120, 18);
+            label1.Size = new Size(139, 22);
             label1.TabIndex = 1;
             label1.Text = "Enrollment Type";
             // 
@@ -1977,7 +1995,7 @@
             txtRefNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtRefNo.Location = new Point(773, 61);
             txtRefNo.Name = "txtRefNo";
-            txtRefNo.Size = new Size(443, 25);
+            txtRefNo.Size = new Size(443, 29);
             txtRefNo.TabIndex = 0;
             // 
             // panel1
@@ -2090,7 +2108,7 @@
             // 
             // RsbsaAddView
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.White;
@@ -2334,5 +2352,6 @@
         private TextBox textBox10;
         private Label label48;
         private FlowLayoutPanel flowLayoutPanelParcels;
+        private Button btnSave;
     }
 }

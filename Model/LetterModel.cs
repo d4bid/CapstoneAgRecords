@@ -159,6 +159,7 @@ namespace AgRecords.Model
                         letter.letterTo = reader["letterTo"].ToString();
                         letter.letterFrom = reader["letterFrom"].ToString();
                         letter.letterDate = DateTime.Parse(reader["letterDate"].ToString());
+
                     }
 
                     reader.Close();

@@ -54,5 +54,19 @@ namespace AgRecords.View
             parentPanel.Controls.Add(rsbsaView);
             rsbsaView.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RSBSAtry rsbsaTry = new RSBSAtry();
+            //rsbsaTry.FormClosed += RSBSATry_FormClosed;
+
+            rsbsaTry.TopLevel = false;
+            rsbsaTry.FormBorderStyle = FormBorderStyle.None;
+            rsbsaTry.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(rsbsaTry);
+            rsbsaTry.Show();
+        }
     }
 }

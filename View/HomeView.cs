@@ -296,6 +296,11 @@ namespace AgRecords.View
             DisableButton();
             OpenChildForm(new MainView(panelDesktop));
             lblTitle.Text = "Home";
+
+            foreach (IconButton menuButton in panelMenu.Controls.OfType<IconButton>())
+            {
+                menuButton.MouseEnter += IconButton_MouseEnter;
+            }
         }
 
         private void HomeView_Resize(object sender, EventArgs e)
@@ -315,6 +320,24 @@ namespace AgRecords.View
             else
                 this.WindowState = FormWindowState.Normal;
         }
+
+        private void IconButton_MouseEnter(object sender, EventArgs e)
+        {
+            IconButton iconButton = (IconButton)sender;
+
+            // Check if the panelMenu is in a collapsed state
+            if (panelMenu.Width <= 100) // Adjust this condition as needed
+            {
+                // Display the tooltip with the IconButton's Tag property as text
+                toolTip1.Active = true;
+                toolTip1.SetToolTip(iconButton, iconButton.Tag.ToString());
+            }
+            else
+            {
+                toolTip1.Active = false;
+            }
+        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {

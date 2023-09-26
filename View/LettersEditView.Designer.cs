@@ -47,8 +47,8 @@
             labelLetterId = new Label();
             listViewLetters = new ListView();
             groupBox3 = new GroupBox();
-            label3 = new Label();
             dateTimePicker1 = new DateTimePicker();
+            label3 = new Label();
             txtBoxDescription = new TextBox();
             label7 = new Label();
             txtBoxFrom = new TextBox();
@@ -72,7 +72,7 @@
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(135, 44);
-            btnSave.TabIndex = 31;
+            btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -89,7 +89,7 @@
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(135, 44);
-            btnCancel.TabIndex = 30;
+            btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -105,7 +105,7 @@
             btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(135, 44);
-            btnRemove.TabIndex = 29;
+            btnRemove.TabIndex = 0;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
@@ -121,7 +121,7 @@
             btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(135, 44);
-            btnBrowse.TabIndex = 28;
+            btnBrowse.TabIndex = 8;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
@@ -168,7 +168,7 @@
             txtBoxTags.Location = new Point(86, 117);
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(469, 29);
-            txtBoxTags.TabIndex = 27;
+            txtBoxTags.TabIndex = 3;
             // 
             // label2
             // 
@@ -190,7 +190,7 @@
             comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(469, 30);
-            comboBoxType.TabIndex = 25;
+            comboBoxType.TabIndex = 2;
             // 
             // txtBoxTitle
             // 
@@ -200,7 +200,7 @@
             txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
             txtBoxTitle.Size = new Size(469, 29);
-            txtBoxTitle.TabIndex = 24;
+            txtBoxTitle.TabIndex = 1;
             // 
             // label1
             // 
@@ -258,8 +258,8 @@
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(dateTimePicker1);
+            groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(txtBoxDescription);
             groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(txtBoxFrom);
@@ -273,28 +273,26 @@
             groupBox3.TabIndex = 36;
             groupBox3.TabStop = false;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Location = new Point(90, 24);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(376, 29);
+            dateTimePicker1.TabIndex = 4;
+            // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(15, 20);
+            label3.Location = new Point(15, 25);
             label3.Name = "label3";
             label3.Size = new Size(48, 22);
             label3.TabIndex = 39;
             label3.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Checked = false;
-            dateTimePicker1.Location = new Point(91, 17);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(375, 29);
-            dateTimePicker1.TabIndex = 38;
-            dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
             // 
             // txtBoxDescription
             // 
@@ -306,7 +304,7 @@
             txtBoxDescription.Multiline = true;
             txtBoxDescription.Name = "txtBoxDescription";
             txtBoxDescription.Size = new Size(447, 103);
-            txtBoxDescription.TabIndex = 37;
+            txtBoxDescription.TabIndex = 7;
             // 
             // label7
             // 
@@ -328,7 +326,7 @@
             txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
             txtBoxFrom.Name = "txtBoxFrom";
             txtBoxFrom.Size = new Size(376, 29);
-            txtBoxFrom.TabIndex = 35;
+            txtBoxFrom.TabIndex = 6;
             // 
             // label6
             // 
@@ -350,7 +348,7 @@
             txtBoxTo.Margin = new Padding(3, 4, 3, 4);
             txtBoxTo.Name = "txtBoxTo";
             txtBoxTo.Size = new Size(376, 29);
-            txtBoxTo.TabIndex = 33;
+            txtBoxTo.TabIndex = 5;
             // 
             // label5
             // 
@@ -411,12 +409,12 @@
         private ListView listViewLetters;
         private GroupBox groupBox3;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
         private TextBox txtBoxDescription;
         private Label label7;
         private TextBox txtBoxFrom;
         private Label label6;
         private TextBox txtBoxTo;
         private Label label5;
+        private DateTimePicker dateTimePicker1;
     }
 }

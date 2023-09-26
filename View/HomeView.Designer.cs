@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panelMenu = new Panel();
             btnUsers = new FontAwesome.Sharp.IconButton();
             btnActivities = new FontAwesome.Sharp.IconButton();
@@ -58,6 +59,7 @@
             lblUserName = new Label();
             lblTitle = new Label();
             panelDesktop = new Panel();
+            toolTip1 = new ToolTip(components);
             panelMenu.SuspendLayout();
             panelReportsSubMenu.SuspendLayout();
             panelCropsSubMenu.SuspendLayout();
@@ -725,5 +727,6 @@
         public FontAwesome.Sharp.IconButton btnReportsCrops;
         public FontAwesome.Sharp.IconButton btnActivities;
         public FontAwesome.Sharp.IconButton btnCertifications;
+        private ToolTip toolTip1;
     }
 }
