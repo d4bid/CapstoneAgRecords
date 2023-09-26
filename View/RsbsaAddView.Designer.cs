@@ -270,7 +270,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1540, 730);
+            panelFarmProfile.Size = new Size(1540, 0);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -281,7 +281,7 @@
             panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1540, 730);
+            panelFarmLand.Size = new Size(1540, 0);
             panelFarmLand.TabIndex = 52;
             // 
             // flowLayoutPanelParcels
@@ -415,7 +415,7 @@
             // label44
             // 
             label44.AutoSize = true;
-            label44.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label44.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label44.Location = new Point(481, 30);
             label44.Name = "label44";
             label44.Size = new Size(114, 22);
@@ -425,7 +425,7 @@
             // textBox8
             // 
             textBox8.BorderStyle = BorderStyle.FixedSingle;
-            textBox8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox8.Location = new Point(481, 61);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(405, 29);
@@ -434,7 +434,7 @@
             // label45
             // 
             label45.AutoSize = true;
-            label45.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label45.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label45.Location = new Point(20, 30);
             label45.Name = "label45";
             label45.Size = new Size(76, 22);
@@ -444,7 +444,7 @@
             // textBox9
             // 
             textBox9.BorderStyle = BorderStyle.FixedSingle;
-            textBox9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox9.Location = new Point(20, 61);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(408, 29);
@@ -471,7 +471,7 @@
             // textBox6
             // 
             textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox6.Location = new Point(50, 393);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(242, 29);
@@ -480,7 +480,7 @@
             // checkBox25
             // 
             checkBox25.AutoSize = true;
-            checkBox25.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox25.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox25.Location = new Point(16, 352);
             checkBox25.Name = "checkBox25";
             checkBox25.Size = new Size(211, 26);
@@ -491,7 +491,7 @@
             // checkBox24
             // 
             checkBox24.AutoSize = true;
-            checkBox24.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox24.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox24.Location = new Point(16, 275);
             checkBox24.Name = "checkBox24";
             checkBox24.Size = new Size(276, 48);
@@ -503,7 +503,7 @@
             // checkBox23
             // 
             checkBox23.AutoSize = true;
-            checkBox23.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox23.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox23.Location = new Point(16, 204);
             checkBox23.Name = "checkBox23";
             checkBox23.Size = new Size(286, 48);
@@ -515,7 +515,7 @@
             // checkBox27
             // 
             checkBox27.AutoSize = true;
-            checkBox27.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox27.Location = new Point(15, 139);
             checkBox27.Name = "checkBox27";
             checkBox27.Size = new Size(251, 48);
@@ -527,7 +527,7 @@
             // checkBox28
             // 
             checkBox28.AutoSize = true;
-            checkBox28.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox28.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox28.Location = new Point(16, 95);
             checkBox28.Name = "checkBox28";
             checkBox28.Size = new Size(252, 26);
@@ -538,7 +538,7 @@
             // label41
             // 
             label41.AutoSize = true;
-            label41.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label41.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label41.Location = new Point(16, 44);
             label41.Name = "label41";
             label41.Size = new Size(172, 22);
@@ -567,7 +567,7 @@
             // checkBox22
             // 
             checkBox22.AutoSize = true;
-            checkBox22.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox22.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox22.Location = new Point(16, 275);
             checkBox22.Name = "checkBox22";
             checkBox22.Size = new Size(134, 26);
@@ -578,7 +578,7 @@
             // textBox5
             // 
             textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox5.Location = new Point(49, 363);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(214, 29);
@@ -587,7 +587,7 @@
             // checkBox17
             // 
             checkBox17.AutoSize = true;
-            checkBox17.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox17.Location = new Point(15, 322);
             checkBox17.Name = "checkBox17";
             checkBox17.Size = new Size(211, 26);
@@ -598,7 +598,7 @@
             // checkBox18
             // 
             checkBox18.AutoSize = true;
-            checkBox18.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox18.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox18.Location = new Point(16, 231);
             checkBox18.Name = "checkBox18";
             checkBox18.Size = new Size(157, 26);
@@ -609,7 +609,7 @@
             // checkBox19
             // 
             checkBox19.AutoSize = true;
-            checkBox19.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox19.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox19.Location = new Point(15, 184);
             checkBox19.Name = "checkBox19";
             checkBox19.Size = new Size(102, 26);
@@ -620,7 +620,7 @@
             // checkBox20
             // 
             checkBox20.AutoSize = true;
-            checkBox20.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox20.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox20.Location = new Point(15, 139);
             checkBox20.Name = "checkBox20";
             checkBox20.Size = new Size(129, 26);
@@ -631,7 +631,7 @@
             // checkBox21
             // 
             checkBox21.AutoSize = true;
-            checkBox21.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox21.Location = new Point(16, 95);
             checkBox21.Name = "checkBox21";
             checkBox21.Size = new Size(133, 26);
@@ -642,7 +642,7 @@
             // label40
             // 
             label40.AutoSize = true;
-            label40.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label40.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label40.Location = new Point(16, 44);
             label40.Name = "label40";
             label40.Size = new Size(193, 22);
@@ -670,7 +670,7 @@
             // textBox4
             // 
             textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.Location = new Point(52, 321);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(214, 29);
@@ -679,7 +679,7 @@
             // checkBox12
             // 
             checkBox12.AutoSize = true;
-            checkBox12.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox12.Location = new Point(15, 276);
             checkBox12.Name = "checkBox12";
             checkBox12.Size = new Size(211, 26);
@@ -690,7 +690,7 @@
             // checkBox13
             // 
             checkBox13.AutoSize = true;
-            checkBox13.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox13.Location = new Point(16, 231);
             checkBox13.Name = "checkBox13";
             checkBox13.Size = new Size(119, 26);
@@ -701,7 +701,7 @@
             // checkBox14
             // 
             checkBox14.AutoSize = true;
-            checkBox14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox14.Location = new Point(15, 184);
             checkBox14.Name = "checkBox14";
             checkBox14.Size = new Size(117, 26);
@@ -712,7 +712,7 @@
             // checkBox15
             // 
             checkBox15.AutoSize = true;
-            checkBox15.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox15.Location = new Point(15, 139);
             checkBox15.Name = "checkBox15";
             checkBox15.Size = new Size(213, 26);
@@ -723,7 +723,7 @@
             // checkBox16
             // 
             checkBox16.AutoSize = true;
-            checkBox16.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox16.Location = new Point(16, 95);
             checkBox16.Name = "checkBox16";
             checkBox16.Size = new Size(169, 26);
@@ -734,7 +734,7 @@
             // label43
             // 
             label43.AutoSize = true;
-            label43.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label43.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label43.Location = new Point(16, 44);
             label43.Name = "label43";
             label43.Size = new Size(110, 22);
@@ -767,7 +767,7 @@
             // label39
             // 
             label39.AutoSize = true;
-            label39.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label39.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label39.Location = new Point(52, 432);
             label39.Name = "label39";
             label39.Size = new Size(124, 22);
@@ -777,7 +777,7 @@
             // textBox3
             // 
             textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.Location = new Point(52, 462);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(214, 29);
@@ -786,7 +786,7 @@
             // checkBox11
             // 
             checkBox11.AutoSize = true;
-            checkBox11.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox11.Location = new Point(13, 400);
             checkBox11.Name = "checkBox11";
             checkBox11.Size = new Size(91, 26);
@@ -797,7 +797,7 @@
             // label38
             // 
             label38.AutoSize = true;
-            label38.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label38.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label38.Location = new Point(52, 324);
             label38.Name = "label38";
             label38.Size = new Size(124, 22);
@@ -807,7 +807,7 @@
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(52, 354);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(214, 29);
@@ -816,7 +816,7 @@
             // checkBox10
             // 
             checkBox10.AutoSize = true;
-            checkBox10.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox10.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox10.Location = new Point(13, 292);
             checkBox10.Name = "checkBox10";
             checkBox10.Size = new Size(112, 26);
@@ -827,7 +827,7 @@
             // label37
             // 
             label37.AutoSize = true;
-            label37.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label37.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label37.Location = new Point(54, 216);
             label37.Name = "label37";
             label37.Size = new Size(124, 22);
@@ -837,7 +837,7 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(54, 246);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(214, 29);
@@ -846,7 +846,7 @@
             // checkBox9
             // 
             checkBox9.AutoSize = true;
-            checkBox9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox9.Location = new Point(15, 184);
             checkBox9.Name = "checkBox9";
             checkBox9.Size = new Size(128, 26);
@@ -857,7 +857,7 @@
             // checkBox8
             // 
             checkBox8.AutoSize = true;
-            checkBox8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox8.Location = new Point(15, 139);
             checkBox8.Name = "checkBox8";
             checkBox8.Size = new Size(70, 26);
@@ -868,7 +868,7 @@
             // checkBox7
             // 
             checkBox7.AutoSize = true;
-            checkBox7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox7.Location = new Point(16, 95);
             checkBox7.Name = "checkBox7";
             checkBox7.Size = new Size(66, 26);
@@ -879,7 +879,7 @@
             // label54
             // 
             label54.AutoSize = true;
-            label54.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label54.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label54.Location = new Point(16, 44);
             label54.Name = "label54";
             label54.Size = new Size(202, 22);
@@ -904,7 +904,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox5.Location = new Point(747, 35);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(114, 26);
@@ -915,7 +915,7 @@
             // checkBox6
             // 
             checkBox6.AutoSize = true;
-            checkBox6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox6.Location = new Point(1038, 35);
             checkBox6.Name = "checkBox6";
             checkBox6.Size = new Size(114, 26);
@@ -926,7 +926,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox4.Location = new Point(17, 35);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(90, 26);
@@ -937,7 +937,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.Location = new Point(337, 35);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(198, 26);
@@ -963,7 +963,7 @@
             // txtEcContact
             // 
             txtEcContact.BorderStyle = BorderStyle.FixedSingle;
-            txtEcContact.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEcContact.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtEcContact.Location = new Point(12, 134);
             txtEcContact.Name = "txtEcContact";
             txtEcContact.Size = new Size(443, 29);
@@ -972,7 +972,7 @@
             // label36
             // 
             label36.AutoSize = true;
-            label36.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label36.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label36.Location = new Point(14, 103);
             label36.Name = "label36";
             label36.Size = new Size(142, 22);
@@ -982,7 +982,7 @@
             // txtEcName
             // 
             txtEcName.BorderStyle = BorderStyle.FixedSingle;
-            txtEcName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEcName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtEcName.Location = new Point(14, 61);
             txtEcName.Name = "txtEcName";
             txtEcName.Size = new Size(441, 29);
@@ -991,7 +991,7 @@
             // label35
             // 
             label35.AutoSize = true;
-            label35.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label35.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label35.Location = new Point(16, 30);
             label35.Name = "label35";
             label35.Size = new Size(315, 22);
@@ -1014,7 +1014,7 @@
             // txtAss
             // 
             txtAss.BorderStyle = BorderStyle.FixedSingle;
-            txtAss.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAss.Location = new Point(163, 61);
             txtAss.Name = "txtAss";
             txtAss.Size = new Size(615, 29);
@@ -1023,7 +1023,7 @@
             // txtMemberAss
             // 
             txtMemberAss.AutoSize = true;
-            txtMemberAss.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMemberAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMemberAss.Location = new Point(16, 27);
             txtMemberAss.Name = "txtMemberAss";
             txtMemberAss.Size = new Size(429, 26);
@@ -1034,7 +1034,7 @@
             // label28
             // 
             label28.AutoSize = true;
-            label28.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label28.Location = new Point(37, 62);
             label28.Name = "label28";
             label28.Size = new Size(120, 22);
@@ -1059,7 +1059,7 @@
             // txtGovIdNum
             // 
             txtGovIdNum.BorderStyle = BorderStyle.FixedSingle;
-            txtGovIdNum.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtGovIdNum.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(436, 60);
             txtGovIdNum.Name = "txtGovIdNum";
             txtGovIdNum.Size = new Size(342, 29);
@@ -1068,7 +1068,7 @@
             // label26
             // 
             label26.AutoSize = true;
-            label26.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label26.Location = new Point(436, 27);
             label26.Name = "label26";
             label26.Size = new Size(96, 22);
@@ -1078,7 +1078,7 @@
             // txtGovIdType
             // 
             txtGovIdType.BorderStyle = BorderStyle.FixedSingle;
-            txtGovIdType.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtGovIdType.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtGovIdType.Location = new Point(204, 60);
             txtGovIdType.Name = "txtGovIdType";
             txtGovIdType.Size = new Size(214, 29);
@@ -1087,7 +1087,7 @@
             // chGovId
             // 
             chGovId.AutoSize = true;
-            chGovId.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            chGovId.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chGovId.Location = new Point(16, 27);
             chGovId.Name = "chGovId";
             chGovId.Size = new Size(192, 26);
@@ -1098,7 +1098,7 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label27.Location = new Point(16, 63);
             label27.Name = "label27";
             label27.Size = new Size(182, 22);
@@ -1121,7 +1121,7 @@
             // txtIp
             // 
             txtIp.BorderStyle = BorderStyle.FixedSingle;
-            txtIp.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIp.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtIp.Location = new Point(142, 61);
             txtIp.Name = "txtIp";
             txtIp.Size = new Size(207, 29);
@@ -1130,7 +1130,7 @@
             // chMemberIp
             // 
             chMemberIp.AutoSize = true;
-            chMemberIp.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            chMemberIp.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chMemberIp.Location = new Point(16, 27);
             chMemberIp.Name = "chMemberIp";
             chMemberIp.Size = new Size(288, 26);
@@ -1141,7 +1141,7 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label25.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label25.Location = new Point(16, 63);
             label25.Name = "label25";
             label25.Size = new Size(120, 22);
@@ -1162,7 +1162,7 @@
             groupBox15.Controls.Add(nudHouseFemale);
             groupBox15.Controls.Add(txtHouseHeadName);
             groupBox15.Controls.Add(label29);
-            groupBox15.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox15.Location = new Point(357, 442);
             groupBox15.Name = "groupBox15";
             groupBox15.Size = new Size(631, 282);
@@ -1173,7 +1173,7 @@
             // label34
             // 
             label34.AutoSize = true;
-            label34.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label34.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label34.Location = new Point(162, 135);
             label34.Name = "label34";
             label34.Size = new Size(108, 22);
@@ -1183,7 +1183,7 @@
             // txtHouseHeadRs
             // 
             txtHouseHeadRs.BorderStyle = BorderStyle.FixedSingle;
-            txtHouseHeadRs.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtHouseHeadRs.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtHouseHeadRs.Location = new Point(280, 133);
             txtHouseHeadRs.Name = "txtHouseHeadRs";
             txtHouseHeadRs.Size = new Size(288, 29);
@@ -1192,7 +1192,7 @@
             // chHouseHead
             // 
             chHouseHead.AutoSize = true;
-            chHouseHead.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            chHouseHead.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chHouseHead.Location = new Point(20, 31);
             chHouseHead.Name = "chHouseHead";
             chHouseHead.Size = new Size(165, 26);
@@ -1203,7 +1203,7 @@
             // label32
             // 
             label32.AutoSize = true;
-            label32.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label32.Location = new Point(20, 211);
             label32.Name = "label32";
             label32.Size = new Size(280, 22);
@@ -1213,7 +1213,7 @@
             // nudNoLivingHouseMem
             // 
             nudNoLivingHouseMem.BorderStyle = BorderStyle.FixedSingle;
-            nudNoLivingHouseMem.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            nudNoLivingHouseMem.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudNoLivingHouseMem.Location = new Point(21, 242);
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
             nudNoLivingHouseMem.Size = new Size(279, 29);
@@ -1222,7 +1222,7 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label31.Location = new Point(325, 211);
             label31.Name = "label31";
             label31.Size = new Size(102, 22);
@@ -1232,7 +1232,7 @@
             // nudHouseNoMale
             // 
             nudHouseNoMale.BorderStyle = BorderStyle.FixedSingle;
-            nudHouseNoMale.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            nudHouseNoMale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudHouseNoMale.Location = new Point(326, 242);
             nudHouseNoMale.Name = "nudHouseNoMale";
             nudHouseNoMale.Size = new Size(104, 29);
@@ -1241,7 +1241,7 @@
             // label30
             // 
             label30.AutoSize = true;
-            label30.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label30.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label30.Location = new Point(462, 211);
             label30.Name = "label30";
             label30.Size = new Size(122, 22);
@@ -1251,7 +1251,7 @@
             // nudHouseFemale
             // 
             nudHouseFemale.BorderStyle = BorderStyle.FixedSingle;
-            nudHouseFemale.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            nudHouseFemale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudHouseFemale.Location = new Point(464, 242);
             nudHouseFemale.Name = "nudHouseFemale";
             nudHouseFemale.Size = new Size(120, 29);
@@ -1260,7 +1260,7 @@
             // txtHouseHeadName
             // 
             txtHouseHeadName.BorderStyle = BorderStyle.FixedSingle;
-            txtHouseHeadName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtHouseHeadName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtHouseHeadName.Location = new Point(280, 61);
             txtHouseHeadName.Name = "txtHouseHeadName";
             txtHouseHeadName.Size = new Size(288, 29);
@@ -1269,7 +1269,7 @@
             // label29
             // 
             label29.AutoSize = true;
-            label29.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label29.Location = new Point(20, 62);
             label29.Name = "label29";
             label29.Size = new Size(250, 22);
@@ -1291,7 +1291,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox3.Location = new Point(20, 62);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(157, 26);
@@ -1302,7 +1302,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox2.Location = new Point(20, 29);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(202, 26);
@@ -1325,7 +1325,7 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label24.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label24.Location = new Point(14, 30);
             label24.Name = "label24";
             label24.Size = new Size(215, 22);
@@ -1334,7 +1334,7 @@
             // 
             // cbHighestEduc
             // 
-            cbHighestEduc.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            cbHighestEduc.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             cbHighestEduc.FormattingEnabled = true;
             cbHighestEduc.Items.AddRange(new object[] { "Pre-school", "Elementary", "High School (non K-12)", "Junior High School (K-12)", "Senior High School (K-12)", "College", "Vocational", "Post-graduate", "None" });
             cbHighestEduc.Location = new Point(14, 60);
@@ -1357,7 +1357,7 @@
             // txtMaidenMother
             // 
             txtMaidenMother.BorderStyle = BorderStyle.FixedSingle;
-            txtMaidenMother.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaidenMother.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaidenMother.Location = new Point(14, 61);
             txtMaidenMother.Name = "txtMaidenMother";
             txtMaidenMother.Size = new Size(302, 29);
@@ -1366,7 +1366,7 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label23.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label23.Location = new Point(16, 30);
             label23.Name = "label23";
             label23.Size = new Size(196, 22);
@@ -1388,7 +1388,7 @@
             // label33
             // 
             label33.AutoSize = true;
-            label33.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label33.Location = new Point(16, 30);
             label33.Name = "label33";
             label33.Size = new Size(73, 22);
@@ -1430,7 +1430,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label14.Location = new Point(16, 102);
             label14.Name = "label14";
             label14.Size = new Size(223, 22);
@@ -1440,7 +1440,7 @@
             // txtSpouseName
             // 
             txtSpouseName.BorderStyle = BorderStyle.FixedSingle;
-            txtSpouseName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSpouseName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtSpouseName.Location = new Point(16, 133);
             txtSpouseName.Name = "txtSpouseName";
             txtSpouseName.Size = new Size(300, 29);
@@ -1449,7 +1449,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label22.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label22.Location = new Point(16, 30);
             label22.Name = "label22";
             label22.Size = new Size(99, 22);
@@ -1474,7 +1474,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(227, 30);
             label13.Name = "label13";
             label13.Size = new Size(147, 22);
@@ -1484,7 +1484,7 @@
             // txtLandNo
             // 
             txtLandNo.BorderStyle = BorderStyle.FixedSingle;
-            txtLandNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLandNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtLandNo.Location = new Point(227, 59);
             txtLandNo.Name = "txtLandNo";
             txtLandNo.Size = new Size(218, 29);
@@ -1493,7 +1493,7 @@
             // txtMobNo
             // 
             txtMobNo.BorderStyle = BorderStyle.FixedSingle;
-            txtMobNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMobNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMobNo.Location = new Point(16, 60);
             txtMobNo.Name = "txtMobNo";
             txtMobNo.Size = new Size(188, 29);
@@ -1502,7 +1502,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label11.Location = new Point(16, 30);
             label11.Name = "label11";
             label11.Size = new Size(133, 22);
@@ -1529,7 +1529,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(621, 30);
             label10.Name = "label10";
             label10.Size = new Size(73, 22);
@@ -1539,7 +1539,7 @@
             // txtBirthCountry
             // 
             txtBirthCountry.BorderStyle = BorderStyle.FixedSingle;
-            txtBirthCountry.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBirthCountry.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthCountry.Location = new Point(621, 61);
             txtBirthCountry.Name = "txtBirthCountry";
             txtBirthCountry.Size = new Size(365, 29);
@@ -1548,7 +1548,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(304, 30);
             label8.Name = "label8";
             label8.Size = new Size(79, 22);
@@ -1558,7 +1558,7 @@
             // txtBirthProvince
             // 
             txtBirthProvince.BorderStyle = BorderStyle.FixedSingle;
-            txtBirthProvince.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBirthProvince.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthProvince.Location = new Point(304, 61);
             txtBirthProvince.Name = "txtBirthProvince";
             txtBirthProvince.Size = new Size(300, 29);
@@ -1567,7 +1567,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label15.Location = new Point(20, 30);
             label15.Name = "label15";
             label15.Size = new Size(106, 22);
@@ -1577,7 +1577,7 @@
             // txtBirthMunicipality
             // 
             txtBirthMunicipality.BorderStyle = BorderStyle.FixedSingle;
-            txtBirthMunicipality.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBirthMunicipality.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthMunicipality.Location = new Point(20, 61);
             txtBirthMunicipality.Name = "txtBirthMunicipality";
             txtBirthMunicipality.Size = new Size(267, 29);
@@ -1597,7 +1597,7 @@
             // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpBirthDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpBirthDate.Location = new Point(14, 61);
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(302, 29);
@@ -1606,7 +1606,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(16, 30);
             label12.Name = "label12";
             label12.Size = new Size(109, 22);
@@ -1628,7 +1628,7 @@
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Male", "Female" });
             comboBox1.Location = new Point(15, 59);
@@ -1639,7 +1639,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label21.Location = new Point(15, 29);
             label21.Name = "label21";
             label21.Size = new Size(40, 22);
@@ -1672,7 +1672,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(1597, 30);
             label9.Name = "label9";
             label9.Size = new Size(65, 22);
@@ -1682,7 +1682,7 @@
             // txtAddRegion
             // 
             txtAddRegion.BorderStyle = BorderStyle.FixedSingle;
-            txtAddRegion.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAddRegion.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddRegion.Location = new Point(1597, 61);
             txtAddRegion.Name = "txtAddRegion";
             txtAddRegion.Size = new Size(177, 29);
@@ -1692,7 +1692,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label16.Location = new Point(1283, 29);
             label16.Name = "label16";
             label16.Size = new Size(79, 22);
@@ -1702,7 +1702,7 @@
             // txtAddProvince
             // 
             txtAddProvince.BorderStyle = BorderStyle.FixedSingle;
-            txtAddProvince.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAddProvince.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddProvince.Location = new Point(1283, 60);
             txtAddProvince.Name = "txtAddProvince";
             txtAddProvince.Size = new Size(300, 29);
@@ -1712,7 +1712,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label17.Location = new Point(966, 30);
             label17.Name = "label17";
             label17.Size = new Size(106, 22);
@@ -1722,7 +1722,7 @@
             // txtAddMunicipality
             // 
             txtAddMunicipality.BorderStyle = BorderStyle.FixedSingle;
-            txtAddMunicipality.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAddMunicipality.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddMunicipality.Location = new Point(966, 61);
             txtAddMunicipality.Name = "txtAddMunicipality";
             txtAddMunicipality.Size = new Size(300, 29);
@@ -1732,7 +1732,7 @@
             // cbAddBrgy
             // 
             cbAddBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbAddBrgy.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            cbAddBrgy.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             cbAddBrgy.Location = new Point(649, 60);
@@ -1743,7 +1743,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label18.Location = new Point(649, 30);
             label18.Name = "label18";
             label18.Size = new Size(86, 22);
@@ -1753,7 +1753,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label19.Location = new Point(332, 30);
             label19.Name = "label19";
             label19.Size = new Size(172, 22);
@@ -1763,7 +1763,7 @@
             // txtAddStreet
             // 
             txtAddStreet.BorderStyle = BorderStyle.FixedSingle;
-            txtAddStreet.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAddStreet.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddStreet.Location = new Point(332, 61);
             txtAddStreet.Name = "txtAddStreet";
             txtAddStreet.Size = new Size(300, 29);
@@ -1772,7 +1772,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label20.Location = new Point(16, 30);
             label20.Name = "label20";
             label20.Size = new Size(227, 22);
@@ -1782,7 +1782,7 @@
             // txtAddPurok
             // 
             txtAddPurok.BorderStyle = BorderStyle.FixedSingle;
-            txtAddPurok.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAddPurok.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddPurok.Location = new Point(16, 60);
             txtAddPurok.Name = "txtAddPurok";
             txtAddPurok.Size = new Size(300, 29);
@@ -1810,7 +1810,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(966, 30);
             label7.Name = "label7";
             label7.Size = new Size(141, 22);
@@ -1820,7 +1820,7 @@
             // txtExtname
             // 
             txtExtname.BorderStyle = BorderStyle.FixedSingle;
-            txtExtname.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtExtname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtExtname.Location = new Point(966, 61);
             txtExtname.Name = "txtExtname";
             txtExtname.Size = new Size(151, 29);
@@ -1829,7 +1829,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(649, 30);
             label6.Name = "label6";
             label6.Size = new Size(117, 22);
@@ -1839,7 +1839,7 @@
             // txtMiddlename
             // 
             txtMiddlename.BorderStyle = BorderStyle.FixedSingle;
-            txtMiddlename.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMiddlename.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMiddlename.Location = new Point(649, 61);
             txtMiddlename.Name = "txtMiddlename";
             txtMiddlename.Size = new Size(300, 29);
@@ -1848,7 +1848,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(332, 30);
             label5.Name = "label5";
             label5.Size = new Size(98, 22);
@@ -1858,7 +1858,7 @@
             // txtFirstname
             // 
             txtFirstname.BorderStyle = BorderStyle.FixedSingle;
-            txtFirstname.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFirstname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtFirstname.Location = new Point(332, 61);
             txtFirstname.Name = "txtFirstname";
             txtFirstname.Size = new Size(300, 29);
@@ -1867,7 +1867,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(16, 30);
             label4.Name = "label4";
             label4.Size = new Size(83, 22);
@@ -1877,7 +1877,7 @@
             // txtSurname
             // 
             txtSurname.BorderStyle = BorderStyle.FixedSingle;
-            txtSurname.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSurname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtSurname.Location = new Point(16, 61);
             txtSurname.Name = "txtSurname";
             txtSurname.Size = new Size(300, 29);
@@ -1930,7 +1930,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(773, 30);
             label3.Name = "label3";
             label3.Size = new Size(161, 22);
@@ -1940,7 +1940,7 @@
             // rbEtUpdating
             // 
             rbEtUpdating.AutoSize = true;
-            rbEtUpdating.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEtUpdating.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             rbEtUpdating.Location = new Point(102, 65);
             rbEtUpdating.Name = "rbEtUpdating";
             rbEtUpdating.Size = new Size(103, 26);
@@ -1952,7 +1952,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(278, 30);
             label2.Name = "label2";
             label2.Size = new Size(159, 22);
@@ -1962,7 +1962,7 @@
             // rbEtNew
             // 
             rbEtNew.AutoSize = true;
-            rbEtNew.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEtNew.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             rbEtNew.Location = new Point(20, 65);
             rbEtNew.Name = "rbEtNew";
             rbEtNew.Size = new Size(68, 26);
@@ -1973,7 +1973,7 @@
             // 
             // dtDateAdm
             // 
-            dtDateAdm.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtDateAdm.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtDateAdm.Location = new Point(278, 61);
             dtDateAdm.Name = "dtDateAdm";
             dtDateAdm.Size = new Size(407, 29);
@@ -1982,7 +1982,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(16, 30);
             label1.Name = "label1";
             label1.Size = new Size(139, 22);
@@ -1992,7 +1992,7 @@
             // txtRefNo
             // 
             txtRefNo.BorderStyle = BorderStyle.FixedSingle;
-            txtRefNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRefNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtRefNo.Location = new Point(773, 61);
             txtRefNo.Name = "txtRefNo";
             txtRefNo.Size = new Size(443, 29);
