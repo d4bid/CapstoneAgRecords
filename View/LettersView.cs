@@ -16,7 +16,7 @@ namespace AgRecords.View
     {
         private LetterController letterController;
         private Panel parentPanel;
-
+        private string type = "";
 
         public LettersView(Control parentControl)
         {
@@ -58,8 +58,12 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
+            comboBoxSearchCategory.SelectedIndex = 0;
+            comboBoxFilterType.SelectedIndex = 0;
+
             DataTable letterTable = letterController.LoadLetterView();
             dgvLetters.DataSource = letterTable;
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -104,6 +108,40 @@ namespace AgRecords.View
                     parentPanel.Controls.Add(lettersEditView);
                     lettersEditView.Show();
                 }
+            }
+        }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            getType(comboBoxFilterType);
+            DataTable dt = letterController.SearchLetter(txtBoxSearch.Text, comboBoxSearchCategory.Text, type);
+            dgvLetters.DataSource = dt;
+        }
+
+        private void comboBoxSearchFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            getType(comboBoxFilterType);
+            DataTable dt = letterController.SearchLetter(txtBoxSearch.Text, comboBoxSearchCategory.Text, type);
+            dgvLetters.DataSource = dt;
+        }
+
+        private void comboBoxFilterType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getType(comboBoxFilterType);
+            DataTable dt = letterController.SearchLetter(txtBoxSearch.Text, comboBoxSearchCategory.Text, type);
+            dgvLetters.DataSource = dt;
+        }
+
+        public string getType(ComboBox comboBox)
+        {
+            type = comboBox.Text;
+            if (type == "All")
+            {
+                return type = "";
+            }
+            else
+            {
+                return type;
             }
         }
     }

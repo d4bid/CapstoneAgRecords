@@ -32,7 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnAdd = new Button();
             panel1 = new Panel();
-            comboBox1 = new ComboBox();
+            label1 = new Label();
+            comboBoxFilterType = new ComboBox();
+            comboBoxSearchCategory = new ComboBox();
             panel2 = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtBoxSearch = new TextBox();
@@ -49,12 +51,11 @@
             btnAdd.BackColor = Color.FromArgb(43, 121, 223);
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(987, 27);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Location = new Point(864, 20);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(139, 39);
+            btnAdd.Size = new Size(122, 29);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
@@ -63,34 +64,63 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(comboBoxFilterType);
+            panel1.Controls.Add(comboBoxSearchCategory);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnAdd);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(0, 0, 0, 11);
-            panel1.Size = new Size(1139, 91);
+            panel1.Padding = new Padding(0, 0, 0, 8);
+            panel1.Size = new Size(997, 68);
             panel1.TabIndex = 21;
             // 
-            // comboBox1
+            // label1
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(382, 31);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(170, 30);
-            comboBox1.TabIndex = 0;
+            label1.AutoSize = true;
+            label1.Location = new Point(518, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(31, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Type";
+            // 
+            // comboBoxFilterType
+            // 
+            comboBoxFilterType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFilterType.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFilterType.FormattingEnabled = true;
+            comboBoxFilterType.Items.AddRange(new object[] { "All", "Incoming", "Outgoing", "Internal" });
+            comboBoxFilterType.Location = new Point(562, 24);
+            comboBoxFilterType.Margin = new Padding(3, 2, 3, 2);
+            comboBoxFilterType.Name = "comboBoxFilterType";
+            comboBoxFilterType.Size = new Size(149, 25);
+            comboBoxFilterType.TabIndex = 3;
+            comboBoxFilterType.SelectedIndexChanged += comboBoxFilterType_SelectedIndexChanged;
+            // 
+            // comboBoxSearchCategory
+            // 
+            comboBoxSearchCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxSearchCategory.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxSearchCategory.FormattingEnabled = true;
+            comboBoxSearchCategory.Items.AddRange(new object[] { "All", "ID", "Title", "Receiver", "Sender", "Date Received" });
+            comboBoxSearchCategory.Location = new Point(325, 24);
+            comboBoxSearchCategory.Margin = new Padding(3, 2, 3, 2);
+            comboBoxSearchCategory.Name = "comboBoxSearchCategory";
+            comboBoxSearchCategory.Size = new Size(149, 25);
+            comboBoxSearchCategory.TabIndex = 0;
+            comboBoxSearchCategory.SelectedValueChanged += comboBoxSearchFilter_SelectedValueChanged;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(iconPictureBox1);
             panel2.Controls.Add(txtBoxSearch);
-            panel2.Location = new Point(22, 31);
+            panel2.Location = new Point(19, 23);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(342, 30);
+            panel2.Size = new Size(300, 23);
             panel2.TabIndex = 2;
             // 
             // iconPictureBox1
@@ -100,10 +130,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 25;
+            iconPictureBox1.IconSize = 19;
             iconPictureBox1.Location = new Point(0, 2);
+            iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(25, 25);
+            iconPictureBox1.Size = new Size(22, 19);
             iconPictureBox1.TabIndex = 3;
             iconPictureBox1.TabStop = false;
             // 
@@ -111,11 +142,13 @@
             // 
             txtBoxSearch.BorderStyle = BorderStyle.None;
             txtBoxSearch.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxSearch.Location = new Point(27, 4);
+            txtBoxSearch.Location = new Point(24, 3);
+            txtBoxSearch.Margin = new Padding(3, 2, 3, 2);
             txtBoxSearch.Name = "txtBoxSearch";
             txtBoxSearch.PlaceholderText = "Search";
-            txtBoxSearch.Size = new Size(314, 22);
+            txtBoxSearch.Size = new Size(275, 18);
             txtBoxSearch.TabIndex = 0;
+            txtBoxSearch.TextChanged += txtBoxSearch_TextChanged;
             // 
             // dgvLetters
             // 
@@ -128,7 +161,7 @@
             dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
@@ -145,30 +178,31 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvLetters.DefaultCellStyle = dataGridViewCellStyle2;
             dgvLetters.GridColor = Color.FromArgb(239, 239, 239);
-            dgvLetters.Location = new Point(0, 97);
+            dgvLetters.Location = new Point(0, 73);
+            dgvLetters.Margin = new Padding(3, 2, 3, 2);
             dgvLetters.Name = "dgvLetters";
             dgvLetters.ReadOnly = true;
             dgvLetters.RowHeadersVisible = false;
             dgvLetters.RowHeadersWidth = 51;
             dgvLetters.RowTemplate.Height = 40;
             dgvLetters.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLetters.Size = new Size(1139, 520);
+            dgvLetters.Size = new Size(997, 390);
             dgvLetters.TabIndex = 22;
             dgvLetters.CellDoubleClick += dgvLetters_CellDoubleClick;
             // 
             // LettersView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
-            ClientSize = new Size(1139, 619);
+            ClientSize = new Size(997, 464);
             Controls.Add(dgvLetters);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "LettersView";
             Text = "LettersView";
             Load += LettersView_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
@@ -183,6 +217,8 @@
         private Panel panel2;
         private TextBox txtBoxSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxSearchCategory;
+        private ComboBox comboBoxFilterType;
+        private Label label1;
     }
 }

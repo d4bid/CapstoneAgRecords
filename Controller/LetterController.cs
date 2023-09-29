@@ -327,5 +327,40 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable SearchLetter(string searchText, string categoryText, string letterType)
+        {
+            DataTable dt = new DataTable();
+            if (categoryText == "All")
+            {
+                dt = letterModel.SearchLetterAll(searchText, letterType);
+            }
+            else if (categoryText == "ID")
+            {
+                dt = letterModel.SearchLetterID(searchText, letterType);
+            }
+            else if (categoryText == "Title")
+            {
+                dt = letterModel.SearchLetterTitle(searchText, letterType);
+            }
+            else if (categoryText == "Type")
+            {
+                dt = letterModel.SearchLetterType(searchText, letterType);
+            }
+            else if (categoryText == "Receiver")
+            {
+                dt = letterModel.SearchLetterReceiver(searchText, letterType);
+            }
+            else if (categoryText == "Sender")
+            {
+                dt = letterModel.SearchLetterSender(searchText, letterType);
+            }
+            else if (categoryText == "Date Received")
+            {
+                dt = letterModel.SearchLetterDateReceived(searchText, letterType);
+            }
+
+            return dt;
+        }
+
     }
 }

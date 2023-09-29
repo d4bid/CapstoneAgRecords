@@ -300,5 +300,172 @@ namespace AgRecords.Model
             }
         }
 
+        //FOR SEARCHIIIIIIIING
+
+        //Search to all columns
+        public DataTable SearchLetterAll(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterAll(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+        //Search by categories
+        public DataTable SearchLetterID(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterID(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable SearchLetterTitle(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterTitle(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable SearchLetterType(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterType(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable SearchLetterReceiver(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterReceiver(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable SearchLetterSender(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterSender(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable SearchLetterDateReceived(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterDateReceived(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
+
+
     }
 }

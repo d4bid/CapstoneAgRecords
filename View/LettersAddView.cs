@@ -18,11 +18,8 @@ namespace AgRecords.View
         private LetterController letterController;
         private List<TagItem> tagItems = new List<TagItem>();
         private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
-
         private string fullName = HomeView.Instance.fullName.Text;
-
         public event EventHandler FormClosed;
-
 
         public LettersAddView()
         {
