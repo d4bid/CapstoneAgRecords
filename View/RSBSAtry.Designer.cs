@@ -28,32 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
             SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.BackColor = Color.Transparent;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Location = new Point(449, 190);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7049608F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 89.29504F));
-            tableLayoutPanel1.Size = new Size(642, 383);
-            tableLayoutPanel1.TabIndex = 0;
             // 
             // RSBSAtry
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackgroundImage = Properties.Resources.RSBSA_Page_1;
+            BackgroundImage = Properties.Resources.RSBSA1;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1540, 1055);
-            Controls.Add(tableLayoutPanel1);
+            ClientSize = new Size(702, 652);
             Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "RSBSAtry";
@@ -63,7 +47,5 @@
         }
 
         #endregion
-
-        private TableLayoutPanel tableLayoutPanel1;
     }
 }
