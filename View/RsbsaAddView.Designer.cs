@@ -270,7 +270,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1540, 0);
+            panelFarmProfile.Size = new Size(1540, 730);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -281,7 +281,7 @@
             panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1540, 0);
+            panelFarmLand.Size = new Size(1540, 730);
             panelFarmLand.TabIndex = 52;
             // 
             // flowLayoutPanelParcels
@@ -428,7 +428,7 @@
             textBox8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox8.Location = new Point(481, 61);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(405, 29);
+            textBox8.Size = new Size(405, 28);
             textBox8.TabIndex = 9;
             // 
             // label45
@@ -437,7 +437,7 @@
             label45.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label45.Location = new Point(20, 30);
             label45.Name = "label45";
-            label45.Size = new Size(76, 22);
+            label45.Size = new Size(75, 22);
             label45.TabIndex = 8;
             label45.Text = "Farming";
             // 
@@ -447,7 +447,7 @@
             textBox9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox9.Location = new Point(20, 61);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(408, 29);
+            textBox9.Size = new Size(408, 28);
             textBox9.TabIndex = 7;
             // 
             // groupBox20
@@ -474,7 +474,7 @@
             textBox6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox6.Location = new Point(50, 393);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(242, 29);
+            textBox6.Size = new Size(242, 28);
             textBox6.TabIndex = 48;
             // 
             // checkBox25
@@ -483,7 +483,7 @@
             checkBox25.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox25.Location = new Point(16, 352);
             checkBox25.Name = "checkBox25";
-            checkBox25.Size = new Size(211, 26);
+            checkBox25.Size = new Size(215, 26);
             checkBox25.TabIndex = 47;
             checkBox25.Text = "Others, please specify:";
             checkBox25.UseVisualStyleBackColor = true;
@@ -494,7 +494,7 @@
             checkBox24.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox24.Location = new Point(16, 275);
             checkBox24.Name = "checkBox24";
-            checkBox24.Size = new Size(276, 48);
+            checkBox24.Size = new Size(278, 48);
             checkBox24.TabIndex = 39;
             checkBox24.Text = "Participated in any agricultural \nactivity/program";
             checkBox24.TextAlign = ContentAlignment.TopLeft;
@@ -506,7 +506,7 @@
             checkBox23.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox23.Location = new Point(16, 204);
             checkBox23.Name = "checkBox23";
-            checkBox23.Size = new Size(286, 48);
+            checkBox23.Size = new Size(280, 48);
             checkBox23.TabIndex = 38;
             checkBox23.Text = "Attending/Attended non-formal \nagrifishery related course";
             checkBox23.TextAlign = ContentAlignment.TopLeft;
@@ -518,7 +518,7 @@
             checkBox27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox27.Location = new Point(15, 139);
             checkBox27.Name = "checkBox27";
-            checkBox27.Size = new Size(251, 48);
+            checkBox27.Size = new Size(244, 48);
             checkBox27.TabIndex = 37;
             checkBox27.Text = "Attending/Attended formal \nagrifishery related course";
             checkBox27.TextAlign = ContentAlignment.TopLeft;
@@ -541,7 +541,7 @@
             label41.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label41.Location = new Point(16, 44);
             label41.Name = "label41";
-            label41.Size = new Size(172, 22);
+            label41.Size = new Size(171, 22);
             label41.TabIndex = 13;
             label41.Text = "Type of Involvement";
             // 
@@ -570,7 +570,7 @@
             checkBox22.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox22.Location = new Point(16, 275);
             checkBox22.Name = "checkBox22";
-            checkBox22.Size = new Size(134, 26);
+            checkBox22.Size = new Size(137, 26);
             checkBox22.TabIndex = 47;
             checkBox22.Text = "Fish Vending";
             checkBox22.UseVisualStyleBackColor = true;
@@ -581,7 +581,7 @@
             textBox5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox5.Location = new Point(49, 363);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 29);
+            textBox5.Size = new Size(214, 28);
             textBox5.TabIndex = 46;
             // 
             // checkBox17
@@ -590,7 +590,7 @@
             checkBox17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox17.Location = new Point(15, 322);
             checkBox17.Name = "checkBox17";
-            checkBox17.Size = new Size(211, 26);
+            checkBox17.Size = new Size(215, 26);
             checkBox17.TabIndex = 45;
             checkBox17.Text = "Others, please specify:";
             checkBox17.UseVisualStyleBackColor = true;
@@ -601,7 +601,7 @@
             checkBox18.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox18.Location = new Point(16, 231);
             checkBox18.Name = "checkBox18";
-            checkBox18.Size = new Size(157, 26);
+            checkBox18.Size = new Size(160, 26);
             checkBox18.TabIndex = 42;
             checkBox18.Text = "Fish Processing";
             checkBox18.UseVisualStyleBackColor = true;
@@ -612,7 +612,7 @@
             checkBox19.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox19.Location = new Point(15, 184);
             checkBox19.Name = "checkBox19";
-            checkBox19.Size = new Size(102, 26);
+            checkBox19.Size = new Size(104, 26);
             checkBox19.TabIndex = 38;
             checkBox19.Text = "Gleaning";
             checkBox19.UseVisualStyleBackColor = true;
@@ -623,7 +623,7 @@
             checkBox20.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox20.Location = new Point(15, 139);
             checkBox20.Name = "checkBox20";
-            checkBox20.Size = new Size(129, 26);
+            checkBox20.Size = new Size(128, 26);
             checkBox20.TabIndex = 37;
             checkBox20.Text = "Aquaculture";
             checkBox20.UseVisualStyleBackColor = true;
@@ -634,7 +634,7 @@
             checkBox21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox21.Location = new Point(16, 95);
             checkBox21.Name = "checkBox21";
-            checkBox21.Size = new Size(133, 26);
+            checkBox21.Size = new Size(135, 26);
             checkBox21.TabIndex = 36;
             checkBox21.Text = "Fish Capture";
             checkBox21.UseVisualStyleBackColor = true;
@@ -645,7 +645,7 @@
             label40.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label40.Location = new Point(16, 44);
             label40.Name = "label40";
-            label40.Size = new Size(193, 22);
+            label40.Size = new Size(196, 22);
             label40.TabIndex = 13;
             label40.Text = "Type of Fishing Activity";
             // 
@@ -673,7 +673,7 @@
             textBox4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.Location = new Point(52, 321);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 29);
+            textBox4.Size = new Size(214, 28);
             textBox4.TabIndex = 46;
             // 
             // checkBox12
@@ -682,7 +682,7 @@
             checkBox12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox12.Location = new Point(15, 276);
             checkBox12.Name = "checkBox12";
-            checkBox12.Size = new Size(211, 26);
+            checkBox12.Size = new Size(215, 26);
             checkBox12.TabIndex = 45;
             checkBox12.Text = "Others, please specify:";
             checkBox12.UseVisualStyleBackColor = true;
@@ -693,7 +693,7 @@
             checkBox13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox13.Location = new Point(16, 231);
             checkBox13.Name = "checkBox13";
-            checkBox13.Size = new Size(119, 26);
+            checkBox13.Size = new Size(118, 26);
             checkBox13.TabIndex = 42;
             checkBox13.Text = "Harvesting";
             checkBox13.UseVisualStyleBackColor = true;
@@ -704,7 +704,7 @@
             checkBox14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox14.Location = new Point(15, 184);
             checkBox14.Name = "checkBox14";
-            checkBox14.Size = new Size(117, 26);
+            checkBox14.Size = new Size(116, 26);
             checkBox14.TabIndex = 38;
             checkBox14.Text = "Cultivation";
             checkBox14.UseVisualStyleBackColor = true;
@@ -715,7 +715,7 @@
             checkBox15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox15.Location = new Point(15, 139);
             checkBox15.Name = "checkBox15";
-            checkBox15.Size = new Size(213, 26);
+            checkBox15.Size = new Size(212, 26);
             checkBox15.TabIndex = 37;
             checkBox15.Text = "Planting/Transplanting";
             checkBox15.UseVisualStyleBackColor = true;
@@ -726,7 +726,7 @@
             checkBox16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox16.Location = new Point(16, 95);
             checkBox16.Name = "checkBox16";
-            checkBox16.Size = new Size(169, 26);
+            checkBox16.Size = new Size(170, 26);
             checkBox16.TabIndex = 36;
             checkBox16.Text = "Land Preparation";
             checkBox16.UseVisualStyleBackColor = true;
@@ -737,7 +737,7 @@
             label43.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label43.Location = new Point(16, 44);
             label43.Name = "label43";
-            label43.Size = new Size(110, 22);
+            label43.Size = new Size(113, 22);
             label43.TabIndex = 13;
             label43.Text = "Kind of Work";
             // 
@@ -780,7 +780,7 @@
             textBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.Location = new Point(52, 462);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 29);
+            textBox3.Size = new Size(214, 28);
             textBox3.TabIndex = 46;
             // 
             // checkBox11
@@ -789,7 +789,7 @@
             checkBox11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox11.Location = new Point(13, 400);
             checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(91, 26);
+            checkBox11.Size = new Size(93, 26);
             checkBox11.TabIndex = 45;
             checkBox11.Text = "Poultry,";
             checkBox11.UseVisualStyleBackColor = true;
@@ -810,7 +810,7 @@
             textBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(52, 354);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 29);
+            textBox2.Size = new Size(214, 28);
             textBox2.TabIndex = 43;
             // 
             // checkBox10
@@ -840,7 +840,7 @@
             textBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(54, 246);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 29);
+            textBox1.Size = new Size(214, 28);
             textBox1.TabIndex = 40;
             // 
             // checkBox9
@@ -849,7 +849,7 @@
             checkBox9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox9.Location = new Point(15, 184);
             checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(128, 26);
+            checkBox9.Size = new Size(131, 26);
             checkBox9.TabIndex = 38;
             checkBox9.Text = "Other crops,";
             checkBox9.UseVisualStyleBackColor = true;
@@ -860,7 +860,7 @@
             checkBox8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox8.Location = new Point(15, 139);
             checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(70, 26);
+            checkBox8.Size = new Size(71, 26);
             checkBox8.TabIndex = 37;
             checkBox8.Text = "Corn";
             checkBox8.UseVisualStyleBackColor = true;
@@ -871,7 +871,7 @@
             checkBox7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox7.Location = new Point(16, 95);
             checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(66, 26);
+            checkBox7.Size = new Size(68, 26);
             checkBox7.TabIndex = 36;
             checkBox7.Text = "Rice";
             checkBox7.UseVisualStyleBackColor = true;
@@ -882,7 +882,7 @@
             label54.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label54.Location = new Point(16, 44);
             label54.Name = "label54";
-            label54.Size = new Size(202, 22);
+            label54.Size = new Size(203, 22);
             label54.TabIndex = 13;
             label54.Text = "Type of Farming Activity";
             // 
@@ -907,7 +907,7 @@
             checkBox5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox5.Location = new Point(747, 35);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(114, 26);
+            checkBox5.Size = new Size(116, 26);
             checkBox5.TabIndex = 37;
             checkBox5.Text = "FisherFolk";
             checkBox5.UseVisualStyleBackColor = true;
@@ -918,7 +918,7 @@
             checkBox6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox6.Location = new Point(1038, 35);
             checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(114, 26);
+            checkBox6.Size = new Size(116, 26);
             checkBox6.TabIndex = 36;
             checkBox6.Text = "Agri Youth";
             checkBox6.UseVisualStyleBackColor = true;
@@ -929,7 +929,7 @@
             checkBox4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox4.Location = new Point(17, 35);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(90, 26);
+            checkBox4.Size = new Size(89, 26);
             checkBox4.TabIndex = 35;
             checkBox4.Text = "Farmer";
             checkBox4.UseVisualStyleBackColor = true;
@@ -940,7 +940,7 @@
             checkBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.Location = new Point(337, 35);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(198, 26);
+            checkBox1.Size = new Size(194, 26);
             checkBox1.TabIndex = 34;
             checkBox1.Text = "Farmworker/Laborer";
             checkBox1.UseVisualStyleBackColor = true;
@@ -966,7 +966,7 @@
             txtEcContact.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtEcContact.Location = new Point(12, 134);
             txtEcContact.Name = "txtEcContact";
-            txtEcContact.Size = new Size(443, 29);
+            txtEcContact.Size = new Size(443, 28);
             txtEcContact.TabIndex = 29;
             // 
             // label36
@@ -975,7 +975,7 @@
             label36.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label36.Location = new Point(14, 103);
             label36.Name = "label36";
-            label36.Size = new Size(142, 22);
+            label36.Size = new Size(140, 22);
             label36.TabIndex = 28;
             label36.Text = "Contact Number";
             // 
@@ -985,7 +985,7 @@
             txtEcName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtEcName.Location = new Point(14, 61);
             txtEcName.Name = "txtEcName";
-            txtEcName.Size = new Size(441, 29);
+            txtEcName.Size = new Size(441, 28);
             txtEcName.TabIndex = 27;
             // 
             // label35
@@ -994,7 +994,7 @@
             label35.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label35.Location = new Point(16, 30);
             label35.Name = "label35";
-            label35.Size = new Size(315, 22);
+            label35.Size = new Size(319, 22);
             label35.TabIndex = 6;
             label35.Text = "Person to Notify in Case of Emergency";
             // 
@@ -1017,7 +1017,7 @@
             txtAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAss.Location = new Point(163, 61);
             txtAss.Name = "txtAss";
-            txtAss.Size = new Size(615, 29);
+            txtAss.Size = new Size(615, 28);
             txtAss.TabIndex = 14;
             // 
             // txtMemberAss
@@ -1026,7 +1026,7 @@
             txtMemberAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMemberAss.Location = new Point(16, 27);
             txtMemberAss.Name = "txtMemberAss";
-            txtMemberAss.Size = new Size(429, 26);
+            txtMemberAss.Size = new Size(425, 26);
             txtMemberAss.TabIndex = 33;
             txtMemberAss.Text = "Member of any Farmers Association/ Cooperative";
             txtMemberAss.UseVisualStyleBackColor = true;
@@ -1037,7 +1037,7 @@
             label28.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label28.Location = new Point(37, 62);
             label28.Name = "label28";
-            label28.Size = new Size(120, 22);
+            label28.Size = new Size(121, 22);
             label28.TabIndex = 33;
             label28.Text = "If yes, Specify";
             // 
@@ -1062,7 +1062,7 @@
             txtGovIdNum.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(436, 60);
             txtGovIdNum.Name = "txtGovIdNum";
-            txtGovIdNum.Size = new Size(342, 29);
+            txtGovIdNum.Size = new Size(342, 28);
             txtGovIdNum.TabIndex = 34;
             // 
             // label26
@@ -1071,7 +1071,7 @@
             label26.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label26.Location = new Point(436, 27);
             label26.Name = "label26";
-            label26.Size = new Size(96, 22);
+            label26.Size = new Size(95, 22);
             label26.TabIndex = 35;
             label26.Text = "ID Number";
             // 
@@ -1081,7 +1081,7 @@
             txtGovIdType.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtGovIdType.Location = new Point(204, 60);
             txtGovIdType.Name = "txtGovIdType";
-            txtGovIdType.Size = new Size(214, 29);
+            txtGovIdType.Size = new Size(214, 28);
             txtGovIdType.TabIndex = 14;
             // 
             // chGovId
@@ -1090,7 +1090,7 @@
             chGovId.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chGovId.Location = new Point(16, 27);
             chGovId.Name = "chGovId";
-            chGovId.Size = new Size(192, 26);
+            chGovId.Size = new Size(193, 26);
             chGovId.TabIndex = 33;
             chGovId.Text = "With Government ID";
             chGovId.UseVisualStyleBackColor = true;
@@ -1101,7 +1101,7 @@
             label27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label27.Location = new Point(16, 63);
             label27.Name = "label27";
-            label27.Size = new Size(182, 22);
+            label27.Size = new Size(186, 22);
             label27.TabIndex = 33;
             label27.Text = "If yes, specify ID Type";
             // 
@@ -1124,7 +1124,7 @@
             txtIp.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtIp.Location = new Point(142, 61);
             txtIp.Name = "txtIp";
-            txtIp.Size = new Size(207, 29);
+            txtIp.Size = new Size(207, 28);
             txtIp.TabIndex = 14;
             // 
             // chMemberIp
@@ -1144,7 +1144,7 @@
             label25.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label25.Location = new Point(16, 63);
             label25.Name = "label25";
-            label25.Size = new Size(120, 22);
+            label25.Size = new Size(121, 22);
             label25.TabIndex = 33;
             label25.Text = "If yes, Specify";
             // 
@@ -1176,7 +1176,7 @@
             label34.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label34.Location = new Point(162, 135);
             label34.Name = "label34";
-            label34.Size = new Size(108, 22);
+            label34.Size = new Size(109, 22);
             label34.TabIndex = 43;
             label34.Text = "Relationship";
             // 
@@ -1186,7 +1186,7 @@
             txtHouseHeadRs.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtHouseHeadRs.Location = new Point(280, 133);
             txtHouseHeadRs.Name = "txtHouseHeadRs";
-            txtHouseHeadRs.Size = new Size(288, 29);
+            txtHouseHeadRs.Size = new Size(288, 28);
             txtHouseHeadRs.TabIndex = 42;
             // 
             // chHouseHead
@@ -1195,7 +1195,7 @@
             chHouseHead.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             chHouseHead.Location = new Point(20, 31);
             chHouseHead.Name = "chHouseHead";
-            chHouseHead.Size = new Size(165, 26);
+            chHouseHead.Size = new Size(166, 26);
             chHouseHead.TabIndex = 41;
             chHouseHead.Text = "Household Head";
             chHouseHead.UseVisualStyleBackColor = true;
@@ -1206,7 +1206,7 @@
             label32.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label32.Location = new Point(20, 211);
             label32.Name = "label32";
-            label32.Size = new Size(280, 22);
+            label32.Size = new Size(279, 22);
             label32.TabIndex = 40;
             label32.Text = "No. of Living Household Members";
             // 
@@ -1216,7 +1216,7 @@
             nudNoLivingHouseMem.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudNoLivingHouseMem.Location = new Point(21, 242);
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
-            nudNoLivingHouseMem.Size = new Size(279, 29);
+            nudNoLivingHouseMem.Size = new Size(279, 28);
             nudNoLivingHouseMem.TabIndex = 39;
             // 
             // label31
@@ -1225,7 +1225,7 @@
             label31.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label31.Location = new Point(325, 211);
             label31.Name = "label31";
-            label31.Size = new Size(102, 22);
+            label31.Size = new Size(101, 22);
             label31.TabIndex = 38;
             label31.Text = "No. of Male";
             // 
@@ -1235,7 +1235,7 @@
             nudHouseNoMale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudHouseNoMale.Location = new Point(326, 242);
             nudHouseNoMale.Name = "nudHouseNoMale";
-            nudHouseNoMale.Size = new Size(104, 29);
+            nudHouseNoMale.Size = new Size(104, 28);
             nudHouseNoMale.TabIndex = 37;
             // 
             // label30
@@ -1254,7 +1254,7 @@
             nudHouseFemale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             nudHouseFemale.Location = new Point(464, 242);
             nudHouseFemale.Name = "nudHouseFemale";
-            nudHouseFemale.Size = new Size(120, 29);
+            nudHouseFemale.Size = new Size(120, 28);
             nudHouseFemale.TabIndex = 35;
             // 
             // txtHouseHeadName
@@ -1263,7 +1263,7 @@
             txtHouseHeadName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtHouseHeadName.Location = new Point(280, 61);
             txtHouseHeadName.Name = "txtHouseHeadName";
-            txtHouseHeadName.Size = new Size(288, 29);
+            txtHouseHeadName.Size = new Size(288, 28);
             txtHouseHeadName.TabIndex = 11;
             // 
             // label29
@@ -1272,7 +1272,7 @@
             label29.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label29.Location = new Point(20, 62);
             label29.Name = "label29";
-            label29.Size = new Size(250, 22);
+            label29.Size = new Size(251, 22);
             label29.TabIndex = 34;
             label29.Text = "If no, name of household head";
             // 
@@ -1294,7 +1294,7 @@
             checkBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox3.Location = new Point(20, 62);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(157, 26);
+            checkBox3.Size = new Size(161, 26);
             checkBox3.TabIndex = 35;
             checkBox3.Text = "4P's Beneficiary";
             checkBox3.UseVisualStyleBackColor = true;
@@ -1305,7 +1305,7 @@
             checkBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox2.Location = new Point(20, 29);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(202, 26);
+            checkBox2.Size = new Size(203, 26);
             checkBox2.TabIndex = 34;
             checkBox2.Text = "Person with Disability";
             checkBox2.UseVisualStyleBackColor = true;
@@ -1328,7 +1328,7 @@
             label24.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label24.Location = new Point(14, 30);
             label24.Name = "label24";
-            label24.Size = new Size(215, 22);
+            label24.Size = new Size(216, 22);
             label24.TabIndex = 33;
             label24.Text = "Highest Formal Education";
             // 
@@ -1360,7 +1360,7 @@
             txtMaidenMother.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaidenMother.Location = new Point(14, 61);
             txtMaidenMother.Name = "txtMaidenMother";
-            txtMaidenMother.Size = new Size(302, 29);
+            txtMaidenMother.Size = new Size(302, 28);
             txtMaidenMother.TabIndex = 27;
             // 
             // label23
@@ -1369,7 +1369,7 @@
             label23.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label23.Location = new Point(16, 30);
             label23.Name = "label23";
-            label23.Size = new Size(196, 22);
+            label23.Size = new Size(193, 22);
             label23.TabIndex = 6;
             label23.Text = "Mother's Maiden Name";
             // 
@@ -1391,7 +1391,7 @@
             label33.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label33.Location = new Point(16, 30);
             label33.Name = "label33";
-            label33.Size = new Size(73, 22);
+            label33.Size = new Size(75, 22);
             label33.TabIndex = 33;
             label33.Text = "Religion";
             // 
@@ -1433,7 +1433,7 @@
             label14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label14.Location = new Point(16, 102);
             label14.Name = "label14";
-            label14.Size = new Size(223, 22);
+            label14.Size = new Size(222, 22);
             label14.TabIndex = 27;
             label14.Text = "Name of Spouse if Married";
             // 
@@ -1443,7 +1443,7 @@
             txtSpouseName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtSpouseName.Location = new Point(16, 133);
             txtSpouseName.Name = "txtSpouseName";
-            txtSpouseName.Size = new Size(300, 29);
+            txtSpouseName.Size = new Size(300, 28);
             txtSpouseName.TabIndex = 26;
             // 
             // label22
@@ -1452,7 +1452,7 @@
             label22.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label22.Location = new Point(16, 30);
             label22.Name = "label22";
-            label22.Size = new Size(99, 22);
+            label22.Size = new Size(100, 22);
             label22.TabIndex = 13;
             label22.Text = "Civil Status";
             // 
@@ -1477,7 +1477,7 @@
             label13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(227, 30);
             label13.Name = "label13";
-            label13.Size = new Size(147, 22);
+            label13.Size = new Size(146, 22);
             label13.TabIndex = 27;
             label13.Text = "Landline Number";
             // 
@@ -1487,7 +1487,7 @@
             txtLandNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtLandNo.Location = new Point(227, 59);
             txtLandNo.Name = "txtLandNo";
-            txtLandNo.Size = new Size(218, 29);
+            txtLandNo.Size = new Size(218, 28);
             txtLandNo.TabIndex = 26;
             // 
             // txtMobNo
@@ -1496,7 +1496,7 @@
             txtMobNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMobNo.Location = new Point(16, 60);
             txtMobNo.Name = "txtMobNo";
-            txtMobNo.Size = new Size(188, 29);
+            txtMobNo.Size = new Size(188, 28);
             txtMobNo.TabIndex = 18;
             // 
             // label11
@@ -1505,7 +1505,7 @@
             label11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label11.Location = new Point(16, 30);
             label11.Name = "label11";
-            label11.Size = new Size(133, 22);
+            label11.Size = new Size(130, 22);
             label11.TabIndex = 13;
             label11.Text = "Mobile Number";
             // 
@@ -1542,7 +1542,7 @@
             txtBirthCountry.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthCountry.Location = new Point(621, 61);
             txtBirthCountry.Name = "txtBirthCountry";
-            txtBirthCountry.Size = new Size(365, 29);
+            txtBirthCountry.Size = new Size(365, 28);
             txtBirthCountry.TabIndex = 12;
             // 
             // label8
@@ -1551,7 +1551,7 @@
             label8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(304, 30);
             label8.Name = "label8";
-            label8.Size = new Size(79, 22);
+            label8.Size = new Size(80, 22);
             label8.TabIndex = 10;
             label8.Text = "Province";
             // 
@@ -1561,7 +1561,7 @@
             txtBirthProvince.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthProvince.Location = new Point(304, 61);
             txtBirthProvince.Name = "txtBirthProvince";
-            txtBirthProvince.Size = new Size(300, 29);
+            txtBirthProvince.Size = new Size(300, 28);
             txtBirthProvince.TabIndex = 9;
             // 
             // label15
@@ -1570,7 +1570,7 @@
             label15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label15.Location = new Point(20, 30);
             label15.Name = "label15";
-            label15.Size = new Size(106, 22);
+            label15.Size = new Size(103, 22);
             label15.TabIndex = 8;
             label15.Text = "Municipality";
             // 
@@ -1580,7 +1580,7 @@
             txtBirthMunicipality.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtBirthMunicipality.Location = new Point(20, 61);
             txtBirthMunicipality.Name = "txtBirthMunicipality";
-            txtBirthMunicipality.Size = new Size(267, 29);
+            txtBirthMunicipality.Size = new Size(267, 28);
             txtBirthMunicipality.TabIndex = 7;
             // 
             // groupBox5
@@ -1600,7 +1600,7 @@
             dtpBirthDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpBirthDate.Location = new Point(14, 61);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(302, 29);
+            dtpBirthDate.Size = new Size(302, 28);
             dtpBirthDate.TabIndex = 13;
             // 
             // label12
@@ -1609,7 +1609,7 @@
             label12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(16, 30);
             label12.Name = "label12";
-            label12.Size = new Size(109, 22);
+            label12.Size = new Size(110, 22);
             label12.TabIndex = 6;
             label12.Text = "Date of Birth";
             // 
@@ -1642,7 +1642,7 @@
             label21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label21.Location = new Point(15, 29);
             label21.Name = "label21";
-            label21.Size = new Size(40, 22);
+            label21.Size = new Size(41, 22);
             label21.TabIndex = 13;
             label21.Text = "Sex";
             // 
@@ -1675,7 +1675,7 @@
             label9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(1597, 30);
             label9.Name = "label9";
-            label9.Size = new Size(65, 22);
+            label9.Size = new Size(67, 22);
             label9.TabIndex = 29;
             label9.Text = "Region";
             // 
@@ -1685,7 +1685,7 @@
             txtAddRegion.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddRegion.Location = new Point(1597, 61);
             txtAddRegion.Name = "txtAddRegion";
-            txtAddRegion.Size = new Size(177, 29);
+            txtAddRegion.Size = new Size(177, 28);
             txtAddRegion.TabIndex = 28;
             txtAddRegion.Text = "2";
             // 
@@ -1695,7 +1695,7 @@
             label16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label16.Location = new Point(1283, 29);
             label16.Name = "label16";
-            label16.Size = new Size(79, 22);
+            label16.Size = new Size(80, 22);
             label16.TabIndex = 27;
             label16.Text = "Province";
             // 
@@ -1705,7 +1705,7 @@
             txtAddProvince.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddProvince.Location = new Point(1283, 60);
             txtAddProvince.Name = "txtAddProvince";
-            txtAddProvince.Size = new Size(300, 29);
+            txtAddProvince.Size = new Size(300, 28);
             txtAddProvince.TabIndex = 26;
             txtAddProvince.Text = "Nueva Vizcaya";
             // 
@@ -1715,7 +1715,7 @@
             label17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label17.Location = new Point(966, 30);
             label17.Name = "label17";
-            label17.Size = new Size(106, 22);
+            label17.Size = new Size(103, 22);
             label17.TabIndex = 25;
             label17.Text = "Municipality";
             // 
@@ -1725,7 +1725,7 @@
             txtAddMunicipality.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddMunicipality.Location = new Point(966, 61);
             txtAddMunicipality.Name = "txtAddMunicipality";
-            txtAddMunicipality.Size = new Size(300, 29);
+            txtAddMunicipality.Size = new Size(300, 28);
             txtAddMunicipality.TabIndex = 24;
             txtAddMunicipality.Text = "Solano";
             // 
@@ -1746,7 +1746,7 @@
             label18.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label18.Location = new Point(649, 30);
             label18.Name = "label18";
-            label18.Size = new Size(86, 22);
+            label18.Size = new Size(87, 22);
             label18.TabIndex = 22;
             label18.Text = "Barangay";
             // 
@@ -1756,7 +1756,7 @@
             label19.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label19.Location = new Point(332, 30);
             label19.Name = "label19";
-            label19.Size = new Size(172, 22);
+            label19.Size = new Size(169, 22);
             label19.TabIndex = 20;
             label19.Text = "Street/Sition/Subdv.";
             // 
@@ -1766,7 +1766,7 @@
             txtAddStreet.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddStreet.Location = new Point(332, 61);
             txtAddStreet.Name = "txtAddStreet";
-            txtAddStreet.Size = new Size(300, 29);
+            txtAddStreet.Size = new Size(300, 28);
             txtAddStreet.TabIndex = 19;
             // 
             // label20
@@ -1775,7 +1775,7 @@
             label20.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label20.Location = new Point(16, 30);
             label20.Name = "label20";
-            label20.Size = new Size(227, 22);
+            label20.Size = new Size(223, 22);
             label20.TabIndex = 18;
             label20.Text = "House/Lot/Bldg. No./Purok";
             // 
@@ -1785,7 +1785,7 @@
             txtAddPurok.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddPurok.Location = new Point(16, 60);
             txtAddPurok.Name = "txtAddPurok";
-            txtAddPurok.Size = new Size(300, 29);
+            txtAddPurok.Size = new Size(300, 28);
             txtAddPurok.TabIndex = 17;
             // 
             // groupBox2
@@ -1823,7 +1823,7 @@
             txtExtname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtExtname.Location = new Point(966, 61);
             txtExtname.Name = "txtExtname";
-            txtExtname.Size = new Size(151, 29);
+            txtExtname.Size = new Size(151, 28);
             txtExtname.TabIndex = 11;
             // 
             // label6
@@ -1832,7 +1832,7 @@
             label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(649, 30);
             label6.Name = "label6";
-            label6.Size = new Size(117, 22);
+            label6.Size = new Size(114, 22);
             label6.TabIndex = 10;
             label6.Text = "Middle Name";
             // 
@@ -1842,7 +1842,7 @@
             txtMiddlename.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtMiddlename.Location = new Point(649, 61);
             txtMiddlename.Name = "txtMiddlename";
-            txtMiddlename.Size = new Size(300, 29);
+            txtMiddlename.Size = new Size(300, 28);
             txtMiddlename.TabIndex = 9;
             // 
             // label5
@@ -1851,7 +1851,7 @@
             label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(332, 30);
             label5.Name = "label5";
-            label5.Size = new Size(98, 22);
+            label5.Size = new Size(97, 22);
             label5.TabIndex = 8;
             label5.Text = "First Name";
             // 
@@ -1861,7 +1861,7 @@
             txtFirstname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtFirstname.Location = new Point(332, 61);
             txtFirstname.Name = "txtFirstname";
-            txtFirstname.Size = new Size(300, 29);
+            txtFirstname.Size = new Size(300, 28);
             txtFirstname.TabIndex = 7;
             // 
             // label4
@@ -1870,7 +1870,7 @@
             label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(16, 30);
             label4.Name = "label4";
-            label4.Size = new Size(83, 22);
+            label4.Size = new Size(82, 22);
             label4.TabIndex = 6;
             label4.Text = "Surname";
             // 
@@ -1880,7 +1880,7 @@
             txtSurname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtSurname.Location = new Point(16, 61);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(300, 29);
+            txtSurname.Size = new Size(300, 28);
             txtSurname.TabIndex = 0;
             // 
             // panel4
@@ -1955,7 +1955,7 @@
             label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(278, 30);
             label2.Name = "label2";
-            label2.Size = new Size(159, 22);
+            label2.Size = new Size(157, 22);
             label2.TabIndex = 4;
             label2.Text = "Date Administered";
             // 
@@ -1965,7 +1965,7 @@
             rbEtNew.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             rbEtNew.Location = new Point(20, 65);
             rbEtNew.Name = "rbEtNew";
-            rbEtNew.Size = new Size(68, 26);
+            rbEtNew.Size = new Size(67, 26);
             rbEtNew.TabIndex = 3;
             rbEtNew.TabStop = true;
             rbEtNew.Text = "New";
@@ -1976,7 +1976,7 @@
             dtDateAdm.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtDateAdm.Location = new Point(278, 61);
             dtDateAdm.Name = "dtDateAdm";
-            dtDateAdm.Size = new Size(407, 29);
+            dtDateAdm.Size = new Size(407, 28);
             dtDateAdm.TabIndex = 2;
             // 
             // label1
@@ -1985,7 +1985,7 @@
             label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(16, 30);
             label1.Name = "label1";
-            label1.Size = new Size(139, 22);
+            label1.Size = new Size(141, 22);
             label1.TabIndex = 1;
             label1.Text = "Enrollment Type";
             // 
@@ -1995,7 +1995,7 @@
             txtRefNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             txtRefNo.Location = new Point(773, 61);
             txtRefNo.Name = "txtRefNo";
-            txtRefNo.Size = new Size(443, 29);
+            txtRefNo.Size = new Size(443, 28);
             txtRefNo.TabIndex = 0;
             // 
             // panel1
@@ -2017,17 +2017,17 @@
             // panelColorDoc
             // 
             panelColorDoc.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorDoc.Location = new Point(494, 44);
+            panelColorDoc.Location = new Point(530, 43);
             panelColorDoc.Name = "panelColorDoc";
-            panelColorDoc.Size = new Size(89, 5);
+            panelColorDoc.Size = new Size(122, 5);
             panelColorDoc.TabIndex = 24;
             // 
             // panelColorFl
             // 
             panelColorFl.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorFl.Location = new Point(366, 44);
+            panelColorFl.Location = new Point(386, 43);
             panelColorFl.Name = "panelColorFl";
-            panelColorFl.Size = new Size(87, 5);
+            panelColorFl.Size = new Size(122, 5);
             panelColorFl.TabIndex = 22;
             // 
             // btnDocuments
@@ -2036,8 +2036,8 @@
             btnDocuments.FlatAppearance.MouseDownBackColor = Color.White;
             btnDocuments.FlatAppearance.MouseOverBackColor = Color.White;
             btnDocuments.FlatStyle = FlatStyle.Flat;
-            btnDocuments.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDocuments.Location = new Point(478, 11);
+            btnDocuments.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDocuments.Location = new Point(530, 11);
             btnDocuments.Name = "btnDocuments";
             btnDocuments.Size = new Size(122, 29);
             btnDocuments.TabIndex = 25;
@@ -2051,8 +2051,8 @@
             btnFarmLand.FlatAppearance.MouseDownBackColor = Color.White;
             btnFarmLand.FlatAppearance.MouseOverBackColor = Color.White;
             btnFarmLand.FlatStyle = FlatStyle.Flat;
-            btnFarmLand.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFarmLand.Location = new Point(350, 11);
+            btnFarmLand.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFarmLand.Location = new Point(386, 11);
             btnFarmLand.Name = "btnFarmLand";
             btnFarmLand.Size = new Size(122, 29);
             btnFarmLand.TabIndex = 23;
@@ -2063,17 +2063,17 @@
             // panelColorFp
             // 
             panelColorFp.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorFp.Location = new Point(233, 44);
+            panelColorFp.Location = new Point(240, 43);
             panelColorFp.Name = "panelColorFp";
-            panelColorFp.Size = new Size(95, 5);
+            panelColorFp.Size = new Size(122, 5);
             panelColorFp.TabIndex = 21;
             // 
             // panelColorPi
             // 
             panelColorPi.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorPi.Location = new Point(32, 44);
+            panelColorPi.Location = new Point(18, 43);
             panelColorPi.Name = "panelColorPi";
-            panelColorPi.Size = new Size(168, 5);
+            panelColorPi.Size = new Size(197, 5);
             panelColorPi.TabIndex = 20;
             // 
             // btnFarmProfile
@@ -2082,8 +2082,8 @@
             btnFarmProfile.FlatAppearance.MouseDownBackColor = Color.White;
             btnFarmProfile.FlatAppearance.MouseOverBackColor = Color.White;
             btnFarmProfile.FlatStyle = FlatStyle.Flat;
-            btnFarmProfile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFarmProfile.Location = new Point(221, 11);
+            btnFarmProfile.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFarmProfile.Location = new Point(240, 11);
             btnFarmProfile.Name = "btnFarmProfile";
             btnFarmProfile.Size = new Size(122, 29);
             btnFarmProfile.TabIndex = 19;
@@ -2097,7 +2097,7 @@
             btnPersonal.FlatAppearance.MouseDownBackColor = Color.White;
             btnPersonal.FlatAppearance.MouseOverBackColor = Color.White;
             btnPersonal.FlatStyle = FlatStyle.Flat;
-            btnPersonal.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPersonal.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnPersonal.Location = new Point(18, 11);
             btnPersonal.Name = "btnPersonal";
             btnPersonal.Size = new Size(197, 29);

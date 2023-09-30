@@ -30,12 +30,21 @@
         {
             labelParcelNo = new Label();
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            panel4 = new Panel();
-            panel5 = new Panel();
+            panel7 = new Panel();
+            rtbRemarks = new RichTextBox();
+            label18 = new Label();
+            cmbOrganicPractitioner = new ComboBox();
+            label17 = new Label();
+            cmbFarmType = new ComboBox();
+            label16 = new Label();
+            headNo = new NumericUpDown();
+            label15 = new Label();
+            nudFarmSize = new NumericUpDown();
+            label14 = new Label();
+            txtAnimalType = new ComboBox();
+            txtCropCommodity = new ComboBox();
+            label13 = new Label();
+            label12 = new Label();
             panel6 = new Panel();
             txtOwnershipOthers = new TextBox();
             checkBox4 = new CheckBox();
@@ -58,34 +67,25 @@
             cmbMunicipality = new ComboBox();
             label1 = new Label();
             txtOwnershipDcNo = new TextBox();
-            panel7 = new Panel();
+            panel4 = new Panel();
+            panel2 = new Panel();
             panel8 = new Panel();
             label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            txtCropCommodity = new ComboBox();
-            txtAnimalType = new ComboBox();
-            nudFarmSize = new NumericUpDown();
-            label14 = new Label();
-            label15 = new Label();
-            headNo = new NumericUpDown();
-            label16 = new Label();
-            cmbFarmType = new ComboBox();
-            cmbOrganicPractitioner = new ComboBox();
-            label17 = new Label();
-            label18 = new Label();
-            rtbRemarks = new RichTextBox();
+            panel5 = new Panel();
+            label3 = new Label();
+            panel3 = new Panel();
+            label2 = new Label();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)headNo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudFarmSize).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudFarmArea).BeginInit();
-            panel7.SuspendLayout();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudFarmSize).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)headNo).BeginInit();
+            panel5.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // labelParcelNo
@@ -110,67 +110,159 @@
             panel1.Size = new Size(1113, 523);
             panel1.TabIndex = 2;
             // 
-            // panel2
+            // panel7
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(panel8);
-            panel2.Controls.Add(panel5);
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1111, 48);
-            panel2.TabIndex = 0;
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(rtbRemarks);
+            panel7.Controls.Add(label18);
+            panel7.Controls.Add(cmbOrganicPractitioner);
+            panel7.Controls.Add(label17);
+            panel7.Controls.Add(cmbFarmType);
+            panel7.Controls.Add(label16);
+            panel7.Controls.Add(headNo);
+            panel7.Controls.Add(label15);
+            panel7.Controls.Add(nudFarmSize);
+            panel7.Controls.Add(label14);
+            panel7.Controls.Add(txtAnimalType);
+            panel7.Controls.Add(txtCropCommodity);
+            panel7.Controls.Add(label13);
+            panel7.Controls.Add(label12);
+            panel7.Dock = DockStyle.Left;
+            panel7.Location = new Point(618, 48);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(494, 473);
+            panel7.TabIndex = 25;
             // 
-            // panel3
+            // rtbRemarks
             // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label2);
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(139, 46);
-            panel3.TabIndex = 0;
+            rtbRemarks.Location = new Point(148, 335);
+            rtbRemarks.Name = "rtbRemarks";
+            rtbRemarks.Size = new Size(324, 123);
+            rtbRemarks.TabIndex = 58;
+            rtbRemarks.Text = "";
             // 
-            // label2
+            // label18
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(9, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(122, 24);
-            label2.TabIndex = 3;
-            label2.Text = "Farm Parcel No.";
+            label18.AutoSize = true;
+            label18.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(17, 335);
+            label18.Name = "label18";
+            label18.Size = new Size(71, 24);
+            label18.TabIndex = 57;
+            label18.Text = "Remarks";
             // 
-            // label3
+            // cmbOrganicPractitioner
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(145, 10);
-            label3.Name = "label3";
-            label3.Size = new Size(169, 24);
-            label3.TabIndex = 4;
-            label3.Text = "Farm Land Description";
+            cmbOrganicPractitioner.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOrganicPractitioner.FormattingEnabled = true;
+            cmbOrganicPractitioner.Items.AddRange(new object[] { "Yes", "No" });
+            cmbOrganicPractitioner.Location = new Point(217, 258);
+            cmbOrganicPractitioner.Name = "cmbOrganicPractitioner";
+            cmbOrganicPractitioner.Size = new Size(255, 30);
+            cmbOrganicPractitioner.TabIndex = 56;
             // 
-            // panel4
+            // label17
             // 
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(labelParcelNo);
-            panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(0, 48);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(140, 473);
-            panel4.TabIndex = 1;
+            label17.AutoSize = true;
+            label17.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(17, 263);
+            label17.Name = "label17";
+            label17.Size = new Size(152, 24);
+            label17.TabIndex = 55;
+            label17.Text = "Organic Practitioner";
             // 
-            // panel5
+            // cmbFarmType
             // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(label3);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(139, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(478, 46);
-            panel5.TabIndex = 1;
+            cmbFarmType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFarmType.FormattingEnabled = true;
+            cmbFarmType.Items.AddRange(new object[] { "Irrigated", "Rainfed Upland", "Rainfed Lowland" });
+            cmbFarmType.Location = new Point(148, 211);
+            cmbFarmType.Name = "cmbFarmType";
+            cmbFarmType.Size = new Size(324, 30);
+            cmbFarmType.TabIndex = 54;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(17, 212);
+            label16.Name = "label16";
+            label16.Size = new Size(84, 24);
+            label16.TabIndex = 53;
+            label16.Text = "Farm Type";
+            // 
+            // headNo
+            // 
+            headNo.Location = new Point(148, 173);
+            headNo.Name = "headNo";
+            headNo.Size = new Size(324, 29);
+            headNo.TabIndex = 52;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(17, 173);
+            label15.Name = "label15";
+            label15.Size = new Size(92, 24);
+            label15.TabIndex = 51;
+            label15.Text = "No. of Head";
+            // 
+            // nudFarmSize
+            // 
+            nudFarmSize.Location = new Point(86, 114);
+            nudFarmSize.Name = "nudFarmSize";
+            nudFarmSize.Size = new Size(386, 29);
+            nudFarmSize.TabIndex = 50;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(17, 114);
+            label14.Name = "label14";
+            label14.Size = new Size(40, 24);
+            label14.TabIndex = 49;
+            label14.Text = "Size";
+            // 
+            // txtAnimalType
+            // 
+            txtAnimalType.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtAnimalType.FormattingEnabled = true;
+            txtAnimalType.Location = new Point(187, 56);
+            txtAnimalType.Name = "txtAnimalType";
+            txtAnimalType.Size = new Size(285, 30);
+            txtAnimalType.TabIndex = 48;
+            // 
+            // txtCropCommodity
+            // 
+            txtCropCommodity.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtCropCommodity.FormattingEnabled = true;
+            txtCropCommodity.Items.AddRange(new object[] { "Rice", "Corn", "HVC", "Livestock", "Poultry", "Agri-Fishery" });
+            txtCropCommodity.Location = new Point(187, 10);
+            txtCropCommodity.Name = "txtCropCommodity";
+            txtCropCommodity.Size = new Size(285, 30);
+            txtCropCommodity.TabIndex = 47;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(17, 57);
+            label13.Name = "label13";
+            label13.Size = new Size(114, 24);
+            label13.TabIndex = 46;
+            label13.Text = "Type of Animal";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(17, 11);
+            label12.Name = "label12";
+            label12.Size = new Size(131, 24);
+            label12.TabIndex = 45;
+            label12.Text = "Crop/Commodity";
             // 
             // panel6
             // 
@@ -403,28 +495,27 @@
             txtOwnershipDcNo.Size = new Size(205, 29);
             txtOwnershipDcNo.TabIndex = 24;
             // 
-            // panel7
+            // panel4
             // 
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(rtbRemarks);
-            panel7.Controls.Add(label18);
-            panel7.Controls.Add(cmbOrganicPractitioner);
-            panel7.Controls.Add(label17);
-            panel7.Controls.Add(cmbFarmType);
-            panel7.Controls.Add(label16);
-            panel7.Controls.Add(headNo);
-            panel7.Controls.Add(label15);
-            panel7.Controls.Add(nudFarmSize);
-            panel7.Controls.Add(label14);
-            panel7.Controls.Add(txtAnimalType);
-            panel7.Controls.Add(txtCropCommodity);
-            panel7.Controls.Add(label13);
-            panel7.Controls.Add(label12);
-            panel7.Dock = DockStyle.Left;
-            panel7.Location = new Point(618, 48);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(494, 473);
-            panel7.TabIndex = 25;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(labelParcelNo);
+            panel4.Dock = DockStyle.Left;
+            panel4.Location = new Point(0, 48);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(140, 473);
+            panel4.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(panel8);
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1111, 48);
+            panel2.TabIndex = 0;
             // 
             // panel8
             // 
@@ -446,165 +537,73 @@
             label11.TabIndex = 5;
             label11.Text = "Farm";
             // 
-            // label12
+            // panel5
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(17, 11);
-            label12.Name = "label12";
-            label12.Size = new Size(131, 24);
-            label12.TabIndex = 45;
-            label12.Text = "Crop/Commodity";
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(label3);
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(139, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(478, 46);
+            panel5.TabIndex = 1;
             // 
-            // label13
+            // label3
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(17, 57);
-            label13.Name = "label13";
-            label13.Size = new Size(114, 24);
-            label13.TabIndex = 46;
-            label13.Text = "Type of Animal";
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(145, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(169, 24);
+            label3.TabIndex = 4;
+            label3.Text = "Farm Land Description";
             // 
-            // txtCropCommodity
+            // panel3
             // 
-            txtCropCommodity.DropDownStyle = ComboBoxStyle.DropDownList;
-            txtCropCommodity.FormattingEnabled = true;
-            txtCropCommodity.Items.AddRange(new object[] { "Rice", "Corn", "HVC", "Livestock", "Poultry", "Agri-Fishery" });
-            txtCropCommodity.Location = new Point(187, 10);
-            txtCropCommodity.Name = "txtCropCommodity";
-            txtCropCommodity.Size = new Size(285, 30);
-            txtCropCommodity.TabIndex = 47;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label2);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(139, 46);
+            panel3.TabIndex = 0;
             // 
-            // txtAnimalType
+            // label2
             // 
-            txtAnimalType.DropDownStyle = ComboBoxStyle.DropDownList;
-            txtAnimalType.FormattingEnabled = true;
-            txtAnimalType.Location = new Point(187, 56);
-            txtAnimalType.Name = "txtAnimalType";
-            txtAnimalType.Size = new Size(285, 30);
-            txtAnimalType.TabIndex = 48;
-            // 
-            // nudFarmSize
-            // 
-            nudFarmSize.Location = new Point(86, 114);
-            nudFarmSize.Name = "nudFarmSize";
-            nudFarmSize.Size = new Size(386, 29);
-            nudFarmSize.TabIndex = 50;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(17, 114);
-            label14.Name = "label14";
-            label14.Size = new Size(40, 24);
-            label14.TabIndex = 49;
-            label14.Text = "Size";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(17, 173);
-            label15.Name = "label15";
-            label15.Size = new Size(92, 24);
-            label15.TabIndex = 51;
-            label15.Text = "No. of Head";
-            // 
-            // headNo
-            // 
-            headNo.Location = new Point(148, 173);
-            headNo.Name = "headNo";
-            headNo.Size = new Size(324, 29);
-            headNo.TabIndex = 52;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(17, 212);
-            label16.Name = "label16";
-            label16.Size = new Size(84, 24);
-            label16.TabIndex = 53;
-            label16.Text = "Farm Type";
-            // 
-            // cmbFarmType
-            // 
-            cmbFarmType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFarmType.FormattingEnabled = true;
-            cmbFarmType.Items.AddRange(new object[] { "Irrigated", "Rainfed Upland", "Rainfed Lowland" });
-            cmbFarmType.Location = new Point(148, 211);
-            cmbFarmType.Name = "cmbFarmType";
-            cmbFarmType.Size = new Size(324, 30);
-            cmbFarmType.TabIndex = 54;
-            // 
-            // cmbOrganicPractitioner
-            // 
-            cmbOrganicPractitioner.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbOrganicPractitioner.FormattingEnabled = true;
-            cmbOrganicPractitioner.Items.AddRange(new object[] { "Yes", "No" });
-            cmbOrganicPractitioner.Location = new Point(217, 258);
-            cmbOrganicPractitioner.Name = "cmbOrganicPractitioner";
-            cmbOrganicPractitioner.Size = new Size(255, 30);
-            cmbOrganicPractitioner.TabIndex = 56;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(17, 263);
-            label17.Name = "label17";
-            label17.Size = new Size(152, 24);
-            label17.TabIndex = 55;
-            label17.Text = "Organic Practitioner";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(17, 335);
-            label18.Name = "label18";
-            label18.Size = new Size(71, 24);
-            label18.TabIndex = 57;
-            label18.Text = "Remarks";
-            // 
-            // rtbRemarks
-            // 
-            rtbRemarks.Location = new Point(148, 335);
-            rtbRemarks.Name = "rtbRemarks";
-            rtbRemarks.Size = new Size(324, 123);
-            rtbRemarks.TabIndex = 58;
-            rtbRemarks.Text = "";
+            label2.AutoSize = true;
+            label2.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(9, 10);
+            label2.Name = "label2";
+            label2.Size = new Size(122, 24);
+            label2.TabIndex = 3;
+            label2.Text = "Farm Parcel No.";
             // 
             // FarmLandControl
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panel1);
             Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(3, 5, 3, 5);
             Name = "FarmLandControl";
-            Size = new Size(1119, 530);
+            Size = new Size(1121, 532);
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)headNo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudFarmSize).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudFarmArea).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudFarmSize).EndInit();
-            ((System.ComponentModel.ISupportInitialize)headNo).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
