@@ -19,7 +19,10 @@ namespace AgRecords.View
 
         private void RSBSAtry_Load(object sender, EventArgs e)
         {
-
+            this.HorizontalScroll.Enabled = true;
+            this.HorizontalScroll.Visible = true;
+            this.VerticalScroll.Enabled = false;
+            this.VerticalScroll.Visible = false;
         }
     }
 }
