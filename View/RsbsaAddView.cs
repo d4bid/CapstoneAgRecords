@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace AgRecords.View
 {
     public partial class RsbsaAddView : Form
     {
+        private RSBSAController rsbsaController;
+
         public RsbsaAddView()
         {
             InitializeComponent();
+            rsbsaController = new RSBSAController(this);
         }
 
         // Method
@@ -30,6 +34,14 @@ namespace AgRecords.View
             panelFarmLand.Visible = false;
 
             numericUpDown1.Value = 1;
+
+            rsbsaController.GenerateNewRSBSAId();
+
+        }
+
+        public void GenerateNewRSBSAId(string rsbsaId)
+        {
+            labelRsbsaId.Text = rsbsaId;
         }
 
         // Buttons/Tab
