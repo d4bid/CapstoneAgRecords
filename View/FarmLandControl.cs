@@ -16,5 +16,10 @@ namespace AgRecords.View
         {
             InitializeComponent();
         }
+
+        private void FarmLandControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
