@@ -28,24 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel4 = new Panel();
-            label3 = new Label();
-            rbEtUpdating = new RadioButton();
-            label2 = new Label();
-            rbEtNew = new RadioButton();
-            dtDateAdm = new DateTimePicker();
-            label1 = new Label();
-            txtRefNo = new TextBox();
-            panel1 = new Panel();
-            panelColorDoc = new Panel();
-            panelColorFl = new Panel();
-            btnDocuments = new Button();
-            btnFarmLand = new Button();
-            panelColorFp = new Panel();
-            panelColorPi = new Panel();
-            btnFarmProfile = new Button();
-            btnPersonal = new Button();
-            panelPersonalInfo = new Panel();
+            checkBox3 = new CheckBox();
+            cbHighestEduc = new ComboBox();
+            groupBox9 = new GroupBox();
+            txtMaidenMother = new TextBox();
+            label23 = new Label();
+            label33 = new Label();
+            cbReligion = new ComboBox();
+            cbCivilStatus = new ComboBox();
+            label14 = new Label();
+            txtSpouseName = new TextBox();
+            label22 = new Label();
+            label13 = new Label();
+            txtLandNo = new TextBox();
+            txtMobNo = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
+            txtBirthCountry = new TextBox();
+            label8 = new Label();
+            label24 = new Label();
+            label15 = new Label();
+            checkBox2 = new CheckBox();
+            label26 = new Label();
+            txtAss = new TextBox();
+            txtGovIdType = new TextBox();
+            chGovId = new CheckBox();
+            label27 = new Label();
+            txtIp = new TextBox();
+            chMemberIp = new CheckBox();
+            label25 = new Label();
+            label34 = new Label();
+            txtHouseHeadRs = new TextBox();
+            chHouseHead = new CheckBox();
+            label32 = new Label();
+            nudNoLivingHouseMem = new NumericUpDown();
+            label31 = new Label();
+            nudHouseNoMale = new NumericUpDown();
+            label30 = new Label();
+            nudHouseFemale = new NumericUpDown();
+            txtHouseHeadName = new TextBox();
+            txtBirthProvince = new TextBox();
+            label29 = new Label();
+            txtBirthMunicipality = new TextBox();
+            label7 = new Label();
+            txtExtname = new TextBox();
+            label6 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            txtMiddlename = new TextBox();
+            label5 = new Label();
+            dtpBirthDate = new DateTimePicker();
+            label12 = new Label();
+            comboBox1 = new ComboBox();
+            label21 = new Label();
+            label9 = new Label();
+            txtAddRegion = new TextBox();
+            label16 = new Label();
+            txtAddProvince = new TextBox();
+            label17 = new Label();
+            txtAddMunicipality = new TextBox();
+            cbAddBrgy = new ComboBox();
+            label18 = new Label();
+            label19 = new Label();
+            txtAddStreet = new TextBox();
+            label20 = new Label();
+            txtAddPurok = new TextBox();
+            txtMemberAss = new CheckBox();
+            txtFirstname = new TextBox();
+            label4 = new Label();
+            txtSurname = new TextBox();
+            label28 = new Label();
             panelFarmProfile = new Panel();
             panelFarmLand = new Panel();
             flowLayoutPanelParcels = new FlowLayoutPanel();
@@ -107,97 +158,79 @@
             checkBox6 = new CheckBox();
             checkBox4 = new CheckBox();
             checkBox1 = new CheckBox();
+            txtGovIdNum = new TextBox();
+            groupBox14 = new GroupBox();
+            groupBox11 = new GroupBox();
+            groupBox17 = new GroupBox();
+            groupBox15 = new GroupBox();
+            groupBox13 = new GroupBox();
+            groupBox12 = new GroupBox();
+            groupBox10 = new GroupBox();
+            panelPersonalInfo = new Panel();
             groupBox16 = new GroupBox();
             txtEcContact = new TextBox();
             label36 = new Label();
             txtEcName = new TextBox();
             label35 = new Label();
-            groupBox14 = new GroupBox();
-            txtAss = new TextBox();
-            txtMemberAss = new CheckBox();
-            label28 = new Label();
-            groupBox11 = new GroupBox();
-            txtGovIdNum = new TextBox();
-            label26 = new Label();
-            txtGovIdType = new TextBox();
-            chGovId = new CheckBox();
-            label27 = new Label();
-            groupBox17 = new GroupBox();
-            txtIp = new TextBox();
-            chMemberIp = new CheckBox();
-            label25 = new Label();
-            groupBox15 = new GroupBox();
-            label34 = new Label();
-            txtHouseHeadRs = new TextBox();
-            chHouseHead = new CheckBox();
-            label32 = new Label();
-            nudNoLivingHouseMem = new NumericUpDown();
-            label31 = new Label();
-            nudHouseNoMale = new NumericUpDown();
-            label30 = new Label();
-            nudHouseFemale = new NumericUpDown();
-            txtHouseHeadName = new TextBox();
-            label29 = new Label();
-            groupBox13 = new GroupBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            groupBox12 = new GroupBox();
-            label24 = new Label();
-            cbHighestEduc = new ComboBox();
-            groupBox9 = new GroupBox();
-            txtMaidenMother = new TextBox();
-            label23 = new Label();
-            groupBox10 = new GroupBox();
-            label33 = new Label();
-            cbReligion = new ComboBox();
             groupBox8 = new GroupBox();
-            cbCivilStatus = new ComboBox();
-            label14 = new Label();
-            txtSpouseName = new TextBox();
-            label22 = new Label();
             groupBox7 = new GroupBox();
-            label13 = new Label();
-            txtLandNo = new TextBox();
-            txtMobNo = new TextBox();
-            label11 = new Label();
             groupBox6 = new GroupBox();
-            label10 = new Label();
-            txtBirthCountry = new TextBox();
-            label8 = new Label();
-            txtBirthProvince = new TextBox();
-            label15 = new Label();
-            txtBirthMunicipality = new TextBox();
             groupBox5 = new GroupBox();
-            dtpBirthDate = new DateTimePicker();
-            label12 = new Label();
             groupBox4 = new GroupBox();
-            comboBox1 = new ComboBox();
-            label21 = new Label();
             groupBox3 = new GroupBox();
-            label9 = new Label();
-            txtAddRegion = new TextBox();
-            label16 = new Label();
-            txtAddProvince = new TextBox();
-            label17 = new Label();
-            txtAddMunicipality = new TextBox();
-            cbAddBrgy = new ComboBox();
-            label18 = new Label();
-            label19 = new Label();
-            txtAddStreet = new TextBox();
-            label20 = new Label();
-            txtAddPurok = new TextBox();
             groupBox2 = new GroupBox();
-            label7 = new Label();
-            txtExtname = new TextBox();
-            label6 = new Label();
-            txtMiddlename = new TextBox();
-            label5 = new Label();
-            txtFirstname = new TextBox();
-            label4 = new Label();
-            txtSurname = new TextBox();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
-            panelPersonalInfo.SuspendLayout();
+            panel2 = new Panel();
+            label1 = new Label();
+            label49 = new Label();
+            panel5 = new Panel();
+            label50 = new Label();
+            panel8 = new Panel();
+            panel3 = new Panel();
+            labelParcelNo = new Label();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            txtOwnershipOthers = new TextBox();
+            checkBox26 = new CheckBox();
+            txtLesseeOwnerName = new TextBox();
+            checkBox29 = new CheckBox();
+            checkBox30 = new CheckBox();
+            panel9 = new Panel();
+            checkBox31 = new CheckBox();
+            txtTenantOwnerName = new TextBox();
+            label51 = new Label();
+            label52 = new Label();
+            cmbAgrarianReformBen = new ComboBox();
+            label53 = new Label();
+            cmbAncestralDomain = new ComboBox();
+            label55 = new Label();
+            nudFarmArea = new NumericUpDown();
+            label56 = new Label();
+            label57 = new Label();
+            label58 = new Label();
+            cmbBarangay = new ComboBox();
+            cmbMunicipality = new ComboBox();
+            label59 = new Label();
+            txtOwnershipDcNo = new TextBox();
+            label60 = new Label();
+            panel10 = new Panel();
+            rtbRemarks = new RichTextBox();
+            label61 = new Label();
+            cmbOrganicPractitioner = new ComboBox();
+            label62 = new Label();
+            cmbFarmType = new ComboBox();
+            label63 = new Label();
+            headNo = new NumericUpDown();
+            label64 = new Label();
+            nudFarmSize = new NumericUpDown();
+            label65 = new Label();
+            txtAnimalType = new ComboBox();
+            txtCropCommodity = new ComboBox();
+            label66 = new Label();
+            panel11 = new Panel();
+            groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudNoLivingHouseMem).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudHouseNoMale).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudHouseFemale).BeginInit();
             panelFarmProfile.SuspendLayout();
             panelFarmLand.SuspendLayout();
             groupBox23.SuspendLayout();
@@ -209,18 +242,15 @@
             groupBox18.SuspendLayout();
             groupBox28.SuspendLayout();
             groupBox33.SuspendLayout();
-            groupBox16.SuspendLayout();
             groupBox14.SuspendLayout();
             groupBox11.SuspendLayout();
             groupBox17.SuspendLayout();
             groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudNoLivingHouseMem).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudHouseNoMale).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudHouseFemale).BeginInit();
             groupBox13.SuspendLayout();
             groupBox12.SuspendLayout();
-            groupBox9.SuspendLayout();
             groupBox10.SuspendLayout();
+            panelPersonalInfo.SuspendLayout();
+            groupBox16.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBox7.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -228,225 +258,688 @@
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
+            panel2.SuspendLayout();
+            panel5.SuspendLayout();
+            panel8.SuspendLayout();
+            panel3.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudFarmArea).BeginInit();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)headNo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudFarmSize).BeginInit();
+            panel11.SuspendLayout();
             SuspendLayout();
             // 
-            // panel4
+            // checkBox3
             // 
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(rbEtUpdating);
-            panel4.Controls.Add(label2);
-            panel4.Controls.Add(rbEtNew);
-            panel4.Controls.Add(dtDateAdm);
-            panel4.Controls.Add(label1);
-            panel4.Controls.Add(txtRefNo);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1816, 101);
-            panel4.TabIndex = 19;
+            checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox3.Location = new Point(20, 62);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(161, 26);
+            checkBox3.TabIndex = 35;
+            checkBox3.Text = "4P's Beneficiary";
+            checkBox3.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // cbHighestEduc
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(776, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(161, 22);
-            label3.TabIndex = 17;
-            label3.Text = "Reference Number";
+            cbHighestEduc.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbHighestEduc.FormattingEnabled = true;
+            cbHighestEduc.Items.AddRange(new object[] { "Pre-school", "Elementary", "High School (non K-12)", "Junior High School (K-12)", "Senior High School (K-12)", "College", "Vocational", "Post-graduate", "None" });
+            cbHighestEduc.Location = new Point(14, 60);
+            cbHighestEduc.Name = "cbHighestEduc";
+            cbHighestEduc.Size = new Size(392, 36);
+            cbHighestEduc.TabIndex = 32;
             // 
-            // rbEtUpdating
+            // groupBox9
             // 
-            rbEtUpdating.AutoSize = true;
-            rbEtUpdating.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEtUpdating.Location = new Point(105, 55);
-            rbEtUpdating.Name = "rbEtUpdating";
-            rbEtUpdating.Size = new Size(103, 26);
-            rbEtUpdating.TabIndex = 16;
-            rbEtUpdating.TabStop = true;
-            rbEtUpdating.Text = "Updating";
-            rbEtUpdating.UseVisualStyleBackColor = true;
+            groupBox9.BackColor = Color.White;
+            groupBox9.Controls.Add(txtMaidenMother);
+            groupBox9.Controls.Add(label23);
+            groupBox9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox9.Location = new Point(11, 623);
+            groupBox9.Name = "groupBox9";
+            groupBox9.Size = new Size(333, 101);
+            groupBox9.TabIndex = 31;
+            groupBox9.TabStop = false;
             // 
-            // label2
+            // txtMaidenMother
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(281, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(157, 22);
-            label2.TabIndex = 15;
-            label2.Text = "Date Administered";
+            txtMaidenMother.BorderStyle = BorderStyle.FixedSingle;
+            txtMaidenMother.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaidenMother.Location = new Point(14, 61);
+            txtMaidenMother.Name = "txtMaidenMother";
+            txtMaidenMother.Size = new Size(302, 28);
+            txtMaidenMother.TabIndex = 27;
             // 
-            // rbEtNew
+            // label23
             // 
-            rbEtNew.AutoSize = true;
-            rbEtNew.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEtNew.Location = new Point(23, 55);
-            rbEtNew.Name = "rbEtNew";
-            rbEtNew.Size = new Size(67, 26);
-            rbEtNew.TabIndex = 14;
-            rbEtNew.TabStop = true;
-            rbEtNew.Text = "New";
-            rbEtNew.UseVisualStyleBackColor = true;
+            label23.AutoSize = true;
+            label23.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label23.Location = new Point(16, 30);
+            label23.Name = "label23";
+            label23.Size = new Size(193, 22);
+            label23.TabIndex = 6;
+            label23.Text = "Mother's Maiden Name";
             // 
-            // dtDateAdm
+            // label33
             // 
-            dtDateAdm.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dtDateAdm.Location = new Point(281, 51);
-            dtDateAdm.Name = "dtDateAdm";
-            dtDateAdm.Size = new Size(407, 28);
-            dtDateAdm.TabIndex = 13;
+            label33.AutoSize = true;
+            label33.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Location = new Point(16, 30);
+            label33.Name = "label33";
+            label33.Size = new Size(75, 22);
+            label33.TabIndex = 33;
+            label33.Text = "Religion";
             // 
-            // label1
+            // cbReligion
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(19, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(141, 22);
-            label1.TabIndex = 12;
-            label1.Text = "Enrollment Type";
+            cbReligion.FormattingEnabled = true;
+            cbReligion.Items.AddRange(new object[] { "Christianity", "Islam" });
+            cbReligion.Location = new Point(14, 61);
+            cbReligion.Name = "cbReligion";
+            cbReligion.Size = new Size(302, 30);
+            cbReligion.TabIndex = 32;
             // 
-            // txtRefNo
+            // cbCivilStatus
             // 
-            txtRefNo.BorderStyle = BorderStyle.FixedSingle;
-            txtRefNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRefNo.Location = new Point(776, 51);
-            txtRefNo.Name = "txtRefNo";
-            txtRefNo.Size = new Size(443, 28);
-            txtRefNo.TabIndex = 11;
+            cbCivilStatus.FormattingEnabled = true;
+            cbCivilStatus.Items.AddRange(new object[] { "Single", "Married", "Widowed", "Separated" });
+            cbCivilStatus.Location = new Point(16, 60);
+            cbCivilStatus.Name = "cbCivilStatus";
+            cbCivilStatus.Size = new Size(300, 30);
+            cbCivilStatus.TabIndex = 33;
             // 
-            // panel1
+            // label14
             // 
-            panel1.Controls.Add(panelColorDoc);
-            panel1.Controls.Add(panelColorFl);
-            panel1.Controls.Add(btnDocuments);
-            panel1.Controls.Add(btnFarmLand);
-            panel1.Controls.Add(panelColorFp);
-            panel1.Controls.Add(panelColorPi);
-            panel1.Controls.Add(btnFarmProfile);
-            panel1.Controls.Add(btnPersonal);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 101);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1816, 65);
-            panel1.TabIndex = 20;
+            label14.AutoSize = true;
+            label14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(16, 102);
+            label14.Name = "label14";
+            label14.Size = new Size(222, 22);
+            label14.TabIndex = 27;
+            label14.Text = "Name of Spouse if Married";
             // 
-            // panelColorDoc
+            // txtSpouseName
             // 
-            panelColorDoc.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorDoc.Location = new Point(530, 43);
-            panelColorDoc.Name = "panelColorDoc";
-            panelColorDoc.Size = new Size(122, 5);
-            panelColorDoc.TabIndex = 24;
+            txtSpouseName.BorderStyle = BorderStyle.FixedSingle;
+            txtSpouseName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSpouseName.Location = new Point(16, 133);
+            txtSpouseName.Name = "txtSpouseName";
+            txtSpouseName.Size = new Size(300, 34);
+            txtSpouseName.TabIndex = 26;
             // 
-            // panelColorFl
+            // label22
             // 
-            panelColorFl.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorFl.Location = new Point(386, 43);
-            panelColorFl.Name = "panelColorFl";
-            panelColorFl.Size = new Size(122, 5);
-            panelColorFl.TabIndex = 22;
+            label22.AutoSize = true;
+            label22.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label22.Location = new Point(16, 30);
+            label22.Name = "label22";
+            label22.Size = new Size(100, 22);
+            label22.TabIndex = 13;
+            label22.Text = "Civil Status";
             // 
-            // btnDocuments
+            // label13
             // 
-            btnDocuments.FlatAppearance.BorderSize = 0;
-            btnDocuments.FlatAppearance.MouseDownBackColor = Color.White;
-            btnDocuments.FlatAppearance.MouseOverBackColor = Color.White;
-            btnDocuments.FlatStyle = FlatStyle.Flat;
-            btnDocuments.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDocuments.Location = new Point(530, 11);
-            btnDocuments.Name = "btnDocuments";
-            btnDocuments.Size = new Size(122, 29);
-            btnDocuments.TabIndex = 25;
-            btnDocuments.Text = "Documents";
-            btnDocuments.UseVisualStyleBackColor = true;
+            label13.AutoSize = true;
+            label13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(227, 30);
+            label13.Name = "label13";
+            label13.Size = new Size(146, 22);
+            label13.TabIndex = 27;
+            label13.Text = "Landline Number";
             // 
-            // btnFarmLand
+            // txtLandNo
             // 
-            btnFarmLand.FlatAppearance.BorderSize = 0;
-            btnFarmLand.FlatAppearance.MouseDownBackColor = Color.White;
-            btnFarmLand.FlatAppearance.MouseOverBackColor = Color.White;
-            btnFarmLand.FlatStyle = FlatStyle.Flat;
-            btnFarmLand.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFarmLand.Location = new Point(386, 11);
-            btnFarmLand.Name = "btnFarmLand";
-            btnFarmLand.Size = new Size(122, 29);
-            btnFarmLand.TabIndex = 23;
-            btnFarmLand.Text = "Farm Land";
-            btnFarmLand.UseVisualStyleBackColor = true;
+            txtLandNo.BorderStyle = BorderStyle.FixedSingle;
+            txtLandNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtLandNo.Location = new Point(227, 59);
+            txtLandNo.Name = "txtLandNo";
+            txtLandNo.Size = new Size(218, 34);
+            txtLandNo.TabIndex = 26;
             // 
-            // panelColorFp
+            // txtMobNo
             // 
-            panelColorFp.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorFp.Location = new Point(240, 43);
-            panelColorFp.Name = "panelColorFp";
-            panelColorFp.Size = new Size(122, 5);
-            panelColorFp.TabIndex = 21;
+            txtMobNo.BorderStyle = BorderStyle.FixedSingle;
+            txtMobNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtMobNo.Location = new Point(16, 60);
+            txtMobNo.Name = "txtMobNo";
+            txtMobNo.Size = new Size(188, 34);
+            txtMobNo.TabIndex = 18;
             // 
-            // panelColorPi
+            // label11
             // 
-            panelColorPi.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorPi.Location = new Point(18, 43);
-            panelColorPi.Name = "panelColorPi";
-            panelColorPi.Size = new Size(197, 5);
-            panelColorPi.TabIndex = 20;
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(16, 30);
+            label11.Name = "label11";
+            label11.Size = new Size(130, 22);
+            label11.TabIndex = 13;
+            label11.Text = "Mobile Number";
             // 
-            // btnFarmProfile
+            // label10
             // 
-            btnFarmProfile.FlatAppearance.BorderSize = 0;
-            btnFarmProfile.FlatAppearance.MouseDownBackColor = Color.White;
-            btnFarmProfile.FlatAppearance.MouseOverBackColor = Color.White;
-            btnFarmProfile.FlatStyle = FlatStyle.Flat;
-            btnFarmProfile.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFarmProfile.Location = new Point(240, 11);
-            btnFarmProfile.Name = "btnFarmProfile";
-            btnFarmProfile.Size = new Size(122, 29);
-            btnFarmProfile.TabIndex = 19;
-            btnFarmProfile.Text = "Farm Profile";
-            btnFarmProfile.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(621, 30);
+            label10.Name = "label10";
+            label10.Size = new Size(73, 22);
+            label10.TabIndex = 13;
+            label10.Text = "Country";
             // 
-            // btnPersonal
+            // txtBirthCountry
             // 
-            btnPersonal.FlatAppearance.BorderSize = 0;
-            btnPersonal.FlatAppearance.MouseDownBackColor = Color.White;
-            btnPersonal.FlatAppearance.MouseOverBackColor = Color.White;
-            btnPersonal.FlatStyle = FlatStyle.Flat;
-            btnPersonal.Font = new Font("Roboto Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnPersonal.Location = new Point(18, 11);
-            btnPersonal.Name = "btnPersonal";
-            btnPersonal.Size = new Size(197, 29);
-            btnPersonal.TabIndex = 18;
-            btnPersonal.Text = "Personal Information";
-            btnPersonal.UseVisualStyleBackColor = true;
+            txtBirthCountry.BorderStyle = BorderStyle.FixedSingle;
+            txtBirthCountry.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBirthCountry.Location = new Point(621, 61);
+            txtBirthCountry.Name = "txtBirthCountry";
+            txtBirthCountry.Size = new Size(365, 34);
+            txtBirthCountry.TabIndex = 12;
             // 
-            // panelPersonalInfo
+            // label8
             // 
-            panelPersonalInfo.Controls.Add(panelFarmProfile);
-            panelPersonalInfo.Controls.Add(groupBox16);
-            panelPersonalInfo.Controls.Add(groupBox14);
-            panelPersonalInfo.Controls.Add(groupBox11);
-            panelPersonalInfo.Controls.Add(groupBox17);
-            panelPersonalInfo.Controls.Add(groupBox15);
-            panelPersonalInfo.Controls.Add(groupBox13);
-            panelPersonalInfo.Controls.Add(groupBox12);
-            panelPersonalInfo.Controls.Add(groupBox9);
-            panelPersonalInfo.Controls.Add(groupBox10);
-            panelPersonalInfo.Controls.Add(groupBox8);
-            panelPersonalInfo.Controls.Add(groupBox7);
-            panelPersonalInfo.Controls.Add(groupBox6);
-            panelPersonalInfo.Controls.Add(groupBox5);
-            panelPersonalInfo.Controls.Add(groupBox4);
-            panelPersonalInfo.Controls.Add(groupBox3);
-            panelPersonalInfo.Controls.Add(groupBox2);
-            panelPersonalInfo.Dock = DockStyle.Top;
-            panelPersonalInfo.Location = new Point(0, 166);
-            panelPersonalInfo.Name = "panelPersonalInfo";
-            panelPersonalInfo.Size = new Size(1816, 740);
-            panelPersonalInfo.TabIndex = 21;
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(304, 30);
+            label8.Name = "label8";
+            label8.Size = new Size(80, 22);
+            label8.TabIndex = 10;
+            label8.Text = "Province";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label24.Location = new Point(14, 30);
+            label24.Name = "label24";
+            label24.Size = new Size(216, 22);
+            label24.TabIndex = 33;
+            label24.Text = "Highest Formal Education";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(20, 30);
+            label15.Name = "label15";
+            label15.Size = new Size(103, 22);
+            label15.TabIndex = 8;
+            label15.Text = "Municipality";
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox2.Location = new Point(20, 29);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(203, 26);
+            checkBox2.TabIndex = 34;
+            checkBox2.Text = "Person with Disability";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Location = new Point(436, 27);
+            label26.Name = "label26";
+            label26.Size = new Size(95, 22);
+            label26.TabIndex = 35;
+            label26.Text = "ID Number";
+            // 
+            // txtAss
+            // 
+            txtAss.BorderStyle = BorderStyle.FixedSingle;
+            txtAss.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAss.Location = new Point(163, 61);
+            txtAss.Name = "txtAss";
+            txtAss.Size = new Size(615, 34);
+            txtAss.TabIndex = 14;
+            // 
+            // txtGovIdType
+            // 
+            txtGovIdType.BorderStyle = BorderStyle.FixedSingle;
+            txtGovIdType.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtGovIdType.Location = new Point(204, 60);
+            txtGovIdType.Name = "txtGovIdType";
+            txtGovIdType.Size = new Size(214, 34);
+            txtGovIdType.TabIndex = 14;
+            // 
+            // chGovId
+            // 
+            chGovId.AutoSize = true;
+            chGovId.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            chGovId.Location = new Point(16, 27);
+            chGovId.Name = "chGovId";
+            chGovId.Size = new Size(193, 26);
+            chGovId.TabIndex = 33;
+            chGovId.Text = "With Government ID";
+            chGovId.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(16, 63);
+            label27.Name = "label27";
+            label27.Size = new Size(186, 22);
+            label27.TabIndex = 33;
+            label27.Text = "If yes, specify ID Type";
+            // 
+            // txtIp
+            // 
+            txtIp.BorderStyle = BorderStyle.FixedSingle;
+            txtIp.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtIp.Location = new Point(142, 61);
+            txtIp.Name = "txtIp";
+            txtIp.Size = new Size(207, 34);
+            txtIp.TabIndex = 14;
+            // 
+            // chMemberIp
+            // 
+            chMemberIp.AutoSize = true;
+            chMemberIp.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            chMemberIp.Location = new Point(16, 27);
+            chMemberIp.Name = "chMemberIp";
+            chMemberIp.Size = new Size(288, 26);
+            chMemberIp.TabIndex = 33;
+            chMemberIp.Text = "Member of an Indigenous Group";
+            chMemberIp.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label25.Location = new Point(16, 63);
+            label25.Name = "label25";
+            label25.Size = new Size(121, 22);
+            label25.TabIndex = 33;
+            label25.Text = "If yes, Specify";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label34.Location = new Point(162, 135);
+            label34.Name = "label34";
+            label34.Size = new Size(109, 22);
+            label34.TabIndex = 43;
+            label34.Text = "Relationship";
+            // 
+            // txtHouseHeadRs
+            // 
+            txtHouseHeadRs.BorderStyle = BorderStyle.FixedSingle;
+            txtHouseHeadRs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtHouseHeadRs.Location = new Point(280, 133);
+            txtHouseHeadRs.Name = "txtHouseHeadRs";
+            txtHouseHeadRs.Size = new Size(288, 34);
+            txtHouseHeadRs.TabIndex = 42;
+            // 
+            // chHouseHead
+            // 
+            chHouseHead.AutoSize = true;
+            chHouseHead.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            chHouseHead.Location = new Point(20, 31);
+            chHouseHead.Name = "chHouseHead";
+            chHouseHead.Size = new Size(166, 26);
+            chHouseHead.TabIndex = 41;
+            chHouseHead.Text = "Household Head";
+            chHouseHead.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(20, 211);
+            label32.Name = "label32";
+            label32.Size = new Size(279, 22);
+            label32.TabIndex = 40;
+            label32.Text = "No. of Living Household Members";
+            // 
+            // nudNoLivingHouseMem
+            // 
+            nudNoLivingHouseMem.BorderStyle = BorderStyle.FixedSingle;
+            nudNoLivingHouseMem.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            nudNoLivingHouseMem.Location = new Point(21, 242);
+            nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
+            nudNoLivingHouseMem.Size = new Size(279, 28);
+            nudNoLivingHouseMem.TabIndex = 39;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(325, 211);
+            label31.Name = "label31";
+            label31.Size = new Size(101, 22);
+            label31.TabIndex = 38;
+            label31.Text = "No. of Male";
+            // 
+            // nudHouseNoMale
+            // 
+            nudHouseNoMale.BorderStyle = BorderStyle.FixedSingle;
+            nudHouseNoMale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            nudHouseNoMale.Location = new Point(326, 242);
+            nudHouseNoMale.Name = "nudHouseNoMale";
+            nudHouseNoMale.Size = new Size(104, 28);
+            nudHouseNoMale.TabIndex = 37;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label30.Location = new Point(462, 211);
+            label30.Name = "label30";
+            label30.Size = new Size(122, 22);
+            label30.TabIndex = 36;
+            label30.Text = "No. of Female";
+            // 
+            // nudHouseFemale
+            // 
+            nudHouseFemale.BorderStyle = BorderStyle.FixedSingle;
+            nudHouseFemale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            nudHouseFemale.Location = new Point(464, 242);
+            nudHouseFemale.Name = "nudHouseFemale";
+            nudHouseFemale.Size = new Size(120, 28);
+            nudHouseFemale.TabIndex = 35;
+            // 
+            // txtHouseHeadName
+            // 
+            txtHouseHeadName.BorderStyle = BorderStyle.FixedSingle;
+            txtHouseHeadName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtHouseHeadName.Location = new Point(280, 61);
+            txtHouseHeadName.Name = "txtHouseHeadName";
+            txtHouseHeadName.Size = new Size(288, 34);
+            txtHouseHeadName.TabIndex = 11;
+            // 
+            // txtBirthProvince
+            // 
+            txtBirthProvince.BorderStyle = BorderStyle.FixedSingle;
+            txtBirthProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBirthProvince.Location = new Point(304, 61);
+            txtBirthProvince.Name = "txtBirthProvince";
+            txtBirthProvince.Size = new Size(300, 34);
+            txtBirthProvince.TabIndex = 9;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Location = new Point(20, 62);
+            label29.Name = "label29";
+            label29.Size = new Size(251, 22);
+            label29.TabIndex = 34;
+            label29.Text = "If no, name of household head";
+            // 
+            // txtBirthMunicipality
+            // 
+            txtBirthMunicipality.BorderStyle = BorderStyle.FixedSingle;
+            txtBirthMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBirthMunicipality.Location = new Point(20, 61);
+            txtBirthMunicipality.Name = "txtBirthMunicipality";
+            txtBirthMunicipality.Size = new Size(267, 34);
+            txtBirthMunicipality.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(966, 30);
+            label7.Name = "label7";
+            label7.Size = new Size(141, 22);
+            label7.TabIndex = 12;
+            label7.Text = "Extension Name";
+            // 
+            // txtExtname
+            // 
+            txtExtname.BorderStyle = BorderStyle.FixedSingle;
+            txtExtname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtExtname.Location = new Point(966, 61);
+            txtExtname.Name = "txtExtname";
+            txtExtname.Size = new Size(151, 28);
+            txtExtname.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(649, 30);
+            label6.Name = "label6";
+            label6.Size = new Size(114, 22);
+            label6.TabIndex = 10;
+            label6.Text = "Middle Name";
+            // 
+            // txtMiddlename
+            // 
+            txtMiddlename.BorderStyle = BorderStyle.FixedSingle;
+            txtMiddlename.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMiddlename.Location = new Point(649, 61);
+            txtMiddlename.Name = "txtMiddlename";
+            txtMiddlename.Size = new Size(300, 28);
+            txtMiddlename.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(332, 30);
+            label5.Name = "label5";
+            label5.Size = new Size(97, 22);
+            label5.TabIndex = 8;
+            label5.Text = "First Name";
+            // 
+            // dtpBirthDate
+            // 
+            dtpBirthDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpBirthDate.Location = new Point(14, 61);
+            dtpBirthDate.Name = "dtpBirthDate";
+            dtpBirthDate.Size = new Size(302, 28);
+            dtpBirthDate.TabIndex = 13;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(16, 30);
+            label12.Name = "label12";
+            label12.Size = new Size(110, 22);
+            label12.TabIndex = 6;
+            label12.Text = "Date of Birth";
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
+            comboBox1.Location = new Point(15, 59);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(137, 30);
+            comboBox1.TabIndex = 31;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(15, 29);
+            label21.Name = "label21";
+            label21.Size = new Size(41, 22);
+            label21.TabIndex = 13;
+            label21.Text = "Sex";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(1597, 30);
+            label9.Name = "label9";
+            label9.Size = new Size(67, 22);
+            label9.TabIndex = 29;
+            label9.Text = "Region";
+            // 
+            // txtAddRegion
+            // 
+            txtAddRegion.BorderStyle = BorderStyle.FixedSingle;
+            txtAddRegion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAddRegion.Location = new Point(1597, 61);
+            txtAddRegion.Name = "txtAddRegion";
+            txtAddRegion.Size = new Size(177, 34);
+            txtAddRegion.TabIndex = 28;
+            txtAddRegion.Text = "2";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(1283, 29);
+            label16.Name = "label16";
+            label16.Size = new Size(80, 22);
+            label16.TabIndex = 27;
+            label16.Text = "Province";
+            // 
+            // txtAddProvince
+            // 
+            txtAddProvince.BorderStyle = BorderStyle.FixedSingle;
+            txtAddProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAddProvince.Location = new Point(1283, 60);
+            txtAddProvince.Name = "txtAddProvince";
+            txtAddProvince.Size = new Size(300, 34);
+            txtAddProvince.TabIndex = 26;
+            txtAddProvince.Text = "Nueva Vizcaya";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(966, 30);
+            label17.Name = "label17";
+            label17.Size = new Size(103, 22);
+            label17.TabIndex = 25;
+            label17.Text = "Municipality";
+            // 
+            // txtAddMunicipality
+            // 
+            txtAddMunicipality.BorderStyle = BorderStyle.FixedSingle;
+            txtAddMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAddMunicipality.Location = new Point(966, 61);
+            txtAddMunicipality.Name = "txtAddMunicipality";
+            txtAddMunicipality.Size = new Size(300, 34);
+            txtAddMunicipality.TabIndex = 24;
+            txtAddMunicipality.Text = "Solano";
+            // 
+            // cbAddBrgy
+            // 
+            cbAddBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbAddBrgy.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbAddBrgy.FormattingEnabled = true;
+            cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            cbAddBrgy.Location = new Point(649, 60);
+            cbAddBrgy.Name = "cbAddBrgy";
+            cbAddBrgy.Size = new Size(300, 36);
+            cbAddBrgy.TabIndex = 23;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(649, 30);
+            label18.Name = "label18";
+            label18.Size = new Size(87, 22);
+            label18.TabIndex = 22;
+            label18.Text = "Barangay";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(332, 30);
+            label19.Name = "label19";
+            label19.Size = new Size(169, 22);
+            label19.TabIndex = 20;
+            label19.Text = "Street/Sition/Subdv.";
+            // 
+            // txtAddStreet
+            // 
+            txtAddStreet.BorderStyle = BorderStyle.FixedSingle;
+            txtAddStreet.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAddStreet.Location = new Point(332, 61);
+            txtAddStreet.Name = "txtAddStreet";
+            txtAddStreet.Size = new Size(300, 34);
+            txtAddStreet.TabIndex = 19;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.Location = new Point(16, 30);
+            label20.Name = "label20";
+            label20.Size = new Size(223, 22);
+            label20.TabIndex = 18;
+            label20.Text = "House/Lot/Bldg. No./Purok";
+            // 
+            // txtAddPurok
+            // 
+            txtAddPurok.BorderStyle = BorderStyle.FixedSingle;
+            txtAddPurok.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAddPurok.Location = new Point(16, 60);
+            txtAddPurok.Name = "txtAddPurok";
+            txtAddPurok.Size = new Size(300, 28);
+            txtAddPurok.TabIndex = 17;
+            // 
+            // txtMemberAss
+            // 
+            txtMemberAss.AutoSize = true;
+            txtMemberAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMemberAss.Location = new Point(16, 27);
+            txtMemberAss.Name = "txtMemberAss";
+            txtMemberAss.Size = new Size(425, 26);
+            txtMemberAss.TabIndex = 33;
+            txtMemberAss.Text = "Member of any Farmers Association/ Cooperative";
+            txtMemberAss.UseVisualStyleBackColor = true;
+            // 
+            // txtFirstname
+            // 
+            txtFirstname.BorderStyle = BorderStyle.FixedSingle;
+            txtFirstname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFirstname.Location = new Point(332, 61);
+            txtFirstname.Name = "txtFirstname";
+            txtFirstname.Size = new Size(300, 28);
+            txtFirstname.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(16, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(82, 22);
+            label4.TabIndex = 6;
+            label4.Text = "Surname";
+            // 
+            // txtSurname
+            // 
+            txtSurname.BorderStyle = BorderStyle.FixedSingle;
+            txtSurname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSurname.Location = new Point(16, 61);
+            txtSurname.Name = "txtSurname";
+            txtSurname.Size = new Size(300, 28);
+            txtSurname.TabIndex = 0;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Location = new Point(37, 62);
+            label28.Name = "label28";
+            label28.Size = new Size(121, 22);
+            label28.TabIndex = 33;
+            label28.Text = "If yes, Specify";
             // 
             // panelFarmProfile
             // 
+            panelFarmProfile.Controls.Add(panel2);
             panelFarmProfile.Controls.Add(panelFarmLand);
             panelFarmProfile.Controls.Add(groupBox21);
             panelFarmProfile.Controls.Add(groupBox20);
@@ -457,7 +950,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1816, 0);
+            panelFarmProfile.Size = new Size(1816, 906);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -465,10 +958,9 @@
             panelFarmLand.Controls.Add(flowLayoutPanelParcels);
             panelFarmLand.Controls.Add(groupBox23);
             panelFarmLand.Controls.Add(groupBox22);
-            panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1816, 0);
+            panelFarmLand.Size = new Size(1800, 0);
             panelFarmLand.TabIndex = 52;
             // 
             // flowLayoutPanelParcels
@@ -1131,58 +1623,14 @@
             checkBox1.Text = "Farmworker/Laborer";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // groupBox16
+            // txtGovIdNum
             // 
-            groupBox16.BackColor = Color.White;
-            groupBox16.Controls.Add(txtEcContact);
-            groupBox16.Controls.Add(label36);
-            groupBox16.Controls.Add(txtEcName);
-            groupBox16.Controls.Add(label35);
-            groupBox16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox16.Location = new Point(1007, 563);
-            groupBox16.Name = "groupBox16";
-            groupBox16.Size = new Size(472, 174);
-            groupBox16.TabIndex = 41;
-            groupBox16.TabStop = false;
-            groupBox16.Text = "Emergency Contact";
-            // 
-            // txtEcContact
-            // 
-            txtEcContact.BorderStyle = BorderStyle.FixedSingle;
-            txtEcContact.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEcContact.Location = new Point(12, 134);
-            txtEcContact.Name = "txtEcContact";
-            txtEcContact.Size = new Size(443, 28);
-            txtEcContact.TabIndex = 29;
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label36.Location = new Point(14, 103);
-            label36.Name = "label36";
-            label36.Size = new Size(140, 22);
-            label36.TabIndex = 28;
-            label36.Text = "Contact Number";
-            // 
-            // txtEcName
-            // 
-            txtEcName.BorderStyle = BorderStyle.FixedSingle;
-            txtEcName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEcName.Location = new Point(14, 61);
-            txtEcName.Name = "txtEcName";
-            txtEcName.Size = new Size(441, 28);
-            txtEcName.TabIndex = 27;
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(16, 30);
-            label35.Name = "label35";
-            label35.Size = new Size(319, 22);
-            label35.TabIndex = 6;
-            label35.Text = "Person to Notify in Case of Emergency";
+            txtGovIdNum.BorderStyle = BorderStyle.FixedSingle;
+            txtGovIdNum.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtGovIdNum.Location = new Point(436, 60);
+            txtGovIdNum.Name = "txtGovIdNum";
+            txtGovIdNum.Size = new Size(342, 28);
+            txtGovIdNum.TabIndex = 34;
             // 
             // groupBox14
             // 
@@ -1191,41 +1639,11 @@
             groupBox14.Controls.Add(txtMemberAss);
             groupBox14.Controls.Add(label28);
             groupBox14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox14.Location = new Point(1007, 455);
+            groupBox14.Location = new Point(1007, 442);
             groupBox14.Name = "groupBox14";
             groupBox14.Size = new Size(793, 102);
             groupBox14.TabIndex = 40;
             groupBox14.TabStop = false;
-            // 
-            // txtAss
-            // 
-            txtAss.BorderStyle = BorderStyle.FixedSingle;
-            txtAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAss.Location = new Point(163, 61);
-            txtAss.Name = "txtAss";
-            txtAss.Size = new Size(615, 28);
-            txtAss.TabIndex = 14;
-            // 
-            // txtMemberAss
-            // 
-            txtMemberAss.AutoSize = true;
-            txtMemberAss.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMemberAss.Location = new Point(16, 27);
-            txtMemberAss.Name = "txtMemberAss";
-            txtMemberAss.Size = new Size(425, 26);
-            txtMemberAss.TabIndex = 33;
-            txtMemberAss.Text = "Member of any Farmers Association/ Cooperative";
-            txtMemberAss.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label28.Location = new Point(37, 62);
-            label28.Name = "label28";
-            label28.Size = new Size(121, 22);
-            label28.TabIndex = 33;
-            label28.Text = "If yes, Specify";
             // 
             // groupBox11
             // 
@@ -1236,60 +1654,11 @@
             groupBox11.Controls.Add(chGovId);
             groupBox11.Controls.Add(label27);
             groupBox11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox11.Location = new Point(1007, 347);
+            groupBox11.Location = new Point(1007, 334);
             groupBox11.Name = "groupBox11";
             groupBox11.Size = new Size(793, 102);
             groupBox11.TabIndex = 39;
             groupBox11.TabStop = false;
-            // 
-            // txtGovIdNum
-            // 
-            txtGovIdNum.BorderStyle = BorderStyle.FixedSingle;
-            txtGovIdNum.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtGovIdNum.Location = new Point(436, 60);
-            txtGovIdNum.Name = "txtGovIdNum";
-            txtGovIdNum.Size = new Size(342, 28);
-            txtGovIdNum.TabIndex = 34;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label26.Location = new Point(436, 27);
-            label26.Name = "label26";
-            label26.Size = new Size(95, 22);
-            label26.TabIndex = 35;
-            label26.Text = "ID Number";
-            // 
-            // txtGovIdType
-            // 
-            txtGovIdType.BorderStyle = BorderStyle.FixedSingle;
-            txtGovIdType.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtGovIdType.Location = new Point(204, 60);
-            txtGovIdType.Name = "txtGovIdType";
-            txtGovIdType.Size = new Size(214, 28);
-            txtGovIdType.TabIndex = 14;
-            // 
-            // chGovId
-            // 
-            chGovId.AutoSize = true;
-            chGovId.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            chGovId.Location = new Point(16, 27);
-            chGovId.Name = "chGovId";
-            chGovId.Size = new Size(193, 26);
-            chGovId.TabIndex = 33;
-            chGovId.Text = "With Government ID";
-            chGovId.UseVisualStyleBackColor = true;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label27.Location = new Point(16, 63);
-            label27.Name = "label27";
-            label27.Size = new Size(186, 22);
-            label27.TabIndex = 33;
-            label27.Text = "If yes, specify ID Type";
             // 
             // groupBox17
             // 
@@ -1298,41 +1667,11 @@
             groupBox17.Controls.Add(chMemberIp);
             groupBox17.Controls.Add(label25);
             groupBox17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox17.Location = new Point(621, 347);
+            groupBox17.Location = new Point(621, 334);
             groupBox17.Name = "groupBox17";
             groupBox17.Size = new Size(367, 102);
             groupBox17.TabIndex = 38;
             groupBox17.TabStop = false;
-            // 
-            // txtIp
-            // 
-            txtIp.BorderStyle = BorderStyle.FixedSingle;
-            txtIp.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtIp.Location = new Point(142, 61);
-            txtIp.Name = "txtIp";
-            txtIp.Size = new Size(207, 28);
-            txtIp.TabIndex = 14;
-            // 
-            // chMemberIp
-            // 
-            chMemberIp.AutoSize = true;
-            chMemberIp.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            chMemberIp.Location = new Point(16, 27);
-            chMemberIp.Name = "chMemberIp";
-            chMemberIp.Size = new Size(288, 26);
-            chMemberIp.TabIndex = 33;
-            chMemberIp.Text = "Member of an Indigenous Group";
-            chMemberIp.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(16, 63);
-            label25.Name = "label25";
-            label25.Size = new Size(121, 22);
-            label25.TabIndex = 33;
-            label25.Text = "If yes, Specify";
             // 
             // groupBox15
             // 
@@ -1349,118 +1688,12 @@
             groupBox15.Controls.Add(txtHouseHeadName);
             groupBox15.Controls.Add(label29);
             groupBox15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox15.Location = new Point(357, 455);
+            groupBox15.Location = new Point(357, 442);
             groupBox15.Name = "groupBox15";
             groupBox15.Size = new Size(631, 282);
             groupBox15.TabIndex = 36;
             groupBox15.TabStop = false;
             groupBox15.Text = "Household";
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(162, 135);
-            label34.Name = "label34";
-            label34.Size = new Size(109, 22);
-            label34.TabIndex = 43;
-            label34.Text = "Relationship";
-            // 
-            // txtHouseHeadRs
-            // 
-            txtHouseHeadRs.BorderStyle = BorderStyle.FixedSingle;
-            txtHouseHeadRs.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtHouseHeadRs.Location = new Point(280, 133);
-            txtHouseHeadRs.Name = "txtHouseHeadRs";
-            txtHouseHeadRs.Size = new Size(288, 28);
-            txtHouseHeadRs.TabIndex = 42;
-            // 
-            // chHouseHead
-            // 
-            chHouseHead.AutoSize = true;
-            chHouseHead.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            chHouseHead.Location = new Point(20, 31);
-            chHouseHead.Name = "chHouseHead";
-            chHouseHead.Size = new Size(166, 26);
-            chHouseHead.TabIndex = 41;
-            chHouseHead.Text = "Household Head";
-            chHouseHead.UseVisualStyleBackColor = true;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label32.Location = new Point(20, 211);
-            label32.Name = "label32";
-            label32.Size = new Size(279, 22);
-            label32.TabIndex = 40;
-            label32.Text = "No. of Living Household Members";
-            // 
-            // nudNoLivingHouseMem
-            // 
-            nudNoLivingHouseMem.BorderStyle = BorderStyle.FixedSingle;
-            nudNoLivingHouseMem.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            nudNoLivingHouseMem.Location = new Point(21, 242);
-            nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
-            nudNoLivingHouseMem.Size = new Size(279, 28);
-            nudNoLivingHouseMem.TabIndex = 39;
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label31.Location = new Point(325, 211);
-            label31.Name = "label31";
-            label31.Size = new Size(101, 22);
-            label31.TabIndex = 38;
-            label31.Text = "No. of Male";
-            // 
-            // nudHouseNoMale
-            // 
-            nudHouseNoMale.BorderStyle = BorderStyle.FixedSingle;
-            nudHouseNoMale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            nudHouseNoMale.Location = new Point(326, 242);
-            nudHouseNoMale.Name = "nudHouseNoMale";
-            nudHouseNoMale.Size = new Size(104, 28);
-            nudHouseNoMale.TabIndex = 37;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label30.Location = new Point(462, 211);
-            label30.Name = "label30";
-            label30.Size = new Size(122, 22);
-            label30.TabIndex = 36;
-            label30.Text = "No. of Female";
-            // 
-            // nudHouseFemale
-            // 
-            nudHouseFemale.BorderStyle = BorderStyle.FixedSingle;
-            nudHouseFemale.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            nudHouseFemale.Location = new Point(464, 242);
-            nudHouseFemale.Name = "nudHouseFemale";
-            nudHouseFemale.Size = new Size(120, 28);
-            nudHouseFemale.TabIndex = 35;
-            // 
-            // txtHouseHeadName
-            // 
-            txtHouseHeadName.BorderStyle = BorderStyle.FixedSingle;
-            txtHouseHeadName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtHouseHeadName.Location = new Point(280, 61);
-            txtHouseHeadName.Name = "txtHouseHeadName";
-            txtHouseHeadName.Size = new Size(288, 28);
-            txtHouseHeadName.TabIndex = 11;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label29.Location = new Point(20, 62);
-            label29.Name = "label29";
-            label29.Size = new Size(251, 22);
-            label29.TabIndex = 34;
-            label29.Text = "If no, name of household head";
             // 
             // groupBox13
             // 
@@ -1468,33 +1701,11 @@
             groupBox13.Controls.Add(checkBox3);
             groupBox13.Controls.Add(checkBox2);
             groupBox13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox13.Location = new Point(357, 349);
+            groupBox13.Location = new Point(357, 336);
             groupBox13.Name = "groupBox13";
             groupBox13.Size = new Size(244, 102);
             groupBox13.TabIndex = 34;
             groupBox13.TabStop = false;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox3.Location = new Point(20, 62);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(161, 26);
-            checkBox3.TabIndex = 35;
-            checkBox3.Text = "4P's Beneficiary";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox2.Location = new Point(20, 29);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(203, 26);
-            checkBox2.TabIndex = 34;
-            checkBox2.Text = "Person with Disability";
-            checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
@@ -1502,62 +1713,11 @@
             groupBox12.Controls.Add(label24);
             groupBox12.Controls.Add(cbHighestEduc);
             groupBox12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox12.Location = new Point(1379, 239);
+            groupBox12.Location = new Point(1379, 226);
             groupBox12.Name = "groupBox12";
             groupBox12.Size = new Size(421, 102);
             groupBox12.TabIndex = 33;
             groupBox12.TabStop = false;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(14, 30);
-            label24.Name = "label24";
-            label24.Size = new Size(216, 22);
-            label24.TabIndex = 33;
-            label24.Text = "Highest Formal Education";
-            // 
-            // cbHighestEduc
-            // 
-            cbHighestEduc.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            cbHighestEduc.FormattingEnabled = true;
-            cbHighestEduc.Items.AddRange(new object[] { "Pre-school", "Elementary", "High School (non K-12)", "Junior High School (K-12)", "Senior High School (K-12)", "College", "Vocational", "Post-graduate", "None" });
-            cbHighestEduc.Location = new Point(14, 60);
-            cbHighestEduc.Name = "cbHighestEduc";
-            cbHighestEduc.Size = new Size(392, 30);
-            cbHighestEduc.TabIndex = 32;
-            // 
-            // groupBox9
-            // 
-            groupBox9.BackColor = Color.White;
-            groupBox9.Controls.Add(txtMaidenMother);
-            groupBox9.Controls.Add(label23);
-            groupBox9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox9.Location = new Point(11, 636);
-            groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(333, 101);
-            groupBox9.TabIndex = 31;
-            groupBox9.TabStop = false;
-            // 
-            // txtMaidenMother
-            // 
-            txtMaidenMother.BorderStyle = BorderStyle.FixedSingle;
-            txtMaidenMother.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaidenMother.Location = new Point(14, 61);
-            txtMaidenMother.Name = "txtMaidenMother";
-            txtMaidenMother.Size = new Size(302, 28);
-            txtMaidenMother.TabIndex = 27;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(16, 30);
-            label23.Name = "label23";
-            label23.Size = new Size(193, 22);
-            label23.TabIndex = 6;
-            label23.Text = "Mother's Maiden Name";
             // 
             // groupBox10
             // 
@@ -1565,30 +1725,90 @@
             groupBox10.Controls.Add(label33);
             groupBox10.Controls.Add(cbReligion);
             groupBox10.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox10.Location = new Point(11, 347);
+            groupBox10.Location = new Point(11, 334);
             groupBox10.Name = "groupBox10";
             groupBox10.Size = new Size(333, 102);
             groupBox10.TabIndex = 30;
             groupBox10.TabStop = false;
             // 
-            // label33
+            // panelPersonalInfo
             // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(16, 30);
-            label33.Name = "label33";
-            label33.Size = new Size(75, 22);
-            label33.TabIndex = 33;
-            label33.Text = "Religion";
+            panelPersonalInfo.AutoScroll = true;
+            panelPersonalInfo.Controls.Add(panelFarmProfile);
+            panelPersonalInfo.Controls.Add(groupBox16);
+            panelPersonalInfo.Controls.Add(groupBox14);
+            panelPersonalInfo.Controls.Add(groupBox11);
+            panelPersonalInfo.Controls.Add(groupBox17);
+            panelPersonalInfo.Controls.Add(groupBox15);
+            panelPersonalInfo.Controls.Add(groupBox13);
+            panelPersonalInfo.Controls.Add(groupBox12);
+            panelPersonalInfo.Controls.Add(groupBox9);
+            panelPersonalInfo.Controls.Add(groupBox10);
+            panelPersonalInfo.Controls.Add(groupBox8);
+            panelPersonalInfo.Controls.Add(groupBox7);
+            panelPersonalInfo.Controls.Add(groupBox6);
+            panelPersonalInfo.Controls.Add(groupBox5);
+            panelPersonalInfo.Controls.Add(groupBox4);
+            panelPersonalInfo.Controls.Add(groupBox3);
+            panelPersonalInfo.Controls.Add(groupBox2);
+            panelPersonalInfo.Dock = DockStyle.Top;
+            panelPersonalInfo.Location = new Point(0, 0);
+            panelPersonalInfo.Name = "panelPersonalInfo";
+            panelPersonalInfo.Size = new Size(1816, 909);
+            panelPersonalInfo.TabIndex = 19;
             // 
-            // cbReligion
+            // groupBox16
             // 
-            cbReligion.FormattingEnabled = true;
-            cbReligion.Items.AddRange(new object[] { "Christianity", "Islam" });
-            cbReligion.Location = new Point(14, 61);
-            cbReligion.Name = "cbReligion";
-            cbReligion.Size = new Size(302, 30);
-            cbReligion.TabIndex = 32;
+            groupBox16.BackColor = Color.White;
+            groupBox16.Controls.Add(txtEcContact);
+            groupBox16.Controls.Add(label36);
+            groupBox16.Controls.Add(txtEcName);
+            groupBox16.Controls.Add(label35);
+            groupBox16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox16.Location = new Point(1007, 550);
+            groupBox16.Name = "groupBox16";
+            groupBox16.Size = new Size(472, 174);
+            groupBox16.TabIndex = 41;
+            groupBox16.TabStop = false;
+            groupBox16.Text = "Emergency Contact";
+            // 
+            // txtEcContact
+            // 
+            txtEcContact.BorderStyle = BorderStyle.FixedSingle;
+            txtEcContact.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtEcContact.Location = new Point(12, 134);
+            txtEcContact.Name = "txtEcContact";
+            txtEcContact.Size = new Size(443, 34);
+            txtEcContact.TabIndex = 29;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label36.Location = new Point(14, 103);
+            label36.Name = "label36";
+            label36.Size = new Size(140, 22);
+            label36.TabIndex = 28;
+            label36.Text = "Contact Number";
+            // 
+            // txtEcName
+            // 
+            txtEcName.BorderStyle = BorderStyle.FixedSingle;
+            txtEcName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtEcName.Location = new Point(14, 61);
+            txtEcName.Name = "txtEcName";
+            txtEcName.Size = new Size(441, 34);
+            txtEcName.TabIndex = 27;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label35.Location = new Point(16, 30);
+            label35.Name = "label35";
+            label35.Size = new Size(319, 22);
+            label35.TabIndex = 6;
+            label35.Text = "Person to Notify in Case of Emergency";
             // 
             // groupBox8
             // 
@@ -1598,49 +1818,11 @@
             groupBox8.Controls.Add(txtSpouseName);
             groupBox8.Controls.Add(label22);
             groupBox8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox8.Location = new Point(11, 455);
+            groupBox8.Location = new Point(11, 442);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(333, 175);
             groupBox8.TabIndex = 17;
             groupBox8.TabStop = false;
-            // 
-            // cbCivilStatus
-            // 
-            cbCivilStatus.FormattingEnabled = true;
-            cbCivilStatus.Items.AddRange(new object[] { "Single", "Married", "Widowed", "Separated" });
-            cbCivilStatus.Location = new Point(16, 60);
-            cbCivilStatus.Name = "cbCivilStatus";
-            cbCivilStatus.Size = new Size(300, 30);
-            cbCivilStatus.TabIndex = 33;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(16, 102);
-            label14.Name = "label14";
-            label14.Size = new Size(222, 22);
-            label14.TabIndex = 27;
-            label14.Text = "Name of Spouse if Married";
-            // 
-            // txtSpouseName
-            // 
-            txtSpouseName.BorderStyle = BorderStyle.FixedSingle;
-            txtSpouseName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSpouseName.Location = new Point(16, 133);
-            txtSpouseName.Name = "txtSpouseName";
-            txtSpouseName.Size = new Size(300, 28);
-            txtSpouseName.TabIndex = 26;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.Location = new Point(16, 30);
-            label22.Name = "label22";
-            label22.Size = new Size(100, 22);
-            label22.TabIndex = 13;
-            label22.Text = "Civil Status";
             // 
             // groupBox7
             // 
@@ -1652,48 +1834,10 @@
             groupBox7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox7.Location = new Point(1340, 10);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(460, 115);
+            groupBox7.Size = new Size(460, 102);
             groupBox7.TabIndex = 16;
             groupBox7.TabStop = false;
             groupBox7.Text = "Contact";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(227, 30);
-            label13.Name = "label13";
-            label13.Size = new Size(146, 22);
-            label13.TabIndex = 27;
-            label13.Text = "Landline Number";
-            // 
-            // txtLandNo
-            // 
-            txtLandNo.BorderStyle = BorderStyle.FixedSingle;
-            txtLandNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLandNo.Location = new Point(227, 59);
-            txtLandNo.Name = "txtLandNo";
-            txtLandNo.Size = new Size(218, 28);
-            txtLandNo.TabIndex = 26;
-            // 
-            // txtMobNo
-            // 
-            txtMobNo.BorderStyle = BorderStyle.FixedSingle;
-            txtMobNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMobNo.Location = new Point(16, 60);
-            txtMobNo.Name = "txtMobNo";
-            txtMobNo.Size = new Size(188, 28);
-            txtMobNo.TabIndex = 18;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(16, 30);
-            label11.Name = "label11";
-            label11.Size = new Size(130, 22);
-            label11.TabIndex = 13;
-            label11.Text = "Mobile Number";
             // 
             // groupBox6
             // 
@@ -1705,69 +1849,12 @@
             groupBox6.Controls.Add(label15);
             groupBox6.Controls.Add(txtBirthMunicipality);
             groupBox6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox6.Location = new Point(357, 239);
+            groupBox6.Location = new Point(357, 226);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(1004, 102);
             groupBox6.TabIndex = 15;
             groupBox6.TabStop = false;
             groupBox6.Text = "Place of Birth";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(621, 30);
-            label10.Name = "label10";
-            label10.Size = new Size(73, 22);
-            label10.TabIndex = 13;
-            label10.Text = "Country";
-            // 
-            // txtBirthCountry
-            // 
-            txtBirthCountry.BorderStyle = BorderStyle.FixedSingle;
-            txtBirthCountry.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBirthCountry.Location = new Point(621, 61);
-            txtBirthCountry.Name = "txtBirthCountry";
-            txtBirthCountry.Size = new Size(365, 28);
-            txtBirthCountry.TabIndex = 12;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(304, 30);
-            label8.Name = "label8";
-            label8.Size = new Size(80, 22);
-            label8.TabIndex = 10;
-            label8.Text = "Province";
-            // 
-            // txtBirthProvince
-            // 
-            txtBirthProvince.BorderStyle = BorderStyle.FixedSingle;
-            txtBirthProvince.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBirthProvince.Location = new Point(304, 61);
-            txtBirthProvince.Name = "txtBirthProvince";
-            txtBirthProvince.Size = new Size(300, 28);
-            txtBirthProvince.TabIndex = 9;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(20, 30);
-            label15.Name = "label15";
-            label15.Size = new Size(103, 22);
-            label15.TabIndex = 8;
-            label15.Text = "Municipality";
-            // 
-            // txtBirthMunicipality
-            // 
-            txtBirthMunicipality.BorderStyle = BorderStyle.FixedSingle;
-            txtBirthMunicipality.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBirthMunicipality.Location = new Point(20, 61);
-            txtBirthMunicipality.Name = "txtBirthMunicipality";
-            txtBirthMunicipality.Size = new Size(267, 28);
-            txtBirthMunicipality.TabIndex = 7;
             // 
             // groupBox5
             // 
@@ -1775,29 +1862,11 @@
             groupBox5.Controls.Add(dtpBirthDate);
             groupBox5.Controls.Add(label12);
             groupBox5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox5.Location = new Point(11, 239);
+            groupBox5.Location = new Point(11, 226);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(333, 102);
             groupBox5.TabIndex = 14;
             groupBox5.TabStop = false;
-            // 
-            // dtpBirthDate
-            // 
-            dtpBirthDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpBirthDate.Location = new Point(14, 61);
-            dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(302, 28);
-            dtpBirthDate.TabIndex = 13;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(16, 30);
-            label12.Name = "label12";
-            label12.Size = new Size(110, 22);
-            label12.TabIndex = 6;
-            label12.Text = "Date of Birth";
             // 
             // groupBox4
             // 
@@ -1807,30 +1876,9 @@
             groupBox4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox4.Location = new Point(1159, 10);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(166, 115);
+            groupBox4.Size = new Size(166, 102);
             groupBox4.TabIndex = 13;
             groupBox4.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(15, 59);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(137, 30);
-            comboBox1.TabIndex = 31;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(15, 29);
-            label21.Name = "label21";
-            label21.Size = new Size(41, 22);
-            label21.TabIndex = 13;
-            label21.Text = "Sex";
             // 
             // groupBox3
             // 
@@ -1848,131 +1896,12 @@
             groupBox3.Controls.Add(label20);
             groupBox3.Controls.Add(txtAddPurok);
             groupBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox3.Location = new Point(11, 131);
+            groupBox3.Location = new Point(11, 118);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(1789, 102);
             groupBox3.TabIndex = 11;
             groupBox3.TabStop = false;
             groupBox3.Text = "Address";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(1597, 30);
-            label9.Name = "label9";
-            label9.Size = new Size(67, 22);
-            label9.TabIndex = 29;
-            label9.Text = "Region";
-            // 
-            // txtAddRegion
-            // 
-            txtAddRegion.BorderStyle = BorderStyle.FixedSingle;
-            txtAddRegion.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAddRegion.Location = new Point(1597, 61);
-            txtAddRegion.Name = "txtAddRegion";
-            txtAddRegion.Size = new Size(177, 28);
-            txtAddRegion.TabIndex = 28;
-            txtAddRegion.Text = "2";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(1283, 29);
-            label16.Name = "label16";
-            label16.Size = new Size(80, 22);
-            label16.TabIndex = 27;
-            label16.Text = "Province";
-            // 
-            // txtAddProvince
-            // 
-            txtAddProvince.BorderStyle = BorderStyle.FixedSingle;
-            txtAddProvince.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAddProvince.Location = new Point(1283, 60);
-            txtAddProvince.Name = "txtAddProvince";
-            txtAddProvince.Size = new Size(300, 28);
-            txtAddProvince.TabIndex = 26;
-            txtAddProvince.Text = "Nueva Vizcaya";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(966, 30);
-            label17.Name = "label17";
-            label17.Size = new Size(103, 22);
-            label17.TabIndex = 25;
-            label17.Text = "Municipality";
-            // 
-            // txtAddMunicipality
-            // 
-            txtAddMunicipality.BorderStyle = BorderStyle.FixedSingle;
-            txtAddMunicipality.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAddMunicipality.Location = new Point(966, 61);
-            txtAddMunicipality.Name = "txtAddMunicipality";
-            txtAddMunicipality.Size = new Size(300, 28);
-            txtAddMunicipality.TabIndex = 24;
-            txtAddMunicipality.Text = "Solano";
-            // 
-            // cbAddBrgy
-            // 
-            cbAddBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbAddBrgy.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            cbAddBrgy.FormattingEnabled = true;
-            cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbAddBrgy.Location = new Point(649, 60);
-            cbAddBrgy.Name = "cbAddBrgy";
-            cbAddBrgy.Size = new Size(300, 30);
-            cbAddBrgy.TabIndex = 23;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(649, 30);
-            label18.Name = "label18";
-            label18.Size = new Size(87, 22);
-            label18.TabIndex = 22;
-            label18.Text = "Barangay";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(332, 30);
-            label19.Name = "label19";
-            label19.Size = new Size(169, 22);
-            label19.TabIndex = 20;
-            label19.Text = "Street/Sition/Subdv.";
-            // 
-            // txtAddStreet
-            // 
-            txtAddStreet.BorderStyle = BorderStyle.FixedSingle;
-            txtAddStreet.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAddStreet.Location = new Point(332, 61);
-            txtAddStreet.Name = "txtAddStreet";
-            txtAddStreet.Size = new Size(300, 28);
-            txtAddStreet.TabIndex = 19;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(16, 30);
-            label20.Name = "label20";
-            label20.Size = new Size(223, 22);
-            label20.TabIndex = 18;
-            label20.Text = "House/Lot/Bldg. No./Purok";
-            // 
-            // txtAddPurok
-            // 
-            txtAddPurok.BorderStyle = BorderStyle.FixedSingle;
-            txtAddPurok.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAddPurok.Location = new Point(16, 60);
-            txtAddPurok.Name = "txtAddPurok";
-            txtAddPurok.Size = new Size(300, 28);
-            txtAddPurok.TabIndex = 17;
             // 
             // groupBox2
             // 
@@ -1986,110 +1915,530 @@
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(txtSurname);
             groupBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(11, 10);
+            groupBox2.Location = new Point(64, 10);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1133, 115);
+            groupBox2.Size = new Size(1133, 102);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
+            groupBox2.Text = "Name";
             // 
-            // label7
+            // panel2
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(966, 30);
-            label7.Name = "label7";
-            label7.Size = new Size(141, 22);
-            label7.TabIndex = 12;
-            label7.Text = "Extension Name";
+            panel2.Controls.Add(panel11);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1816, 490);
+            panel2.TabIndex = 53;
             // 
-            // txtExtname
+            // label1
             // 
-            txtExtname.BorderStyle = BorderStyle.FixedSingle;
-            txtExtname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtExtname.Location = new Point(966, 61);
-            txtExtname.Name = "txtExtname";
-            txtExtname.Size = new Size(151, 28);
-            txtExtname.TabIndex = 11;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(9, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 22);
+            label1.TabIndex = 3;
+            label1.Text = "Farm Parcel No.";
             // 
-            // label6
+            // label49
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(649, 30);
-            label6.Name = "label6";
-            label6.Size = new Size(114, 22);
-            label6.TabIndex = 10;
-            label6.Text = "Middle Name";
+            label49.AutoSize = true;
+            label49.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label49.Location = new Point(145, 10);
+            label49.Name = "label49";
+            label49.Size = new Size(191, 22);
+            label49.TabIndex = 4;
+            label49.Text = "Farm Land Description";
             // 
-            // txtMiddlename
+            // panel5
             // 
-            txtMiddlename.BorderStyle = BorderStyle.FixedSingle;
-            txtMiddlename.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMiddlename.Location = new Point(649, 61);
-            txtMiddlename.Name = "txtMiddlename";
-            txtMiddlename.Size = new Size(300, 28);
-            txtMiddlename.TabIndex = 9;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(label49);
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(139, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(478, 46);
+            panel5.TabIndex = 1;
             // 
-            // label5
+            // label50
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(332, 30);
-            label5.Name = "label5";
-            label5.Size = new Size(97, 22);
-            label5.TabIndex = 8;
-            label5.Text = "First Name";
+            label50.AutoSize = true;
+            label50.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label50.Location = new Point(217, 10);
+            label50.Name = "label50";
+            label50.Size = new Size(51, 22);
+            label50.TabIndex = 5;
+            label50.Text = "Farm";
             // 
-            // txtFirstname
+            // panel8
             // 
-            txtFirstname.BorderStyle = BorderStyle.FixedSingle;
-            txtFirstname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFirstname.Location = new Point(332, 61);
-            txtFirstname.Name = "txtFirstname";
-            txtFirstname.Size = new Size(300, 28);
-            txtFirstname.TabIndex = 7;
+            panel8.BorderStyle = BorderStyle.FixedSingle;
+            panel8.Controls.Add(label50);
+            panel8.Dock = DockStyle.Left;
+            panel8.Location = new Point(617, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(494, 46);
+            panel8.TabIndex = 2;
             // 
-            // label4
+            // panel3
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(16, 30);
-            label4.Name = "label4";
-            label4.Size = new Size(82, 22);
-            label4.TabIndex = 6;
-            label4.Text = "Surname";
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(labelParcelNo);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 48);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(140, 473);
+            panel3.TabIndex = 1;
             // 
-            // txtSurname
+            // labelParcelNo
             // 
-            txtSurname.BorderStyle = BorderStyle.FixedSingle;
-            txtSurname.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSurname.Location = new Point(16, 61);
-            txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(300, 28);
-            txtSurname.TabIndex = 0;
+            labelParcelNo.AutoSize = true;
+            labelParcelNo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            labelParcelNo.Location = new Point(67, 145);
+            labelParcelNo.Name = "labelParcelNo";
+            labelParcelNo.Size = new Size(20, 22);
+            labelParcelNo.TabIndex = 0;
+            labelParcelNo.Text = "1";
+            // 
+            // panel6
+            // 
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(panel8);
+            panel6.Controls.Add(panel5);
+            panel6.Controls.Add(panel7);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1111, 48);
+            panel6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(label1);
+            panel7.Dock = DockStyle.Left;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(139, 46);
+            panel7.TabIndex = 0;
+            // 
+            // txtOwnershipOthers
+            // 
+            txtOwnershipOthers.BorderStyle = BorderStyle.FixedSingle;
+            txtOwnershipOthers.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtOwnershipOthers.Location = new Point(145, 432);
+            txtOwnershipOthers.Name = "txtOwnershipOthers";
+            txtOwnershipOthers.Size = new Size(322, 29);
+            txtOwnershipOthers.TabIndex = 44;
+            // 
+            // checkBox26
+            // 
+            checkBox26.AutoSize = true;
+            checkBox26.Location = new Point(27, 432);
+            checkBox26.Name = "checkBox26";
+            checkBox26.Size = new Size(85, 26);
+            checkBox26.TabIndex = 43;
+            checkBox26.Text = "Others";
+            checkBox26.UseVisualStyleBackColor = true;
+            // 
+            // txtLesseeOwnerName
+            // 
+            txtLesseeOwnerName.BorderStyle = BorderStyle.FixedSingle;
+            txtLesseeOwnerName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLesseeOwnerName.Location = new Point(145, 399);
+            txtLesseeOwnerName.Name = "txtLesseeOwnerName";
+            txtLesseeOwnerName.Size = new Size(322, 29);
+            txtLesseeOwnerName.TabIndex = 42;
+            // 
+            // checkBox29
+            // 
+            checkBox29.AutoSize = true;
+            checkBox29.Location = new Point(27, 400);
+            checkBox29.Name = "checkBox29";
+            checkBox29.Size = new Size(90, 26);
+            checkBox29.TabIndex = 41;
+            checkBox29.Text = "Lessee";
+            checkBox29.UseVisualStyleBackColor = true;
+            // 
+            // checkBox30
+            // 
+            checkBox30.AutoSize = true;
+            checkBox30.Location = new Point(27, 368);
+            checkBox30.Name = "checkBox30";
+            checkBox30.Size = new Size(88, 26);
+            checkBox30.TabIndex = 40;
+            checkBox30.Text = "Tenant";
+            checkBox30.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(txtOwnershipOthers);
+            panel9.Controls.Add(checkBox26);
+            panel9.Controls.Add(txtLesseeOwnerName);
+            panel9.Controls.Add(checkBox29);
+            panel9.Controls.Add(checkBox30);
+            panel9.Controls.Add(checkBox31);
+            panel9.Controls.Add(txtTenantOwnerName);
+            panel9.Controls.Add(label51);
+            panel9.Controls.Add(label52);
+            panel9.Controls.Add(cmbAgrarianReformBen);
+            panel9.Controls.Add(label53);
+            panel9.Controls.Add(cmbAncestralDomain);
+            panel9.Controls.Add(label55);
+            panel9.Controls.Add(nudFarmArea);
+            panel9.Controls.Add(label56);
+            panel9.Controls.Add(label57);
+            panel9.Controls.Add(label58);
+            panel9.Controls.Add(cmbBarangay);
+            panel9.Controls.Add(cmbMunicipality);
+            panel9.Controls.Add(label59);
+            panel9.Controls.Add(txtOwnershipDcNo);
+            panel9.Dock = DockStyle.Left;
+            panel9.Location = new Point(140, 48);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(478, 473);
+            panel9.TabIndex = 24;
+            // 
+            // checkBox31
+            // 
+            checkBox31.AutoSize = true;
+            checkBox31.Location = new Point(27, 336);
+            checkBox31.Name = "checkBox31";
+            checkBox31.Size = new Size(174, 26);
+            checkBox31.TabIndex = 39;
+            checkBox31.Text = "Registered Owner";
+            checkBox31.UseVisualStyleBackColor = true;
+            // 
+            // txtTenantOwnerName
+            // 
+            txtTenantOwnerName.BorderStyle = BorderStyle.FixedSingle;
+            txtTenantOwnerName.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenantOwnerName.Location = new Point(145, 365);
+            txtTenantOwnerName.Name = "txtTenantOwnerName";
+            txtTenantOwnerName.Size = new Size(322, 29);
+            txtTenantOwnerName.TabIndex = 38;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label51.Location = new Point(12, 301);
+            label51.Name = "label51";
+            label51.Size = new Size(142, 22);
+            label51.TabIndex = 37;
+            label51.Text = "Ownership Type";
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label52.Location = new Point(12, 263);
+            label52.Name = "label52";
+            label52.Size = new Size(215, 22);
+            label52.TabIndex = 36;
+            label52.Text = "Ownership Document No.";
+            // 
+            // cmbAgrarianReformBen
+            // 
+            cmbAgrarianReformBen.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAgrarianReformBen.FormattingEnabled = true;
+            cmbAgrarianReformBen.Items.AddRange(new object[] { "Yes", "No" });
+            cmbAgrarianReformBen.Location = new Point(262, 206);
+            cmbAgrarianReformBen.Name = "cmbAgrarianReformBen";
+            cmbAgrarianReformBen.Size = new Size(205, 30);
+            cmbAgrarianReformBen.TabIndex = 35;
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label53.Location = new Point(12, 212);
+            label53.Name = "label53";
+            label53.Size = new Size(235, 22);
+            label53.TabIndex = 34;
+            label53.Text = "Agrarian Reform Beneficiary";
+            // 
+            // cmbAncestralDomain
+            // 
+            cmbAncestralDomain.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAncestralDomain.FormattingEnabled = true;
+            cmbAncestralDomain.Items.AddRange(new object[] { "Yes", "No" });
+            cmbAncestralDomain.Location = new Point(262, 167);
+            cmbAncestralDomain.Name = "cmbAncestralDomain";
+            cmbAncestralDomain.Size = new Size(205, 30);
+            cmbAncestralDomain.TabIndex = 33;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label55.Location = new Point(12, 173);
+            label55.Name = "label55";
+            label55.Size = new Size(192, 22);
+            label55.TabIndex = 32;
+            label55.Text = "With Ancestral Domain";
+            // 
+            // nudFarmArea
+            // 
+            nudFarmArea.Location = new Point(262, 114);
+            nudFarmArea.Name = "nudFarmArea";
+            nudFarmArea.Size = new Size(205, 29);
+            nudFarmArea.TabIndex = 31;
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label56.Location = new Point(12, 114);
+            label56.Name = "label56";
+            label56.Size = new Size(245, 22);
+            label56.TabIndex = 30;
+            label56.Text = "Total Farm Area (in hectares)";
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label57.Location = new Point(154, 57);
+            label57.Name = "label57";
+            label57.Size = new Size(103, 22);
+            label57.TabIndex = 29;
+            label57.Text = "Municipality";
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label58.Location = new Point(154, 12);
+            label58.Name = "label58";
+            label58.Size = new Size(87, 22);
+            label58.TabIndex = 28;
+            label58.Text = "Barangay";
+            // 
+            // cmbBarangay
+            // 
+            cmbBarangay.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBarangay.FormattingEnabled = true;
+            cmbBarangay.Location = new Point(262, 11);
+            cmbBarangay.Name = "cmbBarangay";
+            cmbBarangay.Size = new Size(205, 30);
+            cmbBarangay.TabIndex = 27;
+            // 
+            // cmbMunicipality
+            // 
+            cmbMunicipality.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMunicipality.FormattingEnabled = true;
+            cmbMunicipality.Location = new Point(262, 56);
+            cmbMunicipality.Name = "cmbMunicipality";
+            cmbMunicipality.Size = new Size(205, 30);
+            cmbMunicipality.TabIndex = 26;
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label59.Location = new Point(12, 11);
+            label59.Name = "label59";
+            label59.Size = new Size(124, 22);
+            label59.TabIndex = 25;
+            label59.Text = "Farm Location";
+            // 
+            // txtOwnershipDcNo
+            // 
+            txtOwnershipDcNo.BorderStyle = BorderStyle.FixedSingle;
+            txtOwnershipDcNo.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtOwnershipDcNo.Location = new Point(262, 258);
+            txtOwnershipDcNo.Name = "txtOwnershipDcNo";
+            txtOwnershipDcNo.Size = new Size(205, 29);
+            txtOwnershipDcNo.TabIndex = 24;
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label60.Location = new Point(17, 11);
+            label60.Name = "label60";
+            label60.Size = new Size(143, 22);
+            label60.TabIndex = 45;
+            label60.Text = "Crop/Commodity";
+            // 
+            // panel10
+            // 
+            panel10.BorderStyle = BorderStyle.FixedSingle;
+            panel10.Controls.Add(rtbRemarks);
+            panel10.Controls.Add(label61);
+            panel10.Controls.Add(cmbOrganicPractitioner);
+            panel10.Controls.Add(label62);
+            panel10.Controls.Add(cmbFarmType);
+            panel10.Controls.Add(label63);
+            panel10.Controls.Add(headNo);
+            panel10.Controls.Add(label64);
+            panel10.Controls.Add(nudFarmSize);
+            panel10.Controls.Add(label65);
+            panel10.Controls.Add(txtAnimalType);
+            panel10.Controls.Add(txtCropCommodity);
+            panel10.Controls.Add(label66);
+            panel10.Controls.Add(label60);
+            panel10.Dock = DockStyle.Left;
+            panel10.Location = new Point(618, 48);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(494, 473);
+            panel10.TabIndex = 25;
+            // 
+            // rtbRemarks
+            // 
+            rtbRemarks.Location = new Point(148, 335);
+            rtbRemarks.Name = "rtbRemarks";
+            rtbRemarks.Size = new Size(324, 123);
+            rtbRemarks.TabIndex = 58;
+            rtbRemarks.Text = "";
+            // 
+            // label61
+            // 
+            label61.AutoSize = true;
+            label61.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label61.Location = new Point(17, 335);
+            label61.Name = "label61";
+            label61.Size = new Size(81, 22);
+            label61.TabIndex = 57;
+            label61.Text = "Remarks";
+            // 
+            // cmbOrganicPractitioner
+            // 
+            cmbOrganicPractitioner.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOrganicPractitioner.FormattingEnabled = true;
+            cmbOrganicPractitioner.Items.AddRange(new object[] { "Yes", "No" });
+            cmbOrganicPractitioner.Location = new Point(217, 258);
+            cmbOrganicPractitioner.Name = "cmbOrganicPractitioner";
+            cmbOrganicPractitioner.Size = new Size(255, 30);
+            cmbOrganicPractitioner.TabIndex = 56;
+            // 
+            // label62
+            // 
+            label62.AutoSize = true;
+            label62.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label62.Location = new Point(17, 263);
+            label62.Name = "label62";
+            label62.Size = new Size(169, 22);
+            label62.TabIndex = 55;
+            label62.Text = "Organic Practitioner";
+            // 
+            // cmbFarmType
+            // 
+            cmbFarmType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFarmType.FormattingEnabled = true;
+            cmbFarmType.Items.AddRange(new object[] { "Irrigated", "Rainfed Upland", "Rainfed Lowland" });
+            cmbFarmType.Location = new Point(148, 211);
+            cmbFarmType.Name = "cmbFarmType";
+            cmbFarmType.Size = new Size(324, 30);
+            cmbFarmType.TabIndex = 54;
+            // 
+            // label63
+            // 
+            label63.AutoSize = true;
+            label63.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label63.Location = new Point(17, 212);
+            label63.Name = "label63";
+            label63.Size = new Size(97, 22);
+            label63.TabIndex = 53;
+            label63.Text = "Farm Type";
+            // 
+            // headNo
+            // 
+            headNo.Location = new Point(148, 173);
+            headNo.Name = "headNo";
+            headNo.Size = new Size(324, 29);
+            headNo.TabIndex = 52;
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label64.Location = new Point(17, 173);
+            label64.Name = "label64";
+            label64.Size = new Size(106, 22);
+            label64.TabIndex = 51;
+            label64.Text = "No. of Head";
+            // 
+            // nudFarmSize
+            // 
+            nudFarmSize.Location = new Point(86, 114);
+            nudFarmSize.Name = "nudFarmSize";
+            nudFarmSize.Size = new Size(386, 29);
+            nudFarmSize.TabIndex = 50;
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label65.Location = new Point(17, 114);
+            label65.Name = "label65";
+            label65.Size = new Size(44, 22);
+            label65.TabIndex = 49;
+            label65.Text = "Size";
+            // 
+            // txtAnimalType
+            // 
+            txtAnimalType.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtAnimalType.FormattingEnabled = true;
+            txtAnimalType.Location = new Point(187, 56);
+            txtAnimalType.Name = "txtAnimalType";
+            txtAnimalType.Size = new Size(285, 30);
+            txtAnimalType.TabIndex = 48;
+            // 
+            // txtCropCommodity
+            // 
+            txtCropCommodity.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtCropCommodity.FormattingEnabled = true;
+            txtCropCommodity.Items.AddRange(new object[] { "Rice", "Corn", "HVC", "Livestock", "Poultry", "Agri-Fishery" });
+            txtCropCommodity.Location = new Point(187, 10);
+            txtCropCommodity.Name = "txtCropCommodity";
+            txtCropCommodity.Size = new Size(285, 30);
+            txtCropCommodity.TabIndex = 47;
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label66.Location = new Point(17, 57);
+            label66.Name = "label66";
+            label66.Size = new Size(130, 22);
+            label66.TabIndex = 46;
+            label66.Text = "Type of Animal";
+            // 
+            // panel11
+            // 
+            panel11.BorderStyle = BorderStyle.FixedSingle;
+            panel11.Controls.Add(panel10);
+            panel11.Controls.Add(panel9);
+            panel11.Controls.Add(panel3);
+            panel11.Controls.Add(panel6);
+            panel11.Location = new Point(37, 32);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(1113, 523);
+            panel11.TabIndex = 3;
             // 
             // RSBSAtry
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            HorizontalScroll.Enabled = true;
-            HorizontalScroll.Visible = true;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1816, 921);
             Controls.Add(panelPersonalInfo);
-            Controls.Add(panel1);
-            Controls.Add(panel4);
             Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "RSBSAtry";
             Text = "RSBSAtry";
             Load += RSBSAtry_Load;
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel1.ResumeLayout(false);
-            panelPersonalInfo.ResumeLayout(false);
+            groupBox9.ResumeLayout(false);
+            groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudNoLivingHouseMem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudHouseNoMale).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudHouseFemale).EndInit();
             panelFarmProfile.ResumeLayout(false);
             panelFarmLand.ResumeLayout(false);
             groupBox23.ResumeLayout(false);
@@ -2109,8 +2458,6 @@
             groupBox28.PerformLayout();
             groupBox33.ResumeLayout(false);
             groupBox33.PerformLayout();
-            groupBox16.ResumeLayout(false);
-            groupBox16.PerformLayout();
             groupBox14.ResumeLayout(false);
             groupBox14.PerformLayout();
             groupBox11.ResumeLayout(false);
@@ -2119,17 +2466,15 @@
             groupBox17.PerformLayout();
             groupBox15.ResumeLayout(false);
             groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudNoLivingHouseMem).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudHouseNoMale).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudHouseFemale).EndInit();
             groupBox13.ResumeLayout(false);
             groupBox13.PerformLayout();
             groupBox12.ResumeLayout(false);
             groupBox12.PerformLayout();
-            groupBox9.ResumeLayout(false);
-            groupBox9.PerformLayout();
             groupBox10.ResumeLayout(false);
             groupBox10.PerformLayout();
+            panelPersonalInfo.ResumeLayout(false);
+            groupBox16.ResumeLayout(false);
+            groupBox16.PerformLayout();
             groupBox8.ResumeLayout(false);
             groupBox8.PerformLayout();
             groupBox7.ResumeLayout(false);
@@ -2144,29 +2489,98 @@
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudFarmArea).EndInit();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)headNo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudFarmSize).EndInit();
+            panel11.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel4;
-        private Label label3;
-        private RadioButton rbEtUpdating;
-        private Label label2;
-        private RadioButton rbEtNew;
-        private DateTimePicker dtDateAdm;
-        private Label label1;
-        private TextBox txtRefNo;
-        private Panel panel1;
-        private Panel panelColorDoc;
-        private Panel panelColorFl;
-        private Button btnDocuments;
-        private Button btnFarmLand;
-        private Panel panelColorFp;
-        private Panel panelColorPi;
-        private Button btnFarmProfile;
-        private Button btnPersonal;
-        private Panel panelPersonalInfo;
+        private CheckBox checkBox3;
+        private ComboBox cbHighestEduc;
+        private GroupBox groupBox9;
+        private TextBox txtMaidenMother;
+        private Label label23;
+        private Label label33;
+        private ComboBox cbReligion;
+        private ComboBox cbCivilStatus;
+        private Label label14;
+        private TextBox txtSpouseName;
+        private Label label22;
+        private Label label13;
+        private TextBox txtLandNo;
+        private TextBox txtMobNo;
+        private Label label11;
+        private Label label10;
+        private TextBox txtBirthCountry;
+        private Label label8;
+        private Label label24;
+        private Label label15;
+        private CheckBox checkBox2;
+        private Label label26;
+        private TextBox txtAss;
+        private TextBox txtGovIdType;
+        private CheckBox chGovId;
+        private Label label27;
+        private TextBox txtIp;
+        private CheckBox chMemberIp;
+        private Label label25;
+        private Label label34;
+        private TextBox txtHouseHeadRs;
+        private CheckBox chHouseHead;
+        private Label label32;
+        private NumericUpDown nudNoLivingHouseMem;
+        private Label label31;
+        private NumericUpDown nudHouseNoMale;
+        private Label label30;
+        private NumericUpDown nudHouseFemale;
+        private TextBox txtHouseHeadName;
+        private TextBox txtBirthProvince;
+        private Label label29;
+        private TextBox txtBirthMunicipality;
+        private Label label7;
+        private TextBox txtExtname;
+        private Label label6;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TextBox txtMiddlename;
+        private Label label5;
+        private DateTimePicker dtpBirthDate;
+        private Label label12;
+        private ComboBox comboBox1;
+        private Label label21;
+        private Label label9;
+        private TextBox txtAddRegion;
+        private Label label16;
+        private TextBox txtAddProvince;
+        private Label label17;
+        private TextBox txtAddMunicipality;
+        private ComboBox cbAddBrgy;
+        private Label label18;
+        private Label label19;
+        private TextBox txtAddStreet;
+        private Label label20;
+        private TextBox txtAddPurok;
+        private CheckBox txtMemberAss;
+        private TextBox txtFirstname;
+        private Label label4;
+        private TextBox txtSurname;
+        private Label label28;
         private Panel panelFarmProfile;
         private Panel panelFarmLand;
         private FlowLayoutPanel flowLayoutPanelParcels;
@@ -2228,93 +2642,74 @@
         private CheckBox checkBox6;
         private CheckBox checkBox4;
         private CheckBox checkBox1;
+        private TextBox txtGovIdNum;
+        private GroupBox groupBox14;
+        private GroupBox groupBox11;
+        private GroupBox groupBox17;
+        private GroupBox groupBox15;
+        private GroupBox groupBox13;
+        private GroupBox groupBox12;
+        private GroupBox groupBox10;
+        private Panel panelPersonalInfo;
         private GroupBox groupBox16;
         private TextBox txtEcContact;
         private Label label36;
         private TextBox txtEcName;
         private Label label35;
-        private GroupBox groupBox14;
-        private TextBox txtAss;
-        private CheckBox txtMemberAss;
-        private Label label28;
-        private GroupBox groupBox11;
-        private TextBox txtGovIdNum;
-        private Label label26;
-        private TextBox txtGovIdType;
-        private CheckBox chGovId;
-        private Label label27;
-        private GroupBox groupBox17;
-        private TextBox txtIp;
-        private CheckBox chMemberIp;
-        private Label label25;
-        private GroupBox groupBox15;
-        private Label label34;
-        private TextBox txtHouseHeadRs;
-        private CheckBox chHouseHead;
-        private Label label32;
-        private NumericUpDown nudNoLivingHouseMem;
-        private Label label31;
-        private NumericUpDown nudHouseNoMale;
-        private Label label30;
-        private NumericUpDown nudHouseFemale;
-        private TextBox txtHouseHeadName;
-        private Label label29;
-        private GroupBox groupBox13;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private GroupBox groupBox12;
-        private Label label24;
-        private ComboBox cbHighestEduc;
-        private GroupBox groupBox9;
-        private TextBox txtMaidenMother;
-        private Label label23;
-        private GroupBox groupBox10;
-        private Label label33;
-        private ComboBox cbReligion;
         private GroupBox groupBox8;
-        private ComboBox cbCivilStatus;
-        private Label label14;
-        private TextBox txtSpouseName;
-        private Label label22;
         private GroupBox groupBox7;
         private GroupBox groupBox6;
-        private Label label10;
-        private TextBox txtBirthCountry;
-        private Label label8;
-        private TextBox txtBirthProvince;
-        private Label label15;
-        private TextBox txtBirthMunicipality;
         private GroupBox groupBox5;
-        private DateTimePicker dtpBirthDate;
-        private Label label12;
         private GroupBox groupBox4;
-        private ComboBox comboBox1;
-        private Label label21;
         private GroupBox groupBox3;
-        private Label label9;
-        private TextBox txtAddRegion;
-        private Label label16;
-        private TextBox txtAddProvince;
-        private Label label17;
-        private TextBox txtAddMunicipality;
-        private ComboBox cbAddBrgy;
-        private Label label18;
-        private Label label19;
-        private TextBox txtAddStreet;
-        private Label label20;
-        private TextBox txtAddPurok;
-        private Label label13;
-        private TextBox txtLandNo;
-        private TextBox txtMobNo;
-        private Label label11;
         private GroupBox groupBox2;
-        private Label label7;
-        private TextBox txtExtname;
-        private Label label6;
-        private TextBox txtMiddlename;
-        private Label label5;
-        private TextBox txtFirstname;
-        private Label label4;
-        private TextBox txtSurname;
+        private Panel panel2;
+        private Panel panel11;
+        private Panel panel10;
+        private RichTextBox rtbRemarks;
+        private Label label61;
+        private ComboBox cmbOrganicPractitioner;
+        private Label label62;
+        private ComboBox cmbFarmType;
+        private Label label63;
+        private NumericUpDown headNo;
+        private Label label64;
+        private NumericUpDown nudFarmSize;
+        private Label label65;
+        private ComboBox txtAnimalType;
+        private ComboBox txtCropCommodity;
+        private Label label66;
+        private Label label60;
+        private Panel panel9;
+        private TextBox txtOwnershipOthers;
+        private CheckBox checkBox26;
+        private TextBox txtLesseeOwnerName;
+        private CheckBox checkBox29;
+        private CheckBox checkBox30;
+        private CheckBox checkBox31;
+        private TextBox txtTenantOwnerName;
+        private Label label51;
+        private Label label52;
+        private ComboBox cmbAgrarianReformBen;
+        private Label label53;
+        private ComboBox cmbAncestralDomain;
+        private Label label55;
+        private NumericUpDown nudFarmArea;
+        private Label label56;
+        private Label label57;
+        private Label label58;
+        private ComboBox cmbBarangay;
+        private ComboBox cmbMunicipality;
+        private Label label59;
+        private TextBox txtOwnershipDcNo;
+        private Panel panel3;
+        public Label labelParcelNo;
+        private Panel panel6;
+        private Panel panel8;
+        private Label label50;
+        private Panel panel5;
+        private Label label49;
+        private Panel panel7;
+        private Label label1;
     }
 }

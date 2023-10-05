@@ -33,7 +33,7 @@ namespace AgRecords.View
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
 
-            numericUpDown1.Value = 1;
+            nudFarmParcelNo.Value = 1;
 
             rsbsaController.GenerateNewRSBSAId();
 
@@ -104,7 +104,7 @@ namespace AgRecords.View
         //for farm parcel
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            int numberOfControls = (int)numericUpDown1.Value;
+            int numberOfControls = (int)nudFarmParcelNo.Value;
 
             flowLayoutPanelParcels.Controls.Clear();
 
@@ -119,6 +119,16 @@ namespace AgRecords.View
                 // Add the UserControl to the parent control (e.g., Panel)
                 flowLayoutPanelParcels.Controls.Add(farmLandControl);
             }
+        }
+
+        private void rectangleRound42_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label61_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
