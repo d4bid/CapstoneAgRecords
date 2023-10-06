@@ -130,5 +130,10 @@ namespace AgRecords.View
         {
 
         }
+
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

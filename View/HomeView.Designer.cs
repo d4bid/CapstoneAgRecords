@@ -100,7 +100,7 @@
             btnUsers.FlatAppearance.BorderSize = 0;
             btnUsers.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnUsers.FlatStyle = FlatStyle.Flat;
-            btnUsers.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsers.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUsers.ForeColor = Color.White;
             btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
             btnUsers.IconColor = Color.White;
@@ -126,7 +126,7 @@
             btnActivities.FlatAppearance.BorderSize = 0;
             btnActivities.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnActivities.FlatStyle = FlatStyle.Flat;
-            btnActivities.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnActivities.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnActivities.ForeColor = Color.White;
             btnActivities.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             btnActivities.IconColor = Color.White;
@@ -151,7 +151,7 @@
             btnCertifications.FlatAppearance.BorderSize = 0;
             btnCertifications.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnCertifications.FlatStyle = FlatStyle.Flat;
-            btnCertifications.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCertifications.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCertifications.ForeColor = Color.White;
             btnCertifications.IconChar = FontAwesome.Sharp.IconChar.Scroll;
             btnCertifications.IconColor = Color.White;
@@ -176,7 +176,7 @@
             btnLetters.FlatAppearance.BorderSize = 0;
             btnLetters.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnLetters.FlatStyle = FlatStyle.Flat;
-            btnLetters.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLetters.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLetters.ForeColor = Color.White;
             btnLetters.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             btnLetters.IconColor = Color.White;
@@ -212,7 +212,7 @@
             btnReportsCrops.Dock = DockStyle.Top;
             btnReportsCrops.FlatAppearance.BorderSize = 0;
             btnReportsCrops.FlatStyle = FlatStyle.Flat;
-            btnReportsCrops.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReportsCrops.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReportsCrops.ForeColor = Color.White;
             btnReportsCrops.IconChar = FontAwesome.Sharp.IconChar.None;
             btnReportsCrops.IconColor = Color.White;
@@ -237,7 +237,7 @@
             btnReportsRsbsa.Dock = DockStyle.Top;
             btnReportsRsbsa.FlatAppearance.BorderSize = 0;
             btnReportsRsbsa.FlatStyle = FlatStyle.Flat;
-            btnReportsRsbsa.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReportsRsbsa.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReportsRsbsa.ForeColor = Color.White;
             btnReportsRsbsa.IconChar = FontAwesome.Sharp.IconChar.None;
             btnReportsRsbsa.IconColor = Color.White;
@@ -263,7 +263,7 @@
             btnReports.FlatAppearance.BorderSize = 0;
             btnReports.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnReports.FlatStyle = FlatStyle.Flat;
-            btnReports.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReports.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReports.ForeColor = Color.White;
             btnReports.IconChar = FontAwesome.Sharp.IconChar.FileText;
             btnReports.IconColor = Color.White;
@@ -289,7 +289,7 @@
             btnDamages.FlatAppearance.BorderSize = 0;
             btnDamages.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnDamages.FlatStyle = FlatStyle.Flat;
-            btnDamages.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDamages.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnDamages.ForeColor = Color.White;
             btnDamages.IconChar = FontAwesome.Sharp.IconChar.WheatAwnCircleExclamation;
             btnDamages.IconColor = Color.White;
@@ -327,7 +327,7 @@
             btnVegetable.Dock = DockStyle.Top;
             btnVegetable.FlatAppearance.BorderSize = 0;
             btnVegetable.FlatStyle = FlatStyle.Flat;
-            btnVegetable.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVegetable.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnVegetable.ForeColor = Color.White;
             btnVegetable.IconChar = FontAwesome.Sharp.IconChar.None;
             btnVegetable.IconColor = Color.White;
@@ -352,7 +352,7 @@
             btnCorn.Dock = DockStyle.Top;
             btnCorn.FlatAppearance.BorderSize = 0;
             btnCorn.FlatStyle = FlatStyle.Flat;
-            btnCorn.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCorn.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCorn.ForeColor = Color.White;
             btnCorn.IconChar = FontAwesome.Sharp.IconChar.None;
             btnCorn.IconColor = Color.White;
@@ -377,7 +377,7 @@
             btnRice.Dock = DockStyle.Top;
             btnRice.FlatAppearance.BorderSize = 0;
             btnRice.FlatStyle = FlatStyle.Flat;
-            btnRice.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRice.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnRice.ForeColor = Color.White;
             btnRice.IconChar = FontAwesome.Sharp.IconChar.None;
             btnRice.IconColor = Color.White;
@@ -403,7 +403,7 @@
             btnCrops.FlatAppearance.BorderSize = 0;
             btnCrops.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnCrops.FlatStyle = FlatStyle.Flat;
-            btnCrops.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrops.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrops.ForeColor = Color.White;
             btnCrops.IconChar = FontAwesome.Sharp.IconChar.WheatAwn;
             btnCrops.IconColor = Color.White;
@@ -428,7 +428,7 @@
             btnRSBSA.Dock = DockStyle.Top;
             btnRSBSA.FlatAppearance.BorderSize = 0;
             btnRSBSA.FlatStyle = FlatStyle.Flat;
-            btnRSBSA.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRSBSA.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnRSBSA.ForeColor = Color.White;
             btnRSBSA.IconChar = FontAwesome.Sharp.IconChar.File;
             btnRSBSA.IconColor = Color.White;
@@ -453,7 +453,7 @@
             btnLogout.Dock = DockStyle.Bottom;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogout.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.White;
             btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             btnLogout.IconColor = Color.White;
@@ -479,7 +479,7 @@
             btnDashoard.FlatAppearance.BorderSize = 0;
             btnDashoard.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnDashoard.FlatStyle = FlatStyle.Flat;
-            btnDashoard.Font = new Font("Roboto Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDashoard.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnDashoard.ForeColor = Color.White;
             btnDashoard.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
             btnDashoard.IconColor = Color.White;
@@ -628,11 +628,11 @@
             // 
             lblUserRole.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblUserRole.AutoSize = true;
-            lblUserRole.Font = new Font("Roboto Condensed", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
+            lblUserRole.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
             lblUserRole.ForeColor = Color.FromArgb(43, 121, 223);
             lblUserRole.Location = new Point(965, 59);
             lblUserRole.Name = "lblUserRole";
-            lblUserRole.Size = new Size(41, 19);
+            lblUserRole.Size = new Size(41, 17);
             lblUserRole.TabIndex = 22;
             lblUserRole.Text = "label1";
             // 
@@ -640,22 +640,22 @@
             // 
             lblUserName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblUserName.AutoSize = true;
-            lblUserName.Font = new Font("Roboto Condensed", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUserName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblUserName.ForeColor = Color.FromArgb(43, 121, 223);
             lblUserName.Location = new Point(965, 37);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(45, 20);
+            lblUserName.Size = new Size(51, 20);
             lblUserName.TabIndex = 21;
             lblUserName.Text = "label1";
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Roboto Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.FromArgb(0, 35, 76);
             lblTitle.Location = new Point(18, 28);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(70, 32);
+            lblTitle.Size = new Size(77, 31);
             lblTitle.TabIndex = 20;
             lblTitle.Text = "Home";
             // 
