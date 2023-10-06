@@ -28,4 +28,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Reports\DataSets\" />
+  </ItemGroup>
+
 </Project>
