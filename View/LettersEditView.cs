@@ -30,6 +30,7 @@ namespace AgRecords.View
             labelLetterId.Text = letters.letterId;
             txtBoxTitle.Text = letters.letterTitle;
             comboBoxType.Text = letters.letterType;
+            comboBoxAction.Text = letters.letterAction;
             txtBoxDescription.Text = letters.letterDescription;
             txtBoxFrom.Text = letters.letterFrom;
             txtBoxTo.Text = letters.letterTo;
@@ -230,7 +231,7 @@ namespace AgRecords.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (letterController.UpdateLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
-                txtBoxDescription.Text, letterTags, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary, dateTimePicker1.Value.Date))
+                txtBoxDescription.Text, letterTags, txtBoxTo.Text, txtBoxFrom.Text, comboBoxAction.Text, imageDictionary, dateTimePicker1.Value.Date))
             {
                 this.Close();
                 FormClosed?.Invoke(this, EventArgs.Empty);

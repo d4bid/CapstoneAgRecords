@@ -17,6 +17,7 @@ namespace AgRecords.Model
         public string letterTags { get; set; }
         public string letterTo { get; set; }
         public string letterFrom { get; set; }
+        public string letterAction{ get; set; }
         public DateTime letterDate { get; set; }
     }
 }

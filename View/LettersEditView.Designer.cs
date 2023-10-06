@@ -55,6 +55,8 @@
             label6 = new Label();
             txtBoxTo = new TextBox();
             label5 = new Label();
+            label4 = new Label();
+            comboBoxAction = new ComboBox();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -68,10 +70,9 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(806, 549);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Location = new Point(705, 412);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(135, 44);
+            btnSave.Size = new Size(118, 33);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -85,10 +86,9 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(946, 549);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Location = new Point(828, 412);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(135, 44);
+            btnCancel.Size = new Size(118, 33);
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -101,10 +101,9 @@
             btnRemove.FlatStyle = FlatStyle.Flat;
             btnRemove.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnRemove.ForeColor = Color.White;
-            btnRemove.Location = new Point(154, 549);
-            btnRemove.Margin = new Padding(3, 4, 3, 4);
+            btnRemove.Location = new Point(135, 412);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(135, 44);
+            btnRemove.Size = new Size(118, 33);
             btnRemove.TabIndex = 0;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = false;
@@ -117,10 +116,9 @@
             btnBrowse.FlatStyle = FlatStyle.Flat;
             btnBrowse.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(13, 549);
-            btnBrowse.Margin = new Padding(3, 4, 3, 4);
+            btnBrowse.Location = new Point(11, 412);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(135, 44);
+            btnBrowse.Size = new Size(118, 33);
             btnBrowse.TabIndex = 8;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = false;
@@ -146,37 +144,39 @@
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(labelTitle);
             groupBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(13, 67);
+            groupBox2.Location = new Point(11, 50);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(573, 268);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(501, 201);
             groupBox2.TabIndex = 35;
             groupBox2.TabStop = false;
             // 
             // flowLayoutPanelTags
             // 
             flowLayoutPanelTags.AutoScroll = true;
-            flowLayoutPanelTags.Location = new Point(86, 153);
-            flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanelTags.Location = new Point(75, 115);
             flowLayoutPanelTags.Name = "flowLayoutPanelTags";
-            flowLayoutPanelTags.Size = new Size(469, 103);
+            flowLayoutPanelTags.Size = new Size(410, 77);
             flowLayoutPanelTags.TabIndex = 28;
             // 
             // txtBoxTags
             // 
             txtBoxTags.BorderStyle = BorderStyle.FixedSingle;
             txtBoxTags.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxTags.Location = new Point(86, 117);
+            txtBoxTags.Location = new Point(75, 88);
+            txtBoxTags.Margin = new Padding(3, 2, 3, 2);
             txtBoxTags.Name = "txtBoxTags";
-            txtBoxTags.Size = new Size(469, 28);
+            txtBoxTags.Size = new Size(411, 24);
             txtBoxTags.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(11, 119);
+            label2.Location = new Point(10, 89);
             label2.Name = "label2";
-            label2.Size = new Size(51, 22);
+            label2.Size = new Size(41, 18);
             label2.TabIndex = 26;
             label2.Text = "Tags";
             // 
@@ -186,29 +186,27 @@
             comboBoxType.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Incoming", "Outgoing", "Internal" });
-            comboBoxType.Location = new Point(86, 69);
-            comboBoxType.Margin = new Padding(3, 4, 3, 4);
+            comboBoxType.Location = new Point(75, 52);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(469, 30);
+            comboBoxType.Size = new Size(411, 25);
             comboBoxType.TabIndex = 2;
             // 
             // txtBoxTitle
             // 
             txtBoxTitle.BorderStyle = BorderStyle.FixedSingle;
             txtBoxTitle.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxTitle.Location = new Point(86, 23);
-            txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
+            txtBoxTitle.Location = new Point(75, 17);
             txtBoxTitle.Name = "txtBoxTitle";
-            txtBoxTitle.Size = new Size(469, 28);
+            txtBoxTitle.Size = new Size(411, 24);
             txtBoxTitle.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(11, 72);
+            label1.Location = new Point(10, 54);
             label1.Name = "label1";
-            label1.Size = new Size(51, 22);
+            label1.Size = new Size(40, 18);
             label1.TabIndex = 23;
             label1.Text = "Type";
             // 
@@ -216,9 +214,9 @@
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTitle.Location = new Point(11, 25);
+            labelTitle.Location = new Point(10, 19);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(45, 22);
+            labelTitle.Size = new Size(35, 18);
             labelTitle.TabIndex = 22;
             labelTitle.Text = "Title";
             // 
@@ -226,9 +224,11 @@
             // 
             groupBox1.Controls.Add(labelLetterId);
             groupBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(13, 5);
+            groupBox1.Location = new Point(11, 4);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(573, 59);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(501, 44);
             groupBox1.TabIndex = 33;
             groupBox1.TabStop = false;
             // 
@@ -236,9 +236,9 @@
             // 
             labelLetterId.AutoSize = true;
             labelLetterId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLetterId.Location = new Point(11, 21);
+            labelLetterId.Location = new Point(10, 16);
             labelLetterId.Name = "labelLetterId";
-            labelLetterId.Size = new Size(85, 25);
+            labelLetterId.Size = new Size(72, 20);
             labelLetterId.TabIndex = 0;
             labelLetterId.Text = "Letter ID";
             // 
@@ -246,10 +246,9 @@
             // 
             listViewLetters.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listViewLetters.LargeImageList = imageList1;
-            listViewLetters.Location = new Point(13, 341);
-            listViewLetters.Margin = new Padding(3, 4, 3, 4);
+            listViewLetters.Location = new Point(11, 256);
             listViewLetters.Name = "listViewLetters";
-            listViewLetters.Size = new Size(1068, 193);
+            listViewLetters.Size = new Size(935, 146);
             listViewLetters.SmallImageList = imageList1;
             listViewLetters.TabIndex = 32;
             listViewLetters.UseCompatibleStateImageBehavior = false;
@@ -258,6 +257,8 @@
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(label4);
+            groupBox3.Controls.Add(comboBoxAction);
             groupBox3.Controls.Add(dateTimePicker1);
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(txtBoxDescription);
@@ -267,9 +268,11 @@
             groupBox3.Controls.Add(txtBoxTo);
             groupBox3.Controls.Add(label5);
             groupBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox3.Location = new Point(601, 6);
+            groupBox3.Location = new Point(526, 4);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(480, 329);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(420, 247);
             groupBox3.TabIndex = 36;
             groupBox3.TabStop = false;
             // 
@@ -277,9 +280,10 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dateTimePicker1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(90, 20);
+            dateTimePicker1.Location = new Point(79, 15);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(376, 29);
+            dateTimePicker1.Size = new Size(330, 25);
             dateTimePicker1.TabIndex = 4;
             // 
             // label3
@@ -287,9 +291,9 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(15, 25);
+            label3.Location = new Point(13, 19);
             label3.Name = "label3";
-            label3.Size = new Size(48, 22);
+            label3.Size = new Size(39, 18);
             label3.TabIndex = 39;
             label3.Text = "Date";
             // 
@@ -298,11 +302,10 @@
             txtBoxDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxDescription.BorderStyle = BorderStyle.FixedSingle;
             txtBoxDescription.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxDescription.Location = new Point(19, 209);
-            txtBoxDescription.Margin = new Padding(3, 4, 3, 4);
+            txtBoxDescription.Location = new Point(17, 157);
             txtBoxDescription.Multiline = true;
             txtBoxDescription.Name = "txtBoxDescription";
-            txtBoxDescription.Size = new Size(447, 103);
+            txtBoxDescription.Size = new Size(391, 78);
             txtBoxDescription.TabIndex = 7;
             // 
             // label7
@@ -310,9 +313,9 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(15, 175);
+            label7.Location = new Point(13, 131);
             label7.Name = "label7";
-            label7.Size = new Size(100, 22);
+            label7.Size = new Size(83, 18);
             label7.TabIndex = 36;
             label7.Text = "Description";
             // 
@@ -321,10 +324,9 @@
             txtBoxFrom.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxFrom.BorderStyle = BorderStyle.FixedSingle;
             txtBoxFrom.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxFrom.Location = new Point(90, 126);
-            txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
+            txtBoxFrom.Location = new Point(79, 94);
             txtBoxFrom.Name = "txtBoxFrom";
-            txtBoxFrom.Size = new Size(376, 28);
+            txtBoxFrom.Size = new Size(329, 24);
             txtBoxFrom.TabIndex = 6;
             // 
             // label6
@@ -332,9 +334,9 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(15, 128);
+            label6.Location = new Point(13, 96);
             label6.Name = "label6";
-            label6.Size = new Size(51, 22);
+            label6.Size = new Size(44, 18);
             label6.TabIndex = 34;
             label6.Text = "From";
             // 
@@ -343,10 +345,9 @@
             txtBoxTo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxTo.BorderStyle = BorderStyle.FixedSingle;
             txtBoxTo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxTo.Location = new Point(90, 79);
-            txtBoxTo.Margin = new Padding(3, 4, 3, 4);
+            txtBoxTo.Location = new Point(79, 59);
             txtBoxTo.Name = "txtBoxTo";
-            txtBoxTo.Size = new Size(376, 28);
+            txtBoxTo.Size = new Size(329, 24);
             txtBoxTo.TabIndex = 5;
             // 
             // label5
@@ -354,18 +355,38 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(15, 81);
+            label5.Location = new Point(13, 61);
             label5.Name = "label5";
-            label5.Size = new Size(32, 22);
+            label5.Size = new Size(26, 18);
             label5.TabIndex = 32;
             label5.Text = "To";
             // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(229, 130);
+            label4.Name = "label4";
+            label4.Size = new Size(52, 18);
+            label4.TabIndex = 41;
+            label4.Text = "Action";
+            // 
+            // comboBoxAction
+            // 
+            comboBoxAction.FormattingEnabled = true;
+            comboBoxAction.Items.AddRange(new object[] { "Pending", "Reviewed", "Responded", "Archived" });
+            comboBoxAction.Location = new Point(287, 124);
+            comboBoxAction.Name = "comboBoxAction";
+            comboBoxAction.Size = new Size(121, 25);
+            comboBoxAction.TabIndex = 40;
+            // 
             // LettersEditView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1096, 611);
+            ClientSize = new Size(959, 458);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -375,7 +396,6 @@
             Controls.Add(btnRemove);
             Controls.Add(btnBrowse);
             KeyPreview = true;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "LettersEditView";
             Text = "s";
             Load += LettersEditView_Load;
@@ -415,5 +435,7 @@
         private TextBox txtBoxTo;
         private Label label5;
         private DateTimePicker dateTimePicker1;
+        private Label label4;
+        private ComboBox comboBoxAction;
     }
 }
