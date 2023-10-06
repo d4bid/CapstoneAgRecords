@@ -225,7 +225,7 @@ namespace AgRecords.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (letterController.AddLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
-                txtBoxDescription.Text, tagItems, txtBoxTo.Text, txtBoxFrom.Text, imageDictionary, dateTimePicker1.Value.Date))
+                txtBoxDescription.Text, tagItems, txtBoxTo.Text, txtBoxFrom.Text, comboBoxAction.Text, imageDictionary, dateTimePicker1.Value.Date))
             {
                 this.Close();
                 FormClosed?.Invoke(this, EventArgs.Empty);
