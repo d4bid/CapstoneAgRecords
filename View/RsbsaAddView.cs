@@ -56,6 +56,7 @@ namespace AgRecords.View
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
+            panelDocument.Visible = false;
         }
 
         private void btnFarmProfile_Click(object sender, EventArgs e)
@@ -68,6 +69,7 @@ namespace AgRecords.View
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = false;
+            panelDocument.Visible = false;
         }
 
         private void btnFarmLand_Click(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace AgRecords.View
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
+            panelDocument.Visible = false;
         }
 
         private void btnDocuments_Click(object sender, EventArgs e)
@@ -89,9 +92,10 @@ namespace AgRecords.View
             panelColorFl.Visible = false;
             panelColorDoc.Visible = true;
 
-            panelPersonalInfo.Visible = false;
-            panelFarmProfile.Visible = false;
-            panelFarmLand.Visible = false;
+            panelPersonalInfo.Visible = true;
+            panelFarmProfile.Visible = true;
+            panelFarmLand.Visible = true;
+            panelDocument.Visible = true;
         }
 
         // End of Buttons/Tab
