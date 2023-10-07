@@ -117,7 +117,7 @@ namespace AgRecords.View
                 {
                     userPhotoView.ShowDialog();
                 }
-            }    
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

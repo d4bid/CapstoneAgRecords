@@ -265,5 +265,6 @@ namespace AgRecords.View
                 e.Handled = registerTag();
             }
         }
+
     }
 }

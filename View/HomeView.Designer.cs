@@ -91,7 +91,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(3, 4, 3, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(325, 753);
+            panelMenu.Size = new Size(320, 753);
             panelMenu.TabIndex = 0;
             // 
             // btnUsers
@@ -111,7 +111,7 @@
             btnUsers.Margin = new Padding(3, 4, 3, 4);
             btnUsers.Name = "btnUsers";
             btnUsers.Padding = new Padding(13, 0, 0, 0);
-            btnUsers.Size = new Size(304, 60);
+            btnUsers.Size = new Size(299, 60);
             btnUsers.TabIndex = 16;
             btnUsers.Tag = "Users";
             btnUsers.Text = "Users";
@@ -137,7 +137,7 @@
             btnActivities.Margin = new Padding(3, 4, 3, 4);
             btnActivities.Name = "btnActivities";
             btnActivities.Padding = new Padding(13, 0, 0, 0);
-            btnActivities.Size = new Size(304, 60);
+            btnActivities.Size = new Size(299, 60);
             btnActivities.TabIndex = 21;
             btnActivities.Tag = "Weekly Activities";
             btnActivities.Text = "Weekly Activities";
@@ -162,7 +162,7 @@
             btnCertifications.Margin = new Padding(3, 4, 3, 4);
             btnCertifications.Name = "btnCertifications";
             btnCertifications.Padding = new Padding(13, 0, 0, 0);
-            btnCertifications.Size = new Size(304, 60);
+            btnCertifications.Size = new Size(299, 60);
             btnCertifications.TabIndex = 22;
             btnCertifications.Tag = "Certifications";
             btnCertifications.Text = "Certifications";
@@ -187,7 +187,7 @@
             btnLetters.Margin = new Padding(3, 4, 3, 4);
             btnLetters.Name = "btnLetters";
             btnLetters.Padding = new Padding(13, 0, 0, 0);
-            btnLetters.Size = new Size(304, 60);
+            btnLetters.Size = new Size(299, 60);
             btnLetters.TabIndex = 17;
             btnLetters.Tag = "Letters";
             btnLetters.Text = "Letters";
@@ -204,7 +204,7 @@
             panelReportsSubMenu.Dock = DockStyle.Top;
             panelReportsSubMenu.Location = new Point(0, 598);
             panelReportsSubMenu.Name = "panelReportsSubMenu";
-            panelReportsSubMenu.Size = new Size(304, 102);
+            panelReportsSubMenu.Size = new Size(299, 102);
             panelReportsSubMenu.TabIndex = 20;
             // 
             // btnReportsCrops
@@ -223,7 +223,7 @@
             btnReportsCrops.Margin = new Padding(3, 4, 3, 4);
             btnReportsCrops.Name = "btnReportsCrops";
             btnReportsCrops.Padding = new Padding(40, 0, 0, 0);
-            btnReportsCrops.Size = new Size(304, 51);
+            btnReportsCrops.Size = new Size(299, 51);
             btnReportsCrops.TabIndex = 17;
             btnReportsCrops.Tag = "Crops";
             btnReportsCrops.Text = "Crops";
@@ -248,7 +248,7 @@
             btnReportsRsbsa.Margin = new Padding(3, 4, 3, 4);
             btnReportsRsbsa.Name = "btnReportsRsbsa";
             btnReportsRsbsa.Padding = new Padding(40, 0, 0, 0);
-            btnReportsRsbsa.Size = new Size(304, 51);
+            btnReportsRsbsa.Size = new Size(299, 51);
             btnReportsRsbsa.TabIndex = 16;
             btnReportsRsbsa.Tag = "RSBSA";
             btnReportsRsbsa.Text = "RSBSA";
@@ -274,7 +274,7 @@
             btnReports.Margin = new Padding(3, 4, 3, 4);
             btnReports.Name = "btnReports";
             btnReports.Padding = new Padding(13, 0, 0, 0);
-            btnReports.Size = new Size(304, 60);
+            btnReports.Size = new Size(299, 60);
             btnReports.TabIndex = 19;
             btnReports.Tag = "Reports";
             btnReports.Text = "Reports";
@@ -300,7 +300,7 @@
             btnDamages.Margin = new Padding(3, 4, 3, 4);
             btnDamages.Name = "btnDamages";
             btnDamages.Padding = new Padding(13, 0, 0, 0);
-            btnDamages.Size = new Size(304, 60);
+            btnDamages.Size = new Size(299, 60);
             btnDamages.TabIndex = 18;
             btnDamages.Tag = "Crop Damages";
             btnDamages.Text = "Crop Damages";
@@ -319,7 +319,7 @@
             panelCropsSubMenu.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             panelCropsSubMenu.Location = new Point(0, 329);
             panelCropsSubMenu.Name = "panelCropsSubMenu";
-            panelCropsSubMenu.Size = new Size(304, 149);
+            panelCropsSubMenu.Size = new Size(299, 149);
             panelCropsSubMenu.TabIndex = 15;
             // 
             // btnVegetable
@@ -338,7 +338,7 @@
             btnVegetable.Margin = new Padding(3, 4, 3, 4);
             btnVegetable.Name = "btnVegetable";
             btnVegetable.Padding = new Padding(40, 0, 0, 0);
-            btnVegetable.Size = new Size(304, 51);
+            btnVegetable.Size = new Size(299, 51);
             btnVegetable.TabIndex = 17;
             btnVegetable.Tag = "Vegetable";
             btnVegetable.Text = "Vegetable";
@@ -363,7 +363,7 @@
             btnCorn.Margin = new Padding(3, 4, 3, 4);
             btnCorn.Name = "btnCorn";
             btnCorn.Padding = new Padding(40, 0, 0, 0);
-            btnCorn.Size = new Size(304, 51);
+            btnCorn.Size = new Size(299, 51);
             btnCorn.TabIndex = 16;
             btnCorn.Tag = "Corn";
             btnCorn.Text = "Corn";
@@ -388,7 +388,7 @@
             btnRice.Margin = new Padding(3, 4, 3, 4);
             btnRice.Name = "btnRice";
             btnRice.Padding = new Padding(40, 0, 0, 0);
-            btnRice.Size = new Size(304, 51);
+            btnRice.Size = new Size(299, 51);
             btnRice.TabIndex = 15;
             btnRice.Tag = "Rice";
             btnRice.Text = "Rice";
@@ -414,7 +414,7 @@
             btnCrops.Margin = new Padding(3, 4, 3, 4);
             btnCrops.Name = "btnCrops";
             btnCrops.Padding = new Padding(13, 0, 0, 0);
-            btnCrops.Size = new Size(304, 60);
+            btnCrops.Size = new Size(299, 60);
             btnCrops.TabIndex = 14;
             btnCrops.Tag = "Crops";
             btnCrops.Text = "Crops";
@@ -439,7 +439,7 @@
             btnRSBSA.Margin = new Padding(3, 4, 3, 4);
             btnRSBSA.Name = "btnRSBSA";
             btnRSBSA.Padding = new Padding(13, 0, 0, 0);
-            btnRSBSA.Size = new Size(304, 60);
+            btnRSBSA.Size = new Size(299, 60);
             btnRSBSA.TabIndex = 13;
             btnRSBSA.Tag = "RSBSA";
             btnRSBSA.Text = "RSBSA";
@@ -464,7 +464,7 @@
             btnLogout.Margin = new Padding(3, 4, 3, 4);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(13, 0, 0, 0);
-            btnLogout.Size = new Size(304, 75);
+            btnLogout.Size = new Size(299, 75);
             btnLogout.TabIndex = 11;
             btnLogout.Tag = "Logout";
             btnLogout.Text = "Logout";
@@ -490,7 +490,7 @@
             btnDashoard.Margin = new Padding(3, 4, 3, 4);
             btnDashoard.Name = "btnDashoard";
             btnDashoard.Padding = new Padding(13, 0, 0, 0);
-            btnDashoard.Size = new Size(304, 60);
+            btnDashoard.Size = new Size(299, 60);
             btnDashoard.TabIndex = 8;
             btnDashoard.Tag = "Dashboard";
             btnDashoard.Text = "Dashboard";
@@ -507,7 +507,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(304, 149);
+            panel2.Size = new Size(299, 149);
             panel2.TabIndex = 0;
             // 
             // btnHome
@@ -550,10 +550,10 @@
             panelTitleBar.Controls.Add(lblUserName);
             panelTitleBar.Controls.Add(lblTitle);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(325, 0);
+            panelTitleBar.Location = new Point(320, 0);
             panelTitleBar.Margin = new Padding(3, 4, 3, 4);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1157, 87);
+            panelTitleBar.Size = new Size(1162, 87);
             panelTitleBar.TabIndex = 1;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
@@ -563,7 +563,7 @@
             picUserPhoto.BackgroundImage = Properties.Resources.profile;
             picUserPhoto.BackgroundImageLayout = ImageLayout.Zoom;
             picUserPhoto.BorderStyle = BorderStyle.FixedSingle;
-            picUserPhoto.Location = new Point(895, 25);
+            picUserPhoto.Location = new Point(905, 23);
             picUserPhoto.Name = "picUserPhoto";
             picUserPhoto.Size = new Size(55, 55);
             picUserPhoto.SizeMode = PictureBoxSizeMode.Zoom;
@@ -580,7 +580,7 @@
             btnMin.IconColor = Color.FromArgb(43, 121, 223);
             btnMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMin.IconSize = 15;
-            btnMin.Location = new Point(1018, 7);
+            btnMin.Location = new Point(1028, 7);
             btnMin.Margin = new Padding(3, 4, 3, 4);
             btnMin.Name = "btnMin";
             btnMin.Size = new Size(46, 19);
@@ -598,7 +598,7 @@
             btnMax.IconColor = Color.FromArgb(43, 121, 223);
             btnMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMax.IconSize = 15;
-            btnMax.Location = new Point(1061, 7);
+            btnMax.Location = new Point(1071, 7);
             btnMax.Margin = new Padding(3, 4, 3, 4);
             btnMax.Name = "btnMax";
             btnMax.Size = new Size(46, 19);
@@ -616,7 +616,7 @@
             btnExit.IconColor = Color.FromArgb(43, 121, 223);
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnExit.IconSize = 15;
-            btnExit.Location = new Point(1109, 7);
+            btnExit.Location = new Point(1114, 7);
             btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(46, 19);
@@ -630,7 +630,7 @@
             lblUserRole.AutoSize = true;
             lblUserRole.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
             lblUserRole.ForeColor = Color.FromArgb(43, 121, 223);
-            lblUserRole.Location = new Point(965, 59);
+            lblUserRole.Location = new Point(975, 57);
             lblUserRole.Name = "lblUserRole";
             lblUserRole.Size = new Size(41, 17);
             lblUserRole.TabIndex = 22;
@@ -642,7 +642,7 @@
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblUserName.ForeColor = Color.FromArgb(43, 121, 223);
-            lblUserName.Location = new Point(965, 37);
+            lblUserName.Location = new Point(975, 35);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(51, 20);
             lblUserName.TabIndex = 21;
@@ -663,11 +663,11 @@
             // 
             panelDesktop.BackColor = Color.FromArgb(239, 239, 239);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(325, 87);
+            panelDesktop.Location = new Point(320, 87);
             panelDesktop.Margin = new Padding(3, 4, 3, 4);
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Padding = new Padding(10, 11, 15, 15);
-            panelDesktop.Size = new Size(1157, 666);
+            panelDesktop.Size = new Size(1162, 666);
             panelDesktop.TabIndex = 3;
             // 
             // HomeView
@@ -682,6 +682,7 @@
             MinimumSize = new Size(1026, 651);
             Name = "HomeView";
             Text = "HomeView";
+            WindowState = FormWindowState.Maximized;
             Load += HomeView_Load;
             Resize += HomeView_Resize;
             panelMenu.ResumeLayout(false);
