@@ -388,7 +388,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 0);
+            panelFarmProfile.Size = new Size(1595, 767);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -398,7 +398,7 @@
             panelFarmLand.Controls.Add(flowLayoutPanelParcels);
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1595, 0);
+            panelFarmLand.Size = new Size(1595, 767);
             panelFarmLand.TabIndex = 52;
             // 
             // panel43
@@ -515,6 +515,7 @@
             nudFarmParcelNo.Name = "nudFarmParcelNo";
             nudFarmParcelNo.Size = new Size(160, 23);
             nudFarmParcelNo.TabIndex = 76;
+            nudFarmParcelNo.ValueChanged += nudFarmParcelNo_ValueChanged;
             // 
             // rectangleRound48
             // 

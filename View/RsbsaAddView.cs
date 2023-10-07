@@ -101,8 +101,22 @@ namespace AgRecords.View
             FormRefresh();
         }
 
-        //for farm parcel
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void rectangleRound42_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label61_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudFarmParcelNo_ValueChanged(object sender, EventArgs e)
         {
             int numberOfControls = (int)nudFarmParcelNo.Value;
 
@@ -120,21 +134,5 @@ namespace AgRecords.View
                 flowLayoutPanelParcels.Controls.Add(farmLandControl);
             }
         }
-
-        private void rectangleRound42_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label61_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox24_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
