@@ -14,6 +14,7 @@ namespace AgRecords.View
     public partial class RsbsaAddView : Form
     {
         private RSBSAController rsbsaController;
+        public event EventHandler FormClosed;
 
         public RsbsaAddView()
         {
@@ -137,6 +138,27 @@ namespace AgRecords.View
                 // Add the UserControl to the parent control (e.g., Panel)
                 flowLayoutPanelParcels.Controls.Add(farmLandControl);
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (rsbsaController.AddRSBSA(labelRsbsaId.Text, null, null, dtDateAdm.Value.Date, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text,
+                txtExtname.Text, cbSex.Text, txtAddPurok.Text, txtAddStreet.Text, cbAddBrgy.Text, txtAddMunicipality.Text, txtAddProvince.Text, txtAddRegion.Text,
+                null, txtMobNo.Text, txtLandNo.Text, "Yes", txtGovIdType.Text, txtGovIdNum.Text, dtpBirthDate.Value.Date, txtBirthMunicipality.Text, txtBirthProvince.Text,
+                txtBirthCountry.Text, null, null, txtSpouseName.Text, txtMaidenMother.Text, "Yes", null, null, Convert.ToInt32(nudNoLivingHouseMem.Value), Convert.ToInt32(nudHouseFemale.Value),
+                Convert.ToInt32(nudHouseNoMale.Value), "No", "No", txtIndigenous.Text, "Yes", txtAssociation.Text, txtEcName.Text, txtEcContact.Text, "Yes", "Yes", "No", "No", "No", "No",
+                "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No",
+                Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text)))
+            {
+                this.Close();
+                FormClosed?.Invoke(this, EventArgs.Empty);
+
+            }
+        }
+
+        private void txtAssociation_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

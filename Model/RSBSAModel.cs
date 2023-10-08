@@ -54,10 +54,8 @@ namespace AgRecords.Model
                     string query = "CALL sp_addNewRSBSAInfo(@rsbsaId, @rsbsaNo, @enrollType, @dateAdmin, @refNo, @userId)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@rsbsaId", rsbsaInfo.rsbsaId);
-                    command.Parameters.AddWithValue("@rsbsaNo", rsbsaInfo.rsbsaNo);
-                    command.Parameters.AddWithValue("@enrollType", rsbsaInfo.enrollType);
-                    command.Parameters.AddWithValue("@dateAdmin", rsbsaInfo.dateAdmin);
-                    command.Parameters.AddWithValue("@refNo", rsbsaInfo.refNo);
+                    command.Parameters.AddWithValue("@rsbsaIdRegion", rsbsaInfo.rsbsaIdRegion);
+                    command.Parameters.AddWithValue("@dateAdmin", rsbsaInfo.dateCreated);
                     command.Parameters.AddWithValue("@userId", rsbsaInfo.userId);
 
                     command.ExecuteNonQuery();
@@ -269,6 +267,113 @@ namespace AgRecords.Model
             }
         }
 
+        public Boolean AddNewRSBSARecord(RSBSA rsbsa)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, " +
+                                    "@surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
+                                    "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
+                                    "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
+                                    "@birthCountry, @religion, @civilStatus, @spouseName, @maidenName, @isHouseHead, " +
+                                    "@houseHeadName, @houseHeadRs, @houseLivingMemCount, @houseMaleCount, @houseFemCount, " +
+                                    "@isPWD, @isIp, @ipGroupName, @isCoopMember, @coopName, @emergContactName, @emergContactNo, " +
+                                    "@isFarmer, @isRiceFarmer, @isCornFarmer, @otherCrops, @hasLivestocks, @hasPoultry, " +
+                                    "@isLaborer, @isPreparingLand, @isPlanting, @isCultivating, @isHarvesting, @otherLaborWork, " +
+                                    "@isFisherfolk, @isFishCapturing, @isAquaculture, @isGleaning, @isFishProcessing, " +
+                                    "@isFishVending, @otherFishingAct, @isAgriYouth, @isPartOfFarmingHousehold, " +
+                                    "@isAttendAgrifishery, @isParticipantAgriProgram, @otherAgriYouthAct, @annualIncomeFarming, " +
+                                    "@annualIncomeNonFarming)";
+
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    //for rsbsa info table
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsa.rsbsaId);
+                    command.Parameters.AddWithValue("@rsbsaIdLGU", rsbsa.rsbsaIdLGU);
+                    command.Parameters.AddWithValue("@rsbsaIdRegion", rsbsa.rsbsaIdRegion);
+                    command.Parameters.AddWithValue("@dateCreated", rsbsa.dateCreated);
+                    command.Parameters.AddWithValue("@userId", rsbsa.userId);
+
+                    //for farmer info table
+                    command.Parameters.AddWithValue("@surname", rsbsa.surname);
+                    command.Parameters.AddWithValue("@firstname", rsbsa.firstname);
+                    command.Parameters.AddWithValue("@middlename", rsbsa.middlename);
+                    command.Parameters.AddWithValue("@extname", rsbsa.extname);
+                    command.Parameters.AddWithValue("@sex", rsbsa.sex);
+                    command.Parameters.AddWithValue("@addrPurok", rsbsa.addrPurok);
+                    command.Parameters.AddWithValue("@addrStreet", rsbsa.addrStreet);
+                    command.Parameters.AddWithValue("@addrBrgy", rsbsa.addrBrgy);
+                    command.Parameters.AddWithValue("@addrMunicipality", rsbsa.addrMunicipality);
+                    command.Parameters.AddWithValue("@addrProvince", rsbsa.addrProvince);
+                    command.Parameters.AddWithValue("@addrRegion", rsbsa.addrRegion);
+                    command.Parameters.AddWithValue("@educAttainment", rsbsa.educAttainment);
+                    command.Parameters.AddWithValue("@contactNo", rsbsa.contactNo);
+                    command.Parameters.AddWithValue("@landlineNo", rsbsa.landlineNo);
+                    command.Parameters.AddWithValue("@withGovId", rsbsa.withGovId);
+                    command.Parameters.AddWithValue("@govIdType", rsbsa.govIdType);
+                    command.Parameters.AddWithValue("@govIdNo", rsbsa.govIdNo);
+                    command.Parameters.AddWithValue("@birthDate", rsbsa.birthDate);
+                    command.Parameters.AddWithValue("@birthMunicipality", rsbsa.birthMunicipality);
+                    command.Parameters.AddWithValue("@birthProvince", rsbsa.birthProvince);
+                    command.Parameters.AddWithValue("@birthCountry", rsbsa.birthCountry);
+                    command.Parameters.AddWithValue("@religion", rsbsa.religion);
+                    command.Parameters.AddWithValue("@civilStatus", rsbsa.civilStatus);
+                    command.Parameters.AddWithValue("@spouseName", rsbsa.spouseName);
+                    command.Parameters.AddWithValue("@maidenName", rsbsa.maidenName);
+                    command.Parameters.AddWithValue("@isHouseHead", rsbsa.isHouseHead);
+                    command.Parameters.AddWithValue("@houseHeadName", rsbsa.houseHeadName);
+                    command.Parameters.AddWithValue("@houseHeadRs", rsbsa.houseHeadRs);
+                    command.Parameters.AddWithValue("@houseLivingMemCount", rsbsa.houseLivingMemCount);
+                    command.Parameters.AddWithValue("@houseMaleCount", rsbsa.houseMaleCount);
+                    command.Parameters.AddWithValue("@houseFemCount", rsbsa.houseFemCount);
+                    command.Parameters.AddWithValue("@isPWD", rsbsa.isPWD);
+                    command.Parameters.AddWithValue("@isIp", rsbsa.isIp);
+                    command.Parameters.AddWithValue("@ipGroupName", rsbsa.ipGroupName);
+                    command.Parameters.AddWithValue("@isCoopMember", rsbsa.isCoopMember);
+                    command.Parameters.AddWithValue("@coopName", rsbsa.coopName);
+                    command.Parameters.AddWithValue("@emergContactName", rsbsa.emergContactName);
+                    command.Parameters.AddWithValue("@emergContactNo", rsbsa.emergContactNo);
+
+                    //for farm profile table
+                    command.Parameters.AddWithValue("@isFarmer", rsbsa.isFarmer);
+                    command.Parameters.AddWithValue("@isRiceFarmer", rsbsa.isRiceFarmer);
+                    command.Parameters.AddWithValue("@isCornFarmer", rsbsa.isCornFarmer);
+                    command.Parameters.AddWithValue("@otherCrops", rsbsa.otherCrops);
+                    command.Parameters.AddWithValue("@hasLivestocks", rsbsa.hasLivestocks);
+                    command.Parameters.AddWithValue("@hasPoultry", rsbsa.hasPoultry);
+                    command.Parameters.AddWithValue("@isLaborer", rsbsa.isLaborer);
+                    command.Parameters.AddWithValue("@isPreparingLand", rsbsa.isPreparingLand);
+                    command.Parameters.AddWithValue("@isPlanting", rsbsa.isPlanting);
+                    command.Parameters.AddWithValue("@isCultivating", rsbsa.isCultivating);
+                    command.Parameters.AddWithValue("@isHarvesting", rsbsa.isHarvesting);
+                    command.Parameters.AddWithValue("@otherLaborWork", rsbsa.otherLaborWork);
+                    command.Parameters.AddWithValue("@isFisherfolk", rsbsa.isFisherfolk);
+                    command.Parameters.AddWithValue("@isFishCapturing", rsbsa.isFishCapturing);
+                    command.Parameters.AddWithValue("@isAquaculture", rsbsa.isAquaculture);
+                    command.Parameters.AddWithValue("@isGleaning", rsbsa.isGleaning);
+                    command.Parameters.AddWithValue("@isFishProcessing", rsbsa.isFishProcessing);
+                    command.Parameters.AddWithValue("@isFishVending", rsbsa.isFishVending);
+                    command.Parameters.AddWithValue("@otherFishingAct", rsbsa.otherFishingAct);
+                    command.Parameters.AddWithValue("@isAgriYouth", rsbsa.isAgriYouth);
+                    command.Parameters.AddWithValue("@isPartOfFarmingHousehold", rsbsa.isPartOfFarmingHousehold);
+                    command.Parameters.AddWithValue("@isAttendAgrifishery", rsbsa.isAttendAgrifishery);
+                    command.Parameters.AddWithValue("@isParticipantAgriProgram", rsbsa.isParticipantAgriProgram);
+                    command.Parameters.AddWithValue("@otherAgriYouthAct", rsbsa.otherAgriYouthAct);
+                    command.Parameters.AddWithValue("@annualIncomeFarming", rsbsa.annualIncomeFarming);
+                    command.Parameters.AddWithValue("@annualIncomeNonFarming", rsbsa.annualIncomeNonFarming);
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new RSBSA information: " + ex.Message, ex);
+            }
+        }
 
 
 
