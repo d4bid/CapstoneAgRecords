@@ -36,6 +36,10 @@
             panelRight = new Panel();
             btnShowPass = new FontAwesome.Sharp.IconButton();
             btnHidePass = new FontAwesome.Sharp.IconButton();
+            txtPassword = new TextBox();
+            txtUsername = new TextBox();
+            rectangleBlue2 = new RectangleBlue();
+            rectangleBlue1 = new RectangleBlue();
             systemLogo = new FontAwesome.Sharp.IconPictureBox();
             lblError = new Label();
             label2 = new Label();
@@ -43,12 +47,8 @@
             btnLogin = new Button();
             lblPassword = new Label();
             lblUsername = new Label();
-            txtPassword = new TextBox();
-            txtUsername = new TextBox();
             btnMin = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
-            rectangleBlue1 = new RectangleBlue();
-            rectangleBlue2 = new RectangleBlue();
             panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -86,7 +86,7 @@
             label3.ForeColor = Color.FromArgb(43, 121, 223);
             label3.Location = new Point(40, 10);
             label3.Name = "label3";
-            label3.Size = new Size(81, 20);
+            label3.Size = new Size(64, 15);
             label3.TabIndex = 43;
             label3.Text = "AgRecords";
             // 
@@ -111,7 +111,7 @@
             label4.ForeColor = Color.FromArgb(148, 145, 145);
             label4.Location = new Point(7, 477);
             label4.Name = "label4";
-            label4.Size = new Size(72, 17);
+            label4.Size = new Size(61, 15);
             label4.TabIndex = 13;
             label4.Text = "Version 1.0";
             // 
@@ -173,6 +173,41 @@
             btnHidePass.UseVisualStyleBackColor = true;
             btnHidePass.Click += btnHidePass_Click;
             // 
+            // txtPassword
+            // 
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Segoe UI", 11.7F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.Location = new Point(42, 309);
+            txtPassword.Margin = new Padding(5, 3, 3, 3);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(290, 21);
+            txtPassword.TabIndex = 2;
+            txtPassword.UseSystemPasswordChar = true;
+            // 
+            // txtUsername
+            // 
+            txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Font = new Font("Segoe UI", 11.7F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.Location = new Point(42, 227);
+            txtUsername.Margin = new Padding(5, 3, 3, 3);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(333, 21);
+            txtUsername.TabIndex = 1;
+            // 
+            // rectangleBlue2
+            // 
+            rectangleBlue2.Location = new Point(35, 303);
+            rectangleBlue2.Name = "rectangleBlue2";
+            rectangleBlue2.Size = new Size(344, 38);
+            rectangleBlue2.TabIndex = 44;
+            // 
+            // rectangleBlue1
+            // 
+            rectangleBlue1.Location = new Point(35, 222);
+            rectangleBlue1.Name = "rectangleBlue1";
+            rectangleBlue1.Size = new Size(344, 38);
+            rectangleBlue1.TabIndex = 43;
+            // 
             // systemLogo
             // 
             systemLogo.BackColor = Color.White;
@@ -194,7 +229,7 @@
             lblError.ImageAlign = ContentAlignment.MiddleLeft;
             lblError.Location = new Point(35, 349);
             lblError.Name = "lblError";
-            lblError.Size = new Size(232, 20);
+            lblError.Size = new Size(180, 15);
             lblError.TabIndex = 39;
             lblError.Text = "Incorrect username or password.";
             lblError.Visible = false;
@@ -206,7 +241,7 @@
             label2.ForeColor = Color.FromArgb(43, 121, 223);
             label2.Location = new Point(140, 143);
             label2.Name = "label2";
-            label2.Size = new Size(153, 20);
+            label2.Size = new Size(124, 15);
             label2.TabIndex = 38;
             label2.Text = "Login to your account";
             // 
@@ -217,7 +252,7 @@
             label1.ForeColor = Color.FromArgb(43, 121, 223);
             label1.Location = new Point(161, 112);
             label1.Name = "label1";
-            label1.Size = new Size(113, 31);
+            label1.Size = new Size(91, 25);
             label1.TabIndex = 37;
             label1.Text = "Welcome";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -244,7 +279,7 @@
             lblPassword.ForeColor = Color.FromArgb(43, 121, 223);
             lblPassword.Location = new Point(34, 275);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(82, 23);
+            lblPassword.Size = new Size(68, 19);
             lblPassword.TabIndex = 33;
             lblPassword.Text = "Password";
             // 
@@ -255,30 +290,9 @@
             lblUsername.ForeColor = Color.FromArgb(43, 121, 223);
             lblUsername.Location = new Point(34, 194);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(87, 23);
+            lblUsername.Size = new Size(71, 19);
             lblUsername.TabIndex = 32;
             lblUsername.Text = "Username";
-            // 
-            // txtPassword
-            // 
-            txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("Segoe UI", 11.7F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(42, 309);
-            txtPassword.Margin = new Padding(5, 3, 3, 3);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(290, 26);
-            txtPassword.TabIndex = 2;
-            txtPassword.UseSystemPasswordChar = true;
-            // 
-            // txtUsername
-            // 
-            txtUsername.BorderStyle = BorderStyle.None;
-            txtUsername.Font = new Font("Segoe UI", 11.7F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(42, 227);
-            txtUsername.Margin = new Padding(5, 3, 3, 3);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(333, 26);
-            txtUsername.TabIndex = 1;
             // 
             // btnMin
             // 
@@ -316,24 +330,10 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
-            // rectangleBlue1
-            // 
-            rectangleBlue1.Location = new Point(35, 222);
-            rectangleBlue1.Name = "rectangleBlue1";
-            rectangleBlue1.Size = new Size(344, 38);
-            rectangleBlue1.TabIndex = 43;
-            // 
-            // rectangleBlue2
-            // 
-            rectangleBlue2.Location = new Point(35, 303);
-            rectangleBlue2.Name = "rectangleBlue2";
-            rectangleBlue2.Size = new Size(344, 38);
-            rectangleBlue2.TabIndex = 44;
-            // 
             // LoginView
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(9F, 18F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 500);

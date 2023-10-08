@@ -288,6 +288,7 @@
             rectangleRound4 = new RectangleRound();
             rectangleRound3 = new RectangleRound();
             label8 = new Label();
+            textBoxFarmParcels = new TextBox();
             panel4 = new Panel();
             panel2 = new Panel();
             panel28 = new Panel();
@@ -300,6 +301,7 @@
             btnFarmLand = new Button();
             btnDocuments = new Button();
             panel27 = new Panel();
+            btnDisplayListCon = new Button();
             btnSave = new Button();
             label26 = new Label();
             labelRsbsaId = new Label();
@@ -3193,6 +3195,16 @@
             label8.TabIndex = 23;
             label8.Text = "First Name";
             // 
+            // textBoxFarmParcels
+            // 
+            textBoxFarmParcels.BackColor = SystemColors.MenuHighlight;
+            textBoxFarmParcels.Location = new Point(917, 11);
+            textBoxFarmParcels.Multiline = true;
+            textBoxFarmParcels.Name = "textBoxFarmParcels";
+            textBoxFarmParcels.Size = new Size(154, 36);
+            textBoxFarmParcels.TabIndex = 5;
+            textBoxFarmParcels.Text = "Debug";
+            // 
             // panel4
             // 
             panel4.Controls.Add(panel2);
@@ -3216,6 +3228,7 @@
             // 
             // panel28
             // 
+            panel28.Controls.Add(textBoxFarmParcels);
             panel28.Controls.Add(panelColorDoc);
             panel28.Controls.Add(panelColorPi);
             panel28.Controls.Add(panelColorFp);
@@ -3328,6 +3341,7 @@
             // 
             // panel27
             // 
+            panel27.Controls.Add(btnDisplayListCon);
             panel27.Controls.Add(btnSave);
             panel27.Controls.Add(label26);
             panel27.Controls.Add(labelRsbsaId);
@@ -3341,6 +3355,16 @@
             panel27.Name = "panel27";
             panel27.Size = new Size(1437, 83);
             panel27.TabIndex = 1;
+            // 
+            // btnDisplayListCon
+            // 
+            btnDisplayListCon.Location = new Point(874, 25);
+            btnDisplayListCon.Name = "btnDisplayListCon";
+            btnDisplayListCon.Size = new Size(75, 42);
+            btnDisplayListCon.TabIndex = 92;
+            btnDisplayListCon.Text = "Debug";
+            btnDisplayListCon.UseVisualStyleBackColor = true;
+            btnDisplayListCon.Click += btnDisplayListCon_Click;
             // 
             // btnSave
             // 
@@ -3550,6 +3574,7 @@
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel28.ResumeLayout(false);
+            panel28.PerformLayout();
             panel27.ResumeLayout(false);
             panel27.PerformLayout();
             panel1.ResumeLayout(false);
@@ -3578,8 +3603,6 @@
         private Panel panel28;
         private Panel panel27;
         private Label label26;
-        private Label labelRsbsaId;
-        private RectangleRound rectangleRound21;
         private Label label2;
         private RectangleRound rectangleRound1;
         private Label label3;
@@ -3841,5 +3864,9 @@
         private Panel panelGovId;
         private RadioButton rbGovIdNo;
         private RadioButton rbGovIdYes;
+        public Label labelRsbsaId;
+        public RectangleRound rectangleRound21;
+        private TextBox textBoxFarmParcels;
+        private Button btnDisplayListCon;
     }
 }

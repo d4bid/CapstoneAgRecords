@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +44,19 @@ namespace AgRecords.View
         public void GenerateNewRSBSAId(string rsbsaId)
         {
             labelRsbsaId.Text = rsbsaId;
+        }
+
+        private List<FarmParcel> GetFarmParcelsFromControls()
+        {
+            List<FarmParcel> farmParcels = new List<FarmParcel>();
+
+            foreach (FarmLandControl farmLandControl in flowLayoutPanelParcels.Controls.OfType<FarmLandControl>())
+            {
+                FarmParcel parcel = farmLandControl.GetFarmParcelData();
+                farmParcels.Add(parcel);
+            }
+
+            return farmParcels;
         }
 
         // Buttons/Tab
@@ -357,18 +371,53 @@ namespace AgRecords.View
                 FarmLandControl farmLandControl = new FarmLandControl();
 
                 // Set properties of the UserControl as needed
-                farmLandControl.labelParcelNo.Text = "Parcel #" + (i + 1);
+                farmLandControl.labelParcelNo.Text = (i + 1).ToString();
 
                 // Add the UserControl to the parent control (e.g., Panel)
                 flowLayoutPanelParcels.Controls.Add(farmLandControl);
             }
         }
 
-
-
         private void txtAssociation_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void btnDisplayListCon_Click(object sender, EventArgs e)
+        {
+            DisplayFarmParcelsDataInTextBox(GetFarmParcelsFromControls());
+        }
+
+        private void DisplayFarmParcelsDataInTextBox(List<FarmParcel> farmParcels)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (FarmParcel parcel in farmParcels)
+            {
+                sb.AppendLine($"Farm Parcel No: {parcel.farmParcelNo}");
+                sb.AppendLine($"Farm Location Brgy: {parcel.farmLocBrgy}");
+                sb.AppendLine($"Farm Location Municipality: {parcel.farmLocMunicipality}");
+                sb.AppendLine($"AD: {parcel.isAncestralDomain}");
+
+                // Add more properties as needed
+
+                foreach (FarmParcelCrop crop in parcel.Crops)
+                {
+                    sb.AppendLine($"Farm Parcel No: {crop.farmParcelNo}");
+                    sb.AppendLine($"Commodity Type: {crop.commodityType}");
+                    sb.AppendLine($"Land Size: {crop.landSize}");
+                    sb.AppendLine($"Head Count: {crop.headCount}");
+                    sb.AppendLine($"Farm Type: {crop.farmType}");
+                    sb.AppendLine($"Is Organic: {crop.isOrganic}");
+                    // Add more crop properties as needed
+                }
+
+                sb.AppendLine(); // Add a newline to separate farm parcels
+            }
+
+            // Assuming textBoxFarmParcels is the TextBox control where you want to display the data
+            textBoxFarmParcels.Text = sb.ToString();
+        }
+
     }
 }

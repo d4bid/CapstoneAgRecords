@@ -33,15 +33,21 @@
             panel44 = new Panel();
             label46 = new Label();
             panel1 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
+            panelAncestralDomain = new Panel();
+            rbAncestralDomainNo = new RadioButton();
+            rbAncestralDomainYes = new RadioButton();
+            rbOwnershipTypeOwner = new RadioButton();
+            panelBeneficiary = new Panel();
+            rbBeneficiaryNo = new RadioButton();
+            rbBeneficiaryYes = new RadioButton();
+            txtOwnershipDocNo = new TextBox();
+            txtFarmArea = new TextBox();
+            txtFarmLocMunicipality = new TextBox();
+            txtFarmLocBarangay = new TextBox();
             rectangleRound6 = new RectangleRound();
             rectangleRound5 = new RectangleRound();
             rectangleRound4 = new RectangleRound();
             rectangleRound3 = new RectangleRound();
-            txtOwnershipOthers = new TextBox();
-            txtLesseeOwnerName = new TextBox();
-            txtTenantOwnerName = new TextBox();
             label51 = new Label();
             label52 = new Label();
             label53 = new Label();
@@ -54,78 +60,82 @@
             panel2 = new Panel();
             label1 = new Label();
             label2 = new Label();
+            panelOwnershipType = new Panel();
+            rbOwnershipTypeOthers = new RadioButton();
+            rbOwnershipTypeLessee = new RadioButton();
+            rbOwnershipTypeTenant = new RadioButton();
+            label5 = new Label();
+            txtOwnerName = new TextBox();
             panel3 = new Panel();
             groupBox5 = new GroupBox();
-            comboBox7 = new ComboBox();
-            comboBox8 = new ComboBox();
-            comboBox9 = new ComboBox();
-            comboBox10 = new ComboBox();
-            comboBox11 = new ComboBox();
-            comboBox12 = new ComboBox();
+            cbLivestockFarmType5 = new ComboBox();
+            cbLivestockFarmType4 = new ComboBox();
+            cbLivestockFarmType3 = new ComboBox();
+            cbLivestockFarmType2 = new ComboBox();
+            cbLivestockFarmType1 = new ComboBox();
+            cbAgriFisheryFarmType = new ComboBox();
+            cbHVCFarmType = new ComboBox();
+            cbCornFarmType = new ComboBox();
+            cbRiceFarmType = new ComboBox();
             groupBox4 = new GroupBox();
-            txtHeadNo6 = new TextBox();
-            txtHeadNo5 = new TextBox();
+            txtLivestockHeadCount5 = new TextBox();
             txtHeadNo4 = new TextBox();
+            txtLivestockHeadCount4 = new TextBox();
             txtHeadNo3 = new TextBox();
+            txtLivestockHeadCount3 = new TextBox();
             txtHeadNo2 = new TextBox();
+            txtLivestockHeadCount2 = new TextBox();
             txtHeadNo1 = new TextBox();
+            txtLivestockHeadCount1 = new TextBox();
             label14 = new Label();
             groupBox7 = new GroupBox();
-            comboBox13 = new ComboBox();
+            txtRemarks = new TextBox();
             label13 = new Label();
             groupBox6 = new GroupBox();
-            comboBox6 = new ComboBox();
-            comboBox5 = new ComboBox();
-            comboBox4 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cbLivestockIsOrganic5 = new ComboBox();
+            cbLivestockIsOrganic4 = new ComboBox();
+            cbLivestockIsOrganic3 = new ComboBox();
+            cbLivestockIsOrganic2 = new ComboBox();
+            cbLivestockIsOrganic1 = new ComboBox();
+            cbIsOrganicAgriFishery = new ComboBox();
+            cbIsOrganicHVC = new ComboBox();
+            cbIsOrganicCorn = new ComboBox();
+            cbIsOrganicRice = new ComboBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             groupBox3 = new GroupBox();
-            txtSize6 = new TextBox();
-            txtSize5 = new TextBox();
-            txtSize4 = new TextBox();
-            txtSize3 = new TextBox();
-            txtSize2 = new TextBox();
-            txtSize1 = new TextBox();
+            txtLivestockSize5 = new TextBox();
+            txtLivestockSize4 = new TextBox();
+            txtLivestockSize3 = new TextBox();
+            txtLivestockSize2 = new TextBox();
+            txtLivestockSize1 = new TextBox();
+            txtLandSizeAgriFishery = new TextBox();
+            txtLandSizeHVC = new TextBox();
+            txtLandSizeCorn = new TextBox();
+            txtLandSizeRice = new TextBox();
             label9 = new Label();
             groupBox2 = new GroupBox();
-            txtAnimal5 = new TextBox();
-            txtAnimal4 = new TextBox();
-            txtAnimal3 = new TextBox();
-            txtAnimal2 = new TextBox();
-            txtAnimal1 = new TextBox();
+            txtLivestock5 = new TextBox();
+            txtLivestock4 = new TextBox();
+            txtLivestock3 = new TextBox();
+            txtLivestock2 = new TextBox();
+            txtLivestock1 = new TextBox();
             label8 = new Label();
             groupBox1 = new GroupBox();
-            chCommodity6 = new CheckBox();
-            chCommodity5 = new CheckBox();
-            cbCommodity4 = new CheckBox();
-            chCommodity3 = new CheckBox();
-            chCommodity2 = new CheckBox();
-            chCommodity1 = new CheckBox();
+            chIsAgriFishery = new CheckBox();
+            chCropIsHVC = new CheckBox();
+            chCropIsCorn = new CheckBox();
+            chCropIsRice = new CheckBox();
             panel4 = new Panel();
             label7 = new Label();
-            txtFarmLocBarangay = new TextBox();
-            txtFarmLocMunicipality = new TextBox();
-            txtFarmArea = new TextBox();
-            txtOwnershipDocNo = new TextBox();
-            this.rbAncestralDomainNo = new RadioButton();
-            rbAncestralDomainYes = new RadioButton();
-            this.panelAncestralDomain = new Panel();
-            rbBeneficiaryNo = new RadioButton();
-            rbBeneficiaryYes = new RadioButton();
-            panelBeneficiary = new Panel();
-            rbOwnershipTypeOwner = new RadioButton();
-            rbOwnershipTypeTenant = new RadioButton();
-            rbOwnershipTypeLessee = new RadioButton();
-            rbOwnershipTypeOthers = new RadioButton();
-            panelOwnershipType = new Panel();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
             panel1.SuspendLayout();
+            panelAncestralDomain.SuspendLayout();
+            panelBeneficiary.SuspendLayout();
             panel2.SuspendLayout();
+            panelOwnershipType.SuspendLayout();
             panel3.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -135,8 +145,6 @@
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             panel4.SuspendLayout();
-            this.panelAncestralDomain.SuspendLayout();
-            panelBeneficiary.SuspendLayout();
             SuspendLayout();
             // 
             // panel43
@@ -185,25 +193,16 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(rbOwnershipTypeOthers);
-            panel1.Controls.Add(rbOwnershipTypeLessee);
-            panel1.Controls.Add(rbOwnershipTypeTenant);
-            panel1.Controls.Add(rbOwnershipTypeOwner);
+            panel1.Controls.Add(panelAncestralDomain);
             panel1.Controls.Add(panelBeneficiary);
-            panel1.Controls.Add(this.panelAncestralDomain);
             panel1.Controls.Add(txtOwnershipDocNo);
             panel1.Controls.Add(txtFarmArea);
             panel1.Controls.Add(txtFarmLocMunicipality);
             panel1.Controls.Add(txtFarmLocBarangay);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(rectangleRound6);
             panel1.Controls.Add(rectangleRound5);
             panel1.Controls.Add(rectangleRound4);
             panel1.Controls.Add(rectangleRound3);
-            panel1.Controls.Add(txtOwnershipOthers);
-            panel1.Controls.Add(txtLesseeOwnerName);
-            panel1.Controls.Add(txtTenantOwnerName);
             panel1.Controls.Add(label51);
             panel1.Controls.Add(label52);
             panel1.Controls.Add(label53);
@@ -221,25 +220,119 @@
             panel1.Size = new Size(670, 505);
             panel1.TabIndex = 74;
             // 
-            // label6
+            // panelAncestralDomain
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(123, 461);
-            label6.Name = "label6";
-            label6.Size = new Size(128, 15);
-            label6.TabIndex = 97;
-            label6.Text = "(Name of Land Owner)";
+            panelAncestralDomain.Controls.Add(rbAncestralDomainNo);
+            panelAncestralDomain.Controls.Add(rbAncestralDomainYes);
+            panelAncestralDomain.Location = new Point(492, 194);
+            panelAncestralDomain.Name = "panelAncestralDomain";
+            panelAncestralDomain.Size = new Size(130, 31);
+            panelAncestralDomain.TabIndex = 110;
             // 
-            // label5
+            // rbAncestralDomainNo
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(123, 422);
-            label5.Name = "label5";
-            label5.Size = new Size(128, 15);
-            label5.TabIndex = 96;
-            label5.Text = "(Name of Land Owner)";
+            rbAncestralDomainNo.AutoSize = true;
+            rbAncestralDomainNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbAncestralDomainNo.Location = new Point(78, 3);
+            rbAncestralDomainNo.Name = "rbAncestralDomainNo";
+            rbAncestralDomainNo.Size = new Size(41, 19);
+            rbAncestralDomainNo.TabIndex = 59;
+            rbAncestralDomainNo.TabStop = true;
+            rbAncestralDomainNo.Text = "No";
+            rbAncestralDomainNo.UseVisualStyleBackColor = true;
+            // 
+            // rbAncestralDomainYes
+            // 
+            rbAncestralDomainYes.AutoSize = true;
+            rbAncestralDomainYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbAncestralDomainYes.Location = new Point(7, 3);
+            rbAncestralDomainYes.Name = "rbAncestralDomainYes";
+            rbAncestralDomainYes.Size = new Size(42, 19);
+            rbAncestralDomainYes.TabIndex = 58;
+            rbAncestralDomainYes.TabStop = true;
+            rbAncestralDomainYes.Text = "Yes";
+            rbAncestralDomainYes.UseVisualStyleBackColor = true;
+            // 
+            // rbOwnershipTypeOwner
+            // 
+            rbOwnershipTypeOwner.AutoSize = true;
+            rbOwnershipTypeOwner.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbOwnershipTypeOwner.Location = new Point(32, 16);
+            rbOwnershipTypeOwner.Name = "rbOwnershipTypeOwner";
+            rbOwnershipTypeOwner.Size = new Size(118, 19);
+            rbOwnershipTypeOwner.TabIndex = 104;
+            rbOwnershipTypeOwner.TabStop = true;
+            rbOwnershipTypeOwner.Text = "Registered Owner";
+            rbOwnershipTypeOwner.UseVisualStyleBackColor = true;
+            // 
+            // panelBeneficiary
+            // 
+            panelBeneficiary.Controls.Add(rbBeneficiaryNo);
+            panelBeneficiary.Controls.Add(rbBeneficiaryYes);
+            panelBeneficiary.Location = new Point(492, 279);
+            panelBeneficiary.Name = "panelBeneficiary";
+            panelBeneficiary.Size = new Size(130, 31);
+            panelBeneficiary.TabIndex = 103;
+            // 
+            // rbBeneficiaryNo
+            // 
+            rbBeneficiaryNo.AutoSize = true;
+            rbBeneficiaryNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbBeneficiaryNo.Location = new Point(78, 3);
+            rbBeneficiaryNo.Name = "rbBeneficiaryNo";
+            rbBeneficiaryNo.Size = new Size(41, 19);
+            rbBeneficiaryNo.TabIndex = 59;
+            rbBeneficiaryNo.TabStop = true;
+            rbBeneficiaryNo.Text = "No";
+            rbBeneficiaryNo.UseVisualStyleBackColor = true;
+            // 
+            // rbBeneficiaryYes
+            // 
+            rbBeneficiaryYes.AutoSize = true;
+            rbBeneficiaryYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbBeneficiaryYes.Location = new Point(7, 3);
+            rbBeneficiaryYes.Name = "rbBeneficiaryYes";
+            rbBeneficiaryYes.Size = new Size(42, 19);
+            rbBeneficiaryYes.TabIndex = 58;
+            rbBeneficiaryYes.TabStop = true;
+            rbBeneficiaryYes.Text = "Yes";
+            rbBeneficiaryYes.UseVisualStyleBackColor = true;
+            // 
+            // txtOwnershipDocNo
+            // 
+            txtOwnershipDocNo.BorderStyle = BorderStyle.None;
+            txtOwnershipDocNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtOwnershipDocNo.Location = new Point(250, 283);
+            txtOwnershipDocNo.Name = "txtOwnershipDocNo";
+            txtOwnershipDocNo.Size = new Size(173, 16);
+            txtOwnershipDocNo.TabIndex = 101;
+            // 
+            // txtFarmArea
+            // 
+            txtFarmArea.BorderStyle = BorderStyle.None;
+            txtFarmArea.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFarmArea.Location = new Point(250, 197);
+            txtFarmArea.Name = "txtFarmArea";
+            txtFarmArea.Size = new Size(173, 16);
+            txtFarmArea.TabIndex = 100;
+            // 
+            // txtFarmLocMunicipality
+            // 
+            txtFarmLocMunicipality.BorderStyle = BorderStyle.None;
+            txtFarmLocMunicipality.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFarmLocMunicipality.Location = new Point(250, 102);
+            txtFarmLocMunicipality.Name = "txtFarmLocMunicipality";
+            txtFarmLocMunicipality.Size = new Size(394, 16);
+            txtFarmLocMunicipality.TabIndex = 99;
+            // 
+            // txtFarmLocBarangay
+            // 
+            txtFarmLocBarangay.BorderStyle = BorderStyle.None;
+            txtFarmLocBarangay.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFarmLocBarangay.Location = new Point(250, 49);
+            txtFarmLocBarangay.Name = "txtFarmLocBarangay";
+            txtFarmLocBarangay.Size = new Size(394, 16);
+            txtFarmLocBarangay.TabIndex = 98;
             // 
             // rectangleRound6
             // 
@@ -276,33 +369,6 @@
             rectangleRound3.Name = "rectangleRound3";
             rectangleRound3.Size = new Size(199, 38);
             rectangleRound3.TabIndex = 88;
-            // 
-            // txtOwnershipOthers
-            // 
-            txtOwnershipOthers.BorderStyle = BorderStyle.FixedSingle;
-            txtOwnershipOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtOwnershipOthers.Location = new Point(319, 375);
-            txtOwnershipOthers.Name = "txtOwnershipOthers";
-            txtOwnershipOthers.Size = new Size(335, 23);
-            txtOwnershipOthers.TabIndex = 87;
-            // 
-            // txtLesseeOwnerName
-            // 
-            txtLesseeOwnerName.BorderStyle = BorderStyle.FixedSingle;
-            txtLesseeOwnerName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLesseeOwnerName.Location = new Point(289, 460);
-            txtLesseeOwnerName.Name = "txtLesseeOwnerName";
-            txtLesseeOwnerName.Size = new Size(365, 23);
-            txtLesseeOwnerName.TabIndex = 85;
-            // 
-            // txtTenantOwnerName
-            // 
-            txtTenantOwnerName.BorderStyle = BorderStyle.FixedSingle;
-            txtTenantOwnerName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenantOwnerName.Location = new Point(291, 420);
-            txtTenantOwnerName.Name = "txtTenantOwnerName";
-            txtTenantOwnerName.Size = new Size(363, 23);
-            txtTenantOwnerName.TabIndex = 81;
             // 
             // label51
             // 
@@ -423,6 +489,74 @@
             label2.TabIndex = 71;
             label2.Text = "Farm Location";
             // 
+            // panelOwnershipType
+            // 
+            panelOwnershipType.Controls.Add(rbOwnershipTypeOwner);
+            panelOwnershipType.Controls.Add(rbOwnershipTypeOthers);
+            panelOwnershipType.Controls.Add(rbOwnershipTypeLessee);
+            panelOwnershipType.Controls.Add(rbOwnershipTypeTenant);
+            panelOwnershipType.Controls.Add(label5);
+            panelOwnershipType.Controls.Add(txtOwnerName);
+            panelOwnershipType.Location = new Point(10, 363);
+            panelOwnershipType.Name = "panelOwnershipType";
+            panelOwnershipType.Size = new Size(655, 132);
+            panelOwnershipType.TabIndex = 109;
+            // 
+            // rbOwnershipTypeOthers
+            // 
+            rbOwnershipTypeOthers.AutoSize = true;
+            rbOwnershipTypeOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbOwnershipTypeOthers.Location = new Point(407, 16);
+            rbOwnershipTypeOthers.Name = "rbOwnershipTypeOthers";
+            rbOwnershipTypeOthers.Size = new Size(60, 19);
+            rbOwnershipTypeOthers.TabIndex = 108;
+            rbOwnershipTypeOthers.TabStop = true;
+            rbOwnershipTypeOthers.Text = "Others";
+            rbOwnershipTypeOthers.UseVisualStyleBackColor = true;
+            // 
+            // rbOwnershipTypeLessee
+            // 
+            rbOwnershipTypeLessee.AutoSize = true;
+            rbOwnershipTypeLessee.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbOwnershipTypeLessee.Location = new Point(279, 16);
+            rbOwnershipTypeLessee.Name = "rbOwnershipTypeLessee";
+            rbOwnershipTypeLessee.Size = new Size(59, 19);
+            rbOwnershipTypeLessee.TabIndex = 106;
+            rbOwnershipTypeLessee.TabStop = true;
+            rbOwnershipTypeLessee.Text = "Lessee";
+            rbOwnershipTypeLessee.UseVisualStyleBackColor = true;
+            // 
+            // rbOwnershipTypeTenant
+            // 
+            rbOwnershipTypeTenant.AutoSize = true;
+            rbOwnershipTypeTenant.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbOwnershipTypeTenant.Location = new Point(168, 16);
+            rbOwnershipTypeTenant.Name = "rbOwnershipTypeTenant";
+            rbOwnershipTypeTenant.Size = new Size(60, 19);
+            rbOwnershipTypeTenant.TabIndex = 105;
+            rbOwnershipTypeTenant.TabStop = true;
+            rbOwnershipTypeTenant.Text = "Tenant";
+            rbOwnershipTypeTenant.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(20, 59);
+            label5.Name = "label5";
+            label5.Size = new Size(253, 15);
+            label5.TabIndex = 96;
+            label5.Text = "(Name of Land Owner, if not registered owner)";
+            // 
+            // txtOwnerName
+            // 
+            txtOwnerName.BorderStyle = BorderStyle.FixedSingle;
+            txtOwnerName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtOwnerName.Location = new Point(279, 57);
+            txtOwnerName.Name = "txtOwnerName";
+            txtOwnerName.Size = new Size(363, 23);
+            txtOwnerName.TabIndex = 81;
+            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -449,12 +583,15 @@
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(comboBox7);
-            groupBox5.Controls.Add(comboBox8);
-            groupBox5.Controls.Add(comboBox9);
-            groupBox5.Controls.Add(comboBox10);
-            groupBox5.Controls.Add(comboBox11);
-            groupBox5.Controls.Add(comboBox12);
+            groupBox5.Controls.Add(cbLivestockFarmType5);
+            groupBox5.Controls.Add(cbLivestockFarmType4);
+            groupBox5.Controls.Add(cbLivestockFarmType3);
+            groupBox5.Controls.Add(cbLivestockFarmType2);
+            groupBox5.Controls.Add(cbLivestockFarmType1);
+            groupBox5.Controls.Add(cbAgriFisheryFarmType);
+            groupBox5.Controls.Add(cbHVCFarmType);
+            groupBox5.Controls.Add(cbCornFarmType);
+            groupBox5.Controls.Add(cbRiceFarmType);
             groupBox5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox5.Location = new Point(419, 58);
             groupBox5.Name = "groupBox5";
@@ -462,68 +599,98 @@
             groupBox5.TabIndex = 86;
             groupBox5.TabStop = false;
             // 
-            // comboBox7
+            // cbLivestockFarmType5
             // 
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Items.AddRange(new object[] { "1", "2", "3" });
-            comboBox7.Location = new Point(6, 172);
-            comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(76, 23);
-            comboBox7.TabIndex = 5;
+            cbLivestockFarmType5.FormattingEnabled = true;
+            cbLivestockFarmType5.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockFarmType5.Location = new Point(6, 340);
+            cbLivestockFarmType5.Name = "cbLivestockFarmType5";
+            cbLivestockFarmType5.Size = new Size(76, 23);
+            cbLivestockFarmType5.TabIndex = 8;
             // 
-            // comboBox8
+            // cbLivestockFarmType4
             // 
-            comboBox8.FormattingEnabled = true;
-            comboBox8.Items.AddRange(new object[] { "1", "2", "3" });
-            comboBox8.Location = new Point(6, 140);
-            comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(76, 23);
-            comboBox8.TabIndex = 4;
+            cbLivestockFarmType4.FormattingEnabled = true;
+            cbLivestockFarmType4.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockFarmType4.Location = new Point(6, 307);
+            cbLivestockFarmType4.Name = "cbLivestockFarmType4";
+            cbLivestockFarmType4.Size = new Size(76, 23);
+            cbLivestockFarmType4.TabIndex = 7;
             // 
-            // comboBox9
+            // cbLivestockFarmType3
             // 
-            comboBox9.FormattingEnabled = true;
-            comboBox9.Items.AddRange(new object[] { "1", "2", "3" });
-            comboBox9.Location = new Point(6, 109);
-            comboBox9.Name = "comboBox9";
-            comboBox9.Size = new Size(76, 23);
-            comboBox9.TabIndex = 3;
+            cbLivestockFarmType3.FormattingEnabled = true;
+            cbLivestockFarmType3.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockFarmType3.Location = new Point(6, 274);
+            cbLivestockFarmType3.Name = "cbLivestockFarmType3";
+            cbLivestockFarmType3.Size = new Size(76, 23);
+            cbLivestockFarmType3.TabIndex = 6;
             // 
-            // comboBox10
+            // cbLivestockFarmType2
             // 
-            comboBox10.FormattingEnabled = true;
-            comboBox10.Items.AddRange(new object[] { "1", "2", "3" });
-            comboBox10.Location = new Point(6, 79);
-            comboBox10.Name = "comboBox10";
-            comboBox10.Size = new Size(76, 23);
-            comboBox10.TabIndex = 2;
+            cbLivestockFarmType2.FormattingEnabled = true;
+            cbLivestockFarmType2.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockFarmType2.Location = new Point(6, 241);
+            cbLivestockFarmType2.Name = "cbLivestockFarmType2";
+            cbLivestockFarmType2.Size = new Size(76, 23);
+            cbLivestockFarmType2.TabIndex = 5;
             // 
-            // comboBox11
+            // cbLivestockFarmType1
             // 
-            comboBox11.FormattingEnabled = true;
-            comboBox11.Items.AddRange(new object[] { "1", "2", "3" });
-            comboBox11.Location = new Point(6, 49);
-            comboBox11.Name = "comboBox11";
-            comboBox11.Size = new Size(76, 23);
-            comboBox11.TabIndex = 1;
+            cbLivestockFarmType1.FormattingEnabled = true;
+            cbLivestockFarmType1.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockFarmType1.Location = new Point(6, 207);
+            cbLivestockFarmType1.Name = "cbLivestockFarmType1";
+            cbLivestockFarmType1.Size = new Size(76, 23);
+            cbLivestockFarmType1.TabIndex = 4;
             // 
-            // comboBox12
+            // cbAgriFisheryFarmType
             // 
-            comboBox12.FormattingEnabled = true;
-            comboBox12.Items.AddRange(new object[] { "1", "2", "3" });
-            comboBox12.Location = new Point(6, 18);
-            comboBox12.Name = "comboBox12";
-            comboBox12.Size = new Size(76, 23);
-            comboBox12.TabIndex = 0;
+            cbAgriFisheryFarmType.FormattingEnabled = true;
+            cbAgriFisheryFarmType.Items.AddRange(new object[] { "1", "2", "3" });
+            cbAgriFisheryFarmType.Location = new Point(6, 109);
+            cbAgriFisheryFarmType.Name = "cbAgriFisheryFarmType";
+            cbAgriFisheryFarmType.Size = new Size(76, 23);
+            cbAgriFisheryFarmType.TabIndex = 3;
+            // 
+            // cbHVCFarmType
+            // 
+            cbHVCFarmType.FormattingEnabled = true;
+            cbHVCFarmType.Items.AddRange(new object[] { "1", "2", "3" });
+            cbHVCFarmType.Location = new Point(6, 79);
+            cbHVCFarmType.Name = "cbHVCFarmType";
+            cbHVCFarmType.Size = new Size(76, 23);
+            cbHVCFarmType.TabIndex = 2;
+            // 
+            // cbCornFarmType
+            // 
+            cbCornFarmType.FormattingEnabled = true;
+            cbCornFarmType.Items.AddRange(new object[] { "1", "2", "3" });
+            cbCornFarmType.Location = new Point(6, 49);
+            cbCornFarmType.Name = "cbCornFarmType";
+            cbCornFarmType.Size = new Size(76, 23);
+            cbCornFarmType.TabIndex = 1;
+            // 
+            // cbRiceFarmType
+            // 
+            cbRiceFarmType.FormattingEnabled = true;
+            cbRiceFarmType.Items.AddRange(new object[] { "1", "2", "3" });
+            cbRiceFarmType.Location = new Point(6, 18);
+            cbRiceFarmType.Name = "cbRiceFarmType";
+            cbRiceFarmType.Size = new Size(76, 23);
+            cbRiceFarmType.TabIndex = 0;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(txtHeadNo6);
-            groupBox4.Controls.Add(txtHeadNo5);
+            groupBox4.Controls.Add(txtLivestockHeadCount5);
             groupBox4.Controls.Add(txtHeadNo4);
+            groupBox4.Controls.Add(txtLivestockHeadCount4);
             groupBox4.Controls.Add(txtHeadNo3);
+            groupBox4.Controls.Add(txtLivestockHeadCount3);
             groupBox4.Controls.Add(txtHeadNo2);
+            groupBox4.Controls.Add(txtLivestockHeadCount2);
             groupBox4.Controls.Add(txtHeadNo1);
+            groupBox4.Controls.Add(txtLivestockHeadCount1);
             groupBox4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox4.Location = new Point(313, 60);
             groupBox4.Name = "groupBox4";
@@ -531,23 +698,14 @@
             groupBox4.TabIndex = 85;
             groupBox4.TabStop = false;
             // 
-            // txtHeadNo6
+            // txtLivestockHeadCount5
             // 
-            txtHeadNo6.BorderStyle = BorderStyle.FixedSingle;
-            txtHeadNo6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtHeadNo6.Location = new Point(6, 171);
-            txtHeadNo6.Name = "txtHeadNo6";
-            txtHeadNo6.Size = new Size(83, 23);
-            txtHeadNo6.TabIndex = 94;
-            // 
-            // txtHeadNo5
-            // 
-            txtHeadNo5.BorderStyle = BorderStyle.FixedSingle;
-            txtHeadNo5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtHeadNo5.Location = new Point(6, 139);
-            txtHeadNo5.Name = "txtHeadNo5";
-            txtHeadNo5.Size = new Size(83, 23);
-            txtHeadNo5.TabIndex = 93;
+            txtLivestockHeadCount5.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockHeadCount5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockHeadCount5.Location = new Point(6, 338);
+            txtLivestockHeadCount5.Name = "txtLivestockHeadCount5";
+            txtLivestockHeadCount5.Size = new Size(83, 23);
+            txtLivestockHeadCount5.TabIndex = 102;
             // 
             // txtHeadNo4
             // 
@@ -558,6 +716,15 @@
             txtHeadNo4.Size = new Size(83, 23);
             txtHeadNo4.TabIndex = 92;
             // 
+            // txtLivestockHeadCount4
+            // 
+            txtLivestockHeadCount4.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockHeadCount4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockHeadCount4.Location = new Point(6, 304);
+            txtLivestockHeadCount4.Name = "txtLivestockHeadCount4";
+            txtLivestockHeadCount4.Size = new Size(83, 23);
+            txtLivestockHeadCount4.TabIndex = 101;
+            // 
             // txtHeadNo3
             // 
             txtHeadNo3.BorderStyle = BorderStyle.FixedSingle;
@@ -566,6 +733,15 @@
             txtHeadNo3.Name = "txtHeadNo3";
             txtHeadNo3.Size = new Size(83, 23);
             txtHeadNo3.TabIndex = 91;
+            // 
+            // txtLivestockHeadCount3
+            // 
+            txtLivestockHeadCount3.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockHeadCount3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockHeadCount3.Location = new Point(6, 272);
+            txtLivestockHeadCount3.Name = "txtLivestockHeadCount3";
+            txtLivestockHeadCount3.Size = new Size(83, 23);
+            txtLivestockHeadCount3.TabIndex = 100;
             // 
             // txtHeadNo2
             // 
@@ -576,6 +752,15 @@
             txtHeadNo2.Size = new Size(83, 23);
             txtHeadNo2.TabIndex = 90;
             // 
+            // txtLivestockHeadCount2
+            // 
+            txtLivestockHeadCount2.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockHeadCount2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockHeadCount2.Location = new Point(6, 238);
+            txtLivestockHeadCount2.Name = "txtLivestockHeadCount2";
+            txtLivestockHeadCount2.Size = new Size(83, 23);
+            txtLivestockHeadCount2.TabIndex = 99;
+            // 
             // txtHeadNo1
             // 
             txtHeadNo1.BorderStyle = BorderStyle.FixedSingle;
@@ -584,6 +769,15 @@
             txtHeadNo1.Name = "txtHeadNo1";
             txtHeadNo1.Size = new Size(83, 23);
             txtHeadNo1.TabIndex = 89;
+            // 
+            // txtLivestockHeadCount1
+            // 
+            txtLivestockHeadCount1.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockHeadCount1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockHeadCount1.Location = new Point(6, 206);
+            txtLivestockHeadCount1.Name = "txtLivestockHeadCount1";
+            txtLivestockHeadCount1.Size = new Size(83, 23);
+            txtLivestockHeadCount1.TabIndex = 98;
             // 
             // label14
             // 
@@ -597,7 +791,7 @@
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(comboBox13);
+            groupBox7.Controls.Add(txtRemarks);
             groupBox7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox7.Location = new Point(619, 58);
             groupBox7.Name = "groupBox7";
@@ -605,14 +799,15 @@
             groupBox7.TabIndex = 83;
             groupBox7.TabStop = false;
             // 
-            // comboBox13
+            // txtRemarks
             // 
-            comboBox13.FormattingEnabled = true;
-            comboBox13.Items.AddRange(new object[] { "Ewan pa", "List of Common Remarks" });
-            comboBox13.Location = new Point(11, 20);
-            comboBox13.Name = "comboBox13";
-            comboBox13.Size = new Size(76, 23);
-            comboBox13.TabIndex = 1;
+            txtRemarks.BorderStyle = BorderStyle.FixedSingle;
+            txtRemarks.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRemarks.Location = new Point(6, 18);
+            txtRemarks.Multiline = true;
+            txtRemarks.Name = "txtRemarks";
+            txtRemarks.Size = new Size(83, 345);
+            txtRemarks.TabIndex = 90;
             // 
             // label13
             // 
@@ -626,12 +821,15 @@
             // 
             // groupBox6
             // 
-            groupBox6.Controls.Add(comboBox6);
-            groupBox6.Controls.Add(comboBox5);
-            groupBox6.Controls.Add(comboBox4);
-            groupBox6.Controls.Add(comboBox3);
-            groupBox6.Controls.Add(comboBox2);
-            groupBox6.Controls.Add(comboBox1);
+            groupBox6.Controls.Add(cbLivestockIsOrganic5);
+            groupBox6.Controls.Add(cbLivestockIsOrganic4);
+            groupBox6.Controls.Add(cbLivestockIsOrganic3);
+            groupBox6.Controls.Add(cbLivestockIsOrganic2);
+            groupBox6.Controls.Add(cbLivestockIsOrganic1);
+            groupBox6.Controls.Add(cbIsOrganicAgriFishery);
+            groupBox6.Controls.Add(cbIsOrganicHVC);
+            groupBox6.Controls.Add(cbIsOrganicCorn);
+            groupBox6.Controls.Add(cbIsOrganicRice);
             groupBox6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox6.Location = new Point(520, 58);
             groupBox6.Name = "groupBox6";
@@ -639,59 +837,86 @@
             groupBox6.TabIndex = 81;
             groupBox6.TabStop = false;
             // 
-            // comboBox6
+            // cbLivestockIsOrganic5
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox6.Location = new Point(6, 172);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(76, 23);
-            comboBox6.TabIndex = 5;
+            cbLivestockIsOrganic5.FormattingEnabled = true;
+            cbLivestockIsOrganic5.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockIsOrganic5.Location = new Point(6, 340);
+            cbLivestockIsOrganic5.Name = "cbLivestockIsOrganic5";
+            cbLivestockIsOrganic5.Size = new Size(76, 23);
+            cbLivestockIsOrganic5.TabIndex = 13;
             // 
-            // comboBox5
+            // cbLivestockIsOrganic4
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox5.Location = new Point(6, 140);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(76, 23);
-            comboBox5.TabIndex = 4;
+            cbLivestockIsOrganic4.FormattingEnabled = true;
+            cbLivestockIsOrganic4.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockIsOrganic4.Location = new Point(6, 307);
+            cbLivestockIsOrganic4.Name = "cbLivestockIsOrganic4";
+            cbLivestockIsOrganic4.Size = new Size(76, 23);
+            cbLivestockIsOrganic4.TabIndex = 12;
             // 
-            // comboBox4
+            // cbLivestockIsOrganic3
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox4.Location = new Point(6, 109);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(76, 23);
-            comboBox4.TabIndex = 3;
+            cbLivestockIsOrganic3.FormattingEnabled = true;
+            cbLivestockIsOrganic3.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockIsOrganic3.Location = new Point(6, 274);
+            cbLivestockIsOrganic3.Name = "cbLivestockIsOrganic3";
+            cbLivestockIsOrganic3.Size = new Size(76, 23);
+            cbLivestockIsOrganic3.TabIndex = 11;
             // 
-            // comboBox3
+            // cbLivestockIsOrganic2
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox3.Location = new Point(6, 79);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(76, 23);
-            comboBox3.TabIndex = 2;
+            cbLivestockIsOrganic2.FormattingEnabled = true;
+            cbLivestockIsOrganic2.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockIsOrganic2.Location = new Point(6, 241);
+            cbLivestockIsOrganic2.Name = "cbLivestockIsOrganic2";
+            cbLivestockIsOrganic2.Size = new Size(76, 23);
+            cbLivestockIsOrganic2.TabIndex = 10;
             // 
-            // comboBox2
+            // cbLivestockIsOrganic1
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox2.Location = new Point(6, 49);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(76, 23);
-            comboBox2.TabIndex = 1;
+            cbLivestockIsOrganic1.FormattingEnabled = true;
+            cbLivestockIsOrganic1.Items.AddRange(new object[] { "1", "2", "3" });
+            cbLivestockIsOrganic1.Location = new Point(6, 207);
+            cbLivestockIsOrganic1.Name = "cbLivestockIsOrganic1";
+            cbLivestockIsOrganic1.Size = new Size(76, 23);
+            cbLivestockIsOrganic1.TabIndex = 9;
             // 
-            // comboBox1
+            // cbIsOrganicAgriFishery
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox1.Location = new Point(6, 18);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(76, 23);
-            comboBox1.TabIndex = 0;
+            cbIsOrganicAgriFishery.FormattingEnabled = true;
+            cbIsOrganicAgriFishery.Items.AddRange(new object[] { "Yes", "No" });
+            cbIsOrganicAgriFishery.Location = new Point(6, 109);
+            cbIsOrganicAgriFishery.Name = "cbIsOrganicAgriFishery";
+            cbIsOrganicAgriFishery.Size = new Size(76, 23);
+            cbIsOrganicAgriFishery.TabIndex = 3;
+            // 
+            // cbIsOrganicHVC
+            // 
+            cbIsOrganicHVC.FormattingEnabled = true;
+            cbIsOrganicHVC.Items.AddRange(new object[] { "Yes", "No" });
+            cbIsOrganicHVC.Location = new Point(6, 79);
+            cbIsOrganicHVC.Name = "cbIsOrganicHVC";
+            cbIsOrganicHVC.Size = new Size(76, 23);
+            cbIsOrganicHVC.TabIndex = 2;
+            // 
+            // cbIsOrganicCorn
+            // 
+            cbIsOrganicCorn.FormattingEnabled = true;
+            cbIsOrganicCorn.Items.AddRange(new object[] { "Yes", "No" });
+            cbIsOrganicCorn.Location = new Point(6, 49);
+            cbIsOrganicCorn.Name = "cbIsOrganicCorn";
+            cbIsOrganicCorn.Size = new Size(76, 23);
+            cbIsOrganicCorn.TabIndex = 1;
+            // 
+            // cbIsOrganicRice
+            // 
+            cbIsOrganicRice.FormattingEnabled = true;
+            cbIsOrganicRice.Items.AddRange(new object[] { "Yes", "No" });
+            cbIsOrganicRice.Location = new Point(6, 18);
+            cbIsOrganicRice.Name = "cbIsOrganicRice";
+            cbIsOrganicRice.Size = new Size(76, 23);
+            cbIsOrganicRice.TabIndex = 0;
             // 
             // label12
             // 
@@ -725,12 +950,15 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(txtSize6);
-            groupBox3.Controls.Add(txtSize5);
-            groupBox3.Controls.Add(txtSize4);
-            groupBox3.Controls.Add(txtSize3);
-            groupBox3.Controls.Add(txtSize2);
-            groupBox3.Controls.Add(txtSize1);
+            groupBox3.Controls.Add(txtLivestockSize5);
+            groupBox3.Controls.Add(txtLivestockSize4);
+            groupBox3.Controls.Add(txtLivestockSize3);
+            groupBox3.Controls.Add(txtLivestockSize2);
+            groupBox3.Controls.Add(txtLivestockSize1);
+            groupBox3.Controls.Add(txtLandSizeAgriFishery);
+            groupBox3.Controls.Add(txtLandSizeHVC);
+            groupBox3.Controls.Add(txtLandSizeCorn);
+            groupBox3.Controls.Add(txtLandSizeRice);
             groupBox3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(207, 60);
             groupBox3.Name = "groupBox3";
@@ -738,65 +966,92 @@
             groupBox3.TabIndex = 75;
             groupBox3.TabStop = false;
             // 
-            // txtSize6
+            // txtLivestockSize5
             // 
-            txtSize6.BorderStyle = BorderStyle.FixedSingle;
-            txtSize6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSize6.Location = new Point(6, 171);
-            txtSize6.Name = "txtSize6";
-            txtSize6.Size = new Size(83, 23);
-            txtSize6.TabIndex = 94;
+            txtLivestockSize5.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockSize5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockSize5.Location = new Point(6, 338);
+            txtLivestockSize5.Name = "txtLivestockSize5";
+            txtLivestockSize5.Size = new Size(83, 23);
+            txtLivestockSize5.TabIndex = 97;
             // 
-            // txtSize5
+            // txtLivestockSize4
             // 
-            txtSize5.BorderStyle = BorderStyle.FixedSingle;
-            txtSize5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSize5.Location = new Point(6, 139);
-            txtSize5.Name = "txtSize5";
-            txtSize5.Size = new Size(83, 23);
-            txtSize5.TabIndex = 93;
+            txtLivestockSize4.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockSize4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockSize4.Location = new Point(6, 304);
+            txtLivestockSize4.Name = "txtLivestockSize4";
+            txtLivestockSize4.Size = new Size(83, 23);
+            txtLivestockSize4.TabIndex = 96;
             // 
-            // txtSize4
+            // txtLivestockSize3
             // 
-            txtSize4.BorderStyle = BorderStyle.FixedSingle;
-            txtSize4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSize4.Location = new Point(6, 107);
-            txtSize4.Name = "txtSize4";
-            txtSize4.Size = new Size(83, 23);
-            txtSize4.TabIndex = 92;
+            txtLivestockSize3.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockSize3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockSize3.Location = new Point(6, 272);
+            txtLivestockSize3.Name = "txtLivestockSize3";
+            txtLivestockSize3.Size = new Size(83, 23);
+            txtLivestockSize3.TabIndex = 95;
             // 
-            // txtSize3
+            // txtLivestockSize2
             // 
-            txtSize3.BorderStyle = BorderStyle.FixedSingle;
-            txtSize3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSize3.Location = new Point(6, 77);
-            txtSize3.Name = "txtSize3";
-            txtSize3.Size = new Size(83, 23);
-            txtSize3.TabIndex = 91;
+            txtLivestockSize2.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockSize2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockSize2.Location = new Point(6, 238);
+            txtLivestockSize2.Name = "txtLivestockSize2";
+            txtLivestockSize2.Size = new Size(83, 23);
+            txtLivestockSize2.TabIndex = 94;
             // 
-            // txtSize2
+            // txtLivestockSize1
             // 
-            txtSize2.BorderStyle = BorderStyle.FixedSingle;
-            txtSize2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSize2.Location = new Point(6, 47);
-            txtSize2.Name = "txtSize2";
-            txtSize2.Size = new Size(83, 23);
-            txtSize2.TabIndex = 90;
+            txtLivestockSize1.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestockSize1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestockSize1.Location = new Point(6, 206);
+            txtLivestockSize1.Name = "txtLivestockSize1";
+            txtLivestockSize1.Size = new Size(83, 23);
+            txtLivestockSize1.TabIndex = 93;
             // 
-            // txtSize1
+            // txtLandSizeAgriFishery
             // 
-            txtSize1.BorderStyle = BorderStyle.FixedSingle;
-            txtSize1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSize1.Location = new Point(6, 17);
-            txtSize1.Name = "txtSize1";
-            txtSize1.Size = new Size(83, 23);
-            txtSize1.TabIndex = 89;
+            txtLandSizeAgriFishery.BorderStyle = BorderStyle.FixedSingle;
+            txtLandSizeAgriFishery.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLandSizeAgriFishery.Location = new Point(6, 107);
+            txtLandSizeAgriFishery.Name = "txtLandSizeAgriFishery";
+            txtLandSizeAgriFishery.Size = new Size(83, 23);
+            txtLandSizeAgriFishery.TabIndex = 92;
+            // 
+            // txtLandSizeHVC
+            // 
+            txtLandSizeHVC.BorderStyle = BorderStyle.FixedSingle;
+            txtLandSizeHVC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLandSizeHVC.Location = new Point(6, 77);
+            txtLandSizeHVC.Name = "txtLandSizeHVC";
+            txtLandSizeHVC.Size = new Size(83, 23);
+            txtLandSizeHVC.TabIndex = 91;
+            // 
+            // txtLandSizeCorn
+            // 
+            txtLandSizeCorn.BorderStyle = BorderStyle.FixedSingle;
+            txtLandSizeCorn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLandSizeCorn.Location = new Point(6, 47);
+            txtLandSizeCorn.Name = "txtLandSizeCorn";
+            txtLandSizeCorn.Size = new Size(83, 23);
+            txtLandSizeCorn.TabIndex = 90;
+            // 
+            // txtLandSizeRice
+            // 
+            txtLandSizeRice.BorderStyle = BorderStyle.FixedSingle;
+            txtLandSizeRice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLandSizeRice.Location = new Point(6, 17);
+            txtLandSizeRice.Name = "txtLandSizeRice";
+            txtLandSizeRice.Size = new Size(83, 23);
+            txtLandSizeRice.TabIndex = 89;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(13, 283);
+            label9.Location = new Point(13, 221);
             label9.Name = "label9";
             label9.Size = new Size(125, 15);
             label9.TabIndex = 74;
@@ -804,62 +1059,62 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(txtAnimal5);
-            groupBox2.Controls.Add(txtAnimal4);
-            groupBox2.Controls.Add(txtAnimal3);
-            groupBox2.Controls.Add(txtAnimal2);
-            groupBox2.Controls.Add(txtAnimal1);
+            groupBox2.Controls.Add(txtLivestock5);
+            groupBox2.Controls.Add(txtLivestock4);
+            groupBox2.Controls.Add(txtLivestock3);
+            groupBox2.Controls.Add(txtLivestock2);
+            groupBox2.Controls.Add(txtLivestock1);
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(13, 302);
+            groupBox2.Location = new Point(13, 240);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(183, 193);
+            groupBox2.Size = new Size(183, 253);
             groupBox2.TabIndex = 73;
             groupBox2.TabStop = false;
             // 
-            // txtAnimal5
+            // txtLivestock5
             // 
-            txtAnimal5.BorderStyle = BorderStyle.FixedSingle;
-            txtAnimal5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAnimal5.Location = new Point(16, 158);
-            txtAnimal5.Name = "txtAnimal5";
-            txtAnimal5.Size = new Size(146, 23);
-            txtAnimal5.TabIndex = 99;
+            txtLivestock5.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestock5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestock5.Location = new Point(16, 158);
+            txtLivestock5.Name = "txtLivestock5";
+            txtLivestock5.Size = new Size(146, 23);
+            txtLivestock5.TabIndex = 99;
             // 
-            // txtAnimal4
+            // txtLivestock4
             // 
-            txtAnimal4.BorderStyle = BorderStyle.FixedSingle;
-            txtAnimal4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAnimal4.Location = new Point(16, 125);
-            txtAnimal4.Name = "txtAnimal4";
-            txtAnimal4.Size = new Size(146, 23);
-            txtAnimal4.TabIndex = 98;
+            txtLivestock4.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestock4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestock4.Location = new Point(16, 125);
+            txtLivestock4.Name = "txtLivestock4";
+            txtLivestock4.Size = new Size(146, 23);
+            txtLivestock4.TabIndex = 98;
             // 
-            // txtAnimal3
+            // txtLivestock3
             // 
-            txtAnimal3.BorderStyle = BorderStyle.FixedSingle;
-            txtAnimal3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAnimal3.Location = new Point(16, 92);
-            txtAnimal3.Name = "txtAnimal3";
-            txtAnimal3.Size = new Size(146, 23);
-            txtAnimal3.TabIndex = 97;
+            txtLivestock3.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestock3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestock3.Location = new Point(16, 92);
+            txtLivestock3.Name = "txtLivestock3";
+            txtLivestock3.Size = new Size(146, 23);
+            txtLivestock3.TabIndex = 97;
             // 
-            // txtAnimal2
+            // txtLivestock2
             // 
-            txtAnimal2.BorderStyle = BorderStyle.FixedSingle;
-            txtAnimal2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAnimal2.Location = new Point(16, 59);
-            txtAnimal2.Name = "txtAnimal2";
-            txtAnimal2.Size = new Size(146, 23);
-            txtAnimal2.TabIndex = 96;
+            txtLivestock2.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestock2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestock2.Location = new Point(16, 59);
+            txtLivestock2.Name = "txtLivestock2";
+            txtLivestock2.Size = new Size(146, 23);
+            txtLivestock2.TabIndex = 96;
             // 
-            // txtAnimal1
+            // txtLivestock1
             // 
-            txtAnimal1.BorderStyle = BorderStyle.FixedSingle;
-            txtAnimal1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAnimal1.Location = new Point(16, 26);
-            txtAnimal1.Name = "txtAnimal1";
-            txtAnimal1.Size = new Size(146, 23);
-            txtAnimal1.TabIndex = 95;
+            txtLivestock1.BorderStyle = BorderStyle.FixedSingle;
+            txtLivestock1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLivestock1.Location = new Point(16, 26);
+            txtLivestock1.Name = "txtLivestock1";
+            txtLivestock1.Size = new Size(146, 23);
+            txtLivestock1.TabIndex = 95;
             // 
             // label8
             // 
@@ -873,84 +1128,60 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(chCommodity6);
-            groupBox1.Controls.Add(chCommodity5);
-            groupBox1.Controls.Add(cbCommodity4);
-            groupBox1.Controls.Add(chCommodity3);
-            groupBox1.Controls.Add(chCommodity2);
-            groupBox1.Controls.Add(chCommodity1);
+            groupBox1.Controls.Add(chIsAgriFishery);
+            groupBox1.Controls.Add(chCropIsHVC);
+            groupBox1.Controls.Add(chCropIsCorn);
+            groupBox1.Controls.Add(chCropIsRice);
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(13, 60);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(183, 204);
+            groupBox1.Size = new Size(183, 149);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
-            // chCommodity6
+            // chIsAgriFishery
             // 
-            chCommodity6.AutoSize = true;
-            chCommodity6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chCommodity6.Location = new Point(16, 170);
-            chCommodity6.Name = "chCommodity6";
-            chCommodity6.Size = new Size(88, 19);
-            chCommodity6.TabIndex = 100;
-            chCommodity6.Text = "Agri-fishery";
-            chCommodity6.UseVisualStyleBackColor = true;
+            chIsAgriFishery.AutoSize = true;
+            chIsAgriFishery.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            chIsAgriFishery.Location = new Point(16, 111);
+            chIsAgriFishery.Name = "chIsAgriFishery";
+            chIsAgriFishery.Size = new Size(88, 19);
+            chIsAgriFishery.TabIndex = 100;
+            chIsAgriFishery.Text = "Agri-fishery";
+            chIsAgriFishery.UseVisualStyleBackColor = true;
             // 
-            // chCommodity5
+            // chCropIsHVC
             // 
-            chCommodity5.AutoSize = true;
-            chCommodity5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chCommodity5.Location = new Point(16, 140);
-            chCommodity5.Name = "chCommodity5";
-            chCommodity5.Size = new Size(64, 19);
-            chCommodity5.TabIndex = 99;
-            chCommodity5.Text = "Poultry";
-            chCommodity5.UseVisualStyleBackColor = true;
+            chCropIsHVC.AutoSize = true;
+            chCropIsHVC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            chCropIsHVC.Location = new Point(16, 80);
+            chCropIsHVC.Name = "chCropIsHVC";
+            chCropIsHVC.Size = new Size(50, 19);
+            chCropIsHVC.TabIndex = 97;
+            chCropIsHVC.Text = "HVC";
+            chCropIsHVC.UseVisualStyleBackColor = true;
             // 
-            // cbCommodity4
+            // chCropIsCorn
             // 
-            cbCommodity4.AutoSize = true;
-            cbCommodity4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCommodity4.Location = new Point(16, 110);
-            cbCommodity4.Name = "cbCommodity4";
-            cbCommodity4.Size = new Size(75, 19);
-            cbCommodity4.TabIndex = 98;
-            cbCommodity4.Text = "Livestock";
-            cbCommodity4.UseVisualStyleBackColor = true;
+            chCropIsCorn.AutoSize = true;
+            chCropIsCorn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            chCropIsCorn.Location = new Point(16, 50);
+            chCropIsCorn.Name = "chCropIsCorn";
+            chCropIsCorn.Size = new Size(52, 19);
+            chCropIsCorn.TabIndex = 96;
+            chCropIsCorn.Text = "Corn";
+            chCropIsCorn.UseVisualStyleBackColor = true;
             // 
-            // chCommodity3
+            // chCropIsRice
             // 
-            chCommodity3.AutoSize = true;
-            chCommodity3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chCommodity3.Location = new Point(16, 80);
-            chCommodity3.Name = "chCommodity3";
-            chCommodity3.Size = new Size(50, 19);
-            chCommodity3.TabIndex = 97;
-            chCommodity3.Text = "HVC";
-            chCommodity3.UseVisualStyleBackColor = true;
-            // 
-            // chCommodity2
-            // 
-            chCommodity2.AutoSize = true;
-            chCommodity2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chCommodity2.Location = new Point(16, 50);
-            chCommodity2.Name = "chCommodity2";
-            chCommodity2.Size = new Size(52, 19);
-            chCommodity2.TabIndex = 96;
-            chCommodity2.Text = "Corn";
-            chCommodity2.UseVisualStyleBackColor = true;
-            // 
-            // chCommodity1
-            // 
-            chCommodity1.AutoSize = true;
-            chCommodity1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chCommodity1.Location = new Point(16, 20);
-            chCommodity1.Name = "chCommodity1";
-            chCommodity1.Size = new Size(48, 19);
-            chCommodity1.TabIndex = 95;
-            chCommodity1.Text = "Rice";
-            chCommodity1.UseVisualStyleBackColor = true;
+            chCropIsRice.AutoSize = true;
+            chCropIsRice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            chCropIsRice.Location = new Point(16, 20);
+            chCropIsRice.Name = "chCropIsRice";
+            chCropIsRice.Size = new Size(48, 19);
+            chCropIsRice.TabIndex = 95;
+            chCropIsRice.Text = "Rice";
+            chCropIsRice.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -973,163 +1204,6 @@
             label7.TabIndex = 28;
             label7.Text = "Farm";
             // 
-            // txtFarmLocBarangay
-            // 
-            txtFarmLocBarangay.BorderStyle = BorderStyle.None;
-            txtFarmLocBarangay.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmLocBarangay.Location = new Point(250, 49);
-            txtFarmLocBarangay.Name = "txtFarmLocBarangay";
-            txtFarmLocBarangay.Size = new Size(394, 16);
-            txtFarmLocBarangay.TabIndex = 98;
-            // 
-            // txtFarmLocMunicipality
-            // 
-            txtFarmLocMunicipality.BorderStyle = BorderStyle.None;
-            txtFarmLocMunicipality.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmLocMunicipality.Location = new Point(250, 102);
-            txtFarmLocMunicipality.Name = "txtFarmLocMunicipality";
-            txtFarmLocMunicipality.Size = new Size(394, 16);
-            txtFarmLocMunicipality.TabIndex = 99;
-            // 
-            // txtFarmArea
-            // 
-            txtFarmArea.BorderStyle = BorderStyle.None;
-            txtFarmArea.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmArea.Location = new Point(250, 197);
-            txtFarmArea.Name = "txtFarmArea";
-            txtFarmArea.Size = new Size(173, 16);
-            txtFarmArea.TabIndex = 100;
-            // 
-            // txtOwnershipDocNo
-            // 
-            txtOwnershipDocNo.BorderStyle = BorderStyle.None;
-            txtOwnershipDocNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtOwnershipDocNo.Location = new Point(250, 283);
-            txtOwnershipDocNo.Name = "txtOwnershipDocNo";
-            txtOwnershipDocNo.Size = new Size(173, 16);
-            txtOwnershipDocNo.TabIndex = 101;
-            // 
-            // rbAncestralDomainNo
-            // 
-            this.rbAncestralDomainNo.AutoSize = true;
-            this.rbAncestralDomainNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            this.rbAncestralDomainNo.Location = new Point(78, 3);
-            this.rbAncestralDomainNo.Name = "rbAncestralDomainNo";
-            this.rbAncestralDomainNo.Size = new Size(41, 19);
-            this.rbAncestralDomainNo.TabIndex = 59;
-            this.rbAncestralDomainNo.TabStop = true;
-            this.rbAncestralDomainNo.Text = "No";
-            this.rbAncestralDomainNo.UseVisualStyleBackColor = true;
-            // 
-            // rbAncestralDomainYes
-            // 
-            rbAncestralDomainYes.AutoSize = true;
-            rbAncestralDomainYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbAncestralDomainYes.Location = new Point(7, 3);
-            rbAncestralDomainYes.Name = "rbAncestralDomainYes";
-            rbAncestralDomainYes.Size = new Size(42, 19);
-            rbAncestralDomainYes.TabIndex = 58;
-            rbAncestralDomainYes.TabStop = true;
-            rbAncestralDomainYes.Text = "Yes";
-            rbAncestralDomainYes.UseVisualStyleBackColor = true;
-            // 
-            // panelAncestralDomain
-            // 
-            this.panelAncestralDomain.Controls.Add(this.rbAncestralDomainNo);
-            this.panelAncestralDomain.Controls.Add(rbAncestralDomainYes);
-            this.panelAncestralDomain.Location = new Point(492, 194);
-            this.panelAncestralDomain.Name = "panelAncestralDomain";
-            this.panelAncestralDomain.Size = new Size(130, 31);
-            this.panelAncestralDomain.TabIndex = 102;
-            // 
-            // rbBeneficiaryNo
-            // 
-            rbBeneficiaryNo.AutoSize = true;
-            rbBeneficiaryNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbBeneficiaryNo.Location = new Point(78, 3);
-            rbBeneficiaryNo.Name = "rbBeneficiaryNo";
-            rbBeneficiaryNo.Size = new Size(41, 19);
-            rbBeneficiaryNo.TabIndex = 59;
-            rbBeneficiaryNo.TabStop = true;
-            rbBeneficiaryNo.Text = "No";
-            rbBeneficiaryNo.UseVisualStyleBackColor = true;
-            // 
-            // rbBeneficiaryYes
-            // 
-            rbBeneficiaryYes.AutoSize = true;
-            rbBeneficiaryYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbBeneficiaryYes.Location = new Point(7, 3);
-            rbBeneficiaryYes.Name = "rbBeneficiaryYes";
-            rbBeneficiaryYes.Size = new Size(42, 19);
-            rbBeneficiaryYes.TabIndex = 58;
-            rbBeneficiaryYes.TabStop = true;
-            rbBeneficiaryYes.Text = "Yes";
-            rbBeneficiaryYes.UseVisualStyleBackColor = true;
-            // 
-            // panelBeneficiary
-            // 
-            panelBeneficiary.Controls.Add(rbBeneficiaryNo);
-            panelBeneficiary.Controls.Add(rbBeneficiaryYes);
-            panelBeneficiary.Location = new Point(492, 279);
-            panelBeneficiary.Name = "panelBeneficiary";
-            panelBeneficiary.Size = new Size(130, 31);
-            panelBeneficiary.TabIndex = 103;
-            // 
-            // rbOwnershipTypeOwner
-            // 
-            rbOwnershipTypeOwner.AutoSize = true;
-            rbOwnershipTypeOwner.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbOwnershipTypeOwner.Location = new Point(30, 379);
-            rbOwnershipTypeOwner.Name = "rbOwnershipTypeOwner";
-            rbOwnershipTypeOwner.Size = new Size(118, 19);
-            rbOwnershipTypeOwner.TabIndex = 104;
-            rbOwnershipTypeOwner.TabStop = true;
-            rbOwnershipTypeOwner.Text = "Registered Owner";
-            rbOwnershipTypeOwner.UseVisualStyleBackColor = true;
-            // 
-            // rbOwnershipTypeTenant
-            // 
-            rbOwnershipTypeTenant.AutoSize = true;
-            rbOwnershipTypeTenant.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbOwnershipTypeTenant.Location = new Point(30, 418);
-            rbOwnershipTypeTenant.Name = "rbOwnershipTypeTenant";
-            rbOwnershipTypeTenant.Size = new Size(60, 19);
-            rbOwnershipTypeTenant.TabIndex = 105;
-            rbOwnershipTypeTenant.TabStop = true;
-            rbOwnershipTypeTenant.Text = "Tenant";
-            rbOwnershipTypeTenant.UseVisualStyleBackColor = true;
-            // 
-            // rbOwnershipTypeLessee
-            // 
-            rbOwnershipTypeLessee.AutoSize = true;
-            rbOwnershipTypeLessee.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbOwnershipTypeLessee.Location = new Point(30, 459);
-            rbOwnershipTypeLessee.Name = "rbOwnershipTypeLessee";
-            rbOwnershipTypeLessee.Size = new Size(59, 19);
-            rbOwnershipTypeLessee.TabIndex = 106;
-            rbOwnershipTypeLessee.TabStop = true;
-            rbOwnershipTypeLessee.Text = "Lessee";
-            rbOwnershipTypeLessee.UseVisualStyleBackColor = true;
-            // 
-            // rbOwnershipTypeOthers
-            // 
-            rbOwnershipTypeOthers.AutoSize = true;
-            rbOwnershipTypeOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbOwnershipTypeOthers.Location = new Point(253, 375);
-            rbOwnershipTypeOthers.Name = "rbOwnershipTypeOthers";
-            rbOwnershipTypeOthers.Size = new Size(60, 19);
-            rbOwnershipTypeOthers.TabIndex = 108;
-            rbOwnershipTypeOthers.TabStop = true;
-            rbOwnershipTypeOthers.Text = "Others";
-            rbOwnershipTypeOthers.UseVisualStyleBackColor = true;
-            // 
-            // panelOwnershipType
-            // 
-            panelOwnershipType.Location = new Point(10, 363);
-            panelOwnershipType.Name = "panelOwnershipType";
-            panelOwnershipType.Size = new Size(655, 132);
-            panelOwnershipType.TabIndex = 109;
-            // 
             // FarmLandControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -1150,14 +1224,21 @@
             panel44.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelAncestralDomain.ResumeLayout(false);
+            panelAncestralDomain.PerformLayout();
+            panelBeneficiary.ResumeLayout(false);
+            panelBeneficiary.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panelOwnershipType.ResumeLayout(false);
+            panelOwnershipType.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -1167,10 +1248,6 @@
             groupBox1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            this.panelAncestralDomain.ResumeLayout(false);
-            this.panelAncestralDomain.PerformLayout();
-            panelBeneficiary.ResumeLayout(false);
-            panelBeneficiary.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1188,9 +1265,7 @@
         private Label label3;
         private Label label4;
         private RectangleRound rectangleRound3;
-        private TextBox txtOwnershipOthers;
-        private TextBox txtLesseeOwnerName;
-        private TextBox txtTenantOwnerName;
+        private TextBox txtOwnerName;
         private Label label51;
         private Label label52;
         private Label label53;
@@ -1201,7 +1276,6 @@
         private CheckBox cbAgrarianNo;
         private CheckBox cbAgrarianYes;
         private CheckBox cbAncestralDomainYes;
-        private Label label6;
         private Label label5;
         private Panel panel3;
         private Panel panel4;
@@ -1214,57 +1288,47 @@
         private GroupBox groupBox3;
         private Label label8;
         private GroupBox groupBox1;
-        private CheckBox chCommodity6;
-        private CheckBox chCommodity5;
-        private CheckBox cbCommodity4;
-        private CheckBox chCommodity3;
-        private CheckBox chCommodity2;
-        private CheckBox chCommodity1;
+        private CheckBox chIsAgriFishery;
+        private CheckBox chCropIsHVC;
+        private CheckBox chCropIsCorn;
+        private CheckBox chCropIsRice;
         private Label label12;
         private Label label13;
         private Label label14;
         private GroupBox groupBox7;
-        private TextBox txtSize6;
-        private TextBox txtSize5;
-        private TextBox txtSize4;
-        private TextBox txtSize3;
-        private TextBox txtSize2;
-        private TextBox txtSize1;
+        private TextBox txtLivestockSize2;
+        private TextBox txtLivestockSize1;
+        private TextBox txtLandSizeAgriFishery;
+        private TextBox txtLandSizeHVC;
+        private TextBox txtLandSizeCorn;
+        private TextBox txtLandSizeRice;
         private Label label11;
         private GroupBox groupBox4;
-        private TextBox txtHeadNo6;
-        private TextBox txtHeadNo5;
         private TextBox txtHeadNo4;
         private TextBox txtHeadNo3;
         private TextBox txtHeadNo2;
         private TextBox txtHeadNo1;
         private GroupBox groupBox6;
-        private ComboBox comboBox6;
-        private ComboBox comboBox5;
-        private ComboBox comboBox4;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbIsOrganicAgriFishery;
+        private ComboBox cbIsOrganicHVC;
+        private ComboBox cbIsOrganicCorn;
+        private ComboBox cbIsOrganicRice;
         private GroupBox groupBox5;
-        private ComboBox comboBox7;
-        private ComboBox comboBox8;
-        private ComboBox comboBox9;
-        private ComboBox comboBox10;
-        private ComboBox comboBox11;
-        private ComboBox comboBox12;
-        private TextBox txtAnimal5;
-        private TextBox txtAnimal4;
-        private TextBox txtAnimal3;
-        private TextBox txtAnimal2;
-        private TextBox txtAnimal1;
-        private ComboBox comboBox13;
+        private ComboBox cbAgriFisheryFarmType;
+        private ComboBox cbHVCFarmType;
+        private ComboBox cbCornFarmType;
+        private ComboBox cbRiceFarmType;
+        private TextBox txtLivestock5;
+        private TextBox txtLivestock4;
+        private TextBox txtLivestock3;
+        private TextBox txtLivestock2;
+        private TextBox txtLivestock1;
         private TextBox txtOwnershipDocNo;
         private TextBox txtFarmArea;
         private TextBox txtFarmLocMunicipality;
         private TextBox txtFarmLocBarangay;
         private Panel panelIPGroup;
         private RadioButton rbIndigenousNo;
-        private RadioButton rbAncestralDomainYes;
         private Panel panelBeneficiary;
         private RadioButton rbBeneficiaryNo;
         private RadioButton rbBeneficiaryYes;
@@ -1273,5 +1337,27 @@
         private RadioButton rbOwnershipTypeTenant;
         private RadioButton rbOwnershipTypeOwner;
         private Panel panelOwnershipType;
+        private ComboBox cbLivestockFarmType5;
+        private ComboBox cbLivestockFarmType4;
+        private ComboBox cbLivestockFarmType3;
+        private ComboBox cbLivestockFarmType2;
+        private ComboBox cbLivestockFarmType1;
+        private TextBox txtLivestockHeadCount5;
+        private TextBox txtLivestockHeadCount4;
+        private TextBox txtLivestockHeadCount3;
+        private TextBox txtLivestockHeadCount2;
+        private TextBox txtLivestockHeadCount1;
+        private TextBox txtLivestockSize5;
+        private TextBox txtLivestockSize4;
+        private TextBox txtLivestockSize3;
+        private ComboBox cbLivestockIsOrganic5;
+        private ComboBox cbLivestockIsOrganic4;
+        private ComboBox cbLivestockIsOrganic3;
+        private ComboBox cbLivestockIsOrganic2;
+        private ComboBox cbLivestockIsOrganic1;
+        private TextBox txtRemarks;
+        private Panel panelAncestralDomain;
+        private RadioButton rbAncestralDomainNo;
+        private RadioButton rbAncestralDomainYes;
     }
 }
