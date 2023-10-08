@@ -83,5 +83,13 @@ namespace AgRecords.Model
         public double? annualIncomeFarming { get; set; }
         public double? annualIncomeNonFarming { get; set; }
 
+        //farmland table
+        public string? rotatingFarmers { get; set; }
+        public int farmParcelCount { get; set; }
+
+        //farmland parcel table
+
+
+
     }
 }

@@ -25,14 +25,14 @@ namespace AgRecords.Model
 
                     if (result == null || result == DBNull.Value)
                     {
-                        return "RSBSA00001";
+                        return "RSBSA000001";
                     }
                     else
                     {
                         string lastId = result.ToString();
-                        int lastNumber = int.Parse(lastId.Substring(4));
+                        int lastNumber = int.Parse(lastId.Substring(6));
                         int nextNumber = lastNumber + 1;
-                        string nextId = "RSBSA" + nextNumber.ToString("00000");
+                        string nextId = "RSBSA" + nextNumber.ToString("000000");
                         return nextId;
                     }
                 }
@@ -287,7 +287,7 @@ namespace AgRecords.Model
                                     "@isFisherfolk, @isFishCapturing, @isAquaculture, @isGleaning, @isFishProcessing, " +
                                     "@isFishVending, @otherFishingAct, @isAgriYouth, @isPartOfFarmingHousehold, " +
                                     "@isAttendAgrifishery, @isParticipantAgriProgram, @otherAgriYouthAct, @annualIncomeFarming, " +
-                                    "@annualIncomeNonFarming)";
+                                    "@annualIncomeNonFarming, @rotatingFarmers, @farmParcelCount)";
 
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     //for rsbsa info table
@@ -364,6 +364,15 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@otherAgriYouthAct", rsbsa.otherAgriYouthAct);
                     command.Parameters.AddWithValue("@annualIncomeFarming", rsbsa.annualIncomeFarming);
                     command.Parameters.AddWithValue("@annualIncomeNonFarming", rsbsa.annualIncomeNonFarming);
+
+                    //for farmland table
+                    command.Parameters.AddWithValue("@rotatingFarmers", rsbsa.rotatingFarmers);
+                    command.Parameters.AddWithValue("@farmParcelCount", rsbsa.farmParcelCount);
+
+                    //for farmland parcel table
+
+
+
                     command.ExecuteNonQuery();
                     return true;
                 }

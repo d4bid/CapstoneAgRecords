@@ -121,11 +121,21 @@ namespace AgRecords.Controller
             string? isParticipantAgriProgram,
             string? otherAgriYouthAct,
             double? annualIncomeFarming,
-            double? annualIncomeNonFarming)
+            double? annualIncomeNonFarming,
+
+            //Farmland
+            string? rotatingFarmers,
+            int farmParcelCount
+
+
+
+            //Farmland Parcel
+
+            )
         {
             try
             {
-
+                string userId = GetUserIdByFullName(fullName);
 
                 // Create an instance of RSBSA and set its properties
                 RSBSA rsbsa = new RSBSA
@@ -134,7 +144,7 @@ namespace AgRecords.Controller
                     rsbsaIdLGU = rsbsaIdLGU,
                     rsbsaIdRegion = rsbsaIdRegion,
                     dateCreated = dateCreated,
-                    userId = fullName,
+                    userId = userId,
 
                     // Farmer Personal Info
                     surname = surname,
@@ -202,7 +212,15 @@ namespace AgRecords.Controller
                     isParticipantAgriProgram = isParticipantAgriProgram,
                     otherAgriYouthAct = otherAgriYouthAct,
                     annualIncomeFarming = annualIncomeFarming,
-                    annualIncomeNonFarming = annualIncomeNonFarming
+                    annualIncomeNonFarming = annualIncomeNonFarming,
+
+                    // Farmland
+                    rotatingFarmers = rotatingFarmers,
+                    farmParcelCount = farmParcelCount
+
+
+                    // Farmland Parcel
+
                 };
 
 
