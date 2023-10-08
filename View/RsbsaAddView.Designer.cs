@@ -132,21 +132,11 @@
             txtIndigenous = new TextBox();
             txtAssociation = new TextBox();
             txtGovIdType = new TextBox();
-            cbGovIdNo = new CheckBox();
-            cbGovIdYes = new CheckBox();
-            cbAssociationNo = new CheckBox();
-            cbAssociationYes = new CheckBox();
-            cbIndigenousNo = new CheckBox();
-            cbIndigenousYes = new CheckBox();
-            cbPwdNo = new CheckBox();
-            cbPwdYes = new CheckBox();
             label65 = new Label();
             label64 = new Label();
             label63 = new Label();
             rectangleRound41 = new RectangleRound();
             label62 = new Label();
-            cb4PsNo = new CheckBox();
-            cb4PsYes = new CheckBox();
             rectangleRound40 = new RectangleRound();
             rectangleRound39 = new RectangleRound();
             rectangleRound37 = new RectangleRound();
@@ -173,8 +163,6 @@
             nudHouseFemale = new NumericUpDown();
             txtHouseHeadRs = new TextBox();
             txtHouseHeadName = new TextBox();
-            cbHouseholdHeadNo = new CheckBox();
-            cbHouseholdHeadYes = new CheckBox();
             rectangleRound33 = new RectangleRound();
             label53 = new Label();
             rectangleRound31 = new RectangleRound();
@@ -190,23 +178,10 @@
             rectangleRound29 = new RectangleRound();
             label52 = new Label();
             panel17 = new Panel();
-            cbEducNone = new CheckBox();
-            cbEducShs = new CheckBox();
-            cbEducCollege = new CheckBox();
-            cbEducPostgrad = new CheckBox();
-            cbEducHs = new CheckBox();
-            cbEducVocational = new CheckBox();
-            cbEducJhs = new CheckBox();
-            cbEducElementary = new CheckBox();
-            cbEducPreschool = new CheckBox();
             panel18 = new Panel();
             label18 = new Label();
             panel14 = new Panel();
             txtSpouseName = new TextBox();
-            cbCivilSeparated = new CheckBox();
-            cbCivilWidowed = new CheckBox();
-            cbCivilMarried = new CheckBox();
-            cbCivilSingle = new CheckBox();
             label16 = new Label();
             rectangleRound14 = new RectangleRound();
             panel15 = new Panel();
@@ -215,12 +190,8 @@
             panel12 = new Panel();
             panel16 = new Panel();
             txtReligionOthers = new TextBox();
-            cbReligionOthers = new CheckBox();
-            cbReligionIslam = new CheckBox();
-            cbReligionChristianity = new CheckBox();
             panel13 = new Panel();
             label36 = new Label();
-            rectangleRound27 = new RectangleRound();
             panel10 = new Panel();
             txtBirthCountry = new TextBox();
             txtBirthProvince = new TextBox();
@@ -307,6 +278,40 @@
             panel1 = new Panel();
             pbFarmerPhoto = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            rectangleRound27 = new RectangleRound();
+            rbChristianity = new RadioButton();
+            rbIslam = new RadioButton();
+            rbOthers = new RadioButton();
+            rbCivilSingle = new RadioButton();
+            rbCivilMarried = new RadioButton();
+            rbCivilWidowed = new RadioButton();
+            rbSeparated = new RadioButton();
+            rbEducPreschool = new RadioButton();
+            rbEducElementary = new RadioButton();
+            rbEducHighschool = new RadioButton();
+            rbEducJuniorHigh = new RadioButton();
+            rbEducSeniorHigh = new RadioButton();
+            rbEducCollege = new RadioButton();
+            rbEducVocational = new RadioButton();
+            rbEducPostGraduate = new RadioButton();
+            rbNone = new RadioButton();
+            rbHouseholdHeadYes = new RadioButton();
+            rbHouseholdHeadNo = new RadioButton();
+            panel45 = new Panel();
+            rbPwdNo = new RadioButton();
+            rbPwdYes = new RadioButton();
+            panel46 = new Panel();
+            rb4psNo = new RadioButton();
+            rb4psYes = new RadioButton();
+            panel47 = new Panel();
+            rbIndigenousNo = new RadioButton();
+            rbIndigenousYes = new RadioButton();
+            panel48 = new Panel();
+            rbGovIdNo = new RadioButton();
+            rbGovIdYes = new RadioButton();
+            panel49 = new Panel();
+            rbAssociationNo = new RadioButton();
+            rbAssociationYes = new RadioButton();
             panelPersonalInfo.SuspendLayout();
             panelFarmProfile.SuspendLayout();
             panelFarmLand.SuspendLayout();
@@ -359,6 +364,11 @@
             panel27.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbFarmerPhoto).BeginInit();
+            panel45.SuspendLayout();
+            panel46.SuspendLayout();
+            panel47.SuspendLayout();
+            panel48.SuspendLayout();
+            panel49.SuspendLayout();
             SuspendLayout();
             // 
             // panelPersonalInfo
@@ -394,7 +404,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 767);
+            panelFarmProfile.Size = new Size(1595, 0);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -405,7 +415,7 @@
             panelFarmLand.Controls.Add(flowLayoutPanelParcels);
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1595, 767);
+            panelFarmLand.Size = new Size(1595, 0);
             panelFarmLand.TabIndex = 52;
             // 
             // panelDocument
@@ -416,7 +426,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 767);
+            panelDocument.Size = new Size(1595, 0);
             panelDocument.TabIndex = 73;
             // 
             // label48
@@ -425,7 +435,7 @@
             label48.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label48.Location = new Point(36, 18);
             label48.Name = "label48";
-            label48.Size = new Size(90, 15);
+            label48.Size = new Size(113, 20);
             label48.TabIndex = 91;
             label48.Text = "Document Type";
             // 
@@ -453,7 +463,7 @@
             comboBoxDocType.Location = new Point(39, 50);
             comboBoxDocType.Margin = new Padding(3, 4, 3, 4);
             comboBoxDocType.Name = "comboBoxDocType";
-            comboBoxDocType.Size = new Size(305, 25);
+            comboBoxDocType.Size = new Size(305, 30);
             comboBoxDocType.TabIndex = 30;
             // 
             // panel43
@@ -487,7 +497,7 @@
             label47.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label47.Location = new Point(583, 44);
             label47.Name = "label47";
-            label47.Size = new Size(28, 15);
+            label47.Size = new Size(35, 20);
             label47.TabIndex = 75;
             label47.Text = "(P3)";
             // 
@@ -506,7 +516,7 @@
             label42.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label42.Location = new Point(274, 44);
             label42.Name = "label42";
-            label42.Size = new Size(28, 15);
+            label42.Size = new Size(35, 20);
             label42.TabIndex = 73;
             label42.Text = "(P2)";
             // 
@@ -536,7 +546,7 @@
             label46.ForeColor = Color.White;
             label46.Location = new Point(6, 1);
             label46.Name = "label46";
-            label46.Size = new Size(220, 20);
+            label46.Size = new Size(264, 25);
             label46.TabIndex = 28;
             label46.Text = "Name of Farmer/s in Rotation";
             // 
@@ -546,7 +556,7 @@
             label72.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label72.Location = new Point(18, 44);
             label72.Name = "label72";
-            label72.Size = new Size(28, 15);
+            label72.Size = new Size(35, 20);
             label72.TabIndex = 71;
             label72.Text = "(P1)";
             // 
@@ -568,7 +578,7 @@
             nudFarmParcelNo.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             nudFarmParcelNo.Location = new Point(21, 77);
             nudFarmParcelNo.Name = "nudFarmParcelNo";
-            nudFarmParcelNo.Size = new Size(160, 23);
+            nudFarmParcelNo.Size = new Size(160, 27);
             nudFarmParcelNo.TabIndex = 76;
             nudFarmParcelNo.ValueChanged += nudFarmParcelNo_ValueChanged;
             // 
@@ -598,7 +608,7 @@
             label70.ForeColor = Color.White;
             label70.Location = new Point(6, 1);
             label70.Name = "label70";
-            label70.Size = new Size(98, 20);
+            label70.Size = new Size(118, 25);
             label70.TabIndex = 28;
             label70.Text = "Farm Parcels";
             // 
@@ -608,7 +618,7 @@
             label71.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label71.Location = new Point(18, 44);
             label71.Name = "label71";
-            label71.Size = new Size(110, 15);
+            label71.Size = new Size(135, 20);
             label71.TabIndex = 71;
             label71.Text = "No. of Farm Parcels";
             // 
@@ -641,7 +651,7 @@
             txtNonFarmingIncome.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtNonFarmingIncome.Location = new Point(403, 78);
             txtNonFarmingIncome.Name = "txtNonFarmingIncome";
-            txtNonFarmingIncome.Size = new Size(382, 22);
+            txtNonFarmingIncome.Size = new Size(382, 27);
             txtNonFarmingIncome.TabIndex = 77;
             // 
             // txtFarmingIncome
@@ -650,7 +660,7 @@
             txtFarmingIncome.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtFarmingIncome.Location = new Point(30, 78);
             txtFarmingIncome.Name = "txtFarmingIncome";
-            txtFarmingIncome.Size = new Size(297, 22);
+            txtFarmingIncome.Size = new Size(297, 27);
             txtFarmingIncome.TabIndex = 76;
             // 
             // rectangleRound45
@@ -688,7 +698,7 @@
             label67.ForeColor = Color.White;
             label67.Location = new Point(6, 1);
             label67.Name = "label67";
-            label67.Size = new Size(226, 20);
+            label67.Size = new Size(273, 25);
             label67.TabIndex = 28;
             label67.Text = "Gross Annual Income Last Year";
             // 
@@ -698,7 +708,7 @@
             label68.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label68.Location = new Point(18, 44);
             label68.Name = "label68";
-            label68.Size = new Size(51, 15);
+            label68.Size = new Size(62, 20);
             label68.TabIndex = 71;
             label68.Text = "Farming";
             // 
@@ -708,7 +718,7 @@
             label69.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label69.Location = new Point(397, 43);
             label69.Name = "label69";
-            label69.Size = new Size(79, 15);
+            label69.Size = new Size(96, 20);
             label69.TabIndex = 74;
             label69.Text = "Non-Farming";
             // 
@@ -735,7 +745,7 @@
             txtInvolvementOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtInvolvementOthers.Location = new Point(73, 307);
             txtInvolvementOthers.Name = "txtInvolvementOthers";
-            txtInvolvementOthers.Size = new Size(242, 23);
+            txtInvolvementOthers.Size = new Size(242, 27);
             txtInvolvementOthers.TabIndex = 54;
             // 
             // checkBox25
@@ -744,7 +754,7 @@
             checkBox25.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox25.Location = new Point(38, 275);
             checkBox25.Name = "checkBox25";
-            checkBox25.Size = new Size(143, 19);
+            checkBox25.Size = new Size(177, 24);
             checkBox25.TabIndex = 53;
             checkBox25.Text = "Others, please specify:";
             checkBox25.UseVisualStyleBackColor = true;
@@ -755,7 +765,7 @@
             cbInvolvementProgram.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbInvolvementProgram.Location = new Point(38, 220);
             cbInvolvementProgram.Name = "cbInvolvementProgram";
-            cbInvolvementProgram.Size = new Size(190, 34);
+            cbInvolvementProgram.Size = new Size(236, 44);
             cbInvolvementProgram.TabIndex = 52;
             cbInvolvementProgram.Text = "Participated in any agricultural \nactivity/program";
             cbInvolvementProgram.TextAlign = ContentAlignment.TopLeft;
@@ -768,7 +778,7 @@
             cbInvolvementNonFormalCourse.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbInvolvementNonFormalCourse.Location = new Point(40, 169);
             cbInvolvementNonFormalCourse.Name = "cbInvolvementNonFormalCourse";
-            cbInvolvementNonFormalCourse.Size = new Size(200, 34);
+            cbInvolvementNonFormalCourse.Size = new Size(248, 44);
             cbInvolvementNonFormalCourse.TabIndex = 51;
             cbInvolvementNonFormalCourse.Text = "Attending/Attended non-formal \nagrifishery related course";
             cbInvolvementNonFormalCourse.TextAlign = ContentAlignment.TopLeft;
@@ -780,7 +790,7 @@
             cbInvolvementFormalCourse.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbInvolvementFormalCourse.Location = new Point(41, 117);
             cbInvolvementFormalCourse.Name = "cbInvolvementFormalCourse";
-            cbInvolvementFormalCourse.Size = new Size(174, 34);
+            cbInvolvementFormalCourse.Size = new Size(217, 44);
             cbInvolvementFormalCourse.TabIndex = 50;
             cbInvolvementFormalCourse.Text = "Attending/Attended formal \nagrifishery related course";
             cbInvolvementFormalCourse.TextAlign = ContentAlignment.TopLeft;
@@ -792,7 +802,7 @@
             cbInvolvementHousehold.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbInvolvementHousehold.Location = new Point(39, 88);
             cbInvolvementHousehold.Name = "cbInvolvementHousehold";
-            cbInvolvementHousehold.Size = new Size(174, 19);
+            cbInvolvementHousehold.Size = new Size(215, 24);
             cbInvolvementHousehold.TabIndex = 49;
             cbInvolvementHousehold.Text = "Part of a farming household";
             cbInvolvementHousehold.UseVisualStyleBackColor = true;
@@ -814,7 +824,7 @@
             label41.ForeColor = Color.White;
             label41.Location = new Point(6, 1);
             label41.Name = "label41";
-            label41.Size = new Size(111, 20);
+            label41.Size = new Size(134, 25);
             label41.TabIndex = 28;
             label41.Text = "For Agri Youth";
             // 
@@ -833,7 +843,7 @@
             label66.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label66.Location = new Point(16, 44);
             label66.Name = "label66";
-            label66.Size = new Size(116, 15);
+            label66.Size = new Size(148, 20);
             label66.TabIndex = 18;
             label66.Text = "Type of Involvement";
             // 
@@ -861,7 +871,7 @@
             cbFishingActVending.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFishingActVending.Location = new Point(35, 208);
             cbFishingActVending.Name = "cbFishingActVending";
-            cbFishingActVending.Size = new Size(93, 19);
+            cbFishingActVending.Size = new Size(114, 24);
             cbFishingActVending.TabIndex = 59;
             cbFishingActVending.Text = "Fish Vending";
             cbFishingActVending.UseVisualStyleBackColor = true;
@@ -872,7 +882,7 @@
             txtFishingActOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtFishingActOthers.Location = new Point(75, 268);
             txtFishingActOthers.Name = "txtFishingActOthers";
-            txtFishingActOthers.Size = new Size(240, 23);
+            txtFishingActOthers.Size = new Size(240, 27);
             txtFishingActOthers.TabIndex = 58;
             // 
             // checkBox18
@@ -881,7 +891,7 @@
             checkBox18.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox18.Location = new Point(35, 238);
             checkBox18.Name = "checkBox18";
-            checkBox18.Size = new Size(143, 19);
+            checkBox18.Size = new Size(177, 24);
             checkBox18.TabIndex = 57;
             checkBox18.Text = "Others, please specify:";
             checkBox18.UseVisualStyleBackColor = true;
@@ -892,7 +902,7 @@
             cbFishingActProcessing.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFishingActProcessing.Location = new Point(35, 178);
             cbFishingActProcessing.Name = "cbFishingActProcessing";
-            cbFishingActProcessing.Size = new Size(107, 19);
+            cbFishingActProcessing.Size = new Size(130, 24);
             cbFishingActProcessing.TabIndex = 56;
             cbFishingActProcessing.Text = "Fish Processing";
             cbFishingActProcessing.UseVisualStyleBackColor = true;
@@ -903,7 +913,7 @@
             cbFishingActGleaning.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFishingActGleaning.Location = new Point(35, 148);
             cbFishingActGleaning.Name = "cbFishingActGleaning";
-            cbFishingActGleaning.Size = new Size(73, 19);
+            cbFishingActGleaning.Size = new Size(90, 24);
             cbFishingActGleaning.TabIndex = 55;
             cbFishingActGleaning.Text = "Gleaning";
             cbFishingActGleaning.UseVisualStyleBackColor = true;
@@ -914,7 +924,7 @@
             cbFishingActAquaculture.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFishingActAquaculture.Location = new Point(35, 118);
             cbFishingActAquaculture.Name = "cbFishingActAquaculture";
-            cbFishingActAquaculture.Size = new Size(91, 19);
+            cbFishingActAquaculture.Size = new Size(111, 24);
             cbFishingActAquaculture.TabIndex = 54;
             cbFishingActAquaculture.Text = "Aquaculture";
             cbFishingActAquaculture.UseVisualStyleBackColor = true;
@@ -925,7 +935,7 @@
             cbFishingActFishCapture.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFishingActFishCapture.Location = new Point(35, 88);
             cbFishingActFishCapture.Name = "cbFishingActFishCapture";
-            cbFishingActFishCapture.Size = new Size(92, 19);
+            cbFishingActFishCapture.Size = new Size(112, 24);
             cbFishingActFishCapture.TabIndex = 53;
             cbFishingActFishCapture.Text = "Fish Capture";
             cbFishingActFishCapture.UseVisualStyleBackColor = true;
@@ -947,7 +957,7 @@
             label24.ForeColor = Color.White;
             label24.Location = new Point(6, 1);
             label24.Name = "label24";
-            label24.Size = new Size(105, 20);
+            label24.Size = new Size(127, 25);
             label24.TabIndex = 28;
             label24.Text = "For Fisherfolk";
             // 
@@ -967,7 +977,7 @@
             label40.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label40.Location = new Point(16, 44);
             label40.Name = "label40";
-            label40.Size = new Size(130, 15);
+            label40.Size = new Size(167, 20);
             label40.TabIndex = 18;
             label40.Text = "Type of Fishing Activity";
             // 
@@ -994,7 +1004,7 @@
             OthersWorkKindOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             OthersWorkKindOthers.Location = new Point(82, 243);
             OthersWorkKindOthers.Name = "OthersWorkKindOthers";
-            OthersWorkKindOthers.Size = new Size(238, 23);
+            OthersWorkKindOthers.Size = new Size(238, 27);
             OthersWorkKindOthers.TabIndex = 52;
             // 
             // checkBox12
@@ -1003,7 +1013,7 @@
             checkBox12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox12.Location = new Point(35, 208);
             checkBox12.Name = "checkBox12";
-            checkBox12.Size = new Size(143, 19);
+            checkBox12.Size = new Size(177, 24);
             checkBox12.TabIndex = 51;
             checkBox12.Text = "Others, please specify:";
             checkBox12.UseVisualStyleBackColor = true;
@@ -1014,7 +1024,7 @@
             cbWorkKindHarvesting.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbWorkKindHarvesting.Location = new Point(35, 178);
             cbWorkKindHarvesting.Name = "cbWorkKindHarvesting";
-            cbWorkKindHarvesting.Size = new Size(83, 19);
+            cbWorkKindHarvesting.Size = new Size(102, 24);
             cbWorkKindHarvesting.TabIndex = 50;
             cbWorkKindHarvesting.Text = "Harvesting";
             cbWorkKindHarvesting.UseVisualStyleBackColor = true;
@@ -1025,7 +1035,7 @@
             cbWorkKindCultivation.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbWorkKindCultivation.Location = new Point(35, 148);
             cbWorkKindCultivation.Name = "cbWorkKindCultivation";
-            cbWorkKindCultivation.Size = new Size(84, 19);
+            cbWorkKindCultivation.Size = new Size(102, 24);
             cbWorkKindCultivation.TabIndex = 49;
             cbWorkKindCultivation.Text = "Cultivation";
             cbWorkKindCultivation.UseVisualStyleBackColor = true;
@@ -1036,7 +1046,7 @@
             cbWorkKindPlanting.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbWorkKindPlanting.Location = new Point(35, 118);
             cbWorkKindPlanting.Name = "cbWorkKindPlanting";
-            cbWorkKindPlanting.Size = new Size(146, 19);
+            cbWorkKindPlanting.Size = new Size(180, 24);
             cbWorkKindPlanting.TabIndex = 48;
             cbWorkKindPlanting.Text = "Planting/Transplanting";
             cbWorkKindPlanting.UseVisualStyleBackColor = true;
@@ -1047,7 +1057,7 @@
             cbWorkKindLandPrep.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbWorkKindLandPrep.Location = new Point(35, 88);
             cbWorkKindLandPrep.Name = "cbWorkKindLandPrep";
-            cbWorkKindLandPrep.Size = new Size(116, 19);
+            cbWorkKindLandPrep.Size = new Size(144, 24);
             cbWorkKindLandPrep.TabIndex = 47;
             cbWorkKindLandPrep.Text = "Land Preparation";
             cbWorkKindLandPrep.UseVisualStyleBackColor = true;
@@ -1069,7 +1079,7 @@
             label43.ForeColor = Color.White;
             label43.Location = new Point(6, 1);
             label43.Name = "label43";
-            label43.Size = new Size(143, 20);
+            label43.Size = new Size(170, 25);
             label43.TabIndex = 28;
             label43.Text = "For Farmerworkers";
             // 
@@ -1088,7 +1098,7 @@
             label45.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label45.Location = new Point(16, 44);
             label45.Name = "label45";
-            label45.Size = new Size(77, 15);
+            label45.Size = new Size(99, 20);
             label45.TabIndex = 18;
             label45.Text = "Kind of Work";
             // 
@@ -1120,7 +1130,7 @@
             label39.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label39.Location = new Point(68, 294);
             label39.Name = "label39";
-            label39.Size = new Size(80, 15);
+            label39.Size = new Size(102, 20);
             label39.TabIndex = 58;
             label39.Text = "please specify";
             // 
@@ -1130,7 +1140,7 @@
             txtFarmActPoultry.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtFarmActPoultry.Location = new Point(176, 292);
             txtFarmActPoultry.Name = "txtFarmActPoultry";
-            txtFarmActPoultry.Size = new Size(141, 23);
+            txtFarmActPoultry.Size = new Size(141, 27);
             txtFarmActPoultry.TabIndex = 57;
             // 
             // checkBox11
@@ -1139,7 +1149,7 @@
             checkBox11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox11.Location = new Point(33, 267);
             checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(67, 19);
+            checkBox11.Size = new Size(79, 24);
             checkBox11.TabIndex = 56;
             checkBox11.Text = "Poultry,";
             checkBox11.UseVisualStyleBackColor = true;
@@ -1150,7 +1160,7 @@
             label38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label38.Location = new Point(68, 235);
             label38.Name = "label38";
-            label38.Size = new Size(80, 15);
+            label38.Size = new Size(102, 20);
             label38.TabIndex = 55;
             label38.Text = "please specify";
             // 
@@ -1160,7 +1170,7 @@
             txtFarmActLivestock.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtFarmActLivestock.Location = new Point(176, 233);
             txtFarmActLivestock.Name = "txtFarmActLivestock";
-            txtFarmActLivestock.Size = new Size(140, 23);
+            txtFarmActLivestock.Size = new Size(140, 27);
             txtFarmActLivestock.TabIndex = 54;
             // 
             // checkBox10
@@ -1169,7 +1179,7 @@
             checkBox10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox10.Location = new Point(33, 208);
             checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(78, 19);
+            checkBox10.Size = new Size(94, 24);
             checkBox10.TabIndex = 53;
             checkBox10.Text = "Livestock,";
             checkBox10.UseVisualStyleBackColor = true;
@@ -1180,7 +1190,7 @@
             label21.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label21.Location = new Point(68, 178);
             label21.Name = "label21";
-            label21.Size = new Size(80, 15);
+            label21.Size = new Size(102, 20);
             label21.TabIndex = 52;
             label21.Text = "please specify";
             // 
@@ -1190,7 +1200,7 @@
             txtFarmActCrops.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtFarmActCrops.Location = new Point(176, 174);
             txtFarmActCrops.Name = "txtFarmActCrops";
-            txtFarmActCrops.Size = new Size(140, 23);
+            txtFarmActCrops.Size = new Size(140, 27);
             txtFarmActCrops.TabIndex = 51;
             // 
             // farmAct4
@@ -1199,7 +1209,7 @@
             farmAct4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             farmAct4.Location = new Point(33, 148);
             farmAct4.Name = "farmAct4";
-            farmAct4.Size = new Size(91, 19);
+            farmAct4.Size = new Size(111, 24);
             farmAct4.TabIndex = 50;
             farmAct4.Text = "Other crops,";
             farmAct4.UseVisualStyleBackColor = true;
@@ -1210,7 +1220,7 @@
             cbFarmActCorn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFarmActCorn.Location = new Point(33, 118);
             cbFarmActCorn.Name = "cbFarmActCorn";
-            cbFarmActCorn.Size = new Size(52, 19);
+            cbFarmActCorn.Size = new Size(62, 24);
             cbFarmActCorn.TabIndex = 49;
             cbFarmActCorn.Text = "Corn";
             cbFarmActCorn.UseVisualStyleBackColor = true;
@@ -1221,7 +1231,7 @@
             cbFarmActRice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFarmActRice.Location = new Point(33, 88);
             cbFarmActRice.Name = "cbFarmActRice";
-            cbFarmActRice.Size = new Size(48, 19);
+            cbFarmActRice.Size = new Size(59, 24);
             cbFarmActRice.TabIndex = 48;
             cbFarmActRice.Text = "Rice";
             cbFarmActRice.UseVisualStyleBackColor = true;
@@ -1243,7 +1253,7 @@
             label44.ForeColor = Color.White;
             label44.Location = new Point(6, 1);
             label44.Name = "label44";
-            label44.Size = new Size(93, 20);
+            label44.Size = new Size(110, 25);
             label44.TabIndex = 28;
             label44.Text = "For Farmers";
             // 
@@ -1262,7 +1272,7 @@
             label54.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label54.Location = new Point(16, 44);
             label54.Name = "label54";
-            label54.Size = new Size(136, 15);
+            label54.Size = new Size(174, 20);
             label54.TabIndex = 18;
             label54.Text = "Type of Farming Activity";
             // 
@@ -1286,7 +1296,7 @@
             cbLivelihoodFisherfolk.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbLivelihoodFisherfolk.Location = new Point(868, 58);
             cbLivelihoodFisherfolk.Name = "cbLivelihoodFisherfolk";
-            cbLivelihoodFisherfolk.Size = new Size(100, 25);
+            cbLivelihoodFisherfolk.Size = new Size(122, 32);
             cbLivelihoodFisherfolk.TabIndex = 41;
             cbLivelihoodFisherfolk.Text = "FisherFolk";
             cbLivelihoodFisherfolk.UseVisualStyleBackColor = true;
@@ -1297,7 +1307,7 @@
             cbLivelihoodAgriyouth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbLivelihoodAgriyouth.Location = new Point(1239, 55);
             cbLivelihoodAgriyouth.Name = "cbLivelihoodAgriyouth";
-            cbLivelihoodAgriyouth.Size = new Size(102, 25);
+            cbLivelihoodAgriyouth.Size = new Size(126, 32);
             cbLivelihoodAgriyouth.TabIndex = 40;
             cbLivelihoodAgriyouth.Text = "Agri Youth";
             cbLivelihoodAgriyouth.UseVisualStyleBackColor = true;
@@ -1308,7 +1318,7 @@
             cbLivelihoodFarmer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbLivelihoodFarmer.Location = new Point(117, 55);
             cbLivelihoodFarmer.Name = "cbLivelihoodFarmer";
-            cbLivelihoodFarmer.Size = new Size(78, 25);
+            cbLivelihoodFarmer.Size = new Size(94, 32);
             cbLivelihoodFarmer.TabIndex = 39;
             cbLivelihoodFarmer.Text = "Farmer";
             cbLivelihoodFarmer.UseVisualStyleBackColor = true;
@@ -1319,7 +1329,7 @@
             cbLivelihoodFarmworker.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbLivelihoodFarmworker.Location = new Point(447, 55);
             cbLivelihoodFarmworker.Name = "cbLivelihoodFarmworker";
-            cbLivelihoodFarmworker.Size = new Size(173, 25);
+            cbLivelihoodFarmworker.Size = new Size(212, 32);
             cbLivelihoodFarmworker.TabIndex = 38;
             cbLivelihoodFarmworker.Text = "Farmworker/Laborer";
             cbLivelihoodFarmworker.UseVisualStyleBackColor = true;
@@ -1350,7 +1360,7 @@
             label37.ForeColor = Color.White;
             label37.Location = new Point(6, 1);
             label37.Name = "label37";
-            label37.Size = new Size(120, 20);
+            label37.Size = new Size(148, 25);
             label37.TabIndex = 28;
             label37.Text = "Main Livelihood";
             // 
@@ -1376,7 +1386,7 @@
             txtEcContact.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtEcContact.Location = new Point(319, 66);
             txtEcContact.Name = "txtEcContact";
-            txtEcContact.Size = new Size(177, 22);
+            txtEcContact.Size = new Size(177, 27);
             txtEcContact.TabIndex = 31;
             // 
             // txtEcName
@@ -1385,7 +1395,7 @@
             txtEcName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtEcName.Location = new Point(26, 66);
             txtEcName.Name = "txtEcName";
-            txtEcName.Size = new Size(256, 22);
+            txtEcName.Size = new Size(256, 27);
             txtEcName.TabIndex = 30;
             // 
             // panel24
@@ -1405,7 +1415,7 @@
             label58.ForeColor = Color.White;
             label58.Location = new Point(6, 1);
             label58.Name = "label58";
-            label58.Size = new Size(144, 20);
+            label58.Size = new Size(177, 25);
             label58.TabIndex = 28;
             label58.Text = "Emergency Contact";
             // 
@@ -1424,7 +1434,7 @@
             label60.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label60.Location = new Point(16, 38);
             label60.Name = "label60";
-            label60.Size = new Size(210, 15);
+            label60.Size = new Size(261, 20);
             label60.TabIndex = 18;
             label60.Text = "Person to Notify in Case of Emergency";
             // 
@@ -1444,7 +1454,7 @@
             label61.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label61.Location = new Point(312, 38);
             label61.Name = "label61";
-            label61.Size = new Size(96, 15);
+            label61.Size = new Size(118, 20);
             label61.TabIndex = 23;
             label61.Text = "Contact Number";
             label61.Click += label61_Click;
@@ -1453,25 +1463,20 @@
             // 
             panel25.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel25.BorderStyle = BorderStyle.FixedSingle;
+            panel25.Controls.Add(panel49);
+            panel25.Controls.Add(panel48);
+            panel25.Controls.Add(panel47);
+            panel25.Controls.Add(panel46);
+            panel25.Controls.Add(panel45);
             panel25.Controls.Add(txtGovIdNum);
             panel25.Controls.Add(txtIndigenous);
             panel25.Controls.Add(txtAssociation);
             panel25.Controls.Add(txtGovIdType);
-            panel25.Controls.Add(cbGovIdNo);
-            panel25.Controls.Add(cbGovIdYes);
-            panel25.Controls.Add(cbAssociationNo);
-            panel25.Controls.Add(cbAssociationYes);
-            panel25.Controls.Add(cbIndigenousNo);
-            panel25.Controls.Add(cbIndigenousYes);
-            panel25.Controls.Add(cbPwdNo);
-            panel25.Controls.Add(cbPwdYes);
             panel25.Controls.Add(label65);
             panel25.Controls.Add(label64);
             panel25.Controls.Add(label63);
             panel25.Controls.Add(rectangleRound41);
             panel25.Controls.Add(label62);
-            panel25.Controls.Add(cb4PsNo);
-            panel25.Controls.Add(cb4PsYes);
             panel25.Controls.Add(rectangleRound40);
             panel25.Controls.Add(rectangleRound39);
             panel25.Controls.Add(rectangleRound37);
@@ -1497,7 +1502,7 @@
             txtGovIdNum.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(184, 288);
             txtGovIdNum.Name = "txtGovIdNum";
-            txtGovIdNum.Size = new Size(313, 22);
+            txtGovIdNum.Size = new Size(313, 27);
             txtGovIdNum.TabIndex = 59;
             // 
             // txtIndigenous
@@ -1506,7 +1511,7 @@
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtIndigenous.Location = new Point(129, 145);
             txtIndigenous.Name = "txtIndigenous";
-            txtIndigenous.Size = new Size(368, 22);
+            txtIndigenous.Size = new Size(368, 27);
             txtIndigenous.TabIndex = 58;
             // 
             // txtAssociation
@@ -1515,7 +1520,7 @@
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAssociation.Location = new Point(129, 385);
             txtAssociation.Name = "txtAssociation";
-            txtAssociation.Size = new Size(368, 22);
+            txtAssociation.Size = new Size(368, 27);
             txtAssociation.TabIndex = 57;
             txtAssociation.TextChanged += txtAssociation_TextChanged;
             // 
@@ -1525,96 +1530,8 @@
             txtGovIdType.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdType.Location = new Point(184, 246);
             txtGovIdType.Name = "txtGovIdType";
-            txtGovIdType.Size = new Size(313, 22);
+            txtGovIdType.Size = new Size(313, 27);
             txtGovIdType.TabIndex = 56;
-            // 
-            // cbGovIdNo
-            // 
-            cbGovIdNo.AutoSize = true;
-            cbGovIdNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbGovIdNo.Location = new Point(259, 208);
-            cbGovIdNo.Name = "cbGovIdNo";
-            cbGovIdNo.Size = new Size(42, 19);
-            cbGovIdNo.TabIndex = 55;
-            cbGovIdNo.Text = "No";
-            cbGovIdNo.UseVisualStyleBackColor = true;
-            // 
-            // cbGovIdYes
-            // 
-            cbGovIdYes.AutoSize = true;
-            cbGovIdYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbGovIdYes.Location = new Point(194, 208);
-            cbGovIdYes.Name = "cbGovIdYes";
-            cbGovIdYes.Size = new Size(43, 19);
-            cbGovIdYes.TabIndex = 54;
-            cbGovIdYes.Text = "Yes";
-            cbGovIdYes.UseVisualStyleBackColor = true;
-            // 
-            // cbAssociationNo
-            // 
-            cbAssociationNo.AutoSize = true;
-            cbAssociationNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbAssociationNo.Location = new Point(439, 348);
-            cbAssociationNo.Name = "cbAssociationNo";
-            cbAssociationNo.Size = new Size(42, 19);
-            cbAssociationNo.TabIndex = 53;
-            cbAssociationNo.Text = "No";
-            cbAssociationNo.UseVisualStyleBackColor = true;
-            // 
-            // cbAssociationYes
-            // 
-            cbAssociationYes.AutoSize = true;
-            cbAssociationYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbAssociationYes.Location = new Point(374, 348);
-            cbAssociationYes.Name = "cbAssociationYes";
-            cbAssociationYes.Size = new Size(43, 19);
-            cbAssociationYes.TabIndex = 52;
-            cbAssociationYes.Text = "Yes";
-            cbAssociationYes.UseVisualStyleBackColor = true;
-            // 
-            // cbIndigenousNo
-            // 
-            cbIndigenousNo.AutoSize = true;
-            cbIndigenousNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbIndigenousNo.Location = new Point(337, 109);
-            cbIndigenousNo.Name = "cbIndigenousNo";
-            cbIndigenousNo.Size = new Size(42, 19);
-            cbIndigenousNo.TabIndex = 42;
-            cbIndigenousNo.Text = "No";
-            cbIndigenousNo.UseVisualStyleBackColor = true;
-            // 
-            // cbIndigenousYes
-            // 
-            cbIndigenousYes.AutoSize = true;
-            cbIndigenousYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbIndigenousYes.Location = new Point(272, 109);
-            cbIndigenousYes.Name = "cbIndigenousYes";
-            cbIndigenousYes.Size = new Size(43, 19);
-            cbIndigenousYes.TabIndex = 41;
-            cbIndigenousYes.Text = "Yes";
-            cbIndigenousYes.UseVisualStyleBackColor = true;
-            // 
-            // cbPwdNo
-            // 
-            cbPwdNo.AutoSize = true;
-            cbPwdNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbPwdNo.Location = new Point(150, 49);
-            cbPwdNo.Name = "cbPwdNo";
-            cbPwdNo.Size = new Size(42, 19);
-            cbPwdNo.TabIndex = 51;
-            cbPwdNo.Text = "No";
-            cbPwdNo.UseVisualStyleBackColor = true;
-            // 
-            // cbPwdYes
-            // 
-            cbPwdYes.AutoSize = true;
-            cbPwdYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbPwdYes.Location = new Point(85, 49);
-            cbPwdYes.Name = "cbPwdYes";
-            cbPwdYes.Size = new Size(43, 19);
-            cbPwdYes.TabIndex = 50;
-            cbPwdYes.Text = "Yes";
-            cbPwdYes.UseVisualStyleBackColor = true;
             // 
             // label65
             // 
@@ -1622,7 +1539,7 @@
             label65.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label65.Location = new Point(85, 293);
             label65.Name = "label65";
-            label65.Size = new Size(65, 15);
+            label65.Size = new Size(82, 20);
             label65.TabIndex = 49;
             label65.Text = "ID Number";
             // 
@@ -1632,7 +1549,7 @@
             label64.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label64.Location = new Point(17, 252);
             label64.Name = "label64";
-            label64.Size = new Size(118, 15);
+            label64.Size = new Size(150, 20);
             label64.TabIndex = 48;
             label64.Text = "If yes, specify ID Type";
             // 
@@ -1642,7 +1559,7 @@
             label63.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label63.Location = new Point(17, 151);
             label63.Name = "label63";
-            label63.Size = new Size(77, 15);
+            label63.Size = new Size(96, 20);
             label63.TabIndex = 45;
             label63.Text = "If yes, specify";
             // 
@@ -1661,31 +1578,9 @@
             label62.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label62.Location = new Point(17, 50);
             label62.Name = "label62";
-            label62.Size = new Size(38, 15);
+            label62.Size = new Size(49, 20);
             label62.TabIndex = 41;
             label62.Text = "PWD?";
-            // 
-            // cb4PsNo
-            // 
-            cb4PsNo.AutoSize = true;
-            cb4PsNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cb4PsNo.Location = new Point(439, 49);
-            cb4PsNo.Name = "cb4PsNo";
-            cb4PsNo.Size = new Size(42, 19);
-            cb4PsNo.TabIndex = 40;
-            cb4PsNo.Text = "No";
-            cb4PsNo.UseVisualStyleBackColor = true;
-            // 
-            // cb4PsYes
-            // 
-            cb4PsYes.AutoSize = true;
-            cb4PsYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cb4PsYes.Location = new Point(374, 49);
-            cb4PsYes.Name = "cb4PsYes";
-            cb4PsYes.Size = new Size(43, 19);
-            cb4PsYes.TabIndex = 39;
-            cb4PsYes.Text = "Yes";
-            cb4PsYes.UseVisualStyleBackColor = true;
             // 
             // rectangleRound40
             // 
@@ -1732,7 +1627,7 @@
             label59.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label59.Location = new Point(17, 208);
             label59.Name = "label59";
-            label59.Size = new Size(120, 15);
+            label59.Size = new Size(151, 20);
             label59.TabIndex = 28;
             label59.Text = "With Government ID?";
             // 
@@ -1742,7 +1637,7 @@
             label56.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label56.Location = new Point(16, 391);
             label56.Name = "label56";
-            label56.Size = new Size(77, 15);
+            label56.Size = new Size(96, 20);
             label56.TabIndex = 27;
             label56.Text = "If yes, specify";
             // 
@@ -1772,7 +1667,7 @@
             label55.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label55.Location = new Point(16, 349);
             label55.Name = "label55";
-            label55.Size = new Size(271, 15);
+            label55.Size = new Size(339, 20);
             label55.TabIndex = 24;
             label55.Text = "Member of any Farmers Association/Cooperative?";
             // 
@@ -1793,7 +1688,7 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(6, 1);
             label7.Name = "label7";
-            label7.Size = new Size(87, 20);
+            label7.Size = new Size(106, 25);
             label7.TabIndex = 28;
             label7.Text = "Affiliations";
             // 
@@ -1813,7 +1708,7 @@
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label17.Location = new Point(224, 50);
             label17.Name = "label17";
-            label17.Size = new Size(94, 15);
+            label17.Size = new Size(118, 20);
             label17.TabIndex = 18;
             label17.Text = "4P's Beneficiary?";
             // 
@@ -1833,7 +1728,7 @@
             label20.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label20.Location = new Point(17, 110);
             label20.Name = "label20";
-            label20.Size = new Size(185, 15);
+            label20.Size = new Size(232, 20);
             label20.TabIndex = 23;
             label20.Text = "Member of an Indigenous Group?";
             // 
@@ -1854,7 +1749,7 @@
             txtMaidenMother.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtMaidenMother.Location = new Point(29, 42);
             txtMaidenMother.Name = "txtMaidenMother";
-            txtMaidenMother.Size = new Size(502, 22);
+            txtMaidenMother.Size = new Size(502, 27);
             txtMaidenMother.TabIndex = 28;
             // 
             // panel22
@@ -1874,7 +1769,7 @@
             label57.ForeColor = Color.White;
             label57.Location = new Point(6, 1);
             label57.Name = "label57";
-            label57.Size = new Size(173, 20);
+            label57.Size = new Size(211, 25);
             label57.TabIndex = 28;
             label57.Text = "Mother's Maiden Name";
             // 
@@ -1890,13 +1785,13 @@
             // panel19
             // 
             panel19.BorderStyle = BorderStyle.FixedSingle;
+            panel19.Controls.Add(rbHouseholdHeadNo);
+            panel19.Controls.Add(rbHouseholdHeadYes);
             panel19.Controls.Add(nudNoLivingHouseMem);
             panel19.Controls.Add(nudHouseNoMale);
             panel19.Controls.Add(nudHouseFemale);
             panel19.Controls.Add(txtHouseHeadRs);
             panel19.Controls.Add(txtHouseHeadName);
-            panel19.Controls.Add(cbHouseholdHeadNo);
-            panel19.Controls.Add(cbHouseholdHeadYes);
             panel19.Controls.Add(rectangleRound33);
             panel19.Controls.Add(label53);
             panel19.Controls.Add(rectangleRound31);
@@ -1921,7 +1816,7 @@
             nudNoLivingHouseMem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nudNoLivingHouseMem.Location = new Point(26, 232);
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
-            nudNoLivingHouseMem.Size = new Size(393, 25);
+            nudNoLivingHouseMem.Size = new Size(393, 30);
             nudNoLivingHouseMem.TabIndex = 47;
             // 
             // nudHouseNoMale
@@ -1930,7 +1825,7 @@
             nudHouseNoMale.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nudHouseNoMale.Location = new Point(28, 303);
             nudHouseNoMale.Name = "nudHouseNoMale";
-            nudHouseNoMale.Size = new Size(211, 25);
+            nudHouseNoMale.Size = new Size(211, 30);
             nudHouseNoMale.TabIndex = 46;
             // 
             // nudHouseFemale
@@ -1939,7 +1834,7 @@
             nudHouseFemale.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nudHouseFemale.Location = new Point(274, 303);
             nudHouseFemale.Name = "nudHouseFemale";
-            nudHouseFemale.Size = new Size(145, 25);
+            nudHouseFemale.Size = new Size(145, 30);
             nudHouseFemale.TabIndex = 45;
             // 
             // txtHouseHeadRs
@@ -1948,7 +1843,7 @@
             txtHouseHeadRs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtHouseHeadRs.Location = new Point(274, 154);
             txtHouseHeadRs.Name = "txtHouseHeadRs";
-            txtHouseHeadRs.Size = new Size(145, 22);
+            txtHouseHeadRs.Size = new Size(145, 27);
             txtHouseHeadRs.TabIndex = 44;
             // 
             // txtHouseHeadName
@@ -1957,30 +1852,8 @@
             txtHouseHeadName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtHouseHeadName.Location = new Point(26, 155);
             txtHouseHeadName.Name = "txtHouseHeadName";
-            txtHouseHeadName.Size = new Size(213, 22);
+            txtHouseHeadName.Size = new Size(213, 27);
             txtHouseHeadName.TabIndex = 43;
-            // 
-            // cbHouseholdHeadNo
-            // 
-            cbHouseholdHeadNo.AutoSize = true;
-            cbHouseholdHeadNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbHouseholdHeadNo.Location = new Point(137, 70);
-            cbHouseholdHeadNo.Name = "cbHouseholdHeadNo";
-            cbHouseholdHeadNo.Size = new Size(42, 19);
-            cbHouseholdHeadNo.TabIndex = 38;
-            cbHouseholdHeadNo.Text = "No";
-            cbHouseholdHeadNo.UseVisualStyleBackColor = true;
-            // 
-            // cbHouseholdHeadYes
-            // 
-            cbHouseholdHeadYes.AutoSize = true;
-            cbHouseholdHeadYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbHouseholdHeadYes.Location = new Point(33, 70);
-            cbHouseholdHeadYes.Name = "cbHouseholdHeadYes";
-            cbHouseholdHeadYes.Size = new Size(43, 19);
-            cbHouseholdHeadYes.TabIndex = 37;
-            cbHouseholdHeadYes.Text = "Yes";
-            cbHouseholdHeadYes.UseVisualStyleBackColor = true;
             // 
             // rectangleRound33
             // 
@@ -1997,7 +1870,7 @@
             label53.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label53.Location = new Point(265, 276);
             label53.Name = "label53";
-            label53.Size = new Size(81, 15);
+            label53.Size = new Size(102, 20);
             label53.TabIndex = 36;
             label53.Text = "No. of Female";
             // 
@@ -2016,7 +1889,7 @@
             label51.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label51.Location = new Point(18, 276);
             label51.Name = "label51";
-            label51.Size = new Size(69, 15);
+            label51.Size = new Size(87, 20);
             label51.TabIndex = 34;
             label51.Text = "No. of Male";
             // 
@@ -2035,7 +1908,7 @@
             label49.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label49.Location = new Point(18, 205);
             label49.Name = "label49";
-            label49.Size = new Size(189, 15);
+            label49.Size = new Size(235, 20);
             label49.TabIndex = 32;
             label49.Text = "No. of Living Household Members";
             // 
@@ -2045,7 +1918,7 @@
             label25.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label25.Location = new Point(18, 128);
             label25.Name = "label25";
-            label25.Size = new Size(169, 15);
+            label25.Size = new Size(211, 20);
             label25.TabIndex = 30;
             label25.Text = "If no, name of household head";
             // 
@@ -2055,7 +1928,7 @@
             label35.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label35.Location = new Point(265, 128);
             label35.Name = "label35";
-            label35.Size = new Size(72, 15);
+            label35.Size = new Size(91, 20);
             label35.TabIndex = 29;
             label35.Text = "Relationship";
             // 
@@ -2085,7 +1958,7 @@
             label50.ForeColor = Color.White;
             label50.Location = new Point(6, 1);
             label50.Name = "label50";
-            label50.Size = new Size(84, 20);
+            label50.Size = new Size(104, 25);
             label50.TabIndex = 28;
             label50.Text = "Household";
             // 
@@ -2113,126 +1986,27 @@
             label52.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label52.Location = new Point(18, 40);
             label52.Name = "label52";
-            label52.Size = new Size(101, 15);
+            label52.Size = new Size(128, 20);
             label52.TabIndex = 23;
             label52.Text = "Household Head?";
             // 
             // panel17
             // 
             panel17.BorderStyle = BorderStyle.FixedSingle;
-            panel17.Controls.Add(cbEducNone);
-            panel17.Controls.Add(cbEducShs);
-            panel17.Controls.Add(cbEducCollege);
-            panel17.Controls.Add(cbEducPostgrad);
-            panel17.Controls.Add(cbEducHs);
-            panel17.Controls.Add(cbEducVocational);
-            panel17.Controls.Add(cbEducJhs);
-            panel17.Controls.Add(cbEducElementary);
-            panel17.Controls.Add(cbEducPreschool);
+            panel17.Controls.Add(rbNone);
+            panel17.Controls.Add(rbEducPostGraduate);
+            panel17.Controls.Add(rbEducVocational);
+            panel17.Controls.Add(rbEducCollege);
+            panel17.Controls.Add(rbEducSeniorHigh);
+            panel17.Controls.Add(rbEducJuniorHigh);
+            panel17.Controls.Add(rbEducHighschool);
+            panel17.Controls.Add(rbEducElementary);
+            panel17.Controls.Add(rbEducPreschool);
             panel17.Controls.Add(panel18);
             panel17.Location = new Point(584, 562);
             panel17.Name = "panel17";
             panel17.Size = new Size(449, 192);
             panel17.TabIndex = 70;
-            // 
-            // cbEducNone
-            // 
-            cbEducNone.AutoSize = true;
-            cbEducNone.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducNone.Location = new Point(272, 127);
-            cbEducNone.Name = "cbEducNone";
-            cbEducNone.Size = new Size(55, 19);
-            cbEducNone.TabIndex = 46;
-            cbEducNone.Text = "None";
-            cbEducNone.UseVisualStyleBackColor = true;
-            // 
-            // cbEducShs
-            // 
-            cbEducShs.AutoSize = true;
-            cbEducShs.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducShs.Location = new Point(18, 156);
-            cbEducShs.Name = "cbEducShs";
-            cbEducShs.Size = new Size(162, 19);
-            cbEducShs.TabIndex = 45;
-            cbEducShs.Text = "Senior High School (K-12)";
-            cbEducShs.UseVisualStyleBackColor = true;
-            // 
-            // cbEducCollege
-            // 
-            cbEducCollege.AutoSize = true;
-            cbEducCollege.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducCollege.Location = new Point(272, 37);
-            cbEducCollege.Name = "cbEducCollege";
-            cbEducCollege.Size = new Size(66, 19);
-            cbEducCollege.TabIndex = 44;
-            cbEducCollege.Text = "College";
-            cbEducCollege.UseVisualStyleBackColor = true;
-            // 
-            // cbEducPostgrad
-            // 
-            cbEducPostgrad.AutoSize = true;
-            cbEducPostgrad.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducPostgrad.Location = new Point(272, 95);
-            cbEducPostgrad.Name = "cbEducPostgrad";
-            cbEducPostgrad.Size = new Size(101, 19);
-            cbEducPostgrad.TabIndex = 43;
-            cbEducPostgrad.Text = "Post-graduate";
-            cbEducPostgrad.UseVisualStyleBackColor = true;
-            // 
-            // cbEducHs
-            // 
-            cbEducHs.AutoSize = true;
-            cbEducHs.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducHs.Location = new Point(18, 96);
-            cbEducHs.Name = "cbEducHs";
-            cbEducHs.Size = new Size(152, 19);
-            cbEducHs.TabIndex = 42;
-            cbEducHs.Text = "High School (non-K-12)";
-            cbEducHs.UseVisualStyleBackColor = true;
-            // 
-            // cbEducVocational
-            // 
-            cbEducVocational.AutoSize = true;
-            cbEducVocational.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducVocational.Location = new Point(272, 65);
-            cbEducVocational.Name = "cbEducVocational";
-            cbEducVocational.Size = new Size(81, 19);
-            cbEducVocational.TabIndex = 41;
-            cbEducVocational.Text = "Vocational";
-            cbEducVocational.UseVisualStyleBackColor = true;
-            // 
-            // cbEducJhs
-            // 
-            cbEducJhs.AutoSize = true;
-            cbEducJhs.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducJhs.Location = new Point(18, 126);
-            cbEducJhs.Name = "cbEducJhs";
-            cbEducJhs.Size = new Size(161, 19);
-            cbEducJhs.TabIndex = 40;
-            cbEducJhs.Text = "Junior High School (K-12)";
-            cbEducJhs.UseVisualStyleBackColor = true;
-            // 
-            // cbEducElementary
-            // 
-            cbEducElementary.AutoSize = true;
-            cbEducElementary.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducElementary.Location = new Point(18, 65);
-            cbEducElementary.Name = "cbEducElementary";
-            cbEducElementary.Size = new Size(85, 19);
-            cbEducElementary.TabIndex = 39;
-            cbEducElementary.Text = "Elementary";
-            cbEducElementary.UseVisualStyleBackColor = true;
-            // 
-            // cbEducPreschool
-            // 
-            cbEducPreschool.AutoSize = true;
-            cbEducPreschool.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbEducPreschool.Location = new Point(18, 35);
-            cbEducPreschool.Name = "cbEducPreschool";
-            cbEducPreschool.Size = new Size(83, 19);
-            cbEducPreschool.TabIndex = 38;
-            cbEducPreschool.Text = "Pre-school";
-            cbEducPreschool.UseVisualStyleBackColor = true;
             // 
             // panel18
             // 
@@ -2251,18 +2025,18 @@
             label18.ForeColor = Color.White;
             label18.Location = new Point(6, 1);
             label18.Name = "label18";
-            label18.Size = new Size(189, 20);
+            label18.Size = new Size(231, 25);
             label18.TabIndex = 28;
             label18.Text = "Highest Formal Education";
             // 
             // panel14
             // 
             panel14.BorderStyle = BorderStyle.FixedSingle;
+            panel14.Controls.Add(rbSeparated);
+            panel14.Controls.Add(rbCivilWidowed);
+            panel14.Controls.Add(rbCivilMarried);
+            panel14.Controls.Add(rbCivilSingle);
             panel14.Controls.Add(txtSpouseName);
-            panel14.Controls.Add(cbCivilSeparated);
-            panel14.Controls.Add(cbCivilWidowed);
-            panel14.Controls.Add(cbCivilMarried);
-            panel14.Controls.Add(cbCivilSingle);
             panel14.Controls.Add(label16);
             panel14.Controls.Add(rectangleRound14);
             panel14.Controls.Add(panel15);
@@ -2278,52 +2052,8 @@
             txtSpouseName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtSpouseName.Location = new Point(25, 115);
             txtSpouseName.Name = "txtSpouseName";
-            txtSpouseName.Size = new Size(506, 22);
+            txtSpouseName.Size = new Size(506, 27);
             txtSpouseName.TabIndex = 27;
-            // 
-            // cbCivilSeparated
-            // 
-            cbCivilSeparated.AutoSize = true;
-            cbCivilSeparated.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCivilSeparated.Location = new Point(432, 47);
-            cbCivilSeparated.Name = "cbCivilSeparated";
-            cbCivilSeparated.Size = new Size(78, 19);
-            cbCivilSeparated.TabIndex = 32;
-            cbCivilSeparated.Text = "Separated";
-            cbCivilSeparated.UseVisualStyleBackColor = true;
-            // 
-            // cbCivilWidowed
-            // 
-            cbCivilWidowed.AutoSize = true;
-            cbCivilWidowed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCivilWidowed.Location = new Point(279, 47);
-            cbCivilWidowed.Name = "cbCivilWidowed";
-            cbCivilWidowed.Size = new Size(76, 19);
-            cbCivilWidowed.TabIndex = 31;
-            cbCivilWidowed.Text = "Widowed";
-            cbCivilWidowed.UseVisualStyleBackColor = true;
-            // 
-            // cbCivilMarried
-            // 
-            cbCivilMarried.AutoSize = true;
-            cbCivilMarried.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCivilMarried.Location = new Point(148, 47);
-            cbCivilMarried.Name = "cbCivilMarried";
-            cbCivilMarried.Size = new Size(67, 19);
-            cbCivilMarried.TabIndex = 30;
-            cbCivilMarried.Text = "Married";
-            cbCivilMarried.UseVisualStyleBackColor = true;
-            // 
-            // cbCivilSingle
-            // 
-            cbCivilSingle.AutoSize = true;
-            cbCivilSingle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCivilSingle.Location = new Point(23, 47);
-            cbCivilSingle.Name = "cbCivilSingle";
-            cbCivilSingle.Size = new Size(58, 19);
-            cbCivilSingle.TabIndex = 29;
-            cbCivilSingle.Text = "Single";
-            cbCivilSingle.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -2331,7 +2061,7 @@
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label16.Location = new Point(14, 88);
             label16.Name = "label16";
-            label16.Size = new Size(94, 15);
+            label16.Size = new Size(119, 20);
             label16.TabIndex = 28;
             label16.Text = "Name of Spouse";
             // 
@@ -2361,7 +2091,7 @@
             label31.ForeColor = Color.White;
             label31.Location = new Point(6, 1);
             label31.Name = "label31";
-            label31.Size = new Size(86, 20);
+            label31.Size = new Size(106, 25);
             label31.TabIndex = 28;
             label31.Text = "Civil Status";
             // 
@@ -2377,11 +2107,11 @@
             // panel12
             // 
             panel12.BorderStyle = BorderStyle.FixedSingle;
+            panel12.Controls.Add(rbOthers);
+            panel12.Controls.Add(rbIslam);
+            panel12.Controls.Add(rbChristianity);
             panel12.Controls.Add(panel16);
             panel12.Controls.Add(txtReligionOthers);
-            panel12.Controls.Add(cbReligionOthers);
-            panel12.Controls.Add(cbReligionIslam);
-            panel12.Controls.Add(cbReligionChristianity);
             panel12.Controls.Add(panel13);
             panel12.Controls.Add(rectangleRound27);
             panel12.Location = new Point(10, 390);
@@ -2403,41 +2133,8 @@
             txtReligionOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtReligionOthers.Location = new Point(325, 48);
             txtReligionOthers.Name = "txtReligionOthers";
-            txtReligionOthers.Size = new Size(205, 16);
+            txtReligionOthers.Size = new Size(205, 20);
             txtReligionOthers.TabIndex = 24;
-            // 
-            // cbReligionOthers
-            // 
-            cbReligionOthers.AutoSize = true;
-            cbReligionOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbReligionOthers.Location = new Point(244, 48);
-            cbReligionOthers.Name = "cbReligionOthers";
-            cbReligionOthers.Size = new Size(61, 19);
-            cbReligionOthers.TabIndex = 23;
-            cbReligionOthers.Text = "Others";
-            cbReligionOthers.UseVisualStyleBackColor = true;
-            // 
-            // cbReligionIslam
-            // 
-            cbReligionIslam.AutoSize = true;
-            cbReligionIslam.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbReligionIslam.Location = new Point(147, 47);
-            cbReligionIslam.Name = "cbReligionIslam";
-            cbReligionIslam.Size = new Size(54, 19);
-            cbReligionIslam.TabIndex = 22;
-            cbReligionIslam.Text = "Islam";
-            cbReligionIslam.UseVisualStyleBackColor = true;
-            // 
-            // cbReligionChristianity
-            // 
-            cbReligionChristianity.AutoSize = true;
-            cbReligionChristianity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbReligionChristianity.Location = new Point(28, 47);
-            cbReligionChristianity.Name = "cbReligionChristianity";
-            cbReligionChristianity.Size = new Size(86, 19);
-            cbReligionChristianity.TabIndex = 21;
-            cbReligionChristianity.Text = "Christianity";
-            cbReligionChristianity.UseVisualStyleBackColor = true;
             // 
             // panel13
             // 
@@ -2456,18 +2153,9 @@
             label36.ForeColor = Color.White;
             label36.Location = new Point(6, 1);
             label36.Name = "label36";
-            label36.Size = new Size(66, 20);
+            label36.Size = new Size(82, 25);
             label36.TabIndex = 28;
             label36.Text = "Religion";
-            // 
-            // rectangleRound27
-            // 
-            rectangleRound27.BackColor = Color.White;
-            rectangleRound27.Location = new Point(14, 40);
-            rectangleRound27.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound27.Name = "rectangleRound27";
-            rectangleRound27.Size = new Size(525, 38);
-            rectangleRound27.TabIndex = 20;
             // 
             // panel10
             // 
@@ -2496,7 +2184,7 @@
             txtBirthCountry.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtBirthCountry.Location = new Point(390, 133);
             txtBirthCountry.Name = "txtBirthCountry";
-            txtBirthCountry.Size = new Size(141, 22);
+            txtBirthCountry.Size = new Size(141, 27);
             txtBirthCountry.TabIndex = 67;
             // 
             // txtBirthProvince
@@ -2505,7 +2193,7 @@
             txtBirthProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtBirthProvince.Location = new Point(201, 134);
             txtBirthProvince.Name = "txtBirthProvince";
-            txtBirthProvince.Size = new Size(150, 22);
+            txtBirthProvince.Size = new Size(150, 27);
             txtBirthProvince.TabIndex = 66;
             // 
             // txtBirthMunicipality
@@ -2514,7 +2202,7 @@
             txtBirthMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtBirthMunicipality.Location = new Point(201, 64);
             txtBirthMunicipality.Name = "txtBirthMunicipality";
-            txtBirthMunicipality.Size = new Size(328, 22);
+            txtBirthMunicipality.Size = new Size(328, 27);
             txtBirthMunicipality.TabIndex = 65;
             // 
             // label34
@@ -2523,7 +2211,7 @@
             label34.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label34.Location = new Point(302, 38);
             label34.Name = "label34";
-            label34.Size = new Size(73, 15);
+            label34.Size = new Size(90, 20);
             label34.TabIndex = 64;
             label34.Text = "Municipality";
             // 
@@ -2533,7 +2221,7 @@
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(381, 107);
             label6.Name = "label6";
-            label6.Size = new Size(50, 15);
+            label6.Size = new Size(60, 20);
             label6.TabIndex = 29;
             label6.Text = "Country";
             // 
@@ -2543,7 +2231,7 @@
             label28.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label28.Location = new Point(191, 107);
             label28.Name = "label28";
-            label28.Size = new Size(84, 15);
+            label28.Size = new Size(105, 20);
             label28.TabIndex = 27;
             label28.Text = "Province/State";
             // 
@@ -2573,7 +2261,7 @@
             label30.ForeColor = Color.White;
             label30.Location = new Point(6, 1);
             label30.Name = "label30";
-            label30.Size = new Size(96, 20);
+            label30.Size = new Size(118, 25);
             label30.TabIndex = 28;
             label30.Text = "Birth Details";
             // 
@@ -2592,7 +2280,7 @@
             dtpBirthDate.Format = DateTimePickerFormat.Short;
             dtpBirthDate.Location = new Point(16, 66);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(135, 24);
+            dtpBirthDate.Size = new Size(135, 28);
             dtpBirthDate.TabIndex = 63;
             // 
             // label32
@@ -2601,7 +2289,7 @@
             label32.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label32.Location = new Point(16, 38);
             label32.Name = "label32";
-            label32.Size = new Size(73, 15);
+            label32.Size = new Size(94, 20);
             label32.TabIndex = 18;
             label32.Text = "Date of Birth";
             // 
@@ -2620,7 +2308,7 @@
             label33.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label33.Location = new Point(190, 38);
             label33.Name = "label33";
-            label33.Size = new Size(80, 15);
+            label33.Size = new Size(100, 20);
             label33.TabIndex = 23;
             label33.Text = "Place of Birth:";
             // 
@@ -2646,7 +2334,7 @@
             txtLandNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtLandNo.Location = new Point(31, 135);
             txtLandNo.Name = "txtLandNo";
-            txtLandNo.Size = new Size(251, 22);
+            txtLandNo.Size = new Size(251, 27);
             txtLandNo.TabIndex = 29;
             // 
             // txtMobNo
@@ -2655,7 +2343,7 @@
             txtMobNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtMobNo.Location = new Point(32, 63);
             txtMobNo.Name = "txtMobNo";
-            txtMobNo.Size = new Size(250, 22);
+            txtMobNo.Size = new Size(250, 27);
             txtMobNo.TabIndex = 28;
             // 
             // label14
@@ -2664,7 +2352,7 @@
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label14.Location = new Point(20, 108);
             label14.Name = "label14";
-            label14.Size = new Size(99, 15);
+            label14.Size = new Size(123, 20);
             label14.TabIndex = 27;
             label14.Text = "Landline Number";
             // 
@@ -2695,7 +2383,7 @@
             label27.ForeColor = Color.White;
             label27.Location = new Point(6, 1);
             label27.Name = "label27";
-            label27.Size = new Size(115, 20);
+            label27.Size = new Size(141, 25);
             label27.TabIndex = 28;
             label27.Text = "Contact Details";
             // 
@@ -2715,7 +2403,7 @@
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label15.Location = new Point(20, 38);
             label15.Name = "label15";
-            label15.Size = new Size(91, 15);
+            label15.Size = new Size(114, 20);
             label15.TabIndex = 24;
             label15.Text = "Mobile Number";
             // 
@@ -2752,7 +2440,7 @@
             txtAddRegion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddRegion.Location = new Point(453, 135);
             txtAddRegion.Name = "txtAddRegion";
-            txtAddRegion.Size = new Size(177, 22);
+            txtAddRegion.Size = new Size(177, 27);
             txtAddRegion.TabIndex = 68;
             txtAddRegion.Text = "2";
             // 
@@ -2762,7 +2450,7 @@
             txtAddProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddProvince.Location = new Point(243, 135);
             txtAddProvince.Name = "txtAddProvince";
-            txtAddProvince.Size = new Size(174, 22);
+            txtAddProvince.Size = new Size(174, 27);
             txtAddProvince.TabIndex = 66;
             txtAddProvince.Text = "Nueva Vizcaya";
             // 
@@ -2772,7 +2460,7 @@
             txtAddMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddMunicipality.Location = new Point(28, 135);
             txtAddMunicipality.Name = "txtAddMunicipality";
-            txtAddMunicipality.Size = new Size(178, 22);
+            txtAddMunicipality.Size = new Size(178, 27);
             txtAddMunicipality.TabIndex = 65;
             txtAddMunicipality.Text = "Solano";
             // 
@@ -2785,7 +2473,7 @@
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             cbAddBrgy.Location = new Point(451, 62);
             cbAddBrgy.Name = "cbAddBrgy";
-            cbAddBrgy.Size = new Size(183, 28);
+            cbAddBrgy.Size = new Size(183, 33);
             cbAddBrgy.TabIndex = 63;
             // 
             // txtAddStreet
@@ -2794,7 +2482,7 @@
             txtAddStreet.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddStreet.Location = new Point(241, 63);
             txtAddStreet.Name = "txtAddStreet";
-            txtAddStreet.Size = new Size(176, 22);
+            txtAddStreet.Size = new Size(176, 27);
             txtAddStreet.TabIndex = 62;
             // 
             // txtAddPurok
@@ -2803,7 +2491,7 @@
             txtAddPurok.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddPurok.Location = new Point(28, 63);
             txtAddPurok.Name = "txtAddPurok";
-            txtAddPurok.Size = new Size(178, 22);
+            txtAddPurok.Size = new Size(178, 27);
             txtAddPurok.TabIndex = 61;
             // 
             // rectangleRound17
@@ -2832,7 +2520,7 @@
             label29.ForeColor = Color.White;
             label29.Location = new Point(6, 1);
             label29.Name = "label29";
-            label29.Size = new Size(66, 20);
+            label29.Size = new Size(80, 25);
             label29.TabIndex = 28;
             label29.Text = "Address";
             // 
@@ -2851,7 +2539,7 @@
             label23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label23.Location = new Point(443, 107);
             label23.Name = "label23";
-            label23.Size = new Size(44, 15);
+            label23.Size = new Size(56, 20);
             label23.TabIndex = 60;
             label23.Text = "Region";
             // 
@@ -2879,7 +2567,7 @@
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label19.Location = new Point(233, 38);
             label19.Name = "label19";
-            label19.Size = new Size(106, 15);
+            label19.Size = new Size(134, 20);
             label19.TabIndex = 52;
             label19.Text = "Street/Sitio/Subdv.";
             // 
@@ -2889,7 +2577,7 @@
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(233, 107);
             label13.Name = "label13";
-            label13.Size = new Size(53, 15);
+            label13.Size = new Size(65, 20);
             label13.TabIndex = 58;
             label13.Text = "Province";
             // 
@@ -2899,7 +2587,7 @@
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(18, 38);
             label5.Name = "label5";
-            label5.Size = new Size(153, 15);
+            label5.Size = new Size(188, 20);
             label5.TabIndex = 21;
             label5.Text = "House/Lot/Bldg. No./Purok";
             // 
@@ -2918,7 +2606,7 @@
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(18, 108);
             label12.Name = "label12";
-            label12.Size = new Size(73, 15);
+            label12.Size = new Size(90, 20);
             label12.TabIndex = 56;
             label12.Text = "Municipality";
             // 
@@ -2928,7 +2616,7 @@
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label11.Location = new Point(445, 38);
             label11.Name = "label11";
-            label11.Size = new Size(56, 15);
+            label11.Size = new Size(71, 20);
             label11.TabIndex = 54;
             label11.Text = "Barangay";
             // 
@@ -2974,7 +2662,7 @@
             cbSex.Items.AddRange(new object[] { "Male", "Female" });
             cbSex.Location = new Point(390, 133);
             cbSex.Name = "cbSex";
-            cbSex.Size = new Size(144, 28);
+            cbSex.Size = new Size(144, 33);
             cbSex.TabIndex = 33;
             // 
             // txtExtname
@@ -2983,7 +2671,7 @@
             txtExtname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtExtname.Location = new Point(235, 135);
             txtExtname.Name = "txtExtname";
-            txtExtname.Size = new Size(116, 22);
+            txtExtname.Size = new Size(116, 27);
             txtExtname.TabIndex = 4;
             // 
             // txtMiddlename
@@ -2992,7 +2680,7 @@
             txtMiddlename.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtMiddlename.Location = new Point(24, 135);
             txtMiddlename.Name = "txtMiddlename";
-            txtMiddlename.Size = new Size(182, 22);
+            txtMiddlename.Size = new Size(182, 27);
             txtMiddlename.TabIndex = 3;
             // 
             // label4
@@ -3001,7 +2689,7 @@
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(381, 107);
             label4.Name = "label4";
-            label4.Size = new Size(25, 15);
+            label4.Size = new Size(32, 20);
             label4.TabIndex = 29;
             label4.Text = "Sex";
             // 
@@ -3011,7 +2699,7 @@
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(231, 108);
             label10.Name = "label10";
-            label10.Size = new Size(93, 15);
+            label10.Size = new Size(116, 20);
             label10.TabIndex = 27;
             label10.Text = "Extension Name";
             // 
@@ -3021,7 +2709,7 @@
             txtFirstname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtFirstname.Location = new Point(240, 63);
             txtFirstname.Name = "txtFirstname";
-            txtFirstname.Size = new Size(294, 22);
+            txtFirstname.Size = new Size(294, 27);
             txtFirstname.TabIndex = 2;
             // 
             // rectangleRound6
@@ -3039,7 +2727,7 @@
             txtSurname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtSurname.Location = new Point(24, 63);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(182, 22);
+            txtSurname.Size = new Size(182, 27);
             txtSurname.TabIndex = 2;
             // 
             // panel5
@@ -3059,7 +2747,7 @@
             label22.ForeColor = Color.White;
             label22.Location = new Point(6, 1);
             label22.Name = "label22";
-            label22.Size = new Size(121, 20);
+            label22.Size = new Size(147, 25);
             label22.TabIndex = 28;
             label22.Text = "Personal Details";
             // 
@@ -3087,7 +2775,7 @@
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(16, 108);
             label9.Name = "label9";
-            label9.Size = new Size(79, 15);
+            label9.Size = new Size(100, 20);
             label9.TabIndex = 25;
             label9.Text = "Middle Name";
             // 
@@ -3097,7 +2785,7 @@
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(16, 38);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(67, 20);
             label1.TabIndex = 18;
             label1.Text = "Surname";
             // 
@@ -3125,7 +2813,7 @@
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(231, 38);
             label8.Name = "label8";
-            label8.Size = new Size(64, 15);
+            label8.Size = new Size(80, 20);
             label8.TabIndex = 23;
             label8.Text = "First Name";
             // 
@@ -3295,7 +2983,7 @@
             label26.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label26.Location = new Point(23, 6);
             label26.Name = "label26";
-            label26.Size = new Size(55, 15);
+            label26.Size = new Size(72, 20);
             label26.TabIndex = 90;
             label26.Text = "RSBSA ID";
             // 
@@ -3305,7 +2993,7 @@
             labelRsbsaId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelRsbsaId.Location = new Point(29, 35);
             labelRsbsaId.Name = "labelRsbsaId";
-            labelRsbsaId.Size = new Size(51, 21);
+            labelRsbsaId.Size = new Size(63, 28);
             labelRsbsaId.TabIndex = 0;
             labelRsbsaId.Text = "label1";
             // 
@@ -3324,7 +3012,7 @@
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(323, 6);
             label2.Name = "label2";
-            label2.Size = new Size(105, 15);
+            label2.Size = new Size(134, 20);
             label2.TabIndex = 85;
             label2.Text = "Date Administered";
             // 
@@ -3343,7 +3031,7 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(548, 6);
             label3.Name = "label3";
-            label3.Size = new Size(106, 15);
+            label3.Size = new Size(133, 20);
             label3.TabIndex = 86;
             label3.Text = "Reference Number";
             // 
@@ -3353,7 +3041,7 @@
             dtDateAdm.Format = DateTimePickerFormat.Short;
             dtDateAdm.Location = new Point(323, 33);
             dtDateAdm.Name = "dtDateAdm";
-            dtDateAdm.Size = new Size(178, 26);
+            dtDateAdm.Size = new Size(178, 30);
             dtDateAdm.TabIndex = 1;
             // 
             // panel1
@@ -3375,9 +3063,399 @@
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
             // 
+            // rectangleRound27
+            // 
+            rectangleRound27.BackColor = Color.White;
+            rectangleRound27.Location = new Point(14, 40);
+            rectangleRound27.Margin = new Padding(2, 3, 2, 3);
+            rectangleRound27.Name = "rectangleRound27";
+            rectangleRound27.Size = new Size(525, 38);
+            rectangleRound27.TabIndex = 20;
+            // 
+            // rbChristianity
+            // 
+            rbChristianity.AutoSize = true;
+            rbChristianity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbChristianity.Location = new Point(22, 47);
+            rbChristianity.Name = "rbChristianity";
+            rbChristianity.Size = new Size(103, 24);
+            rbChristianity.TabIndex = 34;
+            rbChristianity.TabStop = true;
+            rbChristianity.Text = "Christianity";
+            rbChristianity.UseVisualStyleBackColor = true;
+            // 
+            // rbIslam
+            // 
+            rbIslam.AutoSize = true;
+            rbIslam.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbIslam.Location = new Point(147, 47);
+            rbIslam.Name = "rbIslam";
+            rbIslam.Size = new Size(65, 24);
+            rbIslam.TabIndex = 35;
+            rbIslam.TabStop = true;
+            rbIslam.Text = "Islam";
+            rbIslam.UseVisualStyleBackColor = true;
+            // 
+            // rbOthers
+            // 
+            rbOthers.AutoSize = true;
+            rbOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbOthers.Location = new Point(247, 47);
+            rbOthers.Name = "rbOthers";
+            rbOthers.Size = new Size(73, 24);
+            rbOthers.TabIndex = 36;
+            rbOthers.TabStop = true;
+            rbOthers.Text = "Others";
+            rbOthers.UseVisualStyleBackColor = true;
+            // 
+            // rbCivilSingle
+            // 
+            rbCivilSingle.AutoSize = true;
+            rbCivilSingle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbCivilSingle.Location = new Point(21, 47);
+            rbCivilSingle.Name = "rbCivilSingle";
+            rbCivilSingle.Size = new Size(71, 24);
+            rbCivilSingle.TabIndex = 35;
+            rbCivilSingle.TabStop = true;
+            rbCivilSingle.Text = "Single";
+            rbCivilSingle.UseVisualStyleBackColor = true;
+            // 
+            // rbCivilMarried
+            // 
+            rbCivilMarried.AutoSize = true;
+            rbCivilMarried.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbCivilMarried.Location = new Point(148, 47);
+            rbCivilMarried.Name = "rbCivilMarried";
+            rbCivilMarried.Size = new Size(82, 24);
+            rbCivilMarried.TabIndex = 36;
+            rbCivilMarried.TabStop = true;
+            rbCivilMarried.Text = "Married";
+            rbCivilMarried.UseVisualStyleBackColor = true;
+            // 
+            // rbCivilWidowed
+            // 
+            rbCivilWidowed.AutoSize = true;
+            rbCivilWidowed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbCivilWidowed.Location = new Point(278, 47);
+            rbCivilWidowed.Name = "rbCivilWidowed";
+            rbCivilWidowed.Size = new Size(94, 24);
+            rbCivilWidowed.TabIndex = 37;
+            rbCivilWidowed.TabStop = true;
+            rbCivilWidowed.Text = "Widowed";
+            rbCivilWidowed.UseVisualStyleBackColor = true;
+            // 
+            // rbSeparated
+            // 
+            rbSeparated.AutoSize = true;
+            rbSeparated.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbSeparated.Location = new Point(437, 47);
+            rbSeparated.Name = "rbSeparated";
+            rbSeparated.Size = new Size(98, 24);
+            rbSeparated.TabIndex = 38;
+            rbSeparated.TabStop = true;
+            rbSeparated.Text = "Separated";
+            rbSeparated.UseVisualStyleBackColor = true;
+            // 
+            // rbEducPreschool
+            // 
+            rbEducPreschool.AutoSize = true;
+            rbEducPreschool.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducPreschool.Location = new Point(18, 36);
+            rbEducPreschool.Name = "rbEducPreschool";
+            rbEducPreschool.Size = new Size(98, 24);
+            rbEducPreschool.TabIndex = 47;
+            rbEducPreschool.TabStop = true;
+            rbEducPreschool.Text = "Separated";
+            rbEducPreschool.UseVisualStyleBackColor = true;
+            // 
+            // rbEducElementary
+            // 
+            rbEducElementary.AutoSize = true;
+            rbEducElementary.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducElementary.Location = new Point(18, 64);
+            rbEducElementary.Name = "rbEducElementary";
+            rbEducElementary.Size = new Size(104, 24);
+            rbEducElementary.TabIndex = 48;
+            rbEducElementary.TabStop = true;
+            rbEducElementary.Text = "Elementary";
+            rbEducElementary.UseVisualStyleBackColor = true;
+            // 
+            // rbEducHighschool
+            // 
+            rbEducHighschool.AutoSize = true;
+            rbEducHighschool.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducHighschool.Location = new Point(18, 95);
+            rbEducHighschool.Name = "rbEducHighschool";
+            rbEducHighschool.Size = new Size(187, 24);
+            rbEducHighschool.TabIndex = 49;
+            rbEducHighschool.TabStop = true;
+            rbEducHighschool.Text = "High School (non-K-12)";
+            rbEducHighschool.UseVisualStyleBackColor = true;
+            // 
+            // rbEducJuniorHigh
+            // 
+            rbEducJuniorHigh.AutoSize = true;
+            rbEducJuniorHigh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducJuniorHigh.Location = new Point(18, 125);
+            rbEducJuniorHigh.Name = "rbEducJuniorHigh";
+            rbEducJuniorHigh.Size = new Size(199, 24);
+            rbEducJuniorHigh.TabIndex = 50;
+            rbEducJuniorHigh.TabStop = true;
+            rbEducJuniorHigh.Text = "Junior High School (K-12)";
+            rbEducJuniorHigh.UseVisualStyleBackColor = true;
+            // 
+            // rbEducSeniorHigh
+            // 
+            rbEducSeniorHigh.AutoSize = true;
+            rbEducSeniorHigh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducSeniorHigh.Location = new Point(18, 155);
+            rbEducSeniorHigh.Name = "rbEducSeniorHigh";
+            rbEducSeniorHigh.Size = new Size(202, 24);
+            rbEducSeniorHigh.TabIndex = 51;
+            rbEducSeniorHigh.TabStop = true;
+            rbEducSeniorHigh.Text = "Senior High School (K-12)";
+            rbEducSeniorHigh.UseVisualStyleBackColor = true;
+            // 
+            // rbEducCollege
+            // 
+            rbEducCollege.AutoSize = true;
+            rbEducCollege.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducCollege.Location = new Point(273, 36);
+            rbEducCollege.Name = "rbEducCollege";
+            rbEducCollege.Size = new Size(81, 24);
+            rbEducCollege.TabIndex = 52;
+            rbEducCollege.TabStop = true;
+            rbEducCollege.Text = "College";
+            rbEducCollege.UseVisualStyleBackColor = true;
+            // 
+            // rbEducVocational
+            // 
+            rbEducVocational.AutoSize = true;
+            rbEducVocational.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducVocational.Location = new Point(274, 64);
+            rbEducVocational.Name = "rbEducVocational";
+            rbEducVocational.Size = new Size(100, 24);
+            rbEducVocational.TabIndex = 53;
+            rbEducVocational.TabStop = true;
+            rbEducVocational.Text = "Vocational";
+            rbEducVocational.UseVisualStyleBackColor = true;
+            // 
+            // rbEducPostGraduate
+            // 
+            rbEducPostGraduate.AutoSize = true;
+            rbEducPostGraduate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbEducPostGraduate.Location = new Point(274, 95);
+            rbEducPostGraduate.Name = "rbEducPostGraduate";
+            rbEducPostGraduate.Size = new Size(123, 24);
+            rbEducPostGraduate.TabIndex = 54;
+            rbEducPostGraduate.TabStop = true;
+            rbEducPostGraduate.Text = "Post-graduate";
+            rbEducPostGraduate.UseVisualStyleBackColor = true;
+            // 
+            // rbNone
+            // 
+            rbNone.AutoSize = true;
+            rbNone.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbNone.Location = new Point(273, 125);
+            rbNone.Name = "rbNone";
+            rbNone.Size = new Size(66, 24);
+            rbNone.TabIndex = 55;
+            rbNone.TabStop = true;
+            rbNone.Text = "None";
+            rbNone.UseVisualStyleBackColor = true;
+            // 
+            // rbHouseholdHeadYes
+            // 
+            rbHouseholdHeadYes.AutoSize = true;
+            rbHouseholdHeadYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbHouseholdHeadYes.Location = new Point(52, 70);
+            rbHouseholdHeadYes.Name = "rbHouseholdHeadYes";
+            rbHouseholdHeadYes.Size = new Size(51, 24);
+            rbHouseholdHeadYes.TabIndex = 56;
+            rbHouseholdHeadYes.TabStop = true;
+            rbHouseholdHeadYes.Text = "Yes";
+            rbHouseholdHeadYes.UseVisualStyleBackColor = true;
+            // 
+            // rbHouseholdHeadNo
+            // 
+            rbHouseholdHeadNo.AutoSize = true;
+            rbHouseholdHeadNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbHouseholdHeadNo.Location = new Point(148, 70);
+            rbHouseholdHeadNo.Name = "rbHouseholdHeadNo";
+            rbHouseholdHeadNo.Size = new Size(50, 24);
+            rbHouseholdHeadNo.TabIndex = 57;
+            rbHouseholdHeadNo.TabStop = true;
+            rbHouseholdHeadNo.Text = "No";
+            rbHouseholdHeadNo.UseVisualStyleBackColor = true;
+            // 
+            // panel45
+            // 
+            panel45.Controls.Add(rbPwdNo);
+            panel45.Controls.Add(rbPwdYes);
+            panel45.Location = new Point(77, 45);
+            panel45.Name = "panel45";
+            panel45.Size = new Size(130, 31);
+            panel45.TabIndex = 60;
+            // 
+            // rbPwdNo
+            // 
+            rbPwdNo.AutoSize = true;
+            rbPwdNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbPwdNo.Location = new Point(78, 3);
+            rbPwdNo.Name = "rbPwdNo";
+            rbPwdNo.Size = new Size(50, 24);
+            rbPwdNo.TabIndex = 59;
+            rbPwdNo.TabStop = true;
+            rbPwdNo.Text = "No";
+            rbPwdNo.UseVisualStyleBackColor = true;
+            // 
+            // rbPwdYes
+            // 
+            rbPwdYes.AutoSize = true;
+            rbPwdYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbPwdYes.Location = new Point(7, 3);
+            rbPwdYes.Name = "rbPwdYes";
+            rbPwdYes.Size = new Size(51, 24);
+            rbPwdYes.TabIndex = 58;
+            rbPwdYes.TabStop = true;
+            rbPwdYes.Text = "Yes";
+            rbPwdYes.UseVisualStyleBackColor = true;
+            // 
+            // panel46
+            // 
+            panel46.Controls.Add(rb4psNo);
+            panel46.Controls.Add(rb4psYes);
+            panel46.Location = new Point(361, 45);
+            panel46.Name = "panel46";
+            panel46.Size = new Size(130, 31);
+            panel46.TabIndex = 61;
+            // 
+            // rb4psNo
+            // 
+            rb4psNo.AutoSize = true;
+            rb4psNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rb4psNo.Location = new Point(78, 3);
+            rb4psNo.Name = "rb4psNo";
+            rb4psNo.Size = new Size(50, 24);
+            rb4psNo.TabIndex = 59;
+            rb4psNo.TabStop = true;
+            rb4psNo.Text = "No";
+            rb4psNo.UseVisualStyleBackColor = true;
+            // 
+            // rb4psYes
+            // 
+            rb4psYes.AutoSize = true;
+            rb4psYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rb4psYes.Location = new Point(7, 3);
+            rb4psYes.Name = "rb4psYes";
+            rb4psYes.Size = new Size(51, 24);
+            rb4psYes.TabIndex = 58;
+            rb4psYes.TabStop = true;
+            rb4psYes.Text = "Yes";
+            rb4psYes.UseVisualStyleBackColor = true;
+            // 
+            // panel47
+            // 
+            panel47.Controls.Add(rbIndigenousNo);
+            panel47.Controls.Add(rbIndigenousYes);
+            panel47.Location = new Point(266, 105);
+            panel47.Name = "panel47";
+            panel47.Size = new Size(130, 31);
+            panel47.TabIndex = 62;
+            // 
+            // rbIndigenousNo
+            // 
+            rbIndigenousNo.AutoSize = true;
+            rbIndigenousNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbIndigenousNo.Location = new Point(78, 3);
+            rbIndigenousNo.Name = "rbIndigenousNo";
+            rbIndigenousNo.Size = new Size(50, 24);
+            rbIndigenousNo.TabIndex = 59;
+            rbIndigenousNo.TabStop = true;
+            rbIndigenousNo.Text = "No";
+            rbIndigenousNo.UseVisualStyleBackColor = true;
+            // 
+            // rbIndigenousYes
+            // 
+            rbIndigenousYes.AutoSize = true;
+            rbIndigenousYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbIndigenousYes.Location = new Point(7, 3);
+            rbIndigenousYes.Name = "rbIndigenousYes";
+            rbIndigenousYes.Size = new Size(51, 24);
+            rbIndigenousYes.TabIndex = 58;
+            rbIndigenousYes.TabStop = true;
+            rbIndigenousYes.Text = "Yes";
+            rbIndigenousYes.UseVisualStyleBackColor = true;
+            // 
+            // panel48
+            // 
+            panel48.Controls.Add(rbGovIdNo);
+            panel48.Controls.Add(rbGovIdYes);
+            panel48.Location = new Point(179, 203);
+            panel48.Name = "panel48";
+            panel48.Size = new Size(130, 31);
+            panel48.TabIndex = 63;
+            // 
+            // rbGovIdNo
+            // 
+            rbGovIdNo.AutoSize = true;
+            rbGovIdNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbGovIdNo.Location = new Point(78, 3);
+            rbGovIdNo.Name = "rbGovIdNo";
+            rbGovIdNo.Size = new Size(50, 24);
+            rbGovIdNo.TabIndex = 59;
+            rbGovIdNo.TabStop = true;
+            rbGovIdNo.Text = "No";
+            rbGovIdNo.UseVisualStyleBackColor = true;
+            // 
+            // rbGovIdYes
+            // 
+            rbGovIdYes.AutoSize = true;
+            rbGovIdYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbGovIdYes.Location = new Point(7, 3);
+            rbGovIdYes.Name = "rbGovIdYes";
+            rbGovIdYes.Size = new Size(51, 24);
+            rbGovIdYes.TabIndex = 58;
+            rbGovIdYes.TabStop = true;
+            rbGovIdYes.Text = "Yes";
+            rbGovIdYes.UseVisualStyleBackColor = true;
+            // 
+            // panel49
+            // 
+            panel49.Controls.Add(rbAssociationNo);
+            panel49.Controls.Add(rbAssociationYes);
+            panel49.Location = new Point(368, 344);
+            panel49.Name = "panel49";
+            panel49.Size = new Size(130, 31);
+            panel49.TabIndex = 64;
+            // 
+            // rbAssociationNo
+            // 
+            rbAssociationNo.AutoSize = true;
+            rbAssociationNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbAssociationNo.Location = new Point(78, 3);
+            rbAssociationNo.Name = "rbAssociationNo";
+            rbAssociationNo.Size = new Size(50, 24);
+            rbAssociationNo.TabIndex = 59;
+            rbAssociationNo.TabStop = true;
+            rbAssociationNo.Text = "No";
+            rbAssociationNo.UseVisualStyleBackColor = true;
+            // 
+            // rbAssociationYes
+            // 
+            rbAssociationYes.AutoSize = true;
+            rbAssociationYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbAssociationYes.Location = new Point(7, 3);
+            rbAssociationYes.Name = "rbAssociationYes";
+            rbAssociationYes.Size = new Size(51, 24);
+            rbAssociationYes.TabIndex = 58;
+            rbAssociationYes.TabStop = true;
+            rbAssociationYes.Text = "Yes";
+            rbAssociationYes.UseVisualStyleBackColor = true;
+            // 
             // RsbsaAddView
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
@@ -3480,6 +3558,16 @@
             panel27.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbFarmerPhoto).EndInit();
+            panel45.ResumeLayout(false);
+            panel45.PerformLayout();
+            panel46.ResumeLayout(false);
+            panel46.PerformLayout();
+            panel47.ResumeLayout(false);
+            panel47.PerformLayout();
+            panel48.ResumeLayout(false);
+            panel48.PerformLayout();
+            panel49.ResumeLayout(false);
+            panel49.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -3518,19 +3606,11 @@
         private RectangleRound rectangleRound38;
         private Label label61;
         private Panel panel25;
-        private CheckBox cbAssociationNo;
-        private CheckBox cbAssociationYes;
-        private CheckBox cbIndigenousNo;
-        private CheckBox cbIndigenousYes;
-        private CheckBox cbPwdNo;
-        private CheckBox cbPwdYes;
         private Label label65;
         private Label label64;
         private Label label63;
         private RectangleRound rectangleRound41;
         private Label label62;
-        private CheckBox cb4PsNo;
-        private CheckBox cb4PsYes;
         private RectangleRound rectangleRound40;
         private RectangleRound rectangleRound39;
         private RectangleRound rectangleRound37;
@@ -3551,8 +3631,6 @@
         private Label label57;
         private RectangleRound rectangleRound32;
         private Panel panel19;
-        private CheckBox cbHouseholdHeadNo;
-        private CheckBox cbHouseholdHeadYes;
         private RectangleRound rectangleRound33;
         private Label label53;
         private RectangleRound rectangleRound31;
@@ -3568,22 +3646,9 @@
         private RectangleRound rectangleRound29;
         private Label label52;
         private Panel panel17;
-        private CheckBox cbEducNone;
-        private CheckBox cbEducShs;
-        private CheckBox cbEducCollege;
-        private CheckBox cbEducPostgrad;
-        private CheckBox cbEducHs;
-        private CheckBox cbEducVocational;
-        private CheckBox cbEducJhs;
-        private CheckBox cbEducElementary;
-        private CheckBox cbEducPreschool;
         private Panel panel18;
         private Label label18;
         private Panel panel14;
-        private CheckBox cbCivilSeparated;
-        private CheckBox cbCivilWidowed;
-        private CheckBox cbCivilMarried;
-        private CheckBox cbCivilSingle;
         private Label label16;
         private RectangleRound rectangleRound14;
         private Panel panel15;
@@ -3592,12 +3657,8 @@
         private Panel panel12;
         private Panel panel16;
         private TextBox txtReligionOthers;
-        private CheckBox cbReligionOthers;
-        private CheckBox cbReligionIslam;
-        private CheckBox cbReligionChristianity;
         private Panel panel13;
         private Label label36;
-        private RectangleRound rectangleRound27;
         private Panel panel10;
         private Label label34;
         private Label label6;
@@ -3645,8 +3706,6 @@
         private RectangleRound rectangleRound4;
         private RectangleRound rectangleRound3;
         private Label label8;
-        private CheckBox cbGovIdNo;
-        private CheckBox cbGovIdYes;
         private Panel panel29;
         private Panel panel30;
         private Label label37;
@@ -3763,5 +3822,39 @@
         private Button btnBrowse;
         private Label label48;
         private Button btnSave;
+        private RectangleRound rectangleRound27;
+        private RadioButton rbChristianity;
+        private RadioButton rbOthers;
+        private RadioButton rbIslam;
+        private RadioButton rbSeparated;
+        private RadioButton rbCivilWidowed;
+        private RadioButton rbCivilMarried;
+        private RadioButton rbCivilSingle;
+        private RadioButton rbEducElementary;
+        private RadioButton rbEducPreschool;
+        private RadioButton rbHouseholdHeadYes;
+        private RadioButton rbNone;
+        private RadioButton rbEducPostGraduate;
+        private RadioButton rbEducVocational;
+        private RadioButton rbEducCollege;
+        private RadioButton rbEducSeniorHigh;
+        private RadioButton rbEducJuniorHigh;
+        private RadioButton rbEducHighschool;
+        private RadioButton rbHouseholdHeadNo;
+        private Panel panel45;
+        private Panel panel46;
+        private RadioButton rb4psNo;
+        private RadioButton rb4psYes;
+        private RadioButton rbPwdNo;
+        private RadioButton rbPwdYes;
+        private Panel panel47;
+        private RadioButton rbIndigenousNo;
+        private RadioButton rbIndigenousYes;
+        private Panel panel49;
+        private RadioButton rbAssociationNo;
+        private RadioButton rbAssociationYes;
+        private Panel panel48;
+        private RadioButton rbGovIdNo;
+        private RadioButton rbGovIdYes;
     }
 }

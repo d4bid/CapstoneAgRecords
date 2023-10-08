@@ -31,10 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnAdd = new Button();
-            panel2 = new Panel();
-            dgvRicePlanting = new DataGridView();
-            panel3 = new Panel();
             label2 = new Label();
             comboBoxFilterType = new ComboBox();
             searchBox3 = new SearchBox();
@@ -44,10 +40,14 @@
             txtBoxSearch = new TextBox();
             searchBox1 = new SearchBox();
             label1 = new Label();
+            btnAdd = new Button();
+            panel2 = new Panel();
+            dgvRice = new DataGridView();
+            panel3 = new Panel();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRicePlanting).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRice).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -70,76 +70,6 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 22;
             // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAdd.BackColor = Color.FromArgb(43, 121, 223);
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(1438, 27);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(139, 39);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(dgvRicePlanting);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 90);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1595, 836);
-            panel2.TabIndex = 23;
-            // 
-            // dgvRicePlanting
-            // 
-            dgvRicePlanting.AllowUserToAddRows = false;
-            dgvRicePlanting.AllowUserToDeleteRows = false;
-            dgvRicePlanting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRicePlanting.BackgroundColor = Color.White;
-            dgvRicePlanting.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRicePlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvRicePlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRicePlanting.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvRicePlanting.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRicePlanting.Location = new Point(12, 15);
-            dgvRicePlanting.Name = "dgvRicePlanting";
-            dgvRicePlanting.ReadOnly = true;
-            dgvRicePlanting.RowHeadersVisible = false;
-            dgvRicePlanting.RowHeadersWidth = 51;
-            dgvRicePlanting.RowTemplate.Height = 40;
-            dgvRicePlanting.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRicePlanting.Size = new Size(1571, 809);
-            dgvRicePlanting.TabIndex = 23;
-            // 
-            // panel3
-            // 
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 90);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1595, 5);
-            panel3.TabIndex = 24;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -155,7 +85,7 @@
             comboBoxFilterType.FlatStyle = FlatStyle.Flat;
             comboBoxFilterType.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterType.FormattingEnabled = true;
-            comboBoxFilterType.Items.AddRange(new object[] { "All", "Incoming", "Outgoing", "Internal" });
+            comboBoxFilterType.Items.AddRange(new object[] { "All", "Planting", "Standing", "Harvesting" });
             comboBoxFilterType.Location = new Point(640, 39);
             comboBoxFilterType.Name = "comboBoxFilterType";
             comboBoxFilterType.Size = new Size(237, 28);
@@ -174,7 +104,7 @@
             comboBoxSearchCategory.FlatStyle = FlatStyle.Flat;
             comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSearchCategory.FormattingEnabled = true;
-            comboBoxSearchCategory.Items.AddRange(new object[] { "All", "ID", "Title", "Receiver", "Sender", "Date Received" });
+            comboBoxSearchCategory.Items.AddRange(new object[] { "All", "ID", "Season", "Week", "Year" });
             comboBoxSearchCategory.Location = new Point(377, 39);
             comboBoxSearchCategory.Name = "comboBoxSearchCategory";
             comboBoxSearchCategory.Size = new Size(237, 28);
@@ -227,6 +157,76 @@
             label1.TabIndex = 13;
             label1.Text = "Category";
             // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAdd.BackColor = Color.FromArgb(43, 121, 223);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(1438, 27);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(139, 39);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(dgvRice);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 90);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1595, 836);
+            panel2.TabIndex = 23;
+            // 
+            // dgvRice
+            // 
+            dgvRice.AllowUserToAddRows = false;
+            dgvRice.AllowUserToDeleteRows = false;
+            dgvRice.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRice.BackgroundColor = Color.White;
+            dgvRice.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvRice.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRice.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvRice.GridColor = Color.FromArgb(239, 239, 239);
+            dgvRice.Location = new Point(12, 15);
+            dgvRice.Name = "dgvRice";
+            dgvRice.ReadOnly = true;
+            dgvRice.RowHeadersVisible = false;
+            dgvRice.RowHeadersWidth = 51;
+            dgvRice.RowTemplate.Height = 40;
+            dgvRice.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRice.Size = new Size(1571, 809);
+            dgvRice.TabIndex = 23;
+            // 
+            // panel3
+            // 
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 90);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1595, 5);
+            panel3.TabIndex = 24;
+            // 
             // CropsRiceView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -241,9 +241,9 @@
             Load += CropsRiceView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRicePlanting).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRice).EndInit();
             ResumeLayout(false);
         }
 
@@ -251,7 +251,7 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private DataGridView dgvRicePlanting;
+        private DataGridView dgvRice;
         private Button btnAdd;
         private Label label2;
         private ComboBox comboBoxFilterType;

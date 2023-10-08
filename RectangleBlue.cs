@@ -11,14 +11,16 @@ using System.Windows.Forms;
 
 namespace AgRecords
 {
-    public partial class RectangleNavy : UserControl
+    public partial class RectangleBlue : UserControl
     {
-        public RectangleNavy()
+        public RectangleBlue()
         {
             InitializeComponent();
         }
 
         private int borderRadius = 5; // Adjust this value to control the roundness of corners.
+        private float borderWidth = 2; // Adjust the border width as needed
+        private Color customColor = Color.FromArgb(43, 121, 223); // Custom color with ARGB values
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -28,12 +30,10 @@ namespace AgRecords
             g.SmoothingMode = SmoothingMode.AntiAlias; // Set SmoothingMode to AntiAlias
 
             RectangleF rect = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
-            float borderWidth = 3; // Adjust the border width as needed
 
             using (GraphicsPath path = new GraphicsPath())
             {
                 float halfBorderWidth = borderWidth / 2;
-
                 float arcSize = borderRadius * 2;
 
                 // Add arcs for the rounded corners with proper starting points
@@ -45,21 +45,25 @@ namespace AgRecords
                 // Close the path
                 path.CloseAllFigures();
 
-                // Calculate the inner rectangle to ensure even border width
-                RectangleF innerRect = new RectangleF(rect.Left + halfBorderWidth, rect.Top + halfBorderWidth, rect.Width - borderWidth, rect.Height - borderWidth);
-
                 // Fill the inner region with the control's background color
                 using (SolidBrush backgroundBrush = new SolidBrush(this.BackColor))
                 {
-                    g.FillRectangle(backgroundBrush, innerRect);
+                    g.FillPath(backgroundBrush, path);
                 }
 
-                // Draw a custom border with a consistent width around the inner rectangle
-                using (Pen borderPen = new Pen(Color.Red, borderWidth)) // Set your custom border color and thickness here
+                // Draw a custom border with rounded corners
+                using (Pen borderPen = new Pen(customColor, borderWidth)) // Set your custom border thickness (borderWidth) and color here
                 {
                     g.DrawPath(borderPen, path);
                 }
             }
+        }
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            // Invalidate the control to trigger a repaint
+            this.Invalidate();
         }
     }
 }

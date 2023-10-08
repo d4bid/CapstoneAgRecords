@@ -547,11 +547,13 @@
             // 
             // picBoxUser
             // 
-            picBoxUser.BackgroundImage = Properties.Resources.profile;
             picBoxUser.BackgroundImageLayout = ImageLayout.Zoom;
-            picBoxUser.Location = new Point(28, 31);
+            picBoxUser.BorderStyle = BorderStyle.FixedSingle;
+            picBoxUser.Image = Properties.Resources.profile;
+            picBoxUser.Location = new Point(28, 41);
             picBoxUser.Name = "picBoxUser";
             picBoxUser.Size = new Size(300, 300);
+            picBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxUser.TabIndex = 10;
             picBoxUser.TabStop = false;
             // 
@@ -609,7 +611,6 @@
         private TextBox txtBoxConfirmPassword;
         private Label lblConfirmPassword;
         private GroupBox groupBox3;
-        private RoundedPictureBox picBoxUser;
         private RectangleRound rectangleRound1;
         private Label label11;
         private RectangleRound rectangleRound2;
@@ -622,5 +623,6 @@
         private RectangleRound rectangleRound7;
         private Label label12;
         private RectangleRound rectangleRound10;
+        private RoundedPictureBox picBoxUser;
     }
 }

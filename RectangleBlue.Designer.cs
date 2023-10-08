@@ -1,6 +1,6 @@
 ﻿namespace AgRecords
 {
-    partial class RectangleNavy
+    partial class RectangleBlue
     {
         /// <summary> 
         /// Required designer variable.
