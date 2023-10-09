@@ -22,7 +22,17 @@ namespace AgRecords.View
         }
 
         // Methods
+        private void CropsRiceAddView_FormClosed(object sender, EventArgs e)
+        {
+            CropsRiceView cropsRiceView = new CropsRiceView(parentPanel);
+            cropsRiceView.TopLevel = false;
+            cropsRiceView.FormBorderStyle = FormBorderStyle.None;
+            cropsRiceView.Dock = DockStyle.Fill;
 
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(cropsRiceView);
+            cropsRiceView.Show();
+        }
 
         // Trigger Events
 
@@ -31,5 +41,18 @@ namespace AgRecords.View
 
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
+            cropsRiceAddView.FormClosed += CropsRiceAddView_FormClosed;
+
+            cropsRiceAddView.TopLevel = false;
+            cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
+            cropsRiceAddView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(cropsRiceAddView);
+            cropsRiceAddView.Show();
+        }
     }
 }
