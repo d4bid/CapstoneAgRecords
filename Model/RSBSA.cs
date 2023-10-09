@@ -88,7 +88,7 @@ namespace AgRecords.Model
         public int farmParcelCount { get; set; }
 
         //farmland parcel table
-
+        public List<FarmParcel> farmParcels { get; set; }
 
 
     }

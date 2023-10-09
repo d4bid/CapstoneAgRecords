@@ -17,10 +17,16 @@ namespace AgRecords.View
         private RSBSAController rsbsaController;
         public event EventHandler FormClosed;
 
+        public static RsbsaAddView Instance;
+        public Label rsbsaId;
+
         public RsbsaAddView()
         {
             InitializeComponent();
             rsbsaController = new RSBSAController(this);
+
+            Instance = this;
+            rsbsaId = labelRsbsaId;
         }
 
         // Method
@@ -272,10 +278,10 @@ namespace AgRecords.View
                 Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text),
 
                 //farmland
-                "Test", Convert.ToInt32(nudFarmParcelNo.Value)
+                "Test", Convert.ToInt32(nudFarmParcelNo.Value),
 
                 //farmland parcel
-
+                GetFarmParcelsFromControls()
 
                 ))
             {
@@ -394,6 +400,7 @@ namespace AgRecords.View
 
             foreach (FarmParcel parcel in farmParcels)
             {
+                sb.AppendLine($"RSBSA No: {parcel.rsbsaId}");
                 sb.AppendLine($"Farm Parcel No: {parcel.farmParcelNo}");
                 sb.AppendLine($"Farm Location Brgy: {parcel.farmLocBrgy}");
                 sb.AppendLine($"Farm Location Municipality: {parcel.farmLocMunicipality}");
@@ -403,6 +410,7 @@ namespace AgRecords.View
 
                 foreach (FarmParcelCrop crop in parcel.Crops)
                 {
+                    sb.AppendLine($"RSBSA No: {crop.rsbsaId}");
                     sb.AppendLine($"Farm Parcel No: {crop.farmParcelNo}");
                     sb.AppendLine($"Commodity Type: {crop.commodityType}");
                     sb.AppendLine($"Land Size: {crop.landSize}");

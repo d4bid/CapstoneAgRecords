@@ -36,7 +36,6 @@
             panelAncestralDomain = new Panel();
             rbAncestralDomainNo = new RadioButton();
             rbAncestralDomainYes = new RadioButton();
-            rbOwnershipTypeOwner = new RadioButton();
             panelBeneficiary = new Panel();
             rbBeneficiaryNo = new RadioButton();
             rbBeneficiaryYes = new RadioButton();
@@ -61,6 +60,7 @@
             label1 = new Label();
             label2 = new Label();
             panelOwnershipType = new Panel();
+            rbOwnershipTypeOwner = new RadioButton();
             rbOwnershipTypeOthers = new RadioButton();
             rbOwnershipTypeLessee = new RadioButton();
             rbOwnershipTypeTenant = new RadioButton();
@@ -161,10 +161,10 @@
             // labelParcelNo
             // 
             labelParcelNo.AutoSize = true;
-            labelParcelNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelParcelNo.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelParcelNo.Location = new Point(57, 241);
             labelParcelNo.Name = "labelParcelNo";
-            labelParcelNo.Size = new Size(16, 21);
+            labelParcelNo.Size = new Size(33, 45);
             labelParcelNo.TabIndex = 1;
             labelParcelNo.Text = "1";
             // 
@@ -252,18 +252,6 @@
             rbAncestralDomainYes.TabStop = true;
             rbAncestralDomainYes.Text = "Yes";
             rbAncestralDomainYes.UseVisualStyleBackColor = true;
-            // 
-            // rbOwnershipTypeOwner
-            // 
-            rbOwnershipTypeOwner.AutoSize = true;
-            rbOwnershipTypeOwner.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbOwnershipTypeOwner.Location = new Point(32, 16);
-            rbOwnershipTypeOwner.Name = "rbOwnershipTypeOwner";
-            rbOwnershipTypeOwner.Size = new Size(118, 19);
-            rbOwnershipTypeOwner.TabIndex = 104;
-            rbOwnershipTypeOwner.TabStop = true;
-            rbOwnershipTypeOwner.Text = "Registered Owner";
-            rbOwnershipTypeOwner.UseVisualStyleBackColor = true;
             // 
             // panelBeneficiary
             // 
@@ -501,6 +489,18 @@
             panelOwnershipType.Name = "panelOwnershipType";
             panelOwnershipType.Size = new Size(655, 132);
             panelOwnershipType.TabIndex = 109;
+            // 
+            // rbOwnershipTypeOwner
+            // 
+            rbOwnershipTypeOwner.AutoSize = true;
+            rbOwnershipTypeOwner.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbOwnershipTypeOwner.Location = new Point(32, 16);
+            rbOwnershipTypeOwner.Name = "rbOwnershipTypeOwner";
+            rbOwnershipTypeOwner.Size = new Size(118, 19);
+            rbOwnershipTypeOwner.TabIndex = 104;
+            rbOwnershipTypeOwner.TabStop = true;
+            rbOwnershipTypeOwner.Text = "Registered Owner";
+            rbOwnershipTypeOwner.UseVisualStyleBackColor = true;
             // 
             // rbOwnershipTypeOthers
             // 

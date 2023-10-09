@@ -2,6 +2,7 @@
 using AgRecords.View;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace AgRecords.Controller
     internal class RSBSAController
     {
         private RsbsaAddView rsbsaAddView;
+        private RsbsaView rsbsaView;
         private Boolean isDone = false; 
         private string fullName = HomeView.Instance.fullName.Text;
         private RSBSAModel rsbsaModel;
@@ -19,6 +21,12 @@ namespace AgRecords.Controller
         public RSBSAController(RsbsaAddView rsbsaAddView)
         {
             this.rsbsaAddView = rsbsaAddView;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(RsbsaView rsbsaView)
+        {
+            this.rsbsaView = rsbsaView;
             rsbsaModel = new RSBSAModel();
         }
 
@@ -33,6 +41,22 @@ namespace AgRecords.Controller
             {
                 MessageBox.Show(ex.Message, "ID Generation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        public DataTable LoadRSBSAView()
+        {
+            try
+            {
+                DataTable rsbsaTable = rsbsaModel.LoadRSBSADataGrid();
+                return rsbsaTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "RSBSA Records Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
         }
 
         public string GetUserIdByFullName(string fullName)
@@ -125,11 +149,10 @@ namespace AgRecords.Controller
 
             //Farmland
             string? rotatingFarmers,
-            int farmParcelCount
-
-
+            int farmParcelCount,
 
             //Farmland Parcel
+            List<FarmParcel> farmParcels
 
             )
         {
@@ -216,42 +239,23 @@ namespace AgRecords.Controller
 
                     // Farmland
                     rotatingFarmers = rotatingFarmers,
-                    farmParcelCount = farmParcelCount
+                    farmParcelCount = farmParcelCount,
 
 
                     // Farmland Parcel
-
+                    farmParcels = farmParcels,
                 };
-
-
-                //if (letter.letterTitle == "")
-                //{
-                //    MessageBox.Show("Title is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                //}
-                //else if (letter.letterDescription == "")
-                //{
-                //    MessageBox.Show("Description is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                //}
-                //else if (letter.letterTitle != "" && letter.letterDescription != "" && letter.letterTo != "" && letter.letterFrom != "")
-                //{
-                    DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes)
+                
+                DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    if (rsbsaModel.AddNewRSBSARecord(rsbsa))
                     {
-                        if (rsbsaModel.AddNewRSBSARecord(rsbsa))
-                        {
-                            MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            isDone = true;
-                        }
+                        MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        isDone = true;
                     }
-                //    else //cancel saving
-                //    {
-
-                //    }
-                //}
-
-                // Return true to indicate a successful operation
+                }
+                
                 return isDone;
             }
             catch (ApplicationException ex)

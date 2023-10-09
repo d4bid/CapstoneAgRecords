@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,26 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error generating RSBSA ID: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadRSBSADataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rsbsa;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading RSBSA records: " + ex.Message, ex);
             }
         }
 
