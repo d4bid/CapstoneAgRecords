@@ -14,16 +14,25 @@ namespace AgRecords.View
     public partial class RsbsaView : Form
     {
         private Panel parentPanel;
+        private RSBSAController rsbsaController;
+
 
         public RsbsaView(Control parentControl)
         {
             InitializeComponent();
-
+            rsbsaController = new RSBSAController(this);
             this.parentPanel = parentControl as Panel;
         }
 
         private void RsbsaView_Load(object sender, EventArgs e)
         {
+            FormRefresh();
+        }
+
+        public void FormRefresh()
+        {
+            DataTable rsbasaTable = rsbsaController.LoadRSBSAView();
+            dgvRsbsa.DataSource = rsbasaTable;
 
         }
 

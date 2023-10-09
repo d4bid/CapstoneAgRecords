@@ -13,7 +13,7 @@ namespace AgRecords.View
 {
     public partial class FarmLandControl : UserControl
     {
-        RsbsaAddView rsbsaAddView;
+        private string rsbsaIdFromAddForm = RsbsaAddView.Instance.rsbsaId.Text;
         public FarmLandControl()
         {
             InitializeComponent();
@@ -43,6 +43,7 @@ namespace AgRecords.View
         {
             FarmParcel parcel = new FarmParcel
             {
+                rsbsaId = rsbsaIdFromAddForm,
                 farmParcelNo = labelParcelNo.Text,
                 farmLocBrgy = txtFarmLocBarangay.Text,
                 farmLocMunicipality = txtFarmLocMunicipality.Text,
@@ -61,6 +62,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop riceCrop = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Rice",
                     landSize = Convert.ToDouble(txtLandSizeRice.Text),
@@ -76,6 +78,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop cornCrop = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Corn",
                     landSize = Convert.ToDouble(txtLandSizeCorn.Text),
@@ -91,6 +94,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop hvcCrop = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "HVC",
                     landSize = Convert.ToDouble(txtLandSizeHVC.Text),
@@ -106,6 +110,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop agriFisheryCrop = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "AgriFishery",
                     landSize = Convert.ToDouble(txtLandSizeAgriFishery.Text),
@@ -122,6 +127,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop livestock1 = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = txtLivestock1.Text,
                     landSize = 0,
@@ -137,6 +143,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop livestock2 = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = txtLivestock2.Text,
                     landSize = 0,
@@ -152,6 +159,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop livestock3 = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = txtLivestock3.Text,
                     landSize = 0,
@@ -167,6 +175,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop livestock4 = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = txtLivestock4.Text,
                     landSize = 0,
@@ -182,6 +191,7 @@ namespace AgRecords.View
             {
                 FarmParcelCrop livestock5 = new FarmParcelCrop
                 {
+                    rsbsaId = rsbsaIdFromAddForm,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = txtLivestock5.Text,
                     landSize = 0,

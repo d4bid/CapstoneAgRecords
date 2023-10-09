@@ -8,6 +8,7 @@ namespace AgRecords.Model
 {
     public class FarmParcel
     {
+        public string rsbsaId { get; set; }
         public string farmParcelNo { get; set; }
         public string farmLocBrgy { get; set; }
         public string farmLocMunicipality { get; set; }

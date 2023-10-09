@@ -8,6 +8,7 @@ namespace AgRecords.Model
 {
     public class FarmParcelCrop
     {
+        public string rsbsaId { get; set; }
         public string farmParcelNo { get; set; }
         public string commodityType { get; set; }
         public double landSize { get; set; }
