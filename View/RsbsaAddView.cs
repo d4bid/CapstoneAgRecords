@@ -348,7 +348,15 @@ namespace AgRecords.View
         private void RsbsaAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+            DateTime minDate = new DateTime(1900, 1, 1);
+            dtpBirthDate.MaxDate = DateTime.Today;
+            dtDateAdm.MaxDate = DateTime.Today;
+            dtpBirthDate.MinDate = minDate;
+            dtDateAdm.MinDate = minDate;
+
         }
+
+
 
         private void rectangleRound42_Load(object sender, EventArgs e)
         {
