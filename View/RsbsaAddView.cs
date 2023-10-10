@@ -63,6 +63,19 @@ namespace AgRecords.View
             return farmParcels;
         }
 
+        private List<RSBSADocuments> GetDocumentsFromControls()
+        {
+            List<RSBSADocuments> documentsList = new List<RSBSADocuments>();
+
+            foreach (RSBSADocumentControl documentControl in flowLayoutPanelDocs.Controls.OfType<RSBSADocumentControl>())
+            {
+                RSBSADocuments document = documentControl.GetDocumentData();
+                documentsList.Add(document);
+            }
+
+            return documentsList;
+        }
+
         // Buttons/Tab
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -279,7 +292,10 @@ namespace AgRecords.View
                 "Test", Convert.ToInt32(labelParcelCount.Text),
 
                 //farmland parcel
-                GetFarmParcelsFromControls()
+                GetFarmParcelsFromControls(),
+
+                //Docs
+                GetDocumentsFromControls()
 
                 ))
             {
@@ -576,5 +592,26 @@ namespace AgRecords.View
                 txtAssociation.Clear();
             }
         }
+
+        private void btnAddDocsControl_Click(object sender, EventArgs e)
+        {
+            RSBSADocumentControl documentControl = new RSBSADocumentControl();
+
+            // Subscribe to the RemoveButtonClick event
+            documentControl.RemoveButtonClick += RSBSADocumentControl_RemoveButtonClick;
+
+            // Add the documentControl to the flowLayoutPanelDocs
+            flowLayoutPanelDocs.Controls.Add(documentControl);
+        }
+
+        private void RSBSADocumentControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is RSBSADocumentControl documentControl)
+            {
+                // Remove the documentControl from the flowLayoutPanelDocs
+                flowLayoutPanelDocs.Controls.Remove(documentControl);
+            }
+        }
+
     }
 }

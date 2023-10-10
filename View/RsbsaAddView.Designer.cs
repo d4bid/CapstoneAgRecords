@@ -32,9 +32,8 @@
             panelFarmProfile = new Panel();
             panelFarmLand = new Panel();
             panelDocument = new Panel();
-            label48 = new Label();
-            btnBrowse = new Button();
-            comboBoxDocType = new ComboBox();
+            btnAddDocsControl = new FontAwesome.Sharp.IconButton();
+            flowLayoutPanelDocs = new FlowLayoutPanel();
             panel43 = new Panel();
             rectangleRound50 = new RectangleRound();
             label47 = new Label();
@@ -313,6 +312,7 @@
             panel1 = new Panel();
             pbFarmerPhoto = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            openFileDialog1 = new OpenFileDialog();
             panelPersonalInfo.SuspendLayout();
             panelFarmProfile.SuspendLayout();
             panelFarmLand.SuspendLayout();
@@ -404,7 +404,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 0);
+            panelFarmProfile.Size = new Size(1595, 767);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -420,51 +420,35 @@
             // 
             // panelDocument
             // 
-            panelDocument.Controls.Add(label48);
-            panelDocument.Controls.Add(btnBrowse);
-            panelDocument.Controls.Add(comboBoxDocType);
+            panelDocument.Controls.Add(btnAddDocsControl);
+            panelDocument.Controls.Add(flowLayoutPanelDocs);
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 0);
+            panelDocument.Size = new Size(1595, 767);
             panelDocument.TabIndex = 73;
             // 
-            // label48
+            // btnAddDocsControl
             // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label48.Location = new Point(36, 18);
-            label48.Name = "label48";
-            label48.Size = new Size(90, 15);
-            label48.TabIndex = 91;
-            label48.Text = "Document Type";
+            btnAddDocsControl.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnAddDocsControl.IconColor = Color.Black;
+            btnAddDocsControl.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAddDocsControl.IconSize = 30;
+            btnAddDocsControl.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddDocsControl.Location = new Point(39, 39);
+            btnAddDocsControl.Name = "btnAddDocsControl";
+            btnAddDocsControl.Size = new Size(179, 30);
+            btnAddDocsControl.TabIndex = 93;
+            btnAddDocsControl.Text = "Add Document";
+            btnAddDocsControl.UseVisualStyleBackColor = true;
+            btnAddDocsControl.Click += btnAddDocsControl_Click;
             // 
-            // btnBrowse
+            // flowLayoutPanelDocs
             // 
-            btnBrowse.BackColor = Color.FromArgb(43, 121, 223);
-            btnBrowse.FlatAppearance.BorderSize = 0;
-            btnBrowse.FlatStyle = FlatStyle.Flat;
-            btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(517, 36);
-            btnBrowse.Margin = new Padding(3, 4, 3, 4);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(150, 39);
-            btnBrowse.TabIndex = 31;
-            btnBrowse.Text = "Add Document";
-            btnBrowse.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxDocType
-            // 
-            comboBoxDocType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBoxDocType.BackColor = Color.FromArgb(239, 239, 239);
-            comboBoxDocType.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxDocType.FormattingEnabled = true;
-            comboBoxDocType.Items.AddRange(new object[] { "Certificate of Land Transfer", "Emancipation Patent", "Individual Certificate of Land", "Collective CLOA", "Co-ownership CLOA", "Agricultural sales patent", "Homestead patent", "Free Patent", "Certificate of Title or Regular Title", "Certificate of Ancestral Domain Title", "Certificate of Ancestral Land Title", "Tax Declaration", "Barangay Certification" });
-            comboBoxDocType.Location = new Point(39, 50);
-            comboBoxDocType.Margin = new Padding(3, 4, 3, 4);
-            comboBoxDocType.Name = "comboBoxDocType";
-            comboBoxDocType.Size = new Size(305, 25);
-            comboBoxDocType.TabIndex = 30;
+            flowLayoutPanelDocs.Location = new Point(39, 93);
+            flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
+            flowLayoutPanelDocs.Size = new Size(884, 406);
+            flowLayoutPanelDocs.TabIndex = 92;
             // 
             // panel43
             // 
@@ -3210,6 +3194,7 @@
             textBoxFarmParcels.Size = new Size(154, 36);
             textBoxFarmParcels.TabIndex = 5;
             textBoxFarmParcels.Text = "Debug";
+            textBoxFarmParcels.Visible = false;
             // 
             // panel4
             // 
@@ -3234,6 +3219,7 @@
             // 
             // panel28
             // 
+            panel28.Controls.Add(btnDisplayListCon);
             panel28.Controls.Add(textBoxFarmParcels);
             panel28.Controls.Add(panelColorDoc);
             panel28.Controls.Add(panelColorPi);
@@ -3347,7 +3333,6 @@
             // 
             // panel27
             // 
-            panel27.Controls.Add(btnDisplayListCon);
             panel27.Controls.Add(btnSave);
             panel27.Controls.Add(label26);
             panel27.Controls.Add(labelRsbsaId);
@@ -3364,12 +3349,13 @@
             // 
             // btnDisplayListCon
             // 
-            btnDisplayListCon.Location = new Point(874, 25);
+            btnDisplayListCon.Location = new Point(836, 7);
             btnDisplayListCon.Name = "btnDisplayListCon";
             btnDisplayListCon.Size = new Size(75, 42);
             btnDisplayListCon.TabIndex = 92;
             btnDisplayListCon.Text = "Debug";
             btnDisplayListCon.UseVisualStyleBackColor = true;
+            btnDisplayListCon.Visible = false;
             btnDisplayListCon.Click += btnDisplayListCon_Click;
             // 
             // btnSave
@@ -3469,6 +3455,10 @@
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // RsbsaAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -3486,7 +3476,6 @@
             panelFarmProfile.ResumeLayout(false);
             panelFarmLand.ResumeLayout(false);
             panelDocument.ResumeLayout(false);
-            panelDocument.PerformLayout();
             panel43.ResumeLayout(false);
             panel43.PerformLayout();
             panel44.ResumeLayout(false);
@@ -3829,9 +3818,6 @@
         private TextBox txtNonFarmingIncome;
         private TextBox txtFarmingIncome;
         private Panel panelDocument;
-        private ComboBox comboBoxDocType;
-        private Button btnBrowse;
-        private Label label48;
         private Button btnSave;
         private RectangleRound rectangleRound27;
         private RadioButton rbChristianity;
@@ -3873,5 +3859,8 @@
         private Button btnDisplayListCon;
         private FontAwesome.Sharp.IconButton btnAddFarmParcel;
         private Label labelParcelCount;
+        private FlowLayoutPanel flowLayoutPanelDocs;
+        private FontAwesome.Sharp.IconButton btnAddDocsControl;
+        private OpenFileDialog openFileDialog1;
     }
 }

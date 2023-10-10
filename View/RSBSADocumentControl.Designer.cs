@@ -30,10 +30,10 @@
         {
             btnRemove = new FontAwesome.Sharp.IconButton();
             cbDocType = new ComboBox();
-            pictureBox1 = new PictureBox();
-            button1 = new Button();
+            pbDocPhoto = new PictureBox();
+            btnBrowse = new Button();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbDocPhoto).BeginInit();
             SuspendLayout();
             // 
             // btnRemove
@@ -47,6 +47,7 @@
             btnRemove.Size = new Size(30, 30);
             btnRemove.TabIndex = 30;
             btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // cbDocType
             // 
@@ -57,22 +58,26 @@
             cbDocType.Size = new Size(85, 23);
             cbDocType.TabIndex = 31;
             // 
-            // pictureBox1
+            // pbDocPhoto
             // 
-            pictureBox1.Location = new Point(21, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(90, 90);
-            pictureBox1.TabIndex = 32;
-            pictureBox1.TabStop = false;
+            pbDocPhoto.BackgroundImageLayout = ImageLayout.Center;
+            pbDocPhoto.Location = new Point(21, 3);
+            pbDocPhoto.Name = "pbDocPhoto";
+            pbDocPhoto.Size = new Size(90, 90);
+            pbDocPhoto.TabIndex = 32;
+            pbDocPhoto.TabStop = false;
+            pbDocPhoto.Click += pbDocPhoto_Click;
+            pbDocPhoto.DoubleClick += pbDocPhoto_DoubleClick;
             // 
-            // button1
+            // btnBrowse
             // 
-            button1.Location = new Point(17, 95);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 23);
-            button1.TabIndex = 33;
-            button1.Text = "Browse";
-            button1.UseVisualStyleBackColor = true;
+            btnBrowse.Location = new Point(17, 95);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new Size(97, 23);
+            btnBrowse.TabIndex = 33;
+            btnBrowse.Text = "Browse";
+            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.Click += btnBrowse_Click;
             // 
             // label1
             // 
@@ -89,13 +94,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(pictureBox1);
+            Controls.Add(btnBrowse);
+            Controls.Add(pbDocPhoto);
             Controls.Add(cbDocType);
             Controls.Add(btnRemove);
             Name = "RSBSADocumentControl";
             Load += RSBSADocumentControl_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbDocPhoto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -103,9 +108,9 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton btnRemove;
-        private ComboBox cbDocType;
-        private PictureBox pictureBox1;
-        private Button button1;
+        private Button btnBrowse;
         private Label label1;
+        public ComboBox cbDocType;
+        public PictureBox pbDocPhoto;
     }
 }

@@ -68,11 +68,6 @@
             txtOwnerName = new TextBox();
             panel3 = new Panel();
             groupBox5 = new GroupBox();
-            cbLivestockFarmType5 = new ComboBox();
-            cbLivestockFarmType4 = new ComboBox();
-            cbLivestockFarmType3 = new ComboBox();
-            cbLivestockFarmType2 = new ComboBox();
-            cbLivestockFarmType1 = new ComboBox();
             cbAgriFisheryFarmType = new ComboBox();
             cbHVCFarmType = new ComboBox();
             cbCornFarmType = new ComboBox();
@@ -88,11 +83,6 @@
             txtRemarks = new TextBox();
             label13 = new Label();
             groupBox6 = new GroupBox();
-            cbLivestockIsOrganic5 = new ComboBox();
-            cbLivestockIsOrganic4 = new ComboBox();
-            cbLivestockIsOrganic3 = new ComboBox();
-            cbLivestockIsOrganic2 = new ComboBox();
-            cbLivestockIsOrganic1 = new ComboBox();
             cbIsOrganicAgriFishery = new ComboBox();
             cbIsOrganicHVC = new ComboBox();
             cbIsOrganicCorn = new ComboBox();
@@ -575,11 +565,6 @@
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(cbLivestockFarmType5);
-            groupBox5.Controls.Add(cbLivestockFarmType4);
-            groupBox5.Controls.Add(cbLivestockFarmType3);
-            groupBox5.Controls.Add(cbLivestockFarmType2);
-            groupBox5.Controls.Add(cbLivestockFarmType1);
             groupBox5.Controls.Add(cbAgriFisheryFarmType);
             groupBox5.Controls.Add(cbHVCFarmType);
             groupBox5.Controls.Add(cbCornFarmType);
@@ -590,51 +575,6 @@
             groupBox5.Size = new Size(88, 435);
             groupBox5.TabIndex = 86;
             groupBox5.TabStop = false;
-            // 
-            // cbLivestockFarmType5
-            // 
-            cbLivestockFarmType5.FormattingEnabled = true;
-            cbLivestockFarmType5.Items.AddRange(new object[] { "1", "2", "3" });
-            cbLivestockFarmType5.Location = new Point(6, 340);
-            cbLivestockFarmType5.Name = "cbLivestockFarmType5";
-            cbLivestockFarmType5.Size = new Size(76, 23);
-            cbLivestockFarmType5.TabIndex = 8;
-            // 
-            // cbLivestockFarmType4
-            // 
-            cbLivestockFarmType4.FormattingEnabled = true;
-            cbLivestockFarmType4.Items.AddRange(new object[] { "1", "2", "3" });
-            cbLivestockFarmType4.Location = new Point(6, 307);
-            cbLivestockFarmType4.Name = "cbLivestockFarmType4";
-            cbLivestockFarmType4.Size = new Size(76, 23);
-            cbLivestockFarmType4.TabIndex = 7;
-            // 
-            // cbLivestockFarmType3
-            // 
-            cbLivestockFarmType3.FormattingEnabled = true;
-            cbLivestockFarmType3.Items.AddRange(new object[] { "1", "2", "3" });
-            cbLivestockFarmType3.Location = new Point(6, 274);
-            cbLivestockFarmType3.Name = "cbLivestockFarmType3";
-            cbLivestockFarmType3.Size = new Size(76, 23);
-            cbLivestockFarmType3.TabIndex = 6;
-            // 
-            // cbLivestockFarmType2
-            // 
-            cbLivestockFarmType2.FormattingEnabled = true;
-            cbLivestockFarmType2.Items.AddRange(new object[] { "1", "2", "3" });
-            cbLivestockFarmType2.Location = new Point(6, 241);
-            cbLivestockFarmType2.Name = "cbLivestockFarmType2";
-            cbLivestockFarmType2.Size = new Size(76, 23);
-            cbLivestockFarmType2.TabIndex = 5;
-            // 
-            // cbLivestockFarmType1
-            // 
-            cbLivestockFarmType1.FormattingEnabled = true;
-            cbLivestockFarmType1.Items.AddRange(new object[] { "1", "2", "3" });
-            cbLivestockFarmType1.Location = new Point(6, 207);
-            cbLivestockFarmType1.Name = "cbLivestockFarmType1";
-            cbLivestockFarmType1.Size = new Size(76, 23);
-            cbLivestockFarmType1.TabIndex = 4;
             // 
             // cbAgriFisheryFarmType
             // 
@@ -773,11 +713,6 @@
             // 
             // groupBox6
             // 
-            groupBox6.Controls.Add(cbLivestockIsOrganic5);
-            groupBox6.Controls.Add(cbLivestockIsOrganic4);
-            groupBox6.Controls.Add(cbLivestockIsOrganic3);
-            groupBox6.Controls.Add(cbLivestockIsOrganic2);
-            groupBox6.Controls.Add(cbLivestockIsOrganic1);
             groupBox6.Controls.Add(cbIsOrganicAgriFishery);
             groupBox6.Controls.Add(cbIsOrganicHVC);
             groupBox6.Controls.Add(cbIsOrganicCorn);
@@ -788,51 +723,6 @@
             groupBox6.Size = new Size(88, 435);
             groupBox6.TabIndex = 81;
             groupBox6.TabStop = false;
-            // 
-            // cbLivestockIsOrganic5
-            // 
-            cbLivestockIsOrganic5.FormattingEnabled = true;
-            cbLivestockIsOrganic5.Items.AddRange(new object[] { "Yes", "No" });
-            cbLivestockIsOrganic5.Location = new Point(6, 340);
-            cbLivestockIsOrganic5.Name = "cbLivestockIsOrganic5";
-            cbLivestockIsOrganic5.Size = new Size(76, 23);
-            cbLivestockIsOrganic5.TabIndex = 13;
-            // 
-            // cbLivestockIsOrganic4
-            // 
-            cbLivestockIsOrganic4.FormattingEnabled = true;
-            cbLivestockIsOrganic4.Items.AddRange(new object[] { "Yes", "No" });
-            cbLivestockIsOrganic4.Location = new Point(6, 307);
-            cbLivestockIsOrganic4.Name = "cbLivestockIsOrganic4";
-            cbLivestockIsOrganic4.Size = new Size(76, 23);
-            cbLivestockIsOrganic4.TabIndex = 12;
-            // 
-            // cbLivestockIsOrganic3
-            // 
-            cbLivestockIsOrganic3.FormattingEnabled = true;
-            cbLivestockIsOrganic3.Items.AddRange(new object[] { "Yes", "No" });
-            cbLivestockIsOrganic3.Location = new Point(6, 274);
-            cbLivestockIsOrganic3.Name = "cbLivestockIsOrganic3";
-            cbLivestockIsOrganic3.Size = new Size(76, 23);
-            cbLivestockIsOrganic3.TabIndex = 11;
-            // 
-            // cbLivestockIsOrganic2
-            // 
-            cbLivestockIsOrganic2.FormattingEnabled = true;
-            cbLivestockIsOrganic2.Items.AddRange(new object[] { "Yes", "No" });
-            cbLivestockIsOrganic2.Location = new Point(6, 241);
-            cbLivestockIsOrganic2.Name = "cbLivestockIsOrganic2";
-            cbLivestockIsOrganic2.Size = new Size(76, 23);
-            cbLivestockIsOrganic2.TabIndex = 10;
-            // 
-            // cbLivestockIsOrganic1
-            // 
-            cbLivestockIsOrganic1.FormattingEnabled = true;
-            cbLivestockIsOrganic1.Items.AddRange(new object[] { "Yes", "No" });
-            cbLivestockIsOrganic1.Location = new Point(6, 207);
-            cbLivestockIsOrganic1.Name = "cbLivestockIsOrganic1";
-            cbLivestockIsOrganic1.Size = new Size(76, 23);
-            cbLivestockIsOrganic1.TabIndex = 9;
             // 
             // cbIsOrganicAgriFishery
             // 
@@ -1245,21 +1135,11 @@
         private RadioButton rbOwnershipTypeTenant;
         private RadioButton rbOwnershipTypeOwner;
         private Panel panelOwnershipType;
-        private ComboBox cbLivestockFarmType5;
-        private ComboBox cbLivestockFarmType4;
-        private ComboBox cbLivestockFarmType3;
-        private ComboBox cbLivestockFarmType2;
-        private ComboBox cbLivestockFarmType1;
         private TextBox txtLivestockHeadCount5;
         private TextBox txtLivestockHeadCount4;
         private TextBox txtLivestockHeadCount3;
         private TextBox txtLivestockHeadCount2;
         private TextBox txtLivestockHeadCount1;
-        private ComboBox cbLivestockIsOrganic5;
-        private ComboBox cbLivestockIsOrganic4;
-        private ComboBox cbLivestockIsOrganic3;
-        private ComboBox cbLivestockIsOrganic2;
-        private ComboBox cbLivestockIsOrganic1;
         private Panel panelAncestralDomain;
         private RadioButton rbAncestralDomainNo;
         private RadioButton rbAncestralDomainYes;

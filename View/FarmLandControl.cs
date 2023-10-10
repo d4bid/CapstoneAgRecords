@@ -144,8 +144,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock1.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount1.Text),
-                    farmType = cbLivestockFarmType1.Text,
-                    isOrganic = cbLivestockIsOrganic1.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock1);
@@ -160,8 +160,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock2.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount2.Text),
-                    farmType = cbLivestockFarmType2.Text,
-                    isOrganic = cbLivestockIsOrganic2.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock2);
@@ -176,8 +176,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock3.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount3.Text),
-                    farmType = cbLivestockFarmType3.Text,
-                    isOrganic = cbLivestockIsOrganic3.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock3);
@@ -192,8 +192,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock4.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount4.Text),
-                    farmType = cbLivestockFarmType4.Text,
-                    isOrganic = cbLivestockIsOrganic4.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock4);
@@ -208,8 +208,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock5.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount5.Text),
-                    farmType = cbLivestockFarmType5.Text,
-                    isOrganic = cbLivestockIsOrganic5.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock5);
