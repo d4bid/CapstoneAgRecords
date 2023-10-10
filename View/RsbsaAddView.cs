@@ -41,8 +41,6 @@ namespace AgRecords.View
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
 
-            nudFarmParcelNo.Value = 1;
-
             rsbsaController.GenerateNewRSBSAId();
 
         }
@@ -63,6 +61,19 @@ namespace AgRecords.View
             }
 
             return farmParcels;
+        }
+
+        private List<RSBSADocuments> GetDocumentsFromControls()
+        {
+            List<RSBSADocuments> documentsList = new List<RSBSADocuments>();
+
+            foreach (RSBSADocumentControl documentControl in flowLayoutPanelDocs.Controls.OfType<RSBSADocumentControl>())
+            {
+                RSBSADocuments document = documentControl.GetDocumentData();
+                documentsList.Add(document);
+            }
+
+            return documentsList;
         }
 
         // Buttons/Tab
@@ -278,10 +289,13 @@ namespace AgRecords.View
                 Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text),
 
                 //farmland
-                "Test", Convert.ToInt32(nudFarmParcelNo.Value),
+                "Test", Convert.ToInt32(labelParcelCount.Text),
 
                 //farmland parcel
-                GetFarmParcelsFromControls()
+                GetFarmParcelsFromControls(),
+
+                //Docs
+                GetDocumentsFromControls()
 
                 ))
             {
@@ -348,7 +362,20 @@ namespace AgRecords.View
         private void RsbsaAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+
+            radiobuttonsPreAnswer_PersonalInfo();
+            comboboxesPreAnswer_PersonalInfo();
+            disabletxtboxes_PersonalInfo();
+
+            DateTime minDate = new DateTime(1900, 1, 1);
+            dtpBirthDate.MaxDate = DateTime.Today;
+            dtDateAdm.MaxDate = DateTime.Today;
+            dtpBirthDate.MinDate = minDate;
+            dtDateAdm.MinDate = minDate;
+
         }
+
+
 
         private void rectangleRound42_Load(object sender, EventArgs e)
         {
@@ -365,24 +392,71 @@ namespace AgRecords.View
 
         }
 
-        private void nudFarmParcelNo_ValueChanged(object sender, EventArgs e)
+        //private void nudFarmParcelNo_ValueChanged(object sender, EventArgs e)
+        //{
+
+        //    flowLayoutPanelParcels.Controls.Clear();
+
+        //    for (int i = 0; i < numberOfControls; i++)
+        //    {
+        //        // Create an instance of your custom UserControl
+        //        FarmLandControl farmLandControl = new FarmLandControl();
+
+        //        // Set properties of the UserControl as needed
+        //        farmLandControl.labelParcelNo.Text = (i + 1).ToString();
+
+        //        // Add the UserControl to the parent control (e.g., Panel)
+        //        flowLayoutPanelParcels.Controls.Add(farmLandControl);
+        //    }
+        //}
+
+        private void btnAddFarmParcel_Click(object sender, EventArgs e)
         {
-            int numberOfControls = (int)nudFarmParcelNo.Value;
+            FarmLandControl farmLandControl = new FarmLandControl();
 
-            flowLayoutPanelParcels.Controls.Clear();
+            // Set the labelParcelNo.Text based on the current count
+            farmLandControl.labelParcelNo.Text = (flowLayoutPanelParcels.Controls.Count + 1).ToString();
 
-            for (int i = 0; i < numberOfControls; i++)
+            flowLayoutPanelParcels.Controls.Add(farmLandControl);
+
+            // Handle the remove button click event
+            farmLandControl.RemoveButtonClick += FarmLandControl_RemoveButtonClick;
+
+            // Update the parcel count label
+            UpdateParcelCountLabel();
+        }
+
+        private void FarmLandControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is FarmLandControl farmLandControl)
             {
-                // Create an instance of your custom UserControl
-                FarmLandControl farmLandControl = new FarmLandControl();
+                // Get the index of the control being removed
+                int removedIndex = flowLayoutPanelParcels.Controls.IndexOf(farmLandControl);
 
-                // Set properties of the UserControl as needed
-                farmLandControl.labelParcelNo.Text = (i + 1).ToString();
+                // Check if the control was found in the Controls collection
+                if (removedIndex >= 0 && removedIndex < flowLayoutPanelParcels.Controls.Count)
+                {
+                    // Remove the farmLandControl from the flowLayoutPanelParcels
+                    flowLayoutPanelParcels.Controls.Remove(farmLandControl);
 
-                // Add the UserControl to the parent control (e.g., Panel)
-                flowLayoutPanelParcels.Controls.Add(farmLandControl);
+                    // Update the parcel numbers for the remaining controls
+                    for (int i = removedIndex; i < flowLayoutPanelParcels.Controls.Count; i++)
+                    {
+                        FarmLandControl remainingControl = (FarmLandControl)flowLayoutPanelParcels.Controls[i];
+                        remainingControl.labelParcelNo.Text = (i + 1).ToString();
+                    }
+                }
+
+                // Update the parcel count label
+                UpdateParcelCountLabel();
             }
         }
+
+        private void UpdateParcelCountLabel()
+        {
+            labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
+        }
+
 
         private void txtAssociation_TextChanged(object sender, EventArgs e)
         {
@@ -404,9 +478,14 @@ namespace AgRecords.View
                 sb.AppendLine($"Farm Parcel No: {parcel.farmParcelNo}");
                 sb.AppendLine($"Farm Location Brgy: {parcel.farmLocBrgy}");
                 sb.AppendLine($"Farm Location Municipality: {parcel.farmLocMunicipality}");
-                sb.AppendLine($"AD: {parcel.isAncestralDomain}");
-
-                // Add more properties as needed
+                sb.AppendLine($"Is Ancestral Domain: {parcel.isAncestralDomain}");
+                sb.AppendLine($"Ownership No: {parcel.ownershipNo}");
+                sb.AppendLine($"Is Agrarian Beneficiary: {parcel.isAgrarianBeneficiary}");
+                sb.AppendLine($"Is Registered Owner: {parcel.isRegisteredOwner}");
+                sb.AppendLine($"Ownership Type: {parcel.ownershipType}");
+                sb.AppendLine($"Owner Name: {parcel.ownerName}");
+                sb.AppendLine($"Remarks: {parcel.remarks}");
+                sb.AppendLine();
 
                 foreach (FarmParcelCrop crop in parcel.Crops)
                 {
@@ -417,7 +496,7 @@ namespace AgRecords.View
                     sb.AppendLine($"Head Count: {crop.headCount}");
                     sb.AppendLine($"Farm Type: {crop.farmType}");
                     sb.AppendLine($"Is Organic: {crop.isOrganic}");
-                    // Add more crop properties as needed
+                    sb.AppendLine();
                 }
 
                 sb.AppendLine(); // Add a newline to separate farm parcels
@@ -425,6 +504,113 @@ namespace AgRecords.View
 
             // Assuming textBoxFarmParcels is the TextBox control where you want to display the data
             textBoxFarmParcels.Text = sb.ToString();
+        }
+
+        //EVENTS
+
+        //personal info
+        private void disabletxtboxes_PersonalInfo()
+        {
+            txtHouseHeadName.Enabled = false;
+            txtHouseHeadRs.Enabled = false;
+            txtIndigenous.Enabled = false;
+            txtAssociation.Enabled = false;
+        }
+        private void radiobuttonsPreAnswer_PersonalInfo()
+        {
+            rbGovIdYes.Checked = true;
+            rb4psYes.Checked = true;
+            rbHouseholdHeadYes.Checked = true;
+
+            rbPwdNo.Checked = true;
+            rbAssociationNo.Checked = true;
+            rbIndigenousNo.Checked = true;
+
+            rbChristianity.Checked = true;
+            rbCivilMarried.Checked = true;
+        }
+
+        private void comboboxesPreAnswer_PersonalInfo()
+        {
+            cbSex.SelectedIndex = 0;
+        }
+
+        private void rbHouseholdHeadNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHouseholdHeadNo.Checked)
+            {
+                txtHouseHeadName.Enabled = true;
+                txtHouseHeadRs.Enabled = true;
+            }
+            else
+            {
+                txtHouseHeadName.Enabled = false;
+                txtHouseHeadRs.Enabled = false;
+                txtHouseHeadName.Clear();
+                txtHouseHeadRs.Clear();
+            }
+        }
+
+        private void rbIndigenousYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbIndigenousYes.Checked)
+            {
+                txtIndigenous.Enabled = true;
+            }
+            else
+            {
+                txtIndigenous.Enabled = false;
+                txtIndigenous.Clear();
+            }
+
+        }
+
+        private void rbAssociationYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbAssociationYes.Checked)
+            {
+                txtAssociation.Enabled = true;
+            }
+            else
+            {
+                txtAssociation.Enabled = false;
+                txtAssociation.Clear();
+            }
+        }
+
+        private void rbGovIdYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbGovIdYes.Checked)
+            {
+                txtGovIdType.Enabled = true;
+                txtGovIdNum.Enabled = true;
+            }
+            else
+            {
+                txtGovIdType.Enabled = false;
+                txtGovIdNum.Enabled = false;
+                txtAssociation.Clear();
+            }
+        }
+
+        private void btnAddDocsControl_Click(object sender, EventArgs e)
+        {
+            RSBSADocumentControl documentControl = new RSBSADocumentControl();
+
+            // Subscribe to the RemoveButtonClick event
+            documentControl.RemoveButtonClick += RSBSADocumentControl_RemoveButtonClick;
+
+            // Add the documentControl to the flowLayoutPanelDocs
+            flowLayoutPanelDocs.Controls.Add(documentControl);
+        }
+
+        private void RSBSADocumentControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is RSBSADocumentControl documentControl)
+            {
+                // Remove the documentControl from the flowLayoutPanelDocs
+                flowLayoutPanelDocs.Controls.Remove(documentControl);
+            }
         }
 
     }

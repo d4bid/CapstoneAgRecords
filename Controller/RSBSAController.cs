@@ -152,7 +152,10 @@ namespace AgRecords.Controller
             int farmParcelCount,
 
             //Farmland Parcel
-            List<FarmParcel> farmParcels
+            List<FarmParcel> farmParcels,
+
+            //Docs
+            List<RSBSADocuments> rsbsaDocuments
 
             )
         {
@@ -244,6 +247,9 @@ namespace AgRecords.Controller
 
                     // Farmland Parcel
                     farmParcels = farmParcels,
+
+                    // RSBSA Docs
+                    rsbsaDocuments = rsbsaDocuments,
                 };
                 
                 DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -251,8 +257,14 @@ namespace AgRecords.Controller
                 {
                     if (rsbsaModel.AddNewRSBSARecord(rsbsa))
                     {
-                        MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        isDone = true;
+                        if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                        {
+                            if (rsbsaModel.AddNewRSBSADocument(rsbsaDocuments))
+                            {
+                                MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                isDone = true;
+                            }
+                        }
                     }
                 }
                 

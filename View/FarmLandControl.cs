@@ -14,9 +14,21 @@ namespace AgRecords.View
     public partial class FarmLandControl : UserControl
     {
         private string rsbsaIdFromAddForm = RsbsaAddView.Instance.rsbsaId.Text;
+
+        // Declare the event
+        public event EventHandler RemoveButtonClick;
         public FarmLandControl()
         {
             InitializeComponent();
+
+            // Wire up the remove button click event
+            btnRemove.Click += btnRemove_Click;
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            // Raise the custom event when the remove button is clicked
+            RemoveButtonClick?.Invoke(this, EventArgs.Empty);
         }
 
         private void FarmLandControl_Load(object sender, EventArgs e)
@@ -51,10 +63,10 @@ namespace AgRecords.View
                 isAncestralDomain = panelAncestralDomain.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
                 ownershipNo = txtOwnershipDocNo.Text,
                 isAgrarianBeneficiary = panelBeneficiary.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
-                isRegisteredOwner = panelOwnershipType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
+                isRegisteredOwner = panelOwnershipType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Registered Owner" ? "Yes" : "No",
                 ownershipType = panelOwnershipType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text,
-                ownerName = (panelOwnershipType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text != "owner") ? txtOwnerName.Text : null,
-                remarks = (panelOwnershipType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text != "owner") ? txtRemarks.Text : null,
+                ownerName = (panelOwnershipType.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Registered Owner") ? null : txtOwnerName.Text,
+                remarks = txtRemarks.Text,
                 Crops = new List<FarmParcelCrop>()
             };
 
@@ -132,8 +144,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock1.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount1.Text),
-                    farmType = cbLivestockFarmType1.Text,
-                    isOrganic = cbLivestockIsOrganic1.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock1);
@@ -148,8 +160,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock2.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount2.Text),
-                    farmType = cbLivestockFarmType2.Text,
-                    isOrganic = cbLivestockIsOrganic2.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock2);
@@ -164,8 +176,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock3.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount3.Text),
-                    farmType = cbLivestockFarmType3.Text,
-                    isOrganic = cbLivestockIsOrganic3.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock3);
@@ -180,8 +192,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock4.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount4.Text),
-                    farmType = cbLivestockFarmType4.Text,
-                    isOrganic = cbLivestockIsOrganic4.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock4);
@@ -196,8 +208,8 @@ namespace AgRecords.View
                     commodityType = txtLivestock5.Text,
                     landSize = 0,
                     headCount = Convert.ToInt32(txtLivestockHeadCount5.Text),
-                    farmType = cbLivestockFarmType5.Text,
-                    isOrganic = cbLivestockIsOrganic5.Text
+                    farmType = null,
+                    isOrganic = null
                 };
 
                 parcel.Crops.Add(livestock5);
@@ -205,6 +217,7 @@ namespace AgRecords.View
 
             return parcel;
         }
+
 
     }
 }
