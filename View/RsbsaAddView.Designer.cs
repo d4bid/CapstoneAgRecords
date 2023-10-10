@@ -427,7 +427,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 767);
+            panelDocument.Size = new Size(1595, 0);
             panelDocument.TabIndex = 73;
             // 
             // label48
@@ -1801,7 +1801,7 @@
             rectangleRound34.Location = new Point(360, 340);
             rectangleRound34.Margin = new Padding(2, 3, 2, 3);
             rectangleRound34.Name = "rectangleRound34";
-            rectangleRound34.Size = new Size(148, 38);
+            rectangleRound34.Size = new Size(158, 38);
             rectangleRound34.TabIndex = 26;
             // 
             // rectangleRound19
@@ -1852,7 +1852,7 @@
             rectangleRound15.Location = new Point(354, 42);
             rectangleRound15.Margin = new Padding(2, 3, 2, 3);
             rectangleRound15.Name = "rectangleRound15";
-            rectangleRound15.Size = new Size(154, 38);
+            rectangleRound15.Size = new Size(158, 38);
             rectangleRound15.TabIndex = 20;
             // 
             // label17
@@ -3204,7 +3204,6 @@
             textBoxFarmParcels.Size = new Size(154, 36);
             textBoxFarmParcels.TabIndex = 5;
             textBoxFarmParcels.Text = "Debug";
-            textBoxFarmParcels.Visible = false;
             // 
             // panel4
             // 
@@ -3365,7 +3364,6 @@
             btnDisplayListCon.TabIndex = 92;
             btnDisplayListCon.Text = "Debug";
             btnDisplayListCon.UseVisualStyleBackColor = true;
-            btnDisplayListCon.Visible = false;
             btnDisplayListCon.Click += btnDisplayListCon_Click;
             // 
             // btnSave

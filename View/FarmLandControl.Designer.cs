@@ -87,9 +87,6 @@
             txtLivestockHeadCount2 = new TextBox();
             txtHeadNo1 = new TextBox();
             txtLivestockHeadCount1 = new TextBox();
-            label14 = new Label();
-            groupBox7 = new GroupBox();
-            txtRemarks = new TextBox();
             label13 = new Label();
             groupBox6 = new GroupBox();
             cbLivestockIsOrganic5 = new ComboBox();
@@ -129,6 +126,9 @@
             chCropIsRice = new CheckBox();
             panel4 = new Panel();
             label7 = new Label();
+            groupBox7 = new GroupBox();
+            label14 = new Label();
+            txtRemarks = new TextBox();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
             panel1.SuspendLayout();
@@ -139,12 +139,12 @@
             panel3.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox4.SuspendLayout();
-            groupBox7.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             panel4.SuspendLayout();
+            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // panel43
@@ -779,36 +779,6 @@
             txtLivestockHeadCount1.Size = new Size(83, 23);
             txtLivestockHeadCount1.TabIndex = 98;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(619, 41);
-            label14.Name = "label14";
-            label14.Size = new Size(52, 15);
-            label14.TabIndex = 84;
-            label14.Text = "Remarks";
-            // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(txtRemarks);
-            groupBox7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox7.Location = new Point(619, 58);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(95, 437);
-            groupBox7.TabIndex = 83;
-            groupBox7.TabStop = false;
-            // 
-            // txtRemarks
-            // 
-            txtRemarks.BorderStyle = BorderStyle.FixedSingle;
-            txtRemarks.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRemarks.Location = new Point(6, 18);
-            txtRemarks.Multiline = true;
-            txtRemarks.Name = "txtRemarks";
-            txtRemarks.Size = new Size(83, 345);
-            txtRemarks.TabIndex = 90;
-            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -1204,6 +1174,36 @@
             label7.TabIndex = 28;
             label7.Text = "Farm";
             // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(txtRemarks);
+            groupBox7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox7.Location = new Point(619, 58);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(95, 437);
+            groupBox7.TabIndex = 83;
+            groupBox7.TabStop = false;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(619, 41);
+            label14.Name = "label14";
+            label14.Size = new Size(52, 15);
+            label14.TabIndex = 84;
+            label14.Text = "Remarks";
+            // 
+            // txtRemarks
+            // 
+            txtRemarks.BorderStyle = BorderStyle.FixedSingle;
+            txtRemarks.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRemarks.Location = new Point(6, 18);
+            txtRemarks.Multiline = true;
+            txtRemarks.Name = "txtRemarks";
+            txtRemarks.Size = new Size(83, 345);
+            txtRemarks.TabIndex = 90;
+            // 
             // FarmLandControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -1237,8 +1237,6 @@
             groupBox5.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -1248,6 +1246,8 @@
             groupBox1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1294,8 +1294,6 @@
         private CheckBox chCropIsRice;
         private Label label12;
         private Label label13;
-        private Label label14;
-        private GroupBox groupBox7;
         private TextBox txtLivestockSize2;
         private TextBox txtLivestockSize1;
         private TextBox txtLandSizeAgriFishery;
@@ -1355,9 +1353,11 @@
         private ComboBox cbLivestockIsOrganic3;
         private ComboBox cbLivestockIsOrganic2;
         private ComboBox cbLivestockIsOrganic1;
-        private TextBox txtRemarks;
         private Panel panelAncestralDomain;
         private RadioButton rbAncestralDomainNo;
         private RadioButton rbAncestralDomainYes;
+        private Label label14;
+        private GroupBox groupBox7;
+        private TextBox txtRemarks;
     }
 }

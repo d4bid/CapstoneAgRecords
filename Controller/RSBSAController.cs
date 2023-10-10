@@ -251,8 +251,11 @@ namespace AgRecords.Controller
                 {
                     if (rsbsaModel.AddNewRSBSARecord(rsbsa))
                     {
-                        MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        isDone = true;
+                        if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                        {
+                            MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            isDone = true;
+                        }
                     }
                 }
                 

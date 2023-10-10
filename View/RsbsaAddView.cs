@@ -412,9 +412,14 @@ namespace AgRecords.View
                 sb.AppendLine($"Farm Parcel No: {parcel.farmParcelNo}");
                 sb.AppendLine($"Farm Location Brgy: {parcel.farmLocBrgy}");
                 sb.AppendLine($"Farm Location Municipality: {parcel.farmLocMunicipality}");
-                sb.AppendLine($"AD: {parcel.isAncestralDomain}");
-
-                // Add more properties as needed
+                sb.AppendLine($"Is Ancestral Domain: {parcel.isAncestralDomain}");
+                sb.AppendLine($"Ownership No: {parcel.ownershipNo}");
+                sb.AppendLine($"Is Agrarian Beneficiary: {parcel.isAgrarianBeneficiary}");
+                sb.AppendLine($"Is Registered Owner: {parcel.isRegisteredOwner}");
+                sb.AppendLine($"Ownership Type: {parcel.ownershipType}");
+                sb.AppendLine($"Owner Name: {parcel.ownerName}");
+                sb.AppendLine($"Remarks: {parcel.remarks}");
+                sb.AppendLine();
 
                 foreach (FarmParcelCrop crop in parcel.Crops)
                 {
@@ -425,7 +430,7 @@ namespace AgRecords.View
                     sb.AppendLine($"Head Count: {crop.headCount}");
                     sb.AppendLine($"Farm Type: {crop.farmType}");
                     sb.AppendLine($"Is Organic: {crop.isOrganic}");
-                    // Add more crop properties as needed
+                    sb.AppendLine();
                 }
 
                 sb.AppendLine(); // Add a newline to separate farm parcels
@@ -434,6 +439,7 @@ namespace AgRecords.View
             // Assuming textBoxFarmParcels is the TextBox control where you want to display the data
             textBoxFarmParcels.Text = sb.ToString();
         }
+
 
     }
 }
