@@ -134,8 +134,8 @@ namespace AgRecords.View
             cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
             cropsRiceAddView.Dock = DockStyle.Fill;
 
-            parentPanel.Controls.Clear();
-            parentPanel.Controls.Add(cropsRiceAddView);
+            //parentPanel.Controls.Clear();
+            //parentPanel.Controls.Add(cropsRiceAddView);
             cropsRiceAddView.Show();
         }
 

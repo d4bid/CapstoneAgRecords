@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            btnCancel = new Button();
+            btnSave = new Button();
             label11 = new Label();
             label12 = new Label();
             searchBox7 = new SearchBox();
@@ -51,7 +53,13 @@
             searchBox3 = new SearchBox();
             panel3 = new Panel();
             panel2 = new Panel();
+            panel4 = new Panel();
+            cbUpland = new CheckBox();
+            cbLowland = new CheckBox();
+            cbIrrigated = new CheckBox();
             panel43 = new Panel();
+            button1 = new Button();
+            btnNew = new Button();
             txtSize = new TextBox();
             searchBox11 = new SearchBox();
             label16 = new Label();
@@ -66,21 +74,13 @@
             cmbFarmType = new ComboBox();
             searchBox2 = new SearchBox();
             label1 = new Label();
-            dgvRicePlanting = new DataGridView();
-            btnNew = new Button();
-            panel4 = new Panel();
-            cbIrrigated = new CheckBox();
-            cbLowland = new CheckBox();
-            cbUpland = new CheckBox();
-            btnCancel = new Button();
-            btnSave = new Button();
-            button1 = new Button();
+            dgvRicePlantLogs = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRicePlanting).BeginInit();
-            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRicePlantLogs).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -112,6 +112,36 @@
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 23;
+            // 
+            // btnCancel
+            // 
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
+            btnCancel.FlatAppearance.BorderSize = 2;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
+            btnCancel.Location = new Point(1428, 29);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(130, 40);
+            btnCancel.TabIndex = 51;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(43, 121, 223);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(1288, 29);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(130, 40);
+            btnSave.TabIndex = 50;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -282,12 +312,52 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel43);
-            panel2.Controls.Add(dgvRicePlanting);
+            panel2.Controls.Add(dgvRicePlantLogs);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 95);
             panel2.Name = "panel2";
             panel2.Size = new Size(1595, 831);
             panel2.TabIndex = 26;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(cbUpland);
+            panel4.Controls.Add(cbLowland);
+            panel4.Controls.Add(cbIrrigated);
+            panel4.Location = new Point(17, 246);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(590, 46);
+            panel4.TabIndex = 75;
+            // 
+            // cbUpland
+            // 
+            cbUpland.AutoSize = true;
+            cbUpland.Location = new Point(410, 11);
+            cbUpland.Name = "cbUpland";
+            cbUpland.Size = new Size(134, 24);
+            cbUpland.TabIndex = 2;
+            cbUpland.Text = "Rainfed Upland";
+            cbUpland.UseVisualStyleBackColor = true;
+            // 
+            // cbLowland
+            // 
+            cbLowland.AutoSize = true;
+            cbLowland.Location = new Point(191, 11);
+            cbLowland.Name = "cbLowland";
+            cbLowland.Size = new Size(142, 24);
+            cbLowland.TabIndex = 1;
+            cbLowland.Text = "Rainfed Lowland";
+            cbLowland.UseVisualStyleBackColor = true;
+            // 
+            // cbIrrigated
+            // 
+            cbIrrigated.AutoSize = true;
+            cbIrrigated.Location = new Point(37, 11);
+            cbIrrigated.Name = "cbIrrigated";
+            cbIrrigated.Size = new Size(88, 24);
+            cbIrrigated.TabIndex = 0;
+            cbIrrigated.Text = "Irrigated";
+            cbIrrigated.UseVisualStyleBackColor = true;
             // 
             // panel43
             // 
@@ -313,6 +383,37 @@
             panel43.Size = new Size(1566, 171);
             panel43.TabIndex = 74;
             // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(43, 121, 223);
+            button1.Location = new Point(1410, 79);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(130, 39);
+            button1.TabIndex = 52;
+            button1.Text = "Clear";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // btnNew
+            // 
+            btnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNew.BackColor = Color.FromArgb(255, 221, 100);
+            btnNew.FlatAppearance.BorderSize = 0;
+            btnNew.FlatStyle = FlatStyle.Flat;
+            btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNew.ForeColor = Color.FromArgb(3, 0, 67);
+            btnNew.Location = new Point(1261, 79);
+            btnNew.Margin = new Padding(3, 4, 3, 4);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(130, 39);
+            btnNew.TabIndex = 40;
+            btnNew.Text = "New";
+            btnNew.UseVisualStyleBackColor = false;
+            // 
             // txtSize
             // 
             txtSize.BorderStyle = BorderStyle.None;
@@ -321,6 +422,7 @@
             txtSize.Name = "txtSize";
             txtSize.Size = new Size(230, 24);
             txtSize.TabIndex = 39;
+            txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11
             // 
@@ -443,142 +545,41 @@
             label1.TabIndex = 26;
             label1.Text = "Farm Type";
             // 
-            // dgvRicePlanting
+            // dgvRicePlantLogs
             // 
-            dgvRicePlanting.AllowUserToAddRows = false;
-            dgvRicePlanting.AllowUserToDeleteRows = false;
-            dgvRicePlanting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRicePlanting.BackgroundColor = Color.White;
-            dgvRicePlanting.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dgvRicePlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            dgvRicePlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.White;
-            dataGridViewCellStyle14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
-            dgvRicePlanting.DefaultCellStyle = dataGridViewCellStyle14;
-            dgvRicePlanting.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRicePlanting.Location = new Point(17, 309);
-            dgvRicePlanting.Name = "dgvRicePlanting";
-            dgvRicePlanting.ReadOnly = true;
-            dgvRicePlanting.RowHeadersVisible = false;
-            dgvRicePlanting.RowHeadersWidth = 51;
-            dgvRicePlanting.RowTemplate.Height = 40;
-            dgvRicePlanting.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRicePlanting.Size = new Size(1565, 515);
-            dgvRicePlanting.TabIndex = 23;
-            // 
-            // btnNew
-            // 
-            btnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnNew.BackColor = Color.FromArgb(43, 121, 223);
-            btnNew.FlatAppearance.BorderSize = 0;
-            btnNew.FlatStyle = FlatStyle.Flat;
-            btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(1261, 79);
-            btnNew.Margin = new Padding(3, 4, 3, 4);
-            btnNew.Name = "btnNew";
-            btnNew.Size = new Size(130, 39);
-            btnNew.TabIndex = 40;
-            btnNew.Text = "New";
-            btnNew.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(cbUpland);
-            panel4.Controls.Add(cbLowland);
-            panel4.Controls.Add(cbIrrigated);
-            panel4.Location = new Point(17, 246);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(590, 46);
-            panel4.TabIndex = 75;
-            // 
-            // cbIrrigated
-            // 
-            cbIrrigated.AutoSize = true;
-            cbIrrigated.Location = new Point(37, 11);
-            cbIrrigated.Name = "cbIrrigated";
-            cbIrrigated.Size = new Size(88, 24);
-            cbIrrigated.TabIndex = 0;
-            cbIrrigated.Text = "Irrigated";
-            cbIrrigated.UseVisualStyleBackColor = true;
-            // 
-            // cbLowland
-            // 
-            cbLowland.AutoSize = true;
-            cbLowland.Location = new Point(191, 11);
-            cbLowland.Name = "cbLowland";
-            cbLowland.Size = new Size(142, 24);
-            cbLowland.TabIndex = 1;
-            cbLowland.Text = "Rainfed Lowland";
-            cbLowland.UseVisualStyleBackColor = true;
-            // 
-            // cbUpland
-            // 
-            cbUpland.AutoSize = true;
-            cbUpland.Location = new Point(410, 11);
-            cbUpland.Name = "cbUpland";
-            cbUpland.Size = new Size(134, 24);
-            cbUpland.TabIndex = 2;
-            cbUpland.Text = "Rainfed Upland";
-            cbUpland.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1428, 29);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 51;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            btnSave.BackColor = Color.FromArgb(43, 121, 223);
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1288, 29);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(130, 40);
-            btnSave.TabIndex = 50;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(43, 121, 223);
-            button1.Location = new Point(1410, 79);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(130, 39);
-            button1.TabIndex = 52;
-            button1.Text = "Clear";
-            button1.UseVisualStyleBackColor = true;
+            dgvRicePlantLogs.AllowUserToAddRows = false;
+            dgvRicePlantLogs.AllowUserToDeleteRows = false;
+            dgvRicePlantLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRicePlantLogs.BackgroundColor = Color.White;
+            dgvRicePlantLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRicePlantLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvRicePlantLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRicePlantLogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvRicePlantLogs.GridColor = Color.FromArgb(239, 239, 239);
+            dgvRicePlantLogs.Location = new Point(17, 309);
+            dgvRicePlantLogs.Name = "dgvRicePlantLogs";
+            dgvRicePlantLogs.ReadOnly = true;
+            dgvRicePlantLogs.RowHeadersVisible = false;
+            dgvRicePlantLogs.RowHeadersWidth = 51;
+            dgvRicePlantLogs.RowTemplate.Height = 40;
+            dgvRicePlantLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRicePlantLogs.Size = new Size(1565, 515);
+            dgvRicePlantLogs.TabIndex = 23;
             // 
             // CropsRiceAddView
             // 
@@ -590,16 +591,17 @@
             Controls.Add(panel1);
             Name = "CropsRiceAddView";
             Text = "CropsRiceAddView";
+            Load += CropsRiceAddView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel43.ResumeLayout(false);
             panel43.PerformLayout();
             panel44.ResumeLayout(false);
             panel44.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRicePlanting).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRicePlantLogs).EndInit();
             ResumeLayout(false);
         }
 
@@ -609,7 +611,7 @@
         private Label label2;
         private Panel panel3;
         private Panel panel2;
-        private DataGridView dgvRicePlanting;
+        private DataGridView dgvRicePlantLogs;
         private Label label3;
         private Label labelReport;
         private Label label5;

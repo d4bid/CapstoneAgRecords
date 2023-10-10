@@ -295,7 +295,7 @@
             Controls.Add(label1);
             MaximizeBox = false;
             Name = "RiceAddView";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RiceAddView";
             Load += RiceAddView_Load;
             groupBox1.ResumeLayout(false);

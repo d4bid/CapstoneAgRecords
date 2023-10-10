@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,26 @@ namespace AgRecords.Model
         public RiceModel()
         {
             db = new DatabaseConnection();
+        }
+
+        public DataTable LoadRicePlantLogsDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_plant;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice planting records: " + ex.Message, ex);
+            }
         }
 
 

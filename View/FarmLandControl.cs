@@ -218,6 +218,22 @@ namespace AgRecords.View
             return parcel;
         }
 
+        private void txtLivestockHeadCount1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void txtLivestockHeadCount2_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtLivestockHeadCount3_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbIsOrganicCorn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

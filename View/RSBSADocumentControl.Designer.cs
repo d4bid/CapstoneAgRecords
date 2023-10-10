@@ -38,13 +38,16 @@
             // 
             // btnRemove
             // 
+            btnRemove.FlatAppearance.BorderSize = 0;
+            btnRemove.FlatStyle = FlatStyle.Flat;
             btnRemove.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            btnRemove.IconColor = Color.Black;
+            btnRemove.IconColor = Color.FromArgb(0, 35, 76);
             btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRemove.IconSize = 30;
-            btnRemove.Location = new Point(117, 3);
+            btnRemove.Location = new Point(276, 3);
+            btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(30, 30);
+            btnRemove.Size = new Size(23, 34);
             btnRemove.TabIndex = 30;
             btnRemove.UseVisualStyleBackColor = true;
             btnRemove.Click += btnRemove_Click;
@@ -52,18 +55,20 @@
             // cbDocType
             // 
             cbDocType.FormattingEnabled = true;
-            cbDocType.Items.AddRange(new object[] { "Type 1", "Type 2", "Type 3", "Type 4" });
-            cbDocType.Location = new Point(49, 124);
+            cbDocType.Items.AddRange(new object[] { "Certificate of Land Transfer", "Emancipation Patent", "Individual Certificate of Land", "Collective CLOA", "Co-Ownership CLOA", "Agricultural sales patent", "Homestead patent", "Free Patent", "Certificate of Title or Regular Title", "Ceritificate of Ancestral Domain Title", "Certificate of Ancestral Land Title", "Tax Declaration", "Barangay Certification" });
+            cbDocType.Location = new Point(28, 276);
+            cbDocType.Margin = new Padding(3, 4, 3, 4);
             cbDocType.Name = "cbDocType";
-            cbDocType.Size = new Size(85, 23);
+            cbDocType.Size = new Size(243, 28);
             cbDocType.TabIndex = 31;
             // 
             // pbDocPhoto
             // 
             pbDocPhoto.BackgroundImageLayout = ImageLayout.Center;
-            pbDocPhoto.Location = new Point(21, 3);
+            pbDocPhoto.Location = new Point(28, 32);
+            pbDocPhoto.Margin = new Padding(3, 4, 3, 4);
             pbDocPhoto.Name = "pbDocPhoto";
-            pbDocPhoto.Size = new Size(90, 90);
+            pbDocPhoto.Size = new Size(243, 166);
             pbDocPhoto.TabIndex = 32;
             pbDocPhoto.TabStop = false;
             pbDocPhoto.Click += pbDocPhoto_Click;
@@ -71,34 +76,42 @@
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(17, 95);
+            btnBrowse.BackColor = Color.FromArgb(255, 221, 100);
+            btnBrowse.FlatAppearance.BorderSize = 0;
+            btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBrowse.Location = new Point(28, 206);
+            btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(97, 23);
+            btnBrowse.Size = new Size(243, 31);
             btnBrowse.TabIndex = 33;
             btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 128);
+            label1.Location = new Point(28, 252);
             label1.Name = "label1";
-            label1.Size = new Size(31, 15);
+            label1.Size = new Size(40, 20);
             label1.TabIndex = 34;
             label1.Text = "Type";
             // 
             // RSBSADocumentControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.White;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(label1);
             Controls.Add(btnBrowse);
             Controls.Add(pbDocPhoto);
             Controls.Add(cbDocType);
             Controls.Add(btnRemove);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RSBSADocumentControl";
+            Size = new Size(304, 321);
             Load += RSBSADocumentControl_Load;
             ((System.ComponentModel.ISupportInitialize)pbDocPhoto).EndInit();
             ResumeLayout(false);
