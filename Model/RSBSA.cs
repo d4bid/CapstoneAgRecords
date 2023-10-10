@@ -90,6 +90,10 @@ namespace AgRecords.Model
         //farmland parcel table
         public List<FarmParcel> farmParcels { get; set; }
 
+        //RSBSA Docs
+        public List<RSBSADocuments> rsbsaDocuments { get; set; }
+
+
 
     }
 }

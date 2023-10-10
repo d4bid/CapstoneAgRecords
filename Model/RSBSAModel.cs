@@ -64,6 +64,18 @@ namespace AgRecords.Model
             }
         }
 
+        public byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                // Save the image to the memory stream in the desired format (e.g., JPEG)
+                image.Save(memoryStream, ImageFormat.Jpeg);
+
+                // Convert the memory stream to a byte array and return it
+                return memoryStream.ToArray();
+            }
+        }
+
         public bool AddNewFarmParcel(List<FarmParcel> farmParcels)
         {
             try
@@ -117,6 +129,44 @@ namespace AgRecords.Model
             {
                 // Handle exceptions and return false if there is an error
                 throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
+            }
+        }
+
+        public bool AddNewRSBSADocument(List<RSBSADocuments> rsbsaDocuments)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    foreach (RSBSADocuments rsbsaDocument in rsbsaDocuments)
+                    {
+                        foreach (var kvp in rsbsaDocument.docPhotoDictionary)
+                        {
+                            MySqlCommand documentCommand = new MySqlCommand("sp_addNewRSBSADocument", db.GetConnection());
+                            documentCommand.CommandType = CommandType.StoredProcedure;
+
+                            documentCommand.Parameters.AddWithValue("_rsbsaId", rsbsaDocument.rsbsaId);
+                            documentCommand.Parameters.AddWithValue("_docType", rsbsaDocument.docType);
+                            documentCommand.Parameters.AddWithValue("_docFilename", kvp.Key); // Filename from the dictionary
+
+                            byte[] docPhotoBytes = ConvertImageToByteArray(kvp.Value);
+
+                            // Add the image data to the database command parameters
+                            documentCommand.Parameters.AddWithValue("_docPhoto", docPhotoBytes);
+
+                            documentCommand.ExecuteNonQuery();
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions and return false if there is an error
+                throw new ApplicationException("Error adding new RSBSA Document: " + ex.Message, ex);
             }
         }
 
