@@ -348,6 +348,11 @@ namespace AgRecords.View
         private void RsbsaAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+
+            radiobuttonsPreAnswer_PersonalInfo();
+            comboboxesPreAnswer_PersonalInfo();
+            disabletxtboxes_PersonalInfo();
+
             DateTime minDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Today;
             dtDateAdm.MaxDate = DateTime.Today;
@@ -440,6 +445,91 @@ namespace AgRecords.View
             textBoxFarmParcels.Text = sb.ToString();
         }
 
+        //EVENTS
 
+        //personal info
+        private void disabletxtboxes_PersonalInfo()
+        {
+            txtHouseHeadName.Enabled = false;
+            txtHouseHeadRs.Enabled = false;
+            txtIndigenous.Enabled = false;
+            txtAssociation.Enabled = false;
+        }
+        private void radiobuttonsPreAnswer_PersonalInfo()
+        {
+            rbGovIdYes.Checked = true;
+            rb4psYes.Checked = true;
+            rbHouseholdHeadYes.Checked = true;
+
+            rbPwdNo.Checked = true;
+            rbAssociationNo.Checked = true;
+            rbIndigenousNo.Checked = true;
+
+            rbChristianity.Checked = true;
+            rbCivilMarried.Checked = true;
+        }
+
+        private void comboboxesPreAnswer_PersonalInfo()
+        {
+            cbSex.SelectedIndex = 0;
+        }
+
+        private void rbHouseholdHeadNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHouseholdHeadNo.Checked)
+            {
+                txtHouseHeadName.Enabled = true;
+                txtHouseHeadRs.Enabled = true;
+            }
+            else
+            {
+                txtHouseHeadName.Enabled = false;
+                txtHouseHeadRs.Enabled = false;
+                txtHouseHeadName.Clear();
+                txtHouseHeadRs.Clear();
+            }
+        }
+
+        private void rbIndigenousYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbIndigenousYes.Checked)
+            {
+                txtIndigenous.Enabled = true;
+            }
+            else
+            {
+                txtIndigenous.Enabled = false;
+                txtIndigenous.Clear();
+            }
+
+        }
+
+        private void rbAssociationYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbAssociationYes.Checked)
+            {
+                txtAssociation.Enabled = true;
+            }
+            else
+            {
+                txtAssociation.Enabled = false;
+                txtAssociation.Clear();
+            }
+        }
+
+        private void rbGovIdYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbGovIdYes.Checked)
+            {
+                txtGovIdType.Enabled = true;
+                txtGovIdNum.Enabled = true;
+            }
+            else
+            {
+                txtGovIdType.Enabled = false;
+                txtGovIdNum.Enabled = false;
+                txtAssociation.Clear();
+            }
+        }
     }
 }
