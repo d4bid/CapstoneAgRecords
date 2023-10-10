@@ -43,16 +43,19 @@ namespace AgRecords.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
-            cropsRiceAddView.FormClosed += CropsRiceAddView_FormClosed;
+            //CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
+            //cropsRiceAddView.FormClosed += CropsRiceAddView_FormClosed;
 
-            cropsRiceAddView.TopLevel = false;
-            cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
-            cropsRiceAddView.Dock = DockStyle.Fill;
+            //cropsRiceAddView.TopLevel = false;
+            //cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
+            //cropsRiceAddView.Dock = DockStyle.Fill;
 
-            parentPanel.Controls.Clear();
-            parentPanel.Controls.Add(cropsRiceAddView);
-            cropsRiceAddView.Show();
+            //parentPanel.Controls.Clear();
+            //parentPanel.Controls.Add(cropsRiceAddView);
+            //cropsRiceAddView.Show();
+
+            RiceAddView riceAddView = new RiceAddView();
+            riceAddView.Show();
         }
     }
 }
