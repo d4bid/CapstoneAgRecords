@@ -405,7 +405,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 767);
+            panelFarmProfile.Size = new Size(1595, 0);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -1516,6 +1516,7 @@
             rbAssociationYes.TabStop = true;
             rbAssociationYes.Text = "Yes";
             rbAssociationYes.UseVisualStyleBackColor = true;
+            rbAssociationYes.CheckedChanged += rbAssociationYes_CheckedChanged;
             // 
             // panelGovId
             // 
@@ -1549,6 +1550,7 @@
             rbGovIdYes.TabStop = true;
             rbGovIdYes.Text = "Yes";
             rbGovIdYes.UseVisualStyleBackColor = true;
+            rbGovIdYes.CheckedChanged += rbGovIdYes_CheckedChanged;
             // 
             // panelIPGroup
             // 
@@ -1582,6 +1584,7 @@
             rbIndigenousYes.TabStop = true;
             rbIndigenousYes.Text = "Yes";
             rbIndigenousYes.UseVisualStyleBackColor = true;
+            rbIndigenousYes.CheckedChanged += rbIndigenousYes_CheckedChanged;
             // 
             // panel4Ps
             // 
@@ -1974,6 +1977,7 @@
             rbHouseholdHeadNo.TabStop = true;
             rbHouseholdHeadNo.Text = "No";
             rbHouseholdHeadNo.UseVisualStyleBackColor = true;
+            rbHouseholdHeadNo.CheckedChanged += rbHouseholdHeadNo_CheckedChanged;
             // 
             // rbHouseholdHeadYes
             // 
