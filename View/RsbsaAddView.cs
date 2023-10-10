@@ -349,7 +349,7 @@ namespace AgRecords.View
         {
             FormRefresh();
 
-            radiobuttonsPreAnswer_PersonalInfo();
+            //radiobuttonsPreAnswer_PersonalInfo();
             comboboxesPreAnswer_PersonalInfo();
             disabletxtboxes_PersonalInfo();
 
