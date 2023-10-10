@@ -14,9 +14,21 @@ namespace AgRecords.View
     public partial class FarmLandControl : UserControl
     {
         private string rsbsaIdFromAddForm = RsbsaAddView.Instance.rsbsaId.Text;
+
+        // Declare the event
+        public event EventHandler RemoveButtonClick;
         public FarmLandControl()
         {
             InitializeComponent();
+
+            // Wire up the remove button click event
+            btnRemove.Click += btnRemove_Click;
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            // Raise the custom event when the remove button is clicked
+            RemoveButtonClick?.Invoke(this, EventArgs.Empty);
         }
 
         private void FarmLandControl_Load(object sender, EventArgs e)
@@ -205,6 +217,7 @@ namespace AgRecords.View
 
             return parcel;
         }
+
 
     }
 }
