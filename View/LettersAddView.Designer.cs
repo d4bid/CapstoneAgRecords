@@ -60,7 +60,7 @@
             txtBoxTo = new TextBox();
             rectangleRound4 = new RectangleRound();
             label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpDateReceived = new DateTimePicker();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -114,7 +114,7 @@
             btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(135, 44);
-            btnBrowse.TabIndex = 6;
+            btnBrowse.TabIndex = 8;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
@@ -172,7 +172,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(labelLetterId);
-            groupBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(11, 8);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(752, 59);
@@ -194,7 +194,7 @@
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(labelTitle);
-            groupBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(11, 78);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(752, 325);
@@ -212,7 +212,7 @@
             comboBoxAction.Margin = new Padding(3, 4, 3, 4);
             comboBoxAction.Name = "comboBoxAction";
             comboBoxAction.Size = new Size(603, 33);
-            comboBoxAction.TabIndex = 34;
+            comboBoxAction.TabIndex = 3;
             // 
             // rectangleRound6
             // 
@@ -240,7 +240,7 @@
             txtBoxTags.Location = new Point(115, 180);
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(597, 27);
-            txtBoxTags.TabIndex = 27;
+            txtBoxTags.TabIndex = 4;
             txtBoxTags.KeyPress += txtBoxTags_KeyPress;
             // 
             // rectangleRound3
@@ -262,7 +262,7 @@
             comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(603, 33);
-            comboBoxType.TabIndex = 25;
+            comboBoxType.TabIndex = 2;
             // 
             // rectangleRound2
             // 
@@ -280,7 +280,8 @@
             txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
             txtBoxTitle.Size = new Size(597, 27);
-            txtBoxTitle.TabIndex = 24;
+            txtBoxTitle.TabIndex = 1;
+            txtBoxTitle.KeyPress += TextBox_KeyPress;
             // 
             // rectangleRound1
             // 
@@ -339,11 +340,11 @@
             groupBox3.Controls.Add(txtBoxTo);
             groupBox3.Controls.Add(rectangleRound4);
             groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(dateTimePicker1);
+            groupBox3.Controls.Add(dtpDateReceived);
             groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label5);
-            groupBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(784, 8);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(799, 395);
@@ -360,7 +361,7 @@
             txtBoxDescription.Multiline = true;
             txtBoxDescription.Name = "txtBoxDescription";
             txtBoxDescription.Size = new Size(601, 171);
-            txtBoxDescription.TabIndex = 29;
+            txtBoxDescription.TabIndex = 7;
             // 
             // rectangleRound7
             // 
@@ -380,7 +381,7 @@
             txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
             txtBoxFrom.Name = "txtBoxFrom";
             txtBoxFrom.Size = new Size(601, 27);
-            txtBoxFrom.TabIndex = 27;
+            txtBoxFrom.TabIndex = 6;
             // 
             // rectangleRound5
             // 
@@ -390,6 +391,7 @@
             rectangleRound5.Name = "rectangleRound5";
             rectangleRound5.Size = new Size(622, 38);
             rectangleRound5.TabIndex = 35;
+            rectangleRound5.KeyPress += TextBox_KeyPress;
             // 
             // txtBoxTo
             // 
@@ -400,7 +402,8 @@
             txtBoxTo.Margin = new Padding(3, 4, 3, 4);
             txtBoxTo.Name = "txtBoxTo";
             txtBoxTo.Size = new Size(601, 27);
-            txtBoxTo.TabIndex = 25;
+            txtBoxTo.TabIndex = 5;
+            txtBoxTo.KeyPress += TextBox_KeyPress;
             // 
             // rectangleRound4
             // 
@@ -422,17 +425,17 @@
             label3.TabIndex = 31;
             label3.Text = "Date";
             // 
-            // dateTimePicker1
+            // dtpDateReceived
             // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Checked = false;
-            dateTimePicker1.Location = new Point(152, 21);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(623, 29);
-            dateTimePicker1.TabIndex = 30;
-            dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
+            dtpDateReceived.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dtpDateReceived.CalendarFont = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpDateReceived.Checked = false;
+            dtpDateReceived.Location = new Point(152, 21);
+            dtpDateReceived.Margin = new Padding(3, 4, 3, 4);
+            dtpDateReceived.Name = "dtpDateReceived";
+            dtpDateReceived.Size = new Size(623, 28);
+            dtpDateReceived.TabIndex = 30;
+            dtpDateReceived.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -516,7 +519,7 @@
         private Label labelTitle;
         private GroupBox groupBox3;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDateReceived;
         private TextBox txtBoxDescription;
         private Label label7;
         private TextBox txtBoxFrom;
