@@ -457,6 +457,8 @@ namespace AgRecords.View
             txtHouseHeadRs.BackColor = Color.White;
             txtIndigenous.BackColor = Color.White;
             txtAssociation.BackColor = Color.White;
+            txtGovIdType.BackColor = Color.White;
+            txtGovIdNum.BackColor = Color.White;
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
         {
@@ -531,7 +533,8 @@ namespace AgRecords.View
             {
                 txtGovIdType.Enabled = false;
                 txtGovIdNum.Enabled = false;
-                txtAssociation.Clear();
+                txtGovIdType.Clear();
+                txtGovIdNum.Clear();
             }
         }
     }

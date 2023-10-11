@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -310,6 +311,18 @@ namespace AgRecords.View
                     }
                 }
             }
+        }
+
+        //restrict accepted textbox input
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlpaNumeric(sender, e);
+        }
+
+        //convert all Alpabets to Uppercase in textbox
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
         }
     }
 }
