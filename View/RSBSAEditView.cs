@@ -13,9 +13,16 @@ namespace AgRecords.View
 {
     public partial class RSBSAEditView : Form
     {
+        public event EventHandler FormClosed;
+        private RSBSAController rsbsaController;
+
+
+
         public RSBSAEditView()
         {
             InitializeComponent();
+            rsbsaController = new RSBSAController(this);
+
         }
 
         // Method

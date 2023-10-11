@@ -12,6 +12,7 @@ namespace AgRecords.Controller
     internal class RSBSAController
     {
         private RsbsaAddView rsbsaAddView;
+        private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
         private Boolean isDone = false; 
         private string fullName = HomeView.Instance.fullName.Text;
@@ -27,6 +28,12 @@ namespace AgRecords.Controller
         public RSBSAController(RsbsaView rsbsaView)
         {
             this.rsbsaView = rsbsaView;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(RSBSAEditView rsbsaEditView)
+        {
+            this.rsbsaEditView = rsbsaEditView;
             rsbsaModel = new RSBSAModel();
         }
 

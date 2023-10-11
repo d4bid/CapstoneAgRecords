@@ -16,6 +16,7 @@ namespace AgRecords.View
     public partial class LettersEditView : Form
     {
         private LetterController letterController;
+
         private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
         private List<TagItem> tagItems = new List<TagItem>();
         private List<string> letterTags = new List<string>();
