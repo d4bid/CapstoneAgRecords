@@ -31,8 +31,10 @@
             panelPersonalInfo = new Panel();
             panelFarmProfile = new Panel();
             panelFarmLand = new Panel();
+            panel19 = new Panel();
             flowLayoutPanelParcels = new FlowLayoutPanel();
             panel12 = new Panel();
+            panel17 = new Panel();
             panel41 = new Panel();
             btnAddFarmParcel = new FontAwesome.Sharp.IconButton();
             labelParcelCount = new Label();
@@ -316,12 +318,12 @@
             pbFarmerPhoto = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             openFileDialog1 = new OpenFileDialog();
-            panel17 = new Panel();
-            panel19 = new Panel();
             panelPersonalInfo.SuspendLayout();
             panelFarmProfile.SuspendLayout();
             panelFarmLand.SuspendLayout();
+            panel19.SuspendLayout();
             panel12.SuspendLayout();
+            panel17.SuspendLayout();
             panel41.SuspendLayout();
             panel42.SuspendLayout();
             panel43.SuspendLayout();
@@ -376,8 +378,6 @@
             panel27.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbFarmerPhoto).BeginInit();
-            panel17.SuspendLayout();
-            panel19.SuspendLayout();
             SuspendLayout();
             // 
             // panelPersonalInfo
@@ -426,6 +426,16 @@
             panelFarmLand.Size = new Size(1595, 767);
             panelFarmLand.TabIndex = 52;
             // 
+            // panel19
+            // 
+            panel19.Controls.Add(flowLayoutPanelParcels);
+            panel19.Dock = DockStyle.Fill;
+            panel19.Location = new Point(0, 927);
+            panel19.Name = "panel19";
+            panel19.Padding = new Padding(10);
+            panel19.Size = new Size(1595, 0);
+            panel19.TabIndex = 75;
+            // 
             // flowLayoutPanelParcels
             // 
             flowLayoutPanelParcels.AutoScroll = true;
@@ -444,6 +454,16 @@
             panel12.Padding = new Padding(10);
             panel12.Size = new Size(1595, 160);
             panel12.TabIndex = 74;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(panel41);
+            panel17.Controls.Add(panel43);
+            panel17.Dock = DockStyle.Fill;
+            panel17.Location = new Point(10, 10);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1575, 140);
+            panel17.TabIndex = 73;
             // 
             // panel41
             // 
@@ -3500,26 +3520,6 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // panel17
-            // 
-            panel17.Controls.Add(panel41);
-            panel17.Controls.Add(panel43);
-            panel17.Dock = DockStyle.Fill;
-            panel17.Location = new Point(10, 10);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(1575, 140);
-            panel17.TabIndex = 73;
-            // 
-            // panel19
-            // 
-            panel19.Controls.Add(flowLayoutPanelParcels);
-            panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 927);
-            panel19.Name = "panel19";
-            panel19.Padding = new Padding(10);
-            panel19.Size = new Size(1595, 0);
-            panel19.TabIndex = 75;
-            // 
             // RsbsaAddView
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
@@ -3536,7 +3536,9 @@
             panelPersonalInfo.ResumeLayout(false);
             panelFarmProfile.ResumeLayout(false);
             panelFarmLand.ResumeLayout(false);
+            panel19.ResumeLayout(false);
             panel12.ResumeLayout(false);
+            panel17.ResumeLayout(false);
             panel41.ResumeLayout(false);
             panel41.PerformLayout();
             panel42.ResumeLayout(false);
@@ -3636,8 +3638,6 @@
             panel27.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbFarmerPhoto).EndInit();
-            panel17.ResumeLayout(false);
-            panel19.ResumeLayout(false);
             ResumeLayout(false);
         }
 

@@ -21,20 +21,20 @@ namespace AgRecords.Controller
             riceModel = new RiceModel();
         }
 
-        public DataTable LoadRicePlantLogView()
-        {
-            try
-            {
-                DataTable ricePlantLogsTable = riceModel.LoadRicePlantLogsDataGrid();
-                return ricePlantLogsTable;
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Rice Plant Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //public DataTable LoadRicePlantLogView()
+        //{
+        //    try
+        //    {
+        //        DataTable ricePlantLogsTable = riceModel.LoadRicePlantLogsDataGrid();
+        //        return ricePlantLogsTable;
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Rice Plant Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                return null;
-            }
+        //        return null;
+        //    }
 
-        }
+        //}
     }
 }
