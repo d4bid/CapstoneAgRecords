@@ -1709,6 +1709,7 @@
             // 
             // txtAssociation
             // 
+            txtAssociation.BackColor = Color.White;
             txtAssociation.BorderStyle = BorderStyle.None;
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAssociation.Location = new Point(129, 385);

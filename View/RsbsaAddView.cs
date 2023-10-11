@@ -363,7 +363,7 @@ namespace AgRecords.View
         {
             FormRefresh();
 
-            radiobuttonsPreAnswer_PersonalInfo();
+            //radiobuttonsPreAnswer_PersonalInfo();
             comboboxesPreAnswer_PersonalInfo();
             disabletxtboxes_PersonalInfo();
 
@@ -374,8 +374,6 @@ namespace AgRecords.View
             dtDateAdm.MinDate = minDate;
 
         }
-
-
 
         private void rectangleRound42_Load(object sender, EventArgs e)
         {
@@ -515,6 +513,11 @@ namespace AgRecords.View
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
+
+            txtHouseHeadName.BackColor = Color.White;
+            txtHouseHeadRs.BackColor = Color.White;
+            txtIndigenous.BackColor = Color.White;
+            txtAssociation.BackColor = Color.White;
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
         {

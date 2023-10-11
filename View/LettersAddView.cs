@@ -30,6 +30,9 @@ namespace AgRecords.View
         private void LettersAddView_Load(object sender, EventArgs e)
         {
             formRefresh();
+            DateTime minDate = new DateTime(1900, 1, 1);
+            dtpDateReceived.MaxDate = DateTime.Today;
+            dtpDateReceived.MinDate = minDate;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -213,7 +216,7 @@ namespace AgRecords.View
             //generate new letterId
             letterController.GenerateNewLetterID();
 
-            dateTimePicker1.Value = DateTime.Today;
+            dtpDateReceived.Value = DateTime.Today;
 
         }
 
@@ -225,7 +228,7 @@ namespace AgRecords.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (letterController.AddLetter(labelLetterId.Text, txtBoxTitle.Text, comboBoxType.Text,
-                txtBoxDescription.Text, tagItems, txtBoxTo.Text, txtBoxFrom.Text, comboBoxAction.Text, imageDictionary, dateTimePicker1.Value.Date))
+                txtBoxDescription.Text, tagItems, txtBoxTo.Text, txtBoxFrom.Text, comboBoxAction.Text, imageDictionary, dtpDateReceived.Value.Date))
             {
                 this.Close();
                 FormClosed?.Invoke(this, EventArgs.Empty);
@@ -263,6 +266,21 @@ namespace AgRecords.View
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = registerTag();
+            }
+        }
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            string text = textBox.Text;
+            char enteredChar = e.KeyChar;
+
+            if ((enteredChar == ' ' && text.EndsWith(" ") || enteredChar == '.'&& text.EndsWith(".")))
+            {
+                e.Handled = true; 
+            }
+            else if (!char.IsLetterOrDigit(enteredChar) && !char.IsControl(enteredChar) && enteredChar != ' ' && enteredChar != '.')
+            {
+                e.Handled = true; 
             }
         }
 
