@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -395,11 +396,6 @@ namespace AgRecords.View
             }
         }
 
-        private void txtAssociation_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDisplayListCon_Click(object sender, EventArgs e)
         {
             DisplayFarmParcelsDataInTextBox(GetFarmParcelsFromControls());
@@ -452,6 +448,8 @@ namespace AgRecords.View
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
+            txtGovIdType.Enabled = false;
+            txtGovIdNum.Enabled = false;
 
             txtHouseHeadName.BackColor = Color.White;
             txtHouseHeadRs.BackColor = Color.White;
@@ -537,5 +535,30 @@ namespace AgRecords.View
                 txtGovIdNum.Clear();
             }
         }
+
+        //restrict text field input
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlpaNumeric(sender, e);
+        }
+
+        //allow chars only
+        private void TextBox_AlphaOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlphaOnly(sender, e);
+        }
+
+        //allow nums only
+        private void TextBox_NumericOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericOnly(sender, e);
+        }
+
+        //convert all Alpabets to Uppercase in textbox
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
+
     }
 }
