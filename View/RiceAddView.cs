@@ -127,17 +127,9 @@ namespace AgRecords.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
-            cropsRiceAddView.FormClosed += CropsRiceAddView_FormClosed;
-
-            cropsRiceAddView.TopLevel = false;
-            cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
-            cropsRiceAddView.Dock = DockStyle.Fill;
-
-            //parentPanel.Controls.Clear();
-            //parentPanel.Controls.Add(cropsRiceAddView);
-            cropsRiceAddView.Show();
+            this.Close();
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

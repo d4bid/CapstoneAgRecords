@@ -17,7 +17,155 @@ namespace AgRecords.Model
             db = new DatabaseConnection();
         }
 
-        public DataTable LoadRicePlantLogsDataGrid()
+        // STANDING
+
+        //generate next rice stand report id
+
+        public string GenerateNextStandId()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_selectMaxRiceStandId", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    int currentYear = DateTime.Now.Year;
+
+                    if (result == null || result == DBNull.Value)
+                    {
+                        return $"RICESTANDING-{currentYear}-001";
+                    }
+                    else
+                    {
+                        string lastId = result.ToString();
+                        int lastYear = int.Parse(lastId.Substring(5, 4)); // Extract the year from the last ID
+                        int lastNumber = int.Parse(lastId.Substring(10)); // Extract the number part
+                        string nextId;
+
+                        if (currentYear == lastYear)
+                        {
+                            int nextNumber = lastNumber + 1;
+                            nextId = $"RICEPSTANDING-{currentYear}-{nextNumber.ToString("000")}";
+                        }
+                        else if (currentYear == lastYear + 1)
+                        {
+                            nextId = $"RICESTANDING-{currentYear}-001"; // Reset for the new year
+                        }
+                        else
+                        {
+                            // Handle cases where the current year is not consecutive to the last year
+                            throw new InvalidOperationException("Year gap is greater than 1, manual intervention may be needed.");
+                        }
+
+                        return nextId;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error generating next ID: " + ex.Message, ex);
+            }
+        }
+
+        // Add report
+        public Boolean AddRiceStandingRep(RiceStandingRep rsr)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_addRiceStandingReport(@riceSrId, @month, @week, @year, @createdBy)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rsr.riceSrId);
+                    command.Parameters.AddWithValue("@month", rsr.month);
+                    command.Parameters.AddWithValue("@week", rsr.week);
+                    command.Parameters.AddWithValue("@year", rsr.year);
+                    command.Parameters.AddWithValue("@createdBy", rsr.createdBy);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new rice standing report: " + ex.Message, ex);
+            }
+        }
+
+        // get rice standing report details
+        public RicePlantingRep GetRiceStandReportById(string ricePrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getRiceStandReportById(@riceSrId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", ricePrId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RicePlantingRep rsr = null;
+
+                    if (reader.Read())
+                    {
+                        rsr = new RicePlantingRep();
+                        rsr.ricePrId = reader["riceSrId"].ToString();
+                        rsr.month = reader["month"].ToString();
+                        rsr.week = reader["week"].ToString();
+                        rsr.year = (int)reader["year"];
+                        rsr.createdBy = reader["createdBy"].ToString();
+                    }
+
+                    reader.Close();
+                    return rsr;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting rice standing record by ID: " + ex.Message, ex);
+            }
+        }
+
+        // Add Rice Standing Logs
+        public Boolean AddRiceStandingLogs(RiceStanding rsr)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rsr.riceSrId);
+                    command.Parameters.AddWithValue("@brgyId", rsr.brgyId);
+                    command.Parameters.AddWithValue("@farmTypeId", rsr.farmTypeId);
+                    command.Parameters.AddWithValue("@growthStageId", rsr.growthStageId);
+                    command.Parameters.AddWithValue("@size", rsr.size);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new rice standing record: " + ex.Message, ex);
+            }
+        }
+
+
+        public DataTable LoadRiceStandLogsDataGrid()
         {
             try
             {
@@ -25,7 +173,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_plant;", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_logs;", db.GetConnection());
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -33,12 +181,31 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading rice planting records: " + ex.Message, ex);
+                throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadRiceStandReportsDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_report;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
             }
         }
 
 
-        //add user account
         public Boolean AddRicePlantingRep(RicePlantingRep rpr)
         {
             try
@@ -68,57 +235,7 @@ namespace AgRecords.Model
             }
         }
 
-        //generate next rice plant report id
-
-        public string GenerateNextId()
-        {
-            try
-            {
-                using (DatabaseConnection db = new DatabaseConnection())
-                {
-                    db.Open();
-
-                    MySqlCommand command = new MySqlCommand("CALL sp_selectMaxRicePlantId", db.GetConnection());
-
-                    object result = command.ExecuteScalar();
-
-                    int currentYear = DateTime.Now.Year;
-
-                    if (result == null || result == DBNull.Value)
-                    {
-                        return $"RICE-{currentYear}-001";
-                    }
-                    else
-                    {
-                        string lastId = result.ToString();
-                        int lastYear = int.Parse(lastId.Substring(5, 4)); // Extract the year from the last ID
-                        int lastNumber = int.Parse(lastId.Substring(10)); // Extract the number part
-                        string nextId;
-
-                        if (currentYear == lastYear)
-                        {
-                            int nextNumber = lastNumber + 1;
-                            nextId = $"RICEPLANTING-{currentYear}-{nextNumber.ToString("000")}";
-                        }
-                        else if (currentYear == lastYear + 1)
-                        {
-                            nextId = $"RICE-{currentYear}-001"; // Reset for the new year
-                        }
-                        else
-                        {
-                            // Handle cases where the current year is not consecutive to the last year
-                            throw new InvalidOperationException("Year gap is greater than 1, manual intervention may be needed.");
-                        }
-
-                        return nextId;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Error generating next ID: " + ex.Message, ex);
-            }
-        }
+      
 
         //get rice planting report details
         public RicePlantingRep GetRicePlantReportById(string ricePrId)
