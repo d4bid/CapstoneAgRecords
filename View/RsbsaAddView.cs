@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -450,6 +451,7 @@ namespace AgRecords.View
             }
         }
 
+
         private void UpdateParcelCountLabel()
         {
             labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
@@ -460,7 +462,6 @@ namespace AgRecords.View
         {
 
         }
-
         private void btnDisplayListCon_Click(object sender, EventArgs e)
         {
             DisplayFarmParcelsDataInTextBox(GetFarmParcelsFromControls());
@@ -513,11 +514,15 @@ namespace AgRecords.View
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
+            txtGovIdType.Enabled = false;
+            txtGovIdNum.Enabled = false;
 
             txtHouseHeadName.BackColor = Color.White;
             txtHouseHeadRs.BackColor = Color.White;
             txtIndigenous.BackColor = Color.White;
             txtAssociation.BackColor = Color.White;
+            txtGovIdType.BackColor = Color.White;
+            txtGovIdNum.BackColor = Color.White;
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
         {
@@ -592,28 +597,10 @@ namespace AgRecords.View
             {
                 txtGovIdType.Enabled = false;
                 txtGovIdNum.Enabled = false;
-                txtAssociation.Clear();
+                txtGovIdType.Clear();
+                txtGovIdNum.Clear();
             }
         }
-
-        private void btnAddDocsControl_Click(object sender, EventArgs e)
-        {
-            RSBSADocumentControl documentControl = new RSBSADocumentControl();
-
-            // Subscribe to the RemoveButtonClick event
-            documentControl.RemoveButtonClick += RSBSADocumentControl_RemoveButtonClick;
-
-            // Add the documentControl to the flowLayoutPanelDocs
-            flowLayoutPanelDocs.Controls.Add(documentControl);
-        }
-
-        private void RSBSADocumentControl_RemoveButtonClick(object sender, EventArgs e)
-        {
-            if (sender is RSBSADocumentControl documentControl)
-            {
-                // Remove the documentControl from the flowLayoutPanelDocs
-                flowLayoutPanelDocs.Controls.Remove(documentControl);
-            }
         }
 
     }

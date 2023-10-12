@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -268,21 +269,17 @@ namespace AgRecords.View
                 e.Handled = registerTag();
             }
         }
+
+        //restrict accepted textbox input
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            string text = textBox.Text;
-            char enteredChar = e.KeyChar;
-
-            if ((enteredChar == ' ' && text.EndsWith(" ") || enteredChar == '.'&& text.EndsWith(".")))
-            {
-                e.Handled = true; 
-            }
-            else if (!char.IsLetterOrDigit(enteredChar) && !char.IsControl(enteredChar) && enteredChar != ' ' && enteredChar != '.')
-            {
-                e.Handled = true; 
-            }
+            TextboxValidation.TextBox_AlpaNumeric(sender, e);
         }
 
+        //convert all Alpabets to Uppercase in textbox
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
     }
 }

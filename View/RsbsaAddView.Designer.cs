@@ -273,7 +273,7 @@
             label12 = new Label();
             label11 = new Label();
             rectangleRound9 = new RectangleRound();
-            panel3 = new Panel();
+            panelPersonalDetails = new Panel();
             cbSex = new ComboBox();
             txtExtname = new TextBox();
             txtMiddlename = new TextBox();
@@ -370,7 +370,7 @@
             panel9.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
-            panel3.SuspendLayout();
+            panelPersonalDetails.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -394,7 +394,7 @@
             panelPersonalInfo.Controls.Add(panel10);
             panelPersonalInfo.Controls.Add(panel8);
             panelPersonalInfo.Controls.Add(panel6);
-            panelPersonalInfo.Controls.Add(panel3);
+            panelPersonalInfo.Controls.Add(panelPersonalDetails);
             panelPersonalInfo.Dock = DockStyle.Top;
             panelPersonalInfo.Location = new Point(0, 160);
             panelPersonalInfo.Name = "panelPersonalInfo";
@@ -1415,6 +1415,7 @@
             txtEcContact.Name = "txtEcContact";
             txtEcContact.Size = new Size(177, 22);
             txtEcContact.TabIndex = 31;
+            txtEcContact.KeyPress += TextBox_NumericOnly;
             // 
             // txtEcName
             // 
@@ -1424,6 +1425,8 @@
             txtEcName.Name = "txtEcName";
             txtEcName.Size = new Size(256, 22);
             txtEcName.TabIndex = 30;
+            txtEcName.TextChanged += TextBox_TextChanged;
+            txtEcName.KeyPress += TextBox_AlphaOnly;
             // 
             // panel24
             // 
@@ -1697,6 +1700,7 @@
             txtGovIdNum.Name = "txtGovIdNum";
             txtGovIdNum.Size = new Size(313, 22);
             txtGovIdNum.TabIndex = 59;
+            txtGovIdNum.KeyPress += TextBox_KeyPress;
             // 
             // txtIndigenous
             // 
@@ -1706,6 +1710,8 @@
             txtIndigenous.Name = "txtIndigenous";
             txtIndigenous.Size = new Size(368, 22);
             txtIndigenous.TabIndex = 58;
+            txtIndigenous.TextChanged += TextBox_TextChanged;
+            txtIndigenous.KeyPress += TextBox_AlphaOnly;
             // 
             // txtAssociation
             // 
@@ -1716,7 +1722,8 @@
             txtAssociation.Name = "txtAssociation";
             txtAssociation.Size = new Size(368, 22);
             txtAssociation.TabIndex = 57;
-            txtAssociation.TextChanged += txtAssociation_TextChanged;
+            txtAssociation.TextChanged += TextBox_TextChanged;
+            txtAssociation.KeyPress += TextBox_AlphaOnly;
             // 
             // txtGovIdType
             // 
@@ -1726,6 +1733,8 @@
             txtGovIdType.Name = "txtGovIdType";
             txtGovIdType.Size = new Size(313, 22);
             txtGovIdType.TabIndex = 56;
+            txtGovIdType.TextChanged += TextBox_TextChanged;
+            txtGovIdType.KeyPress += TextBox_AlphaOnly;
             // 
             // label65
             // 
@@ -1938,6 +1947,8 @@
             txtMaidenMother.Name = "txtMaidenMother";
             txtMaidenMother.Size = new Size(502, 22);
             txtMaidenMother.TabIndex = 28;
+            txtMaidenMother.TextChanged += TextBox_TextChanged;
+            txtMaidenMother.KeyPress += TextBox_AlphaOnly;
             // 
             // panel22
             // 
@@ -2057,6 +2068,8 @@
             txtHouseHeadRs.Name = "txtHouseHeadRs";
             txtHouseHeadRs.Size = new Size(145, 22);
             txtHouseHeadRs.TabIndex = 44;
+            txtHouseHeadRs.TextChanged += TextBox_TextChanged;
+            txtHouseHeadRs.KeyPress += TextBox_AlphaOnly;
             // 
             // txtHouseHeadName
             // 
@@ -2066,6 +2079,8 @@
             txtHouseHeadName.Name = "txtHouseHeadName";
             txtHouseHeadName.Size = new Size(213, 22);
             txtHouseHeadName.TabIndex = 43;
+            txtHouseHeadName.TextChanged += TextBox_TextChanged;
+            txtHouseHeadName.KeyPress += TextBox_AlphaOnly;
             // 
             // rectangleRound33
             // 
@@ -2422,6 +2437,8 @@
             txtSpouseName.Name = "txtSpouseName";
             txtSpouseName.Size = new Size(506, 22);
             txtSpouseName.TabIndex = 27;
+            txtSpouseName.TextChanged += TextBox_TextChanged;
+            txtSpouseName.KeyPress += TextBox_AlphaOnly;
             // 
             // label16
             // 
@@ -2539,6 +2556,8 @@
             txtReligionOthers.Name = "txtReligionOthers";
             txtReligionOthers.Size = new Size(205, 16);
             txtReligionOthers.TabIndex = 24;
+            txtReligionOthers.TextChanged += TextBox_TextChanged;
+            txtReligionOthers.KeyPress += TextBox_AlphaOnly;
             // 
             // panel13
             // 
@@ -2599,6 +2618,9 @@
             txtBirthCountry.Name = "txtBirthCountry";
             txtBirthCountry.Size = new Size(141, 22);
             txtBirthCountry.TabIndex = 67;
+            txtBirthCountry.Text = "PHILIPPINES";
+            txtBirthCountry.TextChanged += TextBox_TextChanged;
+            txtBirthCountry.KeyPress += TextBox_AlphaOnly;
             // 
             // txtBirthProvince
             // 
@@ -2608,6 +2630,8 @@
             txtBirthProvince.Name = "txtBirthProvince";
             txtBirthProvince.Size = new Size(150, 22);
             txtBirthProvince.TabIndex = 66;
+            txtBirthProvince.TextChanged += TextBox_TextChanged;
+            txtBirthProvince.KeyPress += TextBox_AlphaOnly;
             // 
             // txtBirthMunicipality
             // 
@@ -2617,6 +2641,8 @@
             txtBirthMunicipality.Name = "txtBirthMunicipality";
             txtBirthMunicipality.Size = new Size(328, 22);
             txtBirthMunicipality.TabIndex = 65;
+            txtBirthMunicipality.TextChanged += TextBox_TextChanged;
+            txtBirthMunicipality.KeyPress += TextBox_AlphaOnly;
             // 
             // label34
             // 
@@ -2748,6 +2774,7 @@
             txtLandNo.Name = "txtLandNo";
             txtLandNo.Size = new Size(251, 22);
             txtLandNo.TabIndex = 29;
+            txtLandNo.KeyPress += TextBox_NumericOnly;
             // 
             // txtMobNo
             // 
@@ -2757,6 +2784,7 @@
             txtMobNo.Name = "txtMobNo";
             txtMobNo.Size = new Size(250, 22);
             txtMobNo.TabIndex = 28;
+            txtMobNo.KeyPress += TextBox_NumericOnly;
             // 
             // label14
             // 
@@ -2853,6 +2881,7 @@
             txtAddRegion.Size = new Size(177, 22);
             txtAddRegion.TabIndex = 68;
             txtAddRegion.Text = "2";
+            txtAddRegion.KeyPress += TextBox_NumericOnly;
             // 
             // txtAddProvince
             // 
@@ -2862,7 +2891,9 @@
             txtAddProvince.Name = "txtAddProvince";
             txtAddProvince.Size = new Size(174, 22);
             txtAddProvince.TabIndex = 66;
-            txtAddProvince.Text = "Nueva Vizcaya";
+            txtAddProvince.Text = "NUEVA VIZCAYA";
+            txtAddProvince.TextChanged += TextBox_TextChanged;
+            txtAddProvince.KeyPress += TextBox_AlphaOnly;
             // 
             // txtAddMunicipality
             // 
@@ -2872,7 +2903,9 @@
             txtAddMunicipality.Name = "txtAddMunicipality";
             txtAddMunicipality.Size = new Size(178, 22);
             txtAddMunicipality.TabIndex = 65;
-            txtAddMunicipality.Text = "Solano";
+            txtAddMunicipality.Text = "SOLANO";
+            txtAddMunicipality.TextChanged += TextBox_TextChanged;
+            txtAddMunicipality.KeyPress += TextBox_AlphaOnly;
             // 
             // cbAddBrgy
             // 
@@ -2894,6 +2927,8 @@
             txtAddStreet.Name = "txtAddStreet";
             txtAddStreet.Size = new Size(176, 22);
             txtAddStreet.TabIndex = 62;
+            txtAddStreet.TextChanged += TextBox_TextChanged;
+            txtAddStreet.KeyPress += TextBox_KeyPress;
             // 
             // txtAddPurok
             // 
@@ -2903,6 +2938,8 @@
             txtAddPurok.Name = "txtAddPurok";
             txtAddPurok.Size = new Size(178, 22);
             txtAddPurok.TabIndex = 61;
+            txtAddPurok.TextChanged += TextBox_TextChanged;
+            txtAddPurok.KeyPress += TextBox_KeyPress;
             // 
             // rectangleRound17
             // 
@@ -3009,6 +3046,7 @@
             rectangleRound8.Name = "rectangleRound8";
             rectangleRound8.Size = new Size(194, 38);
             rectangleRound8.TabIndex = 0;
+            rectangleRound8.KeyPress += TextBox_AlphaOnly;
             // 
             // label12
             // 
@@ -3039,29 +3077,29 @@
             rectangleRound9.Size = new Size(196, 38);
             rectangleRound9.TabIndex = 0;
             // 
-            // panel3
+            // panelPersonalDetails
             // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(cbSex);
-            panel3.Controls.Add(txtExtname);
-            panel3.Controls.Add(txtMiddlename);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(txtFirstname);
-            panel3.Controls.Add(rectangleRound6);
-            panel3.Controls.Add(txtSurname);
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(rectangleRound5);
-            panel3.Controls.Add(rectangleRound2);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(rectangleRound4);
-            panel3.Controls.Add(rectangleRound3);
-            panel3.Controls.Add(label8);
-            panel3.Location = new Point(11, 8);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(557, 182);
-            panel3.TabIndex = 0;
+            panelPersonalDetails.BorderStyle = BorderStyle.FixedSingle;
+            panelPersonalDetails.Controls.Add(cbSex);
+            panelPersonalDetails.Controls.Add(txtExtname);
+            panelPersonalDetails.Controls.Add(txtMiddlename);
+            panelPersonalDetails.Controls.Add(label4);
+            panelPersonalDetails.Controls.Add(label10);
+            panelPersonalDetails.Controls.Add(txtFirstname);
+            panelPersonalDetails.Controls.Add(rectangleRound6);
+            panelPersonalDetails.Controls.Add(txtSurname);
+            panelPersonalDetails.Controls.Add(panel5);
+            panelPersonalDetails.Controls.Add(rectangleRound5);
+            panelPersonalDetails.Controls.Add(rectangleRound2);
+            panelPersonalDetails.Controls.Add(label9);
+            panelPersonalDetails.Controls.Add(label1);
+            panelPersonalDetails.Controls.Add(rectangleRound4);
+            panelPersonalDetails.Controls.Add(rectangleRound3);
+            panelPersonalDetails.Controls.Add(label8);
+            panelPersonalDetails.Location = new Point(11, 8);
+            panelPersonalDetails.Name = "panelPersonalDetails";
+            panelPersonalDetails.Size = new Size(557, 182);
+            panelPersonalDetails.TabIndex = 0;
             // 
             // cbSex
             // 
@@ -3083,6 +3121,8 @@
             txtExtname.Name = "txtExtname";
             txtExtname.Size = new Size(116, 22);
             txtExtname.TabIndex = 4;
+            txtExtname.TextChanged += TextBox_TextChanged;
+            txtExtname.KeyPress += TextBox_AlphaOnly;
             // 
             // txtMiddlename
             // 
@@ -3092,6 +3132,8 @@
             txtMiddlename.Name = "txtMiddlename";
             txtMiddlename.Size = new Size(182, 22);
             txtMiddlename.TabIndex = 3;
+            txtMiddlename.TextChanged += TextBox_TextChanged;
+            txtMiddlename.KeyPress += TextBox_AlphaOnly;
             // 
             // label4
             // 
@@ -3121,6 +3163,8 @@
             txtFirstname.Name = "txtFirstname";
             txtFirstname.Size = new Size(294, 22);
             txtFirstname.TabIndex = 2;
+            txtFirstname.TextChanged += TextBox_TextChanged;
+            txtFirstname.KeyPress += TextBox_AlphaOnly;
             // 
             // rectangleRound6
             // 
@@ -3139,6 +3183,8 @@
             txtSurname.Name = "txtSurname";
             txtSurname.Size = new Size(182, 22);
             txtSurname.TabIndex = 2;
+            txtSurname.TextChanged += TextBox_TextChanged;
+            txtSurname.KeyPress += TextBox_AlphaOnly;
             // 
             // panel5
             // 
@@ -3627,8 +3673,8 @@
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelPersonalDetails.ResumeLayout(false);
+            panelPersonalDetails.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel4.ResumeLayout(false);
@@ -3762,7 +3808,7 @@
         private Label label12;
         private Label label11;
         private RectangleRound rectangleRound9;
-        private Panel panel3;
+        private Panel panelPersonalDetails;
         private Label label4;
         private Label label10;
         private RectangleRound rectangleRound6;

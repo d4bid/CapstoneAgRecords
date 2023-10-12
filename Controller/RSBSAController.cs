@@ -258,24 +258,50 @@ namespace AgRecords.Controller
                     // RSBSA Docs
                     rsbsaDocuments = rsbsaDocuments,
                 };
-                
-                DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
+
+                //VALIDATIONS SHIT
+                if (string.IsNullOrWhiteSpace(surname))
                 {
-                    if (rsbsaModel.AddNewRSBSARecord(rsbsa))
+                    MessageBox.Show("Please add farmer surname.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(firstname))
+                {
+                    MessageBox.Show("Please add farmer first name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(middlename))
+                {
+                    MessageBox.Show("Please add middle name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(sex))
+                {
+                    MessageBox.Show("Please indicate farmer sex.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(addrBrgy))
+                {
+                    MessageBox.Show("Please indicate farmer sex.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
                     {
-                        if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                        if (rsbsaModel.AddNewRSBSARecord(rsbsa))
                         {
+
+
                             if (rsbsaModel.AddNewRSBSADocument(rsbsaDocuments))
+
                             {
                                 MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 isDone = true;
                             }
                         }
                     }
+
+                    return isDone;
                 }
-                
-                return isDone;
+                           
             }
             catch (ApplicationException ex)
             {
@@ -285,102 +311,5 @@ namespace AgRecords.Controller
             }
         }
 
-        public RSBSA GetRSBSAInfoByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetRSBSAInfoById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding RSBSA Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public RSBSA GetFarmerInfoByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetFarmerInfoById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding Farmer Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public RSBSA GetFarmProfileByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetFarmProfileById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding Farm Profile Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public RSBSA GetFarmlandByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetFarmlandById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding Farmland Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public RSBSA GetFarmlandParcelsByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetFarmlandParcelsById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding Farmland Parcel Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public RSBSA GetFarmlandParcelCropsByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetFarmlandParcelCropsById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding Farmland Parcel Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public RSBSA GetDocsByRSBSAId(string rsbsaId)
-        {
-            try
-            {
-                return rsbsaModel.GetDocsById(rsbsaId);
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Finding RSBSA Documents Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
     }
 }

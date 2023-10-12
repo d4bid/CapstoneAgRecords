@@ -81,7 +81,7 @@
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(135, 44);
-            btnSave.TabIndex = 9;
+            btnSave.TabIndex = 11;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -98,7 +98,7 @@
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(135, 44);
-            btnCancel.TabIndex = 10;
+            btnCancel.TabIndex = 12;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -114,7 +114,7 @@
             btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(135, 44);
-            btnRemove.TabIndex = 0;
+            btnRemove.TabIndex = 10;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
@@ -130,7 +130,7 @@
             btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(135, 44);
-            btnBrowse.TabIndex = 8;
+            btnBrowse.TabIndex = 9;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
@@ -154,7 +154,7 @@
             listViewLetters.Name = "listViewLetters";
             listViewLetters.Size = new Size(1572, 230);
             listViewLetters.SmallImageList = imageList1;
-            listViewLetters.TabIndex = 32;
+            listViewLetters.TabIndex = 0;
             listViewLetters.UseCompatibleStateImageBehavior = false;
             listViewLetters.DoubleClick += listViewLetters_DoubleClick;
             // 
@@ -171,11 +171,11 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(labelLetterId);
-            groupBox1.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(11, 8);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(752, 64);
-            groupBox1.TabIndex = 33;
+            groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
             // groupBox2
@@ -193,11 +193,11 @@
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(labelTitle);
-            groupBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(11, 78);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(752, 325);
-            groupBox2.TabIndex = 34;
+            groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
             // comboBoxAction
@@ -211,7 +211,7 @@
             comboBoxAction.Margin = new Padding(3, 4, 3, 4);
             comboBoxAction.Name = "comboBoxAction";
             comboBoxAction.Size = new Size(603, 33);
-            comboBoxAction.TabIndex = 34;
+            comboBoxAction.TabIndex = 3;
             // 
             // rectangleRound6
             // 
@@ -219,7 +219,7 @@
             rectangleRound6.Location = new Point(104, 124);
             rectangleRound6.Name = "rectangleRound6";
             rectangleRound6.Size = new Size(620, 38);
-            rectangleRound6.TabIndex = 35;
+            rectangleRound6.TabIndex = 0;
             // 
             // label4
             // 
@@ -229,7 +229,7 @@
             label4.Location = new Point(16, 135);
             label4.Name = "label4";
             label4.Size = new Size(53, 20);
-            label4.TabIndex = 36;
+            label4.TabIndex = 0;
             label4.Text = "Action";
             // 
             // txtBoxTags
@@ -239,7 +239,8 @@
             txtBoxTags.Location = new Point(115, 180);
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(597, 27);
-            txtBoxTags.TabIndex = 27;
+            txtBoxTags.TabIndex = 4;
+            txtBoxTags.TextChanged += TextBox_TextChanged;
             // 
             // rectangleRound3
             // 
@@ -247,7 +248,7 @@
             rectangleRound3.Location = new Point(104, 176);
             rectangleRound3.Name = "rectangleRound3";
             rectangleRound3.Size = new Size(620, 38);
-            rectangleRound3.TabIndex = 31;
+            rectangleRound3.TabIndex = 0;
             // 
             // comboBoxType
             // 
@@ -260,7 +261,7 @@
             comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(603, 33);
-            comboBoxType.TabIndex = 25;
+            comboBoxType.TabIndex = 2;
             // 
             // rectangleRound2
             // 
@@ -268,7 +269,7 @@
             rectangleRound2.Location = new Point(104, 75);
             rectangleRound2.Name = "rectangleRound2";
             rectangleRound2.Size = new Size(620, 38);
-            rectangleRound2.TabIndex = 30;
+            rectangleRound2.TabIndex = 0;
             // 
             // txtBoxTitle
             // 
@@ -278,7 +279,8 @@
             txtBoxTitle.Margin = new Padding(3, 4, 3, 4);
             txtBoxTitle.Name = "txtBoxTitle";
             txtBoxTitle.Size = new Size(597, 27);
-            txtBoxTitle.TabIndex = 24;
+            txtBoxTitle.TabIndex = 1;
+            txtBoxTitle.TextChanged += TextBox_TextChanged;
             // 
             // rectangleRound1
             // 
@@ -286,7 +288,7 @@
             rectangleRound1.Location = new Point(104, 26);
             rectangleRound1.Name = "rectangleRound1";
             rectangleRound1.Size = new Size(620, 38);
-            rectangleRound1.TabIndex = 29;
+            rectangleRound1.TabIndex = 0;
             // 
             // flowLayoutPanelTags
             // 
@@ -295,7 +297,7 @@
             flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanelTags.Name = "flowLayoutPanelTags";
             flowLayoutPanelTags.Size = new Size(620, 86);
-            flowLayoutPanelTags.TabIndex = 28;
+            flowLayoutPanelTags.TabIndex = 0;
             // 
             // label2
             // 
@@ -304,7 +306,7 @@
             label2.Location = new Point(16, 187);
             label2.Name = "label2";
             label2.Size = new Size(39, 20);
-            label2.TabIndex = 26;
+            label2.TabIndex = 0;
             label2.Text = "Tags";
             // 
             // label1
@@ -314,7 +316,7 @@
             label1.Location = new Point(16, 85);
             label1.Name = "label1";
             label1.Size = new Size(41, 20);
-            label1.TabIndex = 23;
+            label1.TabIndex = 0;
             label1.Text = "Type";
             // 
             // labelTitle
@@ -324,7 +326,7 @@
             labelTitle.Location = new Point(16, 34);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(38, 20);
-            labelTitle.TabIndex = 22;
+            labelTitle.TabIndex = 0;
             labelTitle.Text = "Title";
             // 
             // groupBox3
@@ -341,11 +343,11 @@
             groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label5);
-            groupBox3.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(781, 8);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(799, 395);
-            groupBox3.TabIndex = 35;
+            groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             // 
             // txtBoxDescription
@@ -358,7 +360,7 @@
             txtBoxDescription.Multiline = true;
             txtBoxDescription.Name = "txtBoxDescription";
             txtBoxDescription.Size = new Size(601, 171);
-            txtBoxDescription.TabIndex = 29;
+            txtBoxDescription.TabIndex = 8;
             // 
             // rectangleRound7
             // 
@@ -367,7 +369,7 @@
             rectangleRound7.Location = new Point(152, 194);
             rectangleRound7.Name = "rectangleRound7";
             rectangleRound7.Size = new Size(623, 183);
-            rectangleRound7.TabIndex = 36;
+            rectangleRound7.TabIndex = 0;
             // 
             // txtBoxFrom
             // 
@@ -378,7 +380,9 @@
             txtBoxFrom.Margin = new Padding(3, 4, 3, 4);
             txtBoxFrom.Name = "txtBoxFrom";
             txtBoxFrom.Size = new Size(601, 27);
-            txtBoxFrom.TabIndex = 27;
+            txtBoxFrom.TabIndex = 7;
+            txtBoxFrom.TextChanged += TextBox_TextChanged;
+            txtBoxFrom.KeyPress += TextBox_KeyPress;
             // 
             // rectangleRound5
             // 
@@ -387,7 +391,7 @@
             rectangleRound5.Location = new Point(153, 141);
             rectangleRound5.Name = "rectangleRound5";
             rectangleRound5.Size = new Size(622, 38);
-            rectangleRound5.TabIndex = 35;
+            rectangleRound5.TabIndex = 0;
             // 
             // txtBoxTo
             // 
@@ -398,7 +402,9 @@
             txtBoxTo.Margin = new Padding(3, 4, 3, 4);
             txtBoxTo.Name = "txtBoxTo";
             txtBoxTo.Size = new Size(601, 27);
-            txtBoxTo.TabIndex = 25;
+            txtBoxTo.TabIndex = 6;
+            txtBoxTo.TextChanged += TextBox_TextChanged;
+            txtBoxTo.KeyPress += TextBox_KeyPress;
             // 
             // rectangleRound4
             // 
@@ -407,7 +413,8 @@
             rectangleRound4.Location = new Point(153, 92);
             rectangleRound4.Name = "rectangleRound4";
             rectangleRound4.Size = new Size(624, 38);
-            rectangleRound4.TabIndex = 34;
+            rectangleRound4.TabIndex = 0;
+            rectangleRound4.KeyPress += TextBox_KeyPress;
             // 
             // label3
             // 
@@ -417,19 +424,19 @@
             label3.Location = new Point(19, 25);
             label3.Name = "label3";
             label3.Size = new Size(41, 20);
-            label3.TabIndex = 31;
+            label3.TabIndex = 0;
             label3.Text = "Date";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.Checked = false;
             dateTimePicker1.Location = new Point(152, 21);
             dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(623, 29);
-            dateTimePicker1.TabIndex = 30;
+            dateTimePicker1.Size = new Size(623, 28);
+            dateTimePicker1.TabIndex = 5;
             dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
             // 
             // label7
@@ -440,7 +447,7 @@
             label7.Location = new Point(19, 205);
             label7.Name = "label7";
             label7.Size = new Size(87, 20);
-            label7.TabIndex = 28;
+            label7.TabIndex = 0;
             label7.Text = "Description";
             // 
             // label6
@@ -451,7 +458,7 @@
             label6.Location = new Point(19, 151);
             label6.Name = "label6";
             label6.Size = new Size(45, 20);
-            label6.TabIndex = 26;
+            label6.TabIndex = 0;
             label6.Text = "From";
             // 
             // label5
@@ -462,7 +469,7 @@
             label5.Location = new Point(19, 104);
             label5.Name = "label5";
             label5.Size = new Size(25, 20);
-            label5.TabIndex = 24;
+            label5.TabIndex = 0;
             label5.Text = "To";
             // 
             // LettersEditView
