@@ -25,6 +25,8 @@ namespace AgRecords.Model
         {
             try
             {
+                int currentYear = DateTime.Now.Year;
+
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
                     db.Open();
@@ -33,36 +35,20 @@ namespace AgRecords.Model
 
                     object result = command.ExecuteScalar();
 
-                    int currentYear = DateTime.Now.Year;
+                    int nextNumber = 1; // Default to 1 if no records are found
 
-                    if (result == null || result == DBNull.Value)
-                    {
-                        return $"RICESTANDING-{currentYear}-001";
-                    }
-                    else
+                    if (result != null && result != DBNull.Value)
                     {
                         string lastId = result.ToString();
-                        int lastYear = int.Parse(lastId.Substring(5, 4)); // Extract the year from the last ID
-                        int lastNumber = int.Parse(lastId.Substring(10)); // Extract the number part
-                        string nextId;
+                        string yearPart = lastId.Substring(12, 4); // Extract the year from the last ID
 
-                        if (currentYear == lastYear)
+                        if (yearPart == currentYear.ToString())
                         {
-                            int nextNumber = lastNumber + 1;
-                            nextId = $"RICEPSTANDING-{currentYear}-{nextNumber.ToString("000")}";
+                            nextNumber = int.Parse(lastId.Substring(17)) + 1;
                         }
-                        else if (currentYear == lastYear + 1)
-                        {
-                            nextId = $"RICESTANDING-{currentYear}-001"; // Reset for the new year
-                        }
-                        else
-                        {
-                            // Handle cases where the current year is not consecutive to the last year
-                            throw new InvalidOperationException("Year gap is greater than 1, manual intervention may be needed.");
-                        }
-
-                        return nextId;
                     }
+
+                    return $"RICESTANDING-{currentYear}-{nextNumber:D3}";
                 }
             }
             catch (Exception ex)
@@ -70,6 +56,8 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error generating next ID: " + ex.Message, ex);
             }
         }
+
+
 
         // Add report
         public Boolean AddRiceStandingRep(RiceStandingRep rsr)

@@ -13,7 +13,7 @@ namespace AgRecords.Model
         public string riceSrId { get; set; }
         public string month { get; set; }
         public string week { get; set; }
-        public int year { get; set; }
+        public string year { get; set; }
         public string createdBy { get; set; }
         public Timestamp dateCreated { get; set; }
     }

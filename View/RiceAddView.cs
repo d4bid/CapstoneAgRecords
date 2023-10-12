@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,56 +13,62 @@ namespace AgRecords.View
 {
     public partial class RiceAddView : Form
     {
+        private CropsRiceController cropsRiceController;
+        public event EventHandler FormClosed;
+
         private Panel parentPanel;
 
         public RiceAddView()
         {
             InitializeComponent();
+
+            cropsRiceController = new CropsRiceController(this);
         }
 
         // Methods
         private void CropsRiceAddView_FormClosed(object sender, EventArgs e)
         {
-            CropsRiceView cropsRiceView = new CropsRiceView(parentPanel);
-            cropsRiceView.TopLevel = false;
-            cropsRiceView.FormBorderStyle = FormBorderStyle.None;
-            cropsRiceView.Dock = DockStyle.Fill;
-
-            parentPanel.Controls.Clear();
-            parentPanel.Controls.Add(cropsRiceView);
-            cropsRiceView.Show();
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
 
         public void FormRefresh()
         {
             cmbSeason.Select();
 
-            SetSeasonYear();
+            //SetSeasonYear();
+
+            cropsRiceController.GenerateNewRiceStandID();
 
             int currentYear = DateTime.Now.Year;
-            txtYear.Text = currentYear.ToString();
+            textboxYear.Text = currentYear.ToString();
 
         }
 
-        public void SetSeasonYear()
+        public void GenerateNewRiceStandId(string riceSrId)
         {
-            int currentYear = DateTime.Now.Year;
-
-            // Calculate the past and future years
-            int pastYear = currentYear - 1;
-            int futureYear = currentYear + 1;
-
-            // Create the items in the format "YYYY-YYYY"
-            string pastYearItem = $"{pastYear}-{currentYear}";
-            string futureYearItem = $"{currentYear}-{futureYear}";
-
-            // Add the items to the cmbSeasonYear ComboBox
-            cmbSeasonYear.Items.Add(futureYearItem);
-            cmbSeasonYear.Items.Add(pastYearItem);
-
-            // Optionally, you can set an initial selection
-            cmbSeasonYear.SelectedIndex = 0;
+            labelRiceSrId.Text = riceSrId;
         }
+
+        //public void SetSeasonYear()
+        //{
+        //    int currentYear = DateTime.Now.Year;
+
+        //    // Calculate the past and future years
+        //    int pastYear = currentYear - 1;
+        //    int futureYear = currentYear + 1;
+
+        //    // Create the items in the format "YYYY-YYYY"
+        //    string pastYearItem = $"{pastYear}-{currentYear}";
+        //    string futureYearItem = $"{currentYear}-{futureYear}";
+
+        //    // Add the items to the cmbSeasonYear ComboBox
+        //    cmbSeasonYear.Items.Add(futureYearItem);
+        //    cmbSeasonYear.Items.Add(pastYearItem);
+
+        //    // Optionally, you can set an initial selection
+        //    cmbSeasonYear.SelectedIndex = 0;
+        //}
 
         private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -127,7 +134,10 @@ namespace AgRecords.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
+            {
+                this.Close();
+            }
         }
 
 
