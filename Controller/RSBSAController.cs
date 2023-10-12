@@ -12,6 +12,7 @@ namespace AgRecords.Controller
     internal class RSBSAController
     {
         private RsbsaAddView rsbsaAddView;
+        private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
         private Boolean isDone = false; 
         private string fullName = HomeView.Instance.fullName.Text;
@@ -27,6 +28,12 @@ namespace AgRecords.Controller
         public RSBSAController(RsbsaView rsbsaView)
         {
             this.rsbsaView = rsbsaView;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(RSBSAEditView rsbsaEditView)
+        {
+            this.rsbsaEditView = rsbsaEditView;
             rsbsaModel = new RSBSAModel();
         }
 
@@ -152,7 +159,10 @@ namespace AgRecords.Controller
             int farmParcelCount,
 
             //Farmland Parcel
-            List<FarmParcel> farmParcels
+            List<FarmParcel> farmParcels,
+
+            //Docs
+            List<RSBSADocuments> rsbsaDocuments
 
             )
         {
@@ -244,6 +254,9 @@ namespace AgRecords.Controller
 
                     // Farmland Parcel
                     farmParcels = farmParcels,
+
+                    // RSBSA Docs
+                    rsbsaDocuments = rsbsaDocuments,
                 };
 
                 //VALIDATIONS SHIT
@@ -275,7 +288,10 @@ namespace AgRecords.Controller
                     {
                         if (rsbsaModel.AddNewRSBSARecord(rsbsa))
                         {
-                            if (rsbsaModel.AddNewFarmParcel(farmParcels))
+
+
+                            if (rsbsaModel.AddNewRSBSADocument(rsbsaDocuments))
+
                             {
                                 MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 isDone = true;
@@ -294,6 +310,6 @@ namespace AgRecords.Controller
                 return false;
             }
         }
-        //
+
     }
 }

@@ -42,8 +42,6 @@ namespace AgRecords.View
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
 
-            nudFarmParcelNo.Value = 1;
-
             rsbsaController.GenerateNewRSBSAId();
 
         }
@@ -64,6 +62,19 @@ namespace AgRecords.View
             }
 
             return farmParcels;
+        }
+
+        private List<RSBSADocuments> GetDocumentsFromControls()
+        {
+            List<RSBSADocuments> documentsList = new List<RSBSADocuments>();
+
+            foreach (RSBSADocumentControl documentControl in flowLayoutPanelDocs.Controls.OfType<RSBSADocumentControl>())
+            {
+                RSBSADocuments document = documentControl.GetDocumentData();
+                documentsList.Add(document);
+            }
+
+            return documentsList;
         }
 
         // Buttons/Tab
@@ -279,10 +290,13 @@ namespace AgRecords.View
                 Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text),
 
                 //farmland
-                "Test", Convert.ToInt32(nudFarmParcelNo.Value),
+                "Test", Convert.ToInt32(labelParcelCount.Text),
 
                 //farmland parcel
-                GetFarmParcelsFromControls()
+                GetFarmParcelsFromControls(),
+
+                //Docs
+                GetDocumentsFromControls()
 
                 ))
             {
@@ -377,25 +391,77 @@ namespace AgRecords.View
 
         }
 
-        private void nudFarmParcelNo_ValueChanged(object sender, EventArgs e)
+        //private void nudFarmParcelNo_ValueChanged(object sender, EventArgs e)
+        //{
+
+        //    flowLayoutPanelParcels.Controls.Clear();
+
+        //    for (int i = 0; i < numberOfControls; i++)
+        //    {
+        //        // Create an instance of your custom UserControl
+        //        FarmLandControl farmLandControl = new FarmLandControl();
+
+        //        // Set properties of the UserControl as needed
+        //        farmLandControl.labelParcelNo.Text = (i + 1).ToString();
+
+        //        // Add the UserControl to the parent control (e.g., Panel)
+        //        flowLayoutPanelParcels.Controls.Add(farmLandControl);
+        //    }
+        //}
+
+        private void btnAddFarmParcel_Click(object sender, EventArgs e)
         {
-            int numberOfControls = (int)nudFarmParcelNo.Value;
+            FarmLandControl farmLandControl = new FarmLandControl();
 
-            flowLayoutPanelParcels.Controls.Clear();
+            // Set the labelParcelNo.Text based on the current count
+            farmLandControl.labelParcelNo.Text = (flowLayoutPanelParcels.Controls.Count + 1).ToString();
 
-            for (int i = 0; i < numberOfControls; i++)
+            flowLayoutPanelParcels.Controls.Add(farmLandControl);
+
+            // Handle the remove button click event
+            farmLandControl.RemoveButtonClick += FarmLandControl_RemoveButtonClick;
+
+            // Update the parcel count label
+            UpdateParcelCountLabel();
+        }
+
+        private void FarmLandControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is FarmLandControl farmLandControl)
             {
-                // Create an instance of your custom UserControl
-                FarmLandControl farmLandControl = new FarmLandControl();
+                // Get the index of the control being removed
+                int removedIndex = flowLayoutPanelParcels.Controls.IndexOf(farmLandControl);
 
-                // Set properties of the UserControl as needed
-                farmLandControl.labelParcelNo.Text = (i + 1).ToString();
+                // Check if the control was found in the Controls collection
+                if (removedIndex >= 0 && removedIndex < flowLayoutPanelParcels.Controls.Count)
+                {
+                    // Remove the farmLandControl from the flowLayoutPanelParcels
+                    flowLayoutPanelParcels.Controls.Remove(farmLandControl);
 
-                // Add the UserControl to the parent control (e.g., Panel)
-                flowLayoutPanelParcels.Controls.Add(farmLandControl);
+                    // Update the parcel numbers for the remaining controls
+                    for (int i = removedIndex; i < flowLayoutPanelParcels.Controls.Count; i++)
+                    {
+                        FarmLandControl remainingControl = (FarmLandControl)flowLayoutPanelParcels.Controls[i];
+                        remainingControl.labelParcelNo.Text = (i + 1).ToString();
+                    }
+                }
+
+                // Update the parcel count label
+                UpdateParcelCountLabel();
             }
         }
 
+
+        private void UpdateParcelCountLabel()
+        {
+            labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
+        }
+
+
+        private void txtAssociation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void btnDisplayListCon_Click(object sender, EventArgs e)
         {
             DisplayFarmParcelsDataInTextBox(GetFarmParcelsFromControls());
@@ -535,29 +601,6 @@ namespace AgRecords.View
                 txtGovIdNum.Clear();
             }
         }
-
-        //restrict text field input
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextboxValidation.TextBox_AlpaNumeric(sender, e);
-        }
-
-        //allow chars only
-        private void TextBox_AlphaOnly(object sender, KeyPressEventArgs e)
-        {
-            TextboxValidation.TextBox_AlphaOnly(sender, e);
-        }
-
-        //allow nums only
-        private void TextBox_NumericOnly(object sender, KeyPressEventArgs e)
-        {
-            TextboxValidation.TextBox_NumericOnly(sender, e);
-        }
-
-        //convert all Alpabets to Uppercase in textbox
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextboxValidation.TextBox_AllCaps(sender, e);
         }
 
     }

@@ -64,6 +64,18 @@ namespace AgRecords.Model
             }
         }
 
+        public byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                // Save the image to the memory stream in the desired format (e.g., JPEG)
+                image.Save(memoryStream, ImageFormat.Jpeg);
+
+                // Convert the memory stream to a byte array and return it
+                return memoryStream.ToArray();
+            }
+        }
+
         public bool AddNewFarmParcel(List<FarmParcel> farmParcels)
         {
             try
@@ -117,6 +129,44 @@ namespace AgRecords.Model
             {
                 // Handle exceptions and return false if there is an error
                 throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
+            }
+        }
+
+        public bool AddNewRSBSADocument(List<RSBSADocuments> rsbsaDocuments)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    foreach (RSBSADocuments rsbsaDocument in rsbsaDocuments)
+                    {
+                        foreach (var kvp in rsbsaDocument.docPhotoDictionary)
+                        {
+                            MySqlCommand documentCommand = new MySqlCommand("sp_addNewRSBSADocument", db.GetConnection());
+                            documentCommand.CommandType = CommandType.StoredProcedure;
+
+                            documentCommand.Parameters.AddWithValue("_rsbsaId", rsbsaDocument.rsbsaId);
+                            documentCommand.Parameters.AddWithValue("_docType", rsbsaDocument.docType);
+                            documentCommand.Parameters.AddWithValue("_docFilename", kvp.Key); // Filename from the dictionary
+
+                            byte[] docPhotoBytes = ConvertImageToByteArray(kvp.Value);
+
+                            // Add the image data to the database command parameters
+                            documentCommand.Parameters.AddWithValue("_docPhoto", docPhotoBytes);
+
+                            documentCommand.ExecuteNonQuery();
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions and return false if there is an error
+                throw new ApplicationException("Error adding new RSBSA Document: " + ex.Message, ex);
             }
         }
 
@@ -233,6 +283,352 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error adding new RSBSA information: " + ex.Message, ex);
             }
         }
+
+        public RSBSA GetRSBSAInfoById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getRSBSAInfoById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA rsbsaInfo = null;
+
+                    if (reader.Read())
+                    {
+                        rsbsaInfo = new RSBSA();
+                        rsbsaInfo.rsbsaId = reader["rsbsaId"].ToString();
+                        rsbsaInfo.rsbsaIdRegion = reader["rsbsaIdRegion"].ToString();
+                        rsbsaInfo.userId = reader["userId"].ToString();
+                        rsbsaInfo.dateCreated = DateTime.Parse(reader["dateCreated"].ToString());
+                    }
+
+                    reader.Close();
+                    return rsbsaInfo;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting RSBSA info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public RSBSA GetFarmerInfoById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getFarmerInfoById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA farmerInfo = null;
+
+                    if (reader.Read())
+                    {
+                        farmerInfo = new RSBSA();
+                        farmerInfo.surname = reader["surname"].ToString();
+                        farmerInfo.firstname = reader["firstname"].ToString();
+                        farmerInfo.middlename = reader["middlename"].ToString();
+                        farmerInfo.extname = reader["extname"].ToString();
+                        farmerInfo.sex = reader["sex"].ToString();
+                        farmerInfo.addrPurok = reader["addrPurok"].ToString();
+                        farmerInfo.addrStreet = reader["addrStreet"].ToString();
+                        farmerInfo.addrBrgy = reader["addrBrgy"].ToString();
+                        farmerInfo.addrMunicipality = reader["addrMunicipality"].ToString();
+                        farmerInfo.addrProvince = reader["addrProvince"].ToString();
+                        farmerInfo.addrRegion = reader["addrRegion"].ToString();
+                        farmerInfo.educAttainment = reader["educAttainment"].ToString();
+                        farmerInfo.contactNo = reader["contactNo"].ToString();
+                        farmerInfo.landlineNo = reader["landlineNo"].ToString();
+                        farmerInfo.withGovId = reader["withGovId"].ToString();
+                        farmerInfo.govIdType = reader["govIdType"].ToString();
+                        farmerInfo.govIdNo = reader["govIdNo"].ToString();
+                        farmerInfo.birthDate = DateTime.Parse(reader["birthDate"].ToString());
+                        farmerInfo.birthMunicipality = reader["birthMunicipality"].ToString();
+                        farmerInfo.birthProvince = reader["birthProvince"].ToString();
+                        farmerInfo.birthCountry = reader["birthCountry"].ToString();
+                        farmerInfo.religion = reader["religion"].ToString();
+                        farmerInfo.civilStatus = reader["civilStatus"].ToString();
+                        farmerInfo.spouseName = reader["spouseName"].ToString();
+                        farmerInfo.maidenName = reader["maidenName"].ToString();
+                        farmerInfo.isHouseHead = reader["isHouseHead"].ToString();
+                        farmerInfo.houseHeadName = reader["houseHeadName"].ToString();
+                        farmerInfo.houseHeadRs = reader["houseHeadRs"].ToString();
+                        farmerInfo.houseLivingMemCount = Convert.ToInt32(reader["houseLivingMemCount"]);
+                        farmerInfo.houseMaleCount = Convert.ToInt32(reader["houseMaleCount"]);
+                        farmerInfo.houseFemCount = Convert.ToInt32(reader["houseFemCount"]);
+                        farmerInfo.isPWD = reader["isPWD"].ToString();
+                        farmerInfo.isIp = reader["isIp"].ToString();
+                        farmerInfo.ipGroupName = reader["ipGroupName"].ToString();
+                        farmerInfo.isCoopMember = reader["isCoopMember"].ToString();
+                        farmerInfo.coopName = reader["coopName"].ToString();
+                        farmerInfo.emergContactName = reader["emergContactName"].ToString();
+                        farmerInfo.emergContactNo = reader["emergContactNo"].ToString();
+                    }
+
+                    reader.Close();
+                    return farmerInfo;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting farmer info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public RSBSA GetFarmProfileById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getFarmProfileById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA farmProfile = null;
+
+                    if (reader.Read())
+                    {
+                        farmProfile = new RSBSA();
+                        farmProfile.isFarmer = reader["isFarmer"].ToString();
+                        farmProfile.isRiceFarmer = reader["isRiceFarmer"].ToString();
+                        farmProfile.isCornFarmer = reader["isCornFarmer"].ToString();
+                        farmProfile.otherCrops = reader["otherCrops"].ToString();
+                        farmProfile.hasLivestocks = reader["hasLivestocks"].ToString();
+                        farmProfile.hasPoultry = reader["hasPoultry"].ToString();
+                        farmProfile.isLaborer = reader["isLaborer"].ToString();
+                        farmProfile.isPreparingLand = reader["isPreparingLand"].ToString();
+                        farmProfile.isPlanting = reader["isPlanting"].ToString();
+                        farmProfile.isCultivating = reader["isCultivating"].ToString();
+                        farmProfile.isHarvesting = reader["isHarvesting"].ToString();
+                        farmProfile.otherLaborWork = reader["otherLaborWork"].ToString();
+                        farmProfile.isFisherfolk = reader["isFisherfolk"].ToString();
+                        farmProfile.isFishCapturing = reader["isFishCapturing"].ToString();
+                        farmProfile.isAquaculture = reader["isAquaculture"].ToString();
+                        farmProfile.isGleaning = reader["isGleaning"].ToString();
+                        farmProfile.isFishProcessing = reader["isFishProcessing"].ToString();
+                        farmProfile.isFishVending = reader["isFishVending"].ToString();
+                        farmProfile.otherFishingAct = reader["otherFishingAct"].ToString();
+                        farmProfile.isAgriYouth = reader["isAgriYouth"].ToString();
+                        farmProfile.isPartOfFarmingHousehold = reader["isPartOfFarmingHousehold"].ToString();
+                        farmProfile.isAttendAgrifishery = reader["isAttendAgrifishery"].ToString();
+                        farmProfile.isParticipantAgriProgram = reader["isParticipantAgriProgram"].ToString();
+                        farmProfile.otherAgriYouthAct = reader["otherAgriYouthAct"].ToString();
+                        farmProfile.annualIncomeFarming = Convert.ToDouble(reader["annualIncomeFarming"]);
+                        farmProfile.annualIncomeNonFarming = Convert.ToDouble(reader["annualIncomeNonFarming"]);
+                    }
+
+
+                    reader.Close();
+                    return farmProfile;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting farm profile info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public RSBSA GetFarmlandById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getFarmlandById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA farmland = null;
+
+                    if (reader.Read())
+                    {
+                        farmland = new RSBSA();
+                        farmland.rotatingFarmers = reader["rotatingFarmers"].ToString();
+                        farmland.farmParcelCount = Convert.ToInt32(reader["farmParcelCount"]);
+                    }
+
+                    reader.Close();
+                    return farmland;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting farmland info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public RSBSA GetFarmlandParcelsById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getFarmlandParcelById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA parcel = null;
+
+                    if (reader.HasRows)
+                    {
+                        parcel = new RSBSA();
+                        parcel.farmParcels = new List<FarmParcel>();
+
+                        while (reader.Read())
+                        {
+                            FarmParcel farmParcel = new FarmParcel();
+                            farmParcel.rsbsaId = reader["rsbsaId"].ToString();
+                            farmParcel.farmParcelNo = reader["farmParcelNo"].ToString();
+                            farmParcel.farmLocBrgy = reader["farmLocBrgy"].ToString();
+                            farmParcel.farmLocMunicipality = reader["farmLocMunicipality"].ToString();
+                            farmParcel.farmSize = Convert.ToDouble(reader["farmSize"]);
+                            farmParcel.isAncestralDomain = reader["isAncestralDomain"].ToString();
+                            farmParcel.ownershipNo = reader["ownershipNo"].ToString();
+                            farmParcel.isAgrarianBeneficiary = reader["isAgrarianBeneficiary"].ToString();
+                            farmParcel.isRegisteredOwner = reader["isRegisteredOwner"].ToString();
+                            farmParcel.ownershipType = reader["ownershipType"].ToString();
+                            farmParcel.ownerName = reader["ownerName"].ToString();
+                            farmParcel.remarks = reader["remarks"].ToString();
+
+                            parcel.farmParcels.Add(farmParcel);
+                        }
+                    }
+
+                    reader.Close();
+                    return parcel;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting farmland parcels info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public RSBSA GetFarmlandParcelCropsById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getFarmlandParcelCropsById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA parcelCrops = null;
+
+                    if (reader.HasRows)
+                    {
+                        parcelCrops = new RSBSA();
+                        parcelCrops.farmParcelCrops = new List<FarmParcelCrop>();
+
+                        while (reader.Read())
+                        {
+                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                            farmParcelCrop.farmParcelNo = reader["farmParcelNo"].ToString();
+                            farmParcelCrop.commodityType = reader["commodityType"].ToString();
+                            farmParcelCrop.landSize = Convert.ToDouble(reader["landSize"]);
+                            farmParcelCrop.headCount = Convert.ToInt32(reader["headCount"]);
+                            farmParcelCrop.farmType = reader["farmType"].ToString();
+                            farmParcelCrop.isOrganic = reader["isOrganic"].ToString();
+
+                            parcelCrops.farmParcelCrops.Add(farmParcelCrop);
+                        }
+                    }
+
+                    reader.Close();
+                    return parcelCrops;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting farmland parcel crops by ID: " + ex.Message, ex);
+            }
+        }
+
+        public RSBSA GetDocsById(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getRSBSADocsById(@rsbsaId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@rsbsaId", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RSBSA docs = null;
+
+                    if (reader.HasRows)
+                    {
+                        docs = new RSBSA();
+                        docs.rsbsaDocuments = new List<RSBSADocuments>();
+
+                        while (reader.Read())
+                        {
+                            RSBSADocuments document = new RSBSADocuments();
+                            document.rsbsaId = reader["rsbsaId"].ToString();
+                            document.docType = reader["docType"].ToString();
+                            string docFilename = reader["docFilename"].ToString();
+
+                            //convert byte to image then pass it to dictionary
+                            byte[] docPhotoBytes = (byte[])reader["docPhoto"];
+                            Image docImage = GetImageFromByteArray(docPhotoBytes);
+
+                            document.docPhotoDictionary.Add(docFilename, docImage);
+                            docs.rsbsaDocuments.Add(document);
+                        }
+                    }
+
+                    reader.Close();
+                    return docs;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting documents by ID: " + ex.Message, ex);
+            }
+        }
+
+        //method to convert byte array to Image
+        private Image GetImageFromByteArray(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
+            }
+        }
+
 
 
 

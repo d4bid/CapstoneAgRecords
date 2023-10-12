@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,6 +77,36 @@ namespace AgRecords.View
             parentPanel.Controls.Clear();
             parentPanel.Controls.Add(rsbsaTry);
             rsbsaTry.Show();
+        }
+
+        private void dgvRsbsa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Get the selected row
+                DataGridViewRow row = dgvRsbsa.Rows[e.RowIndex];
+
+                // Get the user ID from the first cell of the row
+                string rsbsaId = row.Cells[0].Value.ToString();
+
+                if (rsbsaId != null)
+                {
+                    //// Get the user account data from the database using the user ID
+                    //Letters letters = letterController.GetLetterInfoByLetterId(userId);
+                    //LettersPages lettersPages = letterController.GetLetterPagesByLetterId(userId);
+
+                    //LettersEditView lettersEditView = new LettersEditView(letters, lettersPages);
+                    //lettersEditView.FormClosed += LettersEditView_FormClosed;
+
+                    //lettersEditView.TopLevel = false;
+                    //lettersEditView.FormBorderStyle = FormBorderStyle.None;
+                    //lettersEditView.Dock = DockStyle.Fill;
+
+                    //parentPanel.Controls.Clear();
+                    //parentPanel.Controls.Add(lettersEditView);
+                    //lettersEditView.Show();
+                }
+            }
         }
     }
 }

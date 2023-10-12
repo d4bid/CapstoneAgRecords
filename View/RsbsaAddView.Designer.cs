@@ -31,10 +31,16 @@
             panelPersonalInfo = new Panel();
             panelFarmProfile = new Panel();
             panelFarmLand = new Panel();
-            panelDocument = new Panel();
-            label48 = new Label();
-            btnBrowse = new Button();
-            comboBoxDocType = new ComboBox();
+            panel19 = new Panel();
+            flowLayoutPanelParcels = new FlowLayoutPanel();
+            panel12 = new Panel();
+            panel17 = new Panel();
+            panel41 = new Panel();
+            btnAddFarmParcel = new FontAwesome.Sharp.IconButton();
+            labelParcelCount = new Label();
+            panel42 = new Panel();
+            label70 = new Label();
+            label71 = new Label();
             panel43 = new Panel();
             rectangleRound50 = new RectangleRound();
             label47 = new Label();
@@ -44,13 +50,10 @@
             panel44 = new Panel();
             label46 = new Label();
             label72 = new Label();
-            panel41 = new Panel();
-            nudFarmParcelNo = new NumericUpDown();
-            rectangleRound48 = new RectangleRound();
-            panel42 = new Panel();
-            label70 = new Label();
-            label71 = new Label();
-            flowLayoutPanelParcels = new FlowLayoutPanel();
+            panelDocument = new Panel();
+            flowLayoutPanelDocs = new FlowLayoutPanel();
+            panel14 = new Panel();
+            btnAddDocsControl = new FontAwesome.Sharp.IconButton();
             panel39 = new Panel();
             txtNonFarmingIncome = new TextBox();
             txtFarmingIncome = new TextBox();
@@ -292,6 +295,7 @@
             panel4 = new Panel();
             panel2 = new Panel();
             panel28 = new Panel();
+            btnDisplayListCon = new Button();
             panelColorDoc = new Panel();
             panelColorPi = new Panel();
             panelColorFp = new Panel();
@@ -301,7 +305,7 @@
             btnFarmLand = new Button();
             btnDocuments = new Button();
             panel27 = new Panel();
-            btnDisplayListCon = new Button();
+            btnCancel = new Button();
             btnSave = new Button();
             label26 = new Label();
             labelRsbsaId = new Label();
@@ -313,15 +317,19 @@
             panel1 = new Panel();
             pbFarmerPhoto = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            openFileDialog1 = new OpenFileDialog();
             panelPersonalInfo.SuspendLayout();
             panelFarmProfile.SuspendLayout();
             panelFarmLand.SuspendLayout();
-            panelDocument.SuspendLayout();
+            panel19.SuspendLayout();
+            panel12.SuspendLayout();
+            panel17.SuspendLayout();
+            panel41.SuspendLayout();
+            panel42.SuspendLayout();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
-            panel41.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudFarmParcelNo).BeginInit();
-            panel42.SuspendLayout();
+            panelDocument.SuspendLayout();
+            panel14.SuspendLayout();
             panel39.SuspendLayout();
             panel40.SuspendLayout();
             panel37.SuspendLayout();
@@ -405,71 +413,125 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 0);
+            panelFarmProfile.Size = new Size(1595, 767);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
             // 
+            panelFarmLand.Controls.Add(panel19);
+            panelFarmLand.Controls.Add(panel12);
             panelFarmLand.Controls.Add(panelDocument);
-            panelFarmLand.Controls.Add(panel43);
-            panelFarmLand.Controls.Add(panel41);
-            panelFarmLand.Controls.Add(flowLayoutPanelParcels);
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
             panelFarmLand.Size = new Size(1595, 767);
             panelFarmLand.TabIndex = 52;
             // 
-            // panelDocument
+            // panel19
             // 
-            panelDocument.Controls.Add(label48);
-            panelDocument.Controls.Add(btnBrowse);
-            panelDocument.Controls.Add(comboBoxDocType);
-            panelDocument.Dock = DockStyle.Top;
-            panelDocument.Location = new Point(0, 0);
-            panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 0);
-            panelDocument.TabIndex = 73;
+            panel19.Controls.Add(flowLayoutPanelParcels);
+            panel19.Dock = DockStyle.Fill;
+            panel19.Location = new Point(0, 927);
+            panel19.Name = "panel19";
+            panel19.Padding = new Padding(10);
+            panel19.Size = new Size(1595, 0);
+            panel19.TabIndex = 75;
             // 
-            // label48
+            // flowLayoutPanelParcels
             // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label48.Location = new Point(36, 18);
-            label48.Name = "label48";
-            label48.Size = new Size(113, 20);
-            label48.TabIndex = 91;
-            label48.Text = "Document Type";
+            flowLayoutPanelParcels.AutoScroll = true;
+            flowLayoutPanelParcels.Dock = DockStyle.Fill;
+            flowLayoutPanelParcels.Location = new Point(10, 10);
+            flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
+            flowLayoutPanelParcels.Size = new Size(1575, 0);
+            flowLayoutPanelParcels.TabIndex = 54;
             // 
-            // btnBrowse
+            // panel12
             // 
-            btnBrowse.BackColor = Color.FromArgb(43, 121, 223);
-            btnBrowse.FlatAppearance.BorderSize = 0;
-            btnBrowse.FlatStyle = FlatStyle.Flat;
-            btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(517, 36);
-            btnBrowse.Margin = new Padding(3, 4, 3, 4);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(150, 39);
-            btnBrowse.TabIndex = 31;
-            btnBrowse.Text = "Add Document";
-            btnBrowse.UseVisualStyleBackColor = false;
+            panel12.Controls.Add(panel17);
+            panel12.Dock = DockStyle.Top;
+            panel12.Location = new Point(0, 767);
+            panel12.Name = "panel12";
+            panel12.Padding = new Padding(10);
+            panel12.Size = new Size(1595, 160);
+            panel12.TabIndex = 74;
             // 
-            // comboBoxDocType
+            // panel17
             // 
-            comboBoxDocType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBoxDocType.BackColor = Color.FromArgb(239, 239, 239);
-            comboBoxDocType.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxDocType.FormattingEnabled = true;
-            comboBoxDocType.Items.AddRange(new object[] { "Certificate of Land Transfer", "Emancipation Patent", "Individual Certificate of Land", "Collective CLOA", "Co-ownership CLOA", "Agricultural sales patent", "Homestead patent", "Free Patent", "Certificate of Title or Regular Title", "Certificate of Ancestral Domain Title", "Certificate of Ancestral Land Title", "Tax Declaration", "Barangay Certification" });
-            comboBoxDocType.Location = new Point(39, 50);
-            comboBoxDocType.Margin = new Padding(3, 4, 3, 4);
-            comboBoxDocType.Name = "comboBoxDocType";
-            comboBoxDocType.Size = new Size(305, 30);
-            comboBoxDocType.TabIndex = 30;
+            panel17.Controls.Add(panel41);
+            panel17.Controls.Add(panel43);
+            panel17.Dock = DockStyle.Fill;
+            panel17.Location = new Point(10, 10);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1575, 140);
+            panel17.TabIndex = 73;
+            // 
+            // panel41
+            // 
+            panel41.BorderStyle = BorderStyle.FixedSingle;
+            panel41.Controls.Add(btnAddFarmParcel);
+            panel41.Controls.Add(labelParcelCount);
+            panel41.Controls.Add(panel42);
+            panel41.Controls.Add(label71);
+            panel41.Location = new Point(2, 5);
+            panel41.Name = "panel41";
+            panel41.Size = new Size(179, 128);
+            panel41.TabIndex = 71;
+            // 
+            // btnAddFarmParcel
+            // 
+            btnAddFarmParcel.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnAddFarmParcel.IconColor = Color.FromArgb(0, 35, 76);
+            btnAddFarmParcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAddFarmParcel.IconSize = 30;
+            btnAddFarmParcel.Location = new Point(91, 75);
+            btnAddFarmParcel.Name = "btnAddFarmParcel";
+            btnAddFarmParcel.Size = new Size(31, 31);
+            btnAddFarmParcel.TabIndex = 73;
+            btnAddFarmParcel.UseVisualStyleBackColor = true;
+            btnAddFarmParcel.Click += btnAddFarmParcel_Click;
+            // 
+            // labelParcelCount
+            // 
+            labelParcelCount.AutoSize = true;
+            labelParcelCount.Location = new Point(65, 79);
+            labelParcelCount.Name = "labelParcelCount";
+            labelParcelCount.Size = new Size(20, 22);
+            labelParcelCount.TabIndex = 72;
+            labelParcelCount.Text = "0";
+            // 
+            // panel42
+            // 
+            panel42.BackColor = Color.FromArgb(43, 121, 223);
+            panel42.Controls.Add(label70);
+            panel42.Dock = DockStyle.Top;
+            panel42.Location = new Point(0, 0);
+            panel42.Name = "panel42";
+            panel42.Size = new Size(177, 29);
+            panel42.TabIndex = 0;
+            // 
+            // label70
+            // 
+            label70.AutoSize = true;
+            label70.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label70.ForeColor = Color.White;
+            label70.Location = new Point(6, 1);
+            label70.Name = "label70";
+            label70.Size = new Size(118, 25);
+            label70.TabIndex = 28;
+            label70.Text = "Farm Parcels";
+            // 
+            // label71
+            // 
+            label71.AutoSize = true;
+            label71.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label71.Location = new Point(18, 44);
+            label71.Name = "label71";
+            label71.Size = new Size(135, 20);
+            label71.TabIndex = 71;
+            label71.Text = "No. of Farm Parcels";
             // 
             // panel43
             // 
-            panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel43.BorderStyle = BorderStyle.FixedSingle;
             panel43.Controls.Add(rectangleRound50);
             panel43.Controls.Add(label47);
@@ -478,9 +540,9 @@
             panel43.Controls.Add(rectangleRound46);
             panel43.Controls.Add(panel44);
             panel43.Controls.Add(label72);
-            panel43.Location = new Point(240, 9);
+            panel43.Location = new Point(195, 5);
             panel43.Name = "panel43";
-            panel43.Size = new Size(1345, 128);
+            panel43.Size = new Size(1368, 128);
             panel43.TabIndex = 72;
             // 
             // rectangleRound50
@@ -537,7 +599,7 @@
             panel44.Dock = DockStyle.Top;
             panel44.Location = new Point(0, 0);
             panel44.Name = "panel44";
-            panel44.Size = new Size(1343, 29);
+            panel44.Size = new Size(1366, 29);
             panel44.TabIndex = 0;
             // 
             // label46
@@ -561,75 +623,53 @@
             label72.TabIndex = 71;
             label72.Text = "(P1)";
             // 
-            // panel41
+            // panelDocument
             // 
-            panel41.BorderStyle = BorderStyle.FixedSingle;
-            panel41.Controls.Add(nudFarmParcelNo);
-            panel41.Controls.Add(rectangleRound48);
-            panel41.Controls.Add(panel42);
-            panel41.Controls.Add(label71);
-            panel41.Location = new Point(12, 9);
-            panel41.Name = "panel41";
-            panel41.Size = new Size(213, 128);
-            panel41.TabIndex = 71;
+            panelDocument.Controls.Add(flowLayoutPanelDocs);
+            panelDocument.Controls.Add(panel14);
+            panelDocument.Dock = DockStyle.Top;
+            panelDocument.Location = new Point(0, 0);
+            panelDocument.Name = "panelDocument";
+            panelDocument.Size = new Size(1595, 767);
+            panelDocument.TabIndex = 73;
             // 
-            // nudFarmParcelNo
+            // flowLayoutPanelDocs
             // 
-            nudFarmParcelNo.BorderStyle = BorderStyle.None;
-            nudFarmParcelNo.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            nudFarmParcelNo.Location = new Point(21, 77);
-            nudFarmParcelNo.Name = "nudFarmParcelNo";
-            nudFarmParcelNo.Size = new Size(160, 27);
-            nudFarmParcelNo.TabIndex = 76;
-            nudFarmParcelNo.ValueChanged += nudFarmParcelNo_ValueChanged;
+            flowLayoutPanelDocs.AutoScroll = true;
+            flowLayoutPanelDocs.Dock = DockStyle.Fill;
+            flowLayoutPanelDocs.Location = new Point(0, 87);
+            flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
+            flowLayoutPanelDocs.Size = new Size(1595, 680);
+            flowLayoutPanelDocs.TabIndex = 92;
             // 
-            // rectangleRound48
+            // panel14
             // 
-            rectangleRound48.BackColor = Color.White;
-            rectangleRound48.Location = new Point(15, 72);
-            rectangleRound48.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound48.Name = "rectangleRound48";
-            rectangleRound48.Size = new Size(170, 38);
-            rectangleRound48.TabIndex = 72;
+            panel14.Controls.Add(btnAddDocsControl);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new Point(0, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(1595, 87);
+            panel14.TabIndex = 94;
             // 
-            // panel42
+            // btnAddDocsControl
             // 
-            panel42.BackColor = Color.FromArgb(43, 121, 223);
-            panel42.Controls.Add(label70);
-            panel42.Dock = DockStyle.Top;
-            panel42.Location = new Point(0, 0);
-            panel42.Name = "panel42";
-            panel42.Size = new Size(211, 29);
-            panel42.TabIndex = 0;
-            // 
-            // label70
-            // 
-            label70.AutoSize = true;
-            label70.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label70.ForeColor = Color.White;
-            label70.Location = new Point(6, 1);
-            label70.Name = "label70";
-            label70.Size = new Size(118, 25);
-            label70.TabIndex = 28;
-            label70.Text = "Farm Parcels";
-            // 
-            // label71
-            // 
-            label71.AutoSize = true;
-            label71.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label71.Location = new Point(18, 44);
-            label71.Name = "label71";
-            label71.Size = new Size(135, 20);
-            label71.TabIndex = 71;
-            label71.Text = "No. of Farm Parcels";
-            // 
-            // flowLayoutPanelParcels
-            // 
-            flowLayoutPanelParcels.AutoScroll = true;
-            flowLayoutPanelParcels.Location = new Point(11, 163);
-            flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
-            flowLayoutPanelParcels.Size = new Size(1574, 555);
-            flowLayoutPanelParcels.TabIndex = 54;
+            btnAddDocsControl.BackColor = Color.FromArgb(255, 221, 100);
+            btnAddDocsControl.FlatAppearance.BorderSize = 0;
+            btnAddDocsControl.FlatStyle = FlatStyle.Flat;
+            btnAddDocsControl.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddDocsControl.ForeColor = Color.FromArgb(0, 35, 76);
+            btnAddDocsControl.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnAddDocsControl.IconColor = Color.FromArgb(0, 35, 76);
+            btnAddDocsControl.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAddDocsControl.IconSize = 30;
+            btnAddDocsControl.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddDocsControl.Location = new Point(1285, 24);
+            btnAddDocsControl.Name = "btnAddDocsControl";
+            btnAddDocsControl.Size = new Size(300, 39);
+            btnAddDocsControl.TabIndex = 93;
+            btnAddDocsControl.Text = "Add Document";
+            btnAddDocsControl.UseVisualStyleBackColor = false;
+            btnAddDocsControl.Click += btnAddDocsControl_Click;
             // 
             // panel39
             // 
@@ -1354,7 +1394,6 @@
             // 
             // panel23
             // 
-            panel23.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel23.BorderStyle = BorderStyle.FixedSingle;
             panel23.Controls.Add(txtEcContact);
             panel23.Controls.Add(txtEcName);
@@ -1431,7 +1470,6 @@
             // 
             // rectangleRound38
             // 
-            rectangleRound38.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound38.BackColor = Color.White;
             rectangleRound38.Location = new Point(310, 63);
             rectangleRound38.Margin = new Padding(2, 3, 2, 3);
@@ -1452,7 +1490,6 @@
             // 
             // panel25
             // 
-            panel25.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel25.BorderStyle = BorderStyle.FixedSingle;
             panel25.Controls.Add(panelCoop);
             panel25.Controls.Add(panelGovId);
@@ -1759,7 +1796,6 @@
             // 
             // rectangleRound39
             // 
-            rectangleRound39.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound39.BackColor = Color.White;
             rectangleRound39.Location = new Point(174, 200);
             rectangleRound39.Margin = new Padding(2, 3, 2, 3);
@@ -1769,7 +1805,6 @@
             // 
             // rectangleRound37
             // 
-            rectangleRound37.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound37.BackColor = Color.White;
             rectangleRound37.Location = new Point(174, 242);
             rectangleRound37.Margin = new Padding(2, 3, 2, 3);
@@ -1779,7 +1814,6 @@
             // 
             // rectangleRound35
             // 
-            rectangleRound35.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound35.BackColor = Color.White;
             rectangleRound35.Location = new Point(174, 284);
             rectangleRound35.Margin = new Padding(2, 3, 2, 3);
@@ -1809,17 +1843,15 @@
             // 
             // rectangleRound34
             // 
-            rectangleRound34.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound34.BackColor = Color.White;
             rectangleRound34.Location = new Point(360, 340);
             rectangleRound34.Margin = new Padding(2, 3, 2, 3);
             rectangleRound34.Name = "rectangleRound34";
-            rectangleRound34.Size = new Size(158, 38);
+            rectangleRound34.Size = new Size(148, 38);
             rectangleRound34.TabIndex = 26;
             // 
             // rectangleRound19
             // 
-            rectangleRound19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound19.BackColor = Color.White;
             rectangleRound19.Location = new Point(118, 382);
             rectangleRound19.Margin = new Padding(2, 3, 2, 3);
@@ -1860,7 +1892,6 @@
             // 
             // rectangleRound15
             // 
-            rectangleRound15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound15.BackColor = Color.White;
             rectangleRound15.Location = new Point(354, 42);
             rectangleRound15.Margin = new Padding(2, 3, 2, 3);
@@ -1880,7 +1911,6 @@
             // 
             // rectangleRound16
             // 
-            rectangleRound16.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound16.BackColor = Color.White;
             rectangleRound16.Location = new Point(119, 143);
             rectangleRound16.Margin = new Padding(2, 3, 2, 3);
@@ -2723,7 +2753,6 @@
             // 
             // panel8
             // 
-            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(txtLandNo);
             panel8.Controls.Add(txtMobNo);
@@ -2769,7 +2798,6 @@
             // 
             // rectangleRound12
             // 
-            rectangleRound12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound12.BackColor = Color.White;
             rectangleRound12.Location = new Point(20, 131);
             rectangleRound12.Margin = new Padding(2, 3, 2, 3);
@@ -2800,7 +2828,6 @@
             // 
             // rectangleRound13
             // 
-            rectangleRound13.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound13.BackColor = Color.White;
             rectangleRound13.Location = new Point(20, 60);
             rectangleRound13.Margin = new Padding(2, 3, 2, 3);
@@ -3255,6 +3282,7 @@
             textBoxFarmParcels.Size = new Size(154, 36);
             textBoxFarmParcels.TabIndex = 5;
             textBoxFarmParcels.Text = "Debug";
+            textBoxFarmParcels.Visible = false;
             // 
             // panel4
             // 
@@ -3279,6 +3307,7 @@
             // 
             // panel28
             // 
+            panel28.Controls.Add(btnDisplayListCon);
             panel28.Controls.Add(textBoxFarmParcels);
             panel28.Controls.Add(panelColorDoc);
             panel28.Controls.Add(panelColorPi);
@@ -3293,6 +3322,17 @@
             panel28.Name = "panel28";
             panel28.Size = new Size(1437, 57);
             panel28.TabIndex = 0;
+            // 
+            // btnDisplayListCon
+            // 
+            btnDisplayListCon.Location = new Point(836, 7);
+            btnDisplayListCon.Name = "btnDisplayListCon";
+            btnDisplayListCon.Size = new Size(75, 42);
+            btnDisplayListCon.TabIndex = 92;
+            btnDisplayListCon.Text = "Debug";
+            btnDisplayListCon.UseVisualStyleBackColor = true;
+            btnDisplayListCon.Visible = false;
+            btnDisplayListCon.Click += btnDisplayListCon_Click;
             // 
             // panelColorDoc
             // 
@@ -3392,7 +3432,7 @@
             // 
             // panel27
             // 
-            panel27.Controls.Add(btnDisplayListCon);
+            panel27.Controls.Add(btnCancel);
             panel27.Controls.Add(btnSave);
             panel27.Controls.Add(label26);
             panel27.Controls.Add(labelRsbsaId);
@@ -3407,22 +3447,31 @@
             panel27.Size = new Size(1437, 83);
             panel27.TabIndex = 1;
             // 
-            // btnDisplayListCon
+            // btnCancel
             // 
-            btnDisplayListCon.Location = new Point(874, 25);
-            btnDisplayListCon.Name = "btnDisplayListCon";
-            btnDisplayListCon.Size = new Size(75, 42);
-            btnDisplayListCon.TabIndex = 92;
-            btnDisplayListCon.Text = "Debug";
-            btnDisplayListCon.UseVisualStyleBackColor = true;
-            btnDisplayListCon.Click += btnDisplayListCon_Click;
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
+            btnCancel.FlatAppearance.BorderSize = 2;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
+            btnCancel.Location = new Point(1277, 19);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(130, 40);
+            btnCancel.TabIndex = 92;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.OrangeRed;
-            btnSave.Location = new Point(955, 27);
+            btnSave.BackColor = Color.FromArgb(43, 121, 223);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(1137, 19);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 32);
+            btnSave.Size = new Size(130, 40);
             btnSave.TabIndex = 91;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -3514,6 +3563,10 @@
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // RsbsaAddView
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
@@ -3530,17 +3583,19 @@
             panelPersonalInfo.ResumeLayout(false);
             panelFarmProfile.ResumeLayout(false);
             panelFarmLand.ResumeLayout(false);
-            panelDocument.ResumeLayout(false);
-            panelDocument.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel12.ResumeLayout(false);
+            panel17.ResumeLayout(false);
+            panel41.ResumeLayout(false);
+            panel41.PerformLayout();
+            panel42.ResumeLayout(false);
+            panel42.PerformLayout();
             panel43.ResumeLayout(false);
             panel43.PerformLayout();
             panel44.ResumeLayout(false);
             panel44.PerformLayout();
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudFarmParcelNo).EndInit();
-            panel42.ResumeLayout(false);
-            panel42.PerformLayout();
+            panelDocument.ResumeLayout(false);
+            panel14.ResumeLayout(false);
             panel39.ResumeLayout(false);
             panel39.PerformLayout();
             panel40.ResumeLayout(false);
@@ -3831,11 +3886,9 @@
         private Label label69;
         private RectangleRound rectangleRound45;
         private Panel panel41;
-        private RectangleRound rectangleRound48;
         private Panel panel42;
         private Label label70;
         private Label label71;
-        private NumericUpDown nudFarmParcelNo;
         private Panel panel43;
         private RectangleRound rectangleRound46;
         private Panel panel44;
@@ -3877,9 +3930,6 @@
         private TextBox txtNonFarmingIncome;
         private TextBox txtFarmingIncome;
         private Panel panelDocument;
-        private ComboBox comboBoxDocType;
-        private Button btnBrowse;
-        private Label label48;
         private Button btnSave;
         private RectangleRound rectangleRound27;
         private RadioButton rbChristianity;
@@ -3919,5 +3969,15 @@
         public RectangleRound rectangleRound21;
         private TextBox textBoxFarmParcels;
         private Button btnDisplayListCon;
+        private FontAwesome.Sharp.IconButton btnAddFarmParcel;
+        private Label labelParcelCount;
+        private FlowLayoutPanel flowLayoutPanelDocs;
+        private FontAwesome.Sharp.IconButton btnAddDocsControl;
+        private OpenFileDialog openFileDialog1;
+        private Button btnCancel;
+        private Panel panel12;
+        private Panel panel14;
+        private Panel panel17;
+        private Panel panel19;
     }
 }
