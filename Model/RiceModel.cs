@@ -40,14 +40,11 @@ namespace AgRecords.Model
                     if (result != null && result != DBNull.Value)
                     {
                         string lastId = result.ToString();
-                        string[] parts = lastId.Split('-');
+                        string yearPart = lastId.Substring(12, 4); // Extract the year from the last ID
 
-                        if (parts.Length == 3 && parts[0] == "RICESTANDING" && parts[1] == currentYear.ToString())
+                        if (yearPart == currentYear.ToString())
                         {
-                            if (int.TryParse(parts[2], out int lastNumber))
-                            {
-                                nextNumber = lastNumber + 1;
-                            }
+                            nextNumber = int.Parse(lastId.Substring(17)) + 1;
                         }
                     }
 
@@ -59,7 +56,6 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error generating next ID: " + ex.Message, ex);
             }
         }
-
 
 
 
