@@ -23,8 +23,6 @@ namespace AgRecords.Controller
         UserModel userModel = new UserModel();
         private Boolean isDone = false; //for processing CRUD operations
 
-
-
         //to get the username of the current user
         private string fullName = HomeView.Instance.fullName.Text;
 
