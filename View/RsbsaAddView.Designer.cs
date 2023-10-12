@@ -270,7 +270,7 @@
             label12 = new Label();
             label11 = new Label();
             rectangleRound9 = new RectangleRound();
-            panel3 = new Panel();
+            panelPersonalDetails = new Panel();
             cbSex = new ComboBox();
             txtExtname = new TextBox();
             txtMiddlename = new TextBox();
@@ -362,7 +362,7 @@
             panel9.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
-            panel3.SuspendLayout();
+            panelPersonalDetails.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -386,7 +386,7 @@
             panelPersonalInfo.Controls.Add(panel10);
             panelPersonalInfo.Controls.Add(panel8);
             panelPersonalInfo.Controls.Add(panel6);
-            panelPersonalInfo.Controls.Add(panel3);
+            panelPersonalInfo.Controls.Add(panelPersonalDetails);
             panelPersonalInfo.Dock = DockStyle.Top;
             panelPersonalInfo.Location = new Point(0, 160);
             panelPersonalInfo.Name = "panelPersonalInfo";
@@ -3050,29 +3050,29 @@
             rectangleRound9.Size = new Size(196, 38);
             rectangleRound9.TabIndex = 0;
             // 
-            // panel3
+            // panelPersonalDetails
             // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(cbSex);
-            panel3.Controls.Add(txtExtname);
-            panel3.Controls.Add(txtMiddlename);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(txtFirstname);
-            panel3.Controls.Add(rectangleRound6);
-            panel3.Controls.Add(txtSurname);
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(rectangleRound5);
-            panel3.Controls.Add(rectangleRound2);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(rectangleRound4);
-            panel3.Controls.Add(rectangleRound3);
-            panel3.Controls.Add(label8);
-            panel3.Location = new Point(11, 8);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(557, 182);
-            panel3.TabIndex = 0;
+            panelPersonalDetails.BorderStyle = BorderStyle.FixedSingle;
+            panelPersonalDetails.Controls.Add(cbSex);
+            panelPersonalDetails.Controls.Add(txtExtname);
+            panelPersonalDetails.Controls.Add(txtMiddlename);
+            panelPersonalDetails.Controls.Add(label4);
+            panelPersonalDetails.Controls.Add(label10);
+            panelPersonalDetails.Controls.Add(txtFirstname);
+            panelPersonalDetails.Controls.Add(rectangleRound6);
+            panelPersonalDetails.Controls.Add(txtSurname);
+            panelPersonalDetails.Controls.Add(panel5);
+            panelPersonalDetails.Controls.Add(rectangleRound5);
+            panelPersonalDetails.Controls.Add(rectangleRound2);
+            panelPersonalDetails.Controls.Add(label9);
+            panelPersonalDetails.Controls.Add(label1);
+            panelPersonalDetails.Controls.Add(rectangleRound4);
+            panelPersonalDetails.Controls.Add(rectangleRound3);
+            panelPersonalDetails.Controls.Add(label8);
+            panelPersonalDetails.Location = new Point(11, 8);
+            panelPersonalDetails.Name = "panelPersonalDetails";
+            panelPersonalDetails.Size = new Size(557, 182);
+            panelPersonalDetails.TabIndex = 0;
             // 
             // cbSex
             // 
@@ -3618,8 +3618,8 @@
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelPersonalDetails.ResumeLayout(false);
+            panelPersonalDetails.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel4.ResumeLayout(false);
@@ -3753,7 +3753,7 @@
         private Label label12;
         private Label label11;
         private RectangleRound rectangleRound9;
-        private Panel panel3;
+        private Panel panelPersonalDetails;
         private Label label4;
         private Label label10;
         private RectangleRound rectangleRound6;

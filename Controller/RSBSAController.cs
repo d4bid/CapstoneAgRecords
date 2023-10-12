@@ -245,21 +245,47 @@ namespace AgRecords.Controller
                     // Farmland Parcel
                     farmParcels = farmParcels,
                 };
-                
-                DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
+
+                //VALIDATIONS SHIT
+                if (string.IsNullOrWhiteSpace(surname))
                 {
-                    if (rsbsaModel.AddNewRSBSARecord(rsbsa))
+                    MessageBox.Show("Please add farmer surname.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(firstname))
+                {
+                    MessageBox.Show("Please add farmer first name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(middlename))
+                {
+                    MessageBox.Show("Please add middle name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(sex))
+                {
+                    MessageBox.Show("Please indicate farmer sex.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrWhiteSpace(addrBrgy))
+                {
+                    MessageBox.Show("Please indicate farmer sex.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to save this letter?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
                     {
-                        if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                        if (rsbsaModel.AddNewRSBSARecord(rsbsa))
                         {
-                            MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            isDone = true;
+                            if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                            {
+                                MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                isDone = true;
+                            }
                         }
                     }
+
+                    return isDone;
                 }
-                
-                return isDone;
+                           
             }
             catch (ApplicationException ex)
             {
@@ -268,5 +294,6 @@ namespace AgRecords.Controller
                 return false;
             }
         }
+        //
     }
 }
