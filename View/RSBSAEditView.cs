@@ -24,6 +24,46 @@ namespace AgRecords.View
             InitializeComponent();
             rsbsaController = new RSBSAController(this);
 
+            //to restore data
+            //RSBSA Info
+            labelRsbsaId.Text = rsbsaInfo.rsbsaId;
+            dtDateAdm.Value = rsbsaInfo.dateCreated;
+
+            //Farmer Info
+            txtSurname.Text = farmerInfo.surname;
+            txtFirstname.Text = farmerInfo.firstname;
+            txtMiddlename.Text = farmerInfo.middlename;
+            txtExtname.Text = farmerInfo.extname;
+            cbSex.Text = farmerInfo.sex;
+
+            txtAddPurok.Text = farmerInfo.addrPurok;
+            txtAddStreet.Text = farmerInfo.addrStreet;
+            cbAddBrgy.Text = farmerInfo.addrBrgy;
+            txtAddMunicipality.Text = farmerInfo.addrMunicipality;
+            txtAddProvince.Text = farmerInfo.addrProvince;
+            txtAddRegion.Text = farmerInfo.addrRegion;
+
+            //rbEducText, txtMobNo.Text, txtLandNo.Text, rbGovIdText, txtGovIdType.Text, txtGovIdNum.Text,
+
+
+            //Farm Profile
+
+
+
+            //Farmland
+
+
+
+            //Farmland Parcel
+
+
+
+            //Farmland Parcel Crops
+
+
+
+            //RSBSA Docs
+
         }
 
         // Method

@@ -718,7 +718,7 @@
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Margin = new Padding(3, 2, 3, 2);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1396, 575);
+            panelFarmProfile.Size = new Size(1396, 0);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -729,14 +729,14 @@
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Margin = new Padding(3, 2, 3, 2);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1396, 575);
+            panelFarmLand.Size = new Size(1396, 0);
             panelFarmLand.TabIndex = 52;
             // 
             // panel19
             // 
             panel19.Controls.Add(flowLayoutPanelParcels);
             panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 695);
+            panel19.Location = new Point(0, 120);
             panel19.Margin = new Padding(3, 2, 3, 2);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(9, 8, 9, 8);
@@ -757,7 +757,7 @@
             // 
             panel12.Controls.Add(panel17);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 575);
+            panel12.Location = new Point(0, 0);
             panel12.Margin = new Padding(3, 2, 3, 2);
             panel12.Name = "panel12";
             panel12.Padding = new Padding(9, 8, 9, 8);
@@ -945,7 +945,7 @@
             panelDocument.Location = new Point(0, 0);
             panelDocument.Margin = new Padding(3, 2, 3, 2);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1396, 575);
+            panelDocument.Size = new Size(1396, 0);
             panelDocument.TabIndex = 73;
             // 
             // flowLayoutPanelDocs
@@ -955,7 +955,7 @@
             flowLayoutPanelDocs.Location = new Point(0, 65);
             flowLayoutPanelDocs.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1396, 510);
+            flowLayoutPanelDocs.Size = new Size(1396, 0);
             flowLayoutPanelDocs.TabIndex = 92;
             // 
             // panel14
