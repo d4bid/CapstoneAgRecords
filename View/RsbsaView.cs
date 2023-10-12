@@ -83,30 +83,28 @@ namespace AgRecords.View
         {
             if (e.RowIndex >= 0)
             {
+                // Get the selected row
                 DataGridViewRow row = dgvRsbsa.Rows[e.RowIndex];
 
+                // Get the user ID from the first cell of the row
                 string rsbsaId = row.Cells[0].Value.ToString();
 
                 if (rsbsaId != null)
                 {
-                    RSBSA rsbsaInfo = rsbsaController.GetRSBSAInfoByRSBSAId(rsbsaId);
-                    RSBSA farmerInfo = rsbsaController.GetFarmerInfoByRSBSAId(rsbsaId);
-                    RSBSA farmProfile = rsbsaController.GetFarmProfileByRSBSAId(rsbsaId);
-                    RSBSA farmland = rsbsaController.GetFarmlandByRSBSAId(rsbsaId);
-                    RSBSA farmlandParcel = rsbsaController.GetFarmlandParcelsByRSBSAId(rsbsaId);
-                    RSBSA farmlandParcelCrops = rsbsaController.GetFarmlandParcelCropsByRSBSAId(rsbsaId);
-                    RSBSA rsbsaDocs = rsbsaController.GetDocsByRSBSAId(rsbsaId);
+                    //// Get the user account data from the database using the user ID
+                    //Letters letters = letterController.GetLetterInfoByLetterId(userId);
+                    //LettersPages lettersPages = letterController.GetLetterPagesByLetterId(userId);
 
-                    RSBSAEditView rsbsaEditView = new RSBSAEditView(rsbsaInfo, farmerInfo, farmProfile, farmland, farmlandParcel, farmlandParcelCrops, rsbsaDocs);
-                    //rsbsaEditView.FormClosed += RSBSAEditView_FormClosed;
+                    //LettersEditView lettersEditView = new LettersEditView(letters, lettersPages);
+                    //lettersEditView.FormClosed += LettersEditView_FormClosed;
 
-                    rsbsaEditView.TopLevel = false;
-                    rsbsaEditView.FormBorderStyle = FormBorderStyle.None;
-                    rsbsaEditView.Dock = DockStyle.Fill;
+                    //lettersEditView.TopLevel = false;
+                    //lettersEditView.FormBorderStyle = FormBorderStyle.None;
+                    //lettersEditView.Dock = DockStyle.Fill;
 
-                    parentPanel.Controls.Clear();
-                    parentPanel.Controls.Add(rsbsaEditView);
-                    rsbsaEditView.Show();
+                    //parentPanel.Controls.Clear();
+                    //parentPanel.Controls.Add(lettersEditView);
+                    //lettersEditView.Show();
                 }
             }
         }
