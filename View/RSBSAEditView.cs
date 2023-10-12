@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace AgRecords.View
 
 
 
-        public RSBSAEditView()
+        public RSBSAEditView(RSBSA rsbsaInfo, RSBSA farmerInfo, RSBSA farmProfile, RSBSA farmland, RSBSA farmlandParcel, RSBSA farmlandParcelCrops, RSBSA rsbsaDocs)
         {
             InitializeComponent();
             rsbsaController = new RSBSAController(this);
