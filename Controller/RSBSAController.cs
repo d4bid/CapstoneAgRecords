@@ -284,5 +284,103 @@ namespace AgRecords.Controller
                 return false;
             }
         }
+
+        public RSBSA GetRSBSAInfoByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetRSBSAInfoById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding RSBSA Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RSBSA GetFarmerInfoByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetFarmerInfoById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Farmer Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RSBSA GetFarmProfileByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetFarmProfileById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Farm Profile Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RSBSA GetFarmlandByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetFarmlandById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Farmland Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RSBSA GetFarmlandParcelsByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetFarmlandParcelsById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Farmland Parcel Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RSBSA GetFarmlandParcelCropsByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetFarmlandParcelCropsById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Farmland Parcel Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RSBSA GetDocsByRSBSAId(string rsbsaId)
+        {
+            try
+            {
+                return rsbsaModel.GetDocsById(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding RSBSA Documents Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
     }
 }
