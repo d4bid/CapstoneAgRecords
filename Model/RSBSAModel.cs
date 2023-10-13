@@ -94,6 +94,7 @@ namespace AgRecords.Model
                         parcelCommand.Parameters.AddWithValue("_farmParcelNo", farmParcel.farmParcelNo);
                         parcelCommand.Parameters.AddWithValue("_farmLocBrgy", farmParcel.farmLocBrgy);
                         parcelCommand.Parameters.AddWithValue("_farmLocMunicipality", farmParcel.farmLocMunicipality);
+                        parcelCommand.Parameters.AddWithValue("_farmSize", farmParcel.farmSize);
                         parcelCommand.Parameters.AddWithValue("_isAncestralDomain", farmParcel.isAncestralDomain);
                         parcelCommand.Parameters.AddWithValue("_isAgrarianBeneficiary", farmParcel.isAgrarianBeneficiary);
                         parcelCommand.Parameters.AddWithValue("_ownershipNo", farmParcel.ownershipNo);
@@ -185,7 +186,7 @@ namespace AgRecords.Model
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
                                     "@birthCountry, @religion, @civilStatus, @spouseName, @maidenName, @isHouseHead, " +
                                     "@houseHeadName, @houseHeadRs, @houseLivingMemCount, @houseMaleCount, @houseFemCount, " +
-                                    "@isPWD, @isIp, @ipGroupName, @isCoopMember, @coopName, @emergContactName, @emergContactNo, " +
+                                    "@isPWD, @is4Ps, @isIp, @ipGroupName, @isCoopMember, @coopName, @emergContactName, @emergContactNo, " +
                                     "@isFarmer, @isRiceFarmer, @isCornFarmer, @otherCrops, @hasLivestocks, @hasPoultry, " +
                                     "@isLaborer, @isPreparingLand, @isPlanting, @isCultivating, @isHarvesting, @otherLaborWork, " +
                                     "@isFisherfolk, @isFishCapturing, @isAquaculture, @isGleaning, @isFishProcessing, " +
@@ -234,6 +235,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@houseMaleCount", rsbsa.houseMaleCount);
                     command.Parameters.AddWithValue("@houseFemCount", rsbsa.houseFemCount);
                     command.Parameters.AddWithValue("@isPWD", rsbsa.isPWD);
+                    command.Parameters.AddWithValue("@is4Ps", rsbsa.is4Ps);
                     command.Parameters.AddWithValue("@isIp", rsbsa.isIp);
                     command.Parameters.AddWithValue("@ipGroupName", rsbsa.ipGroupName);
                     command.Parameters.AddWithValue("@isCoopMember", rsbsa.isCoopMember);
@@ -369,6 +371,7 @@ namespace AgRecords.Model
                         farmerInfo.houseMaleCount = Convert.ToInt32(reader["houseMaleCount"]);
                         farmerInfo.houseFemCount = Convert.ToInt32(reader["houseFemCount"]);
                         farmerInfo.isPWD = reader["isPWD"].ToString();
+                        farmerInfo.is4Ps = reader["is4Ps"].ToString();
                         farmerInfo.isIp = reader["isIp"].ToString();
                         farmerInfo.ipGroupName = reader["ipGroupName"].ToString();
                         farmerInfo.isCoopMember = reader["isCoopMember"].ToString();

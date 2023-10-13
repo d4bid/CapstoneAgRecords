@@ -90,7 +90,7 @@
             label69 = new Label();
             panel37 = new Panel();
             txtInvolvementOthers = new TextBox();
-            checkBox25 = new CheckBox();
+            cbInvolvementOthers = new CheckBox();
             cbInvolvementProgram = new CheckBox();
             cbInvolvementFormalCourse = new CheckBox();
             cbInvolvementHousehold = new CheckBox();
@@ -101,7 +101,7 @@
             panel35 = new Panel();
             cbFishingActVending = new CheckBox();
             txtFishingActOthers = new TextBox();
-            checkBox18 = new CheckBox();
+            cbFishingActOthers = new CheckBox();
             cbFishingActProcessing = new CheckBox();
             cbFishingActGleaning = new CheckBox();
             cbFishingActAquaculture = new CheckBox();
@@ -112,7 +112,7 @@
             label40 = new Label();
             panel33 = new Panel();
             txtWorkKindOthers = new TextBox();
-            checkBox12 = new CheckBox();
+            cbWorkKindOthers = new CheckBox();
             cbWorkKindHarvesting = new CheckBox();
             cbWorkKindCultivation = new CheckBox();
             cbWorkKindPlanting = new CheckBox();
@@ -124,13 +124,13 @@
             panel31 = new Panel();
             label39 = new Label();
             txtFarmActPoultry = new TextBox();
-            checkBox11 = new CheckBox();
+            cbPoultry = new CheckBox();
             label38 = new Label();
             txtFarmActLivestock = new TextBox();
-            checkBox10 = new CheckBox();
+            cbLivestock = new CheckBox();
             label21 = new Label();
             txtFarmActCrops = new TextBox();
-            farmAct4 = new CheckBox();
+            cbOtherCrops = new CheckBox();
             cbFarmActCorn = new CheckBox();
             cbFarmActRice = new CheckBox();
             panel32 = new Panel();
@@ -718,7 +718,7 @@
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Margin = new Padding(3, 2, 3, 2);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1396, 0);
+            panelFarmProfile.Size = new Size(1396, 575);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -729,7 +729,7 @@
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Margin = new Padding(3, 2, 3, 2);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1396, 0);
+            panelFarmLand.Size = new Size(1396, 575);
             panelFarmLand.TabIndex = 52;
             // 
             // panel19
@@ -740,7 +740,7 @@
             panel19.Margin = new Padding(3, 2, 3, 2);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(9, 8, 9, 8);
-            panel19.Size = new Size(1396, 0);
+            panel19.Size = new Size(1396, 455);
             panel19.TabIndex = 75;
             // 
             // flowLayoutPanelParcels
@@ -750,7 +750,7 @@
             flowLayoutPanelParcels.Location = new Point(9, 8);
             flowLayoutPanelParcels.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
-            flowLayoutPanelParcels.Size = new Size(1378, 0);
+            flowLayoutPanelParcels.Size = new Size(1378, 439);
             flowLayoutPanelParcels.TabIndex = 54;
             // 
             // panel12
@@ -1088,7 +1088,7 @@
             // 
             panel37.BorderStyle = BorderStyle.FixedSingle;
             panel37.Controls.Add(txtInvolvementOthers);
-            panel37.Controls.Add(checkBox25);
+            panel37.Controls.Add(cbInvolvementOthers);
             panel37.Controls.Add(cbInvolvementProgram);
             panel37.Controls.Add(cbInvolvementFormalCourse);
             panel37.Controls.Add(cbInvolvementHousehold);
@@ -1111,17 +1111,17 @@
             txtInvolvementOthers.Size = new Size(212, 23);
             txtInvolvementOthers.TabIndex = 54;
             // 
-            // checkBox25
+            // cbInvolvementOthers
             // 
-            checkBox25.AutoSize = true;
-            checkBox25.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox25.Location = new Point(34, 158);
-            checkBox25.Margin = new Padding(3, 2, 3, 2);
-            checkBox25.Name = "checkBox25";
-            checkBox25.Size = new Size(143, 19);
-            checkBox25.TabIndex = 53;
-            checkBox25.Text = "Others, please specify:";
-            checkBox25.UseVisualStyleBackColor = true;
+            cbInvolvementOthers.AutoSize = true;
+            cbInvolvementOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbInvolvementOthers.Location = new Point(34, 158);
+            cbInvolvementOthers.Margin = new Padding(3, 2, 3, 2);
+            cbInvolvementOthers.Name = "cbInvolvementOthers";
+            cbInvolvementOthers.Size = new Size(143, 19);
+            cbInvolvementOthers.TabIndex = 53;
+            cbInvolvementOthers.Text = "Others, please specify:";
+            cbInvolvementOthers.UseVisualStyleBackColor = true;
             // 
             // cbInvolvementProgram
             // 
@@ -1207,7 +1207,7 @@
             panel35.BorderStyle = BorderStyle.FixedSingle;
             panel35.Controls.Add(cbFishingActVending);
             panel35.Controls.Add(txtFishingActOthers);
-            panel35.Controls.Add(checkBox18);
+            panel35.Controls.Add(cbFishingActOthers);
             panel35.Controls.Add(cbFishingActProcessing);
             panel35.Controls.Add(cbFishingActGleaning);
             panel35.Controls.Add(cbFishingActAquaculture);
@@ -1243,17 +1243,17 @@
             txtFishingActOthers.Size = new Size(210, 23);
             txtFishingActOthers.TabIndex = 58;
             // 
-            // checkBox18
+            // cbFishingActOthers
             // 
-            checkBox18.AutoSize = true;
-            checkBox18.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox18.Location = new Point(31, 178);
-            checkBox18.Margin = new Padding(3, 2, 3, 2);
-            checkBox18.Name = "checkBox18";
-            checkBox18.Size = new Size(143, 19);
-            checkBox18.TabIndex = 57;
-            checkBox18.Text = "Others, please specify:";
-            checkBox18.UseVisualStyleBackColor = true;
+            cbFishingActOthers.AutoSize = true;
+            cbFishingActOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbFishingActOthers.Location = new Point(31, 178);
+            cbFishingActOthers.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActOthers.Name = "cbFishingActOthers";
+            cbFishingActOthers.Size = new Size(143, 19);
+            cbFishingActOthers.TabIndex = 57;
+            cbFishingActOthers.Text = "Others, please specify:";
+            cbFishingActOthers.UseVisualStyleBackColor = true;
             // 
             // cbFishingActProcessing
             // 
@@ -1348,7 +1348,7 @@
             // 
             panel33.BorderStyle = BorderStyle.FixedSingle;
             panel33.Controls.Add(txtWorkKindOthers);
-            panel33.Controls.Add(checkBox12);
+            panel33.Controls.Add(cbWorkKindOthers);
             panel33.Controls.Add(cbWorkKindHarvesting);
             panel33.Controls.Add(cbWorkKindCultivation);
             panel33.Controls.Add(cbWorkKindPlanting);
@@ -1372,17 +1372,17 @@
             txtWorkKindOthers.Size = new Size(208, 23);
             txtWorkKindOthers.TabIndex = 52;
             // 
-            // checkBox12
+            // cbWorkKindOthers
             // 
-            checkBox12.AutoSize = true;
-            checkBox12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox12.Location = new Point(31, 156);
-            checkBox12.Margin = new Padding(3, 2, 3, 2);
-            checkBox12.Name = "checkBox12";
-            checkBox12.Size = new Size(143, 19);
-            checkBox12.TabIndex = 51;
-            checkBox12.Text = "Others, please specify:";
-            checkBox12.UseVisualStyleBackColor = true;
+            cbWorkKindOthers.AutoSize = true;
+            cbWorkKindOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbWorkKindOthers.Location = new Point(31, 156);
+            cbWorkKindOthers.Margin = new Padding(3, 2, 3, 2);
+            cbWorkKindOthers.Name = "cbWorkKindOthers";
+            cbWorkKindOthers.Size = new Size(143, 19);
+            cbWorkKindOthers.TabIndex = 51;
+            cbWorkKindOthers.Text = "Others, please specify:";
+            cbWorkKindOthers.UseVisualStyleBackColor = true;
             // 
             // cbWorkKindHarvesting
             // 
@@ -1478,13 +1478,13 @@
             panel31.BorderStyle = BorderStyle.FixedSingle;
             panel31.Controls.Add(label39);
             panel31.Controls.Add(txtFarmActPoultry);
-            panel31.Controls.Add(checkBox11);
+            panel31.Controls.Add(cbPoultry);
             panel31.Controls.Add(label38);
             panel31.Controls.Add(txtFarmActLivestock);
-            panel31.Controls.Add(checkBox10);
+            panel31.Controls.Add(cbLivestock);
             panel31.Controls.Add(label21);
             panel31.Controls.Add(txtFarmActCrops);
-            panel31.Controls.Add(farmAct4);
+            panel31.Controls.Add(cbOtherCrops);
             panel31.Controls.Add(cbFarmActCorn);
             panel31.Controls.Add(cbFarmActRice);
             panel31.Controls.Add(panel32);
@@ -1516,17 +1516,17 @@
             txtFarmActPoultry.Size = new Size(124, 23);
             txtFarmActPoultry.TabIndex = 57;
             // 
-            // checkBox11
+            // cbPoultry
             // 
-            checkBox11.AutoSize = true;
-            checkBox11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox11.Location = new Point(29, 200);
-            checkBox11.Margin = new Padding(3, 2, 3, 2);
-            checkBox11.Name = "checkBox11";
-            checkBox11.Size = new Size(67, 19);
-            checkBox11.TabIndex = 56;
-            checkBox11.Text = "Poultry,";
-            checkBox11.UseVisualStyleBackColor = true;
+            cbPoultry.AutoSize = true;
+            cbPoultry.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbPoultry.Location = new Point(29, 200);
+            cbPoultry.Margin = new Padding(3, 2, 3, 2);
+            cbPoultry.Name = "cbPoultry";
+            cbPoultry.Size = new Size(67, 19);
+            cbPoultry.TabIndex = 56;
+            cbPoultry.Text = "Poultry,";
+            cbPoultry.UseVisualStyleBackColor = true;
             // 
             // label38
             // 
@@ -1548,17 +1548,17 @@
             txtFarmActLivestock.Size = new Size(123, 23);
             txtFarmActLivestock.TabIndex = 54;
             // 
-            // checkBox10
+            // cbLivestock
             // 
-            checkBox10.AutoSize = true;
-            checkBox10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox10.Location = new Point(29, 156);
-            checkBox10.Margin = new Padding(3, 2, 3, 2);
-            checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(78, 19);
-            checkBox10.TabIndex = 53;
-            checkBox10.Text = "Livestock,";
-            checkBox10.UseVisualStyleBackColor = true;
+            cbLivestock.AutoSize = true;
+            cbLivestock.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbLivestock.Location = new Point(29, 156);
+            cbLivestock.Margin = new Padding(3, 2, 3, 2);
+            cbLivestock.Name = "cbLivestock";
+            cbLivestock.Size = new Size(78, 19);
+            cbLivestock.TabIndex = 53;
+            cbLivestock.Text = "Livestock,";
+            cbLivestock.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -1580,17 +1580,17 @@
             txtFarmActCrops.Size = new Size(123, 23);
             txtFarmActCrops.TabIndex = 51;
             // 
-            // farmAct4
+            // cbOtherCrops
             // 
-            farmAct4.AutoSize = true;
-            farmAct4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            farmAct4.Location = new Point(29, 111);
-            farmAct4.Margin = new Padding(3, 2, 3, 2);
-            farmAct4.Name = "farmAct4";
-            farmAct4.Size = new Size(91, 19);
-            farmAct4.TabIndex = 50;
-            farmAct4.Text = "Other crops,";
-            farmAct4.UseVisualStyleBackColor = true;
+            cbOtherCrops.AutoSize = true;
+            cbOtherCrops.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbOtherCrops.Location = new Point(29, 111);
+            cbOtherCrops.Margin = new Padding(3, 2, 3, 2);
+            cbOtherCrops.Name = "cbOtherCrops";
+            cbOtherCrops.Size = new Size(91, 19);
+            cbOtherCrops.TabIndex = 50;
+            cbOtherCrops.Text = "Other crops,";
+            cbOtherCrops.UseVisualStyleBackColor = true;
             // 
             // cbFarmActCorn
             // 
@@ -3850,7 +3850,7 @@
         private Label label69;
         private Panel panel37;
         private TextBox txtInvolvementOthers;
-        private CheckBox checkBox25;
+        private CheckBox cbInvolvementOthers;
         private CheckBox cbInvolvementProgram;
         private CheckBox cbInvolvementFormalCourse;
         private CheckBox cbInvolvementHousehold;
@@ -3861,7 +3861,7 @@
         private Panel panel35;
         private CheckBox cbFishingActVending;
         private TextBox txtFishingActOthers;
-        private CheckBox checkBox18;
+        private CheckBox cbFishingActOthers;
         private CheckBox cbFishingActProcessing;
         private CheckBox cbFishingActGleaning;
         private CheckBox cbFishingActAquaculture;
@@ -3872,7 +3872,7 @@
         private Label label40;
         private Panel panel33;
         private TextBox txtWorkKindOthers;
-        private CheckBox checkBox12;
+        private CheckBox cbWorkKindOthers;
         private CheckBox cbWorkKindHarvesting;
         private CheckBox cbWorkKindCultivation;
         private CheckBox cbWorkKindPlanting;
@@ -3884,13 +3884,13 @@
         private Panel panel31;
         private Label label39;
         private TextBox txtFarmActPoultry;
-        private CheckBox checkBox11;
+        private CheckBox cbPoultry;
         private Label label38;
         private TextBox txtFarmActLivestock;
-        private CheckBox checkBox10;
+        private CheckBox cbLivestock;
         private Label label21;
         private TextBox txtFarmActCrops;
-        private CheckBox farmAct4;
+        private CheckBox cbOtherCrops;
         private CheckBox cbFarmActCorn;
         private CheckBox cbFarmActRice;
         private Panel panel32;

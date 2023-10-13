@@ -48,6 +48,7 @@ namespace AgRecords.Model
         public int houseMaleCount { get; set; }
         public int houseFemCount { get; set; }
         public string? isPWD { get; set; }
+        public string? is4Ps { get; set; }
         public string? isIp { get; set; }
         public string? ipGroupName { get; set; }
         public string? isCoopMember { get; set; }

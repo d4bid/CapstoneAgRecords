@@ -14,6 +14,7 @@ namespace AgRecords.Controller
         private RsbsaAddView rsbsaAddView;
         private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
+        private FarmLandControl farmLandControl;
         private Boolean isDone = false; 
         private string fullName = HomeView.Instance.fullName.Text;
         private RSBSAModel rsbsaModel;
@@ -37,6 +38,12 @@ namespace AgRecords.Controller
             rsbsaModel = new RSBSAModel();
         }
 
+        public RSBSAController(FarmLandControl farmLandControl)
+        {
+            this.farmLandControl = farmLandControl;
+            rsbsaModel = new RSBSAModel();
+        }
+
         public void GenerateNewRSBSAId()
         {
             try
@@ -47,6 +54,21 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "ID Generation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public string RSBSAIdForUserControl()
+        {
+            try
+            {
+                return rsbsaModel.GenerateRSBSAId();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "ID Generation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+
             }
         }
 
@@ -119,6 +141,7 @@ namespace AgRecords.Controller
             int houseMaleCount,
             int houseFemCount,
             string? isPWD,
+            string? is4Ps,
             string? isIp,
             string? ipGroupName,
             string? isCoopMember,
@@ -212,6 +235,7 @@ namespace AgRecords.Controller
                     houseMaleCount = houseMaleCount,
                     houseFemCount = houseFemCount,
                     isPWD = isPWD,
+                    is4Ps = is4Ps,
                     isIp = isIp,
                     ipGroupName = ipGroupName,
                     isCoopMember = isCoopMember,
