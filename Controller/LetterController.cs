@@ -220,32 +220,32 @@ namespace AgRecords.Controller
 
                 if (letter.letterTitle == "")
                 {
-                    MessageBox.Show("Title is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (letter.letterDescription == "")
-                {
-                    MessageBox.Show("Description is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (letter.letterTo == "")
-                {
-                    MessageBox.Show("Receiver information is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (letter.letterFrom == "")
-                {
-                    MessageBox.Show("Sender information is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please provide a title.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (concatenatedTags.ToString().Count(c => c == ',') < 2)
                 {
-                    MessageBox.Show("At least three tags is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please add at least three tags.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (letter.letterTo == "")
+                {
+                    MessageBox.Show("Please provide recipient information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (letter.letterFrom == "")
+                {
+                    MessageBox.Show("Please provide sender information.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (letter.letterDescription == "")
+                {
+                    MessageBox.Show("Please provide a description.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (imageDictionary.Count < 1)
                 {
-                    MessageBox.Show("Letter photos is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please attach at least one photo to your letter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (letter.letterTitle != "" && letter.letterDescription != "" && letter.letterTo != "" && letter.letterFrom != "")
                 {

@@ -241,6 +241,7 @@
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(597, 27);
             txtBoxTags.TabIndex = 4;
+            txtBoxTags.TextChanged += TextBox_TextChanged;
             txtBoxTags.KeyPress += txtBoxTags_KeyPress;
             // 
             // rectangleRound3
@@ -281,6 +282,7 @@
             txtBoxTitle.Name = "txtBoxTitle";
             txtBoxTitle.Size = new Size(597, 27);
             txtBoxTitle.TabIndex = 1;
+            txtBoxTitle.TextChanged += TextBox_TextChanged;
             txtBoxTitle.KeyPress += TextBox_KeyPress;
             // 
             // rectangleRound1
@@ -382,6 +384,8 @@
             txtBoxFrom.Name = "txtBoxFrom";
             txtBoxFrom.Size = new Size(601, 27);
             txtBoxFrom.TabIndex = 6;
+            txtBoxFrom.TextChanged += TextBox_TextChanged;
+            txtBoxFrom.KeyPress += AlphaOnly;
             // 
             // rectangleRound5
             // 
@@ -403,7 +407,8 @@
             txtBoxTo.Name = "txtBoxTo";
             txtBoxTo.Size = new Size(601, 27);
             txtBoxTo.TabIndex = 5;
-            txtBoxTo.KeyPress += TextBox_KeyPress;
+            txtBoxTo.TextChanged += TextBox_TextChanged;
+            txtBoxTo.KeyPress += AlphaOnly;
             // 
             // rectangleRound4
             // 
