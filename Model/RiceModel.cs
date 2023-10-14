@@ -17,26 +17,6 @@ namespace AgRecords.Model
             db = new DatabaseConnection();
         }
 
-        public DataTable LoadRiceStandLogsDataGrid()
-        {
-            try
-            {
-                using (DatabaseConnection db = new DatabaseConnection())
-                {
-                    db.Open();
-                    DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_logs;", db.GetConnection());
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                    return dataTable;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
-            }
-        }
-
         public DataTable LoadRiceReportDataGrid()
         {
             try
@@ -130,7 +110,7 @@ namespace AgRecords.Model
         }
 
         // get rice standing report details
-        public RicePlantingRep GetRiceStandReportById(string ricePrId)
+        public RiceStandingRep GetRiceStandReportById(string riceSrId)
         {
             try
             {
@@ -139,19 +119,19 @@ namespace AgRecords.Model
                     db.Open();
 
                     MySqlCommand command = new MySqlCommand("CALL sp_getRiceStandReportById(@riceSrId)", db.GetConnection());
-                    command.Parameters.AddWithValue("@riceSrId", ricePrId);
+                    command.Parameters.AddWithValue("@riceSrId", riceSrId);
 
                     MySqlDataReader reader = command.ExecuteReader();
 
-                    RicePlantingRep rsr = null;
+                    RiceStandingRep rsr = null;
 
                     if (reader.Read())
                     {
-                        rsr = new RicePlantingRep();
-                        rsr.ricePrId = reader["riceSrId"].ToString();
+                        rsr = new RiceStandingRep();
+                        rsr.riceSrId = reader["riceSrId"].ToString();
                         rsr.month = reader["month"].ToString();
                         rsr.week = reader["week"].ToString();
-                        rsr.year = (int)reader["year"];
+                        rsr.year = reader["year"].ToString();
                         rsr.createdBy = reader["createdBy"].ToString();
                     }
 
@@ -166,8 +146,52 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable LoadRiceStandLogsDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_logs;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
+        // Move Next Rice Standing Logs
+        public Boolean MoveNextRiceStandingLogs(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_moveNextRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error moving next rice standing logs: " + ex.Message, ex);
+            }
+        }
+
         // Add Rice Standing Logs
-        public Boolean AddRiceStandingLogs(RiceStanding rsr)
+        public Boolean AddRiceStandingLogs(RiceStanding rs)
         {
             try
             {
@@ -177,12 +201,43 @@ namespace AgRecords.Model
 
                     string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
-                    command.Parameters.AddWithValue("@riceSrId", rsr.riceSrId);
-                    command.Parameters.AddWithValue("@brgyId", rsr.brgyId);
-                    command.Parameters.AddWithValue("@farmTypeId", rsr.farmTypeId);
-                    command.Parameters.AddWithValue("@growthStageId", rsr.growthStageId);
-                    command.Parameters.AddWithValue("@size", rsr.size);
-                    command.Parameters.AddWithValue("@logDate", rsr.logDate);
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+                    command.Parameters.AddWithValue("@brgyId", rs.brgyId);
+                    command.Parameters.AddWithValue("@farmTypeId", rs.farmTypeId);
+                    command.Parameters.AddWithValue("@growthStageId", rs.growthStageId);
+                    command.Parameters.AddWithValue("@seedTypeId", rs.seedTypeId);
+                    command.Parameters.AddWithValue("@size", rs.size);
+                    command.Parameters.AddWithValue("@logDate", rs.logDate);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new rice standing record: " + ex.Message, ex);
+            }
+        }
+
+        // Update Rice Standing Log
+        public Boolean UpdateRiceStandingLog(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+                    command.Parameters.AddWithValue("@brgyId", rs.brgyId);
+                    command.Parameters.AddWithValue("@farmTypeId", rs.farmTypeId);
+                    command.Parameters.AddWithValue("@growthStageId", rs.growthStageId);
+                    command.Parameters.AddWithValue("@seedTypeId", rs.seedTypeId);
+                    command.Parameters.AddWithValue("@size", rs.size);
+                    command.Parameters.AddWithValue("@logDate", rs.logDate);
 
                     command.ExecuteNonQuery();
                     return true;
@@ -215,7 +270,47 @@ namespace AgRecords.Model
             }
         }
 
+        // get rice standing logs details
+        public RiceStanding GetRiceStandingLogsById(int riceStandingLogsId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
 
+                    MySqlCommand command = new MySqlCommand("CALL sp_getRiceStandingLogsById(@riceStandingLogsId)", db.GetConnection());
+                    command.Parameters.AddWithValue("@riceStandingLogsId", riceStandingLogsId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    RiceStanding rs = null;
+
+                    if (reader.Read())
+                    {
+                        rs = new RiceStanding();
+                        rs.riceStandingLogsId = (int)reader["riceStandingLogsId"];
+                        rs.riceSrId = reader["riceSrId"].ToString();
+                        rs.brgyId = (int)reader["brgyId"];
+                        rs.farmTypeId = (int)reader["farmTypeId"];
+                        rs.growthStageId = (int)reader["growthStageId"];
+                        rs.seedTypeId = (int)reader["seedTypeId"];
+                        rs.size = (float)reader["size"];
+                        rs.logDate = DateTime.Parse(reader["logDate"].ToString());
+                    }
+
+                    reader.Close();
+                    return rs;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting rice standing log by ID: " + ex.Message, ex);
+            }
+        }
+
+        // PLANTING
         public Boolean AddRicePlantingRep(RicePlantingRep rpr)
         {
             try

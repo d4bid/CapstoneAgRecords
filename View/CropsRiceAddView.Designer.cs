@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
@@ -53,15 +53,16 @@
             searchBox3 = new SearchBox();
             panel3 = new Panel();
             panel2 = new Panel();
-            cmbSeedType = new ComboBox();
-            searchBox10 = new SearchBox();
-            label8 = new Label();
             panel4 = new Panel();
             cbUpland = new CheckBox();
             cbLowland = new CheckBox();
             cbIrrigated = new CheckBox();
             panel43 = new Panel();
+            btnUpdate = new Button();
+            cmbSeedType = new ComboBox();
+            searchBox10 = new SearchBox();
             label9 = new Label();
+            label8 = new Label();
             dtpLogDate = new DateTimePicker();
             button1 = new Button();
             btnNew = new Button();
@@ -326,34 +327,6 @@
             panel2.Size = new Size(1595, 826);
             panel2.TabIndex = 26;
             // 
-            // cmbSeedType
-            // 
-            cmbSeedType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSeedType.FlatStyle = FlatStyle.Flat;
-            cmbSeedType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbSeedType.FormattingEnabled = true;
-            cmbSeedType.Items.AddRange(new object[] { "Hybrid Seeds", "Tagged Seeds", "Good Quality Seeds", "Farmers Saved Seeds" });
-            cmbSeedType.Location = new Point(518, 75);
-            cmbSeedType.Name = "cmbSeedType";
-            cmbSeedType.Size = new Size(220, 33);
-            cmbSeedType.TabIndex = 76;
-            // 
-            // searchBox10
-            // 
-            searchBox10.Location = new Point(512, 73);
-            searchBox10.Name = "searchBox10";
-            searchBox10.Size = new Size(229, 39);
-            searchBox10.TabIndex = 78;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(512, 50);
-            label8.Name = "label8";
-            label8.Size = new Size(77, 20);
-            label8.TabIndex = 77;
-            label8.Text = "Seed Type";
-            // 
             // panel4
             // 
             panel4.Controls.Add(cbUpland);
@@ -397,6 +370,7 @@
             // panel43
             // 
             panel43.BorderStyle = BorderStyle.FixedSingle;
+            panel43.Controls.Add(btnUpdate);
             panel43.Controls.Add(cmbSeedType);
             panel43.Controls.Add(searchBox10);
             panel43.Controls.Add(label9);
@@ -422,6 +396,41 @@
             panel43.Size = new Size(1566, 222);
             panel43.TabIndex = 74;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.FromArgb(255, 221, 100);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
+            btnUpdate.Location = new Point(1202, 64);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(130, 39);
+            btnUpdate.TabIndex = 79;
+            btnUpdate.Text = "Save";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // cmbSeedType
+            // 
+            cmbSeedType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSeedType.FlatStyle = FlatStyle.Flat;
+            cmbSeedType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbSeedType.FormattingEnabled = true;
+            cmbSeedType.Items.AddRange(new object[] { "Hybrid Seeds", "Tagged Seeds", "Good Quality Seeds", "Farmers Saved Seeds" });
+            cmbSeedType.Location = new Point(518, 75);
+            cmbSeedType.Name = "cmbSeedType";
+            cmbSeedType.Size = new Size(220, 33);
+            cmbSeedType.TabIndex = 76;
+            // 
+            // searchBox10
+            // 
+            searchBox10.Location = new Point(512, 73);
+            searchBox10.Name = "searchBox10";
+            searchBox10.Size = new Size(229, 39);
+            searchBox10.TabIndex = 78;
+            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -430,6 +439,15 @@
             label9.Size = new Size(41, 20);
             label9.TabIndex = 54;
             label9.Text = "Date";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(512, 50);
+            label8.Name = "label8";
+            label8.Size = new Size(77, 20);
+            label8.TabIndex = 77;
+            label8.Text = "Seed Type";
             // 
             // dtpLogDate
             // 
@@ -610,24 +628,24 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvRiceStandLogs.Location = new Point(17, 346);
             dgvRiceStandLogs.Name = "dgvRiceStandLogs";
@@ -638,6 +656,7 @@
             dgvRiceStandLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRiceStandLogs.Size = new Size(1565, 468);
             dgvRiceStandLogs.TabIndex = 23;
+            dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
             // 
             // CropsRiceAddView
             // 
@@ -715,5 +734,6 @@
         private Label label8;
         private Label label9;
         private DateTimePicker dtpLogDate;
+        private Button btnUpdate;
     }
 }

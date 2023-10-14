@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnAdd = new Button();
             panel1 = new Panel();
+            label2 = new Label();
+            comboBoxFilterType = new ComboBox();
+            searchBox3 = new SearchBox();
+            comboBoxSearchCategory = new ComboBox();
             searchBox2 = new SearchBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtBoxSearch = new TextBox();
             searchBox1 = new SearchBox();
             label1 = new Label();
-            comboBoxFilterType = new ComboBox();
-            comboBoxSearchCategory = new ComboBox();
             dgvLetters = new DataGridView();
             panel2 = new Panel();
-            searchBox3 = new SearchBox();
-            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
@@ -84,6 +84,48 @@
             panel1.Padding = new Padding(0, 0, 0, 11);
             panel1.Size = new Size(1595, 91);
             panel1.TabIndex = 21;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(638, 13);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 20);
+            label2.TabIndex = 8;
+            label2.Text = "Type";
+            // 
+            // comboBoxFilterType
+            // 
+            comboBoxFilterType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFilterType.FlatStyle = FlatStyle.Flat;
+            comboBoxFilterType.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFilterType.FormattingEnabled = true;
+            comboBoxFilterType.Items.AddRange(new object[] { "All", "Incoming", "Outgoing", "Internal" });
+            comboBoxFilterType.Location = new Point(643, 41);
+            comboBoxFilterType.Name = "comboBoxFilterType";
+            comboBoxFilterType.Size = new Size(237, 28);
+            comboBoxFilterType.TabIndex = 3;
+            comboBoxFilterType.SelectedIndexChanged += comboBoxFilterType_SelectedIndexChanged;
+            // 
+            // searchBox3
+            // 
+            searchBox3.Location = new Point(638, 36);
+            searchBox3.Name = "searchBox3";
+            searchBox3.Size = new Size(246, 39);
+            searchBox3.TabIndex = 7;
+            // 
+            // comboBoxSearchCategory
+            // 
+            comboBoxSearchCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxSearchCategory.FlatStyle = FlatStyle.Flat;
+            comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxSearchCategory.FormattingEnabled = true;
+            comboBoxSearchCategory.Items.AddRange(new object[] { "All", "ID", "Title", "Receiver", "Sender", "Date Received" });
+            comboBoxSearchCategory.Location = new Point(380, 41);
+            comboBoxSearchCategory.Name = "comboBoxSearchCategory";
+            comboBoxSearchCategory.Size = new Size(237, 28);
+            comboBoxSearchCategory.TabIndex = 0;
+            comboBoxSearchCategory.SelectedValueChanged += comboBoxSearchFilter_SelectedValueChanged;
             // 
             // searchBox2
             // 
@@ -133,32 +175,6 @@
             label1.TabIndex = 4;
             label1.Text = "Category";
             // 
-            // comboBoxFilterType
-            // 
-            comboBoxFilterType.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxFilterType.FlatStyle = FlatStyle.Flat;
-            comboBoxFilterType.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxFilterType.FormattingEnabled = true;
-            comboBoxFilterType.Items.AddRange(new object[] { "All", "Incoming", "Outgoing", "Internal" });
-            comboBoxFilterType.Location = new Point(643, 41);
-            comboBoxFilterType.Name = "comboBoxFilterType";
-            comboBoxFilterType.Size = new Size(237, 28);
-            comboBoxFilterType.TabIndex = 3;
-            comboBoxFilterType.SelectedIndexChanged += comboBoxFilterType_SelectedIndexChanged;
-            // 
-            // comboBoxSearchCategory
-            // 
-            comboBoxSearchCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxSearchCategory.FlatStyle = FlatStyle.Flat;
-            comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxSearchCategory.FormattingEnabled = true;
-            comboBoxSearchCategory.Items.AddRange(new object[] { "All", "ID", "Title", "Receiver", "Sender", "Date Received" });
-            comboBoxSearchCategory.Location = new Point(380, 41);
-            comboBoxSearchCategory.Name = "comboBoxSearchCategory";
-            comboBoxSearchCategory.Size = new Size(237, 28);
-            comboBoxSearchCategory.TabIndex = 0;
-            comboBoxSearchCategory.SelectedValueChanged += comboBoxSearchFilter_SelectedValueChanged;
-            // 
             // dgvLetters
             // 
             dgvLetters.AllowUserToAddRows = false;
@@ -167,34 +183,34 @@
             dgvLetters.BackgroundColor = Color.White;
             dgvLetters.BorderStyle = BorderStyle.None;
             dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle21.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = Color.White;
-            dataGridViewCellStyle21.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle21.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle21.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
-            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvLetters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = Color.White;
-            dataGridViewCellStyle22.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle22.ForeColor = Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle22.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.False;
-            dgvLetters.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvLetters.DefaultCellStyle = dataGridViewCellStyle2;
             dgvLetters.Dock = DockStyle.Fill;
             dgvLetters.GridColor = Color.FromArgb(239, 239, 239);
-            dgvLetters.Location = new Point(0, 96);
+            dgvLetters.Location = new Point(0, 101);
             dgvLetters.Name = "dgvLetters";
             dgvLetters.ReadOnly = true;
             dgvLetters.RowHeadersVisible = false;
             dgvLetters.RowHeadersWidth = 51;
             dgvLetters.RowTemplate.Height = 40;
             dgvLetters.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLetters.Size = new Size(1595, 830);
+            dgvLetters.Size = new Size(1595, 825);
             dgvLetters.TabIndex = 22;
             dgvLetters.CellDoubleClick += dgvLetters_CellDoubleClick;
             // 
@@ -203,24 +219,8 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 91);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1595, 5);
+            panel2.Size = new Size(1595, 10);
             panel2.TabIndex = 23;
-            // 
-            // searchBox3
-            // 
-            searchBox3.Location = new Point(638, 36);
-            searchBox3.Name = "searchBox3";
-            searchBox3.Size = new Size(246, 39);
-            searchBox3.TabIndex = 7;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(638, 13);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 20);
-            label2.TabIndex = 8;
-            label2.Text = "Type";
             // 
             // LettersView
             // 
