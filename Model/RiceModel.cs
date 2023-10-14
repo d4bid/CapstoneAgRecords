@@ -17,6 +17,46 @@ namespace AgRecords.Model
             db = new DatabaseConnection();
         }
 
+        public DataTable LoadRiceStandLogsDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_logs;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadRiceReportDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_report;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+            }
+        }
+
         // STANDING
 
         //generate next rice stand report id
@@ -51,7 +91,7 @@ namespace AgRecords.Model
                         }
                     }
 
-                    return $"RICESTANDING-{currentYear}-{nextNumber:D3}";
+                    return $"RICESTANDING-{currentYear}-{nextNumber:D2}";
                 }
             }
             catch (Exception ex)
@@ -59,8 +99,6 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error generating next ID: " + ex.Message, ex);
             }
         }
-
-
 
 
         // Add report
@@ -137,13 +175,14 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size)";
+                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@riceSrId", rsr.riceSrId);
                     command.Parameters.AddWithValue("@brgyId", rsr.brgyId);
                     command.Parameters.AddWithValue("@farmTypeId", rsr.farmTypeId);
                     command.Parameters.AddWithValue("@growthStageId", rsr.growthStageId);
                     command.Parameters.AddWithValue("@size", rsr.size);
+                    command.Parameters.AddWithValue("@logDate", rsr.logDate);
 
                     command.ExecuteNonQuery();
                     return true;
@@ -153,27 +192,6 @@ namespace AgRecords.Model
             {
                 // Wrap the original exception in a custom exception with a meaningful message.
                 throw new ApplicationException("Error adding new rice standing record: " + ex.Message, ex);
-            }
-        }
-
-
-        public DataTable LoadRiceStandLogsDataGrid()
-        {
-            try
-            {
-                using (DatabaseConnection db = new DatabaseConnection())
-                {
-                    db.Open();
-                    DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_logs;", db.GetConnection());
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                    return dataTable;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
             }
         }
 

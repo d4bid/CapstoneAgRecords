@@ -15,5 +15,6 @@ namespace AgRecords.Model
         public int farmTypeId { get; set; }
         public int growthStageId { get; set; }
         public float size { get; set; }
+        public DateTime logDate { get; set; }
     }
 }

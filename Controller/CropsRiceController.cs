@@ -25,6 +25,12 @@ namespace AgRecords.Controller
         //to get the username of the current user
         private string fullName = HomeView.Instance.fullName.Text;
 
+        public CropsRiceController(CropsRiceView cropsRiceView)
+        {
+            this.cropsRiceView = cropsRiceView;
+            riceModel = new RiceModel();
+        }
+
         public CropsRiceController(CropsRiceAddView cropsRiceAddView)
         {
             this.cropsRiceAddView = cropsRiceAddView;
@@ -37,21 +43,23 @@ namespace AgRecords.Controller
             riceModel = new RiceModel();
         }
 
-        // STANDING
-        //public DataTable LoadRiceReportView()
-        //{
-        //    try
-        //    {
-        //        DataTable riceReportTable = riceModel.LoadRicePlantLogsDataGrid();
-        //        return riceReportTable;
-        //    }
-        //    catch (ApplicationException ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Rice Plant Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-        //        return null;
-        //    }
-        //}
+        public DataTable LoadRiceReportView()
+        {
+            try
+            {
+                DataTable riceReportTable = riceModel.LoadRiceReportDataGrid();
+                return riceReportTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Plant Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        // STANDING
 
         // Get createdBy
         public string GetUserIdByFullName(string fullName)
@@ -99,7 +107,7 @@ namespace AgRecords.Controller
 
                 if (rsr.riceSrId == "")
                 {
-                    MessageBox.Show("Rice Standing Record Id is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("ID is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (rsr.month == null)
@@ -120,7 +128,7 @@ namespace AgRecords.Controller
                     if (riceModel.AddRiceStandingRep(rsr))
                     {
                         isDone = true;
-                        MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
@@ -135,7 +143,7 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddRiceStandingLogs(string riceSrId, int brgyId, int farmTypeId, int growthStageId, float size)
+        public bool AddRiceStandingLogs(string riceSrId, int brgyId, int farmTypeId, int growthStageId, float size, DateTime logDate)
         {
             try
             {
@@ -145,7 +153,8 @@ namespace AgRecords.Controller
                     brgyId = brgyId,
                     farmTypeId = farmTypeId,
                     growthStageId = growthStageId,
-                    size = size
+                    size = size,
+                    logDate = logDate
                 };
 
                 if (rs.riceSrId == "")

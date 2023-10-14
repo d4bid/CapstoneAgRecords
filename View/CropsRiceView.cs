@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +14,24 @@ namespace AgRecords.View
     public partial class CropsRiceView : Form
     {
         private Panel parentPanel;
+        private CropsRiceController cropsRiceController;
 
         public CropsRiceView(Control parentControl)
         {
             InitializeComponent();
 
             this.parentPanel = parentControl as Panel;
+            cropsRiceController = new CropsRiceController(this);
         }
 
         // Methods
+
+        private void FormRefresh()
+        {
+            DataTable riceTable = cropsRiceController.LoadRiceReportView();
+            dgvRice.DataSource = riceTable;
+        }
+
         private void CropsRiceAddView_FormClosed(object sender, EventArgs e)
         {
             CropsRiceView cropsRiceView = new CropsRiceView(parentPanel);
@@ -44,11 +54,12 @@ namespace AgRecords.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             RiceAddView riceAddView = new RiceAddView();
-            riceAddView.FormClosed += (s, args) => {
-                // Show CropsRiceAddView when RiceAddView is closed
-                CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
-                cropsRiceAddView.FormClosed += CropsRiceAddView_FormClosed;
+            riceAddView.SaveButtonClicked += (s, args) =>
+            {
+                // Handle the event when the Save button is clicked in RiceAddView
+                this.Close(); // Close the current form (CropsRiceView)
 
+                CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
                 cropsRiceAddView.TopLevel = false;
                 cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
                 cropsRiceAddView.Dock = DockStyle.Fill;
@@ -57,7 +68,6 @@ namespace AgRecords.View
                 parentPanel.Controls.Add(cropsRiceAddView);
                 cropsRiceAddView.Show();
             };
-
             riceAddView.Show();
         }
     }

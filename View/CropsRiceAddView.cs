@@ -25,8 +25,8 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            //DataTable ricePlantLogsTable = cropsRiceController.LoadRicePlantLogView();
-            //dgvRicePlantLogs.DataSource = ricePlantLogsTable;
+            DataTable riceStandLogsTable = cropsRiceController.LoadRiceStandLogsView();
+            dgvRiceStandLogs.DataSource = riceStandLogsTable;
 
         }
 

@@ -17,6 +17,7 @@ namespace AgRecords.View
         public event EventHandler FormClosed;
 
         private Panel parentPanel;
+        public event EventHandler SaveButtonClicked;
 
         public RiceAddView()
         {
@@ -26,11 +27,6 @@ namespace AgRecords.View
         }
 
         // Methods
-        private void CropsRiceAddView_FormClosed(object sender, EventArgs e)
-        {
-            this.Close();
-            FormClosed?.Invoke(this, EventArgs.Empty);
-        }
 
         public void FormRefresh()
         {
@@ -44,6 +40,8 @@ namespace AgRecords.View
             textboxYear.Text = currentYear.ToString();
 
         }
+
+        // Events
 
         public void GenerateNewRiceStandId(string riceSrId)
         {
@@ -136,10 +134,11 @@ namespace AgRecords.View
         {
             if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
             {
-                this.Close();
+                // Trigger the event when the "Save" button is clicked
+                SaveButtonClicked?.Invoke(this, EventArgs.Empty);
+                this.Close(); // Close the current form (RiceAddView)
             }
         }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -150,7 +149,5 @@ namespace AgRecords.View
         {
             FormRefresh();
         }
-
-        // Events
     }
 }
