@@ -15,6 +15,7 @@ namespace AgRecords.Controller
         private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
         private FarmLandControl farmLandControl;
+        private RSBSADocumentControl rsbsaDocumentControl;
         private Boolean isDone = false; 
         private string fullName = HomeView.Instance.fullName.Text;
         private RSBSAModel rsbsaModel;
@@ -41,6 +42,12 @@ namespace AgRecords.Controller
         public RSBSAController(FarmLandControl farmLandControl)
         {
             this.farmLandControl = farmLandControl;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(RSBSADocumentControl rsbsaDocumentControl)
+        {
+            this.rsbsaDocumentControl = rsbsaDocumentControl;
             rsbsaModel = new RSBSAModel();
         }
 

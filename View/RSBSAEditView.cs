@@ -200,10 +200,16 @@ namespace AgRecords.View
                 }
             }
 
-
-
             //RSBSA Docs
-
+            if (rsbsaDocs != null)
+            {
+                for (int i = 0; i < rsbsaDocs.rsbsaDocuments.Count; i++)
+                {
+                    RSBSADocumentControl docsControl = new RSBSADocumentControl();
+                    docsControl.SetData(rsbsaDocs.rsbsaDocuments[i]);
+                    flowLayoutPanelDocs.Controls.Add(docsControl);
+                }
+            }
         }
 
         // Method

@@ -1,4 +1,5 @@
-﻿using AgRecords.Model;
+﻿using AgRecords.Controller;
+using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,25 +15,43 @@ namespace AgRecords.View
     public partial class RSBSADocumentControl : UserControl
     {
         // Declare the event
+        private RSBSAController rsbsaController;
         public event EventHandler RemoveButtonClick;
-        private string rsbsaIdFromAddForm = RsbsaAddView.Instance.rsbsaId.Text;
+        private string rsbsaId = "";
         private string filename = "";
         private Image selectedImage = null;
 
         public RSBSADocumentControl()
         {
             InitializeComponent();
+            rsbsaController = new RSBSAController(this);
 
             // Wire up the remove button click event
+            cbDocType.SelectedIndex = 0;
             btnRemove.Click += btnRemove_Click;
             pbDocPhoto.SizeMode = PictureBoxSizeMode.Zoom;
-
-
         }
 
         private void RSBSADocumentControl_Load(object sender, EventArgs e)
         {
-            cbDocType.SelectedIndex = 0;
+
+        }
+
+        public void SetData(RSBSADocuments docs)
+        {
+            cbDocType.Text = docs.docType;
+
+            foreach (var kvp in docs.docPhotoDictionary)
+            {
+                if (docs.docFilename.Equals(kvp.Key))
+                {
+                    filename = kvp.Key;
+                    selectedImage = kvp.Value;
+
+                    pbDocPhoto.Image = selectedImage;
+                }
+                break; 
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -61,9 +80,11 @@ namespace AgRecords.View
 
         public RSBSADocuments GetDocumentData()
         {
+            rsbsaId = rsbsaController.RSBSAIdForUserControl();
+
             RSBSADocuments document = new RSBSADocuments
             {
-                rsbsaId = rsbsaIdFromAddForm, // Set rsbsaId as per your logic
+                rsbsaId = rsbsaId, // Set rsbsaId as per your logic
                 docType = cbDocType.Text,
                 docPhotoDictionary = new Dictionary<string, Image>()
             };
