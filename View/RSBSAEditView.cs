@@ -17,8 +17,6 @@ namespace AgRecords.View
         public event EventHandler FormClosed;
         private RSBSAController rsbsaController;
 
-
-
         public RSBSAEditView(RSBSA rsbsaInfo, RSBSA farmerInfo, RSBSA farmProfile, RSBSA farmland, RSBSA farmlandParcel, RSBSA farmlandParcelCrops, RSBSA rsbsaDocs)
         {
             InitializeComponent();
@@ -200,10 +198,17 @@ namespace AgRecords.View
                 }
             }
 
-
-
             //RSBSA Docs
-
+            if (rsbsaDocs != null)
+            {
+                for (int i = 0; i < rsbsaDocs.rsbsaDocuments.Count; i++)
+                {
+                    RSBSADocumentControl docsControl = new RSBSADocumentControl();
+                    docsControl.SetData(rsbsaDocs.rsbsaDocuments[i]);
+                    docsControl.RemoveButtonClick += RSBSADocumentControl_RemoveButtonClick;
+                    flowLayoutPanelDocs.Controls.Add(docsControl);
+                }
+            }
         }
 
         // Method
@@ -275,6 +280,106 @@ namespace AgRecords.View
         private void RSBSAEditView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+
+            DateTime minDate = new DateTime(1900, 1, 1);
+            dtpBirthDate.MaxDate = DateTime.Today;
+            dtDateAdm.MaxDate = DateTime.Today;
+            dtpBirthDate.MinDate = minDate;
+            dtDateAdm.MinDate = minDate;
+        }
+
+        //codes from add view
+        private List<FarmParcel> GetFarmParcelsFromControls()
+        {
+            List<FarmParcel> farmParcels = new List<FarmParcel>();
+
+            foreach (FarmLandControl farmLandControl in flowLayoutPanelParcels.Controls.OfType<FarmLandControl>())
+            {
+                FarmParcel parcel = farmLandControl.GetFarmParcelData();
+                farmParcels.Add(parcel);
+            }
+
+            return farmParcels;
+        }
+
+        private List<RSBSADocuments> GetDocumentsFromControls()
+        {
+            List<RSBSADocuments> documentsList = new List<RSBSADocuments>();
+
+            foreach (RSBSADocumentControl documentControl in flowLayoutPanelDocs.Controls.OfType<RSBSADocumentControl>())
+            {
+                RSBSADocuments document = documentControl.GetDocumentData();
+                documentsList.Add(document);
+            }
+
+            return documentsList;
+        }
+
+        private void btnAddFarmParcel_Click(object sender, EventArgs e)
+        {
+            FarmLandControl farmLandControl = new FarmLandControl();
+
+            // Set the labelParcelNo.Text based on the current count
+            farmLandControl.labelParcelNo.Text = (flowLayoutPanelParcels.Controls.Count + 1).ToString();
+
+            flowLayoutPanelParcels.Controls.Add(farmLandControl);
+
+            // Handle the remove button click event
+            farmLandControl.RemoveButtonClick += FarmLandControl_RemoveButtonClick;
+
+            // Update the parcel count label
+            UpdateParcelCountLabel();
+        }
+
+        private void UpdateParcelCountLabel()
+        {
+            labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
+        }
+
+        private void FarmLandControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is FarmLandControl farmLandControl)
+            {
+                // Get the index of the control being removed
+                int removedIndex = flowLayoutPanelParcels.Controls.IndexOf(farmLandControl);
+
+                // Check if the control was found in the Controls collection
+                if (removedIndex >= 0 && removedIndex < flowLayoutPanelParcels.Controls.Count)
+                {
+                    // Remove the farmLandControl from the flowLayoutPanelParcels
+                    flowLayoutPanelParcels.Controls.Remove(farmLandControl);
+
+                    // Update the parcel numbers for the remaining controls
+                    for (int i = removedIndex; i < flowLayoutPanelParcels.Controls.Count; i++)
+                    {
+                        FarmLandControl remainingControl = (FarmLandControl)flowLayoutPanelParcels.Controls[i];
+                        remainingControl.labelParcelNo.Text = (i + 1).ToString();
+                    }
+                }
+
+                // Update the parcel count label
+                UpdateParcelCountLabel();
+            }
+        }
+
+        private void btnAddDocsControl_Click(object sender, EventArgs e)
+        {
+            RSBSADocumentControl documentControl = new RSBSADocumentControl();
+
+            // Subscribe to the RemoveButtonClick event
+            documentControl.RemoveButtonClick += RSBSADocumentControl_RemoveButtonClick;
+
+            // Add the documentControl to the flowLayoutPanelDocs
+            flowLayoutPanelDocs.Controls.Add(documentControl);
+        }
+
+        private void RSBSADocumentControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is RSBSADocumentControl documentControl)
+            {
+                // Remove the documentControl from the flowLayoutPanelDocs
+                flowLayoutPanelDocs.Controls.Remove(documentControl);
+            }
         }
     }
 }

@@ -602,6 +602,7 @@ namespace AgRecords.Model
                             RSBSADocuments document = new RSBSADocuments();
                             document.rsbsaId = reader["rsbsaId"].ToString();
                             document.docType = reader["docType"].ToString();
+                            document.docFilename = reader["docFilename"].ToString();
                             string docFilename = reader["docFilename"].ToString();
 
                             // Check if "docPhoto" field is not DBNull

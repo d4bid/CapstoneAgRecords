@@ -736,11 +736,11 @@
             // 
             panel19.Controls.Add(flowLayoutPanelParcels);
             panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 120);
+            panel19.Location = new Point(0, 695);
             panel19.Margin = new Padding(3, 2, 3, 2);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(9, 8, 9, 8);
-            panel19.Size = new Size(1396, 455);
+            panel19.Size = new Size(1396, 0);
             panel19.TabIndex = 75;
             // 
             // flowLayoutPanelParcels
@@ -750,14 +750,14 @@
             flowLayoutPanelParcels.Location = new Point(9, 8);
             flowLayoutPanelParcels.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
-            flowLayoutPanelParcels.Size = new Size(1378, 439);
+            flowLayoutPanelParcels.Size = new Size(1378, 0);
             flowLayoutPanelParcels.TabIndex = 54;
             // 
             // panel12
             // 
             panel12.Controls.Add(panel17);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 0);
+            panel12.Location = new Point(0, 575);
             panel12.Margin = new Padding(3, 2, 3, 2);
             panel12.Name = "panel12";
             panel12.Padding = new Padding(9, 8, 9, 8);
@@ -800,6 +800,7 @@
             btnAddFarmParcel.Size = new Size(27, 23);
             btnAddFarmParcel.TabIndex = 73;
             btnAddFarmParcel.UseVisualStyleBackColor = true;
+            btnAddFarmParcel.Click += btnAddFarmParcel_Click;
             // 
             // labelParcelCount
             // 
@@ -945,7 +946,7 @@
             panelDocument.Location = new Point(0, 0);
             panelDocument.Margin = new Padding(3, 2, 3, 2);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1396, 0);
+            panelDocument.Size = new Size(1396, 575);
             panelDocument.TabIndex = 73;
             // 
             // flowLayoutPanelDocs
@@ -955,7 +956,7 @@
             flowLayoutPanelDocs.Location = new Point(0, 65);
             flowLayoutPanelDocs.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1396, 0);
+            flowLayoutPanelDocs.Size = new Size(1396, 510);
             flowLayoutPanelDocs.TabIndex = 92;
             // 
             // panel14
@@ -987,6 +988,7 @@
             btnAddDocsControl.TabIndex = 93;
             btnAddDocsControl.Text = "Add Document";
             btnAddDocsControl.UseVisualStyleBackColor = false;
+            btnAddDocsControl.Click += btnAddDocsControl_Click;
             // 
             // panel39
             // 
