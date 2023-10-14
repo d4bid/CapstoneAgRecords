@@ -34,7 +34,7 @@ namespace AgRecords.View
 
         private void RSBSADocumentControl_Load(object sender, EventArgs e)
         {
-
+            btnRemove.Click += btnRemove_Click;
         }
 
         public void SetData(RSBSADocuments docs)

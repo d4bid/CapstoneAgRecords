@@ -800,6 +800,7 @@
             btnAddFarmParcel.Size = new Size(27, 23);
             btnAddFarmParcel.TabIndex = 73;
             btnAddFarmParcel.UseVisualStyleBackColor = true;
+            btnAddFarmParcel.Click += btnAddFarmParcel_Click;
             // 
             // labelParcelCount
             // 
@@ -987,6 +988,7 @@
             btnAddDocsControl.TabIndex = 93;
             btnAddDocsControl.Text = "Add Document";
             btnAddDocsControl.UseVisualStyleBackColor = false;
+            btnAddDocsControl.Click += btnAddDocsControl_Click;
             // 
             // panel39
             // 
