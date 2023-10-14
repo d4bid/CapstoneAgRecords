@@ -186,12 +186,14 @@ namespace AgRecords.View
                         {
                             FarmLandControl farmLandControl = new FarmLandControl();
                             farmLandControl.SetData(farmlandParcel.farmParcels[i], null);
+                            farmLandControl.RemoveButtonClick += FarmLandControl_RemoveButtonClick;
                             flowLayoutPanelParcels.Controls.Add(farmLandControl);
                         }
                         else
                         {
                             FarmLandControl farmLandControl = new FarmLandControl();
                             farmLandControl.SetData(farmlandParcel.farmParcels[i], farmlandParcelCrops.farmParcelCrops);
+                            farmLandControl.RemoveButtonClick += FarmLandControl_RemoveButtonClick;
                             flowLayoutPanelParcels.Controls.Add(farmLandControl);
                         }
                     }
@@ -379,6 +381,233 @@ namespace AgRecords.View
             {
                 // Remove the documentControl from the flowLayoutPanelDocs
                 flowLayoutPanelDocs.Controls.Remove(documentControl);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //radio buttons in personal info
+            RadioButton rbIsHouseholdHead = panelHousehold.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbCivilStatus = panelCivilStat.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbEduc = panelEduc.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbGovId = panelGovId.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbIPGroup = panelIPGroup.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbPWD = panelPWD.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rb4Ps = panel4Ps.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbReligion = panelReligion.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton rbCoop = panelCoop.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+            //farmer info
+            string rbIsHouseholdHeadText = "No";
+            string rbCivilStatusText = "";
+            string rbEducText = "";
+            string rbGovIdText = "No";
+            string rbIPGroupText = "No";
+            string rbPWDText = "No";
+            string rb4PsText = "No";
+            string rbReligionText = "";
+            string rbCooptText = "No";
+
+            //farm profile
+            string isFarmerText = "No";
+            string isRiceFarmerText = "No";
+            string isCornFarmerText = "No";
+            string isLaborerText = "No";
+            string isPreparingLandText = "No";
+            string isPlantingText = "No";
+            string isCultivatingText = "No";
+            string isHarvestingText = "No";
+            string isFisherfolkText = "No";
+            string isFishCapturingText = "No";
+            string isAquacultureText = "No";
+            string isGleaningText = "No";
+            string isFishProcessingText = "No";
+            string isFishVendingText = "No";
+            string isAgriYouthText = "No";
+            string isPartOfFarmingHouseholdText = "No";
+            string isAttendAgrifisheryText = "No";
+            string isParticipantAgriProgramText = "No";
+
+            //farm info
+            if (rbIsHouseholdHead != null)
+            {
+                rbIsHouseholdHeadText = rbIsHouseholdHead.Text;
+            }
+
+            if (rbCivilStatus != null)
+            {
+                rbCivilStatusText = rbCivilStatus.Text;
+            }
+
+            if (rbEduc != null)
+            {
+                rbEducText = rbEduc.Text;
+            }
+
+            if (rbGovId != null)
+            {
+                rbGovIdText = rbGovId.Text;
+            }
+
+            if (rbIPGroup != null)
+            {
+                rbIPGroupText = rbIPGroup.Text;
+            }
+
+            if (rbPWD != null)
+            {
+                rbPWDText = rbPWD.Text;
+            }
+
+            if (rb4Ps != null)
+            {
+                rb4PsText = rb4Ps.Text;
+            }
+
+            if (rbReligion != null)
+            {
+                if (rbReligion.Text == "Others")
+                {
+                    rbReligionText = txtReligionOthers.Text;
+                }
+                else
+                {
+                    rbReligionText = rbReligion.Text;
+                }
+            }
+
+            if (rbCoop != null)
+            {
+                rbCooptText = rbCoop.Text;
+            }
+
+            //farm profile
+            if (cbLivelihoodFarmer.Checked)
+            {
+                isFarmerText = "Yes";
+            }
+
+            if (cbFarmActRice.Checked)
+            {
+                isRiceFarmerText = "Yes";
+            }
+
+            if (cbFarmActCorn.Checked)
+            {
+                isCornFarmerText = "Yes";
+            }
+
+            if (cbLivelihoodFarmworker.Checked)
+            {
+                isLaborerText = "Yes";
+            }
+
+            if (cbWorkKindLandPrep.Checked)
+            {
+                isPreparingLandText = "Yes";
+            }
+
+            if (cbWorkKindPlanting.Checked)
+            {
+                isPlantingText = "Yes";
+            }
+
+            if (cbWorkKindCultivation.Checked)
+            {
+                isCultivatingText = "Yes";
+            }
+
+            if (cbWorkKindHarvesting.Checked)
+            {
+                isHarvestingText = "Yes";
+            }
+
+            if (cbLivelihoodFisherfolk.Checked)
+            {
+                isFisherfolkText = "Yes";
+            }
+
+            if (cbFishingActFishCapture.Checked)
+            {
+                isFishCapturingText = "Yes";
+            }
+
+            if (cbFishingActAquaculture.Checked)
+            {
+                isAquacultureText = "Yes";
+            }
+
+            if (cbFishingActGleaning.Checked)
+            {
+                isGleaningText = "Yes";
+            }
+
+            if (cbFishingActProcessing.Checked)
+            {
+                isFishProcessingText = "Yes";
+            }
+
+            if (cbFishingActVending.Checked)
+            {
+                isFishVendingText = "Yes";
+            }
+
+            if (cbLivelihoodAgriyouth.Checked)
+            {
+                isAgriYouthText = "Yes";
+            }
+
+            if (cbInvolvementHousehold.Checked)
+            {
+                isPartOfFarmingHouseholdText = "Yes";
+            }
+
+            if (cbInvolvementFormalCourse.Checked)
+            {
+                isAttendAgrifisheryText = "Yes";
+            }
+
+            if (cbInvolvementProgram.Checked)
+            {
+                isParticipantAgriProgramText = "Yes";
+            }
+
+
+            if (rsbsaController.EditRSBSA(
+                //rsbsa info
+                labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
+
+                //farmer info
+                txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
+                txtAddPurok.Text, txtAddStreet.Text, cbAddBrgy.Text, txtAddMunicipality.Text, txtAddProvince.Text, txtAddRegion.Text,
+                rbEducText, txtMobNo.Text, txtLandNo.Text, rbGovIdText, txtGovIdType.Text, txtGovIdNum.Text,
+                dtpBirthDate.Value.Date, txtBirthMunicipality.Text, txtBirthProvince.Text, txtBirthCountry.Text,
+                rbReligionText, rbCivilStatusText, txtSpouseName.Text, txtMaidenMother.Text,
+                rbIsHouseholdHeadText, txtHouseHeadName.Text, txtHouseHeadRs.Text,
+                Convert.ToInt32(nudNoLivingHouseMem.Value), Convert.ToInt32(nudHouseFemale.Value), Convert.ToInt32(nudHouseNoMale.Value),
+                rbPWDText, rb4PsText, rbIPGroupText, txtIndigenous.Text, rbCooptText, txtAssociation.Text, txtEcName.Text, txtEcContact.Text,
+
+                //farm profile
+                isFarmerText, isRiceFarmerText, isCornFarmerText, txtFarmActCrops.Text, txtFarmActLivestock.Text, txtFarmActPoultry.Text,
+                isLaborerText, isPreparingLandText, isPlantingText, isCultivatingText, isHarvestingText, txtWorkKindOthers.Text,
+                isFisherfolkText, isFishCapturingText, isAquacultureText, isGleaningText, isFishProcessingText, isFishVendingText, txtFishingActOthers.Text,
+                isAgriYouthText, isPartOfFarmingHouseholdText, isAttendAgrifisheryText, isParticipantAgriProgramText, txtInvolvementOthers.Text,
+                Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text),
+
+                //farmland
+                "Test", Convert.ToInt32(labelParcelCount.Text),
+
+                //farmland parcel
+                GetFarmParcelsFromControls(),
+
+                //Docs
+                GetDocumentsFromControls()
+
+                ))
+            {
+                this.Close();
+                FormClosed?.Invoke(this, EventArgs.Empty);
+
             }
         }
     }

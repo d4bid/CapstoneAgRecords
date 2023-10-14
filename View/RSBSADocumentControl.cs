@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,6 +94,21 @@ namespace AgRecords.View
             {
                 // Add the image to the dictionary with the filename as the key
                 document.docPhotoDictionary.Add(filename, selectedImage);
+
+
+
+
+
+                // Convert the Image to a byte array
+                byte[] imageBytes = null;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    selectedImage.Save(ms, ImageFormat.Png);
+                    imageBytes = ms.ToArray();
+                }
+
+                document.docPhotoDictionaryByte.Add(filename, imageBytes);
+
             }
 
             return document;
