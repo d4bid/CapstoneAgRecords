@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -373,6 +374,8 @@ namespace AgRecords.View
             dtpBirthDate.MinDate = minDate;
             dtDateAdm.MinDate = minDate;
 
+            txtSurname.Focus();
+
         }
 
         private void rectangleRound42_Load(object sender, EventArgs e)
@@ -512,11 +515,19 @@ namespace AgRecords.View
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
+            txtGovIdType.Enabled = false;
+            txtGovIdNum.Enabled = false;
+            txtReligionOthers.Enabled = false;
 
             txtHouseHeadName.BackColor = Color.White;
             txtHouseHeadRs.BackColor = Color.White;
             txtIndigenous.BackColor = Color.White;
             txtAssociation.BackColor = Color.White;
+            txtGovIdType.BackColor = Color.White;
+            txtGovIdNum.BackColor = Color.White;
+            txtReligionOthers.BackColor = Color.White;
+            txtSpouseName.BackColor = Color.White;
+
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
         {
@@ -595,6 +606,30 @@ namespace AgRecords.View
             }
         }
 
+        private void rbOthers_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbOthers.Checked)
+            {
+                txtReligionOthers.Enabled = true;
+            }
+            else
+            {
+                txtReligionOthers.Enabled = false;
+                txtReligionOthers.Clear();
+            }
+        }
+        private void rbCivilSingle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCivilSingle.Checked)
+            {
+                txtSpouseName.Enabled = false;
+                txtSpouseName.Clear();
+            }
+            else
+            {
+                txtSpouseName.Enabled = true;
+            }
+        }
         private void btnAddDocsControl_Click(object sender, EventArgs e)
         {
             RSBSADocumentControl documentControl = new RSBSADocumentControl();
@@ -614,6 +649,45 @@ namespace AgRecords.View
                 flowLayoutPanelDocs.Controls.Remove(documentControl);
             }
         }
+        //keypress events
+        private void AlphaNum(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlpaNumeric(sender, e);
+        }
+
+        private void AlphaOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlphaOnly(sender, e);
+        }
+
+        private void NumOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericOnly(sender, e);
+        }
+
+        private void NumOnlyLimited(object sender, KeyPressEventArgs e)
+        {
+            if (txtEcContact.Focused)
+            {
+                TextboxValidation.TextBox_NumericOnlyLimited(txtEcContact, e, 11);
+            }
+            else if (txtMobNo.Focused)
+            {
+                TextboxValidation.TextBox_NumericOnlyLimited(txtMobNo, e, 11);
+            }
+            else if (txtLandNo.Focused)
+            {
+                TextboxValidation.TextBox_NumericOnlyLimited(txtLandNo, e, 7);
+            }
+        }
+
+        //textchanged events
+        private void AllCaps(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
+
+
 
     }
 }

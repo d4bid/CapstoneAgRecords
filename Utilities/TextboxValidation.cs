@@ -61,7 +61,6 @@ namespace AgRecords.Utilities
             }
         }
 
-
         //allow nums only
         public static void TextBox_NumericOnly(object sender, KeyPressEventArgs e)
         {
@@ -70,6 +69,22 @@ namespace AgRecords.Utilities
                 e.Handled = true;
             }
         }
+
+        //limit number based on parameters
+        public static void TextBox_NumericOnlyLimited(object sender, KeyPressEventArgs e, int maxLength)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (textBox.Text.Length >= maxLength && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
 
     }
 

@@ -285,6 +285,5 @@ namespace AgRecords.View
         {
             TextboxValidation.TextBox_AllCaps(sender, e);
         }
-        ///
     }
 }
