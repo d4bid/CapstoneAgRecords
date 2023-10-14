@@ -94,6 +94,7 @@ namespace AgRecords.Model
                         parcelCommand.Parameters.AddWithValue("_farmParcelNo", farmParcel.farmParcelNo);
                         parcelCommand.Parameters.AddWithValue("_farmLocBrgy", farmParcel.farmLocBrgy);
                         parcelCommand.Parameters.AddWithValue("_farmLocMunicipality", farmParcel.farmLocMunicipality);
+                        parcelCommand.Parameters.AddWithValue("_farmSize", farmParcel.farmSize);
                         parcelCommand.Parameters.AddWithValue("_isAncestralDomain", farmParcel.isAncestralDomain);
                         parcelCommand.Parameters.AddWithValue("_isAgrarianBeneficiary", farmParcel.isAgrarianBeneficiary);
                         parcelCommand.Parameters.AddWithValue("_ownershipNo", farmParcel.ownershipNo);
@@ -185,7 +186,7 @@ namespace AgRecords.Model
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
                                     "@birthCountry, @religion, @civilStatus, @spouseName, @maidenName, @isHouseHead, " +
                                     "@houseHeadName, @houseHeadRs, @houseLivingMemCount, @houseMaleCount, @houseFemCount, " +
-                                    "@isPWD, @isIp, @ipGroupName, @isCoopMember, @coopName, @emergContactName, @emergContactNo, " +
+                                    "@isPWD, @is4Ps, @isIp, @ipGroupName, @isCoopMember, @coopName, @emergContactName, @emergContactNo, " +
                                     "@isFarmer, @isRiceFarmer, @isCornFarmer, @otherCrops, @hasLivestocks, @hasPoultry, " +
                                     "@isLaborer, @isPreparingLand, @isPlanting, @isCultivating, @isHarvesting, @otherLaborWork, " +
                                     "@isFisherfolk, @isFishCapturing, @isAquaculture, @isGleaning, @isFishProcessing, " +
@@ -234,6 +235,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@houseMaleCount", rsbsa.houseMaleCount);
                     command.Parameters.AddWithValue("@houseFemCount", rsbsa.houseFemCount);
                     command.Parameters.AddWithValue("@isPWD", rsbsa.isPWD);
+                    command.Parameters.AddWithValue("@is4Ps", rsbsa.is4Ps);
                     command.Parameters.AddWithValue("@isIp", rsbsa.isIp);
                     command.Parameters.AddWithValue("@ipGroupName", rsbsa.ipGroupName);
                     command.Parameters.AddWithValue("@isCoopMember", rsbsa.isCoopMember);
@@ -369,6 +371,7 @@ namespace AgRecords.Model
                         farmerInfo.houseMaleCount = Convert.ToInt32(reader["houseMaleCount"]);
                         farmerInfo.houseFemCount = Convert.ToInt32(reader["houseFemCount"]);
                         farmerInfo.isPWD = reader["isPWD"].ToString();
+                        farmerInfo.is4Ps = reader["is4Ps"].ToString();
                         farmerInfo.isIp = reader["isIp"].ToString();
                         farmerInfo.ipGroupName = reader["ipGroupName"].ToString();
                         farmerInfo.isCoopMember = reader["isCoopMember"].ToString();
@@ -430,8 +433,8 @@ namespace AgRecords.Model
                         farmProfile.isAttendAgrifishery = reader["isAttendAgrifishery"].ToString();
                         farmProfile.isParticipantAgriProgram = reader["isParticipantAgriProgram"].ToString();
                         farmProfile.otherAgriYouthAct = reader["otherAgriYouthAct"].ToString();
-                        farmProfile.annualIncomeFarming = Convert.ToDouble(reader["annualIncomeFarming"]);
-                        farmProfile.annualIncomeNonFarming = Convert.ToDouble(reader["annualIncomeNonFarming"]);
+                        farmProfile.annualIncomeFarming = reader["annualIncomeFarming"] != DBNull.Value ? Convert.ToDouble(reader["annualIncomeFarming"]) : 0.0;
+                        farmProfile.annualIncomeNonFarming = reader["annualIncomeNonFarming"] != DBNull.Value ? Convert.ToDouble(reader["annualIncomeNonFarming"]) : 0.0;
                     }
 
 
@@ -467,6 +470,7 @@ namespace AgRecords.Model
                         farmland.rotatingFarmers = reader["rotatingFarmers"].ToString();
                         farmland.farmParcelCount = Convert.ToInt32(reader["farmParcelCount"]);
                     }
+
 
                     reader.Close();
                     return farmland;
@@ -506,7 +510,7 @@ namespace AgRecords.Model
                             farmParcel.farmParcelNo = reader["farmParcelNo"].ToString();
                             farmParcel.farmLocBrgy = reader["farmLocBrgy"].ToString();
                             farmParcel.farmLocMunicipality = reader["farmLocMunicipality"].ToString();
-                            farmParcel.farmSize = Convert.ToDouble(reader["farmSize"]);
+                            farmParcel.farmSize = reader["farmSize"] != DBNull.Value ? Convert.ToDouble(reader["farmSize"]) : 0.0;
                             farmParcel.isAncestralDomain = reader["isAncestralDomain"].ToString();
                             farmParcel.ownershipNo = reader["ownershipNo"].ToString();
                             farmParcel.isAgrarianBeneficiary = reader["isAgrarianBeneficiary"].ToString();
@@ -554,8 +558,8 @@ namespace AgRecords.Model
                             FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
                             farmParcelCrop.farmParcelNo = reader["farmParcelNo"].ToString();
                             farmParcelCrop.commodityType = reader["commodityType"].ToString();
-                            farmParcelCrop.landSize = Convert.ToDouble(reader["landSize"]);
-                            farmParcelCrop.headCount = Convert.ToInt32(reader["headCount"]);
+                            farmParcelCrop.landSize = reader["landSize"] != DBNull.Value ? Convert.ToDouble(reader["landSize"]) : 0.0;
+                            farmParcelCrop.headCount = reader["headCount"] != DBNull.Value ? Convert.ToInt32(reader["headCount"]) : 0;
                             farmParcelCrop.farmType = reader["farmType"].ToString();
                             farmParcelCrop.isOrganic = reader["isOrganic"].ToString();
 
@@ -600,12 +604,20 @@ namespace AgRecords.Model
                             document.docType = reader["docType"].ToString();
                             string docFilename = reader["docFilename"].ToString();
 
-                            //convert byte to image then pass it to dictionary
-                            byte[] docPhotoBytes = (byte[])reader["docPhoto"];
-                            Image docImage = GetImageFromByteArray(docPhotoBytes);
+                            // Check if "docPhoto" field is not DBNull
+                            if (reader["docPhoto"] != DBNull.Value)
+                            {
+                                // Convert byte array to image
+                                byte[] docPhotoBytes = (byte[])reader["docPhoto"];
+                                Image docImage = GetImageFromByteArray(docPhotoBytes);
 
-                            document.docPhotoDictionary.Add(docFilename, docImage);
-                            docs.rsbsaDocuments.Add(document);
+                                // Add image to the document only if it is not null
+                                if (docImage != null)
+                                {
+                                    document.docPhotoDictionary.Add(docFilename, docImage);
+                                    docs.rsbsaDocuments.Add(document);
+                                }
+                            }
                         }
                     }
 

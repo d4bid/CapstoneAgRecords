@@ -279,7 +279,7 @@ namespace AgRecords.View
                 rbReligionText, rbCivilStatusText, txtSpouseName.Text, txtMaidenMother.Text,
                 rbIsHouseholdHeadText, txtHouseHeadName.Text, txtHouseHeadRs.Text,
                 Convert.ToInt32(nudNoLivingHouseMem.Value), Convert.ToInt32(nudHouseFemale.Value), Convert.ToInt32(nudHouseNoMale.Value),
-                rbPWDText, rbIPGroupText, txtIndigenous.Text, rbCooptText, txtAssociation.Text, txtEcName.Text, txtEcContact.Text,
+                rbPWDText, rb4PsText, rbIPGroupText, txtIndigenous.Text, rbCooptText, txtAssociation.Text, txtEcName.Text, txtEcContact.Text,
 
                 //farm profile
                 isFarmerText, isRiceFarmerText, isCornFarmerText, txtFarmActCrops.Text, txtFarmActLivestock.Text, txtFarmActPoultry.Text,
@@ -424,6 +424,11 @@ namespace AgRecords.View
             UpdateParcelCountLabel();
         }
 
+        private void UpdateParcelCountLabel()
+        {
+            labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
+        }
+
         private void FarmLandControl_RemoveButtonClick(object sender, EventArgs e)
         {
             if (sender is FarmLandControl farmLandControl)
@@ -449,12 +454,6 @@ namespace AgRecords.View
                 UpdateParcelCountLabel();
             }
         }
-
-        private void UpdateParcelCountLabel()
-        {
-            labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
-        }
-
 
         private void txtAssociation_TextChanged(object sender, EventArgs e)
         {
