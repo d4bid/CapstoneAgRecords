@@ -40,13 +40,13 @@
             label10 = new Label();
             searchBox6 = new SearchBox();
             labelMonth = new Label();
-            label7 = new Label();
-            label6 = new Label();
+            labelSeasonYear = new Label();
+            labelSeason = new Label();
             label5 = new Label();
             searchBox5 = new SearchBox();
             label4 = new Label();
             searchBox4 = new SearchBox();
-            labelReport = new Label();
+            labelRiceSrId = new Label();
             label3 = new Label();
             searchBox1 = new SearchBox();
             label2 = new Label();
@@ -81,6 +81,7 @@
             searchBox2 = new SearchBox();
             label1 = new Label();
             dgvRiceStandLogs = new DataGridView();
+            labelRiceStandingLogsId = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -101,13 +102,13 @@
             panel1.Controls.Add(label10);
             panel1.Controls.Add(searchBox6);
             panel1.Controls.Add(labelMonth);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(labelSeasonYear);
+            panel1.Controls.Add(labelSeason);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(searchBox5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(searchBox4);
-            panel1.Controls.Add(labelReport);
+            panel1.Controls.Add(labelRiceSrId);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(searchBox1);
             panel1.Controls.Add(label2);
@@ -155,7 +156,7 @@
             // 
             labelYear.AutoSize = true;
             labelYear.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelYear.Location = new Point(834, 38);
+            labelYear.Location = new Point(856, 38);
             labelYear.Name = "labelYear";
             labelYear.Size = new Size(56, 28);
             labelYear.TabIndex = 36;
@@ -164,7 +165,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(822, 11);
+            label12.Location = new Point(844, 11);
             label12.Name = "label12";
             label12.Size = new Size(37, 20);
             label12.TabIndex = 35;
@@ -172,7 +173,7 @@
             // 
             // searchBox7
             // 
-            searchBox7.Location = new Point(822, 34);
+            searchBox7.Location = new Point(844, 34);
             searchBox7.Name = "searchBox7";
             searchBox7.Size = new Size(100, 39);
             searchBox7.TabIndex = 34;
@@ -181,7 +182,7 @@
             // 
             labelWeek.AutoSize = true;
             labelWeek.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelWeek.Location = new Point(719, 38);
+            labelWeek.Location = new Point(741, 38);
             labelWeek.Name = "labelWeek";
             labelWeek.Size = new Size(47, 28);
             labelWeek.TabIndex = 33;
@@ -190,7 +191,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(707, 11);
+            label10.Location = new Point(729, 11);
             label10.Name = "label10";
             label10.Size = new Size(45, 20);
             label10.TabIndex = 32;
@@ -198,7 +199,7 @@
             // 
             // searchBox6
             // 
-            searchBox6.Location = new Point(707, 34);
+            searchBox6.Location = new Point(729, 34);
             searchBox6.Name = "searchBox6";
             searchBox6.Size = new Size(100, 39);
             searchBox6.TabIndex = 31;
@@ -207,36 +208,36 @@
             // 
             labelMonth.AutoSize = true;
             labelMonth.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelMonth.Location = new Point(580, 38);
+            labelMonth.Location = new Point(602, 38);
             labelMonth.Name = "labelMonth";
             labelMonth.Size = new Size(82, 28);
             labelMonth.TabIndex = 30;
             labelMonth.Text = "January";
             // 
-            // label7
+            // labelSeasonYear
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(410, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(108, 28);
-            label7.TabIndex = 29;
-            label7.Text = "2022-2023";
+            labelSeasonYear.AutoSize = true;
+            labelSeasonYear.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSeasonYear.Location = new Point(432, 38);
+            labelSeasonYear.Name = "labelSeasonYear";
+            labelSeasonYear.Size = new Size(108, 28);
+            labelSeasonYear.TabIndex = 29;
+            labelSeasonYear.Text = "2022-2023";
             // 
-            // label6
+            // labelSeason
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(283, 38);
-            label6.Name = "label6";
-            label6.Size = new Size(48, 28);
-            label6.TabIndex = 28;
-            label6.Text = "Wet";
+            labelSeason.AutoSize = true;
+            labelSeason.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSeason.Location = new Point(305, 38);
+            labelSeason.Name = "labelSeason";
+            labelSeason.Size = new Size(48, 28);
+            labelSeason.TabIndex = 28;
+            labelSeason.Text = "Wet";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(570, 11);
+            label5.Location = new Point(592, 11);
             label5.Name = "label5";
             label5.Size = new Size(52, 20);
             label5.TabIndex = 27;
@@ -244,7 +245,7 @@
             // 
             // searchBox5
             // 
-            searchBox5.Location = new Point(570, 34);
+            searchBox5.Location = new Point(592, 34);
             searchBox5.Name = "searchBox5";
             searchBox5.Size = new Size(122, 39);
             searchBox5.TabIndex = 26;
@@ -252,7 +253,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(400, 11);
+            label4.Location = new Point(422, 11);
             label4.Name = "label4";
             label4.Size = new Size(37, 20);
             label4.TabIndex = 24;
@@ -260,25 +261,25 @@
             // 
             // searchBox4
             // 
-            searchBox4.Location = new Point(400, 34);
+            searchBox4.Location = new Point(422, 34);
             searchBox4.Name = "searchBox4";
             searchBox4.Size = new Size(142, 39);
             searchBox4.TabIndex = 23;
             // 
-            // labelReport
+            // labelRiceSrId
             // 
-            labelReport.AutoSize = true;
-            labelReport.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelReport.Location = new Point(28, 38);
-            labelReport.Name = "labelReport";
-            labelReport.Size = new Size(149, 28);
-            labelReport.TabIndex = 21;
-            labelReport.Text = "RiceStandingID";
+            labelRiceSrId.AutoSize = true;
+            labelRiceSrId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelRiceSrId.Location = new Point(28, 38);
+            labelRiceSrId.Name = "labelRiceSrId";
+            labelRiceSrId.Size = new Size(149, 28);
+            labelRiceSrId.TabIndex = 21;
+            labelRiceSrId.Text = "RiceStandingID";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(274, 11);
+            label3.Location = new Point(296, 11);
             label3.Name = "label3";
             label3.Size = new Size(56, 20);
             label3.TabIndex = 20;
@@ -286,7 +287,7 @@
             // 
             // searchBox1
             // 
-            searchBox1.Location = new Point(274, 34);
+            searchBox1.Location = new Point(296, 34);
             searchBox1.Name = "searchBox1";
             searchBox1.Size = new Size(111, 39);
             searchBox1.TabIndex = 19;
@@ -304,7 +305,7 @@
             // 
             searchBox3.Location = new Point(17, 34);
             searchBox3.Name = "searchBox3";
-            searchBox3.Size = new Size(230, 39);
+            searchBox3.Size = new Size(262, 39);
             searchBox3.TabIndex = 16;
             // 
             // panel3
@@ -370,6 +371,7 @@
             // panel43
             // 
             panel43.BorderStyle = BorderStyle.FixedSingle;
+            panel43.Controls.Add(labelRiceStandingLogsId);
             panel43.Controls.Add(btnUpdate);
             panel43.Controls.Add(cmbSeedType);
             panel43.Controls.Add(searchBox10);
@@ -489,6 +491,7 @@
             btnNew.TabIndex = 40;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
             // txtSize
             // 
@@ -658,6 +661,16 @@
             dgvRiceStandLogs.TabIndex = 23;
             dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
             // 
+            // labelRiceStandingLogsId
+            // 
+            labelRiceStandingLogsId.AutoSize = true;
+            labelRiceStandingLogsId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelRiceStandingLogsId.Location = new Point(796, 154);
+            labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
+            labelRiceStandingLogsId.Size = new Size(149, 28);
+            labelRiceStandingLogsId.TabIndex = 80;
+            labelRiceStandingLogsId.Text = "RiceStandingID";
+            // 
             // CropsRiceAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -690,11 +703,11 @@
         private Panel panel2;
         private DataGridView dgvRiceStandLogs;
         private Label label3;
-        private Label labelReport;
+        private Label labelRiceSrId;
         private Label label5;
         private Label label4;
-        private Label label7;
-        private Label label6;
+        private Label labelSeasonYear;
+        private Label labelSeason;
         private Label labelMonth;
         private Label labelWeek;
         private Label label10;
@@ -735,5 +748,6 @@
         private Label label9;
         private DateTimePicker dtpLogDate;
         private Button btnUpdate;
+        private Label labelRiceStandingLogsId;
     }
 }

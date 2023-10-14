@@ -76,6 +76,20 @@ namespace AgRecords.Controller
             }
         }
 
+        // Get riceSrId
+        public RiceStandingRep GetRiceStandReportById(string riceSrId)
+        {
+            try
+            {
+                return riceModel.GetRiceStandReportById(riceSrId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
         public void GenerateNewRiceStandID()
         {
             try
@@ -143,7 +157,7 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddRiceStandingLogs(string riceSrId, int brgyId, int farmTypeId, int growthStageId, float size, DateTime logDate)
+        public bool AddRiceStandingLogs(string riceSrId, int brgyId, int farmTypeId, int growthStageId, int seedTypeId, float size, DateTime logDate)
         {
             try
             {
@@ -153,6 +167,7 @@ namespace AgRecords.Controller
                     brgyId = brgyId,
                     farmTypeId = farmTypeId,
                     growthStageId = growthStageId,
+                    seedTypeId = seedTypeId,
                     size = size,
                     logDate = logDate
                 };
@@ -175,7 +190,11 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.riceSrId != null && rs.brgyId != null && rs.farmTypeId != null && rs.growthStageId != null)
+                else if (rs.seedTypeId == null)
+                {
+                    MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rs.riceSrId != null && rs.brgyId != null && rs.farmTypeId != null && rs.growthStageId != null && rs.seedTypeId != null)
                 {
                     if (riceModel.AddRiceStandingLogs(rs))
                     {
@@ -194,17 +213,69 @@ namespace AgRecords.Controller
             }
         }
 
-        public DataTable LoadRiceStandLogsView()
+        public bool MoveNextStandingLogs(string riceSrId)
         {
             try
             {
-                DataTable riceStandLogsTable = riceModel.LoadRiceStandLogsDataGrid();
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                if (rs.riceSrId == "")
+                {
+                    MessageBox.Show("Rice Standing Record Id is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rs.riceSrId != null)
+                {
+                    if (riceModel.MoveNextRiceStandingLogs(rs))
+                    {
+                        isDone = true;
+                    }
+                }
+
+                // Return true to indicate a successful operation
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Move Rice Standing Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+        }
+
+        public DataTable LoadRiceStandLogsView(string riceSrId)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadRiceStandLogsDataGrid(rs);
                 return riceStandLogsTable;
             }
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                return null;
+            }
+        }
+
+        // Get riceStandingLogsId
+        public RiceStanding GetRiceStandingLogsById(int riceStandingLogsId)
+        {
+            try
+            {
+                return riceModel.GetRiceStandingLogsById(riceStandingLogsId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }

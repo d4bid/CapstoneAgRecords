@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,10 @@ namespace AgRecords.View
 
             cropsRiceController = new CropsRiceController(this);
         }
+        public string GetRiceSrIdValue()
+        {
+            return labelRiceSrId.Text;
+        }
 
         // Methods
 
@@ -39,6 +44,11 @@ namespace AgRecords.View
             int currentYear = DateTime.Now.Year;
             textboxYear.Text = currentYear.ToString();
 
+        }
+
+        public string RiceSrIdValue
+        {
+            get { return labelRiceSrId.Text; }
         }
 
         // Events

@@ -146,7 +146,7 @@ namespace AgRecords.Model
             }
         }
 
-        public DataTable LoadRiceStandLogsDataGrid()
+        public DataTable LoadRiceStandLogsDataGrid(RiceStanding rs)
         {
             try
             {
@@ -154,7 +154,10 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_logs;", db.GetConnection());
+                    string query = "CALL sp_getRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -199,7 +202,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
+                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @seedTypeId, @size, @logDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
                     command.Parameters.AddWithValue("@brgyId", rs.brgyId);
@@ -302,13 +305,13 @@ namespace AgRecords.Model
                     reader.Close();
                     return rs;
                 }
-
             }
             catch (Exception ex)
             {
                 throw new ApplicationException("Error getting rice standing log by ID: " + ex.Message, ex);
             }
         }
+
 
         // PLANTING
         public Boolean AddRicePlantingRep(RicePlantingRep rpr)

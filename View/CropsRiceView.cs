@@ -56,6 +56,9 @@ namespace AgRecords.View
             RiceAddView riceAddView = new RiceAddView();
             riceAddView.SaveButtonClicked += (s, args) =>
             {
+                // Get the RiceAddView's labelRiceSrId value
+                string riceSrId = riceAddView.RiceSrIdValue;
+
                 // Handle the event when the Save button is clicked in RiceAddView
                 this.Close(); // Close the current form (CropsRiceView)
 
@@ -66,6 +69,14 @@ namespace AgRecords.View
 
                 parentPanel.Controls.Clear();
                 parentPanel.Controls.Add(cropsRiceAddView);
+
+
+                // Set the labelRiceSrId in CropsRiceAddView
+                cropsRiceAddView.RiceSrIdValue = riceSrId;
+
+                // Call the MoveNextStandingLogs method from cropsRiceController
+                bool success = cropsRiceController.MoveNextStandingLogs(riceSrId);
+
                 cropsRiceAddView.Show();
             };
             riceAddView.Show();
