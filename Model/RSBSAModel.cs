@@ -78,11 +78,16 @@ namespace AgRecords.Model
 
         public bool AddNewFarmParcel(List<FarmParcel> farmParcels)
         {
-            try
+
+            using (DatabaseConnection db = new DatabaseConnection())
             {
-                using (DatabaseConnection db = new DatabaseConnection())
+                db.Open();
+                MySqlTransaction transaction = null;
+
+                try
                 {
-                    db.Open();
+                    // Begin the transaction
+                    transaction = db.GetConnection().BeginTransaction();
 
                     foreach (FarmParcel farmParcel in farmParcels)
                     {
@@ -123,14 +128,18 @@ namespace AgRecords.Model
                         }
                     }
 
+                    // Commit the transaction
+                    transaction.Commit();
                     return true;
                 }
+                catch (Exception ex)
+                {
+                    // Rollback the transaction if an exception occurs
+                    transaction?.Rollback();
+                    throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
+                }
             }
-            catch (Exception ex)
-            {
-                // Handle exceptions and return false if there is an error
-                throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
-            }
+
         }
 
         public bool AddNewRSBSADocument(List<RSBSADocuments> rsbsaDocuments)
