@@ -602,7 +602,8 @@ namespace AgRecords.View
             {
                 txtGovIdType.Enabled = false;
                 txtGovIdNum.Enabled = false;
-                txtAssociation.Clear();
+                txtGovIdType.Clear();
+                txtGovIdNum.Clear();
             }
         }
 
