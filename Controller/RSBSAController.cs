@@ -16,7 +16,7 @@ namespace AgRecords.Controller
         private RsbsaView rsbsaView;
         private FarmLandControl farmLandControl;
         private RSBSADocumentControl rsbsaDocumentControl;
-        private Boolean isDone = false; 
+        private Boolean isDone = false;
         private string fullName = HomeView.Instance.fullName.Text;
         private RSBSAModel rsbsaModel;
         UserModel userModel = new UserModel();
@@ -289,7 +289,168 @@ namespace AgRecords.Controller
                     // RSBSA Docs
                     rsbsaDocuments = rsbsaDocuments,
                 };
+                //personal info
+                if (string.IsNullOrEmpty(rsbsa.surname))
+                {
+                    MessageBox.Show("Please enter surname.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.firstname))
+                {
+                    MessageBox.Show("Please enter firstname.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.middlename))
+                {
+                    MessageBox.Show("Please enter middlename.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.sex))
+                {
+                    MessageBox.Show("Please select a gender.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //address
+                else if (string.IsNullOrEmpty(rsbsa.addrPurok))
+                {
+                    MessageBox.Show("Please enter purok in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrStreet))
+                {
+                    MessageBox.Show("Please enter street in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrBrgy))
+                {
+                    MessageBox.Show("Please enter barangay in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrMunicipality))
+                {
+                    MessageBox.Show("Please enter municipality in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrProvince))
+                {
+                    MessageBox.Show("Please enter province in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrRegion))
+                {
+                    MessageBox.Show("Please enter region in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                // contact
+                else if (string.IsNullOrEmpty(rsbsa.contactNo))
+                {
+                    MessageBox.Show("Please enter a contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //birth details
+                else if (rsbsa.birthDate == DateTime.Today)
+                {
+                    MessageBox.Show("Please enter a valid birth date.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.birthMunicipality))
+                {
+                    MessageBox.Show("Please enter the birth municipality.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.birthProvince))
+                {
+                    MessageBox.Show("Please enter the birth province.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.birthCountry))
+                {
+                    MessageBox.Show("Please enter the birth country.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //religion
+                else if (string.IsNullOrEmpty(rsbsa.religion))
+                {
+                    MessageBox.Show("Please select/specify the religion.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //civil status
+                else if (string.IsNullOrEmpty(rsbsa.civilStatus))
+                {
+                    MessageBox.Show("Please select a civil status.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.spouseName) && rsbsa.civilStatus != "Single")
+                {
+                    MessageBox.Show("Please enter spouse's name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //mother's maiden name
+                else if (string.IsNullOrEmpty(rsbsa.maidenName))
+                {
+                    MessageBox.Show("Please enter mother's maiden name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //household
+                else if (string.IsNullOrEmpty(rsbsa.isHouseHead))
+                {
+                    MessageBox.Show("Please select if person is the house head or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(houseHeadName) && rsbsa.isHouseHead == "No")
+                {
+                    MessageBox.Show("Please enter the house head's name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(houseHeadRs) && rsbsa.isHouseHead == "No")
+                {
+                    MessageBox.Show("Please enter the house head's relationship status.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }             
+                else if (rsbsa.houseLivingMemCount == 0)
+                {
+                    MessageBox.Show("Please indicate number of living house hold members.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rsbsa.houseMaleCount == 0)
+                {
+                    MessageBox.Show("Please indicate number of living male house hold members.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rsbsa.houseFemCount == 0)
+                {
+                    MessageBox.Show("Please indicate nummber of living female house hold members.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                //educational attaiment
+                else if (string.IsNullOrEmpty(rsbsa.educAttainment))
+                {
+                    MessageBox.Show("Please select an education attainment.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //affiliations
+                else if (string.IsNullOrEmpty(rsbsa.isPWD))
+                {
+                    MessageBox.Show("Please select if PWD or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.is4Ps))
+                {
+                    MessageBox.Show("Please select if 4P's beneficiary or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.isIp))
+                {
+                    MessageBox.Show("Please select if IP or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.ipGroupName) && rsbsa.isIp == "Yes")
+                {
+                     MessageBox.Show("Please enter the IP group name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.withGovId))
+                {
+                    MessageBox.Show("Please select if with government ID or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.govIdType) && rsbsa.withGovId == "Yes")
+                {
+                    MessageBox.Show("Please enter ID type.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.govIdNo) && rsbsa.withGovId == "Yes")
+                {
+                    MessageBox.Show("Please enter ID number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.isCoopMember))
+                {
+                    MessageBox.Show("Please select if an association/cooperative member.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.coopName) && rsbsa.isCoopMember == "Yes")
+                {
+                    MessageBox.Show("Please enter the cooperative name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.emergContactName))
+                {
+                    MessageBox.Show("Please enter emergency contact name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.emergContactNo))
+                {
+                    MessageBox.Show("Please enter emergency contact number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 
+                
+                //condition to be set to call the code below
                 DialogResult result = MessageBox.Show("Are you sure you want to save this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
@@ -305,8 +466,9 @@ namespace AgRecords.Controller
                         }
                     }
                 }
-                
+
                 return isDone;
+
             }
             catch (ApplicationException ex)
             {
@@ -620,5 +782,6 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
     }
 }

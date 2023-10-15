@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZstdSharp.Unsafe;
 
 namespace AgRecords.View
 {
@@ -93,15 +94,15 @@ namespace AgRecords.View
             RadioButton rbCoop = panelCoop.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             //farmer info
-            string rbIsHouseholdHeadText = "No";
+            string rbIsHouseholdHeadText = "";
             string rbCivilStatusText = "";
             string rbEducText = "";
-            string rbGovIdText = "No";
-            string rbIPGroupText = "No";
-            string rbPWDText = "No";
-            string rb4PsText = "No";
+            string rbGovIdText = "";
+            string rbIPGroupText = "";
+            string rbPWDText = "";
+            string rb4PsText = "";
             string rbReligionText = "";
-            string rbCooptText = "No";
+            string rbCooptText = "";
 
             //farm profile
             string isFarmerText = "No";
@@ -375,7 +376,6 @@ namespace AgRecords.View
             dtDateAdm.MaxDate = DateTime.Today;
             dtpBirthDate.MinDate = minDate;
             dtDateAdm.MinDate = minDate;
-
             txtSurname.Focus();
         }
 

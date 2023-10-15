@@ -413,7 +413,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 0);
+            panelFarmProfile.Size = new Size(1595, 767);
             panelFarmProfile.TabIndex = 0;
             // 
             // panelFarmLand
@@ -2848,6 +2848,7 @@
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(135, 28);
             dtpBirthDate.TabIndex = 14;
+            dtpBirthDate.Value = new DateTime(2023, 10, 15, 21, 38, 34, 0);
             dtpBirthDate.Enter += SelectedPanel;
             dtpBirthDate.Leave += UnselectedPanel;
             // 
@@ -3713,6 +3714,7 @@
             dtDateAdm.Size = new Size(178, 30);
             dtDateAdm.TabIndex = 0;
             dtDateAdm.TabStop = false;
+            dtDateAdm.Value = new DateTime(2023, 10, 15, 21, 38, 41, 0);
             // 
             // panel1
             // 
