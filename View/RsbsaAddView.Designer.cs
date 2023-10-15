@@ -123,7 +123,7 @@
             panelEmergencyCon = new Panel();
             txtEcContact = new TextBox();
             txtEcName = new TextBox();
-            panel24 = new Panel();
+            panelEmergencyConHeader = new Panel();
             label58 = new Label();
             rectangleRound36 = new RectangleRound();
             label60 = new Label();
@@ -163,7 +163,7 @@
             rectangleRound34 = new RectangleRound();
             rectangleRound19 = new RectangleRound();
             label55 = new Label();
-            panel26 = new Panel();
+            panelAffiliationsHeader = new Panel();
             label7 = new Label();
             rectangleRound15 = new RectangleRound();
             label17 = new Label();
@@ -171,7 +171,7 @@
             label20 = new Label();
             panelMaidenName = new Panel();
             txtMaidenMother = new TextBox();
-            panel22 = new Panel();
+            panelMaidenNameHeader = new Panel();
             label57 = new Label();
             rectangleRound32 = new RectangleRound();
             panelHousehold = new Panel();
@@ -191,7 +191,7 @@
             label25 = new Label();
             label35 = new Label();
             rectangleRound25 = new RectangleRound();
-            panel20 = new Panel();
+            panelHouseholdHeader = new Panel();
             label50 = new Label();
             rectangleRound28 = new RectangleRound();
             rectangleRound29 = new RectangleRound();
@@ -206,7 +206,7 @@
             rbEducHighschool = new RadioButton();
             rbEducElementary = new RadioButton();
             rbEducPreschool = new RadioButton();
-            panel18 = new Panel();
+            panelEducHeader = new Panel();
             label18 = new Label();
             panelCivilStat = new Panel();
             rbSeparated = new RadioButton();
@@ -216,7 +216,7 @@
             txtSpouseName = new TextBox();
             label16 = new Label();
             rectangleRound14 = new RectangleRound();
-            panel15 = new Panel();
+            panelCivStasHeader = new Panel();
             label31 = new Label();
             rectangleRound24 = new RectangleRound();
             panelReligion = new Panel();
@@ -225,7 +225,7 @@
             rbChristianity = new RadioButton();
             panel16 = new Panel();
             txtReligionOthers = new TextBox();
-            panel13 = new Panel();
+            panelReligionHeader = new Panel();
             label36 = new Label();
             rectangleRound27 = new RectangleRound();
             panelBirthDetails = new Panel();
@@ -236,7 +236,7 @@
             label6 = new Label();
             label28 = new Label();
             rectangleRound22 = new RectangleRound();
-            panel11 = new Panel();
+            panelBirthDetailsHeader = new Panel();
             label30 = new Label();
             rectangleRound23 = new RectangleRound();
             dtpBirthDate = new DateTimePicker();
@@ -248,7 +248,7 @@
             txtMobNo = new TextBox();
             label14 = new Label();
             rectangleRound12 = new RectangleRound();
-            panel9 = new Panel();
+            panelContactDetailsHeader = new Panel();
             label27 = new Label();
             rectangleRound13 = new RectangleRound();
             label15 = new Label();
@@ -260,7 +260,7 @@
             txtAddStreet = new TextBox();
             txtAddPurok = new TextBox();
             rectangleRound17 = new RectangleRound();
-            panel7 = new Panel();
+            panelAddressHeader = new Panel();
             label29 = new Label();
             rectangleRound11 = new RectangleRound();
             label23 = new Label();
@@ -282,7 +282,7 @@
             txtFirstname = new TextBox();
             rectangleRound6 = new RectangleRound();
             txtSurname = new TextBox();
-            panel5 = new Panel();
+            panelPersonalDetailsHeader = new Panel();
             label22 = new Label();
             rectangleRound5 = new RectangleRound();
             rectangleRound2 = new RectangleRound();
@@ -343,35 +343,35 @@
             panel29.SuspendLayout();
             panel30.SuspendLayout();
             panelEmergencyCon.SuspendLayout();
-            panel24.SuspendLayout();
+            panelEmergencyConHeader.SuspendLayout();
             panelAffiliations.SuspendLayout();
             panelCoop.SuspendLayout();
             panelGovId.SuspendLayout();
             panelIPGroup.SuspendLayout();
             panel4Ps.SuspendLayout();
             panelPWD.SuspendLayout();
-            panel26.SuspendLayout();
+            panelAffiliationsHeader.SuspendLayout();
             panelMaidenName.SuspendLayout();
-            panel22.SuspendLayout();
+            panelMaidenNameHeader.SuspendLayout();
             panelHousehold.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudNoLivingHouseMem).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudHouseNoMale).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudHouseFemale).BeginInit();
-            panel20.SuspendLayout();
+            panelHouseholdHeader.SuspendLayout();
             panelEduc.SuspendLayout();
-            panel18.SuspendLayout();
+            panelEducHeader.SuspendLayout();
             panelCivilStat.SuspendLayout();
-            panel15.SuspendLayout();
+            panelCivStasHeader.SuspendLayout();
             panelReligion.SuspendLayout();
-            panel13.SuspendLayout();
+            panelReligionHeader.SuspendLayout();
             panelBirthDetails.SuspendLayout();
-            panel11.SuspendLayout();
+            panelBirthDetailsHeader.SuspendLayout();
             panelContactDetails.SuspendLayout();
-            panel9.SuspendLayout();
+            panelContactDetailsHeader.SuspendLayout();
             panelAddress.SuspendLayout();
-            panel7.SuspendLayout();
+            panelAddressHeader.SuspendLayout();
             panelPersonalDetails.SuspendLayout();
-            panel5.SuspendLayout();
+            panelPersonalDetailsHeader.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel28.SuspendLayout();
@@ -413,7 +413,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 767);
+            panelFarmProfile.Size = new Size(1595, 0);
             panelFarmProfile.TabIndex = 0;
             // 
             // panelFarmLand
@@ -684,7 +684,7 @@
             panel39.Location = new Point(13, 556);
             panel39.Name = "panel39";
             panel39.Size = new Size(1494, 137);
-            panel39.TabIndex = 0;
+            panel39.TabIndex = 6;
             // 
             // txtNonFarmingIncome
             // 
@@ -693,7 +693,7 @@
             txtNonFarmingIncome.Location = new Point(403, 78);
             txtNonFarmingIncome.Name = "txtNonFarmingIncome";
             txtNonFarmingIncome.Size = new Size(382, 27);
-            txtNonFarmingIncome.TabIndex = 0;
+            txtNonFarmingIncome.TabIndex = 2;
             // 
             // txtFarmingIncome
             // 
@@ -702,7 +702,7 @@
             txtFarmingIncome.Location = new Point(30, 78);
             txtFarmingIncome.Name = "txtFarmingIncome";
             txtFarmingIncome.Size = new Size(297, 27);
-            txtFarmingIncome.TabIndex = 0;
+            txtFarmingIncome.TabIndex = 1;
             // 
             // rectangleRound45
             // 
@@ -777,7 +777,7 @@
             panel37.Location = new Point(1149, 133);
             panel37.Name = "panel37";
             panel37.Size = new Size(357, 406);
-            panel37.TabIndex = 0;
+            panel37.TabIndex = 5;
             // 
             // txtInvolvementOthers
             // 
@@ -786,7 +786,7 @@
             txtInvolvementOthers.Location = new Point(74, 242);
             txtInvolvementOthers.Name = "txtInvolvementOthers";
             txtInvolvementOthers.Size = new Size(242, 27);
-            txtInvolvementOthers.TabIndex = 0;
+            txtInvolvementOthers.TabIndex = 5;
             // 
             // checkBox25
             // 
@@ -795,7 +795,7 @@
             checkBox25.Location = new Point(39, 210);
             checkBox25.Name = "checkBox25";
             checkBox25.Size = new Size(177, 24);
-            checkBox25.TabIndex = 0;
+            checkBox25.TabIndex = 4;
             checkBox25.Text = "Others, please specify:";
             checkBox25.UseVisualStyleBackColor = true;
             // 
@@ -806,7 +806,7 @@
             cbInvolvementProgram.Location = new Point(39, 163);
             cbInvolvementProgram.Name = "cbInvolvementProgram";
             cbInvolvementProgram.Size = new Size(236, 44);
-            cbInvolvementProgram.TabIndex = 0;
+            cbInvolvementProgram.TabIndex = 3;
             cbInvolvementProgram.Text = "Participated in any agricultural \nactivity/program";
             cbInvolvementProgram.TextAlign = ContentAlignment.TopLeft;
             cbInvolvementProgram.UseVisualStyleBackColor = true;
@@ -819,7 +819,7 @@
             cbInvolvementFormalCourse.Location = new Point(39, 117);
             cbInvolvementFormalCourse.Name = "cbInvolvementFormalCourse";
             cbInvolvementFormalCourse.Size = new Size(217, 44);
-            cbInvolvementFormalCourse.TabIndex = 0;
+            cbInvolvementFormalCourse.TabIndex = 2;
             cbInvolvementFormalCourse.Text = "Attending/Attended formal \nagrifishery related course";
             cbInvolvementFormalCourse.TextAlign = ContentAlignment.TopLeft;
             cbInvolvementFormalCourse.UseVisualStyleBackColor = true;
@@ -831,7 +831,7 @@
             cbInvolvementHousehold.Location = new Point(39, 88);
             cbInvolvementHousehold.Name = "cbInvolvementHousehold";
             cbInvolvementHousehold.Size = new Size(215, 24);
-            cbInvolvementHousehold.TabIndex = 0;
+            cbInvolvementHousehold.TabIndex = 1;
             cbInvolvementHousehold.Text = "Part of a farming household";
             cbInvolvementHousehold.UseVisualStyleBackColor = true;
             // 
@@ -864,6 +864,7 @@
             rectangleRound43.Name = "rectangleRound43";
             rectangleRound43.Size = new Size(321, 309);
             rectangleRound43.TabIndex = 0;
+            rectangleRound43.TabStop = false;
             // 
             // label66
             // 
@@ -891,7 +892,7 @@
             panel35.Location = new Point(768, 133);
             panel35.Name = "panel35";
             panel35.Size = new Size(357, 406);
-            panel35.TabIndex = 0;
+            panel35.TabIndex = 4;
             // 
             // cbFishingActVending
             // 
@@ -900,7 +901,7 @@
             cbFishingActVending.Location = new Point(35, 208);
             cbFishingActVending.Name = "cbFishingActVending";
             cbFishingActVending.Size = new Size(114, 24);
-            cbFishingActVending.TabIndex = 0;
+            cbFishingActVending.TabIndex = 5;
             cbFishingActVending.Text = "Fish Vending";
             cbFishingActVending.UseVisualStyleBackColor = true;
             // 
@@ -911,7 +912,7 @@
             txtFishingActOthers.Location = new Point(75, 268);
             txtFishingActOthers.Name = "txtFishingActOthers";
             txtFishingActOthers.Size = new Size(240, 27);
-            txtFishingActOthers.TabIndex = 0;
+            txtFishingActOthers.TabIndex = 7;
             // 
             // checkBox18
             // 
@@ -920,7 +921,7 @@
             checkBox18.Location = new Point(35, 238);
             checkBox18.Name = "checkBox18";
             checkBox18.Size = new Size(177, 24);
-            checkBox18.TabIndex = 0;
+            checkBox18.TabIndex = 6;
             checkBox18.Text = "Others, please specify:";
             checkBox18.UseVisualStyleBackColor = true;
             // 
@@ -931,7 +932,7 @@
             cbFishingActProcessing.Location = new Point(35, 178);
             cbFishingActProcessing.Name = "cbFishingActProcessing";
             cbFishingActProcessing.Size = new Size(130, 24);
-            cbFishingActProcessing.TabIndex = 0;
+            cbFishingActProcessing.TabIndex = 4;
             cbFishingActProcessing.Text = "Fish Processing";
             cbFishingActProcessing.UseVisualStyleBackColor = true;
             // 
@@ -942,7 +943,7 @@
             cbFishingActGleaning.Location = new Point(35, 148);
             cbFishingActGleaning.Name = "cbFishingActGleaning";
             cbFishingActGleaning.Size = new Size(90, 24);
-            cbFishingActGleaning.TabIndex = 0;
+            cbFishingActGleaning.TabIndex = 3;
             cbFishingActGleaning.Text = "Gleaning";
             cbFishingActGleaning.UseVisualStyleBackColor = true;
             // 
@@ -953,7 +954,7 @@
             cbFishingActAquaculture.Location = new Point(35, 118);
             cbFishingActAquaculture.Name = "cbFishingActAquaculture";
             cbFishingActAquaculture.Size = new Size(111, 24);
-            cbFishingActAquaculture.TabIndex = 0;
+            cbFishingActAquaculture.TabIndex = 2;
             cbFishingActAquaculture.Text = "Aquaculture";
             cbFishingActAquaculture.UseVisualStyleBackColor = true;
             // 
@@ -964,7 +965,7 @@
             cbFishingActFishCapture.Location = new Point(35, 88);
             cbFishingActFishCapture.Name = "cbFishingActFishCapture";
             cbFishingActFishCapture.Size = new Size(112, 24);
-            cbFishingActFishCapture.TabIndex = 0;
+            cbFishingActFishCapture.TabIndex = 1;
             cbFishingActFishCapture.Text = "Fish Capture";
             cbFishingActFishCapture.UseVisualStyleBackColor = true;
             // 
@@ -997,6 +998,7 @@
             rectangleRound42.Name = "rectangleRound42";
             rectangleRound42.Size = new Size(321, 309);
             rectangleRound42.TabIndex = 0;
+            rectangleRound42.TabStop = false;
             rectangleRound42.Load += rectangleRound42_Load;
             // 
             // label40
@@ -1024,7 +1026,7 @@
             panel33.Location = new Point(390, 133);
             panel33.Name = "panel33";
             panel33.Size = new Size(357, 406);
-            panel33.TabIndex = 0;
+            panel33.TabIndex = 3;
             // 
             // txtWorkKindOthers
             // 
@@ -1033,7 +1035,7 @@
             txtWorkKindOthers.Location = new Point(82, 243);
             txtWorkKindOthers.Name = "txtWorkKindOthers";
             txtWorkKindOthers.Size = new Size(238, 27);
-            txtWorkKindOthers.TabIndex = 0;
+            txtWorkKindOthers.TabIndex = 6;
             // 
             // checkBox12
             // 
@@ -1042,7 +1044,7 @@
             checkBox12.Location = new Point(35, 208);
             checkBox12.Name = "checkBox12";
             checkBox12.Size = new Size(177, 24);
-            checkBox12.TabIndex = 0;
+            checkBox12.TabIndex = 5;
             checkBox12.Text = "Others, please specify:";
             checkBox12.UseVisualStyleBackColor = true;
             // 
@@ -1053,7 +1055,7 @@
             cbWorkKindHarvesting.Location = new Point(35, 178);
             cbWorkKindHarvesting.Name = "cbWorkKindHarvesting";
             cbWorkKindHarvesting.Size = new Size(102, 24);
-            cbWorkKindHarvesting.TabIndex = 0;
+            cbWorkKindHarvesting.TabIndex = 4;
             cbWorkKindHarvesting.Text = "Harvesting";
             cbWorkKindHarvesting.UseVisualStyleBackColor = true;
             // 
@@ -1064,7 +1066,7 @@
             cbWorkKindCultivation.Location = new Point(35, 148);
             cbWorkKindCultivation.Name = "cbWorkKindCultivation";
             cbWorkKindCultivation.Size = new Size(102, 24);
-            cbWorkKindCultivation.TabIndex = 0;
+            cbWorkKindCultivation.TabIndex = 3;
             cbWorkKindCultivation.Text = "Cultivation";
             cbWorkKindCultivation.UseVisualStyleBackColor = true;
             // 
@@ -1075,7 +1077,7 @@
             cbWorkKindPlanting.Location = new Point(35, 118);
             cbWorkKindPlanting.Name = "cbWorkKindPlanting";
             cbWorkKindPlanting.Size = new Size(180, 24);
-            cbWorkKindPlanting.TabIndex = 0;
+            cbWorkKindPlanting.TabIndex = 2;
             cbWorkKindPlanting.Text = "Planting/Transplanting";
             cbWorkKindPlanting.UseVisualStyleBackColor = true;
             // 
@@ -1086,7 +1088,7 @@
             cbWorkKindLandPrep.Location = new Point(35, 88);
             cbWorkKindLandPrep.Name = "cbWorkKindLandPrep";
             cbWorkKindLandPrep.Size = new Size(144, 24);
-            cbWorkKindLandPrep.TabIndex = 0;
+            cbWorkKindLandPrep.TabIndex = 1;
             cbWorkKindLandPrep.Text = "Land Preparation";
             cbWorkKindLandPrep.UseVisualStyleBackColor = true;
             // 
@@ -1119,6 +1121,7 @@
             rectangleRound20.Name = "rectangleRound20";
             rectangleRound20.Size = new Size(321, 309);
             rectangleRound20.TabIndex = 0;
+            rectangleRound20.TabStop = false;
             // 
             // label45
             // 
@@ -1150,7 +1153,7 @@
             panel31.Location = new Point(12, 133);
             panel31.Name = "panel31";
             panel31.Size = new Size(357, 406);
-            panel31.TabIndex = 66;
+            panel31.TabIndex = 2;
             // 
             // label39
             // 
@@ -1169,7 +1172,7 @@
             txtFarmActPoultry.Location = new Point(176, 292);
             txtFarmActPoultry.Name = "txtFarmActPoultry";
             txtFarmActPoultry.Size = new Size(141, 27);
-            txtFarmActPoultry.TabIndex = 0;
+            txtFarmActPoultry.TabIndex = 8;
             // 
             // checkBox11
             // 
@@ -1178,7 +1181,7 @@
             checkBox11.Location = new Point(33, 267);
             checkBox11.Name = "checkBox11";
             checkBox11.Size = new Size(79, 24);
-            checkBox11.TabIndex = 0;
+            checkBox11.TabIndex = 7;
             checkBox11.Text = "Poultry,";
             checkBox11.UseVisualStyleBackColor = true;
             // 
@@ -1199,7 +1202,7 @@
             txtFarmActLivestock.Location = new Point(176, 233);
             txtFarmActLivestock.Name = "txtFarmActLivestock";
             txtFarmActLivestock.Size = new Size(140, 27);
-            txtFarmActLivestock.TabIndex = 0;
+            txtFarmActLivestock.TabIndex = 6;
             // 
             // checkBox10
             // 
@@ -1208,7 +1211,7 @@
             checkBox10.Location = new Point(33, 208);
             checkBox10.Name = "checkBox10";
             checkBox10.Size = new Size(94, 24);
-            checkBox10.TabIndex = 0;
+            checkBox10.TabIndex = 5;
             checkBox10.Text = "Livestock,";
             checkBox10.UseVisualStyleBackColor = true;
             // 
@@ -1229,7 +1232,7 @@
             txtFarmActCrops.Location = new Point(176, 174);
             txtFarmActCrops.Name = "txtFarmActCrops";
             txtFarmActCrops.Size = new Size(140, 27);
-            txtFarmActCrops.TabIndex = 0;
+            txtFarmActCrops.TabIndex = 4;
             // 
             // farmAct4
             // 
@@ -1238,7 +1241,7 @@
             farmAct4.Location = new Point(33, 148);
             farmAct4.Name = "farmAct4";
             farmAct4.Size = new Size(111, 24);
-            farmAct4.TabIndex = 0;
+            farmAct4.TabIndex = 3;
             farmAct4.Text = "Other crops,";
             farmAct4.UseVisualStyleBackColor = true;
             // 
@@ -1249,7 +1252,7 @@
             cbFarmActCorn.Location = new Point(33, 118);
             cbFarmActCorn.Name = "cbFarmActCorn";
             cbFarmActCorn.Size = new Size(62, 24);
-            cbFarmActCorn.TabIndex = 0;
+            cbFarmActCorn.TabIndex = 2;
             cbFarmActCorn.Text = "Corn";
             cbFarmActCorn.UseVisualStyleBackColor = true;
             // 
@@ -1260,7 +1263,7 @@
             cbFarmActRice.Location = new Point(33, 88);
             cbFarmActRice.Name = "cbFarmActRice";
             cbFarmActRice.Size = new Size(59, 24);
-            cbFarmActRice.TabIndex = 0;
+            cbFarmActRice.TabIndex = 1;
             cbFarmActRice.Text = "Rice";
             cbFarmActRice.UseVisualStyleBackColor = true;
             // 
@@ -1293,6 +1296,7 @@
             rectangleRound47.Name = "rectangleRound47";
             rectangleRound47.Size = new Size(321, 309);
             rectangleRound47.TabIndex = 0;
+            rectangleRound47.TabStop = false;
             // 
             // label54
             // 
@@ -1317,7 +1321,6 @@
             panel29.Name = "panel29";
             panel29.Size = new Size(1494, 112);
             panel29.TabIndex = 1;
-            panel29.TabStop = true;
             // 
             // cbLivelihoodFisherfolk
             // 
@@ -1326,7 +1329,7 @@
             cbLivelihoodFisherfolk.Location = new Point(868, 58);
             cbLivelihoodFisherfolk.Name = "cbLivelihoodFisherfolk";
             cbLivelihoodFisherfolk.Size = new Size(122, 32);
-            cbLivelihoodFisherfolk.TabIndex = 0;
+            cbLivelihoodFisherfolk.TabIndex = 3;
             cbLivelihoodFisherfolk.Text = "FisherFolk";
             cbLivelihoodFisherfolk.UseVisualStyleBackColor = true;
             // 
@@ -1337,7 +1340,7 @@
             cbLivelihoodAgriyouth.Location = new Point(1239, 55);
             cbLivelihoodAgriyouth.Name = "cbLivelihoodAgriyouth";
             cbLivelihoodAgriyouth.Size = new Size(126, 32);
-            cbLivelihoodAgriyouth.TabIndex = 0;
+            cbLivelihoodAgriyouth.TabIndex = 4;
             cbLivelihoodAgriyouth.Text = "Agri Youth";
             cbLivelihoodAgriyouth.UseVisualStyleBackColor = true;
             // 
@@ -1348,7 +1351,7 @@
             cbLivelihoodFarmer.Location = new Point(117, 55);
             cbLivelihoodFarmer.Name = "cbLivelihoodFarmer";
             cbLivelihoodFarmer.Size = new Size(94, 32);
-            cbLivelihoodFarmer.TabIndex = 0;
+            cbLivelihoodFarmer.TabIndex = 1;
             cbLivelihoodFarmer.Text = "Farmer";
             cbLivelihoodFarmer.UseVisualStyleBackColor = true;
             // 
@@ -1359,7 +1362,7 @@
             cbLivelihoodFarmworker.Location = new Point(447, 55);
             cbLivelihoodFarmworker.Name = "cbLivelihoodFarmworker";
             cbLivelihoodFarmworker.Size = new Size(212, 32);
-            cbLivelihoodFarmworker.TabIndex = 0;
+            cbLivelihoodFarmworker.TabIndex = 2;
             cbLivelihoodFarmworker.Text = "Farmworker/Laborer";
             cbLivelihoodFarmworker.UseVisualStyleBackColor = true;
             // 
@@ -1398,7 +1401,7 @@
             panelEmergencyCon.BorderStyle = BorderStyle.FixedSingle;
             panelEmergencyCon.Controls.Add(txtEcContact);
             panelEmergencyCon.Controls.Add(txtEcName);
-            panelEmergencyCon.Controls.Add(panel24);
+            panelEmergencyCon.Controls.Add(panelEmergencyConHeader);
             panelEmergencyCon.Controls.Add(rectangleRound36);
             panelEmergencyCon.Controls.Add(label60);
             panelEmergencyCon.Controls.Add(rectangleRound38);
@@ -1416,7 +1419,9 @@
             txtEcContact.Name = "txtEcContact";
             txtEcContact.Size = new Size(177, 27);
             txtEcContact.TabIndex = 59;
+            txtEcContact.Enter += SelectedPanel;
             txtEcContact.KeyPress += NumOnlyLimited;
+            txtEcContact.Leave += UnselectedPanel;
             // 
             // txtEcName
             // 
@@ -1427,17 +1432,19 @@
             txtEcName.Size = new Size(256, 27);
             txtEcName.TabIndex = 58;
             txtEcName.TextChanged += AllCaps;
+            txtEcName.Enter += SelectedPanel;
             txtEcName.KeyPress += AlphaOnly;
+            txtEcName.Leave += UnselectedPanel;
             // 
-            // panel24
+            // panelEmergencyConHeader
             // 
-            panel24.BackColor = Color.FromArgb(43, 121, 223);
-            panel24.Controls.Add(label58);
-            panel24.Dock = DockStyle.Top;
-            panel24.Location = new Point(0, 0);
-            panel24.Name = "panel24";
-            panel24.Size = new Size(533, 29);
-            panel24.TabIndex = 0;
+            panelEmergencyConHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelEmergencyConHeader.Controls.Add(label58);
+            panelEmergencyConHeader.Dock = DockStyle.Top;
+            panelEmergencyConHeader.Location = new Point(0, 0);
+            panelEmergencyConHeader.Name = "panelEmergencyConHeader";
+            panelEmergencyConHeader.Size = new Size(533, 29);
+            panelEmergencyConHeader.TabIndex = 0;
             // 
             // label58
             // 
@@ -1517,7 +1524,7 @@
             panelAffiliations.Controls.Add(rectangleRound34);
             panelAffiliations.Controls.Add(rectangleRound19);
             panelAffiliations.Controls.Add(label55);
-            panelAffiliations.Controls.Add(panel26);
+            panelAffiliations.Controls.Add(panelAffiliationsHeader);
             panelAffiliations.Controls.Add(rectangleRound15);
             panelAffiliations.Controls.Add(label17);
             panelAffiliations.Controls.Add(rectangleRound16);
@@ -1548,6 +1555,8 @@
             rbAssociationNo.TabStop = true;
             rbAssociationNo.Text = "No";
             rbAssociationNo.UseVisualStyleBackColor = true;
+            rbAssociationNo.Enter += SelectedPanel;
+            rbAssociationNo.Leave += UnselectedPanel;
             // 
             // rbAssociationYes
             // 
@@ -1561,6 +1570,8 @@
             rbAssociationYes.Text = "Yes";
             rbAssociationYes.UseVisualStyleBackColor = true;
             rbAssociationYes.CheckedChanged += rbAssociationYes_CheckedChanged;
+            rbAssociationYes.Enter += SelectedPanel;
+            rbAssociationYes.Leave += UnselectedPanel;
             // 
             // panelGovId
             // 
@@ -1583,6 +1594,8 @@
             rbGovIdNo.TabStop = true;
             rbGovIdNo.Text = "No";
             rbGovIdNo.UseVisualStyleBackColor = true;
+            rbGovIdNo.Enter += SelectedPanel;
+            rbGovIdNo.Leave += UnselectedPanel;
             // 
             // rbGovIdYes
             // 
@@ -1596,6 +1609,8 @@
             rbGovIdYes.Text = "Yes";
             rbGovIdYes.UseVisualStyleBackColor = true;
             rbGovIdYes.CheckedChanged += rbGovIdYes_CheckedChanged;
+            rbGovIdYes.Enter += SelectedPanel;
+            rbGovIdYes.Leave += UnselectedPanel;
             // 
             // panelIPGroup
             // 
@@ -1618,6 +1633,8 @@
             rbIndigenousNo.TabStop = true;
             rbIndigenousNo.Text = "No";
             rbIndigenousNo.UseVisualStyleBackColor = true;
+            rbIndigenousNo.Enter += SelectedPanel;
+            rbIndigenousNo.Leave += UnselectedPanel;
             // 
             // rbIndigenousYes
             // 
@@ -1631,6 +1648,8 @@
             rbIndigenousYes.Text = "Yes";
             rbIndigenousYes.UseVisualStyleBackColor = true;
             rbIndigenousYes.CheckedChanged += rbIndigenousYes_CheckedChanged;
+            rbIndigenousYes.Enter += SelectedPanel;
+            rbIndigenousYes.Leave += UnselectedPanel;
             // 
             // panel4Ps
             // 
@@ -1653,6 +1672,8 @@
             rb4psNo.TabStop = true;
             rb4psNo.Text = "No";
             rb4psNo.UseVisualStyleBackColor = true;
+            rb4psNo.Enter += SelectedPanel;
+            rb4psNo.Leave += UnselectedPanel;
             // 
             // rb4psYes
             // 
@@ -1665,6 +1686,8 @@
             rb4psYes.TabStop = true;
             rb4psYes.Text = "Yes";
             rb4psYes.UseVisualStyleBackColor = true;
+            rb4psYes.Enter += SelectedPanel;
+            rb4psYes.Leave += UnselectedPanel;
             // 
             // panelPWD
             // 
@@ -1687,6 +1710,8 @@
             rbPwdNo.TabStop = true;
             rbPwdNo.Text = "No";
             rbPwdNo.UseVisualStyleBackColor = true;
+            rbPwdNo.Enter += SelectedPanel;
+            rbPwdNo.Leave += UnselectedPanel;
             // 
             // rbPwdYes
             // 
@@ -1699,6 +1724,8 @@
             rbPwdYes.TabStop = true;
             rbPwdYes.Text = "Yes";
             rbPwdYes.UseVisualStyleBackColor = true;
+            rbPwdYes.Enter += SelectedPanel;
+            rbPwdYes.Leave += UnselectedPanel;
             // 
             // txtGovIdNum
             // 
@@ -1709,7 +1736,9 @@
             txtGovIdNum.Size = new Size(313, 27);
             txtGovIdNum.TabIndex = 7;
             txtGovIdNum.TextChanged += AllCaps;
+            txtGovIdNum.Enter += SelectedPanel;
             txtGovIdNum.KeyPress += AlphaNum;
+            txtGovIdNum.Leave += UnselectedPanel;
             // 
             // txtIndigenous
             // 
@@ -1720,7 +1749,9 @@
             txtIndigenous.Size = new Size(368, 27);
             txtIndigenous.TabIndex = 4;
             txtIndigenous.TextChanged += AllCaps;
+            txtIndigenous.Enter += SelectedPanel;
             txtIndigenous.KeyPress += AlphaOnly;
+            txtIndigenous.Leave += UnselectedPanel;
             // 
             // txtAssociation
             // 
@@ -1732,7 +1763,9 @@
             txtAssociation.Size = new Size(368, 27);
             txtAssociation.TabIndex = 9;
             txtAssociation.TextChanged += AllCaps;
+            txtAssociation.Enter += SelectedPanel;
             txtAssociation.KeyPress += AlphaOnly;
+            txtAssociation.Leave += UnselectedPanel;
             // 
             // txtGovIdType
             // 
@@ -1743,7 +1776,9 @@
             txtGovIdType.Size = new Size(313, 27);
             txtGovIdType.TabIndex = 6;
             txtGovIdType.TextChanged += AllCaps;
+            txtGovIdType.Enter += SelectedPanel;
             txtGovIdType.KeyPress += AlphaOnly;
+            txtGovIdType.Leave += UnselectedPanel;
             // 
             // label65
             // 
@@ -1885,16 +1920,16 @@
             label55.TabIndex = 0;
             label55.Text = "Member of any Farmers Association/Cooperative?";
             // 
-            // panel26
+            // panelAffiliationsHeader
             // 
-            panel26.BackColor = Color.FromArgb(43, 121, 223);
-            panel26.Controls.Add(label7);
-            panel26.Dock = DockStyle.Top;
-            panel26.Location = new Point(0, 0);
-            panel26.Name = "panel26";
-            panel26.Size = new Size(534, 29);
-            panel26.TabIndex = 0;
-            panel26.TabStop = true;
+            panelAffiliationsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelAffiliationsHeader.Controls.Add(label7);
+            panelAffiliationsHeader.Dock = DockStyle.Top;
+            panelAffiliationsHeader.Location = new Point(0, 0);
+            panelAffiliationsHeader.Name = "panelAffiliationsHeader";
+            panelAffiliationsHeader.Size = new Size(534, 29);
+            panelAffiliationsHeader.TabIndex = 0;
+            panelAffiliationsHeader.TabStop = true;
             // 
             // label7
             // 
@@ -1951,7 +1986,7 @@
             // 
             panelMaidenName.BorderStyle = BorderStyle.FixedSingle;
             panelMaidenName.Controls.Add(txtMaidenMother);
-            panelMaidenName.Controls.Add(panel22);
+            panelMaidenName.Controls.Add(panelMaidenNameHeader);
             panelMaidenName.Controls.Add(rectangleRound32);
             panelMaidenName.Location = new Point(9, 663);
             panelMaidenName.Name = "panelMaidenName";
@@ -1967,17 +2002,19 @@
             txtMaidenMother.Size = new Size(502, 27);
             txtMaidenMother.TabIndex = 27;
             txtMaidenMother.TextChanged += AllCaps;
+            txtMaidenMother.Enter += SelectedPanel;
             txtMaidenMother.KeyPress += AlphaOnly;
+            txtMaidenMother.Leave += UnselectedPanel;
             // 
-            // panel22
+            // panelMaidenNameHeader
             // 
-            panel22.BackColor = Color.FromArgb(43, 121, 223);
-            panel22.Controls.Add(label57);
-            panel22.Dock = DockStyle.Top;
-            panel22.Location = new Point(0, 0);
-            panel22.Name = "panel22";
-            panel22.Size = new Size(555, 29);
-            panel22.TabIndex = 0;
+            panelMaidenNameHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelMaidenNameHeader.Controls.Add(label57);
+            panelMaidenNameHeader.Dock = DockStyle.Top;
+            panelMaidenNameHeader.Location = new Point(0, 0);
+            panelMaidenNameHeader.Name = "panelMaidenNameHeader";
+            panelMaidenNameHeader.Size = new Size(555, 29);
+            panelMaidenNameHeader.TabIndex = 0;
             // 
             // label57
             // 
@@ -2019,7 +2056,7 @@
             panelHousehold.Controls.Add(label25);
             panelHousehold.Controls.Add(label35);
             panelHousehold.Controls.Add(rectangleRound25);
-            panelHousehold.Controls.Add(panel20);
+            panelHousehold.Controls.Add(panelHouseholdHeader);
             panelHousehold.Controls.Add(rectangleRound28);
             panelHousehold.Controls.Add(rectangleRound29);
             panelHousehold.Controls.Add(label52);
@@ -2040,6 +2077,8 @@
             rbHouseholdHeadNo.Text = "No";
             rbHouseholdHeadNo.UseVisualStyleBackColor = true;
             rbHouseholdHeadNo.CheckedChanged += rbHouseholdHeadNo_CheckedChanged;
+            rbHouseholdHeadNo.Enter += SelectedPanel;
+            rbHouseholdHeadNo.Leave += UnselectedPanel;
             // 
             // rbHouseholdHeadYes
             // 
@@ -2052,6 +2091,8 @@
             rbHouseholdHeadYes.TabStop = true;
             rbHouseholdHeadYes.Text = "Yes";
             rbHouseholdHeadYes.UseVisualStyleBackColor = true;
+            rbHouseholdHeadYes.Enter += SelectedPanel;
+            rbHouseholdHeadYes.Leave += UnselectedPanel;
             // 
             // nudNoLivingHouseMem
             // 
@@ -2061,6 +2102,8 @@
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
             nudNoLivingHouseMem.Size = new Size(393, 30);
             nudNoLivingHouseMem.TabIndex = 32;
+            nudNoLivingHouseMem.Enter += SelectedPanel;
+            nudNoLivingHouseMem.Leave += UnselectedPanel;
             // 
             // nudHouseNoMale
             // 
@@ -2070,6 +2113,8 @@
             nudHouseNoMale.Name = "nudHouseNoMale";
             nudHouseNoMale.Size = new Size(211, 30);
             nudHouseNoMale.TabIndex = 33;
+            nudHouseNoMale.Enter += SelectedPanel;
+            nudHouseNoMale.Leave += UnselectedPanel;
             // 
             // nudHouseFemale
             // 
@@ -2079,6 +2124,8 @@
             nudHouseFemale.Name = "nudHouseFemale";
             nudHouseFemale.Size = new Size(145, 30);
             nudHouseFemale.TabIndex = 34;
+            nudHouseFemale.Enter += SelectedPanel;
+            nudHouseFemale.Leave += UnselectedPanel;
             // 
             // txtHouseHeadRs
             // 
@@ -2089,7 +2136,9 @@
             txtHouseHeadRs.Size = new Size(145, 27);
             txtHouseHeadRs.TabIndex = 31;
             txtHouseHeadRs.TextChanged += AllCaps;
+            txtHouseHeadRs.Enter += SelectedPanel;
             txtHouseHeadRs.KeyPress += AlphaOnly;
+            txtHouseHeadRs.Leave += UnselectedPanel;
             // 
             // txtHouseHeadName
             // 
@@ -2100,7 +2149,9 @@
             txtHouseHeadName.Size = new Size(213, 27);
             txtHouseHeadName.TabIndex = 30;
             txtHouseHeadName.TextChanged += AllCaps;
+            txtHouseHeadName.Enter += SelectedPanel;
             txtHouseHeadName.KeyPress += AlphaOnly;
+            txtHouseHeadName.Leave += UnselectedPanel;
             // 
             // rectangleRound33
             // 
@@ -2192,15 +2243,15 @@
             rectangleRound25.TabIndex = 0;
             rectangleRound25.TabStop = false;
             // 
-            // panel20
+            // panelHouseholdHeader
             // 
-            panel20.BackColor = Color.FromArgb(43, 121, 223);
-            panel20.Controls.Add(label50);
-            panel20.Dock = DockStyle.Top;
-            panel20.Location = new Point(0, 0);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(447, 29);
-            panel20.TabIndex = 0;
+            panelHouseholdHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelHouseholdHeader.Controls.Add(label50);
+            panelHouseholdHeader.Dock = DockStyle.Top;
+            panelHouseholdHeader.Location = new Point(0, 0);
+            panelHouseholdHeader.Name = "panelHouseholdHeader";
+            panelHouseholdHeader.Size = new Size(447, 29);
+            panelHouseholdHeader.TabIndex = 0;
             // 
             // label50
             // 
@@ -2255,7 +2306,7 @@
             panelEduc.Controls.Add(rbEducHighschool);
             panelEduc.Controls.Add(rbEducElementary);
             panelEduc.Controls.Add(rbEducPreschool);
-            panelEduc.Controls.Add(panel18);
+            panelEduc.Controls.Add(panelEducHeader);
             panelEduc.Location = new Point(584, 562);
             panelEduc.Name = "panelEduc";
             panelEduc.Size = new Size(449, 192);
@@ -2272,6 +2323,8 @@
             rbNone.TabStop = true;
             rbNone.Text = "None";
             rbNone.UseVisualStyleBackColor = true;
+            rbNone.Enter += SelectedPanel;
+            rbNone.Leave += UnselectedPanel;
             // 
             // rbEducPostGraduate
             // 
@@ -2284,6 +2337,8 @@
             rbEducPostGraduate.TabStop = true;
             rbEducPostGraduate.Text = "Post-graduate";
             rbEducPostGraduate.UseVisualStyleBackColor = true;
+            rbEducPostGraduate.Enter += SelectedPanel;
+            rbEducPostGraduate.Leave += UnselectedPanel;
             // 
             // rbEducVocational
             // 
@@ -2296,6 +2351,8 @@
             rbEducVocational.TabStop = true;
             rbEducVocational.Text = "Vocational";
             rbEducVocational.UseVisualStyleBackColor = true;
+            rbEducVocational.Enter += SelectedPanel;
+            rbEducVocational.Leave += UnselectedPanel;
             // 
             // rbEducCollege
             // 
@@ -2308,6 +2365,8 @@
             rbEducCollege.TabStop = true;
             rbEducCollege.Text = "College";
             rbEducCollege.UseVisualStyleBackColor = true;
+            rbEducCollege.Enter += SelectedPanel;
+            rbEducCollege.Leave += UnselectedPanel;
             // 
             // rbEducSeniorHigh
             // 
@@ -2320,6 +2379,8 @@
             rbEducSeniorHigh.TabStop = true;
             rbEducSeniorHigh.Text = "Senior High School (K-12)";
             rbEducSeniorHigh.UseVisualStyleBackColor = true;
+            rbEducSeniorHigh.Enter += SelectedPanel;
+            rbEducSeniorHigh.Leave += UnselectedPanel;
             // 
             // rbEducJuniorHigh
             // 
@@ -2332,6 +2393,8 @@
             rbEducJuniorHigh.TabStop = true;
             rbEducJuniorHigh.Text = "Junior High School (K-12)";
             rbEducJuniorHigh.UseVisualStyleBackColor = true;
+            rbEducJuniorHigh.Enter += SelectedPanel;
+            rbEducJuniorHigh.Leave += UnselectedPanel;
             // 
             // rbEducHighschool
             // 
@@ -2344,6 +2407,8 @@
             rbEducHighschool.TabStop = true;
             rbEducHighschool.Text = "High School (non-K-12)";
             rbEducHighschool.UseVisualStyleBackColor = true;
+            rbEducHighschool.Enter += SelectedPanel;
+            rbEducHighschool.Leave += UnselectedPanel;
             // 
             // rbEducElementary
             // 
@@ -2356,28 +2421,32 @@
             rbEducElementary.TabStop = true;
             rbEducElementary.Text = "Elementary";
             rbEducElementary.UseVisualStyleBackColor = true;
+            rbEducElementary.Enter += SelectedPanel;
+            rbEducElementary.Leave += UnselectedPanel;
             // 
             // rbEducPreschool
             // 
             rbEducPreschool.AutoSize = true;
             rbEducPreschool.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducPreschool.Location = new Point(18, 36);
+            rbEducPreschool.Location = new Point(18, 37);
             rbEducPreschool.Name = "rbEducPreschool";
             rbEducPreschool.Size = new Size(100, 24);
             rbEducPreschool.TabIndex = 35;
             rbEducPreschool.TabStop = true;
             rbEducPreschool.Text = "Pre-school";
             rbEducPreschool.UseVisualStyleBackColor = true;
+            rbEducPreschool.Enter += SelectedPanel;
+            rbEducPreschool.Leave += UnselectedPanel;
             // 
-            // panel18
+            // panelEducHeader
             // 
-            panel18.BackColor = Color.FromArgb(43, 121, 223);
-            panel18.Controls.Add(label18);
-            panel18.Dock = DockStyle.Top;
-            panel18.Location = new Point(0, 0);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(447, 29);
-            panel18.TabIndex = 0;
+            panelEducHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelEducHeader.Controls.Add(label18);
+            panelEducHeader.Dock = DockStyle.Top;
+            panelEducHeader.Location = new Point(0, 0);
+            panelEducHeader.Name = "panelEducHeader";
+            panelEducHeader.Size = new Size(447, 29);
+            panelEducHeader.TabIndex = 0;
             // 
             // label18
             // 
@@ -2400,7 +2469,7 @@
             panelCivilStat.Controls.Add(txtSpouseName);
             panelCivilStat.Controls.Add(label16);
             panelCivilStat.Controls.Add(rectangleRound14);
-            panelCivilStat.Controls.Add(panel15);
+            panelCivilStat.Controls.Add(panelCivStasHeader);
             panelCivilStat.Controls.Add(rectangleRound24);
             panelCivilStat.Location = new Point(9, 488);
             panelCivilStat.Name = "panelCivilStat";
@@ -2418,6 +2487,8 @@
             rbSeparated.TabStop = true;
             rbSeparated.Text = "Separated";
             rbSeparated.UseVisualStyleBackColor = true;
+            rbSeparated.Enter += SelectedPanel;
+            rbSeparated.Leave += UnselectedPanel;
             // 
             // rbCivilWidowed
             // 
@@ -2430,6 +2501,8 @@
             rbCivilWidowed.TabStop = true;
             rbCivilWidowed.Text = "Widowed";
             rbCivilWidowed.UseVisualStyleBackColor = true;
+            rbCivilWidowed.Enter += SelectedPanel;
+            rbCivilWidowed.Leave += UnselectedPanel;
             // 
             // rbCivilMarried
             // 
@@ -2442,6 +2515,8 @@
             rbCivilMarried.TabStop = true;
             rbCivilMarried.Text = "Married";
             rbCivilMarried.UseVisualStyleBackColor = true;
+            rbCivilMarried.Enter += SelectedPanel;
+            rbCivilMarried.Leave += UnselectedPanel;
             // 
             // rbCivilSingle
             // 
@@ -2455,6 +2530,8 @@
             rbCivilSingle.Text = "Single";
             rbCivilSingle.UseVisualStyleBackColor = true;
             rbCivilSingle.CheckedChanged += rbCivilSingle_CheckedChanged;
+            rbCivilSingle.Enter += SelectedPanel;
+            rbCivilSingle.Leave += UnselectedPanel;
             // 
             // txtSpouseName
             // 
@@ -2465,7 +2542,9 @@
             txtSpouseName.Size = new Size(506, 27);
             txtSpouseName.TabIndex = 26;
             txtSpouseName.TextChanged += AllCaps;
+            txtSpouseName.Enter += SelectedPanel;
             txtSpouseName.KeyPress += AlphaOnly;
+            txtSpouseName.Leave += UnselectedPanel;
             // 
             // label16
             // 
@@ -2487,15 +2566,15 @@
             rectangleRound14.TabIndex = 0;
             rectangleRound14.TabStop = false;
             // 
-            // panel15
+            // panelCivStasHeader
             // 
-            panel15.BackColor = Color.FromArgb(43, 121, 223);
-            panel15.Controls.Add(label31);
-            panel15.Dock = DockStyle.Top;
-            panel15.Location = new Point(0, 0);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(555, 29);
-            panel15.TabIndex = 0;
+            panelCivStasHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelCivStasHeader.Controls.Add(label31);
+            panelCivStasHeader.Dock = DockStyle.Top;
+            panelCivStasHeader.Location = new Point(0, 0);
+            panelCivStasHeader.Name = "panelCivStasHeader";
+            panelCivStasHeader.Size = new Size(555, 29);
+            panelCivStasHeader.TabIndex = 0;
             // 
             // label31
             // 
@@ -2526,7 +2605,7 @@
             panelReligion.Controls.Add(rbChristianity);
             panelReligion.Controls.Add(panel16);
             panelReligion.Controls.Add(txtReligionOthers);
-            panelReligion.Controls.Add(panel13);
+            panelReligion.Controls.Add(panelReligionHeader);
             panelReligion.Controls.Add(rectangleRound27);
             panelReligion.Location = new Point(10, 390);
             panelReligion.Name = "panelReligion";
@@ -2545,6 +2624,8 @@
             rbOthers.Text = "Others";
             rbOthers.UseVisualStyleBackColor = true;
             rbOthers.CheckedChanged += rbOthers_CheckedChanged;
+            rbOthers.Enter += SelectedPanel;
+            rbOthers.Leave += UnselectedPanel;
             // 
             // rbIslam
             // 
@@ -2557,6 +2638,8 @@
             rbIslam.TabStop = true;
             rbIslam.Text = "Islam";
             rbIslam.UseVisualStyleBackColor = true;
+            rbIslam.Enter += SelectedPanel;
+            rbIslam.Leave += UnselectedPanel;
             // 
             // rbChristianity
             // 
@@ -2569,6 +2652,8 @@
             rbChristianity.TabStop = true;
             rbChristianity.Text = "Christianity";
             rbChristianity.UseVisualStyleBackColor = true;
+            rbChristianity.Enter += SelectedPanel;
+            rbChristianity.Leave += UnselectedPanel;
             // 
             // panel16
             // 
@@ -2577,6 +2662,7 @@
             panel16.Name = "panel16";
             panel16.Size = new Size(209, 1);
             panel16.TabIndex = 0;
+            panel16.Leave += UnselectedPanel;
             // 
             // txtReligionOthers
             // 
@@ -2587,17 +2673,19 @@
             txtReligionOthers.Size = new Size(205, 20);
             txtReligionOthers.TabIndex = 21;
             txtReligionOthers.TextChanged += AllCaps;
+            txtReligionOthers.Enter += SelectedPanel;
             txtReligionOthers.KeyPress += AlphaOnly;
+            txtReligionOthers.Leave += UnselectedPanel;
             // 
-            // panel13
+            // panelReligionHeader
             // 
-            panel13.BackColor = Color.FromArgb(43, 121, 223);
-            panel13.Controls.Add(label36);
-            panel13.Dock = DockStyle.Top;
-            panel13.Location = new Point(0, 0);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(555, 29);
-            panel13.TabIndex = 0;
+            panelReligionHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelReligionHeader.Controls.Add(label36);
+            panelReligionHeader.Dock = DockStyle.Top;
+            panelReligionHeader.Location = new Point(0, 0);
+            panelReligionHeader.Name = "panelReligionHeader";
+            panelReligionHeader.Size = new Size(555, 29);
+            panelReligionHeader.TabIndex = 0;
             // 
             // label36
             // 
@@ -2630,7 +2718,7 @@
             panelBirthDetails.Controls.Add(label6);
             panelBirthDetails.Controls.Add(label28);
             panelBirthDetails.Controls.Add(rectangleRound22);
-            panelBirthDetails.Controls.Add(panel11);
+            panelBirthDetails.Controls.Add(panelBirthDetailsHeader);
             panelBirthDetails.Controls.Add(rectangleRound23);
             panelBirthDetails.Controls.Add(dtpBirthDate);
             panelBirthDetails.Controls.Add(label32);
@@ -2651,7 +2739,9 @@
             txtBirthCountry.TabIndex = 17;
             txtBirthCountry.Text = "PHILIPPINES";
             txtBirthCountry.TextChanged += AllCaps;
+            txtBirthCountry.Enter += SelectedPanel;
             txtBirthCountry.KeyPress += AlphaOnly;
+            txtBirthCountry.Leave += UnselectedPanel;
             // 
             // txtBirthProvince
             // 
@@ -2662,7 +2752,9 @@
             txtBirthProvince.Size = new Size(150, 27);
             txtBirthProvince.TabIndex = 16;
             txtBirthProvince.TextChanged += AllCaps;
+            txtBirthProvince.Enter += SelectedPanel;
             txtBirthProvince.KeyPress += AlphaOnly;
+            txtBirthProvince.Leave += UnselectedPanel;
             // 
             // txtBirthMunicipality
             // 
@@ -2673,7 +2765,9 @@
             txtBirthMunicipality.Size = new Size(328, 27);
             txtBirthMunicipality.TabIndex = 15;
             txtBirthMunicipality.TextChanged += AllCaps;
+            txtBirthMunicipality.Enter += SelectedPanel;
             txtBirthMunicipality.KeyPress += AlphaOnly;
+            txtBirthMunicipality.Leave += UnselectedPanel;
             // 
             // label34
             // 
@@ -2715,15 +2809,15 @@
             rectangleRound22.TabIndex = 0;
             rectangleRound22.TabStop = false;
             // 
-            // panel11
+            // panelBirthDetailsHeader
             // 
-            panel11.BackColor = Color.FromArgb(43, 121, 223);
-            panel11.Controls.Add(label30);
-            panel11.Dock = DockStyle.Top;
-            panel11.Location = new Point(0, 0);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(555, 29);
-            panel11.TabIndex = 0;
+            panelBirthDetailsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelBirthDetailsHeader.Controls.Add(label30);
+            panelBirthDetailsHeader.Dock = DockStyle.Top;
+            panelBirthDetailsHeader.Location = new Point(0, 0);
+            panelBirthDetailsHeader.Name = "panelBirthDetailsHeader";
+            panelBirthDetailsHeader.Size = new Size(555, 29);
+            panelBirthDetailsHeader.TabIndex = 0;
             // 
             // label30
             // 
@@ -2754,6 +2848,8 @@
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(135, 28);
             dtpBirthDate.TabIndex = 14;
+            dtpBirthDate.Enter += SelectedPanel;
+            dtpBirthDate.Leave += UnselectedPanel;
             // 
             // label32
             // 
@@ -2792,7 +2888,7 @@
             panelContactDetails.Controls.Add(txtMobNo);
             panelContactDetails.Controls.Add(label14);
             panelContactDetails.Controls.Add(rectangleRound12);
-            panelContactDetails.Controls.Add(panel9);
+            panelContactDetails.Controls.Add(panelContactDetailsHeader);
             panelContactDetails.Controls.Add(rectangleRound13);
             panelContactDetails.Controls.Add(label15);
             panelContactDetails.Location = new Point(1264, 8);
@@ -2808,7 +2904,9 @@
             txtLandNo.Name = "txtLandNo";
             txtLandNo.Size = new Size(251, 27);
             txtLandNo.TabIndex = 13;
+            txtLandNo.Enter += SelectedPanel;
             txtLandNo.KeyPress += NumOnlyLimited;
+            txtLandNo.Leave += UnselectedPanel;
             // 
             // txtMobNo
             // 
@@ -2818,7 +2916,9 @@
             txtMobNo.Name = "txtMobNo";
             txtMobNo.Size = new Size(250, 27);
             txtMobNo.TabIndex = 12;
+            txtMobNo.Enter += SelectedPanel;
             txtMobNo.KeyPress += NumOnlyLimited;
+            txtMobNo.Leave += UnselectedPanel;
             // 
             // label14
             // 
@@ -2840,15 +2940,15 @@
             rectangleRound12.TabIndex = 0;
             rectangleRound12.TabStop = false;
             // 
-            // panel9
+            // panelContactDetailsHeader
             // 
-            panel9.BackColor = Color.FromArgb(43, 121, 223);
-            panel9.Controls.Add(label27);
-            panel9.Dock = DockStyle.Top;
-            panel9.Location = new Point(0, 0);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(319, 29);
-            panel9.TabIndex = 0;
+            panelContactDetailsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelContactDetailsHeader.Controls.Add(label27);
+            panelContactDetailsHeader.Dock = DockStyle.Top;
+            panelContactDetailsHeader.Location = new Point(0, 0);
+            panelContactDetailsHeader.Name = "panelContactDetailsHeader";
+            panelContactDetailsHeader.Size = new Size(319, 29);
+            panelContactDetailsHeader.TabIndex = 0;
             // 
             // label27
             // 
@@ -2891,7 +2991,7 @@
             panelAddress.Controls.Add(txtAddStreet);
             panelAddress.Controls.Add(txtAddPurok);
             panelAddress.Controls.Add(rectangleRound17);
-            panelAddress.Controls.Add(panel7);
+            panelAddress.Controls.Add(panelAddressHeader);
             panelAddress.Controls.Add(rectangleRound11);
             panelAddress.Controls.Add(label23);
             panelAddress.Controls.Add(rectangleRound10);
@@ -2917,7 +3017,9 @@
             txtAddRegion.Size = new Size(177, 27);
             txtAddRegion.TabIndex = 11;
             txtAddRegion.Text = "2";
+            txtAddRegion.Enter += SelectedPanel;
             txtAddRegion.KeyPress += NumOnly;
+            txtAddRegion.Leave += UnselectedPanel;
             // 
             // txtAddProvince
             // 
@@ -2929,7 +3031,9 @@
             txtAddProvince.TabIndex = 10;
             txtAddProvince.Text = "NUEVA VIZCAYA";
             txtAddProvince.TextChanged += AllCaps;
+            txtAddProvince.Enter += SelectedPanel;
             txtAddProvince.KeyPress += AlphaOnly;
+            txtAddProvince.Leave += UnselectedPanel;
             // 
             // txtAddMunicipality
             // 
@@ -2941,7 +3045,9 @@
             txtAddMunicipality.TabIndex = 9;
             txtAddMunicipality.Text = "SOLANO";
             txtAddMunicipality.TextChanged += AllCaps;
+            txtAddMunicipality.Enter += SelectedPanel;
             txtAddMunicipality.KeyPress += AlphaOnly;
+            txtAddMunicipality.Leave += UnselectedPanel;
             // 
             // cbAddBrgy
             // 
@@ -2954,6 +3060,8 @@
             cbAddBrgy.Name = "cbAddBrgy";
             cbAddBrgy.Size = new Size(183, 33);
             cbAddBrgy.TabIndex = 8;
+            cbAddBrgy.Enter += SelectedPanel;
+            cbAddBrgy.Leave += UnselectedPanel;
             // 
             // txtAddStreet
             // 
@@ -2964,7 +3072,9 @@
             txtAddStreet.Size = new Size(176, 27);
             txtAddStreet.TabIndex = 7;
             txtAddStreet.TextChanged += AllCaps;
+            txtAddStreet.Enter += SelectedPanel;
             txtAddStreet.KeyPress += AlphaNum;
+            txtAddStreet.Leave += UnselectedPanel;
             // 
             // txtAddPurok
             // 
@@ -2975,7 +3085,9 @@
             txtAddPurok.Size = new Size(178, 27);
             txtAddPurok.TabIndex = 6;
             txtAddPurok.TextChanged += AllCaps;
+            txtAddPurok.Enter += SelectedPanel;
             txtAddPurok.KeyPress += AlphaNum;
+            txtAddPurok.Leave += UnselectedPanel;
             // 
             // rectangleRound17
             // 
@@ -2987,15 +3099,15 @@
             rectangleRound17.TabIndex = 0;
             rectangleRound17.TabStop = false;
             // 
-            // panel7
+            // panelAddressHeader
             // 
-            panel7.BackColor = Color.FromArgb(43, 121, 223);
-            panel7.Controls.Add(label29);
-            panel7.Dock = DockStyle.Top;
-            panel7.Location = new Point(0, 0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(660, 29);
-            panel7.TabIndex = 0;
+            panelAddressHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelAddressHeader.Controls.Add(label29);
+            panelAddressHeader.Dock = DockStyle.Top;
+            panelAddressHeader.Location = new Point(0, 0);
+            panelAddressHeader.Name = "panelAddressHeader";
+            panelAddressHeader.Size = new Size(660, 29);
+            panelAddressHeader.TabIndex = 0;
             // 
             // label29
             // 
@@ -3129,7 +3241,7 @@
             panelPersonalDetails.Controls.Add(txtFirstname);
             panelPersonalDetails.Controls.Add(rectangleRound6);
             panelPersonalDetails.Controls.Add(txtSurname);
-            panelPersonalDetails.Controls.Add(panel5);
+            panelPersonalDetails.Controls.Add(panelPersonalDetailsHeader);
             panelPersonalDetails.Controls.Add(rectangleRound5);
             panelPersonalDetails.Controls.Add(rectangleRound2);
             panelPersonalDetails.Controls.Add(label9);
@@ -3137,7 +3249,7 @@
             panelPersonalDetails.Controls.Add(rectangleRound4);
             panelPersonalDetails.Controls.Add(rectangleRound3);
             panelPersonalDetails.Controls.Add(label8);
-            panelPersonalDetails.Location = new Point(11, 8);
+            panelPersonalDetails.Location = new Point(11, 9);
             panelPersonalDetails.Name = "panelPersonalDetails";
             panelPersonalDetails.Size = new Size(557, 182);
             panelPersonalDetails.TabIndex = 1;
@@ -3153,6 +3265,8 @@
             cbSex.Name = "cbSex";
             cbSex.Size = new Size(144, 33);
             cbSex.TabIndex = 5;
+            cbSex.Enter += SelectedPanel;
+            cbSex.Leave += UnselectedPanel;
             // 
             // txtExtname
             // 
@@ -3163,7 +3277,9 @@
             txtExtname.Size = new Size(116, 27);
             txtExtname.TabIndex = 4;
             txtExtname.TextChanged += AllCaps;
+            txtExtname.Enter += SelectedPanel;
             txtExtname.KeyPress += AlphaOnly;
+            txtExtname.Leave += UnselectedPanel;
             // 
             // txtMiddlename
             // 
@@ -3174,7 +3290,9 @@
             txtMiddlename.Size = new Size(182, 27);
             txtMiddlename.TabIndex = 3;
             txtMiddlename.TextChanged += AllCaps;
+            txtMiddlename.Enter += SelectedPanel;
             txtMiddlename.KeyPress += AlphaOnly;
+            txtMiddlename.Leave += UnselectedPanel;
             // 
             // label4
             // 
@@ -3205,7 +3323,9 @@
             txtFirstname.Size = new Size(294, 27);
             txtFirstname.TabIndex = 2;
             txtFirstname.TextChanged += AllCaps;
+            txtFirstname.Enter += SelectedPanel;
             txtFirstname.KeyPress += AlphaOnly;
+            txtFirstname.Leave += UnselectedPanel;
             // 
             // rectangleRound6
             // 
@@ -3225,17 +3345,19 @@
             txtSurname.Size = new Size(182, 27);
             txtSurname.TabIndex = 1;
             txtSurname.TextChanged += AllCaps;
+            txtSurname.Enter += SelectedPanel;
             txtSurname.KeyPress += AlphaOnly;
+            txtSurname.Leave += UnselectedPanel;
             // 
-            // panel5
+            // panelPersonalDetailsHeader
             // 
-            panel5.BackColor = Color.FromArgb(43, 121, 223);
-            panel5.Controls.Add(label22);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(555, 29);
-            panel5.TabIndex = 0;
+            panelPersonalDetailsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelPersonalDetailsHeader.Controls.Add(label22);
+            panelPersonalDetailsHeader.Dock = DockStyle.Top;
+            panelPersonalDetailsHeader.Location = new Point(0, 0);
+            panelPersonalDetailsHeader.Name = "panelPersonalDetailsHeader";
+            panelPersonalDetailsHeader.Size = new Size(555, 29);
+            panelPersonalDetailsHeader.TabIndex = 0;
             // 
             // label22
             // 
@@ -3670,8 +3792,8 @@
             panel30.PerformLayout();
             panelEmergencyCon.ResumeLayout(false);
             panelEmergencyCon.PerformLayout();
-            panel24.ResumeLayout(false);
-            panel24.PerformLayout();
+            panelEmergencyConHeader.ResumeLayout(false);
+            panelEmergencyConHeader.PerformLayout();
             panelAffiliations.ResumeLayout(false);
             panelAffiliations.PerformLayout();
             panelCoop.ResumeLayout(false);
@@ -3684,47 +3806,47 @@
             panel4Ps.PerformLayout();
             panelPWD.ResumeLayout(false);
             panelPWD.PerformLayout();
-            panel26.ResumeLayout(false);
-            panel26.PerformLayout();
+            panelAffiliationsHeader.ResumeLayout(false);
+            panelAffiliationsHeader.PerformLayout();
             panelMaidenName.ResumeLayout(false);
             panelMaidenName.PerformLayout();
-            panel22.ResumeLayout(false);
-            panel22.PerformLayout();
+            panelMaidenNameHeader.ResumeLayout(false);
+            panelMaidenNameHeader.PerformLayout();
             panelHousehold.ResumeLayout(false);
             panelHousehold.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudNoLivingHouseMem).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudHouseNoMale).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudHouseFemale).EndInit();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
+            panelHouseholdHeader.ResumeLayout(false);
+            panelHouseholdHeader.PerformLayout();
             panelEduc.ResumeLayout(false);
             panelEduc.PerformLayout();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
+            panelEducHeader.ResumeLayout(false);
+            panelEducHeader.PerformLayout();
             panelCivilStat.ResumeLayout(false);
             panelCivilStat.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
+            panelCivStasHeader.ResumeLayout(false);
+            panelCivStasHeader.PerformLayout();
             panelReligion.ResumeLayout(false);
             panelReligion.PerformLayout();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
+            panelReligionHeader.ResumeLayout(false);
+            panelReligionHeader.PerformLayout();
             panelBirthDetails.ResumeLayout(false);
             panelBirthDetails.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
+            panelBirthDetailsHeader.ResumeLayout(false);
+            panelBirthDetailsHeader.PerformLayout();
             panelContactDetails.ResumeLayout(false);
             panelContactDetails.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
+            panelContactDetailsHeader.ResumeLayout(false);
+            panelContactDetailsHeader.PerformLayout();
             panelAddress.ResumeLayout(false);
             panelAddress.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelAddressHeader.ResumeLayout(false);
+            panelAddressHeader.PerformLayout();
             panelPersonalDetails.ResumeLayout(false);
             panelPersonalDetails.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelPersonalDetailsHeader.ResumeLayout(false);
+            panelPersonalDetailsHeader.PerformLayout();
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel28.ResumeLayout(false);
@@ -3762,7 +3884,7 @@
         private Label label3;
         private DateTimePicker dtDateAdm;
         private Panel panelEmergencyCon;
-        private Panel panel24;
+        private Panel panelEmergencyConHeader;
         private Label label58;
         private RectangleRound rectangleRound36;
         private Label label60;
@@ -3783,14 +3905,14 @@
         private RectangleRound rectangleRound34;
         private RectangleRound rectangleRound19;
         private Label label55;
-        private Panel panel26;
+        private Panel panelAffiliationsHeader;
         private Label label7;
         private RectangleRound rectangleRound15;
         private Label label17;
         private RectangleRound rectangleRound16;
         private Label label20;
         private Panel panelMaidenName;
-        private Panel panel22;
+        private Panel panelMaidenNameHeader;
         private Label label57;
         private RectangleRound rectangleRound32;
         private Panel panelHousehold;
@@ -3803,31 +3925,31 @@
         private Label label25;
         private Label label35;
         private RectangleRound rectangleRound25;
-        private Panel panel20;
+        private Panel panelHouseholdHeader;
         private Label label50;
         private RectangleRound rectangleRound28;
         private RectangleRound rectangleRound29;
         private Label label52;
         private Panel panelEduc;
-        private Panel panel18;
+        private Panel panelEducHeader;
         private Label label18;
         private Panel panelCivilStat;
         private Label label16;
         private RectangleRound rectangleRound14;
-        private Panel panel15;
+        private Panel panelCivStasHeader;
         private Label label31;
         private RectangleRound rectangleRound24;
         private Panel panelReligion;
         private Panel panel16;
         private TextBox txtReligionOthers;
-        private Panel panel13;
+        private Panel panelReligionHeader;
         private Label label36;
         private Panel panelBirthDetails;
         private Label label34;
         private Label label6;
         private Label label28;
         private RectangleRound rectangleRound22;
-        private Panel panel11;
+        private Panel panelBirthDetailsHeader;
         private Label label30;
         private RectangleRound rectangleRound23;
         private DateTimePicker dtpBirthDate;
@@ -3837,13 +3959,13 @@
         private Panel panelContactDetails;
         private Label label14;
         private RectangleRound rectangleRound12;
-        private Panel panel9;
+        private Panel panelContactDetailsHeader;
         private Label label27;
         private RectangleRound rectangleRound13;
         private Label label15;
         private Panel panelAddress;
         private RectangleRound rectangleRound17;
-        private Panel panel7;
+        private Panel panelAddressHeader;
         private Label label29;
         private RectangleRound rectangleRound11;
         private Label label23;
@@ -3860,7 +3982,7 @@
         private Label label4;
         private Label label10;
         private RectangleRound rectangleRound6;
-        private Panel panel5;
+        private Panel panelPersonalDetailsHeader;
         private Label label22;
         private RectangleRound rectangleRound5;
         private RectangleRound rectangleRound2;

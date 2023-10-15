@@ -330,6 +330,8 @@ namespace AgRecords.View
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+
+            cbLivelihoodFarmer.Focus();
         }
 
         private void btnFarmLand_Click(object sender, EventArgs e)
@@ -375,7 +377,6 @@ namespace AgRecords.View
             dtDateAdm.MinDate = minDate;
 
             txtSurname.Focus();
-
         }
 
         private void rectangleRound42_Load(object sender, EventArgs e)
@@ -688,7 +689,104 @@ namespace AgRecords.View
             TextboxValidation.TextBox_AllCaps(sender, e);
         }
 
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
 
+            if (focusedControl.Parent == panelPersonalDetails)
+            {
+                PanelSelected.Panel_Enter(panelPersonalDetails, panelPersonalDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelAddress)
+            {
+                PanelSelected.Panel_Enter(panelAddress, panelAddressHeader);
+            }
+            else if (focusedControl.Parent == panelContactDetails)
+            {
+                PanelSelected.Panel_Enter(panelContactDetails, panelContactDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelBirthDetails)
+            {
+                PanelSelected.Panel_Enter(panelBirthDetails, panelBirthDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelReligion)
+            {
+                PanelSelected.Panel_Enter(panelReligion, panelReligionHeader);
+            }
+            else if (focusedControl.Parent == panelCivilStat)
+            {
+                PanelSelected.Panel_Enter(panelCivilStat, panelCivStasHeader);
+            }
+            else if (focusedControl.Parent == panelHousehold)
+            {
+                PanelSelected.Panel_Enter(panelHousehold, panelHouseholdHeader);
+            }
+            else if (focusedControl.Parent == panelEduc)
+            {
+                PanelSelected.Panel_Enter(panelEduc, panelEducHeader);
+            }
+            else if (focusedControl.Parent == panelAffiliations || focusedControl.Parent == panelPWD || focusedControl.Parent == panel4Ps || focusedControl.Parent == panelIPGroup || focusedControl.Parent == panelGovId || focusedControl.Parent == panelCoop)
+            {
+                PanelSelected.Panel_Enter(panelAffiliations, panelAffiliationsHeader);
+            }
+            else if (focusedControl.Parent == panelEmergencyCon)
+            {
+                PanelSelected.Panel_Enter(panelEmergencyCon, panelEmergencyConHeader);
+            }
+            else if (focusedControl.Parent == panelMaidenName)
+            {
+                PanelSelected.Panel_Enter(panelMaidenName, panelMaidenNameHeader);
+            }
+        }
 
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPersonalDetails)
+            {
+                PanelSelected.Panel_Leave(panelPersonalDetails, panelPersonalDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelAddress)
+            {
+                PanelSelected.Panel_Leave(panelAddress, panelAddressHeader);
+            }
+            else if (focusedControl.Parent == panelContactDetails)
+            {
+                PanelSelected.Panel_Leave(panelContactDetails, panelContactDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelBirthDetails)
+            {
+                PanelSelected.Panel_Leave(panelBirthDetails, panelBirthDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelReligion)
+            {
+                PanelSelected.Panel_Leave(panelReligion, panelReligionHeader);
+            }
+            else if (focusedControl.Parent == panelCivilStat)
+            {
+                PanelSelected.Panel_Leave(panelCivilStat, panelCivStasHeader);
+            }
+            else if (focusedControl.Parent == panelHousehold)
+            {
+                PanelSelected.Panel_Leave(panelHousehold, panelHouseholdHeader);
+            }
+            else if (focusedControl.Parent == panelEduc)
+            {
+                PanelSelected.Panel_Leave(panelEduc, panelEducHeader);
+            }
+            else if (focusedControl.Parent == panelAffiliations || focusedControl.Parent == panelPWD || focusedControl.Parent == panel4Ps || focusedControl.Parent == panelIPGroup || focusedControl.Parent == panelGovId || focusedControl.Parent == panelCoop)
+            {
+                PanelSelected.Panel_Leave(panelAffiliations, panelAffiliationsHeader);
+            }
+            else if (focusedControl.Parent == panelEmergencyCon)
+            {
+                PanelSelected.Panel_Leave(panelEmergencyCon, panelEmergencyConHeader);
+            }
+            else if (focusedControl.Parent == panelMaidenName)
+            {
+                PanelSelected.Panel_Leave(panelMaidenName, panelMaidenNameHeader);
+            }
+        }
     }
 }
