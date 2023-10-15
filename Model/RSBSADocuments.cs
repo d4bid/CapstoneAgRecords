@@ -14,5 +14,8 @@ namespace AgRecords.Model
         public string docFilename { get; set; }
 
         public Dictionary<string, Image> docPhotoDictionary = new Dictionary<string, Image>();
+
+        public Dictionary<string, byte[]> docPhotoDictionaryByte = new Dictionary<string, byte[]>();
+
     }
 }
