@@ -108,17 +108,20 @@ namespace AgRecords.View
             string isFarmerText = "No";
             string isRiceFarmerText = "No";
             string isCornFarmerText = "No";
+
             string isLaborerText = "No";
             string isPreparingLandText = "No";
             string isPlantingText = "No";
             string isCultivatingText = "No";
             string isHarvestingText = "No";
+
             string isFisherfolkText = "No";
             string isFishCapturingText = "No";
             string isAquacultureText = "No";
             string isGleaningText = "No";
             string isFishProcessingText = "No";
             string isFishVendingText = "No";
+
             string isAgriYouthText = "No";
             string isPartOfFarmingHouseholdText = "No";
             string isAttendAgrifisheryText = "No";
@@ -367,7 +370,7 @@ namespace AgRecords.View
         {
             FormRefresh();
 
-            //radiobuttonsPreAnswer_PersonalInfo();
+            radiobuttonsPreAnswer_PersonalInfo();
             comboboxesPreAnswer_PersonalInfo();
             disabletxtboxes_PersonalInfo();
 
@@ -737,6 +740,30 @@ namespace AgRecords.View
             {
                 PanelSelected.Panel_Enter(panelMaidenName, panelMaidenNameHeader);
             }
+            else if (focusedControl.Parent == panelMainLivelihood)
+            {
+                PanelSelected.Panel_Enter(panelMainLivelihood, panelMainLivelihoodHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmers)
+            {
+                PanelSelected.Panel_Enter(panelForFarmers, panelForFarmersHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmerworkers)
+            {
+                PanelSelected.Panel_Enter(panelForFarmerworkers, panelForFarmerworkersHeader);
+            }
+            else if (focusedControl.Parent == panelForFisherfolk)
+            {
+                PanelSelected.Panel_Enter(panelForFisherfolk, panelForFisherfolkHeader);
+            }
+            else if (focusedControl.Parent == panelForAgriYouth)
+            {
+                PanelSelected.Panel_Enter(panelForAgriYouth, panelForAgriYouthHeader);
+            }
+            else if (focusedControl.Parent == panelAnnuanIncome)
+            {
+                PanelSelected.Panel_Enter(panelAnnuanIncome, panelAnnuanIncomeHeader);
+            }
         }
 
         private void UnselectedPanel(object sender, EventArgs e)
@@ -786,6 +813,30 @@ namespace AgRecords.View
             else if (focusedControl.Parent == panelMaidenName)
             {
                 PanelSelected.Panel_Leave(panelMaidenName, panelMaidenNameHeader);
+            }
+            else if (focusedControl.Parent == panelMainLivelihood)
+            {
+                PanelSelected.Panel_Leave(panelMainLivelihood, panelMainLivelihoodHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmers)
+            {
+                PanelSelected.Panel_Leave(panelForFarmers, panelForFarmersHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmerworkers)
+            {
+                PanelSelected.Panel_Leave(panelForFarmerworkers, panelForFarmerworkersHeader);
+            }
+            else if (focusedControl.Parent == panelForFisherfolk)
+            {
+                PanelSelected.Panel_Leave(panelForFisherfolk, panelForFisherfolkHeader);
+            }
+            else if (focusedControl.Parent == panelForAgriYouth)
+            {
+                PanelSelected.Panel_Leave(panelForAgriYouth, panelForAgriYouthHeader);
+            }
+            else if (focusedControl.Parent == panelAnnuanIncome)
+            {
+                PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
             }
         }
     }

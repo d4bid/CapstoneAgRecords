@@ -257,12 +257,14 @@ namespace AgRecords.Controller
                     otherCrops = otherCrops,
                     hasLivestocks = hasLivestocks,
                     hasPoultry = hasPoultry,
+
                     isLaborer = isLaborer,
                     isPreparingLand = isPreparingLand,
                     isPlanting = isPlanting,
                     isCultivating = isCultivating,
                     isHarvesting = isHarvesting,
                     otherLaborWork = otherLaborWork,
+
                     isFisherfolk = isFisherfolk,
                     isFishCapturing = isFishCapturing,
                     isAquaculture = isAquaculture,
@@ -270,6 +272,7 @@ namespace AgRecords.Controller
                     isFishProcessing = isFishProcessing,
                     isFishVending = isFishVending,
                     otherFishingAct = otherFishingAct,
+
                     isAgriYouth = isAgriYouth,
                     isPartOfFarmingHousehold = isPartOfFarmingHousehold,
                     isAttendAgrifishery = isAttendAgrifishery,
@@ -448,9 +451,41 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please enter emergency contact number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                
-                
-                //condition to be set to call the code below
+                //main livelihood
+                else if (rsbsa.isFarmer == "No" && rsbsa.isLaborer == "No" && rsbsa.isFisherfolk == "No" && rsbsa.isAgriYouth == "No")
+                {
+                    MessageBox.Show("Please select at least one main livelihood.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for farmers
+                else if (rsbsa.isFarmer == "Yes" && rsbsa.isRiceFarmer=="No" && rsbsa.isCornFarmer == "No" && rsbsa.otherCrops == "No" && rsbsa.hasLivestocks == "No" && rsbsa.hasPoultry == "No")
+                {
+                    MessageBox.Show("Please select at least one activity for farmer.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for farmerworker/laborer
+                else if (rsbsa.isLaborer == "Yes" && rsbsa.isPreparingLand == "No" && rsbsa.isPlanting == "No" && rsbsa.isCultivating == "No" && rsbsa.isHarvesting == "No" && rsbsa.otherLaborWork == "No")
+                {
+                    MessageBox.Show("Please select at least one activity for farmorker.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for fisherfolk
+                else if (rsbsa.isFisherfolk == "Yes" && rsbsa.isFishCapturing == "No" && rsbsa.isAquaculture == "No" && rsbsa.isGleaning == "No" && rsbsa.isFishProcessing == "No" && rsbsa.isFishVending == "No" && rsbsa.otherFishingAct == "No")
+                {
+                    MessageBox.Show("Please select at least one activity for fisherfolk.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for agriyouth
+                else if (rsbsa.isAgriYouth == "Yes" && rsbsa.isPartOfFarmingHousehold == "No" && rsbsa.isAttendAgrifishery == "No" && rsbsa.isParticipantAgriProgram == "No" && rsbsa.otherAgriYouthAct == "No")
+                {
+                    MessageBox.Show("Please select at least one activity for Agri Youth.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //gross annual income
+                else if (rsbsa.annualIncomeFarming==0)
+                {
+                    MessageBox.Show("Please enter gross annual income for farming.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rsbsa.annualIncomeNonFarming == 0)
+                {
+                    MessageBox.Show("Please enter gross annual income for non-farming.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
                 DialogResult result = MessageBox.Show("Are you sure you want to save this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
