@@ -57,7 +57,7 @@ namespace AgRecords.View
 
             foreach (FarmLandControl farmLandControl in flowLayoutPanelParcels.Controls.OfType<FarmLandControl>())
             {
-                FarmParcel parcel = farmLandControl.GetFarmParcelData();
+                FarmParcel parcel = farmLandControl.GetFarmParcelData(labelRsbsaId.Text);
                 farmParcels.Add(parcel);
             }
 
@@ -70,7 +70,7 @@ namespace AgRecords.View
 
             foreach (RSBSADocumentControl documentControl in flowLayoutPanelDocs.Controls.OfType<RSBSADocumentControl>())
             {
-                RSBSADocuments document = documentControl.GetDocumentData();
+                RSBSADocuments document = documentControl.GetDocumentData(labelRsbsaId.Text);
                 documentsList.Add(document);
             }
 

@@ -29,13 +29,13 @@ namespace AgRecords.View
 
             // Wire up the remove button click event
             cbDocType.SelectedIndex = 0;
-            btnRemove.Click += btnRemove_Click;
+            //btnRemove.Click += btnRemove_Click;
             pbDocPhoto.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void RSBSADocumentControl_Load(object sender, EventArgs e)
         {
-            btnRemove.Click += btnRemove_Click;
+
         }
 
         public void SetData(RSBSADocuments docs)
@@ -79,10 +79,8 @@ namespace AgRecords.View
             }
         }
 
-        public RSBSADocuments GetDocumentData()
+        public RSBSADocuments GetDocumentData(string rsbsaId)
         {
-            rsbsaId = rsbsaController.RSBSAIdForUserControl();
-
             RSBSADocuments document = new RSBSADocuments
             {
                 rsbsaId = rsbsaId, // Set rsbsaId as per your logic
@@ -94,21 +92,6 @@ namespace AgRecords.View
             {
                 // Add the image to the dictionary with the filename as the key
                 document.docPhotoDictionary.Add(filename, selectedImage);
-
-
-
-
-
-                // Convert the Image to a byte array
-                byte[] imageBytes = null;
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    selectedImage.Save(ms, ImageFormat.Png);
-                    imageBytes = ms.ToArray();
-                }
-
-                document.docPhotoDictionaryByte.Add(filename, imageBytes);
-
             }
 
             return document;

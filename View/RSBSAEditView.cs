@@ -16,11 +16,17 @@ namespace AgRecords.View
     {
         public event EventHandler FormClosed;
         private RSBSAController rsbsaController;
+        public static RSBSAEditView Instance;
+        public Label currentRSBSAId;
+
 
         public RSBSAEditView(RSBSA rsbsaInfo, RSBSA farmerInfo, RSBSA farmProfile, RSBSA farmland, RSBSA farmlandParcel, RSBSA farmlandParcelCrops, RSBSA rsbsaDocs)
         {
             InitializeComponent();
             rsbsaController = new RSBSAController(this);
+
+            Instance = this;
+            currentRSBSAId = labelRsbsaId;
 
             //to restore data
             //RSBSA Info
@@ -174,10 +180,11 @@ namespace AgRecords.View
             if (farmland != null)
             {
                 //Farmland
-                labelParcelCount.Text = farmland.farmParcelCount.ToString();
+                labelParcelCount.Text = "0";
 
                 if (farmlandParcel != null)
                 {
+                    labelParcelCount.Text = farmlandParcel.farmParcels.Count.ToString();
                     for (int i = 0; i < farmlandParcel.farmParcels.Count; i++)
                     {
                         //Farmland Parcel
@@ -297,7 +304,7 @@ namespace AgRecords.View
 
             foreach (FarmLandControl farmLandControl in flowLayoutPanelParcels.Controls.OfType<FarmLandControl>())
             {
-                FarmParcel parcel = farmLandControl.GetFarmParcelData();
+                FarmParcel parcel = farmLandControl.GetFarmParcelData(labelRsbsaId.Text);
                 farmParcels.Add(parcel);
             }
 
@@ -310,7 +317,7 @@ namespace AgRecords.View
 
             foreach (RSBSADocumentControl documentControl in flowLayoutPanelDocs.Controls.OfType<RSBSADocumentControl>())
             {
-                RSBSADocuments document = documentControl.GetDocumentData();
+                RSBSADocuments document = documentControl.GetDocumentData(labelRsbsaId.Text);
                 documentsList.Add(document);
             }
 

@@ -69,7 +69,7 @@ namespace AgRecords.Model
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 // Save the image to the memory stream in the desired format (e.g., JPEG)
-                image.Save(memoryStream, ImageFormat.Bmp);
+                image.Save(memoryStream,ImageFormat.Png);
 
                 // Convert the memory stream to a byte array and return it
                 return memoryStream.ToArray();
@@ -156,10 +156,13 @@ namespace AgRecords.Model
                     transaction = db.GetConnection().BeginTransaction();
 
                     // Call the stored procedure to delete farm parcels by ID
-                    MySqlCommand deleteCommand = new MySqlCommand("sp_deleteFarmParcelById", db.GetConnection(), transaction);
-                    deleteCommand.CommandType = CommandType.StoredProcedure;
-                    deleteCommand.Parameters.AddWithValue("_rsbsaId", farmParcels[0].rsbsaId);
-                    deleteCommand.ExecuteNonQuery();
+                    if (farmParcels.Count != 0)
+                    {
+                        MySqlCommand deleteCommand = new MySqlCommand("sp_deleteFarmParcelById", db.GetConnection(), transaction);
+                        deleteCommand.CommandType = CommandType.StoredProcedure;
+                        deleteCommand.Parameters.AddWithValue("_rsbsaId", farmParcels[0].rsbsaId);
+                        deleteCommand.ExecuteNonQuery();
+                    }
 
                     foreach (FarmParcel farmParcel in farmParcels)
                     {
@@ -271,16 +274,19 @@ namespace AgRecords.Model
                 {
                     // Begin the transaction
                     transaction = db.GetConnection().BeginTransaction();
-
+                    
                     // Call the stored procedure to delete farm parcels by ID
-                    MySqlCommand deleteCommand = new MySqlCommand("sp_deleteRSBSADocsById", db.GetConnection(), transaction);
-                    deleteCommand.CommandType = CommandType.StoredProcedure;
-                    deleteCommand.Parameters.AddWithValue("_rsbsaId", rsbsaDocuments[0].rsbsaId);
-                    deleteCommand.ExecuteNonQuery();
+                    if (rsbsaDocuments.Count != 0)
+                    {
+                        MySqlCommand deleteCommand = new MySqlCommand("sp_deleteRSBSADocsById", db.GetConnection(), transaction);
+                        deleteCommand.CommandType = CommandType.StoredProcedure;
+                        deleteCommand.Parameters.AddWithValue("_rsbsaId", rsbsaDocuments[0].rsbsaId);
+                        deleteCommand.ExecuteNonQuery();
+                    }
 
                     foreach (RSBSADocuments rsbsaDocument in rsbsaDocuments)
                     {
-                        foreach (var kvp in rsbsaDocument.docPhotoDictionaryByte)
+                        foreach (var kvp in rsbsaDocument.docPhotoDictionary)
                         {
                             MySqlCommand documentCommand = new MySqlCommand("sp_addNewRSBSADocument", db.GetConnection(), transaction);
                             documentCommand.CommandType = CommandType.StoredProcedure;
@@ -289,18 +295,10 @@ namespace AgRecords.Model
                             documentCommand.Parameters.AddWithValue("_docType", rsbsaDocument.docType);
                             documentCommand.Parameters.AddWithValue("_docFilename", kvp.Key); // Filename from the dictionary
 
-                            //byte[] docPhotoBytes = null;
-                            //Image img = kvp.Value;
-
-                            //// Convert the Image to a byte array
-                            //using (MemoryStream ms = new MemoryStream())
-                            //{
-                            //    img.Save(ms, ImageFormat.Png);
-                            //    docPhotoBytes = ms.ToArray();
-                            //}
+                            byte[] docPhotoBytes = ConvertImageToByteArray(kvp.Value);
 
                             // Add the image data to the database command parameters
-                            documentCommand.Parameters.AddWithValue("_docPhoto", kvp.Value);
+                            documentCommand.Parameters.AddWithValue("_docPhoto", docPhotoBytes);
 
                             documentCommand.ExecuteNonQuery();
                         }
@@ -309,6 +307,7 @@ namespace AgRecords.Model
                     // Commit the transaction
                     transaction.Commit();
                     return true;
+
                 }
                 catch (Exception ex)
                 {
