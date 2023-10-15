@@ -26,7 +26,7 @@ namespace AgRecords.View
             rsbsaController = new RSBSAController(this);
 
             // Wire up the remove button click event
-            btnRemove.Click += btnRemove_Click;
+            //btnRemove.Click += btnRemove_Click;
         }
 
         public void SetData(FarmParcel farmParcel, List<FarmParcelCrop> farmParcelCrop)
@@ -159,10 +159,8 @@ namespace AgRecords.View
             }
         }
 
-        public FarmParcel GetFarmParcelData()
+        public FarmParcel GetFarmParcelData(string rsbsaId)
         {
-            rsbsaId = rsbsaController.RSBSAIdForUserControl();
-
             FarmParcel parcel = new FarmParcel
             {
                 rsbsaId = rsbsaId,
