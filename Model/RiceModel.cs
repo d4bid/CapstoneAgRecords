@@ -461,9 +461,9 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addRicePlantingReport(@ricePrId, @season, @seasonYear, @month, @week, @year, @createdBy)";
+                    string query = "CALL sp_addRicePlantingReport(@riceSrId, @season, @seasonYear, @month, @week, @year, @createdBy)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
-                    command.Parameters.AddWithValue("@ricePrId", rpr.ricePrId);
+                    command.Parameters.AddWithValue("@riceSrId", rpr.riceSrId);
                     command.Parameters.AddWithValue("@season", rpr.season);
                     command.Parameters.AddWithValue("@seasonYear", rpr.seasonYear);
                     command.Parameters.AddWithValue("@month", rpr.month);
@@ -481,47 +481,46 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error adding new rice planting report: " + ex.Message, ex);
             }
         }
-
       
 
-        //get rice planting report details
-        public RicePlantingRep GetRicePlantReportById(string ricePrId)
-        {
-            try
-            {
-                using (DatabaseConnection db = new DatabaseConnection())
-                {
-                    db.Open();
+        ////get rice planting report details
+        //public RicePlantingRep GetRicePlantReportById(string ricePrId)
+        //{
+        //    try
+        //    {
+        //        using (DatabaseConnection db = new DatabaseConnection())
+        //        {
+        //            db.Open();
 
-                    MySqlCommand command = new MySqlCommand("CALL sp_getRicePlantReportById(@ricePrId)", db.GetConnection());
-                    command.Parameters.AddWithValue("@ricePrId", ricePrId);
+        //            MySqlCommand command = new MySqlCommand("CALL sp_getRicePlantReportById(@ricePrId)", db.GetConnection());
+        //            command.Parameters.AddWithValue("@ricePrId", ricePrId);
 
-                    MySqlDataReader reader = command.ExecuteReader();
+        //            MySqlDataReader reader = command.ExecuteReader();
 
-                    RicePlantingRep rpr = null;
+        //            RicePlantingRep rpr = null;
 
-                    if (reader.Read())
-                    {
-                        rpr = new RicePlantingRep();
-                        rpr.ricePrId = reader["ricePrId"].ToString();
-                        rpr.season= reader["season"].ToString();
-                        rpr.seasonYear = reader["seasonYear"].ToString();
-                        rpr.month = reader["month"].ToString();
-                        rpr.week = reader["week"].ToString();
-                        rpr.year = (int)reader["year"];
-                        rpr.createdBy = reader["createdBy"].ToString();
-                    }
+        //            if (reader.Read())
+        //            {
+        //                rpr = new RicePlantingRep();
+        //                rpr.ricePrId = reader["ricePrId"].ToString();
+        //                rpr.season= reader["season"].ToString();
+        //                rpr.seasonYear = reader["seasonYear"].ToString();
+        //                rpr.month = reader["month"].ToString();
+        //                rpr.week = reader["week"].ToString();
+        //                rpr.year = (int)reader["year"];
+        //                rpr.createdBy = reader["createdBy"].ToString();
+        //            }
 
-                    reader.Close();
-                    return rpr;
-                }
+        //            reader.Close();
+        //            return rpr;
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Error getting rice planting report by ID: " + ex.Message, ex);
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ApplicationException("Error getting rice planting report by ID: " + ex.Message, ex);
+        //    }
+        //}
 
     }
 }

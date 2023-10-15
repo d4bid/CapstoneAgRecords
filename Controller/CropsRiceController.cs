@@ -397,5 +397,62 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        // PLANTING
+        // Add Rice Planting Report
+        public bool AddRicePlantingReport(string riceSrId, string season, string seasonYear, string month, string week, string year)
+        {
+            try
+            {
+                string createdBy = GetUserIdByFullName(fullName);
+
+                RicePlantingRep rpr = new RicePlantingRep()
+                {
+                    riceSrId = riceSrId,
+                    season = season,
+                    seasonYear = seasonYear,
+                    month = month,
+                    week = week,
+                    year = year,
+                    createdBy = createdBy
+                };
+
+                if (rpr.riceSrId == "")
+                {
+                    MessageBox.Show("ID is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rpr.month == null)
+                {
+                    MessageBox.Show("Month is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rpr.week == null)
+                {
+                    MessageBox.Show("Week is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rpr.year == null)
+                {
+                    MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rpr.riceSrId != null && rpr.month != null && rpr.week != null && rpr.year != null)
+                {
+                    if (riceModel.AddRicePlantingRep(rpr))
+                    {
+                        isDone = true;
+                        //MessageBox.Show("Rice Planting Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                // Return true to indicate a successful operation
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Add Rice Planting Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+        }
     }
 }

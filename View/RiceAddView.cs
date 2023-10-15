@@ -37,7 +37,7 @@ namespace AgRecords.View
         {
             cmbSeason.Select();
 
-            //SetSeasonYear();
+            SetSeasonYear();
 
             cropsRiceController.GenerateNewRiceStandID();
 
@@ -58,25 +58,25 @@ namespace AgRecords.View
             labelRiceSrId.Text = riceSrId;
         }
 
-        //public void SetSeasonYear()
-        //{
-        //    int currentYear = DateTime.Now.Year;
+        public void SetSeasonYear()
+        {
+            int currentYear = DateTime.Now.Year;
 
-        //    // Calculate the past and future years
-        //    int pastYear = currentYear - 1;
-        //    int futureYear = currentYear + 1;
+            // Calculate the past and future years
+            int pastYear = currentYear - 1;
+            int futureYear = currentYear + 1;
 
-        //    // Create the items in the format "YYYY-YYYY"
-        //    string pastYearItem = $"{pastYear}-{currentYear}";
-        //    string futureYearItem = $"{currentYear}-{futureYear}";
+            // Create the items in the format "YYYY-YYYY"
+            string pastYearItem = $"{pastYear}-{currentYear}";
+            string futureYearItem = $"{currentYear}-{futureYear}";
 
-        //    // Add the items to the cmbSeasonYear ComboBox
-        //    cmbSeasonYear.Items.Add(futureYearItem);
-        //    cmbSeasonYear.Items.Add(pastYearItem);
+            // Add the items to the cmbSeasonYear ComboBox
+            cmbSeasonYear.Items.Add(futureYearItem);
+            cmbSeasonYear.Items.Add(pastYearItem);
 
-        //    // Optionally, you can set an initial selection
-        //    cmbSeasonYear.SelectedIndex = 0;
-        //}
+            // Optionally, you can set an initial selection
+            cmbSeasonYear.SelectedIndex = 0;
+        }
 
         private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -142,7 +142,8 @@ namespace AgRecords.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
+            if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) && 
+                cropsRiceController.AddRicePlantingReport(labelRiceSrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
             {
                 // Trigger the event when the "Save" button is clicked
                 SaveButtonClicked?.Invoke(this, EventArgs.Empty);
