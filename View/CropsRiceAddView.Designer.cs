@@ -58,13 +58,14 @@
             cbLowland = new CheckBox();
             cbIrrigated = new CheckBox();
             panel43 = new Panel();
+            labelRiceStandingLogsId = new Label();
             btnUpdate = new Button();
             cmbSeedType = new ComboBox();
             searchBox10 = new SearchBox();
             label9 = new Label();
             label8 = new Label();
             dtpLogDate = new DateTimePicker();
-            button1 = new Button();
+            btnClear = new Button();
             btnNew = new Button();
             txtSize = new TextBox();
             searchBox11 = new SearchBox();
@@ -81,7 +82,6 @@
             searchBox2 = new SearchBox();
             label1 = new Label();
             dgvRiceStandLogs = new DataGridView();
-            labelRiceStandingLogsId = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -347,6 +347,7 @@
             cbUpland.TabIndex = 2;
             cbUpland.Text = "Rainfed Upland";
             cbUpland.UseVisualStyleBackColor = true;
+            cbUpland.CheckedChanged += cbUpland_CheckedChanged;
             // 
             // cbLowland
             // 
@@ -357,6 +358,7 @@
             cbLowland.TabIndex = 1;
             cbLowland.Text = "Rainfed Lowland";
             cbLowland.UseVisualStyleBackColor = true;
+            cbLowland.CheckedChanged += cbLowland_CheckedChanged;
             // 
             // cbIrrigated
             // 
@@ -367,6 +369,7 @@
             cbIrrigated.TabIndex = 0;
             cbIrrigated.Text = "Irrigated";
             cbIrrigated.UseVisualStyleBackColor = true;
+            cbIrrigated.CheckedChanged += cbIrrigated_CheckedChanged;
             // 
             // panel43
             // 
@@ -378,7 +381,7 @@
             panel43.Controls.Add(label9);
             panel43.Controls.Add(label8);
             panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(button1);
+            panel43.Controls.Add(btnClear);
             panel43.Controls.Add(btnNew);
             panel43.Controls.Add(txtSize);
             panel43.Controls.Add(searchBox11);
@@ -397,6 +400,16 @@
             panel43.Name = "panel43";
             panel43.Size = new Size(1566, 222);
             panel43.TabIndex = 74;
+            // 
+            // labelRiceStandingLogsId
+            // 
+            labelRiceStandingLogsId.AutoSize = true;
+            labelRiceStandingLogsId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelRiceStandingLogsId.Location = new Point(796, 154);
+            labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
+            labelRiceStandingLogsId.Size = new Size(149, 28);
+            labelRiceStandingLogsId.TabIndex = 80;
+            labelRiceStandingLogsId.Text = "RiceStandingID";
             // 
             // btnUpdate
             // 
@@ -460,22 +473,23 @@
             dtpLogDate.Size = new Size(135, 28);
             dtpLogDate.TabIndex = 53;
             // 
-            // button1
+            // btnClear
             // 
-            button1.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatAppearance.MouseDownBackColor = Color.White;
-            button1.FlatAppearance.MouseOverBackColor = Color.White;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(3, 0, 67);
-            button1.Location = new Point(1338, 122);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(130, 39);
-            button1.TabIndex = 52;
-            button1.Text = "Clear";
-            button1.UseVisualStyleBackColor = true;
+            btnClear.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
+            btnClear.FlatAppearance.BorderSize = 2;
+            btnClear.FlatAppearance.MouseDownBackColor = Color.White;
+            btnClear.FlatAppearance.MouseOverBackColor = Color.White;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.FromArgb(3, 0, 67);
+            btnClear.Location = new Point(1338, 122);
+            btnClear.Margin = new Padding(3, 4, 3, 4);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(130, 39);
+            btnClear.TabIndex = 52;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnNew
             // 
@@ -661,16 +675,6 @@
             dgvRiceStandLogs.TabIndex = 23;
             dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
             // 
-            // labelRiceStandingLogsId
-            // 
-            labelRiceStandingLogsId.AutoSize = true;
-            labelRiceStandingLogsId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRiceStandingLogsId.Location = new Point(796, 154);
-            labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
-            labelRiceStandingLogsId.Size = new Size(149, 28);
-            labelRiceStandingLogsId.TabIndex = 80;
-            labelRiceStandingLogsId.Text = "RiceStandingID";
-            // 
             // CropsRiceAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -741,7 +745,7 @@
         private CheckBox cbUpland;
         private Button btnCancel;
         private Button btnSave;
-        private Button button1;
+        private Button btnClear;
         private ComboBox cmbSeedType;
         private SearchBox searchBox10;
         private Label label8;

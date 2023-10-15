@@ -246,6 +246,63 @@ namespace AgRecords.Controller
             }
         }
 
+        public bool UpdateRiceStandingLog(int riceStandingLogsId, string riceSrId, int brgyId, int farmTypeId, int growthStageId, int seedTypeId, float size, DateTime logDate)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceStandingLogsId = riceStandingLogsId,
+                    riceSrId = riceSrId,
+                    brgyId = brgyId,
+                    farmTypeId = farmTypeId,
+                    growthStageId = growthStageId,
+                    seedTypeId = seedTypeId,
+                    size = size,
+                    logDate = logDate
+                };
+
+                if (rs.riceSrId == "")
+                {
+                    MessageBox.Show("Rice Standing Record Id is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rs.brgyId == null)
+                {
+                    MessageBox.Show("Barangay is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rs.farmTypeId == null)
+                {
+                    MessageBox.Show("Farm type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rs.growthStageId == null)
+                {
+                    MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rs.seedTypeId == null)
+                {
+                    MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rs.riceSrId != null && rs.brgyId != null && rs.farmTypeId != null && rs.growthStageId != null && rs.seedTypeId != null)
+                {
+                    if (riceModel.UpdateRiceStandingLog(rs))
+                    {
+                        isDone = true;
+                    }
+                }
+
+                // Return true to indicate a successful operation
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Add Rice Standing Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+        }
+
         public DataTable LoadRiceStandLogsView(string riceSrId)
         {
             try
@@ -265,6 +322,67 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        public DataTable LoadIrrigatedRiceStandLogsView(string riceSrId)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadIrrigatedRiceStandLogsDataGrid(rs);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadLowlandRiceStandLogsView(string riceSrId)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadLowlandRiceStandLogsDataGrid(rs);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadUplandRiceStandLogsView(string riceSrId)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadUplandRiceStandLogsDataGrid(rs);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
 
         // Get riceStandingLogsId
         public RiceStanding GetRiceStandingLogsById(int riceStandingLogsId)

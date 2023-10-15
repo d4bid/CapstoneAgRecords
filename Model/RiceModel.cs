@@ -169,6 +169,144 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable LoadIrrigatedRiceStandLogsDataGrid(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getIrrigatedRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadLowlandRiceStandLogsDataGrid(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getLowlandRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadUplandRiceStandLogsDataGrid(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getUplandRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadIrrigatedUplandRiceStandLogsDataGrid(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getIrrigatedUplandRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadIrrigatedLowlandRiceStandLogsDataGrid(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getIrrigatedLowlandRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadLowlandUplandRiceStandLogsDataGrid(RiceStanding rs)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getLowlandUplandRiceStandingLogs(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice standing logs: " + ex.Message, ex);
+            }
+        }
+
         // Move Next Rice Standing Logs
         public Boolean MoveNextRiceStandingLogs(RiceStanding rs)
         {
@@ -232,8 +370,9 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addRiceStandingLog(@riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
+                    string query = "CALL sp_addRiceStandingLog(@riceStandingLogsId, @riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceStandingLogsId", rs.riceStandingLogsId);
                     command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
                     command.Parameters.AddWithValue("@brgyId", rs.brgyId);
                     command.Parameters.AddWithValue("@farmTypeId", rs.farmTypeId);
