@@ -372,14 +372,16 @@ namespace AgRecords.View
 
             radiobuttonsPreAnswer_PersonalInfo();
             comboboxesPreAnswer_PersonalInfo();
-            disabletxtboxes_PersonalInfo();
+            disableObjects();
 
-            DateTime minDate = new DateTime(1900, 1, 1);
+
+            // DateTime minDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Today;
             dtDateAdm.MaxDate = DateTime.Today;
-            dtpBirthDate.MinDate = minDate;
-            dtDateAdm.MinDate = minDate;
+            //dtpBirthDate.MinDate = minDate;
+            //dtDateAdm.MinDate = minDate;
             txtSurname.Focus();
+
         }
 
         private void rectangleRound42_Load(object sender, EventArgs e)
@@ -510,17 +512,32 @@ namespace AgRecords.View
             textBoxFarmParcels.Text = sb.ToString();
         }
 
+        private void ResetPanel(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    checkBox.Checked = false;
+                }
+                else if (control is TextBox textBox)
+                {
+                    textBox.Text = string.Empty;
+                }
+            }
+        }
+
+
         //EVENTS
 
         //personal info
-        private void disabletxtboxes_PersonalInfo()
+        private void disableObjects()
         {
+            //personal info
             txtHouseHeadName.Enabled = false;
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
-            //txtGovIdType.Enabled = false;
-            //txtGovIdNum.Enabled = false;
             txtReligionOthers.Enabled = false;
 
             txtHouseHeadName.BackColor = Color.White;
@@ -531,6 +548,19 @@ namespace AgRecords.View
             txtGovIdNum.BackColor = Color.White;
             txtReligionOthers.BackColor = Color.White;
             txtSpouseName.BackColor = Color.White;
+            nudNoLivingHouseMem.BackColor = Color.White;
+            txtInvolvementOthers.BackColor = Color.White;
+            txtFishingActOthers.BackColor = Color.White;
+            txtWorkKindOthers.BackColor = Color.White;
+            txtFarmActPoultry.BackColor = Color.White;
+            txtFarmActLivestock.BackColor = Color.White;
+            txtFarmActCrops.BackColor = Color.White;
+
+            //farm profile
+            panelForFarmers.Enabled = false;
+            panelForFarmerworkers.Enabled = false;
+            panelForFisherfolk.Enabled = false;
+            panelForAgriYouth.Enabled = false;
 
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
@@ -670,6 +700,11 @@ namespace AgRecords.View
             TextboxValidation.TextBox_NumericOnly(sender, e);
         }
 
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+        }
+
         private void NumOnlyLimited(object sender, KeyPressEventArgs e)
         {
             if (txtEcContact.Focused)
@@ -692,6 +727,7 @@ namespace AgRecords.View
             TextboxValidation.TextBox_AllCaps(sender, e);
         }
 
+        //other events
         private void SelectedPanel(object sender, EventArgs e)
         {
             Control focusedControl = sender as Control;
@@ -838,6 +874,15 @@ namespace AgRecords.View
             {
                 PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
             }
+
+            if (string.IsNullOrEmpty(txtFarmingIncome.Text))
+            {
+                txtFarmingIncome.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtNonFarmingIncome.Text))
+            {
+                txtNonFarmingIncome.Text = "0";
+            }
         }
 
         private void nudHouseNoMale_ValueChanged(object sender, EventArgs e)
@@ -849,5 +894,151 @@ namespace AgRecords.View
         {
             nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
         }
+
+
+        private void isChecked(object sender, EventArgs e)
+        {
+            //main livelihood
+            if (cbLivelihoodFarmer.Checked)
+            {
+                panelForFarmers.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForFarmers);
+                panelForFarmers.Enabled = false;
+            }
+
+            if (cbLivelihoodFarmworker.Checked)
+            {
+                panelForFarmerworkers.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForFarmerworkers);
+                panelForFarmerworkers.Enabled = false;
+            }
+
+            if (cbLivelihoodFisherfolk.Checked)
+            {
+                panelForFisherfolk.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForFisherfolk);
+                panelForFisherfolk.Enabled = false;
+            }
+
+            if (cbLivelihoodAgriyouth.Checked)
+            {
+                panelForAgriYouth.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForAgriYouth);
+                panelForAgriYouth.Enabled = false;
+            }
+            //activities
+            if (cbFarmActCrops.Checked)
+            {
+                txtFarmActCrops.Enabled = true;
+                if (txtFarmActCrops.Text == "")
+                {
+                    txtFarmActCrops.Focus();
+                }
+            }
+            else
+            {
+                txtFarmActCrops.Enabled = false;
+                txtFarmActCrops.Clear();
+            }
+
+            if (cbFarmActLivestock.Checked)
+            {
+                txtFarmActLivestock.Enabled = true;
+                if (txtFarmActLivestock.Text == "")
+                {
+                    txtFarmActLivestock.Focus();
+                }
+            }
+            else
+            {
+                txtFarmActLivestock.Enabled = false;
+                txtFarmActLivestock.Clear();
+            }
+
+            if (cbFarmActPoultry.Checked)
+            {
+                txtFarmActPoultry.Enabled = true;
+                if (txtFarmActPoultry.Text == "")
+                {
+                    txtFarmActPoultry.Focus();
+                }
+            }
+            else
+            {
+                txtFarmActPoultry.Enabled = false;
+                txtFarmActPoultry.Clear();
+            }
+
+            if (cbWorkKindOthers.Checked)
+            {
+                txtWorkKindOthers.Enabled = true;
+                if (txtWorkKindOthers.Text == "")
+                {
+                    txtWorkKindOthers.Focus();
+                }
+            }
+            else
+            {
+                txtWorkKindOthers.Enabled = false;
+                txtWorkKindOthers.Clear();
+            }
+
+            if (cbFishingActOthers.Checked)
+            {
+                txtFishingActOthers.Enabled = true;
+                if (txtFishingActOthers.Text == "")
+                {
+                    txtFishingActOthers.Focus();
+                }
+            }
+            else
+            {
+                txtFishingActOthers.Enabled = false;
+                txtFishingActOthers.Clear();
+            }
+
+            if (cbInvolvementOthers.Checked)
+            {
+                txtInvolvementOthers.Enabled = true;
+                if (txtInvolvementOthers.Text == "")
+                {
+                    txtInvolvementOthers.Focus();
+                }
+            }
+            else
+            {
+                txtInvolvementOthers.Enabled = false;
+                txtInvolvementOthers.Clear();
+            }
+        }
+
+        private void txtFarmingIncome_Click(object sender, EventArgs e)
+        {
+            if (txtFarmingIncome.Text == "0")
+            {
+                txtFarmingIncome.Text = string.Empty;
+            }
+        }
+
+        private void txtNonFarmingIncome_Click(object sender, EventArgs e)
+        {
+            if (txtNonFarmingIncome.Text == "0")
+            {
+                txtNonFarmingIncome.Text = string.Empty;
+            }
+        }
+
     }
 }

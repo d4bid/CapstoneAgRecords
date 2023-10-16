@@ -453,6 +453,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please enter the cooperative name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                //emergency contact
                 else if (string.IsNullOrEmpty(rsbsa.emergContactName))
                 {
                     MessageBox.Show("Please enter emergency contact name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -460,6 +461,10 @@ namespace AgRecords.Controller
                 else if (string.IsNullOrEmpty(rsbsa.emergContactNo))
                 {
                     MessageBox.Show("Please enter emergency contact number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (!Regex.IsMatch(rsbsa.emergContactNo, @"^\d{11}$"))
+                {
+                    MessageBox.Show("Please enter a valid 11-digit contact number for emergency number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //main livelihood
                 else if (rsbsa.isFarmer == "No" && rsbsa.isLaborer == "No" && rsbsa.isFisherfolk == "No" && rsbsa.isAgriYouth == "No")
@@ -487,7 +492,7 @@ namespace AgRecords.Controller
                     MessageBox.Show("Please select at least one activity for Agri Youth.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //gross annual income
-                else if (rsbsa.annualIncomeFarming==0)
+                else if (rsbsa.annualIncomeFarming == 0)
                 {
                     MessageBox.Show("Please enter gross annual income for farming.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

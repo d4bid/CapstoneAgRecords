@@ -69,6 +69,22 @@ namespace AgRecords.Utilities
                 e.Handled = true;
             }
         }
+        //allow decimals only
+        public static void TextBox_NumericWithDecimal(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.' && textBox.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
 
         //limit number based on parameters
         public static void TextBox_NumericOnlyLimited(object sender, KeyPressEventArgs e, int maxLength)
