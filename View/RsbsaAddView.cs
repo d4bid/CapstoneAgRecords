@@ -519,8 +519,8 @@ namespace AgRecords.View
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
-            txtGovIdType.Enabled = false;
-            txtGovIdNum.Enabled = false;
+            //txtGovIdType.Enabled = false;
+            //txtGovIdNum.Enabled = false;
             txtReligionOthers.Enabled = false;
 
             txtHouseHeadName.BackColor = Color.White;
