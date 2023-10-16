@@ -124,7 +124,7 @@ namespace AgRecords.Controller
                     MessageBox.Show("ID is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rsr.month == null)
+                else if (rsr.month == "")
                 {
                     MessageBox.Show("Month is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -246,14 +246,13 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool UpdateRiceStandingLog(int riceStandingLogsId, string riceSrId, int brgyId, int farmTypeId, int growthStageId, int seedTypeId, float size, DateTime logDate)
+        public bool UpdateRiceStandingLog(int riceStandingLogsId,int brgyId, int farmTypeId, int growthStageId, int seedTypeId, float size, DateTime logDate)
         {
             try
             {
                 RiceStanding rs = new RiceStanding()
                 {
                     riceStandingLogsId = riceStandingLogsId,
-                    riceSrId = riceSrId,
                     brgyId = brgyId,
                     farmTypeId = farmTypeId,
                     growthStageId = growthStageId,
@@ -262,12 +261,7 @@ namespace AgRecords.Controller
                     logDate = logDate
                 };
 
-                if (rs.riceSrId == "")
-                {
-                    MessageBox.Show("Rice Standing Record Id is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (rs.brgyId == null)
+                if (rs.brgyId == null)
                 {
                     MessageBox.Show("Barangay is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -284,7 +278,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.riceSrId != null && rs.brgyId != null && rs.farmTypeId != null && rs.growthStageId != null && rs.seedTypeId != null)
+                else if (rs.brgyId != null && rs.farmTypeId != null && rs.growthStageId != null && rs.seedTypeId != null)
                 {
                     if (riceModel.UpdateRiceStandingLog(rs))
                     {
@@ -297,7 +291,7 @@ namespace AgRecords.Controller
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Add Rice Standing Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }
@@ -373,6 +367,26 @@ namespace AgRecords.Controller
                 };
 
                 DataTable riceStandLogsTable = riceModel.LoadUplandRiceStandLogsDataGrid(rs);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadLowlandUplandRiceStandLogsView(string riceSrId)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadLowlandUplandRiceStandLogsDataGrid(rs);
                 return riceStandLogsTable;
             }
             catch (ApplicationException ex)

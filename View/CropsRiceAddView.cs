@@ -28,6 +28,9 @@ namespace AgRecords.View
         {
             string riceSrId = labelRiceSrId.Text;
 
+            //DataTable riceStandLogsTable = cropsRiceController.LoadRiceStandLogsView(riceSrId);
+            //dgvRiceStandLogs.DataSource = riceStandLogsTable;
+
             RiceStandingRep rsr = cropsRiceController.GetRiceStandReportById(riceSrId);
             if (rsr != null)
             {
@@ -36,10 +39,10 @@ namespace AgRecords.View
                 labelYear.Text = rsr.year;
             }
 
-            cbIrrigated.Checked = true;
             ShowChecked();
 
             btnUpdate.Visible = false;
+            labelRiceStandingLogsId.Visible = false;
             ClearStandingLogsTextControls();
         }
 
@@ -47,10 +50,11 @@ namespace AgRecords.View
         {
             cmbBrgy.SelectedIndex = -1;
             cmbFarmType.SelectedIndex = -1;
-            cmbGrowthStage.SelectedIndex = -1;
+            //cmbGrowthStage.SelectedIndex = -1;
             cmbSeedType.SelectedIndex = -1;
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Now;
+            labelRiceStandingLogsId.Text = "";
         }
 
         public string RiceSrIdValue
@@ -61,30 +65,31 @@ namespace AgRecords.View
 
         public void ShowChecked()
         {
-            string riceSrId = labelRiceSrId.Text;
-
             if (cbIrrigated.Checked)
             {
+                cbLowland.Checked = false;
+                cbUpland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
                 DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRiceStandLogsView(riceSrId);
                 dgvRiceStandLogs.DataSource = riceStandLogsTable;
             }
-            else if (cbLowland.Checked)
+
+            if (cbLowland.Checked)
             {
+                cbIrrigated.Checked = false;
+                cbUpland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
                 DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRiceStandLogsView(riceSrId);
                 dgvRiceStandLogs.DataSource = riceStandLogsTable;
             }
-            else if (cbUpland.Checked)
+
+            if (cbUpland.Checked)
             {
+                cbIrrigated.Checked = false;
+                cbLowland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
                 DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceStandLogsView(riceSrId);
                 dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            }
-            else if (cbIrrigated.Checked && cbLowland.Checked)
-            {
-
-            }
-            else if (cbIrrigated.Checked && cbLowland.Checked && cbUpland.Checked)
-            {
-
             }
         }
 
@@ -92,11 +97,22 @@ namespace AgRecords.View
         private void CropsRiceAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+            cbIrrigated.Checked = true;
         }
 
         private void dgvRiceStandLogs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnUpdate.Visible = true;
+            labelRiceStandingLogsId.Visible = true;
+
+            if (labelGrowthStage.Text == "Newly Planted/Seedling Stage")
+            {
+                btnUpdate.Enabled = true;
+            }
+            else
+            {
+                btnUpdate.Enabled = false;
+            }
 
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)
@@ -130,10 +146,34 @@ namespace AgRecords.View
                         cmbSeedType.SelectedIndex = seedIndex;
                     }
 
-                    int growthIndex = rs.growthStageId - 1; // Convert from 1-based ID to 0-based index
-                    if (growthIndex >= 0 && growthIndex < cmbGrowthStage.Items.Count)
+                    //int growthIndex = rs.growthStageId - 1; // Convert from 1-based ID to 0-based index
+                    //if (growthIndex >= 0 && growthIndex < cmbGrowthStage.Items.Count)
+                    //{
+                    //    cmbGrowthStage.SelectedIndex = growthIndex;
+                    //}
+
+                    int growthStageId = rs.growthStageId;
+
+                    switch (growthStageId)
                     {
-                        cmbGrowthStage.SelectedIndex = growthIndex;
+                        case 1:
+                            labelGrowthStage.Text = "Newly Planted/Seedling Stage";
+                            break;
+                        case 2:
+                            labelGrowthStage.Text = "Vegetative Stage";
+                            break;
+                        case 3:
+                            labelGrowthStage.Text = "Reproductive Stage";
+                            break;
+                        case 4:
+                            labelGrowthStage.Text = "Maturing Stage";
+                            break;
+                        case 5:
+                            labelGrowthStage.Text = "Harvested";
+                            break;
+                        default:
+                            labelGrowthStage.Text = "Unknown Stage";
+                            break;
                     }
 
                     txtSize.Text = rs.size.ToString();
@@ -145,22 +185,47 @@ namespace AgRecords.View
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             btnUpdate.Visible = false;
+            labelRiceStandingLogsId.Visible = false;
 
             int brgyIndex = cmbBrgy.SelectedIndex;
             int farmTypeIndex = cmbFarmType.SelectedIndex;
-            int growthStageIndex = cmbGrowthStage.SelectedIndex;
+            //int growthStageIndex = cmbGrowthStage.SelectedIndex;
             int seedTypeIndex = cmbSeedType.SelectedIndex;
 
             // Retrieve the corresponding integer values based on the indices
             int brgyId = brgyIndex + 1; // Add 1 to convert from 0-based index to 1-based ID
             int farmTypeId = farmTypeIndex + 1;
-            int growthStageId = growthStageIndex + 1;
+            //int growthStageId = growthStageIndex + 1;
             int seedTypeId = seedTypeIndex + 1;
+
+            string growthStageText = labelGrowthStage.Text;
+            int growthStageId = 0;
+
+            switch (growthStageText)
+            {
+                case "Newly Planted/Seedling Stage":
+                    growthStageId = 1;
+                    break;
+                case "Vegetative Stage":
+                    growthStageId = 2;
+                    break;
+                case "Reproductive Stage":
+                    growthStageId = 3;
+                    break;
+                case "Maturing Stage":
+                    growthStageId = 4;
+                    break;
+                case "Harvested":
+                    growthStageId = 5;
+                    break;
+                default:
+                    break;
+            }
 
             float size = float.Parse(txtSize.Text);
             int riceStandingLogsId = int.Parse(labelRiceStandingLogsId.Text);
 
-            if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, labelRiceSrId.Text, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
+            if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
             {
                 FormRefresh();
             }
@@ -170,15 +235,16 @@ namespace AgRecords.View
         {
             int brgyIndex = cmbBrgy.SelectedIndex;
             int farmTypeIndex = cmbFarmType.SelectedIndex;
-            int growthStageIndex = cmbGrowthStage.SelectedIndex;
+            //int growthStageIndex = cmbGrowthStage.SelectedIndex;
             int seedTypeIndex = cmbSeedType.SelectedIndex;
 
             // Retrieve the corresponding integer values based on the indices
             int brgyId = brgyIndex + 1; // Add 1 to convert from 0-based index to 1-based ID
             int farmTypeId = farmTypeIndex + 1;
-            int growthStageId = growthStageIndex + 1;
+            //int growthStageId = growthStageIndex + 1;
             int seedTypeId = seedTypeIndex + 1;
 
+            int growthStageId = 1;
             float size = float.Parse(txtSize.Text);
 
             if (cropsRiceController.AddRiceStandingLogs(labelRiceSrId.Text, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
@@ -190,22 +256,44 @@ namespace AgRecords.View
         private void btnClear_Click(object sender, EventArgs e)
         {
             btnUpdate.Visible = false;
+            labelRiceStandingLogsId.Visible = false;
             ClearStandingLogsTextControls();
         }
 
         private void cbIrrigated_CheckedChanged(object sender, EventArgs e)
         {
-            ShowChecked();
+            if (cbIrrigated.Checked)
+            {
+                cbLowland.Checked = false;
+                cbUpland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
+                DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRiceStandLogsView(riceSrId);
+                dgvRiceStandLogs.DataSource = riceStandLogsTable;
+            }
         }
 
         private void cbLowland_CheckedChanged(object sender, EventArgs e)
         {
-            ShowChecked();
+            if (cbLowland.Checked)
+            {
+                cbIrrigated.Checked = false;
+                cbUpland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
+                DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRiceStandLogsView(riceSrId);
+                dgvRiceStandLogs.DataSource = riceStandLogsTable;
+            }
         }
 
         private void cbUpland_CheckedChanged(object sender, EventArgs e)
         {
-            ShowChecked();
+            if (cbUpland.Checked)
+            {
+                cbIrrigated.Checked = false;
+                cbLowland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
+                DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceStandLogsView(riceSrId);
+                dgvRiceStandLogs.DataSource = riceStandLogsTable;
+            }
         }
     }
 }

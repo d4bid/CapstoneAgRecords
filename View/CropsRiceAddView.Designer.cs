@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
@@ -58,6 +58,7 @@
             cbLowland = new CheckBox();
             cbIrrigated = new CheckBox();
             panel43 = new Panel();
+            labelGrowthStage = new Label();
             labelRiceStandingLogsId = new Label();
             btnUpdate = new Button();
             cmbSeedType = new ComboBox();
@@ -333,7 +334,7 @@
             panel4.Controls.Add(cbUpland);
             panel4.Controls.Add(cbLowland);
             panel4.Controls.Add(cbIrrigated);
-            panel4.Location = new Point(17, 280);
+            panel4.Location = new Point(17, 242);
             panel4.Name = "panel4";
             panel4.Size = new Size(590, 46);
             panel4.TabIndex = 75;
@@ -374,6 +375,7 @@
             // panel43
             // 
             panel43.BorderStyle = BorderStyle.FixedSingle;
+            panel43.Controls.Add(labelGrowthStage);
             panel43.Controls.Add(labelRiceStandingLogsId);
             panel43.Controls.Add(btnUpdate);
             panel43.Controls.Add(cmbSeedType);
@@ -396,16 +398,26 @@
             panel43.Controls.Add(cmbFarmType);
             panel43.Controls.Add(searchBox2);
             panel43.Controls.Add(label1);
-            panel43.Location = new Point(17, 26);
+            panel43.Location = new Point(17, 14);
             panel43.Name = "panel43";
             panel43.Size = new Size(1566, 222);
             panel43.TabIndex = 74;
+            // 
+            // labelGrowthStage
+            // 
+            labelGrowthStage.AutoSize = true;
+            labelGrowthStage.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelGrowthStage.Location = new Point(31, 157);
+            labelGrowthStage.Name = "labelGrowthStage";
+            labelGrowthStage.Size = new Size(264, 25);
+            labelGrowthStage.TabIndex = 81;
+            labelGrowthStage.Text = "Newly Planted/Seedling Stage";
             // 
             // labelRiceStandingLogsId
             // 
             labelRiceStandingLogsId.AutoSize = true;
             labelRiceStandingLogsId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRiceStandingLogsId.Location = new Point(796, 154);
+            labelRiceStandingLogsId.Location = new Point(787, 159);
             labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
             labelRiceStandingLogsId.Size = new Size(149, 28);
             labelRiceStandingLogsId.TabIndex = 80;
@@ -645,33 +657,33 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle4;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRiceStandLogs.Location = new Point(17, 346);
+            dgvRiceStandLogs.Location = new Point(17, 295);
             dgvRiceStandLogs.Name = "dgvRiceStandLogs";
             dgvRiceStandLogs.ReadOnly = true;
             dgvRiceStandLogs.RowHeadersVisible = false;
             dgvRiceStandLogs.RowHeadersWidth = 51;
             dgvRiceStandLogs.RowTemplate.Height = 40;
             dgvRiceStandLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRiceStandLogs.Size = new Size(1565, 468);
+            dgvRiceStandLogs.Size = new Size(1565, 519);
             dgvRiceStandLogs.TabIndex = 23;
             dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
             // 
@@ -753,5 +765,6 @@
         private DateTimePicker dtpLogDate;
         private Button btnUpdate;
         private Label labelRiceStandingLogsId;
+        private Label labelGrowthStage;
     }
 }

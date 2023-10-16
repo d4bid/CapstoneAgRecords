@@ -370,10 +370,9 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addRiceStandingLog(@riceStandingLogsId, @riceSrId, @brgyId, @farmTypeId, @growthStageId, @size, @logDate)";
+                    string query = "CALL sp_updateRiceStandingLogs(@riceStandingLogsId, @brgyId, @farmTypeId, @growthStageId, @seedTypeId, @size, @logDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@riceStandingLogsId", rs.riceStandingLogsId);
-                    command.Parameters.AddWithValue("@riceSrId", rs.riceSrId);
                     command.Parameters.AddWithValue("@brgyId", rs.brgyId);
                     command.Parameters.AddWithValue("@farmTypeId", rs.farmTypeId);
                     command.Parameters.AddWithValue("@growthStageId", rs.growthStageId);
