@@ -839,5 +839,15 @@ namespace AgRecords.View
                 PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
             }
         }
+
+        private void nudHouseNoMale_ValueChanged(object sender, EventArgs e)
+        {
+            nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
+        }
+
+        private void nudHouseFemale_ValueChanged(object sender, EventArgs e)
+        {
+            nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
+        }
     }
 }

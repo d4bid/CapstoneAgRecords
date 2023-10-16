@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AgRecords.Controller
@@ -309,6 +310,10 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please select a gender.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                //else if(!Regex.IsMatch(rsbsa.extname, @"[CDILSJRXV.]"))
+                //{
+                //    MessageBox.Show("Please enter a valid extension name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
                 //address
                 else if (string.IsNullOrEmpty(rsbsa.addrPurok))
                 {
@@ -339,6 +344,11 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please enter a contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else if (!Regex.IsMatch(rsbsa.contactNo, @"^\d{11}$"))
+                {
+                    MessageBox.Show("Please enter a valid 11-digit contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
                 //birth details
                 else if (rsbsa.birthDate == DateTime.Today)
                 {

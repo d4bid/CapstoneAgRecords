@@ -413,7 +413,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 767);
+            panelFarmProfile.Size = new Size(1595, 0);
             panelFarmProfile.TabIndex = 0;
             // 
             // panelFarmLand
@@ -2177,9 +2177,11 @@
             // nudNoLivingHouseMem
             // 
             nudNoLivingHouseMem.BorderStyle = BorderStyle.None;
+            nudNoLivingHouseMem.Enabled = false;
             nudNoLivingHouseMem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nudNoLivingHouseMem.Location = new Point(26, 232);
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
+            nudNoLivingHouseMem.ReadOnly = true;
             nudNoLivingHouseMem.Size = new Size(393, 30);
             nudNoLivingHouseMem.TabIndex = 32;
             nudNoLivingHouseMem.Enter += SelectedPanel;
@@ -2193,6 +2195,7 @@
             nudHouseNoMale.Name = "nudHouseNoMale";
             nudHouseNoMale.Size = new Size(211, 30);
             nudHouseNoMale.TabIndex = 33;
+            nudHouseNoMale.ValueChanged += nudHouseNoMale_ValueChanged;
             nudHouseNoMale.Enter += SelectedPanel;
             nudHouseNoMale.Leave += UnselectedPanel;
             // 
@@ -2204,6 +2207,7 @@
             nudHouseFemale.Name = "nudHouseFemale";
             nudHouseFemale.Size = new Size(145, 30);
             nudHouseFemale.TabIndex = 34;
+            nudHouseFemale.ValueChanged += nudHouseFemale_ValueChanged;
             nudHouseFemale.Enter += SelectedPanel;
             nudHouseFemale.Leave += UnselectedPanel;
             // 
