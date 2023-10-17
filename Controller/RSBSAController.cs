@@ -279,6 +279,7 @@ namespace AgRecords.Controller
                     isAttendAgrifishery = isAttendAgrifishery,
                     isParticipantAgriProgram = isParticipantAgriProgram,
                     otherAgriYouthAct = otherAgriYouthAct,
+
                     annualIncomeFarming = annualIncomeFarming,
                     annualIncomeNonFarming = annualIncomeNonFarming,
 
@@ -472,33 +473,33 @@ namespace AgRecords.Controller
                     MessageBox.Show("Please select at least one main livelihood.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //for farmers
-                else if (rsbsa.isFarmer == "Yes" && rsbsa.isRiceFarmer=="No" && rsbsa.isCornFarmer == "No" && rsbsa.otherCrops == "No" && rsbsa.hasLivestocks == "No" && rsbsa.hasPoultry == "No")
+                else if (rsbsa.isFarmer == "Yes" && rsbsa.isRiceFarmer == "No" && rsbsa.isCornFarmer == "No" && rsbsa.otherCrops == "" && rsbsa.hasLivestocks == "" && rsbsa.hasPoultry == "")
                 {
-                    MessageBox.Show("Please select at least one activity for farmer.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please select at least one farmer activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //for farmerworker/laborer
-                else if (rsbsa.isLaborer == "Yes" && rsbsa.isPreparingLand == "No" && rsbsa.isPlanting == "No" && rsbsa.isCultivating == "No" && rsbsa.isHarvesting == "No" && rsbsa.otherLaborWork == "No")
+                else if (rsbsa.isLaborer == "Yes" && rsbsa.isPreparingLand == "No" && rsbsa.isPlanting == "No" && rsbsa.isCultivating == "No" && rsbsa.isHarvesting == "No" && rsbsa.otherLaborWork == "")
                 {
-                    MessageBox.Show("Please select at least one activity for farmorker.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please select at least one farmworker/laborer activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //for fisherfolk
-                else if (rsbsa.isFisherfolk == "Yes" && rsbsa.isFishCapturing == "No" && rsbsa.isAquaculture == "No" && rsbsa.isGleaning == "No" && rsbsa.isFishProcessing == "No" && rsbsa.isFishVending == "No" && rsbsa.otherFishingAct == "No")
+                else if (rsbsa.isFisherfolk == "Yes" && rsbsa.isFishCapturing == "No" && rsbsa.isAquaculture == "No" && rsbsa.isGleaning == "No" && rsbsa.isFishProcessing == "No" && rsbsa.isFishVending == "No" && rsbsa.otherFishingAct == "")
                 {
-                    MessageBox.Show("Please select at least one activity for fisherfolk.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please select at least one fisherfolk activity .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //for agriyouth
-                else if (rsbsa.isAgriYouth == "Yes" && rsbsa.isPartOfFarmingHousehold == "No" && rsbsa.isAttendAgrifishery == "No" && rsbsa.isParticipantAgriProgram == "No" && rsbsa.otherAgriYouthAct == "No")
+                else if (rsbsa.isAgriYouth == "Yes" && rsbsa.isPartOfFarmingHousehold == "No" && rsbsa.isAttendAgrifishery == "No" && rsbsa.isParticipantAgriProgram == "No" && rsbsa.otherAgriYouthAct == "")
                 {
-                    MessageBox.Show("Please select at least one activity for Agri Youth.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please select at least one Agri Youth activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 //gross annual income
                 else if (rsbsa.annualIncomeFarming == 0)
                 {
-                    MessageBox.Show("Please enter gross annual income for farming.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please enter farming gross annual income .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (rsbsa.annualIncomeNonFarming == 0)
                 {
-                    MessageBox.Show("Please enter gross annual income for non-farming.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please enter gross non-farming annual income.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
                 DialogResult result = MessageBox.Show("Are you sure you want to save this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);

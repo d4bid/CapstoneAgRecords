@@ -321,6 +321,8 @@ namespace AgRecords.View
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+
+            txtSurname.Focus();
         }
 
         private void btnFarmProfile_Click(object sender, EventArgs e)
@@ -349,6 +351,8 @@ namespace AgRecords.View
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
             panelDocument.Visible = false;
+
+            btnAddFarmParcel.Focus();
         }
 
         private void btnDocuments_Click(object sender, EventArgs e)
@@ -375,11 +379,13 @@ namespace AgRecords.View
             disableObjects();
 
 
-            // DateTime minDate = new DateTime(1900, 1, 1);
+            DateTime minDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Today;
             dtDateAdm.MaxDate = DateTime.Today;
-            //dtpBirthDate.MinDate = minDate;
-            //dtDateAdm.MinDate = minDate;
+            dtpBirthDate.Value = DateTime.Today;
+            dtDateAdm.Value = DateTime.Today;
+            dtpBirthDate.MinDate = minDate;
+            dtDateAdm.MinDate = minDate;
             txtSurname.Focus();
 
         }
@@ -684,6 +690,7 @@ namespace AgRecords.View
                 flowLayoutPanelDocs.Controls.Remove(documentControl);
             }
         }
+
         //keypress events
         private void AlphaNum(object sender, KeyPressEventArgs e)
         {
@@ -704,6 +711,7 @@ namespace AgRecords.View
         {
             TextboxValidation.TextBox_NumericWithDecimal(sender, e);
         }
+
 
         private void NumOnlyLimited(object sender, KeyPressEventArgs e)
         {
@@ -800,6 +808,10 @@ namespace AgRecords.View
             {
                 PanelSelected.Panel_Enter(panelAnnuanIncome, panelAnnuanIncomeHeader);
             }
+            else if (focusedControl.Parent == panelFarmParcels)
+            {
+                PanelSelected.Panel_Enter(panelFarmParcels, panelFarmParcelsHeader);
+            }
         }
 
         private void UnselectedPanel(object sender, EventArgs e)
@@ -873,6 +885,10 @@ namespace AgRecords.View
             else if (focusedControl.Parent == panelAnnuanIncome)
             {
                 PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
+            }
+            else if (focusedControl.Parent == panelFarmParcels)
+            {
+                PanelSelected.Panel_Leave(panelFarmParcels, panelFarmParcelsHeader);
             }
 
             if (string.IsNullOrEmpty(txtFarmingIncome.Text))

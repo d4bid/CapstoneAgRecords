@@ -35,10 +35,10 @@
             flowLayoutPanelParcels = new FlowLayoutPanel();
             panel12 = new Panel();
             panel17 = new Panel();
-            panel41 = new Panel();
+            panelFarmParcels = new Panel();
             btnAddFarmParcel = new FontAwesome.Sharp.IconButton();
             labelParcelCount = new Label();
-            panel42 = new Panel();
+            panelFarmParcelsHeader = new Panel();
             label70 = new Label();
             label71 = new Label();
             panel43 = new Panel();
@@ -324,8 +324,8 @@
             panel19.SuspendLayout();
             panel12.SuspendLayout();
             panel17.SuspendLayout();
-            panel41.SuspendLayout();
-            panel42.SuspendLayout();
+            panelFarmParcels.SuspendLayout();
+            panelFarmParcelsHeader.SuspendLayout();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
             panelDocument.SuspendLayout();
@@ -457,7 +457,7 @@
             // 
             // panel17
             // 
-            panel17.Controls.Add(panel41);
+            panel17.Controls.Add(panelFarmParcels);
             panel17.Controls.Add(panel43);
             panel17.Dock = DockStyle.Fill;
             panel17.Location = new Point(10, 10);
@@ -465,17 +465,17 @@
             panel17.Size = new Size(1575, 140);
             panel17.TabIndex = 0;
             // 
-            // panel41
+            // panelFarmParcels
             // 
-            panel41.BorderStyle = BorderStyle.FixedSingle;
-            panel41.Controls.Add(btnAddFarmParcel);
-            panel41.Controls.Add(labelParcelCount);
-            panel41.Controls.Add(panel42);
-            panel41.Controls.Add(label71);
-            panel41.Location = new Point(2, 5);
-            panel41.Name = "panel41";
-            panel41.Size = new Size(179, 128);
-            panel41.TabIndex = 0;
+            panelFarmParcels.BorderStyle = BorderStyle.FixedSingle;
+            panelFarmParcels.Controls.Add(btnAddFarmParcel);
+            panelFarmParcels.Controls.Add(labelParcelCount);
+            panelFarmParcels.Controls.Add(panelFarmParcelsHeader);
+            panelFarmParcels.Controls.Add(label71);
+            panelFarmParcels.Location = new Point(2, 5);
+            panelFarmParcels.Name = "panelFarmParcels";
+            panelFarmParcels.Size = new Size(179, 128);
+            panelFarmParcels.TabIndex = 0;
             // 
             // btnAddFarmParcel
             // 
@@ -489,6 +489,8 @@
             btnAddFarmParcel.TabIndex = 0;
             btnAddFarmParcel.UseVisualStyleBackColor = true;
             btnAddFarmParcel.Click += btnAddFarmParcel_Click;
+            btnAddFarmParcel.Enter += SelectedPanel;
+            btnAddFarmParcel.Leave += UnselectedPanel;
             // 
             // labelParcelCount
             // 
@@ -499,15 +501,15 @@
             labelParcelCount.TabIndex = 0;
             labelParcelCount.Text = "0";
             // 
-            // panel42
+            // panelFarmParcelsHeader
             // 
-            panel42.BackColor = Color.FromArgb(43, 121, 223);
-            panel42.Controls.Add(label70);
-            panel42.Dock = DockStyle.Top;
-            panel42.Location = new Point(0, 0);
-            panel42.Name = "panel42";
-            panel42.Size = new Size(177, 29);
-            panel42.TabIndex = 0;
+            panelFarmParcelsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelFarmParcelsHeader.Controls.Add(label70);
+            panelFarmParcelsHeader.Dock = DockStyle.Top;
+            panelFarmParcelsHeader.Location = new Point(0, 0);
+            panelFarmParcelsHeader.Name = "panelFarmParcelsHeader";
+            panelFarmParcelsHeader.Size = new Size(177, 29);
+            panelFarmParcelsHeader.TabIndex = 0;
             // 
             // label70
             // 
@@ -684,7 +686,7 @@
             panelAnnuanIncome.Location = new Point(13, 556);
             panelAnnuanIncome.Name = "panelAnnuanIncome";
             panelAnnuanIncome.Size = new Size(1494, 137);
-            panelAnnuanIncome.TabIndex = 6;
+            panelAnnuanIncome.TabIndex = 17;
             // 
             // txtNonFarmingIncome
             // 
@@ -722,6 +724,7 @@
             rectangleRound45.Name = "rectangleRound45";
             rectangleRound45.Size = new Size(398, 46);
             rectangleRound45.TabIndex = 0;
+            rectangleRound45.TabStop = false;
             // 
             // rectangleRound44
             // 
@@ -731,6 +734,7 @@
             rectangleRound44.Name = "rectangleRound44";
             rectangleRound44.Size = new Size(314, 46);
             rectangleRound44.TabIndex = 0;
+            rectangleRound44.TabStop = false;
             // 
             // panelAnnuanIncomeHeader
             // 
@@ -787,7 +791,7 @@
             panelForAgriYouth.Location = new Point(1149, 133);
             panelForAgriYouth.Name = "panelForAgriYouth";
             panelForAgriYouth.Size = new Size(357, 406);
-            panelForAgriYouth.TabIndex = 5;
+            panelForAgriYouth.TabIndex = 16;
             // 
             // txtInvolvementOthers
             // 
@@ -916,7 +920,7 @@
             panelForFisherfolk.Location = new Point(768, 133);
             panelForFisherfolk.Name = "panelForFisherfolk";
             panelForFisherfolk.Size = new Size(357, 406);
-            panelForFisherfolk.TabIndex = 4;
+            panelForFisherfolk.TabIndex = 15;
             // 
             // cbFishingActVending
             // 
@@ -1068,7 +1072,7 @@
             panelForFarmerworkers.Location = new Point(390, 133);
             panelForFarmerworkers.Name = "panelForFarmerworkers";
             panelForFarmerworkers.Size = new Size(357, 406);
-            panelForFarmerworkers.TabIndex = 3;
+            panelForFarmerworkers.TabIndex = 14;
             // 
             // txtWorkKindOthers
             // 
@@ -1211,7 +1215,7 @@
             panelForFarmers.Location = new Point(12, 133);
             panelForFarmers.Name = "panelForFarmers";
             panelForFarmers.Size = new Size(357, 406);
-            panelForFarmers.TabIndex = 2;
+            panelForFarmers.TabIndex = 13;
             // 
             // label39
             // 
@@ -1406,7 +1410,7 @@
             panelMainLivelihood.Location = new Point(11, 8);
             panelMainLivelihood.Name = "panelMainLivelihood";
             panelMainLivelihood.Size = new Size(1494, 112);
-            panelMainLivelihood.TabIndex = 1;
+            panelMainLivelihood.TabIndex = 12;
             // 
             // cbLivelihoodFisherfolk
             // 
@@ -3860,10 +3864,10 @@
             panel19.ResumeLayout(false);
             panel12.ResumeLayout(false);
             panel17.ResumeLayout(false);
-            panel41.ResumeLayout(false);
-            panel41.PerformLayout();
-            panel42.ResumeLayout(false);
-            panel42.PerformLayout();
+            panelFarmParcels.ResumeLayout(false);
+            panelFarmParcels.PerformLayout();
+            panelFarmParcelsHeader.ResumeLayout(false);
+            panelFarmParcelsHeader.PerformLayout();
             panel43.ResumeLayout(false);
             panel43.PerformLayout();
             panel44.ResumeLayout(false);
@@ -4159,8 +4163,8 @@
         private Label label68;
         private Label label69;
         private RectangleRound rectangleRound45;
-        private Panel panel41;
-        private Panel panel42;
+        private Panel panelFarmParcels;
+        private Panel panelFarmParcelsHeader;
         private Label label70;
         private Label label71;
         private Panel panel43;
