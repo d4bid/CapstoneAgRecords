@@ -192,6 +192,7 @@ namespace AgRecords.Controller
             //Farmland Parcel
             List<FarmParcel> farmParcels,
 
+
             //Docs
             List<RSBSADocuments> rsbsaDocuments
 
@@ -286,7 +287,6 @@ namespace AgRecords.Controller
                     // Farmland
                     rotatingFarmers = rotatingFarmers,
                     farmParcelCount = farmParcelCount,
-
 
                     // Farmland Parcel
                     farmParcels = farmParcels,
@@ -501,6 +501,13 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please enter gross non-farming annual income.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                //farm parcels
+                else if (rsbsa.farmParcelCount == 0)
+                {
+                    MessageBox.Show("Please add at least one farm parcel.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //farm land description
+             
 
                 DialogResult result = MessageBox.Show("Are you sure you want to save this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)

@@ -430,10 +430,10 @@
             // 
             panel19.Controls.Add(flowLayoutPanelParcels);
             panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 927);
+            panel19.Location = new Point(0, 160);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(10);
-            panel19.Size = new Size(1595, 0);
+            panel19.Size = new Size(1595, 607);
             panel19.TabIndex = 0;
             // 
             // flowLayoutPanelParcels
@@ -442,14 +442,14 @@
             flowLayoutPanelParcels.Dock = DockStyle.Fill;
             flowLayoutPanelParcels.Location = new Point(10, 10);
             flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
-            flowLayoutPanelParcels.Size = new Size(1575, 0);
+            flowLayoutPanelParcels.Size = new Size(1575, 587);
             flowLayoutPanelParcels.TabIndex = 0;
             // 
             // panel12
             // 
             panel12.Controls.Add(panel17);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 767);
+            panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
             panel12.Padding = new Padding(10);
             panel12.Size = new Size(1595, 160);
@@ -632,7 +632,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 767);
+            panelDocument.Size = new Size(1595, 0);
             panelDocument.TabIndex = 0;
             // 
             // flowLayoutPanelDocs
@@ -641,7 +641,7 @@
             flowLayoutPanelDocs.Dock = DockStyle.Fill;
             flowLayoutPanelDocs.Location = new Point(0, 87);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1595, 680);
+            flowLayoutPanelDocs.Size = new Size(1595, 0);
             flowLayoutPanelDocs.TabIndex = 0;
             // 
             // panel14
