@@ -164,13 +164,15 @@ namespace AgRecords.View
 
         public FarmParcel GetFarmParcelData(string rsbsaId)
         {
+            double? _farmSize = double.TryParse(txtFarmArea.Text, out double farmSizeParsedValue) && farmSizeParsedValue > 0 ? farmSizeParsedValue : (double?)null;
+
             FarmParcel parcel = new FarmParcel
             {
                 rsbsaId = rsbsaId,
                 farmParcelNo = labelParcelNo.Text,
                 farmLocBrgy = cbFarmLocBarangay.Text,
                 farmLocMunicipality = txtFarmLocMunicipality.Text,
-                farmSize = Convert.ToDouble(txtFarmArea.Text),
+                farmSize = _farmSize,
                 isAncestralDomain = panelAncestralDomain.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
                 ownershipNo = txtOwnershipDocNo.Text,
                 isAgrarianBeneficiary = panelBeneficiary.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
@@ -181,6 +183,13 @@ namespace AgRecords.View
                 Crops = new List<FarmParcelCrop>()
             };
 
+            //if value cannot be parsed to double, return null
+            double? riceLandSize = double.TryParse(txtLandSizeRice.Text, out double riceParsedValue) && riceParsedValue > 0 ? riceParsedValue : (double?)null;
+            double? cornLandSize = double.TryParse(txtLandSizeCorn.Text, out double cornParsedValue) && cornParsedValue > 0 ? cornParsedValue : (double?)null;
+            double? hvcLandSize = double.TryParse(txtLandSizeRice.Text, out double hvcParsedValue) && hvcParsedValue > 0 ? hvcParsedValue : (double?)null;
+            double? agrifishLandSize = double.TryParse(txtLandSizeRice.Text, out double agrifishParsedValue) && agrifishParsedValue > 0 ? agrifishParsedValue : (double?)null;
+
+
             if (chCropIsRice.Checked)
             {
                 FarmParcelCrop riceCrop = new FarmParcelCrop
@@ -188,7 +197,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Rice",
-                    landSize = Convert.ToDouble(txtLandSizeRice.Text),
+                    landSize = riceLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbRiceFarmType.Text,
                     isOrganic = cbIsOrganicRice.Text
@@ -204,7 +213,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Corn",
-                    landSize = Convert.ToDouble(txtLandSizeCorn.Text),
+                    landSize = cornLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbCornFarmType.Text,
                     isOrganic = cbIsOrganicCorn.Text
@@ -220,7 +229,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "HVC",
-                    landSize = Convert.ToDouble(txtLandSizeHVC.Text),
+                    landSize = hvcLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbHVCFarmType.Text,
                     isOrganic = cbIsOrganicHVC.Text
@@ -236,7 +245,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Agri-Fishery",
-                    landSize = Convert.ToDouble(txtLandSizeAgriFishery.Text),
+                    landSize = agrifishLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbAgriFisheryFarmType.Text,
                     isOrganic = cbIsOrganicAgriFishery.Text

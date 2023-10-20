@@ -12,7 +12,7 @@ namespace AgRecords.Model
         public string farmParcelNo { get; set; }
         public string farmLocBrgy { get; set; }
         public string farmLocMunicipality { get; set; }
-        public double farmSize { get; set; }
+        public double? farmSize { get; set; }
         public string isAncestralDomain { get; set; }
         public string ownershipNo { get; set; }
         public string isAgrarianBeneficiary { get; set; }
