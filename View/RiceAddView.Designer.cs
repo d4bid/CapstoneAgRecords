@@ -97,6 +97,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmbSeason);
             groupBox1.Controls.Add(textboxYear);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(searchBox6);
@@ -108,7 +109,6 @@
             groupBox1.Controls.Add(searchBox2);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(searchBox1);
-            groupBox1.Controls.Add(cmbSeason);
             groupBox1.Controls.Add(cmbMonth);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(searchBox4);

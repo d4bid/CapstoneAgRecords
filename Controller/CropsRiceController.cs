@@ -17,6 +17,7 @@ namespace AgRecords.Controller
         private CropsRiceView cropsRiceView;
         private RiceAddView riceAddView;
         private CropsRiceAddView cropsRiceAddView;
+        private CropsRiceEditView cropsRiceEditView;
 
         private RiceModel riceModel;
         UserModel userModel = new UserModel();
@@ -43,18 +44,80 @@ namespace AgRecords.Controller
             riceModel = new RiceModel();
         }
 
+        public CropsRiceController(CropsRiceEditView cropsRiceEditView)
+        {
+            this.cropsRiceEditView = cropsRiceEditView;
+            riceModel = new RiceModel();
+        }
 
-        public DataTable LoadRiceReportView()
+
+        public DataTable LoadRicePlantingReportView()
         {
             try
             {
-                DataTable riceReportTable = riceModel.LoadRiceReportDataGrid();
+                DataTable riceReportTable = riceModel.LoadRicePlantingReportDataGrid();
                 return riceReportTable;
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Rice Plant Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceStandingReportView()
+        {
+            try
+            {
+                DataTable riceReportTable = riceModel.LoadRiceStandingReportDataGrid();
+                return riceReportTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceHarvestingReportView()
+        {
+            try
+            {
+                DataTable riceReportTable = riceModel.LoadRiceHarvestingReportDataGrid();
+                return riceReportTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public RicePlantingRep GetRicePlantReportById(string riceSrId)
+        {
+            try
+            {
+                return riceModel.GetRicePlantReportById(riceSrId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public RiceHarvestingRep GetRiceHarvestReportById(string riceSrId)
+        {
+            try
+            {
+                return riceModel.GetRiceHarvestReportById(riceSrId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }
@@ -89,6 +152,20 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        public int GetMaxRiceStandingLogId(string riceSrId)
+        {
+            try
+            {
+                return riceModel.GetMaxRiceStandingLogId(riceSrId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error getting log ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+        }
+
 
         public void GenerateNewRiceStandID()
         {
@@ -377,6 +454,26 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable LoadGrandTotalRiceStandLogsView(string riceSrId)
+        {
+            try
+            {
+                RiceStanding rs = new RiceStanding()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadGrandTotalRiceStandLogsDataGrid(rs);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
         public DataTable LoadLowlandUplandRiceStandLogsView(string riceSrId)
         {
             try
@@ -413,6 +510,7 @@ namespace AgRecords.Controller
         }
 
         // PLANTING
+
         // Add Rice Planting Report
         public bool AddRicePlantingReport(string riceSrId, string season, string seasonYear, string month, string week, string year)
         {
@@ -434,6 +532,16 @@ namespace AgRecords.Controller
                 if (rpr.riceSrId == "")
                 {
                     MessageBox.Show("ID is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rpr.season == null)
+                {
+                    MessageBox.Show("Season is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rpr.seasonYear == null)
+                {
+                    MessageBox.Show("Season Year is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (rpr.month == null)
@@ -466,6 +574,235 @@ namespace AgRecords.Controller
                 MessageBox.Show(ex.Message, "Add Rice Planting Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
+            }
+        }
+
+        public RicePlanting GetRicePlantingById(int ricePlantingId)
+        {
+            try
+            {
+                return riceModel.GetRicePlantingById(ricePlantingId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadIrrigatedRicePlantingView(string riceSrId)
+        {
+            try
+            {
+                RicePlanting rp = new RicePlanting()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadIrrigatedRicePlantingDataGrid(rp);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadLowlandRicePlantingView(string riceSrId)
+        {
+            try
+            {
+                RicePlanting rp = new RicePlanting()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadLowlandRicePlantingDataGrid(rp);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadUplandRicePlantingView(string riceSrId)
+        {
+            try
+            {
+                RicePlanting rp = new RicePlanting()
+                {
+                    riceSrId = riceSrId,
+                };
+
+                DataTable riceStandLogsTable = riceModel.LoadUplandRicePlantingDataGrid(rp);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        // HARVESTING
+
+        public bool AddRiceHarvestingReport(string riceSrId, string season, string seasonYear, string month, string week, string year)
+        {
+            try
+            {
+                string createdBy = GetUserIdByFullName(fullName);
+
+                RiceHarvestingRep rhr = new RiceHarvestingRep()
+                {
+                    riceSrId = riceSrId,
+                    season = season,
+                    seasonYear = seasonYear,
+                    month = month,
+                    week = week,
+                    year = year,
+                    createdBy = createdBy
+                };
+
+                if (rhr.riceSrId == "")
+                {
+                    MessageBox.Show("ID is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rhr.season == null)
+                {
+                    MessageBox.Show("Season is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rhr.seasonYear == null)
+                {
+                    MessageBox.Show("Season Year is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rhr.month == null)
+                {
+                    MessageBox.Show("Month is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rhr.week == null)
+                {
+                    MessageBox.Show("Week is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rhr.year == null)
+                {
+                    MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rhr.riceSrId != null && rhr.month != null && rhr.week != null && rhr.year != null)
+                {
+                    if (riceModel.AddRiceHarvestingRep(rhr))
+                    {
+                        isDone = true;
+                        //MessageBox.Show("Rice Planting Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                // Return true to indicate a successful operation
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Add Rice Harvesting Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+        }
+
+        public bool UpdateRiceHarvesting(int riceHarvestingId, float yield)
+        {
+            try
+            {
+                RiceHarvesting rh = new RiceHarvesting()
+                {
+                    riceHarvestingId = riceHarvestingId,
+                    yield = yield
+                };
+
+                if (rh.yield == null)
+                {
+                    MessageBox.Show("Ave. Yield is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (rh.yield != null)
+                {
+                    if (riceModel.UpdateRiceHarvesting(rh))
+                    {
+                        isDone = true;
+                    }
+                }
+
+                // Return true to indicate a successful operation
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+        }
+
+        public RiceHarvesting GetRiceHarvestingById(int riceHarvestingId)
+        {
+            try
+            {
+                return riceModel.GetRiceHarvestingById(riceHarvestingId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadIrrigatedRiceHarvestingView(string riceSrId, int seedId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadIrrigatedRiceHarvestingDataGrid(riceSrId, seedId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadLowlandRiceHarvestingView(string riceSrId, int seedId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadLowlandRiceHarvestingDataGrid(riceSrId, seedId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadUplandRiceHarvestingView(string riceSrId, int seedId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadUplandRiceHarvestingDataGrid(riceSrId, seedId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
         }
     }

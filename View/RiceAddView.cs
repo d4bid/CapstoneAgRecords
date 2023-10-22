@@ -71,8 +71,8 @@ namespace AgRecords.View
             string futureYearItem = $"{currentYear}-{futureYear}";
 
             // Add the items to the cmbSeasonYear ComboBox
-            cmbSeasonYear.Items.Add(futureYearItem);
             cmbSeasonYear.Items.Add(pastYearItem);
+            cmbSeasonYear.Items.Add(futureYearItem);
 
             // Optionally, you can set an initial selection
             cmbSeasonYear.SelectedIndex = 0;
@@ -142,8 +142,9 @@ namespace AgRecords.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) && 
-                cropsRiceController.AddRicePlantingReport(labelRiceSrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
+            if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
+                cropsRiceController.AddRicePlantingReport(labelRiceSrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
+                cropsRiceController.AddRiceHarvestingReport(labelRiceSrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
             {
                 // Trigger the event when the "Save" button is clicked
                 SaveButtonClicked?.Invoke(this, EventArgs.Empty);
@@ -159,6 +160,17 @@ namespace AgRecords.View
         private void RiceAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+
+            // Get the current month
+            string currentMonth = DateTime.Now.ToString("MMMM");
+
+            // Find and set the index in the ComboBox
+            int selectedIndex = cmbMonth.FindStringExact(currentMonth);
+
+            if (selectedIndex != -1)
+            {
+                cmbMonth.SelectedIndex = selectedIndex;
+            }
         }
     }
 }

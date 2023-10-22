@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
@@ -40,55 +40,52 @@
             label10 = new Label();
             searchBox6 = new SearchBox();
             labelMonth = new Label();
-            labelSeasonYear = new Label();
-            labelSeason = new Label();
             label5 = new Label();
             searchBox5 = new SearchBox();
-            label4 = new Label();
-            searchBox4 = new SearchBox();
             labelRiceSrId = new Label();
-            label3 = new Label();
-            searchBox1 = new SearchBox();
             label2 = new Label();
             searchBox3 = new SearchBox();
             panel3 = new Panel();
             panel2 = new Panel();
             panel4 = new Panel();
+            cbGrandTotal = new CheckBox();
             cbUpland = new CheckBox();
             cbLowland = new CheckBox();
             cbIrrigated = new CheckBox();
-            panel43 = new Panel();
-            labelGrowthStage = new Label();
-            labelRiceStandingLogsId = new Label();
-            btnUpdate = new Button();
-            cmbSeedType = new ComboBox();
-            searchBox10 = new SearchBox();
-            label9 = new Label();
-            label8 = new Label();
-            dtpLogDate = new DateTimePicker();
-            btnClear = new Button();
+            dgvRiceStandLogs = new DataGridView();
+            panel44 = new Panel();
+            label46 = new Label();
             btnNew = new Button();
+            btnClear = new Button();
+            dtpLogDate = new DateTimePicker();
+            label8 = new Label();
+            label9 = new Label();
+            searchBox10 = new SearchBox();
+            cmbSeedType = new ComboBox();
+            btnUpdate = new Button();
+            labelMaxLogId = new Label();
+            panel43 = new Panel();
+            labelRiceStandingLogsId = new Label();
+            searchBox12 = new SearchBox();
+            label6 = new Label();
+            labelGrowthStage = new Label();
             txtSize = new TextBox();
             searchBox11 = new SearchBox();
-            label16 = new Label();
-            cmbGrowthStage = new ComboBox();
+            LabelSize = new Label();
             searchBox9 = new SearchBox();
             label14 = new Label();
             cmbBrgy = new ComboBox();
             searchBox8 = new SearchBox();
             label13 = new Label();
-            panel44 = new Panel();
-            label46 = new Label();
             cmbFarmType = new ComboBox();
             searchBox2 = new SearchBox();
-            label1 = new Label();
-            dgvRiceStandLogs = new DataGridView();
+            label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).BeginInit();
+            panel44.SuspendLayout();
+            panel43.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -103,15 +100,9 @@
             panel1.Controls.Add(label10);
             panel1.Controls.Add(searchBox6);
             panel1.Controls.Add(labelMonth);
-            panel1.Controls.Add(labelSeasonYear);
-            panel1.Controls.Add(labelSeason);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(searchBox5);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(searchBox4);
             panel1.Controls.Add(labelRiceSrId);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(searchBox1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(searchBox3);
             panel1.Dock = DockStyle.Top;
@@ -123,6 +114,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
             btnCancel.FlatAppearance.BorderSize = 2;
             btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
@@ -140,6 +132,7 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
@@ -152,12 +145,13 @@
             btnSave.TabIndex = 50;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // labelYear
             // 
             labelYear.AutoSize = true;
             labelYear.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelYear.Location = new Point(856, 38);
+            labelYear.Location = new Point(561, 38);
             labelYear.Name = "labelYear";
             labelYear.Size = new Size(56, 28);
             labelYear.TabIndex = 36;
@@ -166,7 +160,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(844, 11);
+            label12.Location = new Point(549, 11);
             label12.Name = "label12";
             label12.Size = new Size(37, 20);
             label12.TabIndex = 35;
@@ -174,7 +168,7 @@
             // 
             // searchBox7
             // 
-            searchBox7.Location = new Point(844, 34);
+            searchBox7.Location = new Point(549, 34);
             searchBox7.Name = "searchBox7";
             searchBox7.Size = new Size(100, 39);
             searchBox7.TabIndex = 34;
@@ -183,7 +177,7 @@
             // 
             labelWeek.AutoSize = true;
             labelWeek.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelWeek.Location = new Point(741, 38);
+            labelWeek.Location = new Point(446, 38);
             labelWeek.Name = "labelWeek";
             labelWeek.Size = new Size(47, 28);
             labelWeek.TabIndex = 33;
@@ -192,7 +186,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(729, 11);
+            label10.Location = new Point(434, 11);
             label10.Name = "label10";
             label10.Size = new Size(45, 20);
             label10.TabIndex = 32;
@@ -200,7 +194,7 @@
             // 
             // searchBox6
             // 
-            searchBox6.Location = new Point(729, 34);
+            searchBox6.Location = new Point(434, 34);
             searchBox6.Name = "searchBox6";
             searchBox6.Size = new Size(100, 39);
             searchBox6.TabIndex = 31;
@@ -209,36 +203,16 @@
             // 
             labelMonth.AutoSize = true;
             labelMonth.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelMonth.Location = new Point(602, 38);
+            labelMonth.Location = new Point(307, 38);
             labelMonth.Name = "labelMonth";
             labelMonth.Size = new Size(82, 28);
             labelMonth.TabIndex = 30;
             labelMonth.Text = "January";
             // 
-            // labelSeasonYear
-            // 
-            labelSeasonYear.AutoSize = true;
-            labelSeasonYear.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSeasonYear.Location = new Point(432, 38);
-            labelSeasonYear.Name = "labelSeasonYear";
-            labelSeasonYear.Size = new Size(108, 28);
-            labelSeasonYear.TabIndex = 29;
-            labelSeasonYear.Text = "2022-2023";
-            // 
-            // labelSeason
-            // 
-            labelSeason.AutoSize = true;
-            labelSeason.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSeason.Location = new Point(305, 38);
-            labelSeason.Name = "labelSeason";
-            labelSeason.Size = new Size(48, 28);
-            labelSeason.TabIndex = 28;
-            labelSeason.Text = "Wet";
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(592, 11);
+            label5.Location = new Point(297, 11);
             label5.Name = "label5";
             label5.Size = new Size(52, 20);
             label5.TabIndex = 27;
@@ -246,26 +220,10 @@
             // 
             // searchBox5
             // 
-            searchBox5.Location = new Point(592, 34);
+            searchBox5.Location = new Point(297, 34);
             searchBox5.Name = "searchBox5";
             searchBox5.Size = new Size(122, 39);
             searchBox5.TabIndex = 26;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(422, 11);
-            label4.Name = "label4";
-            label4.Size = new Size(37, 20);
-            label4.TabIndex = 24;
-            label4.Text = "Year";
-            // 
-            // searchBox4
-            // 
-            searchBox4.Location = new Point(422, 34);
-            searchBox4.Name = "searchBox4";
-            searchBox4.Size = new Size(142, 39);
-            searchBox4.TabIndex = 23;
             // 
             // labelRiceSrId
             // 
@@ -276,22 +234,6 @@
             labelRiceSrId.Size = new Size(149, 28);
             labelRiceSrId.TabIndex = 21;
             labelRiceSrId.Text = "RiceStandingID";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(296, 11);
-            label3.Name = "label3";
-            label3.Size = new Size(56, 20);
-            label3.TabIndex = 20;
-            label3.Text = "Season";
-            // 
-            // searchBox1
-            // 
-            searchBox1.Location = new Point(296, 34);
-            searchBox1.Name = "searchBox1";
-            searchBox1.Size = new Size(111, 39);
-            searchBox1.TabIndex = 19;
             // 
             // label2
             // 
@@ -311,6 +253,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(239, 239, 239);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 90);
             panel3.Name = "panel3";
@@ -331,13 +274,25 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(cbGrandTotal);
             panel4.Controls.Add(cbUpland);
             panel4.Controls.Add(cbLowland);
             panel4.Controls.Add(cbIrrigated);
-            panel4.Location = new Point(17, 242);
+            panel4.Location = new Point(17, 244);
             panel4.Name = "panel4";
-            panel4.Size = new Size(590, 46);
+            panel4.Size = new Size(790, 46);
             panel4.TabIndex = 75;
+            // 
+            // cbGrandTotal
+            // 
+            cbGrandTotal.AutoSize = true;
+            cbGrandTotal.Location = new Point(623, 11);
+            cbGrandTotal.Name = "cbGrandTotal";
+            cbGrandTotal.Size = new Size(108, 24);
+            cbGrandTotal.TabIndex = 3;
+            cbGrandTotal.Text = "Grand Total";
+            cbGrandTotal.UseVisualStyleBackColor = true;
+            cbGrandTotal.CheckedChanged += cbGrandTotal_CheckedChanged;
             // 
             // cbUpland
             // 
@@ -372,234 +327,43 @@
             cbIrrigated.UseVisualStyleBackColor = true;
             cbIrrigated.CheckedChanged += cbIrrigated_CheckedChanged;
             // 
-            // panel43
+            // dgvRiceStandLogs
             // 
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(labelGrowthStage);
-            panel43.Controls.Add(labelRiceStandingLogsId);
-            panel43.Controls.Add(btnUpdate);
-            panel43.Controls.Add(cmbSeedType);
-            panel43.Controls.Add(searchBox10);
-            panel43.Controls.Add(label9);
-            panel43.Controls.Add(label8);
-            panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(btnClear);
-            panel43.Controls.Add(btnNew);
-            panel43.Controls.Add(txtSize);
-            panel43.Controls.Add(searchBox11);
-            panel43.Controls.Add(label16);
-            panel43.Controls.Add(cmbGrowthStage);
-            panel43.Controls.Add(searchBox9);
-            panel43.Controls.Add(label14);
-            panel43.Controls.Add(cmbBrgy);
-            panel43.Controls.Add(searchBox8);
-            panel43.Controls.Add(label13);
-            panel43.Controls.Add(panel44);
-            panel43.Controls.Add(cmbFarmType);
-            panel43.Controls.Add(searchBox2);
-            panel43.Controls.Add(label1);
-            panel43.Location = new Point(17, 14);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1566, 222);
-            panel43.TabIndex = 74;
-            // 
-            // labelGrowthStage
-            // 
-            labelGrowthStage.AutoSize = true;
-            labelGrowthStage.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelGrowthStage.Location = new Point(31, 157);
-            labelGrowthStage.Name = "labelGrowthStage";
-            labelGrowthStage.Size = new Size(264, 25);
-            labelGrowthStage.TabIndex = 81;
-            labelGrowthStage.Text = "Newly Planted/Seedling Stage";
-            // 
-            // labelRiceStandingLogsId
-            // 
-            labelRiceStandingLogsId.AutoSize = true;
-            labelRiceStandingLogsId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRiceStandingLogsId.Location = new Point(787, 159);
-            labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
-            labelRiceStandingLogsId.Size = new Size(149, 28);
-            labelRiceStandingLogsId.TabIndex = 80;
-            labelRiceStandingLogsId.Text = "RiceStandingID";
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.BackColor = Color.FromArgb(255, 221, 100);
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1202, 64);
-            btnUpdate.Margin = new Padding(3, 4, 3, 4);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(130, 39);
-            btnUpdate.TabIndex = 79;
-            btnUpdate.Text = "Save";
-            btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
-            // cmbSeedType
-            // 
-            cmbSeedType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSeedType.FlatStyle = FlatStyle.Flat;
-            cmbSeedType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbSeedType.FormattingEnabled = true;
-            cmbSeedType.Items.AddRange(new object[] { "Hybrid Seeds", "Tagged Seeds", "Good Quality Seeds", "Farmers Saved Seeds" });
-            cmbSeedType.Location = new Point(518, 75);
-            cmbSeedType.Name = "cmbSeedType";
-            cmbSeedType.Size = new Size(220, 33);
-            cmbSeedType.TabIndex = 76;
-            // 
-            // searchBox10
-            // 
-            searchBox10.Location = new Point(512, 73);
-            searchBox10.Name = "searchBox10";
-            searchBox10.Size = new Size(229, 39);
-            searchBox10.TabIndex = 78;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(787, 50);
-            label9.Name = "label9";
-            label9.Size = new Size(41, 20);
-            label9.TabIndex = 54;
-            label9.Text = "Date";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(512, 50);
-            label8.Name = "label8";
-            label8.Size = new Size(77, 20);
-            label8.TabIndex = 77;
-            label8.Text = "Seed Type";
-            // 
-            // dtpLogDate
-            // 
-            dtpLogDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpLogDate.Format = DateTimePickerFormat.Short;
-            dtpLogDate.Location = new Point(787, 75);
-            dtpLogDate.Name = "dtpLogDate";
-            dtpLogDate.Size = new Size(135, 28);
-            dtpLogDate.TabIndex = 53;
-            // 
-            // btnClear
-            // 
-            btnClear.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
-            btnClear.FlatAppearance.BorderSize = 2;
-            btnClear.FlatAppearance.MouseDownBackColor = Color.White;
-            btnClear.FlatAppearance.MouseOverBackColor = Color.White;
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1338, 122);
-            btnClear.Margin = new Padding(3, 4, 3, 4);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(130, 39);
-            btnClear.TabIndex = 52;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
-            // 
-            // btnNew
-            // 
-            btnNew.BackColor = Color.FromArgb(255, 221, 100);
-            btnNew.FlatAppearance.BorderSize = 0;
-            btnNew.FlatStyle = FlatStyle.Flat;
-            btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1338, 65);
-            btnNew.Margin = new Padding(3, 4, 3, 4);
-            btnNew.Name = "btnNew";
-            btnNew.Size = new Size(130, 39);
-            btnNew.TabIndex = 40;
-            btnNew.Text = "New";
-            btnNew.UseVisualStyleBackColor = false;
-            btnNew.Click += btnNew_Click;
-            // 
-            // txtSize
-            // 
-            txtSize.BorderStyle = BorderStyle.None;
-            txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSize.Location = new Point(518, 158);
-            txtSize.Name = "txtSize";
-            txtSize.Size = new Size(217, 24);
-            txtSize.TabIndex = 39;
-            txtSize.TextAlign = HorizontalAlignment.Right;
-            // 
-            // searchBox11
-            // 
-            searchBox11.Location = new Point(512, 152);
-            searchBox11.Name = "searchBox11";
-            searchBox11.Size = new Size(229, 39);
-            searchBox11.TabIndex = 38;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(512, 129);
-            label16.Name = "label16";
-            label16.Size = new Size(66, 20);
-            label16.TabIndex = 37;
-            label16.Text = "Size (ha)";
-            // 
-            // cmbGrowthStage
-            // 
-            cmbGrowthStage.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbGrowthStage.FlatStyle = FlatStyle.Flat;
-            cmbGrowthStage.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbGrowthStage.FormattingEnabled = true;
-            cmbGrowthStage.Items.AddRange(new object[] { "Newly Planted/Standing Stage", "Vegetative Stage", "Reproductive Stage", "Maturing Stage", "Harvested" });
-            cmbGrowthStage.Location = new Point(31, 154);
-            cmbGrowthStage.Name = "cmbGrowthStage";
-            cmbGrowthStage.Size = new Size(443, 33);
-            cmbGrowthStage.TabIndex = 31;
-            // 
-            // searchBox9
-            // 
-            searchBox9.Location = new Point(26, 152);
-            searchBox9.Name = "searchBox9";
-            searchBox9.Size = new Size(452, 39);
-            searchBox9.TabIndex = 33;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(26, 129);
-            label14.Name = "label14";
-            label14.Size = new Size(99, 20);
-            label14.TabIndex = 32;
-            label14.Text = "Growth Stage";
-            // 
-            // cmbBrgy
-            // 
-            cmbBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbBrgy.FlatStyle = FlatStyle.Flat;
-            cmbBrgy.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbBrgy.FormattingEnabled = true;
-            cmbBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cmbBrgy.Location = new Point(31, 75);
-            cmbBrgy.Name = "cmbBrgy";
-            cmbBrgy.Size = new Size(209, 33);
-            cmbBrgy.TabIndex = 30;
-            // 
-            // searchBox8
-            // 
-            searchBox8.Location = new Point(26, 73);
-            searchBox8.Name = "searchBox8";
-            searchBox8.Size = new Size(218, 39);
-            searchBox8.TabIndex = 29;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(26, 50);
-            label13.Name = "label13";
-            label13.Size = new Size(71, 20);
-            label13.TabIndex = 28;
-            label13.Text = "Barangay";
+            dgvRiceStandLogs.AllowUserToAddRows = false;
+            dgvRiceStandLogs.AllowUserToDeleteRows = false;
+            dgvRiceStandLogs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRiceStandLogs.BackgroundColor = Color.White;
+            dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = Color.White;
+            dataGridViewCellStyle17.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.White;
+            dataGridViewCellStyle18.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle18;
+            dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
+            dgvRiceStandLogs.Location = new Point(17, 295);
+            dgvRiceStandLogs.Name = "dgvRiceStandLogs";
+            dgvRiceStandLogs.ReadOnly = true;
+            dgvRiceStandLogs.RowHeadersVisible = false;
+            dgvRiceStandLogs.RowHeadersWidth = 51;
+            dgvRiceStandLogs.RowTemplate.Height = 40;
+            dgvRiceStandLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRiceStandLogs.Size = new Size(1565, 519);
+            dgvRiceStandLogs.TabIndex = 23;
+            dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
             // 
             // panel44
             // 
@@ -622,6 +386,256 @@
             label46.TabIndex = 28;
             label46.Text = "STANDING ACCOMPLISHMENTS";
             // 
+            // btnNew
+            // 
+            btnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNew.BackColor = Color.FromArgb(255, 221, 100);
+            btnNew.FlatAppearance.BorderSize = 0;
+            btnNew.FlatStyle = FlatStyle.Flat;
+            btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNew.ForeColor = Color.FromArgb(3, 0, 67);
+            btnNew.Location = new Point(1270, 86);
+            btnNew.Margin = new Padding(3, 4, 3, 4);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(130, 39);
+            btnNew.TabIndex = 40;
+            btnNew.Text = "New";
+            btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClear.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
+            btnClear.FlatAppearance.BorderSize = 2;
+            btnClear.FlatAppearance.MouseDownBackColor = Color.White;
+            btnClear.FlatAppearance.MouseOverBackColor = Color.White;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.FromArgb(3, 0, 67);
+            btnClear.Location = new Point(1270, 143);
+            btnClear.Margin = new Padding(3, 4, 3, 4);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(130, 39);
+            btnClear.TabIndex = 52;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
+            // dtpLogDate
+            // 
+            dtpLogDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpLogDate.Format = DateTimePickerFormat.Short;
+            dtpLogDate.Location = new Point(866, 74);
+            dtpLogDate.Name = "dtpLogDate";
+            dtpLogDate.Size = new Size(135, 28);
+            dtpLogDate.TabIndex = 53;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(604, 47);
+            label8.Name = "label8";
+            label8.Size = new Size(77, 20);
+            label8.TabIndex = 77;
+            label8.Text = "Seed Type";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(866, 49);
+            label9.Name = "label9";
+            label9.Size = new Size(41, 20);
+            label9.TabIndex = 54;
+            label9.Text = "Date";
+            // 
+            // searchBox10
+            // 
+            searchBox10.Location = new Point(604, 70);
+            searchBox10.Name = "searchBox10";
+            searchBox10.Size = new Size(229, 39);
+            searchBox10.TabIndex = 78;
+            // 
+            // cmbSeedType
+            // 
+            cmbSeedType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSeedType.FlatStyle = FlatStyle.Flat;
+            cmbSeedType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbSeedType.FormattingEnabled = true;
+            cmbSeedType.Items.AddRange(new object[] { "Hybrid Seeds", "Tagged Seeds", "Good Quality Seeds", "Farmers Saved Seeds" });
+            cmbSeedType.Location = new Point(610, 72);
+            cmbSeedType.Name = "cmbSeedType";
+            cmbSeedType.Size = new Size(220, 33);
+            cmbSeedType.TabIndex = 76;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnUpdate.BackColor = Color.FromArgb(255, 221, 100);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
+            btnUpdate.Location = new Point(1270, 86);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(130, 39);
+            btnUpdate.TabIndex = 79;
+            btnUpdate.Text = "Save";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // labelMaxLogId
+            // 
+            labelMaxLogId.AutoSize = true;
+            labelMaxLogId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelMaxLogId.Location = new Point(610, 158);
+            labelMaxLogId.Name = "labelMaxLogId";
+            labelMaxLogId.Size = new Size(102, 28);
+            labelMaxLogId.TabIndex = 82;
+            labelMaxLogId.Text = "MaxLogId";
+            // 
+            // panel43
+            // 
+            panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel43.BorderStyle = BorderStyle.FixedSingle;
+            panel43.Controls.Add(labelRiceStandingLogsId);
+            panel43.Controls.Add(searchBox12);
+            panel43.Controls.Add(label6);
+            panel43.Controls.Add(labelGrowthStage);
+            panel43.Controls.Add(txtSize);
+            panel43.Controls.Add(searchBox11);
+            panel43.Controls.Add(LabelSize);
+            panel43.Controls.Add(searchBox9);
+            panel43.Controls.Add(label14);
+            panel43.Controls.Add(cmbBrgy);
+            panel43.Controls.Add(searchBox8);
+            panel43.Controls.Add(label13);
+            panel43.Controls.Add(cmbFarmType);
+            panel43.Controls.Add(searchBox2);
+            panel43.Controls.Add(label3);
+            panel43.Controls.Add(labelMaxLogId);
+            panel43.Controls.Add(btnUpdate);
+            panel43.Controls.Add(cmbSeedType);
+            panel43.Controls.Add(searchBox10);
+            panel43.Controls.Add(label9);
+            panel43.Controls.Add(label8);
+            panel43.Controls.Add(dtpLogDate);
+            panel43.Controls.Add(btnClear);
+            panel43.Controls.Add(btnNew);
+            panel43.Controls.Add(panel44);
+            panel43.Location = new Point(17, 14);
+            panel43.Name = "panel43";
+            panel43.Size = new Size(1566, 222);
+            panel43.TabIndex = 74;
+            // 
+            // labelRiceStandingLogsId
+            // 
+            labelRiceStandingLogsId.AutoSize = true;
+            labelRiceStandingLogsId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelRiceStandingLogsId.Location = new Point(31, 74);
+            labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
+            labelRiceStandingLogsId.Size = new Size(32, 28);
+            labelRiceStandingLogsId.TabIndex = 95;
+            labelRiceStandingLogsId.Text = "ID";
+            // 
+            // searchBox12
+            // 
+            searchBox12.Location = new Point(26, 70);
+            searchBox12.Name = "searchBox12";
+            searchBox12.Size = new Size(80, 39);
+            searchBox12.TabIndex = 98;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(26, 47);
+            label6.Name = "label6";
+            label6.Size = new Size(24, 20);
+            label6.TabIndex = 97;
+            label6.Text = "ID";
+            // 
+            // labelGrowthStage
+            // 
+            labelGrowthStage.AutoSize = true;
+            labelGrowthStage.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelGrowthStage.Location = new Point(31, 158);
+            labelGrowthStage.Name = "labelGrowthStage";
+            labelGrowthStage.Size = new Size(264, 25);
+            labelGrowthStage.TabIndex = 96;
+            labelGrowthStage.Text = "Newly Planted/Seedling Stage";
+            // 
+            // txtSize
+            // 
+            txtSize.BorderStyle = BorderStyle.None;
+            txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSize.Location = new Point(370, 158);
+            txtSize.Name = "txtSize";
+            txtSize.Size = new Size(202, 24);
+            txtSize.TabIndex = 94;
+            txtSize.Text = "2";
+            txtSize.TextAlign = HorizontalAlignment.Right;
+            // 
+            // searchBox11
+            // 
+            searchBox11.Location = new Point(363, 152);
+            searchBox11.Name = "searchBox11";
+            searchBox11.Size = new Size(216, 39);
+            searchBox11.TabIndex = 93;
+            // 
+            // LabelSize
+            // 
+            LabelSize.AutoSize = true;
+            LabelSize.Location = new Point(363, 129);
+            LabelSize.Name = "LabelSize";
+            LabelSize.Size = new Size(66, 20);
+            LabelSize.TabIndex = 92;
+            LabelSize.Text = "Size (ha)";
+            // 
+            // searchBox9
+            // 
+            searchBox9.Location = new Point(26, 152);
+            searchBox9.Name = "searchBox9";
+            searchBox9.Size = new Size(309, 39);
+            searchBox9.TabIndex = 91;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(26, 129);
+            label14.Name = "label14";
+            label14.Size = new Size(99, 20);
+            label14.TabIndex = 90;
+            label14.Text = "Growth Stage";
+            // 
+            // cmbBrgy
+            // 
+            cmbBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBrgy.FlatStyle = FlatStyle.Flat;
+            cmbBrgy.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbBrgy.FormattingEnabled = true;
+            cmbBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            cmbBrgy.Location = new Point(130, 72);
+            cmbBrgy.Name = "cmbBrgy";
+            cmbBrgy.Size = new Size(200, 33);
+            cmbBrgy.TabIndex = 89;
+            // 
+            // searchBox8
+            // 
+            searchBox8.Location = new Point(125, 70);
+            searchBox8.Name = "searchBox8";
+            searchBox8.Size = new Size(208, 39);
+            searchBox8.TabIndex = 88;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(125, 47);
+            label13.Name = "label13";
+            label13.Size = new Size(71, 20);
+            label13.TabIndex = 87;
+            label13.Text = "Barangay";
+            // 
             // cmbFarmType
             // 
             cmbFarmType.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -629,63 +643,26 @@
             cmbFarmType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbFarmType.FormattingEnabled = true;
             cmbFarmType.Items.AddRange(new object[] { "Irrigated", "Rainfed Lowland", "Raindfed Upland" });
-            cmbFarmType.Location = new Point(267, 75);
+            cmbFarmType.Location = new Point(368, 72);
             cmbFarmType.Name = "cmbFarmType";
             cmbFarmType.Size = new Size(207, 33);
-            cmbFarmType.TabIndex = 25;
+            cmbFarmType.TabIndex = 84;
             // 
             // searchBox2
             // 
-            searchBox2.Location = new Point(262, 73);
+            searchBox2.Location = new Point(363, 70);
             searchBox2.Name = "searchBox2";
             searchBox2.Size = new Size(216, 39);
-            searchBox2.TabIndex = 27;
+            searchBox2.TabIndex = 86;
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(262, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(76, 20);
-            label1.TabIndex = 26;
-            label1.Text = "Farm Type";
-            // 
-            // dgvRiceStandLogs
-            // 
-            dgvRiceStandLogs.AllowUserToAddRows = false;
-            dgvRiceStandLogs.AllowUserToDeleteRows = false;
-            dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRiceStandLogs.BackgroundColor = Color.White;
-            dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRiceStandLogs.Location = new Point(17, 295);
-            dgvRiceStandLogs.Name = "dgvRiceStandLogs";
-            dgvRiceStandLogs.ReadOnly = true;
-            dgvRiceStandLogs.RowHeadersVisible = false;
-            dgvRiceStandLogs.RowHeadersWidth = 51;
-            dgvRiceStandLogs.RowTemplate.Height = 40;
-            dgvRiceStandLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRiceStandLogs.Size = new Size(1565, 519);
-            dgvRiceStandLogs.TabIndex = 23;
-            dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
+            label3.AutoSize = true;
+            label3.Location = new Point(363, 47);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 20);
+            label3.TabIndex = 85;
+            label3.Text = "Farm Type";
             // 
             // CropsRiceAddView
             // 
@@ -703,11 +680,11 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).EndInit();
             panel44.ResumeLayout(false);
             panel44.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).EndInit();
+            panel43.ResumeLayout(false);
+            panel43.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -718,12 +695,8 @@
         private Panel panel3;
         private Panel panel2;
         private DataGridView dgvRiceStandLogs;
-        private Label label3;
         private Label labelRiceSrId;
         private Label label5;
-        private Label label4;
-        private Label labelSeasonYear;
-        private Label labelSeason;
         private Label labelMonth;
         private Label labelWeek;
         private Label label10;
@@ -732,39 +705,40 @@
         private SearchBox searchBox7;
         private SearchBox searchBox6;
         private SearchBox searchBox5;
-        private SearchBox searchBox4;
-        private SearchBox searchBox1;
         private SearchBox searchBox3;
-        private ComboBox cmbFarmType;
-        private SearchBox searchBox2;
-        private Label label1;
-        private Panel panel43;
-        private Panel panel44;
-        private Label label46;
-        private SearchBox searchBox8;
-        private Label label13;
-        private ComboBox cmbBrgy;
-        private ComboBox cmbGrowthStage;
-        private SearchBox searchBox9;
-        private Label label14;
-        private SearchBox searchBox11;
-        private Label label16;
-        private TextBox txtSize;
-        private Button btnNew;
         private Panel panel4;
         private CheckBox cbIrrigated;
         private CheckBox cbLowland;
         private CheckBox cbUpland;
         private Button btnCancel;
         private Button btnSave;
-        private Button btnClear;
+        private CheckBox cbGrandTotal;
+        private Panel panel43;
+        private Label labelRiceStandingLogsId;
+        private SearchBox searchBox12;
+        private Label label6;
+        private Label labelGrowthStage;
+        private TextBox txtSize;
+        private SearchBox searchBox11;
+        private Label LabelSize;
+        private SearchBox searchBox9;
+        private Label label14;
+        private ComboBox cmbBrgy;
+        private SearchBox searchBox8;
+        private Label label13;
+        private ComboBox cmbFarmType;
+        private SearchBox searchBox2;
+        private Label label3;
+        private Label labelMaxLogId;
+        private Button btnUpdate;
         private ComboBox cmbSeedType;
         private SearchBox searchBox10;
-        private Label label8;
         private Label label9;
+        private Label label8;
         private DateTimePicker dtpLogDate;
-        private Button btnUpdate;
-        private Label labelRiceStandingLogsId;
-        private Label labelGrowthStage;
+        private Button btnClear;
+        private Button btnNew;
+        private Panel panel44;
+        private Label label46;
     }
 }

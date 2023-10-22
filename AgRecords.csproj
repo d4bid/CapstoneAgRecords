@@ -19,6 +19,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Reports\DataSets\RicePlantingDSxsd.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RicePlantingDSxsd.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +34,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Reports\DataSets\" />
+    <None Update="Reports\DataSets\RicePlantingDSxsd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RicePlantingDSxsd.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

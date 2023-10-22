@@ -98,6 +98,11 @@ namespace AgRecords.View
         {
             FormRefresh();
             cbIrrigated.Checked = true;
+
+            string riceSrId = labelRiceSrId.Text;
+
+            int maxLogId = cropsRiceController.GetMaxRiceStandingLogId(riceSrId);
+            labelMaxLogId.Text = maxLogId.ToString();
         }
 
         private void dgvRiceStandLogs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -294,6 +299,24 @@ namespace AgRecords.View
                 DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceStandLogsView(riceSrId);
                 dgvRiceStandLogs.DataSource = riceStandLogsTable;
             }
+        }
+
+        private void cbGrandTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbGrandTotal.Checked)
+            {
+                cbIrrigated.Checked = false;
+                cbLowland.Checked = false;
+                cbUpland.Checked = false;
+                string riceSrId = labelRiceSrId.Text;
+                DataTable riceStandLogsTable = cropsRiceController.LoadGrandTotalRiceStandLogsView(riceSrId);
+                dgvRiceStandLogs.DataSource = riceStandLogsTable;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

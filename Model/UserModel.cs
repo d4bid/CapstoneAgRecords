@@ -116,7 +116,7 @@ namespace AgRecords.Model
                         string lastId = result.ToString();
                         int lastNumber = int.Parse(lastId.Substring(4));
                         int nextNumber = lastNumber + 1;
-                        string nextId = "USER" + nextNumber.ToString("0000");
+                        string nextId = "USER" + nextNumber.ToString("00");
                         return nextId;
                     }
                 }
