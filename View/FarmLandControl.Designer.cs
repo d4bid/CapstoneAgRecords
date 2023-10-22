@@ -32,6 +32,7 @@
             labelParcelNo = new Label();
             panel44 = new Panel();
             label46 = new Label();
+            cbLiveStock1 = new ComboBox();
             panelFarmLandDescription = new Panel();
             cbFarmLocBarangay = new ComboBox();
             panelAncestralDomain = new Panel();
@@ -185,10 +186,24 @@
             label46.TabIndex = 0;
             label46.Text = "Farm Parcel No.";
             // 
+            // cbLiveStock1
+            // 
+            cbLiveStock1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbLiveStock1.FlatStyle = FlatStyle.Flat;
+            cbLiveStock1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            cbLiveStock1.FormattingEnabled = true;
+            cbLiveStock1.Items.AddRange(new object[] { "CARABAO", "CATTLE", "CHICKEN", "DOG", "DUCKLING", "GOAT", "GUINEA FOWL", "HORSE", "MALLARD DUCK", "MUSCOVY DUCK", "PIGEON", "QUAIL", "RABBIT", "SHEEP", "SWINE", "TILAPIA", "TURKEY" });
+            cbLiveStock1.Location = new Point(29, 140);
+            cbLiveStock1.Name = "cbLiveStock1";
+            cbLiveStock1.Size = new Size(334, 33);
+            cbLiveStock1.TabIndex = 99;
+            cbLiveStock1.Visible = false;
+            // 
             // panelFarmLandDescription
             // 
             panelFarmLandDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelFarmLandDescription.BorderStyle = BorderStyle.FixedSingle;
+            panelFarmLandDescription.Controls.Add(cbLiveStock1);
             panelFarmLandDescription.Controls.Add(cbFarmLocBarangay);
             panelFarmLandDescription.Controls.Add(panelAncestralDomain);
             panelFarmLandDescription.Controls.Add(panelBeneficiary);
@@ -1048,6 +1063,7 @@
             txtLivestockHeadCount5.PlaceholderText = "0";
             txtLivestockHeadCount5.Size = new Size(70, 20);
             txtLivestockHeadCount5.TabIndex = 10;
+            txtLivestockHeadCount5.Text = "0";
             txtLivestockHeadCount5.TextAlign = HorizontalAlignment.Right;
             txtLivestockHeadCount5.TextChanged += enableNextTexbox;
             txtLivestockHeadCount5.Enter += SelectedPanel;
@@ -1063,6 +1079,7 @@
             txtLivestockHeadCount4.PlaceholderText = "0";
             txtLivestockHeadCount4.Size = new Size(70, 20);
             txtLivestockHeadCount4.TabIndex = 8;
+            txtLivestockHeadCount4.Text = "0";
             txtLivestockHeadCount4.TextAlign = HorizontalAlignment.Right;
             txtLivestockHeadCount4.TextChanged += enableNextTexbox;
             txtLivestockHeadCount4.Enter += SelectedPanel;
@@ -1078,6 +1095,7 @@
             txtLivestockHeadCount3.PlaceholderText = "0";
             txtLivestockHeadCount3.Size = new Size(70, 20);
             txtLivestockHeadCount3.TabIndex = 6;
+            txtLivestockHeadCount3.Text = "0";
             txtLivestockHeadCount3.TextAlign = HorizontalAlignment.Right;
             txtLivestockHeadCount3.TextChanged += enableNextTexbox;
             txtLivestockHeadCount3.Enter += SelectedPanel;
@@ -1093,6 +1111,7 @@
             txtLivestockHeadCount2.PlaceholderText = "0";
             txtLivestockHeadCount2.Size = new Size(70, 20);
             txtLivestockHeadCount2.TabIndex = 4;
+            txtLivestockHeadCount2.Text = "0";
             txtLivestockHeadCount2.TextAlign = HorizontalAlignment.Right;
             txtLivestockHeadCount2.TextChanged += enableNextTexbox;
             txtLivestockHeadCount2.Enter += SelectedPanel;
@@ -1108,6 +1127,7 @@
             txtLivestockHeadCount1.PlaceholderText = "0";
             txtLivestockHeadCount1.Size = new Size(70, 20);
             txtLivestockHeadCount1.TabIndex = 2;
+            txtLivestockHeadCount1.Text = "0";
             txtLivestockHeadCount1.TextAlign = HorizontalAlignment.Right;
             txtLivestockHeadCount1.TextChanged += enableNextTexbox;
             txtLivestockHeadCount1.Enter += SelectedPanel;
@@ -1485,5 +1505,6 @@
         private TextBox txtLivestockHeadCount3;
         private TextBox txtLivestockHeadCount2;
         private TextBox txtLivestockHeadCount1;
+        private ComboBox cbLiveStock1;
     }
 }

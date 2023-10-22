@@ -344,7 +344,11 @@ namespace AgRecords.View
         {
             TextboxValidation.TextBox_AlpaNumeric(sender, e);
         }
+        private void NumOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericOnly(sender, e);
 
+        }
         private void AlphaOnly(object sender, KeyPressEventArgs e)
         {
             TextboxValidation.TextBox_AlphaOnly(sender, e);
@@ -352,31 +356,54 @@ namespace AgRecords.View
             {
                 txtLivestockHeadCount1.Enabled = true;
             }
+            if (string.IsNullOrEmpty(txtLivestock1.Text))
+            {
+                txtLivestockHeadCount1.Text = "";
+                txtLivestockHeadCount1.Enabled = false;
+            }
 
             if (sender == txtLivestock2 && txtLivestock2.Text.Length >= 2)
             {
                 txtLivestockHeadCount2.Enabled = true;
             }
+            if (string.IsNullOrEmpty(txtLivestock2.Text))
+            {
+                txtLivestockHeadCount2.Text = "";
+                txtLivestockHeadCount2.Enabled = false;
+            }
+
             if (sender == txtLivestock3 && txtLivestock3.Text.Length >= 2)
             {
                 txtLivestockHeadCount3.Enabled = true;
             }
+            if (string.IsNullOrEmpty(txtLivestock3.Text))
+            {
+                txtLivestockHeadCount3.Text = "";
+                txtLivestockHeadCount3.Enabled = false;
+            }
+
             if (sender == txtLivestock4 && txtLivestock4.Text.Length >= 2)
             {
                 txtLivestockHeadCount4.Enabled = true;
             }
+            if (string.IsNullOrEmpty(txtLivestock4.Text))
+            {
+                txtLivestockHeadCount4.Text = "";
+                txtLivestockHeadCount4.Enabled = false;
+            }
+
             if (sender == txtLivestock5 && txtLivestock5.Text.Length >= 2)
             {
                 txtLivestockHeadCount5.Enabled = true;
             }
+            if (string.IsNullOrEmpty(txtLivestock5.Text))
+            {
+                txtLivestockHeadCount5.Text = "";
+                txtLivestockHeadCount5.Enabled = false;
+            }
 
         }
 
-        private void NumOnly(object sender, KeyPressEventArgs e)
-        {
-            TextboxValidation.TextBox_NumericOnly(sender, e);
-
-        }
 
         private void enableNextTexbox(object sender, EventArgs e)
         {
@@ -384,30 +411,26 @@ namespace AgRecords.View
             {
                 txtLivestock2.Enabled = true;
             }
-            else
-            {
-                txtLivestock2.Enabled = false;
-            }
 
             if (sender == txtLivestockHeadCount2 && txtLivestockHeadCount2.Text.Length >= 1)
             {
                 txtLivestock3.Enabled = true;
             }
-
-            if (sender == txtLivestockHeadCount3 && txtLivestockHeadCount2.Text.Length >= 1)
+            if (sender == txtLivestockHeadCount3 && txtLivestockHeadCount3.Text.Length >= 1)
             {
                 txtLivestock4.Enabled = true;
             }
+            else
 
-            if (sender == txtLivestockHeadCount4 && txtLivestockHeadCount2.Text.Length >= 1)
+            if (sender == txtLivestockHeadCount4 && txtLivestockHeadCount4.Text.Length >= 1)
             {
                 txtLivestock5.Enabled = true;
             }
         }
 
+
         private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
         {
-
             TextboxValidation.TextBox_NumericWithDecimal(sender, e);
 
         }
@@ -449,6 +472,36 @@ namespace AgRecords.View
             {
                 PanelSelected.Panel_Enter(panelFarm, panelFarmHeader);
             }
+            if (focusedControl == txtLivestockHeadCount1)
+
+                if (txtLivestockHeadCount1.Text == "0")
+                {
+                    txtLivestockHeadCount1.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount2)
+
+                if (txtLivestockHeadCount2.Text == "0")
+                {
+                    txtLivestockHeadCount2.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount3)
+
+                if (txtLivestockHeadCount3.Text == "0")
+                {
+                    txtLivestockHeadCount3.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount4)
+
+                if (txtLivestockHeadCount4.Text == "0")
+                {
+                    txtLivestockHeadCount4.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount5)
+
+                if (txtLivestockHeadCount5.Text == "0")
+                {
+                    txtLivestockHeadCount5.Text = string.Empty;
+                }
         }
 
         private void UnselectedPanel(object sender, EventArgs e)
@@ -465,14 +518,56 @@ namespace AgRecords.View
                 PanelSelected.Panel_Leave(panelFarm, panelFarmHeader);
             }
 
-            //if (string.IsNullOrEmpty(txtFarmingIncome.Text))
-            //{
-            //    txtFarmingIncome.Text = "0";
-            //}
-            //if (string.IsNullOrEmpty(txtNonFarmingIncome.Text))
-            //{
-            //    txtNonFarmingIncome.Text = "0";
-            //}
+            if (string.IsNullOrEmpty(txtLivestockHeadCount1.Text))
+            {
+                txtLivestockHeadCount1.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount2.Text))
+            {
+                txtLivestockHeadCount2.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount3.Text))
+            {
+                txtLivestockHeadCount3.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount4.Text))
+            {
+                txtLivestockHeadCount4.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount5.Text))
+            {
+                txtLivestockHeadCount5.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestock1.Text))
+            {
+                txtLivestockHeadCount1.Text = "";
+                txtLivestockHeadCount1.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock2.Text))
+            {
+                txtLivestockHeadCount2.Text = "";
+                txtLivestockHeadCount2.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock3.Text))
+            {
+                txtLivestockHeadCount3.Text = "";
+                txtLivestockHeadCount3.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock4.Text))
+            {
+                txtLivestockHeadCount4.Text = "";
+                txtLivestockHeadCount4.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock5.Text))
+            {
+                txtLivestockHeadCount5.Text = "";
+                txtLivestockHeadCount5.Enabled = false;
+            }
+
         }
         private void disableObjects()
         {
@@ -625,6 +720,7 @@ namespace AgRecords.View
                 txtOwnerName.Focus();
             }
         }
+
     }
 }
 
