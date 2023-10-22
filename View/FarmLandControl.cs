@@ -144,6 +144,7 @@ namespace AgRecords.View
         private void FarmLandControl_Load(object sender, EventArgs e)
         {
             disableObjects();
+            preAnswerRB();
             cbFarmLocBarangay.Focus();
         }
 
@@ -516,7 +517,11 @@ namespace AgRecords.View
 
 
         }
-
+        private void preAnswerRB()
+        {
+            rbAncestralDomainNo.Checked = true;
+            rbBeneficiaryNo.Checked = true;
+        }
         private void cbQuickAnswer_Farmland(object sender, EventArgs e)
         {
             if (sender == chCropIsRice)
@@ -611,15 +616,15 @@ namespace AgRecords.View
         {
             if (rbOwnershipTypeOwner.Checked)
             {
-                txtOwnerName.Enabled = true;
+                txtOwnerName.Enabled = false;
                 txtOwnerName.Clear();
             }
             else
             {
-                txtOwnerName.Enabled = false;
+                txtOwnerName.Enabled = true;
+                txtOwnerName.Focus();
             }
         }
-
-
     }
 }
+
