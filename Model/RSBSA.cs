@@ -11,9 +11,9 @@ namespace AgRecords.Model
         //RSBSA Info
         public string rsbsaId { get; set; }
         public string? rsbsaIdLGU { get; set; }
-        public string rsbsaIdRegion { get; set; }
+        public string? rsbsaIdRegion { get; set; }
         public DateTime dateCreated { get; set; }
-        public string userId { get; set; }
+        public string? userId { get; set; }
 
         //Farmer Personal Info
         public string? surname { get; set; }
@@ -44,9 +44,9 @@ namespace AgRecords.Model
         public string? isHouseHead { get; set; }
         public string? houseHeadName { get; set; }
         public string? houseHeadRs { get; set; }
-        public int houseLivingMemCount { get; set; }
-        public int houseMaleCount { get; set; }
-        public int houseFemCount { get; set; }
+        public int? houseLivingMemCount { get; set; }
+        public int? houseMaleCount { get; set; }
+        public int? houseFemCount { get; set; }
         public string? isPWD { get; set; }
         public string? is4Ps { get; set; }
         public string? isIp { get; set; }
@@ -86,14 +86,14 @@ namespace AgRecords.Model
 
         //farmland table
         public string? rotatingFarmers { get; set; }
-        public int farmParcelCount { get; set; }
+        public int? farmParcelCount { get; set; }
 
         //farmland parcel table
-        public List<FarmParcel> farmParcels { get; set; }
-        public List<FarmParcelCrop> farmParcelCrops { get; set; }
+        public List<FarmParcel>? farmParcels { get; set; }
+        public List<FarmParcelCrop>? farmParcelCrops { get; set; }
 
         //RSBSA Docs
-        public List<RSBSADocuments> rsbsaDocuments { get; set; }
+        public List<RSBSADocuments>? rsbsaDocuments { get; set; }
 
 
 

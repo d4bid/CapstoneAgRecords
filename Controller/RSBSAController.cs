@@ -110,10 +110,10 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddRSBSA(
+        public bool ImportRSBSA(
             string rsbsaId,
             string? rsbsaIdLGU,
-            string rsbsaIdRegion,
+            string? rsbsaIdRegion,
             DateTime dateCreated,
 
             // Farmer Personal Info
@@ -145,9 +145,9 @@ namespace AgRecords.Controller
             string? isHouseHead,
             string? houseHeadName,
             string? houseHeadRs,
-            int houseLivingMemCount,
-            int houseMaleCount,
-            int houseFemCount,
+            int? houseLivingMemCount,
+            int? houseMaleCount,
+            int? houseFemCount,
             string? isPWD,
             string? is4Ps,
             string? isIp,
@@ -190,11 +190,116 @@ namespace AgRecords.Controller
             int farmParcelCount,
 
             //Farmland Parcel
-            List<FarmParcel> farmParcels,
+            List<FarmParcel>? farmParcels,
 
 
             //Docs
-            List<RSBSADocuments> rsbsaDocuments
+            List<RSBSADocuments>? rsbsaDocuments
+
+            )
+        {
+            try
+            {
+                Boolean isDone = false;
+
+
+
+
+                return isDone;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Importing RSBSA Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+        }
+
+        public bool AddRSBSA(
+            string rsbsaId,
+            string? rsbsaIdLGU,
+            string? rsbsaIdRegion,
+            DateTime dateCreated,
+
+            // Farmer Personal Info
+            string? surname,
+            string? firstname,
+            string? middlename,
+            string? extname,
+            string? sex,
+            string? addrPurok,
+            string? addrStreet,
+            string? addrBrgy,
+            string? addrMunicipality,
+            string? addrProvince,
+            string? addrRegion,
+            string? educAttainment,
+            string? contactNo,
+            string? landlineNo,
+            string? withGovId,
+            string? govIdType,
+            string? govIdNo,
+            DateTime birthDate,
+            string? birthMunicipality,
+            string? birthProvince,
+            string? birthCountry,
+            string? religion,
+            string? civilStatus,
+            string? spouseName,
+            string? maidenName,
+            string? isHouseHead,
+            string? houseHeadName,
+            string? houseHeadRs,
+            int? houseLivingMemCount,
+            int? houseMaleCount,
+            int? houseFemCount,
+            string? isPWD,
+            string? is4Ps,
+            string? isIp,
+            string? ipGroupName,
+            string? isCoopMember,
+            string? coopName,
+            string? emergContactName,
+            string? emergContactNo,
+
+            // Farm Profile
+            string? isFarmer,
+            string? isRiceFarmer,
+            string? isCornFarmer,
+            string? otherCrops,
+            string? hasLivestocks,
+            string? hasPoultry,
+            string? isLaborer,
+            string? isPreparingLand,
+            string? isPlanting,
+            string? isCultivating,
+            string? isHarvesting,
+            string? otherLaborWork,
+            string? isFisherfolk,
+            string? isFishCapturing,
+            string? isAquaculture,
+            string? isGleaning,
+            string? isFishProcessing,
+            string? isFishVending,
+            string? otherFishingAct,
+            string? isAgriYouth,
+            string? isPartOfFarmingHousehold,
+            string? isAttendAgrifishery,
+            string? isParticipantAgriProgram,
+            string? otherAgriYouthAct,
+            double? annualIncomeFarming,
+            double? annualIncomeNonFarming,
+
+            //Farmland
+            string? rotatingFarmers,
+            int farmParcelCount,
+
+            //Farmland Parcel
+            List<FarmParcel>? farmParcels,
+
+
+            //Docs
+            List<RSBSADocuments>? rsbsaDocuments
 
             )
         {

@@ -42,5 +42,14 @@ namespace AgRecords.View
                 }
             }
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Iterate through DataTable rows and insert into the database
+            foreach (DataRow row in ((DataTable)dgvRSBSAtoImport.DataSource).Rows)
+            {
+
+            }
+        }
     }
 }
