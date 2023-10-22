@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZstdSharp.Unsafe;
 
 namespace AgRecords.View
 {
@@ -93,31 +94,34 @@ namespace AgRecords.View
             RadioButton rbCoop = panelCoop.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             //farmer info
-            string rbIsHouseholdHeadText = "No";
+            string rbIsHouseholdHeadText = "";
             string rbCivilStatusText = "";
             string rbEducText = "";
-            string rbGovIdText = "No";
-            string rbIPGroupText = "No";
-            string rbPWDText = "No";
-            string rb4PsText = "No";
+            string rbGovIdText = "";
+            string rbIPGroupText = "";
+            string rbPWDText = "";
+            string rb4PsText = "";
             string rbReligionText = "";
-            string rbCooptText = "No";
+            string rbCooptText = "";
 
             //farm profile
             string isFarmerText = "No";
             string isRiceFarmerText = "No";
             string isCornFarmerText = "No";
+
             string isLaborerText = "No";
             string isPreparingLandText = "No";
             string isPlantingText = "No";
             string isCultivatingText = "No";
             string isHarvestingText = "No";
+
             string isFisherfolkText = "No";
             string isFishCapturingText = "No";
             string isAquacultureText = "No";
             string isGleaningText = "No";
             string isFishProcessingText = "No";
             string isFishVendingText = "No";
+
             string isAgriYouthText = "No";
             string isPartOfFarmingHouseholdText = "No";
             string isAttendAgrifisheryText = "No";
@@ -317,6 +321,8 @@ namespace AgRecords.View
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+
+            txtSurname.Focus();
         }
 
         private void btnFarmProfile_Click(object sender, EventArgs e)
@@ -330,6 +336,8 @@ namespace AgRecords.View
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+
+            cbLivelihoodFarmer.Focus();
         }
 
         private void btnFarmLand_Click(object sender, EventArgs e)
@@ -343,6 +351,8 @@ namespace AgRecords.View
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
             panelDocument.Visible = false;
+
+            btnAddFarmParcel.Focus();
         }
 
         private void btnDocuments_Click(object sender, EventArgs e)
@@ -364,16 +374,18 @@ namespace AgRecords.View
         {
             FormRefresh();
 
-            //radiobuttonsPreAnswer_PersonalInfo();
+            radiobuttonsPreAnswer_PersonalInfo();
             comboboxesPreAnswer_PersonalInfo();
-            disabletxtboxes_PersonalInfo();
+            disableObjects();
+
 
             DateTime minDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Today;
             dtDateAdm.MaxDate = DateTime.Today;
+            dtpBirthDate.Value = DateTime.Today;
+            dtDateAdm.Value = DateTime.Today;
             dtpBirthDate.MinDate = minDate;
             dtDateAdm.MinDate = minDate;
-
             txtSurname.Focus();
 
         }
@@ -506,17 +518,32 @@ namespace AgRecords.View
             textBoxFarmParcels.Text = sb.ToString();
         }
 
+        private void ResetPanel(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    checkBox.Checked = false;
+                }
+                else if (control is TextBox textBox)
+                {
+                    textBox.Text = string.Empty;
+                }
+            }
+        }
+
+
         //EVENTS
 
         //personal info
-        private void disabletxtboxes_PersonalInfo()
+        private void disableObjects()
         {
+            //personal info
             txtHouseHeadName.Enabled = false;
             txtHouseHeadRs.Enabled = false;
             txtIndigenous.Enabled = false;
             txtAssociation.Enabled = false;
-            txtGovIdType.Enabled = false;
-            txtGovIdNum.Enabled = false;
             txtReligionOthers.Enabled = false;
 
             txtHouseHeadName.BackColor = Color.White;
@@ -527,6 +554,19 @@ namespace AgRecords.View
             txtGovIdNum.BackColor = Color.White;
             txtReligionOthers.BackColor = Color.White;
             txtSpouseName.BackColor = Color.White;
+            nudNoLivingHouseMem.BackColor = Color.White;
+            txtInvolvementOthers.BackColor = Color.White;
+            txtFishingActOthers.BackColor = Color.White;
+            txtWorkKindOthers.BackColor = Color.White;
+            txtFarmActPoultry.BackColor = Color.White;
+            txtFarmActLivestock.BackColor = Color.White;
+            txtFarmActCrops.BackColor = Color.White;
+
+            //farm profile
+            panelForFarmers.Enabled = false;
+            panelForFarmerworkers.Enabled = false;
+            panelForFisherfolk.Enabled = false;
+            panelForAgriYouth.Enabled = false;
 
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
@@ -650,6 +690,7 @@ namespace AgRecords.View
                 flowLayoutPanelDocs.Controls.Remove(documentControl);
             }
         }
+
         //keypress events
         private void AlphaNum(object sender, KeyPressEventArgs e)
         {
@@ -665,6 +706,12 @@ namespace AgRecords.View
         {
             TextboxValidation.TextBox_NumericOnly(sender, e);
         }
+
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+        }
+
 
         private void NumOnlyLimited(object sender, KeyPressEventArgs e)
         {
@@ -688,7 +735,326 @@ namespace AgRecords.View
             TextboxValidation.TextBox_AllCaps(sender, e);
         }
 
+        //other events
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
 
+            if (focusedControl.Parent == panelPersonalDetails)
+            {
+                PanelSelected.Panel_Enter(panelPersonalDetails, panelPersonalDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelAddress)
+            {
+                PanelSelected.Panel_Enter(panelAddress, panelAddressHeader);
+            }
+            else if (focusedControl.Parent == panelContactDetails)
+            {
+                PanelSelected.Panel_Enter(panelContactDetails, panelContactDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelBirthDetails)
+            {
+                PanelSelected.Panel_Enter(panelBirthDetails, panelBirthDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelReligion)
+            {
+                PanelSelected.Panel_Enter(panelReligion, panelReligionHeader);
+            }
+            else if (focusedControl.Parent == panelCivilStat)
+            {
+                PanelSelected.Panel_Enter(panelCivilStat, panelCivStasHeader);
+            }
+            else if (focusedControl.Parent == panelHousehold)
+            {
+                PanelSelected.Panel_Enter(panelHousehold, panelHouseholdHeader);
+            }
+            else if (focusedControl.Parent == panelEduc)
+            {
+                PanelSelected.Panel_Enter(panelEduc, panelEducHeader);
+            }
+            else if (focusedControl.Parent == panelAffiliations || focusedControl.Parent == panelPWD || focusedControl.Parent == panel4Ps || focusedControl.Parent == panelIPGroup || focusedControl.Parent == panelGovId || focusedControl.Parent == panelCoop)
+            {
+                PanelSelected.Panel_Enter(panelAffiliations, panelAffiliationsHeader);
+            }
+            else if (focusedControl.Parent == panelEmergencyCon)
+            {
+                PanelSelected.Panel_Enter(panelEmergencyCon, panelEmergencyConHeader);
+            }
+            else if (focusedControl.Parent == panelMaidenName)
+            {
+                PanelSelected.Panel_Enter(panelMaidenName, panelMaidenNameHeader);
+            }
+            else if (focusedControl.Parent == panelMainLivelihood)
+            {
+                PanelSelected.Panel_Enter(panelMainLivelihood, panelMainLivelihoodHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmers)
+            {
+                PanelSelected.Panel_Enter(panelForFarmers, panelForFarmersHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmerworkers)
+            {
+                PanelSelected.Panel_Enter(panelForFarmerworkers, panelForFarmerworkersHeader);
+            }
+            else if (focusedControl.Parent == panelForFisherfolk)
+            {
+                PanelSelected.Panel_Enter(panelForFisherfolk, panelForFisherfolkHeader);
+            }
+            else if (focusedControl.Parent == panelForAgriYouth)
+            {
+                PanelSelected.Panel_Enter(panelForAgriYouth, panelForAgriYouthHeader);
+            }
+            else if (focusedControl.Parent == panelAnnuanIncome)
+            {
+                PanelSelected.Panel_Enter(panelAnnuanIncome, panelAnnuanIncomeHeader);
+            }
+            else if (focusedControl.Parent == panelFarmParcels)
+            {
+                PanelSelected.Panel_Enter(panelFarmParcels, panelFarmParcelsHeader);
+            }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPersonalDetails)
+            {
+                PanelSelected.Panel_Leave(panelPersonalDetails, panelPersonalDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelAddress)
+            {
+                PanelSelected.Panel_Leave(panelAddress, panelAddressHeader);
+            }
+            else if (focusedControl.Parent == panelContactDetails)
+            {
+                PanelSelected.Panel_Leave(panelContactDetails, panelContactDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelBirthDetails)
+            {
+                PanelSelected.Panel_Leave(panelBirthDetails, panelBirthDetailsHeader);
+            }
+            else if (focusedControl.Parent == panelReligion)
+            {
+                PanelSelected.Panel_Leave(panelReligion, panelReligionHeader);
+            }
+            else if (focusedControl.Parent == panelCivilStat)
+            {
+                PanelSelected.Panel_Leave(panelCivilStat, panelCivStasHeader);
+            }
+            else if (focusedControl.Parent == panelHousehold)
+            {
+                PanelSelected.Panel_Leave(panelHousehold, panelHouseholdHeader);
+            }
+            else if (focusedControl.Parent == panelEduc)
+            {
+                PanelSelected.Panel_Leave(panelEduc, panelEducHeader);
+            }
+            else if (focusedControl.Parent == panelAffiliations || focusedControl.Parent == panelPWD || focusedControl.Parent == panel4Ps || focusedControl.Parent == panelIPGroup || focusedControl.Parent == panelGovId || focusedControl.Parent == panelCoop)
+            {
+                PanelSelected.Panel_Leave(panelAffiliations, panelAffiliationsHeader);
+            }
+            else if (focusedControl.Parent == panelEmergencyCon)
+            {
+                PanelSelected.Panel_Leave(panelEmergencyCon, panelEmergencyConHeader);
+            }
+            else if (focusedControl.Parent == panelMaidenName)
+            {
+                PanelSelected.Panel_Leave(panelMaidenName, panelMaidenNameHeader);
+            }
+            else if (focusedControl.Parent == panelMainLivelihood)
+            {
+                PanelSelected.Panel_Leave(panelMainLivelihood, panelMainLivelihoodHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmers)
+            {
+                PanelSelected.Panel_Leave(panelForFarmers, panelForFarmersHeader);
+            }
+            else if (focusedControl.Parent == panelForFarmerworkers)
+            {
+                PanelSelected.Panel_Leave(panelForFarmerworkers, panelForFarmerworkersHeader);
+            }
+            else if (focusedControl.Parent == panelForFisherfolk)
+            {
+                PanelSelected.Panel_Leave(panelForFisherfolk, panelForFisherfolkHeader);
+            }
+            else if (focusedControl.Parent == panelForAgriYouth)
+            {
+                PanelSelected.Panel_Leave(panelForAgriYouth, panelForAgriYouthHeader);
+            }
+            else if (focusedControl.Parent == panelAnnuanIncome)
+            {
+                PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
+            }
+            else if (focusedControl.Parent == panelFarmParcels)
+            {
+                PanelSelected.Panel_Leave(panelFarmParcels, panelFarmParcelsHeader);
+            }
+
+            if (string.IsNullOrEmpty(txtFarmingIncome.Text))
+            {
+                txtFarmingIncome.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtNonFarmingIncome.Text))
+            {
+                txtNonFarmingIncome.Text = "0";
+            }
+        }
+
+        private void nudHouseNoMale_ValueChanged(object sender, EventArgs e)
+        {
+            nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
+        }
+
+        private void nudHouseFemale_ValueChanged(object sender, EventArgs e)
+        {
+            nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
+        }
+
+
+        private void isChecked(object sender, EventArgs e)
+        {
+            //main livelihood
+            if (cbLivelihoodFarmer.Checked)
+            {
+                panelForFarmers.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForFarmers);
+                panelForFarmers.Enabled = false;
+            }
+
+            if (cbLivelihoodFarmworker.Checked)
+            {
+                panelForFarmerworkers.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForFarmerworkers);
+                panelForFarmerworkers.Enabled = false;
+            }
+
+            if (cbLivelihoodFisherfolk.Checked)
+            {
+                panelForFisherfolk.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForFisherfolk);
+                panelForFisherfolk.Enabled = false;
+            }
+
+            if (cbLivelihoodAgriyouth.Checked)
+            {
+                panelForAgriYouth.Enabled = true;
+            }
+            else
+            {
+                ResetPanel(panelForAgriYouth);
+                panelForAgriYouth.Enabled = false;
+            }
+            //activities
+            if (cbFarmActCrops.Checked)
+            {
+                txtFarmActCrops.Enabled = true;
+                if (txtFarmActCrops.Text == "")
+                {
+                    txtFarmActCrops.Focus();
+                }
+            }
+            else
+            {
+                txtFarmActCrops.Enabled = false;
+                txtFarmActCrops.Clear();
+            }
+
+            if (cbFarmActLivestock.Checked)
+            {
+                txtFarmActLivestock.Enabled = true;
+                if (txtFarmActLivestock.Text == "")
+                {
+                    txtFarmActLivestock.Focus();
+                }
+            }
+            else
+            {
+                txtFarmActLivestock.Enabled = false;
+                txtFarmActLivestock.Clear();
+            }
+
+            if (cbFarmActPoultry.Checked)
+            {
+                txtFarmActPoultry.Enabled = true;
+                if (txtFarmActPoultry.Text == "")
+                {
+                    txtFarmActPoultry.Focus();
+                }
+            }
+            else
+            {
+                txtFarmActPoultry.Enabled = false;
+                txtFarmActPoultry.Clear();
+            }
+
+            if (cbWorkKindOthers.Checked)
+            {
+                txtWorkKindOthers.Enabled = true;
+                if (txtWorkKindOthers.Text == "")
+                {
+                    txtWorkKindOthers.Focus();
+                }
+            }
+            else
+            {
+                txtWorkKindOthers.Enabled = false;
+                txtWorkKindOthers.Clear();
+            }
+
+            if (cbFishingActOthers.Checked)
+            {
+                txtFishingActOthers.Enabled = true;
+                if (txtFishingActOthers.Text == "")
+                {
+                    txtFishingActOthers.Focus();
+                }
+            }
+            else
+            {
+                txtFishingActOthers.Enabled = false;
+                txtFishingActOthers.Clear();
+            }
+
+            if (cbInvolvementOthers.Checked)
+            {
+                txtInvolvementOthers.Enabled = true;
+                if (txtInvolvementOthers.Text == "")
+                {
+                    txtInvolvementOthers.Focus();
+                }
+            }
+            else
+            {
+                txtInvolvementOthers.Enabled = false;
+                txtInvolvementOthers.Clear();
+            }
+        }
+
+        private void txtFarmingIncome_Click(object sender, EventArgs e)
+        {
+            if (txtFarmingIncome.Text == "0")
+            {
+                txtFarmingIncome.Text = string.Empty;
+            }
+        }
+
+        private void txtNonFarmingIncome_Click(object sender, EventArgs e)
+        {
+            if (txtNonFarmingIncome.Text == "0")
+            {
+                txtNonFarmingIncome.Text = string.Empty;
+            }
+        }
 
     }
 }

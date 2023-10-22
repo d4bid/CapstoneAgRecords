@@ -1,5 +1,7 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
+using Org.BouncyCastle.Crypto.Modes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +35,7 @@ namespace AgRecords.View
         {
             //parcel
             labelParcelNo.Text = farmParcel.farmParcelNo.ToString();
-            txtFarmLocBarangay.Text = farmParcel.farmLocBrgy;
+            cbFarmLocBarangay.Text = farmParcel.farmLocBrgy;
             txtFarmLocMunicipality.Text = farmParcel.farmLocMunicipality;
             txtFarmArea.Text = farmParcel.farmSize.ToString();
             txtOwnershipDocNo.Text = farmParcel.ownershipNo;
@@ -68,7 +70,7 @@ namespace AgRecords.View
                 txtOwnerName.Text = farmParcel.ownerName;
             }
 
-            if(farmParcelCrop != null)
+            if (farmParcelCrop != null)
             {
                 //parcel crop/commodities
                 int livestockIndex = 1; //index for the first available txtLivestock TextBox
@@ -141,7 +143,9 @@ namespace AgRecords.View
 
         private void FarmLandControl_Load(object sender, EventArgs e)
         {
-            //SetComboBoxesSelectedIndex(this);
+            disableObjects();
+            preAnswerRB();
+            cbFarmLocBarangay.Focus();
         }
 
         private void SetComboBoxesSelectedIndex(Control control)
@@ -161,13 +165,15 @@ namespace AgRecords.View
 
         public FarmParcel GetFarmParcelData(string rsbsaId)
         {
+            double? _farmSize = double.TryParse(txtFarmArea.Text, out double farmSizeParsedValue) && farmSizeParsedValue > 0 ? farmSizeParsedValue : (double?)null;
+
             FarmParcel parcel = new FarmParcel
             {
                 rsbsaId = rsbsaId,
                 farmParcelNo = labelParcelNo.Text,
-                farmLocBrgy = txtFarmLocBarangay.Text,
+                farmLocBrgy = cbFarmLocBarangay.Text,
                 farmLocMunicipality = txtFarmLocMunicipality.Text,
-                farmSize = Convert.ToDouble(txtFarmArea.Text),
+                farmSize = _farmSize,
                 isAncestralDomain = panelAncestralDomain.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
                 ownershipNo = txtOwnershipDocNo.Text,
                 isAgrarianBeneficiary = panelBeneficiary.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text == "Yes" ? "Yes" : "No",
@@ -178,6 +184,13 @@ namespace AgRecords.View
                 Crops = new List<FarmParcelCrop>()
             };
 
+            //if value cannot be parsed to double, return null
+            double? riceLandSize = double.TryParse(txtLandSizeRice.Text, out double riceParsedValue) && riceParsedValue > 0 ? riceParsedValue : (double?)null;
+            double? cornLandSize = double.TryParse(txtLandSizeCorn.Text, out double cornParsedValue) && cornParsedValue > 0 ? cornParsedValue : (double?)null;
+            double? hvcLandSize = double.TryParse(txtLandSizeRice.Text, out double hvcParsedValue) && hvcParsedValue > 0 ? hvcParsedValue : (double?)null;
+            double? agrifishLandSize = double.TryParse(txtLandSizeRice.Text, out double agrifishParsedValue) && agrifishParsedValue > 0 ? agrifishParsedValue : (double?)null;
+
+
             if (chCropIsRice.Checked)
             {
                 FarmParcelCrop riceCrop = new FarmParcelCrop
@@ -185,7 +198,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Rice",
-                    landSize = Convert.ToDouble(txtLandSizeRice.Text),
+                    landSize = riceLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbRiceFarmType.Text,
                     isOrganic = cbIsOrganicRice.Text
@@ -201,7 +214,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Corn",
-                    landSize = Convert.ToDouble(txtLandSizeCorn.Text),
+                    landSize = cornLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbCornFarmType.Text,
                     isOrganic = cbIsOrganicCorn.Text
@@ -217,7 +230,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "HVC",
-                    landSize = Convert.ToDouble(txtLandSizeHVC.Text),
+                    landSize = hvcLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbHVCFarmType.Text,
                     isOrganic = cbIsOrganicHVC.Text
@@ -233,7 +246,7 @@ namespace AgRecords.View
                     rsbsaId = rsbsaId,
                     farmParcelNo = labelParcelNo.Text,
                     commodityType = "Agri-Fishery",
-                    landSize = Convert.ToDouble(txtLandSizeAgriFishery.Text),
+                    landSize = agrifishLandSize,
                     headCount = 0, // HeadCount for crops is always 0
                     farmType = cbAgriFisheryFarmType.Text,
                     isOrganic = cbIsOrganicAgriFishery.Text
@@ -326,27 +339,388 @@ namespace AgRecords.View
             return parcel;
         }
 
-        private void txtLivestockHeadCount1_TextChanged(object sender, EventArgs e)
+        //keypress events
+        private void AlphaNum(object sender, KeyPressEventArgs e)
         {
+            TextboxValidation.TextBox_AlpaNumeric(sender, e);
+        }
+        private void NumOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericOnly(sender, e);
+
+        }
+        private void AlphaOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlphaOnly(sender, e);
+            if (sender == txtLivestock1 && txtLivestock1.Text.Length >= 2)
+            {
+                txtLivestockHeadCount1.Enabled = true;
+            }
+            if (string.IsNullOrEmpty(txtLivestock1.Text))
+            {
+                txtLivestockHeadCount1.Text = "";
+                txtLivestockHeadCount1.Enabled = false;
+            }
+
+            if (sender == txtLivestock2 && txtLivestock2.Text.Length >= 2)
+            {
+                txtLivestockHeadCount2.Enabled = true;
+            }
+            if (string.IsNullOrEmpty(txtLivestock2.Text))
+            {
+                txtLivestockHeadCount2.Text = "";
+                txtLivestockHeadCount2.Enabled = false;
+            }
+
+            if (sender == txtLivestock3 && txtLivestock3.Text.Length >= 2)
+            {
+                txtLivestockHeadCount3.Enabled = true;
+            }
+            if (string.IsNullOrEmpty(txtLivestock3.Text))
+            {
+                txtLivestockHeadCount3.Text = "";
+                txtLivestockHeadCount3.Enabled = false;
+            }
+
+            if (sender == txtLivestock4 && txtLivestock4.Text.Length >= 2)
+            {
+                txtLivestockHeadCount4.Enabled = true;
+            }
+            if (string.IsNullOrEmpty(txtLivestock4.Text))
+            {
+                txtLivestockHeadCount4.Text = "";
+                txtLivestockHeadCount4.Enabled = false;
+            }
+
+            if (sender == txtLivestock5 && txtLivestock5.Text.Length >= 2)
+            {
+                txtLivestockHeadCount5.Enabled = true;
+            }
+            if (string.IsNullOrEmpty(txtLivestock5.Text))
+            {
+                txtLivestockHeadCount5.Text = "";
+                txtLivestockHeadCount5.Enabled = false;
+            }
 
         }
 
-        private void txtLivestockHeadCount2_TextChanged(object sender, EventArgs e)
+
+        private void enableNextTexbox(object sender, EventArgs e)
         {
+            if (sender == txtLivestockHeadCount1 && txtLivestockHeadCount1.Text.Length >= 1)
+            {
+                txtLivestock2.Enabled = true;
+            }
+
+            if (sender == txtLivestockHeadCount2 && txtLivestockHeadCount2.Text.Length >= 1)
+            {
+                txtLivestock3.Enabled = true;
+            }
+            if (sender == txtLivestockHeadCount3 && txtLivestockHeadCount3.Text.Length >= 1)
+            {
+                txtLivestock4.Enabled = true;
+            }
+            else
+
+            if (sender == txtLivestockHeadCount4 && txtLivestockHeadCount4.Text.Length >= 1)
+            {
+                txtLivestock5.Enabled = true;
+            }
         }
 
-        private void txtLivestockHeadCount3_TextChanged(object sender, EventArgs e)
+
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
         {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+
         }
 
-        private void cbIsOrganicCorn_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void NumOnlyLimited(object sender, KeyPressEventArgs e)
+        {
+            //if (txtEcContact.Focused)
+            //{
+            //    TextboxValidation.TextBox_NumericOnlyLimited(txtEcContact, e, 11);
+            //}
+            //else if (txtMobNo.Focused)
+            //{
+            //    TextboxValidation.TextBox_NumericOnlyLimited(txtMobNo, e, 11);
+            //}
+            //else if (txtLandNo.Focused)
+            //{
+            //    TextboxValidation.TextBox_NumericOnlyLimited(txtLandNo, e, 7);
+            //}
         }
 
-        private void txtFarmArea_TextChanged(object sender, EventArgs e)
+        //textchanged events
+        private void AllCaps(object sender, EventArgs e)
         {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
+
+
+        //other events
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelFarmLandDescription || focusedControl.Parent == panelOwnershipType || focusedControl.Parent == panelAncestralDomain || focusedControl.Parent == panelBeneficiary)
+            {
+                PanelSelected.Panel_Enter(panelFarmLandDescription, panelFarmLandDescriptionHeader);
+            }
+            else if (focusedControl.Parent == panelFarm || focusedControl.Parent == gbCrops || focusedControl.Parent == gbFarmType || focusedControl.Parent == gbSize || focusedControl.Parent == gbLivestock || focusedControl.Parent == gbOrganic || focusedControl == txtRemarks)
+            {
+                PanelSelected.Panel_Enter(panelFarm, panelFarmHeader);
+            }
+            if (focusedControl == txtLivestockHeadCount1)
+
+                if (txtLivestockHeadCount1.Text == "0")
+                {
+                    txtLivestockHeadCount1.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount2)
+
+                if (txtLivestockHeadCount2.Text == "0")
+                {
+                    txtLivestockHeadCount2.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount3)
+
+                if (txtLivestockHeadCount3.Text == "0")
+                {
+                    txtLivestockHeadCount3.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount4)
+
+                if (txtLivestockHeadCount4.Text == "0")
+                {
+                    txtLivestockHeadCount4.Text = string.Empty;
+                }
+            if (focusedControl == txtLivestockHeadCount5)
+
+                if (txtLivestockHeadCount5.Text == "0")
+                {
+                    txtLivestockHeadCount5.Text = string.Empty;
+                }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelFarmLandDescription || focusedControl.Parent == panelOwnershipType || focusedControl.Parent == panelAncestralDomain || focusedControl.Parent == panelBeneficiary)
+            {
+                PanelSelected.Panel_Leave(panelFarmLandDescription, panelFarmLandDescriptionHeader);
+            }
+
+            else if (focusedControl.Parent == panelFarm || focusedControl.Parent == gbCrops || focusedControl.Parent == gbFarmType || focusedControl.Parent == gbSize || focusedControl.Parent == gbLivestock || focusedControl.Parent == gbOrganic || focusedControl == txtRemarks)
+            {
+                PanelSelected.Panel_Leave(panelFarm, panelFarmHeader);
+            }
+
+            if (string.IsNullOrEmpty(txtLivestockHeadCount1.Text))
+            {
+                txtLivestockHeadCount1.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount2.Text))
+            {
+                txtLivestockHeadCount2.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount3.Text))
+            {
+                txtLivestockHeadCount3.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount4.Text))
+            {
+                txtLivestockHeadCount4.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestockHeadCount5.Text))
+            {
+                txtLivestockHeadCount5.Text = "0";
+            }
+            if (string.IsNullOrEmpty(txtLivestock1.Text))
+            {
+                txtLivestockHeadCount1.Text = "";
+                txtLivestockHeadCount1.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock2.Text))
+            {
+                txtLivestockHeadCount2.Text = "";
+                txtLivestockHeadCount2.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock3.Text))
+            {
+                txtLivestockHeadCount3.Text = "";
+                txtLivestockHeadCount3.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock4.Text))
+            {
+                txtLivestockHeadCount4.Text = "";
+                txtLivestockHeadCount4.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(txtLivestock5.Text))
+            {
+                txtLivestockHeadCount5.Text = "";
+                txtLivestockHeadCount5.Enabled = false;
+            }
 
         }
+        private void disableObjects()
+        {
+            txtOwnerName.Enabled = false;
+            txtLandSizeRice.Enabled = false;
+            txtLandSizeCorn.Enabled = false;
+            txtLandSizeHVC.Enabled = false;
+            txtLandSizeAgriFishery.Enabled = false;
+            txtLivestockHeadCount1.Enabled = false;
+            txtLivestockHeadCount2.Enabled = false;
+            txtLivestockHeadCount3.Enabled = false;
+            txtLivestockHeadCount4.Enabled = false;
+            txtLivestockHeadCount5.Enabled = false;
+            cbRiceFarmType.Enabled = false;
+            cbCornFarmType.Enabled = false;
+            cbHVCFarmType.Enabled = false;
+            cbAgriFisheryFarmType.Enabled = false;
+            cbIsOrganicRice.Enabled = false;
+            cbIsOrganicCorn.Enabled = false;
+            cbIsOrganicHVC.Enabled = false;
+            cbIsOrganicAgriFishery.Enabled = false;
+            txtLivestock2.Enabled = false;
+            txtLivestock3.Enabled = false;
+            txtLivestock4.Enabled = false;
+            txtLivestock5.Enabled = false;
+
+            txtOwnerName.BackColor = Color.White;
+            txtLandSizeRice.BackColor = Color.White;
+            txtLandSizeCorn.BackColor = Color.White;
+            txtLandSizeHVC.BackColor = Color.White;
+            txtLivestock2.BackColor = Color.White;
+            txtLivestock3.BackColor = Color.White;
+            txtLivestock4.BackColor = Color.White;
+            txtLivestock5.BackColor = Color.White;
+            txtLandSizeAgriFishery.BackColor = Color.White;
+            txtLivestockHeadCount1.BackColor = Color.White;
+            txtLivestockHeadCount2.BackColor = Color.White;
+            txtLivestockHeadCount3.BackColor = Color.White;
+            txtLivestockHeadCount4.BackColor = Color.White;
+            txtLivestockHeadCount5.BackColor = Color.White;
+
+
+
+        }
+        private void preAnswerRB()
+        {
+            rbAncestralDomainNo.Checked = true;
+            rbBeneficiaryNo.Checked = true;
+        }
+        private void cbQuickAnswer_Farmland(object sender, EventArgs e)
+        {
+            if (sender == chCropIsRice)
+            {
+                if (chCropIsRice.Checked)
+                {
+                    cbRiceFarmType.SelectedIndex = 0;
+                    cbIsOrganicRice.SelectedIndex = 1;
+                    txtLandSizeRice.Enabled = true;
+                    txtLandSizeRice.Focus();
+                    cbRiceFarmType.Enabled = true;
+                    cbIsOrganicRice.Enabled = true;
+                }
+                else
+                {
+                    cbRiceFarmType.SelectedIndex = -1;
+                    cbIsOrganicRice.SelectedIndex = -1;
+                    txtLandSizeRice.Clear();
+                    txtLandSizeRice.Enabled = false;
+                    cbRiceFarmType.Enabled = false;
+                    cbIsOrganicRice.Enabled = false;
+                }
+            }
+            if (sender == chCropIsCorn)
+            {
+                if (chCropIsCorn.Checked)
+                {
+                    cbCornFarmType.SelectedIndex = 0;
+                    cbIsOrganicCorn.SelectedIndex = 1;
+                    txtLandSizeCorn.Enabled = true;
+                    txtLandSizeCorn.Focus();
+                    cbCornFarmType.Enabled = true;
+                    cbIsOrganicCorn.Enabled = true;
+                }
+                else
+                {
+                    txtLandSizeCorn.Enabled = false;
+                    cbCornFarmType.Enabled = false;
+                    cbIsOrganicCorn.Enabled = false;
+                    cbCornFarmType.SelectedIndex = -1;
+                    cbIsOrganicCorn.SelectedIndex = -1;
+                    txtLandSizeCorn.Clear();
+                }
+            }
+
+            if (sender == chCropIsHVC)
+            {
+                if (chCropIsHVC.Checked)
+                {
+                    cbHVCFarmType.SelectedIndex = 0;
+                    cbIsOrganicHVC.SelectedIndex = 1;
+                    txtLandSizeHVC.Enabled = true;
+                    txtLandSizeHVC.Focus();
+                    cbHVCFarmType.Enabled = true;
+                    cbIsOrganicHVC.Enabled = true;
+                }
+                else
+                {
+                    txtLandSizeHVC.Enabled = false;
+                    cbHVCFarmType.Enabled = false;
+                    cbIsOrganicHVC.Enabled = false;
+                    cbHVCFarmType.SelectedIndex = -1;
+                    cbIsOrganicHVC.SelectedIndex = -1;
+                    txtLandSizeHVC.Clear();
+
+                }
+            }
+            if (sender == chIsAgriFishery)
+            {
+                if (chIsAgriFishery.Checked)
+                {
+                    cbAgriFisheryFarmType.SelectedIndex = 0;
+                    cbIsOrganicAgriFishery.SelectedIndex = 1;
+                    txtLandSizeAgriFishery.Enabled = true;
+                    txtLandSizeAgriFishery.Focus();
+                    cbAgriFisheryFarmType.Enabled = true;
+                    cbIsOrganicAgriFishery.Enabled = true;
+                }
+                else
+                {
+                    txtLandSizeAgriFishery.Enabled = false;
+                    cbAgriFisheryFarmType.Enabled = false;
+                    cbIsOrganicAgriFishery.Enabled = false;
+                    cbAgriFisheryFarmType.SelectedIndex = -1;
+                    cbIsOrganicAgriFishery.SelectedIndex = -1;
+                    txtLandSizeAgriFishery.Clear();
+                }
+            }
+        }
+
+        private void rbOwnershipTypeOwner_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbOwnershipTypeOwner.Checked)
+            {
+                txtOwnerName.Enabled = false;
+                txtOwnerName.Clear();
+            }
+            else
+            {
+                txtOwnerName.Enabled = true;
+                txtOwnerName.Focus();
+            }
+        }
+
     }
 }
+
