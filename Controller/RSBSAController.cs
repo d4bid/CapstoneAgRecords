@@ -675,13 +675,13 @@ namespace AgRecords.Controller
 
                         else if (isFarmParcelValidated == false)
                         {
-                            if (parcel.Crops == null || !parcel.Crops.Any(c => !string.IsNullOrEmpty(c.commodityType)))
-                            {
-                                MessageBox.Show($"No commodity has been selected for farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                break;
-                            }
-                            else
-                            {
+                            //if (parcel.Crops == null || !parcel.Crops.Any(c => !string.IsNullOrEmpty(c.commodityType)))
+                            //{
+                            //    MessageBox.Show($"No commodity has been selected for farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            //    break;
+                            //}
+                            //else
+                            //{
                                 // Crop validation (assuming FarmParcel has a List<FarmParcelCrop> property named Crops)
                                 foreach (FarmParcelCrop crop in parcel.Crops)
                                 {
@@ -736,7 +736,7 @@ namespace AgRecords.Controller
                                         {
                                             if (crop.landSize == null)
                                             {
-                                                MessageBox.Show($"Please enter a valid land size for the AGRI-FISHERY farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                MessageBox.Show($"Please enter a land size for the AGRI-FISHERY farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                                 break;
                                             }
                                             if (crop.landSize > parcel.farmSize)
@@ -746,21 +746,22 @@ namespace AgRecords.Controller
                                             }
                                         }
 
-                                        else if (crop.commodityType != "Rice" && crop.commodityType != "Corn" && crop.commodityType != "HVC" && crop.commodityType != "Agri-Fishery")
-                                        {
-                                            if (crop.headCount == 0)
-                                            {
-                                                MessageBox.Show($"Please enter a head count for {crop.commodityType} in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                break;
-                                            }
-                                        }
+                                        //else if (crop.commodityType != "Rice" && crop.commodityType != "Corn" && crop.commodityType != "HVC" && crop.commodityType != "Agri-Fishery")
+                                        //{
+                                        //    if (crop.headCount == 0)
+                                        //    {
+                                        //        MessageBox.Show($"Please enter a head count for {crop.commodityType} in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        //        break;
+                                        //    }
+                                        //}
                                         else
                                         {
                                             isFarmParcelValidated = true;
+                                            MessageBox.Show("Farm parcel validated");
                                         }
                                     }
 
-                                }
+                               // }
                             }
                         }
 
