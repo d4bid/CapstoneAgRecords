@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace AgRecords.Model
 {
@@ -28,6 +29,14 @@ namespace AgRecords.Model
             if (connection.State != ConnectionState.Closed)
             {
                 connection.Close();
+            }
+        }
+
+        public async Task OpenAsync()
+        {
+            if (connection.State != ConnectionState.Open)
+            {
+                await connection.OpenAsync();
             }
         }
 

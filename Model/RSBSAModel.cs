@@ -76,75 +76,89 @@ namespace AgRecords.Model
             }
         }
 
-        public bool AddNewFarmParcel(List<FarmParcel> farmParcels)
+        public async Task<bool> AddNewFarmParcelAsync(List<FarmParcel> farmParcels)
         {
-
-            using (DatabaseConnection db = new DatabaseConnection())
+            try
             {
-                db.Open();
-                MySqlTransaction transaction = null;
-
-                try
+                // Use Task.Run to run synchronous code asynchronously
+                bool result = await Task.Run(() =>
                 {
-                    // Begin the transaction
-                    transaction = db.GetConnection().BeginTransaction();
-
-                    foreach (FarmParcel farmParcel in farmParcels)
+                    using (DatabaseConnection db = new DatabaseConnection())
                     {
-                        // Save data to tbl_farmland_parcel using sp_addNewFarmParcel stored procedure
-                        MySqlCommand parcelCommand = new MySqlCommand("sp_addNewFarmParcel", db.GetConnection());
-                        parcelCommand.CommandType = CommandType.StoredProcedure;
+                        db.Open();
+                        MySqlTransaction transaction = null;
 
-                        parcelCommand.Parameters.AddWithValue("_rsbsaId", farmParcel.rsbsaId);
-                        parcelCommand.Parameters.AddWithValue("_farmParcelNo", farmParcel.farmParcelNo);
-                        parcelCommand.Parameters.AddWithValue("_farmLocBrgy", farmParcel.farmLocBrgy);
-                        parcelCommand.Parameters.AddWithValue("_farmLocMunicipality", farmParcel.farmLocMunicipality);
-                        parcelCommand.Parameters.AddWithValue("_farmSize", farmParcel.farmSize);
-                        parcelCommand.Parameters.AddWithValue("_isAncestralDomain", farmParcel.isAncestralDomain);
-                        parcelCommand.Parameters.AddWithValue("_isAgrarianBeneficiary", farmParcel.isAgrarianBeneficiary);
-                        parcelCommand.Parameters.AddWithValue("_ownershipNo", farmParcel.ownershipNo);
-                        parcelCommand.Parameters.AddWithValue("_isRegisteredOwner", farmParcel.isRegisteredOwner);
-                        parcelCommand.Parameters.AddWithValue("_ownershipType", farmParcel.ownershipType);
-                        parcelCommand.Parameters.AddWithValue("_ownerName", farmParcel.ownerName);
-                        parcelCommand.Parameters.AddWithValue("_remarks", farmParcel.remarks);
-
-                        parcelCommand.ExecuteNonQuery();
-
-                        // Save data to tbl_farmland_parcel_crops using sp_addNewFarmParcelCrops stored procedure
-                        foreach (FarmParcelCrop crop in farmParcel.Crops)
+                        try
                         {
-                            MySqlCommand cropCommand = new MySqlCommand("sp_addNewFarmParcelCrops", db.GetConnection());
-                            cropCommand.CommandType = CommandType.StoredProcedure;
+                            // Begin the transaction
+                            transaction = db.GetConnection().BeginTransaction();
 
-                            cropCommand.Parameters.AddWithValue("_rsbsaId", crop.rsbsaId);
-                            cropCommand.Parameters.AddWithValue("_farmParcelNo", crop.farmParcelNo);
-                            cropCommand.Parameters.AddWithValue("_commodityType", crop.commodityType);
-                            cropCommand.Parameters.AddWithValue("_landSize", crop.landSize);
-                            cropCommand.Parameters.AddWithValue("_headCount", crop.headCount);
-                            cropCommand.Parameters.AddWithValue("_farmType", crop.farmType);
-                            cropCommand.Parameters.AddWithValue("_isOrganic", crop.isOrganic);
+                            foreach (FarmParcel farmParcel in farmParcels)
+                            {
+                                // Save data to tbl_farmland_parcel using sp_addNewFarmParcel stored procedure
+                                MySqlCommand parcelCommand = new MySqlCommand("sp_addNewFarmParcel", db.GetConnection());
+                                parcelCommand.CommandType = CommandType.StoredProcedure;
 
-                            cropCommand.ExecuteNonQuery();
+                                parcelCommand.Parameters.AddWithValue("_rsbsaId", farmParcel.rsbsaId);
+                                parcelCommand.Parameters.AddWithValue("_farmParcelNo", farmParcel.farmParcelNo);
+                                parcelCommand.Parameters.AddWithValue("_farmLocBrgy", farmParcel.farmLocBrgy);
+                                parcelCommand.Parameters.AddWithValue("_farmLocMunicipality", farmParcel.farmLocMunicipality);
+                                parcelCommand.Parameters.AddWithValue("_farmSize", farmParcel.farmSize);
+                                parcelCommand.Parameters.AddWithValue("_isAncestralDomain", farmParcel.isAncestralDomain);
+                                parcelCommand.Parameters.AddWithValue("_isAgrarianBeneficiary", farmParcel.isAgrarianBeneficiary);
+                                parcelCommand.Parameters.AddWithValue("_ownershipNo", farmParcel.ownershipNo);
+                                parcelCommand.Parameters.AddWithValue("_isRegisteredOwner", farmParcel.isRegisteredOwner);
+                                parcelCommand.Parameters.AddWithValue("_ownershipType", farmParcel.ownershipType);
+                                parcelCommand.Parameters.AddWithValue("_ownerName", farmParcel.ownerName);
+                                parcelCommand.Parameters.AddWithValue("_remarks", farmParcel.remarks);
+
+                                parcelCommand.ExecuteNonQuery();
+
+                                // Save data to tbl_farmland_parcel_crops using sp_addNewFarmParcelCrops stored procedure
+                                foreach (FarmParcelCrop crop in farmParcel.Crops)
+                                {
+                                    MySqlCommand cropCommand = new MySqlCommand("sp_addNewFarmParcelCrops", db.GetConnection());
+                                    cropCommand.CommandType = CommandType.StoredProcedure;
+
+                                    cropCommand.Parameters.AddWithValue("_rsbsaId", crop.rsbsaId);
+                                    cropCommand.Parameters.AddWithValue("_farmParcelNo", crop.farmParcelNo);
+                                    cropCommand.Parameters.AddWithValue("_commodityType", crop.commodityType);
+                                    cropCommand.Parameters.AddWithValue("_landSize", crop.landSize);
+                                    cropCommand.Parameters.AddWithValue("_headCount", crop.headCount);
+                                    cropCommand.Parameters.AddWithValue("_farmType", crop.farmType);
+                                    cropCommand.Parameters.AddWithValue("_isOrganic", crop.isOrganic);
+
+                                    cropCommand.ExecuteNonQuery();
+                                }
+                            }
+
+                            // Commit the transaction
+                            transaction.Commit();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            // Rollback the transaction if an exception occurs
+                            transaction?.Rollback();
+                            throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
                         }
                     }
-
-                    // Commit the transaction
-                    transaction.Commit();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    // Rollback the transaction if an exception occurs
-                    transaction?.Rollback();
-                    throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
-                }
+                });
+                return result;
             }
+            catch (Exception ex)
+            {
+                // Handle exceptions here if needed
+                // Log the exception, etc.
+                return false;
+            }
+
+            
 
         }
 
         public bool EditFarmParcel(List<FarmParcel> farmParcels)
         {
-
             using (DatabaseConnection db = new DatabaseConnection())
             {
                 db.Open();
@@ -318,13 +332,13 @@ namespace AgRecords.Model
             }
         }
 
-        public Boolean AddNewRSBSARecord(RSBSA rsbsa)
+        public async Task<bool> AddNewRSBSARecordAsync(RSBSA rsbsa)
         {
             try
             {
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
-                    db.Open();
+                    await db.OpenAsync();
 
                     string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, " +
                                     "@surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
@@ -421,7 +435,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@rotatingFarmers", rsbsa.rotatingFarmers);
                     command.Parameters.AddWithValue("@farmParcelCount", rsbsa.farmParcelCount);
 
-                    command.ExecuteNonQuery();
+                    await command.ExecuteNonQueryAsync();
                     return true;
                 }
             }

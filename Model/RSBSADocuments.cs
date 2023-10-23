@@ -8,12 +8,12 @@ namespace AgRecords.Model
 {
     public class RSBSADocuments
     {
-        public string rsbsaId { get; set; }
+        public string? rsbsaId { get; set; }
 
-        public string docType { get; set; }
-        public string docFilename { get; set; }
+        public string? docType { get; set; }
+        public string? docFilename { get; set; }
 
-        public Dictionary<string, Image> docPhotoDictionary = new Dictionary<string, Image>();
+        public Dictionary<string, Image>? docPhotoDictionary = new Dictionary<string, Image>();
 
     }
 }

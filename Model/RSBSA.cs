@@ -9,7 +9,7 @@ namespace AgRecords.Model
     public class RSBSA
     {
         //RSBSA Info
-        public string rsbsaId { get; set; }
+        public string? rsbsaId { get; set; }
         public string? rsbsaIdLGU { get; set; }
         public string? rsbsaIdRegion { get; set; }
         public DateTime dateCreated { get; set; }

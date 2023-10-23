@@ -216,7 +216,7 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddRSBSA(
+        public async Task<bool> AddRSBSA(
             string rsbsaId,
             string? rsbsaIdLGU,
             string? rsbsaIdRegion,
@@ -781,9 +781,9 @@ namespace AgRecords.Controller
                     DialogResult result = MessageBox.Show("Are you sure you want to save this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
-                        if (rsbsaModel.AddNewRSBSARecord(rsbsa))
+                        if (await rsbsaModel.AddNewRSBSARecordAsync(rsbsa))
                         {
-                            if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                            if (await rsbsaModel.AddNewFarmParcelAsync(farmParcels))
                             {
                                 if (rsbsaModel.AddNewRSBSADocument(rsbsaDocuments))
                                 {

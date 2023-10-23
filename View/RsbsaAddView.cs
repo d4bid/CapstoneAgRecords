@@ -80,7 +80,7 @@ namespace AgRecords.View
 
         // Buttons/Tab
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             //radio buttons in personal info
             RadioButton rbIsHouseholdHead = panelHousehold.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
@@ -272,7 +272,7 @@ namespace AgRecords.View
             }
 
 
-            if (rsbsaController.AddRSBSA(
+            if (await rsbsaController.AddRSBSA(
                 //rsbsa info
                 labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
 

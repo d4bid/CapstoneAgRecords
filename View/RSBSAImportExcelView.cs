@@ -48,8 +48,16 @@ namespace AgRecords.View
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
+            // Get the total number of rows to be saved
+            int totalRows = ((DataTable)dgvRSBSAtoImport.DataSource).Rows.Count - 2; // minus 2 for the extra row occupied by the columns in excel
+
+            // Set the ProgressBar properties
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = totalRows;
+            progressBar1.Value = 0;
+
             // Iterate through DataTable rows and insert into the database
             foreach (DataRow row in ((DataTable)dgvRSBSAtoImport.DataSource).Rows)
             {
@@ -62,6 +70,7 @@ namespace AgRecords.View
                     if (DateTime.TryParseExact(row["BIRTHDATE"].ToString(), dateFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out excelDate))
                     {
                         StringBuilder sb = new StringBuilder();
+                        RSBSA rsbsa = new RSBSA();
 
                         // Convert the date to the database format "yyyy-MM-dd"
                         string databaseDate = excelDate.ToString("yyyy-MM-dd");
@@ -69,14 +78,15 @@ namespace AgRecords.View
                         if (rsbsaModel.CheckFarmerExistence(row["FIRST NAME"].ToString(), row["MIDDLE NAME"].ToString(), row["LAST NAME"].ToString(), row["SUFFIX AND EXTENSION"].ToString(), databaseDate))
                         {
                             // Farmer with the provided details already exists in the database
-                            MessageBox.Show("HAAAKDUG");
+                            //MessageBox.Show("HAAAKDUG");
+                            progressBar1.Value++;
                         }
                         else
                         {
+                            RSBSAModel rsbsaModel = new RSBSAModel();
                             string getNextRSBSAId = rsbsaModel.GenerateRSBSAId();
 
                             // Farmer with the provided details does not exist in the database
-                            RSBSA rsbsa = new RSBSA();
                             rsbsa.rsbsaId = getNextRSBSAId;
                             rsbsa.rsbsaIdRegion = row["SYSTEM_GENERATED_RSBSA_NUMBER"].ToString();
                             rsbsa.surname = row["LAST NAME"].ToString();
@@ -132,43 +142,35 @@ namespace AgRecords.View
 
                             rsbsa.farmParcels.Add(farmParcel);
 
-                            if (rsbsaModel.AddNewRSBSARecord(rsbsa))
-                            {
-                                if (rsbsaModel.AddNewFarmParcel(rsbsa.farmParcels))
-                                {
-                                    MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                            if (await rsbsaModel.AddNewRSBSARecordAsync(rsbsa))
+                            {
+                                if (await rsbsaModel.AddNewFarmParcelAsync(rsbsa.farmParcels))
+                                {
+                                    // Increment the ProgressBar value and update the label
+                                    progressBar1.Value++;
+                                    labelProgress.Text = $"Saving: {progressBar1.Value} of {totalRows}";
                                 }
                             }
-
-                            // Add information to the StringBuilder
-                            //sb.AppendLine("RSBSA ID: " + rsbsa.rsbsaId);
-                            //sb.AppendLine("Region: " + rsbsa.rsbsaIdRegion);
-                            //sb.AppendLine("Surname: " + rsbsa.surname);
-                            //sb.AppendLine("First Name: " + rsbsa.firstname);
-                            //sb.AppendLine("Middle Name: " + rsbsa.middlename);
-                            //sb.AppendLine("Suffix and Extension: " + rsbsa.extname);
-                            //sb.AppendLine("Sex: " + rsbsa.sex);
-                            //sb.AppendLine("Address Purok: " + rsbsa.addrPurok);
-                            //sb.AppendLine("Municipality: " + rsbsa.addrMunicipality);
-                            //sb.AppendLine("Province: " + rsbsa.addrProvince);
-                            //sb.AppendLine("Birth Date: " + rsbsa.birthDate.ToShortDateString());
-                            //sb.AppendLine("Contact No: " + rsbsa.contactNo);
-                            //sb.AppendLine("4Ps: " + rsbsa.is4Ps);
-                            //sb.AppendLine("Indigenous: " + rsbsa.isIp);
-                            //sb.AppendLine("PWD: " + rsbsa.isPWD);
-                            //sb.AppendLine("Farm Parcel Count: " + rsbsa.farmParcelCount);
-                            //sb.AppendLine("Farm Location Brgy: " + rsbsa.farmParcels[0].farmLocBrgy);
-                            //sb.AppendLine("Farm Location Municipality: " + rsbsa.farmParcels[0].farmLocMunicipality);
-                            //sb.AppendLine("Farm Size: " + rsbsa.farmParcels[0].farmSize);
-                            //sb.AppendLine("Commodity Type: " + rsbsa.farmParcels[0].Crops[0].commodityType);
-                            //sb.AppendLine(); // Add a new line between records
-
                         }
-
-                       //MessageBox.Show(sb.ToString(), "RSBSA Information from Excel Rows");
                     }
+                    
                 }
+            }
+            // All rows are saved, update progress label
+            labelProgress.Text = $"Saving completed: {totalRows} of {totalRows}";
+
+            // Display a completion message
+            MessageBox.Show("RSBSA Records saved successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private async Task SaveRSBSARecordAndParcelsAsync(RSBSA rsbsa)
+        {
+            // Save RSBSA record asynchronously
+            if (await rsbsaModel.AddNewRSBSARecordAsync(rsbsa))
+            {
+                // Save farm parcels asynchronously
+                await rsbsaModel.AddNewFarmParcelAsync(rsbsa.farmParcels);
             }
         }
     }
