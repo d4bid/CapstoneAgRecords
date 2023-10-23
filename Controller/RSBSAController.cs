@@ -624,156 +624,148 @@ namespace AgRecords.Controller
 
                 else if (isFarmParcelValidated == false)
                 {
+                    bool continueValidation = true;
                     bool hasError = false;
                     foreach (FarmParcel parcel in farmParcels)
                     {
+                        if (!continueValidation)
+                        {
+                            break; // Exit the outer loop if an error has been encountered in the inner loop
+                        }
                         // Farm Parcel validation
                         if (string.IsNullOrEmpty(parcel.farmLocBrgy))
                         {
                             MessageBox.Show($"Please enter the location (Barangay) of the farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;
+                            hasError = true;
                         }
                         else if (string.IsNullOrEmpty(parcel.farmLocMunicipality))
                         {
                             MessageBox.Show($"Please enter the location (Municipality) of the farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;
+                            hasError = true;
                         }
                         else if (parcel.farmSize == null)
                         {
                             MessageBox.Show($"Please enter the Total Farm Size in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;
+                            hasError = true;
                         }
-
                         else if (string.IsNullOrEmpty(parcel.ownershipNo))
                         {
                             MessageBox.Show($"Please enter ownership document number of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;
+                            hasError = true;
                         }
-
                         else if (string.IsNullOrEmpty(parcel.ownershipType))
                         {
                             MessageBox.Show($"Please select ownership type of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;
+                            hasError = true;
                         }
-                        else if (parcel.ownershipType != "Registered Owner" && parcel.ownerName == "")
+                        else if (parcel.ownershipType != "Registered Owner" && string.IsNullOrEmpty(parcel.ownerName))
                         {
                             MessageBox.Show($"Please enter the name of the land owner in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            hasError = true;
+                        }
+                        if (hasError)
+                        {
+                            continue;
+                        }
+                        if (parcel.Crops == null || !parcel.Crops.Any(c => !string.IsNullOrEmpty(c.commodityType)))
+                        {
+                            MessageBox.Show($"No commodity has been selected for farm parcel #{parcel.farmParcelNo}.", "warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            hasError = true;
                             break;
                         }
-
                         else if (isFarmParcelValidated == false)
                         {
-                            double ?totalLandSize = 0;
-
-                            if (parcel.Crops == null || !parcel.Crops.Any(c => !string.IsNullOrEmpty(c.commodityType)))
+                            double? totalLandSize = 0;
+                            // Crop validation (assuming FarmParcel has a List<FarmParcelCrop> property named Crops)
+                            foreach (FarmParcelCrop crop in parcel.Crops)
                             {
-                                MessageBox.Show($"No commodity has been selected for farm parcel #{parcel.farmParcelNo}.", "warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                hasError = true;
-                                break;
-                            }
-                            else
-                            {
-                                // Crop validation (assuming FarmParcel has a List<FarmParcelCrop> property named Crops)
-                                foreach (FarmParcelCrop crop in parcel.Crops)
+                                if (hasError)
                                 {
-                                    //check muna dito kung may laman ba si commodity type
-                                    if (!string.IsNullOrEmpty(crop.commodityType))
+                                    continue;
+                                }
+                                // Check if the commodity type is not empty
+                                if (!string.IsNullOrEmpty(crop.commodityType))
+                                {
+
+                                    if (crop.commodityType == "Rice")
                                     {
-
-                                        if (crop.commodityType == "Rice")
+                                        if (crop.landSize == null)
                                         {
-                                            //no need to test farm type, isOrganic kasi may initial value
-                                            if (crop.landSize == null)
-                                            {
-                                                MessageBox.Show($"Please enter land size for the RICE farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-
-                                            if (crop.landSize > parcel.farmSize)
-                                            {
-                                                MessageBox.Show($"Invalid RICE farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-                                            totalLandSize += crop.landSize;
+                                            MessageBox.Show($"Please enter land size for the RICE farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
                                         }
-
-                                        if (crop.commodityType == "Corn")
+                                        if (crop.landSize > parcel.farmSize)
                                         {
-                                            if (crop.landSize == null)
-                                            {
-                                                MessageBox.Show($"Please enter land size for the CORN farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-                                            if (crop.landSize > parcel.farmSize)
-                                            {
-                                                MessageBox.Show($"Invalid CORN farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-                                            totalLandSize += crop.landSize;
+                                            MessageBox.Show($"Invalid RICE farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
                                         }
-
-                                        if (crop.commodityType == "HVC")
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType == "Corn")
+                                    {
+                                        if (crop.landSize == null)
                                         {
-                                            if (crop.landSize == null)
-                                            {
-                                                MessageBox.Show($"Please enter land size for the HVC farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-                                            if (crop.landSize > parcel.farmSize)
-                                            {
-                                                MessageBox.Show($"Invalid HVC farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-                                            totalLandSize += crop.landSize;
+                                            MessageBox.Show($"Please enter land size for the CORN farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
                                         }
-
-                                         if (crop.commodityType == "Agri-Fishery")
+                                        if (crop.landSize > parcel.farmSize)
                                         {
-                                            if (crop.landSize == null)
-                                            {
-                                                MessageBox.Show($"Please enter a land size for the AGRI-FISHERY farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;                                           
-                                            }
-                                            if (crop.landSize > parcel.farmSize)
-                                            {
-                                                MessageBox.Show($"Invalid AGRI-FISHERY farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
-                                            totalLandSize += crop.landSize;
+                                            MessageBox.Show($"Invalid CORN farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
                                         }
-
-                                        if (crop.commodityType != "Rice" && crop.commodityType != "Corn" && crop.commodityType != "HVC" && crop.commodityType != "Agri-Fishery")
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType == "HVC")
+                                    {
+                                        if (crop.landSize == null)
                                         {
-                                            if (crop.headCount == 0)
-                                            {
-                                                MessageBox.Show($"Please enter a head count for {crop.commodityType} in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                hasError = true;
-                                                break;
-                                            }
+                                            MessageBox.Show($"Please enter land size for the HVC farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
                                         }
-                                    }                              
+                                        if (crop.landSize > parcel.farmSize)
+                                        {
+                                            MessageBox.Show($"Invalid HVC farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
+                                        }
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType == "Agri-Fishery")
+                                    {
+                                        if (crop.landSize == null)
+                                        {
+                                            MessageBox.Show($"Please enter a land size for the AGRI-FISHERY farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
+                                        }
+                                        if (crop.landSize > parcel.farmSize)
+                                        {
+                                            MessageBox.Show($"Invalid AGRI-FISHERY farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
+                                        }
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType != "Rice" && crop.commodityType != "Corn" && crop.commodityType != "HVC" && crop.commodityType != "Agri-Fishery")
+                                    {
+                                        if (crop.headCount == 0)
+                                        {
+                                            MessageBox.Show($"Please enter a head count for {crop.commodityType} in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            hasError = true;
+                                        }
+                                    }
                                 }
-                                if (!hasError && (totalLandSize ?? 0.0) > (parcel.farmSize ?? 0.0))
-                                {
-                                    MessageBox.Show($"Total land size of all crops in farm parcel #{parcel.farmParcelNo} exceeds declared farm size.\nPlease ensure it does not exceed total farm area", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    hasError = true; 
-                                }
-                                if (!hasError)
-                                {
-                                    isFarmParcelValidated = true;
-                                    MessageBox.Show($"hasError={hasError} ,Farm parcel validated: {isFarmParcelValidated}");
-                                }
+                            }
+                            if (!hasError && (totalLandSize ?? 0.0) > (parcel.farmSize ?? 0.0))
+                            {
+                                MessageBox.Show($"Total land size of all crops in farm parcel #{parcel.farmParcelNo} exceeds declared farm size.\nPlease ensure it does not exceed total farm area", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                hasError = true;
+                                continueValidation = false;
                             }
                         }
+                    }
 
+                    // Set isFarmParcelValidated only if there are no errors
+                    if (!hasError)
+                    {
+                        isFarmParcelValidated = true;
                     }
                 }
                 if (isFarmParcelValidated == true)//add '&&' here for validating docs, (isDocsValidated == true)
