@@ -293,8 +293,8 @@ namespace AgRecords.View
                 isAgriYouthText, isPartOfFarmingHouseholdText, isAttendAgrifisheryText, isParticipantAgriProgramText, txtInvolvementOthers.Text,
                 Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text),
 
-                //farmland
-                "Test", Convert.ToInt32(labelParcelCount.Text),
+               //farmland
+               txtRotatingFarmer1.Text + ", " + txtRotatingFarmer2.Text + ", " + txtRotatingFarmer3.Text, Convert.ToInt32(labelParcelCount.Text),
 
                 //farmland parcel
                 GetFarmParcelsFromControls(),
@@ -442,6 +442,38 @@ namespace AgRecords.View
         private void UpdateParcelCountLabel()
         {
             labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
+
+            if (labelParcelCount.Text == "1")
+            {
+                txtRotatingFarmer1.Enabled = true;
+                txtRotatingFarmer2.Enabled = false;
+                txtRotatingFarmer3.Enabled = false;
+                txtRotatingFarmer2.Clear();
+                txtRotatingFarmer3.Clear();
+            }
+            else if (labelParcelCount.Text == "2")
+            {
+                txtRotatingFarmer1.Enabled = true;
+                txtRotatingFarmer2.Enabled = true;
+                txtRotatingFarmer3.Enabled = false;
+                txtRotatingFarmer3.Clear();
+            }
+            else if (labelParcelCount.Text == "3")
+            {
+                txtRotatingFarmer1.Enabled = true;
+                txtRotatingFarmer2.Enabled = true;
+                txtRotatingFarmer3.Enabled = true;
+            }
+            else
+            {
+                txtRotatingFarmer1.Clear();
+                txtRotatingFarmer2.Clear();
+                txtRotatingFarmer3.Clear();
+
+                txtRotatingFarmer1.Enabled = false;
+                txtRotatingFarmer2.Enabled = false;
+                txtRotatingFarmer3.Enabled = false;
+            }
         }
 
         private void FarmLandControl_RemoveButtonClick(object sender, EventArgs e)
@@ -568,6 +600,13 @@ namespace AgRecords.View
             panelForFisherfolk.Enabled = false;
             panelForAgriYouth.Enabled = false;
 
+            //farm land
+            txtRotatingFarmer1.Enabled = false;
+            txtRotatingFarmer2.Enabled = false;
+            txtRotatingFarmer3.Enabled = false;
+            txtRotatingFarmer1.BackColor = Color.White;
+            txtRotatingFarmer2.BackColor = Color.White;
+            txtRotatingFarmer3.BackColor = Color.White;
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
         {
@@ -808,6 +847,10 @@ namespace AgRecords.View
             {
                 PanelSelected.Panel_Enter(panelAnnuanIncome, panelAnnuanIncomeHeader);
             }
+            else if (focusedControl.Parent == panelFarmersInRotation)
+            {
+                PanelSelected.Panel_Enter(panelFarmersInRotation, panelFarmersInRotationHeader);
+            }
             else if (focusedControl.Parent == panelFarmParcels)
             {
                 PanelSelected.Panel_Enter(panelFarmParcels, panelFarmParcelsHeader);
@@ -885,6 +928,10 @@ namespace AgRecords.View
             else if (focusedControl.Parent == panelAnnuanIncome)
             {
                 PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
+            }
+            else if (focusedControl.Parent == panelFarmersInRotation)
+            {
+                PanelSelected.Panel_Leave(panelFarmersInRotation, panelFarmersInRotationHeader);
             }
             else if (focusedControl.Parent == panelFarmParcels)
             {
