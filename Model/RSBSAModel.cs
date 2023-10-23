@@ -641,9 +641,9 @@ namespace AgRecords.Model
                         farmerInfo.isHouseHead = reader["isHouseHead"].ToString();
                         farmerInfo.houseHeadName = reader["houseHeadName"].ToString();
                         farmerInfo.houseHeadRs = reader["houseHeadRs"].ToString();
-                        farmerInfo.houseLivingMemCount = Convert.ToInt32(reader["houseLivingMemCount"]);
-                        farmerInfo.houseMaleCount = Convert.ToInt32(reader["houseMaleCount"]);
-                        farmerInfo.houseFemCount = Convert.ToInt32(reader["houseFemCount"]);
+                        farmerInfo.houseLivingMemCount = reader["houseLivingMemCount"] != DBNull.Value ? Convert.ToInt32(reader["houseLivingMemCount"]) : 0;
+                        farmerInfo.houseMaleCount = reader["houseMaleCount"] != DBNull.Value ? Convert.ToInt32(reader["houseMaleCount"]) : 0;
+                        farmerInfo.houseFemCount = reader["houseFemCount"] != DBNull.Value ? Convert.ToInt32(reader["houseFemCount"]) : 0;
                         farmerInfo.isPWD = reader["isPWD"].ToString();
                         farmerInfo.is4Ps = reader["is4Ps"].ToString();
                         farmerInfo.isIp = reader["isIp"].ToString();

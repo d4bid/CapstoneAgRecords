@@ -108,6 +108,11 @@ namespace AgRecords.View
                     parentPanel.Controls.Add(rsbsaEditView);
                     rsbsaEditView.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Null RSBSA ID", "RSBSA is null.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
             }
         }
     }
