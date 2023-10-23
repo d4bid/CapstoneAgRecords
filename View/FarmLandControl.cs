@@ -130,9 +130,6 @@ namespace AgRecords.View
                 }
 
             }
-
-
-
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -187,8 +184,8 @@ namespace AgRecords.View
             //if value cannot be parsed to double, return null
             double? riceLandSize = double.TryParse(txtLandSizeRice.Text, out double riceParsedValue) && riceParsedValue > 0 ? riceParsedValue : (double?)null;
             double? cornLandSize = double.TryParse(txtLandSizeCorn.Text, out double cornParsedValue) && cornParsedValue > 0 ? cornParsedValue : (double?)null;
-            double? hvcLandSize = double.TryParse(txtLandSizeRice.Text, out double hvcParsedValue) && hvcParsedValue > 0 ? hvcParsedValue : (double?)null;
-            double? agrifishLandSize = double.TryParse(txtLandSizeRice.Text, out double agrifishParsedValue) && agrifishParsedValue > 0 ? agrifishParsedValue : (double?)null;
+            double? hvcLandSize = double.TryParse(txtLandSizeHVC.Text, out double hvcParsedValue) && hvcParsedValue > 0 ? hvcParsedValue : (double?)null;
+            double? agrifishLandSize = double.TryParse(txtLandSizeAgriFishery.Text, out double agrifishParsedValue) && agrifishParsedValue > 0 ? agrifishParsedValue : (double?)null;
 
 
             if (chCropIsRice.Checked)
