@@ -902,6 +902,44 @@ namespace AgRecords.Model
             }
         }
 
+        public bool CheckFarmerExistence(string firstName, string middleName, string lastName, string suffixAndExtension, string birthdate)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("sp_isFarmerAlreadySaved", db.GetConnection());
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Add input parameters
+                    command.Parameters.AddWithValue("@_FirstName", firstName);
+                    command.Parameters.AddWithValue("@_MiddleName", middleName);
+                    command.Parameters.AddWithValue("@_LastName", lastName);
+                    command.Parameters.AddWithValue("@_SuffixAndExtension", suffixAndExtension);
+                    command.Parameters.AddWithValue("@_Birthdate", birthdate);
+
+                    // Add output parameter
+                    MySqlParameter outputParameter = new MySqlParameter("@IsFarmerAlreadySaved", MySqlDbType.Bit);
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    command.ExecuteNonQuery();
+
+                    // Get the boolean result from the output parameter
+                    bool isFarmerAlreadySaved = Convert.ToBoolean(outputParameter.Value);
+
+                    return isFarmerAlreadySaved;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error checking farmer existence: " + ex.Message, ex);
+            }
+        }
+
+
 
 
 
