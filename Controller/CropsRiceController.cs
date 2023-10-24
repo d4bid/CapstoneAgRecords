@@ -851,5 +851,35 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        // PRINTING REPORTS
+
+        public DataTable LoadRicePlantingView(string riceSrId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRicePlantingDataGrid(riceSrId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceStandingView(string riceSrId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceStandingDataGrid(riceSrId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
     }
 }
