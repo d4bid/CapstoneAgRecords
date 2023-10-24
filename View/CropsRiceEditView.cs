@@ -285,8 +285,6 @@ namespace AgRecords.View
             btnUpdate.Visible = true;
             labelRiceStandingLogsId.Visible = true;
 
-
-
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)
             {
@@ -441,12 +439,17 @@ namespace AgRecords.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
                 btnUpdate.Visible = true;
                 btnNew.Visible = false;
             }
-            else
+            else if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                btnUpdate.Visible = false;
+                btnNew.Visible = false;
+            }
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
             {
                 btnUpdate.Visible = false;
                 btnNew.Visible = true;
@@ -488,11 +491,24 @@ namespace AgRecords.View
             }
 
             float size = float.Parse(txtSize.Text);
+            float yield = float.Parse(txtAveYield.Text);
             int riceStandingLogsId = int.Parse(labelRiceStandingLogsId.Text);
+            int riceHarvestingId = int.Parse(labelRiceStandingLogsId.Text);
 
-            if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
+
+            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
-                FormRefresh();
+                if (cropsRiceController.UpdateRiceHarvesting(riceHarvestingId, yield))
+                {
+                    FormRefresh();
+                }
+            }
+            else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
+            {
+                if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
+                {
+                    FormRefresh();
+                }
             }
         }
 

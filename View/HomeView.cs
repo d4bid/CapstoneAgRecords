@@ -374,7 +374,21 @@ namespace AgRecords.View
 
         private void btnDashoard_Click(object sender, EventArgs e)
         {
+            DashboardView dashboardView = new DashboardView(panelDesktop);
+            //userView.formRefresh();
+            dashboardView.TopLevel = false;
+            dashboardView.FormBorderStyle = FormBorderStyle.None;
+            dashboardView.Dock = DockStyle.Fill;
 
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(dashboardView);
+            dashboardView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new DashboardView(panelDesktop));
+            lblTitle.Text = "Dashboard";
+
+            HideSubMenu();
         }
 
         private void btnRSBSA_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace AgRecords.View
 {
-    partial class RiceAddView
+    partial class CornAddView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            btnCancel = new Button();
-            btnSave = new Button();
             groupBox1 = new GroupBox();
             cmbSeason = new ComboBox();
             textboxYear = new TextBox();
@@ -47,53 +44,14 @@
             cmbMonth = new ComboBox();
             label3 = new Label();
             searchBox4 = new SearchBox();
-            labelRiceSrId = new Label();
+            labelCornPrId = new Label();
             label2 = new Label();
             searchBox3 = new SearchBox();
+            btnCancel = new Button();
+            btnSave = new Button();
+            label1 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(32, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(49, 28);
-            label1.TabIndex = 40;
-            label1.Text = "Add";
-            // 
-            // btnCancel
-            // 
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(301, 435);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 49;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
-            // btnSave
-            // 
-            btnSave.BackColor = Color.FromArgb(43, 121, 223);
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(165, 435);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(130, 40);
-            btnSave.TabIndex = 48;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click;
             // 
             // groupBox1
             // 
@@ -112,20 +70,20 @@
             groupBox1.Controls.Add(cmbMonth);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(searchBox4);
-            groupBox1.Controls.Add(labelRiceSrId);
+            groupBox1.Controls.Add(labelCornPrId);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(searchBox3);
-            groupBox1.Location = new Point(32, 60);
+            groupBox1.Location = new Point(32, 59);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(399, 348);
-            groupBox1.TabIndex = 50;
+            groupBox1.TabIndex = 54;
             groupBox1.TabStop = false;
             // 
             // cmbSeason
             // 
             cmbSeason.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSeason.FlatStyle = FlatStyle.Flat;
-            cmbSeason.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbSeason.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbSeason.FormattingEnabled = true;
             cmbSeason.Items.AddRange(new object[] { "Dry", "Wet" });
             cmbSeason.Location = new Point(19, 286);
@@ -180,7 +138,7 @@
             // 
             cmbSeasonYear.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSeasonYear.FlatStyle = FlatStyle.Flat;
-            cmbSeasonYear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbSeasonYear.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbSeasonYear.FormattingEnabled = true;
             cmbSeasonYear.Location = new Point(213, 286);
             cmbSeasonYear.Name = "cmbSeasonYear";
@@ -191,7 +149,7 @@
             // 
             cmbWeek.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbWeek.FlatStyle = FlatStyle.Flat;
-            cmbWeek.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbWeek.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbWeek.FormattingEnabled = true;
             cmbWeek.Location = new Point(22, 201);
             cmbWeek.Name = "cmbWeek";
@@ -257,15 +215,15 @@
             searchBox4.Size = new Size(371, 39);
             searchBox4.TabIndex = 55;
             // 
-            // labelRiceSrId
+            // labelCornPrId
             // 
-            labelRiceSrId.AutoSize = true;
-            labelRiceSrId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRiceSrId.Location = new Point(25, 57);
-            labelRiceSrId.Name = "labelRiceSrId";
-            labelRiceSrId.Size = new Size(80, 28);
-            labelRiceSrId.TabIndex = 53;
-            labelRiceSrId.Text = "riceSrId";
+            labelCornPrId.AutoSize = true;
+            labelCornPrId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCornPrId.Location = new Point(25, 57);
+            labelCornPrId.Name = "labelCornPrId";
+            labelCornPrId.Size = new Size(89, 28);
+            labelCornPrId.TabIndex = 53;
+            labelCornPrId.Text = "cornPrId";
             // 
             // label2
             // 
@@ -283,7 +241,49 @@
             searchBox3.Size = new Size(371, 39);
             searchBox3.TabIndex = 48;
             // 
-            // RiceAddView
+            // btnCancel
+            // 
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
+            btnCancel.FlatAppearance.BorderSize = 2;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
+            btnCancel.Location = new Point(301, 434);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(130, 40);
+            btnCancel.TabIndex = 53;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(43, 121, 223);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(165, 434);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(130, 40);
+            btnSave.TabIndex = 52;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(32, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(49, 28);
+            label1.TabIndex = 51;
+            label1.Text = "Add";
+            // 
+            // CornAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -293,11 +293,10 @@
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(label1);
-            MaximizeBox = false;
-            Name = "RiceAddView";
+            Name = "CornAddView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Rice Standing Accomplishment";
-            Load += RiceAddView_Load;
+            Text = "Corn Accomplishment";
+            Load += CornAddView_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -305,27 +304,28 @@
         }
 
         #endregion
-        private Label label1;
-        private Button btnCancel;
-        private Button btnSave;
+
         private GroupBox groupBox1;
+        private ComboBox cmbSeason;
         private TextBox textboxYear;
         private Label label7;
         private SearchBox searchBox6;
         private Label label6;
-        private ComboBox cmbSeasonYear;
-        private SearchBox searchBox2;
         private Label label5;
+        private ComboBox cmbSeasonYear;
         private ComboBox cmbWeek;
         private SearchBox searchBox5;
+        private SearchBox searchBox2;
         private Label label4;
-        private ComboBox cmbMonth;
-        private SearchBox searchBox4;
-        private Label labelRiceSrId;
-        private Label label3;
-        private ComboBox cmbSeason;
         private SearchBox searchBox1;
+        private ComboBox cmbMonth;
+        private Label label3;
+        private SearchBox searchBox4;
+        private Label labelCornPrId;
         private Label label2;
         private SearchBox searchBox3;
+        private Button btnCancel;
+        private Button btnSave;
+        private Label label1;
     }
 }

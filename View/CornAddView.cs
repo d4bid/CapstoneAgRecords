@@ -1,5 +1,4 @@
 ﻿using AgRecords.Controller;
-using AgRecords.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,26 +11,20 @@ using System.Windows.Forms;
 
 namespace AgRecords.View
 {
-    public partial class RiceAddView : Form
+    public partial class CornAddView : Form
     {
-        private CropsRiceController cropsRiceController;
+        private CropsCornController cropsCornController;
         public event EventHandler FormClosed;
 
         private Panel parentPanel;
         public event EventHandler SaveButtonClicked;
 
-        public RiceAddView()
+        public CornAddView()
         {
             InitializeComponent();
 
-            cropsRiceController = new CropsRiceController(this);
+            cropsCornController = new CropsCornController(this);
         }
-        public string GetRiceSrIdValue()
-        {
-            return labelRiceSrId.Text;
-        }
-
-        // Methods
 
         public void FormRefresh()
         {
@@ -39,21 +32,26 @@ namespace AgRecords.View
 
             SetSeasonYear();
 
-            cropsRiceController.GenerateNewRiceStandID();
+            cropsCornController.GenerateNewCornID();
 
             int currentYear = DateTime.Now.Year;
             textboxYear.Text = currentYear.ToString();
 
         }
 
-        public string RiceSrIdValue
+        public string GetCornIdValue()
         {
-            get { return labelRiceSrId.Text; }
+            return labelCornPrId.Text;
         }
 
-        public void GenerateNewRiceStandId(string riceSrId)
+        public string CornPrIdValue
         {
-            labelRiceSrId.Text = riceSrId;
+            get { return labelCornPrId.Text; }
+        }
+
+        public void GenerateNewCornId(string cornPrId)
+        {
+            labelCornPrId.Text = cornPrId;
         }
 
         public void SetSeasonYear()
@@ -77,6 +75,38 @@ namespace AgRecords.View
         }
 
         // Events
+        private void CornAddView_Load(object sender, EventArgs e)
+        {
+            FormRefresh();
+
+            // Get the current month
+            string currentMonth = DateTime.Now.ToString("MMMM");
+
+            // Find and set the index in the ComboBox
+            int selectedIndex = cmbMonth.FindStringExact(currentMonth);
+
+            if (selectedIndex != -1)
+            {
+                cmbMonth.SelectedIndex = selectedIndex;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (cropsCornController.AddCornPlantingEcoReport(labelCornPrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
+                cropsCornController.AddCornPlantingReport(labelCornPrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
+                cropsCornController.AddCornHarvestingReport(labelCornPrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
+            {
+                // Trigger the event when the "Save" button is clicked
+                SaveButtonClicked?.Invoke(this, EventArgs.Empty);
+                this.Close(); // Close the current form (RiceAddView)
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,39 +167,6 @@ namespace AgRecords.View
             else
             {
                 cmbWeek.Items.Clear();
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (cropsRiceController.AddRiceStandingReport(labelRiceSrId.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
-                cropsRiceController.AddRicePlantingReport(labelRiceSrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
-                cropsRiceController.AddRiceHarvestingReport(labelRiceSrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
-            {
-                // Trigger the event when the "Save" button is clicked
-                SaveButtonClicked?.Invoke(this, EventArgs.Empty);
-                this.Close(); // Close the current form (RiceAddView)
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void RiceAddView_Load(object sender, EventArgs e)
-        {
-            FormRefresh();
-
-            // Get the current month
-            string currentMonth = DateTime.Now.ToString("MMMM");
-
-            // Find and set the index in the ComboBox
-            int selectedIndex = cmbMonth.FindStringExact(currentMonth);
-
-            if (selectedIndex != -1)
-            {
-                cmbMonth.SelectedIndex = selectedIndex;
             }
         }
     }

@@ -29,7 +29,7 @@ namespace AgRecords.View
 
         private void FormRefresh()
         {
-            
+
         }
 
         private void CropsRiceAddView_FormClosed(object sender, EventArgs e)
@@ -56,13 +56,38 @@ namespace AgRecords.View
             cropsRiceView.Show();
         }
 
+        public void DisplayDataTableFilter()
+        {
+            string column = cmbColumn.Text;
+            string keyword = txtBoxSearch.Text;
+
+            if (cmbReportType.Text == "Planting")
+            {
+                DataTable cornPlantingTable = cropsRiceController.LoadRicePlantingReportView(column, keyword);
+                dgvRice.DataSource = cornPlantingTable;
+            }
+            else if (cmbReportType.Text == "Standing")
+            {
+                DataTable cornPlantingTable = cropsRiceController.LoadRiceStandingReportView(column, keyword);
+                dgvRice.DataSource = cornPlantingTable;
+            }
+            else if (cmbReportType.Text == "Harvesting")
+            {
+                DataTable cornPlantingTable = cropsRiceController.LoadRiceHarvestingReportView(column, keyword);
+                dgvRice.DataSource = cornPlantingTable;
+            }
+        }
+
         // Trigger Events
 
         private void CropsRiceView_Load(object sender, EventArgs e)
         {
             FormRefresh();
 
-            cbStanding.Checked = true;
+            cmbColumn.Text = "All";
+            cmbReportType.Text = "Standing";
+
+            DisplayDataTableFilter();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -114,15 +139,15 @@ namespace AgRecords.View
                     RiceHarvestingRep rhr = null;
 
                     // Check if the cbPlanting checkbox is checked
-                    if (cbPlanting.Checked)
+                    if (cmbReportType.Text == "Planting")
                     {
                         rpr = cropsRiceController.GetRicePlantReportById(riceSrId);
                     }
-                    else if (cbStanding.Checked)
+                    else if (cmbReportType.Text == "Standing")
                     {
                         rsr = cropsRiceController.GetRiceStandReportById(riceSrId);
                     }
-                    else if (cbHarvesting.Checked)
+                    else if (cmbReportType.Text == "Harvesting")
                     {
                         rhr = cropsRiceController.GetRiceHarvestReportById(riceSrId);
                     }
@@ -141,42 +166,19 @@ namespace AgRecords.View
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
         {
-
+            DisplayDataTableFilter();
         }
 
-        private void cbPlanting_CheckedChanged(object sender, EventArgs e)
+        private void cmbReportType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbPlanting.Checked)
-            {
-                cbHarvesting.Checked = false;
-                cbStanding.Checked = false;
-                DataTable riceTable = cropsRiceController.LoadRicePlantingReportView();
-                dgvRice.DataSource = riceTable;
-            }
+            DisplayDataTableFilter();
         }
 
-        private void cbStanding_CheckedChanged(object sender, EventArgs e)
+        private void cmbColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbStanding.Checked)
-            {
-                cbHarvesting.Checked = false;
-                cbPlanting.Checked = false;
-                DataTable riceTable = cropsRiceController.LoadRiceStandingReportView();
-                dgvRice.DataSource = riceTable;
-            }
-        }
-
-        private void cbHarvesting_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbHarvesting.Checked)
-            {
-                cbPlanting.Checked = false;
-                cbStanding.Checked = false;
-                DataTable riceTable = cropsRiceController.LoadRiceHarvestingReportView();
-                dgvRice.DataSource = riceTable;
-            }
+            DisplayDataTableFilter();
         }
     }
 }

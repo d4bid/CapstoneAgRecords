@@ -55,6 +55,7 @@ namespace AgRecords.View
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Now;
             labelRiceStandingLogsId.Text = "";
+            labelGrowthStage.Text = "Newly Planted/Seedling Stage";
         }
 
         public string RiceSrIdValue
@@ -107,16 +108,15 @@ namespace AgRecords.View
 
         private void dgvRiceStandLogs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnUpdate.Visible = true;
-            labelRiceStandingLogsId.Visible = true;
-
             if (labelGrowthStage.Text == "Newly Planted/Seedling Stage")
             {
-                btnUpdate.Enabled = true;
+                btnUpdate.Visible = true;
+                btnNew.Visible = true;
             }
             else
             {
-                btnUpdate.Enabled = false;
+                btnUpdate.Visible = false;
+                btnNew.Visible = false;
             }
 
             // Check if the user clicked on a cell in a row, not on the header row

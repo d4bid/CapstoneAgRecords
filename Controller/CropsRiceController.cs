@@ -51,47 +51,89 @@ namespace AgRecords.Controller
         }
 
 
-        public DataTable LoadRicePlantingReportView()
+        //public DataTable LoadRicePlantingReportView()
+        //{
+        //    try
+        //    {
+        //        DataTable riceReportTable = riceModel.LoadRicePlantingReportDataGrid();
+        //        return riceReportTable;
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        //        return null;
+        //    }
+        //}
+
+        //public DataTable LoadRiceStandingReportView()
+        //{
+        //    try
+        //    {
+        //        DataTable riceReportTable = riceModel.LoadRiceStandingReportDataGrid();
+        //        return riceReportTable;
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        //        return null;
+        //    }
+        //}
+
+        //public DataTable LoadRiceHarvestingReportView()
+        //{
+        //    try
+        //    {
+        //        DataTable riceReportTable = riceModel.LoadRiceHarvestingReportDataGrid();
+        //        return riceReportTable;
+        //    }
+        //    catch (ApplicationException ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        //        return null;
+        //    }
+        //}
+
+        public DataTable LoadRicePlantingReportView(string column, string keyword)
         {
             try
             {
-                DataTable riceReportTable = riceModel.LoadRicePlantingReportDataGrid();
-                return riceReportTable;
+                DataTable ricePlantingTable = riceModel.LoadRicePlantingReportDataGrid(column, keyword);
+                return ricePlantingTable;
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }
 
-        public DataTable LoadRiceStandingReportView()
+        public DataTable LoadRiceStandingReportView(string column, string keyword)
         {
             try
             {
-                DataTable riceReportTable = riceModel.LoadRiceStandingReportDataGrid();
-                return riceReportTable;
+                DataTable ricePlantingTable = riceModel.LoadRiceStandingReportDataGrid(column, keyword);
+                return ricePlantingTable;
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }
 
-        public DataTable LoadRiceHarvestingReportView()
+        public DataTable LoadRiceHarvestingReportView(string column, string keyword)
         {
             try
             {
-                DataTable riceReportTable = riceModel.LoadRiceHarvestingReportDataGrid();
-                return riceReportTable;
+                DataTable ricePlantingTable = riceModel.LoadRiceHarvestingReportDataGrid(column, keyword);
+                return ricePlantingTable;
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Rice Report Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }
@@ -206,15 +248,15 @@ namespace AgRecords.Controller
                     MessageBox.Show("Month is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rsr.week == null)
+                else if (rsr.week == "")
                 {
                     MessageBox.Show("Week is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rsr.year == null)
+                else if (rsr.year == "")
                 {
                     MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rsr.riceSrId != null && rsr.month!= null && rsr.week != null && rsr.year != null)
+                else if (rsr.riceSrId != "" && rsr.month!= "" && rsr.week != "" && rsr.year != "")
                 {
                     if (riceModel.AddRiceStandingRep(rsr))
                     {
@@ -254,24 +296,28 @@ namespace AgRecords.Controller
                     MessageBox.Show("Rice Standing Record Id is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rs.brgyId == null)
+                else if (rs.brgyId == 0)
                 {
                     MessageBox.Show("Barangay is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rs.farmTypeId == null)
+                else if (rs.farmTypeId == 0)
                 {
                     MessageBox.Show("Farm type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.growthStageId == null)
+                else if (rs.growthStageId == 0)
                 {
                     MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.seedTypeId == null)
+                else if (rs.seedTypeId == 0)
                 {
                     MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.riceSrId != null && rs.brgyId != null && rs.farmTypeId != null && rs.growthStageId != null && rs.seedTypeId != null)
+                else if (rs.size == 0)
+                {
+                    MessageBox.Show("Size is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (rs.riceSrId != null && rs.brgyId != 0 && rs.farmTypeId != 0 && rs.growthStageId != 0 && rs.seedTypeId != 0 && rs.size != 0)
                 {
                     if (riceModel.AddRiceStandingLogs(rs))
                     {

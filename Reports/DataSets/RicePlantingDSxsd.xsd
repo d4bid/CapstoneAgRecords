@@ -9,7 +9,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="RicePlantingDSxsd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="RicePlantingDSxsd" msprop:Generator_DataSetName="RicePlantingDSxsd">
+  <xs:element name="RicePlantingDSxsd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="RicePlantingDSxsd" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RicePlantingDSxsd">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded" />
     </xs:complexType>

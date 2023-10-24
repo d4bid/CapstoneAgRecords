@@ -17,7 +17,67 @@ namespace AgRecords.Model
             db = new DatabaseConnection();
         }
 
-        public DataTable LoadRicePlantingReportDataGrid()
+        //public DataTable LoadRicePlantingReportDataGrid()
+        //{
+        //    try
+        //    {
+        //        using (DatabaseConnection db = new DatabaseConnection())
+        //        {
+        //            db.Open();
+        //            DataTable dataTable = new DataTable();
+        //            MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_plant_list;", db.GetConnection());
+        //            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+        //            adapter.Fill(dataTable);
+        //            return dataTable;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+        //    }
+        //}
+
+        //public DataTable LoadRiceStandingReportDataGrid()
+        //{
+        //    try
+        //    {
+        //        using (DatabaseConnection db = new DatabaseConnection())
+        //        {
+        //            db.Open();
+        //            DataTable dataTable = new DataTable();
+        //            MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_list;", db.GetConnection());
+        //            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+        //            adapter.Fill(dataTable);
+        //            return dataTable;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+        //    }
+        //}
+
+        //public DataTable LoadRiceHarvestingReportDataGrid()
+        //{
+        //    try
+        //    {
+        //        using (DatabaseConnection db = new DatabaseConnection())
+        //        {
+        //            db.Open();
+        //            DataTable dataTable = new DataTable();
+        //            MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_harvest_list;", db.GetConnection());
+        //            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+        //            adapter.Fill(dataTable);
+        //            return dataTable;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+        //    }
+        //}
+
+        public DataTable LoadRicePlantingReportDataGrid(string column, string keyword)
         {
             try
             {
@@ -25,7 +85,11 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_plant_list;", db.GetConnection());
+                    string query = "CALL sp_searchRicePlanting(@column, @keyword)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@column", column);
+                    command.Parameters.AddWithValue("@keyword", keyword);
+
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -33,11 +97,11 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+                throw new ApplicationException("Error loading rice planting records: " + ex.Message, ex);
             }
         }
 
-        public DataTable LoadRiceStandingReportDataGrid()
+        public DataTable LoadRiceStandingReportDataGrid(string column, string keyword)
         {
             try
             {
@@ -45,7 +109,11 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_stand_list;", db.GetConnection());
+                    string query = "CALL sp_searchRiceStanding(@column, @keyword)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@column", column);
+                    command.Parameters.AddWithValue("@keyword", keyword);
+
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -53,11 +121,11 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+                throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
             }
         }
 
-        public DataTable LoadRiceHarvestingReportDataGrid()
+        public DataTable LoadRiceHarvestingReportDataGrid(string column, string keyword)
         {
             try
             {
@@ -65,7 +133,11 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rice_harvest_list;", db.GetConnection());
+                    string query = "CALL sp_searchRiceHarvesting(@column, @keyword)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@column", column);
+                    command.Parameters.AddWithValue("@keyword", keyword);
+
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -73,7 +145,7 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading rice records: " + ex.Message, ex);
+                throw new ApplicationException("Error loading rice harvesting records: " + ex.Message, ex);
             }
         }
 
@@ -753,6 +825,7 @@ namespace AgRecords.Model
             }
         }
 
+
         // HARVESTING
         public Boolean AddRiceHarvestingRep(RiceHarvestingRep rhr)
         {
@@ -820,7 +893,6 @@ namespace AgRecords.Model
             }
         }
 
-        // Update Rice Harvesting
         public Boolean UpdateRiceHarvesting(RiceHarvesting rh)
         {
             try
