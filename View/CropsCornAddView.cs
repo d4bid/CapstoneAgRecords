@@ -15,6 +15,7 @@ namespace AgRecords.View
     public partial class CropsCornAddView : Form
     {
         private CropsCornController cropsCornController;
+        public event EventHandler FormClosed;
 
         public CropsCornAddView()
         {
@@ -47,6 +48,7 @@ namespace AgRecords.View
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Now;
             labelCornPlantingId.Text = "";
+            labelGrowthStage.Text = "Newly Planted/Seedling Stage";
         }
 
         private int MapCornItemToValue(ComboBox comboBox)
@@ -123,6 +125,8 @@ namespace AgRecords.View
                 labelWeek.Text = cp.week;
                 labelMonth.Text = cp.month;
                 labelYear.Text = cp.year;
+                labelSeason.Text = cp.season;
+                labelSeasonYear.Text = cp.seasonYear;
             }
 
             FormRefresh();
@@ -301,6 +305,11 @@ namespace AgRecords.View
         private void cmbGrowthStageFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayDataTableFilter();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -74,7 +74,7 @@
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 49;
+            btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -90,7 +90,7 @@
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
-            btnSave.TabIndex = 48;
+            btnSave.TabIndex = 3;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -131,7 +131,7 @@
             cmbSeason.Location = new Point(19, 286);
             cmbSeason.Name = "cmbSeason";
             cmbSeason.Size = new Size(165, 33);
-            cmbSeason.TabIndex = 50;
+            cmbSeason.TabIndex = 2;
             // 
             // textboxYear
             // 
@@ -163,9 +163,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(205, 260);
             label6.Name = "label6";
-            label6.Size = new Size(37, 20);
+            label6.Size = new Size(88, 20);
             label6.TabIndex = 62;
-            label6.Text = "Year";
+            label6.Text = "Season Year";
             // 
             // label5
             // 
@@ -196,7 +196,7 @@
             cmbWeek.Location = new Point(22, 201);
             cmbWeek.Name = "cmbWeek";
             cmbWeek.Size = new Size(162, 33);
-            cmbWeek.TabIndex = 57;
+            cmbWeek.TabIndex = 1;
             // 
             // searchBox5
             // 

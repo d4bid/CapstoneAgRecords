@@ -340,8 +340,8 @@
             btnVegetable.Padding = new Padding(40, 0, 0, 0);
             btnVegetable.Size = new Size(299, 51);
             btnVegetable.TabIndex = 17;
-            btnVegetable.Tag = "Vegetable";
-            btnVegetable.Text = "Vegetable";
+            btnVegetable.Tag = "HVC";
+            btnVegetable.Text = "HVC";
             btnVegetable.TextAlign = ContentAlignment.MiddleLeft;
             btnVegetable.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVegetable.UseVisualStyleBackColor = true;

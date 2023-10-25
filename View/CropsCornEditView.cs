@@ -78,6 +78,8 @@ namespace AgRecords.View
                 btnNew.Enabled = true;
                 btnNew.Visible = true;
             }
+
+            DisplayDataTableFilter();
         }
 
         public void ClearTextControls()

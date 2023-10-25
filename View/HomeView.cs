@@ -510,6 +510,20 @@ namespace AgRecords.View
 
         private void btnVegetable_Click(object sender, EventArgs e)
         {
+            CropsHvcView cropsHvcView = new CropsHvcView(panelDesktop);
+            //userView.formRefresh();
+            cropsHvcView.TopLevel = false;
+            cropsHvcView.FormBorderStyle = FormBorderStyle.None;
+            cropsHvcView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(cropsHvcView);
+            cropsHvcView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CropsHvcView(panelDesktop));
+            lblTitle.Text = "Crops \u23F5 HVC";
+
             HideSubMenu();
         }
 
