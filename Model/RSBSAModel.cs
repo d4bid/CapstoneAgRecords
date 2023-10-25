@@ -66,13 +66,20 @@ namespace AgRecords.Model
 
         public byte[] ConvertImageToByteArray(Image image)
         {
-            using (MemoryStream memoryStream = new MemoryStream())
+            if (image != null)
             {
-                // Save the image to the memory stream in the desired format (e.g., JPEG)
-                image.Save(memoryStream,ImageFormat.Png);
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    // Save the image to the memory stream in the desired format (e.g., JPEG)
+                    image.Save(memoryStream, ImageFormat.Png);
 
-                // Convert the memory stream to a byte array and return it
-                return memoryStream.ToArray();
+                    // Convert the memory stream to a byte array and return it
+                    return memoryStream.ToArray();
+                }
+            }
+            else
+            {
+                return null;
             }
         }
 
