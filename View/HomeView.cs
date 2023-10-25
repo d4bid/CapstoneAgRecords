@@ -16,6 +16,7 @@ namespace AgRecords.View
 {
     public partial class HomeView : Form
     {
+        UserModel userModel = new UserModel();
         private int borderSize = 2;
         private Size formSize;
         private IconButton currentBtn;
@@ -24,6 +25,7 @@ namespace AgRecords.View
         //for accessing the username of the current user
         public static HomeView Instance;
         public Label fullName;
+        public Label username;
 
         public HomeView()
         {
@@ -35,7 +37,8 @@ namespace AgRecords.View
 
             //for accessing the username of the current user
             Instance = this;
-            fullName = lblUserName;
+            fullName = lblFullname;
+            username = lblUsername;
         }
 
         //FORM STYLE
@@ -271,8 +274,9 @@ namespace AgRecords.View
                 picUserPhoto.Image = null;
             }
 
-            lblUserName.Text = user.userFirstname + " " + user.userLastname;
+            lblFullname.Text = user.userFirstname + " " + user.userLastname;
             lblUserRole.Text = user.userRole;
+            lblUsername.Text = user.username;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -365,6 +369,7 @@ namespace AgRecords.View
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                userModel.InserActionLog(lblUsername.Text, "Logout", "Account", $"Logout success ({lblUsername.Text})");
                 //string username = lblUserName.Text;
                 this.Close();
                 LoginView loginView = new LoginView();

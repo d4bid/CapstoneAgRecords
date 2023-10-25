@@ -463,7 +463,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_updateRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, " +
+                    string query = "CALL sp_updateRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateModified, @lastModifier, @userId, " +
                                     "@farmerImg, @surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
                                     "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
@@ -482,7 +482,8 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@rsbsaId", rsbsa.rsbsaId);
                     command.Parameters.AddWithValue("@rsbsaIdLGU", rsbsa.rsbsaIdLGU);
                     command.Parameters.AddWithValue("@rsbsaIdRegion", rsbsa.rsbsaIdRegion);
-                    command.Parameters.AddWithValue("@dateCreated", rsbsa.dateCreated);
+                    command.Parameters.AddWithValue("@dateModified", rsbsa.dateModified);
+                    command.Parameters.AddWithValue("@lastModifier", rsbsa.lastModifier);
                     command.Parameters.AddWithValue("@userId", rsbsa.userId);
 
                     //for farmer info table

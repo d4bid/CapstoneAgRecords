@@ -9,6 +9,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace AgRecords.Controller
 {
@@ -25,6 +26,7 @@ namespace AgRecords.Controller
 
         //to get the username of the current user
         private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
 
         public LetterController(LettersView lettersView)
         {
@@ -162,6 +164,7 @@ namespace AgRecords.Controller
 
                             MessageBox.Show("Letter saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isDone = true;
+                            userModel.InserActionLog(username, "Insert", "Letter", $"{letterId} added successfully.");
                         }
                     }
                     else //cancel saving
@@ -176,7 +179,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Letter was not added. Please try again.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Insert", "Letter", $"{letterId} adding failed.");
                 return false;
             }
         }
@@ -271,6 +274,8 @@ namespace AgRecords.Controller
 
                             MessageBox.Show("Letter updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isDone = true;
+                            userModel.InserActionLog(username, "Update", "Letter", $"{letterId} updated successfully.");
+
                         }
                     }
                     else //cancel saving
@@ -285,6 +290,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Update Letter Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                userModel.InserActionLog(username, "Update", "Letter", $"{letterId} update failed.");
 
                 return false;
             }

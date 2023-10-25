@@ -21,6 +21,7 @@ namespace AgRecords.Controller
         private FarmLandControl farmLandControl;
         private RSBSADocumentControl rsbsaDocumentControl;
         private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
         private RSBSAModel rsbsaModel;
         UserModel userModel = new UserModel();
 
@@ -798,6 +799,7 @@ namespace AgRecords.Controller
                                 {
                                     MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     isDone = true;
+                                    userModel.InserActionLog(username, "Insert", "RSBSA", $"{rsbsaId} added successfully.");
                                 }
                             }
                         }
@@ -809,7 +811,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Add RSBSA Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Insert", "RSBSA", $"{rsbsaId} adding failed.");
                 return false;
             }
         }
@@ -818,7 +820,7 @@ namespace AgRecords.Controller
             string rsbsaId,
             string? rsbsaIdLGU,
             string rsbsaIdRegion,
-            DateTime dateCreated,
+            DateTime dateModified,
 
             // Farmer Personal Info
             Image? farmerImg,
@@ -915,7 +917,8 @@ namespace AgRecords.Controller
                     rsbsaId = rsbsaId,
                     rsbsaIdLGU = rsbsaIdLGU,
                     rsbsaIdRegion = rsbsaIdRegion,
-                    dateCreated = dateCreated,
+                    dateModified = dateModified,
+                    lastModifier = username,
                     userId = userId,
 
                     // Farmer Personal Info
@@ -1011,6 +1014,7 @@ namespace AgRecords.Controller
                             {
                                 MessageBox.Show("RSBSA Record updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 isDone = true;
+                                userModel.InserActionLog(username, "Update", "RSBSA", $"{rsbsaId} updated successfully.");
                             }
                         }
                     }
@@ -1021,7 +1025,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Updating RSBSA Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Update", "RSBSA", $"{rsbsaId} update failed.");
                 return false;
             }
         }
