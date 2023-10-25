@@ -51,12 +51,13 @@
             btnHome = new PictureBox();
             btnMenu = new FontAwesome.Sharp.IconButton();
             panelTitleBar = new Panel();
+            lblUsername = new Label();
             picUserPhoto = new RoundedPictureBox();
             btnMin = new FontAwesome.Sharp.IconButton();
             btnMax = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
             lblUserRole = new Label();
-            lblUserName = new Label();
+            lblFullname = new Label();
             lblTitle = new Label();
             panelDesktop = new Panel();
             toolTip1 = new ToolTip(components);
@@ -543,12 +544,13 @@
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.White;
+            panelTitleBar.Controls.Add(lblUsername);
             panelTitleBar.Controls.Add(picUserPhoto);
             panelTitleBar.Controls.Add(btnMin);
             panelTitleBar.Controls.Add(btnMax);
             panelTitleBar.Controls.Add(btnExit);
             panelTitleBar.Controls.Add(lblUserRole);
-            panelTitleBar.Controls.Add(lblUserName);
+            panelTitleBar.Controls.Add(lblFullname);
             panelTitleBar.Controls.Add(lblTitle);
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(320, 0);
@@ -557,6 +559,19 @@
             panelTitleBar.Size = new Size(1162, 87);
             panelTitleBar.TabIndex = 1;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
+            // 
+            // lblUsername
+            // 
+            lblUsername.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblUsername.AutoSize = true;
+            lblUsername.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
+            lblUsername.ForeColor = Color.FromArgb(43, 121, 223);
+            lblUsername.Location = new Point(960, 13);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(62, 17);
+            lblUsername.TabIndex = 27;
+            lblUsername.Text = "username";
+            lblUsername.Visible = false;
             // 
             // picUserPhoto
             // 
@@ -637,17 +652,17 @@
             lblUserRole.TabIndex = 22;
             lblUserRole.Text = "label1";
             // 
-            // lblUserName
+            // lblFullname
             // 
-            lblUserName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblUserName.AutoSize = true;
-            lblUserName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUserName.ForeColor = Color.FromArgb(43, 121, 223);
-            lblUserName.Location = new Point(975, 35);
-            lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(51, 20);
-            lblUserName.TabIndex = 21;
-            lblUserName.Text = "label1";
+            lblFullname.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblFullname.AutoSize = true;
+            lblFullname.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFullname.ForeColor = Color.FromArgb(43, 121, 223);
+            lblFullname.Location = new Point(975, 35);
+            lblFullname.Name = "lblFullname";
+            lblFullname.Size = new Size(51, 20);
+            lblFullname.TabIndex = 21;
+            lblFullname.Text = "label1";
             // 
             // lblTitle
             // 
@@ -708,7 +723,7 @@
         private FontAwesome.Sharp.IconButton btnMax;
         private FontAwesome.Sharp.IconButton btnExit;
         private Label lblUserRole;
-        private Label lblUserName;
+        private Label lblFullname;
         private Label lblTitle;
         private RoundedPictureBox picUserPhoto;
         private FontAwesome.Sharp.IconButton btnMenu;
@@ -730,5 +745,6 @@
         public FontAwesome.Sharp.IconButton btnActivities;
         public FontAwesome.Sharp.IconButton btnCertifications;
         private ToolTip toolTip1;
+        private Label lblUsername;
     }
 }

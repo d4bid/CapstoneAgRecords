@@ -254,6 +254,26 @@ namespace AgRecords.Model
             }
         }
 
+        public void InserActionLog(string username, string activity, string section, string description)
+        {
+            using (DatabaseConnection db = new DatabaseConnection())
+            {
+                db.Open();
+
+                string query = "CALL sp_RegisterUserAction(@username, @activity, @section, @description, @device)";
+                MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@activity", activity);
+                command.Parameters.AddWithValue("@section", section);
+                command.Parameters.AddWithValue("@description", description);
+                command.Parameters.AddWithValue("@device", Environment.MachineName);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+
 
 
     }

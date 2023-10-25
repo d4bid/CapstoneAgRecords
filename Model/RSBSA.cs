@@ -13,6 +13,9 @@ namespace AgRecords.Model
         public string? rsbsaIdLGU { get; set; }
         public string? rsbsaIdRegion { get; set; }
         public DateTime dateCreated { get; set; }
+        public DateTime? dateModified{ get; set; }
+        public string? lastModifier { get; set; }
+
         public string? userId { get; set; }
 
         //Farmer Personal Info

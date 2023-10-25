@@ -606,7 +606,7 @@ namespace AgRecords.View
 
             if (rsbsaController.EditRSBSA(
                 //rsbsa info
-                labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
+                labelRsbsaId.Text, null, null, DateTime.Now,
 
                 //farmer info
                 farmerPhoto, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
