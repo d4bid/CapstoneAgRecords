@@ -42,6 +42,7 @@
             btnFarmLand = new Button();
             btnDocuments = new Button();
             panel27 = new Panel();
+            labelRsbsaIdRegion = new Label();
             btnCancel = new Button();
             btnSave = new Button();
             label26 = new Label();
@@ -383,10 +384,9 @@
             panel4.Controls.Add(panel2);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
-            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(9, 8, 9, 8);
-            panel4.Size = new Size(1396, 120);
+            panel4.Padding = new Padding(10, 11, 10, 11);
+            panel4.Size = new Size(1595, 160);
             panel4.TabIndex = 1;
             // 
             // panel2
@@ -395,10 +395,9 @@
             panel2.Controls.Add(panel27);
             panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(9, 8);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(10, 11);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1378, 104);
+            panel2.Size = new Size(1575, 138);
             panel2.TabIndex = 0;
             // 
             // panel28
@@ -414,18 +413,16 @@
             panel28.Controls.Add(btnFarmLand);
             panel28.Controls.Add(btnDocuments);
             panel28.Dock = DockStyle.Fill;
-            panel28.Location = new Point(121, 62);
-            panel28.Margin = new Padding(3, 2, 3, 2);
+            panel28.Location = new Point(138, 83);
             panel28.Name = "panel28";
-            panel28.Size = new Size(1257, 42);
+            panel28.Size = new Size(1437, 55);
             panel28.TabIndex = 0;
             // 
             // btnDisplayListCon
             // 
-            btnDisplayListCon.Location = new Point(732, 5);
-            btnDisplayListCon.Margin = new Padding(3, 2, 3, 2);
+            btnDisplayListCon.Location = new Point(837, 7);
             btnDisplayListCon.Name = "btnDisplayListCon";
-            btnDisplayListCon.Size = new Size(66, 32);
+            btnDisplayListCon.Size = new Size(75, 43);
             btnDisplayListCon.TabIndex = 92;
             btnDisplayListCon.Text = "Debug";
             btnDisplayListCon.UseVisualStyleBackColor = true;
@@ -434,11 +431,10 @@
             // textBoxFarmParcels
             // 
             textBoxFarmParcels.BackColor = SystemColors.MenuHighlight;
-            textBoxFarmParcels.Location = new Point(802, 8);
-            textBoxFarmParcels.Margin = new Padding(3, 2, 3, 2);
+            textBoxFarmParcels.Location = new Point(917, 11);
             textBoxFarmParcels.Multiline = true;
             textBoxFarmParcels.Name = "textBoxFarmParcels";
-            textBoxFarmParcels.Size = new Size(135, 28);
+            textBoxFarmParcels.Size = new Size(154, 36);
             textBoxFarmParcels.TabIndex = 5;
             textBoxFarmParcels.Text = "Debug";
             textBoxFarmParcels.Visible = false;
@@ -446,37 +442,33 @@
             // panelColorDoc
             // 
             panelColorDoc.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorDoc.Location = new Point(511, 33);
-            panelColorDoc.Margin = new Padding(3, 2, 3, 2);
+            panelColorDoc.Location = new Point(584, 44);
             panelColorDoc.Name = "panelColorDoc";
-            panelColorDoc.Size = new Size(111, 2);
+            panelColorDoc.Size = new Size(127, 3);
             panelColorDoc.TabIndex = 0;
             // 
             // panelColorPi
             // 
             panelColorPi.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorPi.Location = new Point(20, 33);
-            panelColorPi.Margin = new Padding(3, 2, 3, 2);
+            panelColorPi.Location = new Point(23, 44);
             panelColorPi.Name = "panelColorPi";
-            panelColorPi.Size = new Size(186, 2);
+            panelColorPi.Size = new Size(213, 3);
             panelColorPi.TabIndex = 0;
             // 
             // panelColorFp
             // 
             panelColorFp.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorFp.Location = new Point(230, 33);
-            panelColorFp.Margin = new Padding(3, 2, 3, 2);
+            panelColorFp.Location = new Point(263, 44);
             panelColorFp.Name = "panelColorFp";
-            panelColorFp.Size = new Size(123, 2);
+            panelColorFp.Size = new Size(141, 3);
             panelColorFp.TabIndex = 0;
             // 
             // panelColorFl
             // 
             panelColorFl.BackColor = Color.FromArgb(43, 121, 223);
-            panelColorFl.Location = new Point(379, 33);
-            panelColorFl.Margin = new Padding(3, 2, 3, 2);
+            panelColorFl.Location = new Point(433, 44);
             panelColorFl.Name = "panelColorFl";
-            panelColorFl.Size = new Size(107, 2);
+            panelColorFl.Size = new Size(122, 3);
             panelColorFl.TabIndex = 0;
             // 
             // btnFarmProfile
@@ -487,10 +479,9 @@
             btnFarmProfile.FlatStyle = FlatStyle.Flat;
             btnFarmProfile.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnFarmProfile.ForeColor = Color.FromArgb(0, 35, 76);
-            btnFarmProfile.Location = new Point(230, 5);
-            btnFarmProfile.Margin = new Padding(3, 2, 3, 2);
+            btnFarmProfile.Location = new Point(263, 7);
             btnFarmProfile.Name = "btnFarmProfile";
-            btnFarmProfile.Size = new Size(123, 30);
+            btnFarmProfile.Size = new Size(141, 40);
             btnFarmProfile.TabIndex = 2;
             btnFarmProfile.Text = "Farm Profile";
             btnFarmProfile.UseVisualStyleBackColor = true;
@@ -504,10 +495,9 @@
             btnPersonal.FlatStyle = FlatStyle.Flat;
             btnPersonal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnPersonal.ForeColor = Color.FromArgb(0, 35, 76);
-            btnPersonal.Location = new Point(20, 5);
-            btnPersonal.Margin = new Padding(3, 2, 3, 2);
+            btnPersonal.Location = new Point(23, 7);
             btnPersonal.Name = "btnPersonal";
-            btnPersonal.Size = new Size(186, 30);
+            btnPersonal.Size = new Size(213, 40);
             btnPersonal.TabIndex = 1;
             btnPersonal.Text = "Personal Information";
             btnPersonal.UseVisualStyleBackColor = true;
@@ -521,10 +511,9 @@
             btnFarmLand.FlatStyle = FlatStyle.Flat;
             btnFarmLand.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnFarmLand.ForeColor = Color.FromArgb(0, 35, 76);
-            btnFarmLand.Location = new Point(378, 5);
-            btnFarmLand.Margin = new Padding(3, 2, 3, 2);
+            btnFarmLand.Location = new Point(432, 7);
             btnFarmLand.Name = "btnFarmLand";
-            btnFarmLand.Size = new Size(107, 30);
+            btnFarmLand.Size = new Size(122, 40);
             btnFarmLand.TabIndex = 3;
             btnFarmLand.Text = "Farm Land";
             btnFarmLand.UseVisualStyleBackColor = true;
@@ -538,10 +527,9 @@
             btnDocuments.FlatStyle = FlatStyle.Flat;
             btnDocuments.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnDocuments.ForeColor = Color.FromArgb(0, 35, 76);
-            btnDocuments.Location = new Point(511, 5);
-            btnDocuments.Margin = new Padding(3, 2, 3, 2);
+            btnDocuments.Location = new Point(584, 7);
             btnDocuments.Name = "btnDocuments";
-            btnDocuments.Size = new Size(111, 30);
+            btnDocuments.Size = new Size(127, 40);
             btnDocuments.TabIndex = 4;
             btnDocuments.Text = "Documents";
             btnDocuments.UseVisualStyleBackColor = true;
@@ -549,6 +537,7 @@
             // 
             // panel27
             // 
+            panel27.Controls.Add(labelRsbsaIdRegion);
             panel27.Controls.Add(btnCancel);
             panel27.Controls.Add(btnSave);
             panel27.Controls.Add(label26);
@@ -559,11 +548,20 @@
             panel27.Controls.Add(label3);
             panel27.Controls.Add(dtDateAdm);
             panel27.Dock = DockStyle.Top;
-            panel27.Location = new Point(121, 0);
-            panel27.Margin = new Padding(3, 2, 3, 2);
+            panel27.Location = new Point(138, 0);
             panel27.Name = "panel27";
-            panel27.Size = new Size(1257, 62);
+            panel27.Size = new Size(1437, 83);
             panel27.TabIndex = 1;
+            // 
+            // labelRsbsaIdRegion
+            // 
+            labelRsbsaIdRegion.AutoSize = true;
+            labelRsbsaIdRegion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelRsbsaIdRegion.Location = new Point(557, 35);
+            labelRsbsaIdRegion.Name = "labelRsbsaIdRegion";
+            labelRsbsaIdRegion.Size = new Size(63, 28);
+            labelRsbsaIdRegion.TabIndex = 93;
+            labelRsbsaIdRegion.Text = "label1";
             // 
             // btnCancel
             // 
@@ -572,9 +570,10 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1117, 14);
+            btnCancel.Location = new Point(1277, 19);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(114, 30);
+            btnCancel.Size = new Size(130, 40);
             btnCancel.TabIndex = 92;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -586,10 +585,9 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(995, 14);
-            btnSave.Margin = new Padding(3, 2, 3, 2);
+            btnSave.Location = new Point(1137, 19);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(114, 30);
+            btnSave.Size = new Size(130, 40);
             btnSave.TabIndex = 91;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -599,9 +597,9 @@
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label26.Location = new Point(20, 4);
+            label26.Location = new Point(23, 5);
             label26.Name = "label26";
-            label26.Size = new Size(55, 15);
+            label26.Size = new Size(72, 20);
             label26.TabIndex = 90;
             label26.Text = "RSBSA ID";
             // 
@@ -609,47 +607,47 @@
             // 
             labelRsbsaId.AutoSize = true;
             labelRsbsaId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRsbsaId.Location = new Point(25, 26);
+            labelRsbsaId.Location = new Point(29, 35);
             labelRsbsaId.Name = "labelRsbsaId";
-            labelRsbsaId.Size = new Size(51, 21);
+            labelRsbsaId.Size = new Size(63, 28);
             labelRsbsaId.TabIndex = 0;
             labelRsbsaId.Text = "label1";
             // 
             // rectangleRound21
             // 
             rectangleRound21.BackColor = Color.White;
-            rectangleRound21.Location = new Point(19, 23);
-            rectangleRound21.Margin = new Padding(2);
+            rectangleRound21.Location = new Point(22, 31);
+            rectangleRound21.Margin = new Padding(2, 3, 2, 3);
             rectangleRound21.Name = "rectangleRound21";
-            rectangleRound21.Size = new Size(219, 28);
+            rectangleRound21.Size = new Size(250, 37);
             rectangleRound21.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(283, 4);
+            label2.Location = new Point(323, 5);
             label2.Name = "label2";
-            label2.Size = new Size(105, 15);
+            label2.Size = new Size(134, 20);
             label2.TabIndex = 85;
             label2.Text = "Date Administered";
             // 
             // rectangleRound1
             // 
             rectangleRound1.BackColor = Color.White;
-            rectangleRound1.Location = new Point(480, 23);
-            rectangleRound1.Margin = new Padding(2);
+            rectangleRound1.Location = new Point(549, 31);
+            rectangleRound1.Margin = new Padding(2, 3, 2, 3);
             rectangleRound1.Name = "rectangleRound1";
-            rectangleRound1.Size = new Size(273, 28);
+            rectangleRound1.Size = new Size(312, 37);
             rectangleRound1.TabIndex = 87;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(480, 4);
+            label3.Location = new Point(549, 5);
             label3.Name = "label3";
-            label3.Size = new Size(106, 15);
+            label3.Size = new Size(133, 20);
             label3.TabIndex = 86;
             label3.Text = "Reference Number";
             // 
@@ -657,10 +655,9 @@
             // 
             dtDateAdm.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dtDateAdm.Format = DateTimePickerFormat.Short;
-            dtDateAdm.Location = new Point(283, 25);
-            dtDateAdm.Margin = new Padding(3, 2, 3, 2);
+            dtDateAdm.Location = new Point(323, 33);
             dtDateAdm.Name = "dtDateAdm";
-            dtDateAdm.Size = new Size(156, 26);
+            dtDateAdm.Size = new Size(178, 30);
             dtDateAdm.TabIndex = 1;
             // 
             // panel1
@@ -668,9 +665,8 @@
             panel1.Controls.Add(pbFarmerPhoto);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(121, 104);
+            panel1.Size = new Size(138, 138);
             panel1.TabIndex = 0;
             // 
             // pbFarmerPhoto
@@ -678,11 +674,11 @@
             pbFarmerPhoto.BackgroundImage = Properties.Resources.profile;
             pbFarmerPhoto.BackgroundImageLayout = ImageLayout.Zoom;
             pbFarmerPhoto.Location = new Point(0, 0);
-            pbFarmerPhoto.Margin = new Padding(3, 2, 3, 2);
             pbFarmerPhoto.Name = "pbFarmerPhoto";
-            pbFarmerPhoto.Size = new Size(122, 105);
+            pbFarmerPhoto.Size = new Size(139, 140);
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
+            pbFarmerPhoto.DoubleClick += pbFarmerPhoto_DoubleClick;
             // 
             // panelPersonalInfo
             // 
@@ -700,10 +696,9 @@
             panelPersonalInfo.Controls.Add(panel6);
             panelPersonalInfo.Controls.Add(panel3);
             panelPersonalInfo.Dock = DockStyle.Top;
-            panelPersonalInfo.Location = new Point(0, 120);
-            panelPersonalInfo.Margin = new Padding(3, 2, 3, 2);
+            panelPersonalInfo.Location = new Point(0, 160);
             panelPersonalInfo.Name = "panelPersonalInfo";
-            panelPersonalInfo.Size = new Size(1396, 575);
+            panelPersonalInfo.Size = new Size(1595, 767);
             panelPersonalInfo.TabIndex = 14;
             // 
             // panelFarmProfile
@@ -717,9 +712,8 @@
             panelFarmProfile.Controls.Add(panel29);
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
-            panelFarmProfile.Margin = new Padding(3, 2, 3, 2);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1396, 575);
+            panelFarmProfile.Size = new Size(1595, 767);
             panelFarmProfile.TabIndex = 42;
             // 
             // panelFarmLand
@@ -728,41 +722,37 @@
             panelFarmLand.Controls.Add(panel12);
             panelFarmLand.Controls.Add(panelDocument);
             panelFarmLand.Location = new Point(0, 0);
-            panelFarmLand.Margin = new Padding(3, 2, 3, 2);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1396, 575);
+            panelFarmLand.Size = new Size(1595, 767);
             panelFarmLand.TabIndex = 52;
             // 
             // panel19
             // 
             panel19.Controls.Add(flowLayoutPanelParcels);
             panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 695);
-            panel19.Margin = new Padding(3, 2, 3, 2);
+            panel19.Location = new Point(0, 927);
             panel19.Name = "panel19";
-            panel19.Padding = new Padding(9, 8, 9, 8);
-            panel19.Size = new Size(1396, 0);
+            panel19.Padding = new Padding(10, 11, 10, 11);
+            panel19.Size = new Size(1595, 0);
             panel19.TabIndex = 75;
             // 
             // flowLayoutPanelParcels
             // 
             flowLayoutPanelParcels.AutoScroll = true;
             flowLayoutPanelParcels.Dock = DockStyle.Fill;
-            flowLayoutPanelParcels.Location = new Point(9, 8);
-            flowLayoutPanelParcels.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanelParcels.Location = new Point(10, 11);
             flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
-            flowLayoutPanelParcels.Size = new Size(1378, 0);
+            flowLayoutPanelParcels.Size = new Size(1575, 0);
             flowLayoutPanelParcels.TabIndex = 54;
             // 
             // panel12
             // 
             panel12.Controls.Add(panel17);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 575);
-            panel12.Margin = new Padding(3, 2, 3, 2);
+            panel12.Location = new Point(0, 767);
             panel12.Name = "panel12";
-            panel12.Padding = new Padding(9, 8, 9, 8);
-            panel12.Size = new Size(1396, 120);
+            panel12.Padding = new Padding(10, 11, 10, 11);
+            panel12.Size = new Size(1595, 160);
             panel12.TabIndex = 74;
             // 
             // panel17
@@ -770,10 +760,9 @@
             panel17.Controls.Add(panel41);
             panel17.Controls.Add(panel43);
             panel17.Dock = DockStyle.Fill;
-            panel17.Location = new Point(9, 8);
-            panel17.Margin = new Padding(3, 2, 3, 2);
+            panel17.Location = new Point(10, 11);
             panel17.Name = "panel17";
-            panel17.Size = new Size(1378, 104);
+            panel17.Size = new Size(1575, 138);
             panel17.TabIndex = 73;
             // 
             // panel41
@@ -783,10 +772,9 @@
             panel41.Controls.Add(labelParcelCount);
             panel41.Controls.Add(panel42);
             panel41.Controls.Add(label71);
-            panel41.Location = new Point(2, 4);
-            panel41.Margin = new Padding(3, 2, 3, 2);
+            panel41.Location = new Point(2, 5);
             panel41.Name = "panel41";
-            panel41.Size = new Size(157, 96);
+            panel41.Size = new Size(179, 127);
             panel41.TabIndex = 71;
             // 
             // btnAddFarmParcel
@@ -795,10 +783,9 @@
             btnAddFarmParcel.IconColor = Color.FromArgb(0, 35, 76);
             btnAddFarmParcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAddFarmParcel.IconSize = 30;
-            btnAddFarmParcel.Location = new Point(80, 56);
-            btnAddFarmParcel.Margin = new Padding(3, 2, 3, 2);
+            btnAddFarmParcel.Location = new Point(91, 75);
             btnAddFarmParcel.Name = "btnAddFarmParcel";
-            btnAddFarmParcel.Size = new Size(27, 23);
+            btnAddFarmParcel.Size = new Size(31, 31);
             btnAddFarmParcel.TabIndex = 73;
             btnAddFarmParcel.UseVisualStyleBackColor = true;
             btnAddFarmParcel.Click += btnAddFarmParcel_Click;
@@ -806,9 +793,9 @@
             // labelParcelCount
             // 
             labelParcelCount.AutoSize = true;
-            labelParcelCount.Location = new Point(57, 59);
+            labelParcelCount.Location = new Point(65, 79);
             labelParcelCount.Name = "labelParcelCount";
-            labelParcelCount.Size = new Size(13, 15);
+            labelParcelCount.Size = new Size(17, 20);
             labelParcelCount.TabIndex = 72;
             labelParcelCount.Text = "0";
             // 
@@ -818,9 +805,8 @@
             panel42.Controls.Add(label70);
             panel42.Dock = DockStyle.Top;
             panel42.Location = new Point(0, 0);
-            panel42.Margin = new Padding(3, 2, 3, 2);
             panel42.Name = "panel42";
-            panel42.Size = new Size(155, 22);
+            panel42.Size = new Size(177, 29);
             panel42.TabIndex = 0;
             // 
             // label70
@@ -828,9 +814,9 @@
             label70.AutoSize = true;
             label70.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label70.ForeColor = Color.White;
-            label70.Location = new Point(5, 1);
+            label70.Location = new Point(6, 1);
             label70.Name = "label70";
-            label70.Size = new Size(98, 20);
+            label70.Size = new Size(118, 25);
             label70.TabIndex = 28;
             label70.Text = "Farm Parcels";
             // 
@@ -838,9 +824,9 @@
             // 
             label71.AutoSize = true;
             label71.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label71.Location = new Point(16, 33);
+            label71.Location = new Point(18, 44);
             label71.Name = "label71";
-            label71.Size = new Size(110, 15);
+            label71.Size = new Size(135, 20);
             label71.TabIndex = 71;
             label71.Text = "No. of Farm Parcels";
             // 
@@ -854,57 +840,56 @@
             panel43.Controls.Add(rectangleRound46);
             panel43.Controls.Add(panel44);
             panel43.Controls.Add(label72);
-            panel43.Location = new Point(171, 4);
-            panel43.Margin = new Padding(3, 2, 3, 2);
+            panel43.Location = new Point(195, 5);
             panel43.Name = "panel43";
-            panel43.Size = new Size(1197, 96);
+            panel43.Size = new Size(1368, 127);
             panel43.TabIndex = 72;
             // 
             // rectangleRound50
             // 
             rectangleRound50.BackColor = Color.White;
-            rectangleRound50.Location = new Point(510, 54);
-            rectangleRound50.Margin = new Padding(2);
+            rectangleRound50.Location = new Point(583, 72);
+            rectangleRound50.Margin = new Padding(2, 3, 2, 3);
             rectangleRound50.Name = "rectangleRound50";
-            rectangleRound50.Size = new Size(252, 28);
+            rectangleRound50.Size = new Size(288, 37);
             rectangleRound50.TabIndex = 76;
             // 
             // label47
             // 
             label47.AutoSize = true;
             label47.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label47.Location = new Point(510, 33);
+            label47.Location = new Point(583, 44);
             label47.Name = "label47";
-            label47.Size = new Size(28, 15);
+            label47.Size = new Size(35, 20);
             label47.TabIndex = 75;
             label47.Text = "(P3)";
             // 
             // rectangleRound49
             // 
             rectangleRound49.BackColor = Color.White;
-            rectangleRound49.Location = new Point(240, 54);
-            rectangleRound49.Margin = new Padding(2);
+            rectangleRound49.Location = new Point(274, 72);
+            rectangleRound49.Margin = new Padding(2, 3, 2, 3);
             rectangleRound49.Name = "rectangleRound49";
-            rectangleRound49.Size = new Size(252, 28);
+            rectangleRound49.Size = new Size(288, 37);
             rectangleRound49.TabIndex = 74;
             // 
             // label42
             // 
             label42.AutoSize = true;
             label42.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label42.Location = new Point(240, 33);
+            label42.Location = new Point(274, 44);
             label42.Name = "label42";
-            label42.Size = new Size(28, 15);
+            label42.Size = new Size(35, 20);
             label42.TabIndex = 73;
             label42.Text = "(P2)";
             // 
             // rectangleRound46
             // 
             rectangleRound46.BackColor = Color.White;
-            rectangleRound46.Location = new Point(19, 54);
-            rectangleRound46.Margin = new Padding(2);
+            rectangleRound46.Location = new Point(22, 72);
+            rectangleRound46.Margin = new Padding(2, 3, 2, 3);
             rectangleRound46.Name = "rectangleRound46";
-            rectangleRound46.Size = new Size(201, 28);
+            rectangleRound46.Size = new Size(230, 37);
             rectangleRound46.TabIndex = 72;
             // 
             // panel44
@@ -913,9 +898,8 @@
             panel44.Controls.Add(label46);
             panel44.Dock = DockStyle.Top;
             panel44.Location = new Point(0, 0);
-            panel44.Margin = new Padding(3, 2, 3, 2);
             panel44.Name = "panel44";
-            panel44.Size = new Size(1195, 22);
+            panel44.Size = new Size(1366, 29);
             panel44.TabIndex = 0;
             // 
             // label46
@@ -923,9 +907,9 @@
             label46.AutoSize = true;
             label46.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label46.ForeColor = Color.White;
-            label46.Location = new Point(5, 1);
+            label46.Location = new Point(6, 1);
             label46.Name = "label46";
-            label46.Size = new Size(220, 20);
+            label46.Size = new Size(264, 25);
             label46.TabIndex = 28;
             label46.Text = "Name of Farmer/s in Rotation";
             // 
@@ -933,9 +917,9 @@
             // 
             label72.AutoSize = true;
             label72.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label72.Location = new Point(16, 33);
+            label72.Location = new Point(18, 44);
             label72.Name = "label72";
-            label72.Size = new Size(28, 15);
+            label72.Size = new Size(35, 20);
             label72.TabIndex = 71;
             label72.Text = "(P1)";
             // 
@@ -945,19 +929,17 @@
             panelDocument.Controls.Add(panel14);
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
-            panelDocument.Margin = new Padding(3, 2, 3, 2);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1396, 575);
+            panelDocument.Size = new Size(1595, 767);
             panelDocument.TabIndex = 73;
             // 
             // flowLayoutPanelDocs
             // 
             flowLayoutPanelDocs.AutoScroll = true;
             flowLayoutPanelDocs.Dock = DockStyle.Fill;
-            flowLayoutPanelDocs.Location = new Point(0, 65);
-            flowLayoutPanelDocs.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanelDocs.Location = new Point(0, 87);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1396, 510);
+            flowLayoutPanelDocs.Size = new Size(1595, 680);
             flowLayoutPanelDocs.TabIndex = 92;
             // 
             // panel14
@@ -965,9 +947,8 @@
             panel14.Controls.Add(btnAddDocsControl);
             panel14.Dock = DockStyle.Top;
             panel14.Location = new Point(0, 0);
-            panel14.Margin = new Padding(3, 2, 3, 2);
             panel14.Name = "panel14";
-            panel14.Size = new Size(1396, 65);
+            panel14.Size = new Size(1595, 87);
             panel14.TabIndex = 94;
             // 
             // btnAddDocsControl
@@ -982,10 +963,9 @@
             btnAddDocsControl.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAddDocsControl.IconSize = 30;
             btnAddDocsControl.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddDocsControl.Location = new Point(1124, 18);
-            btnAddDocsControl.Margin = new Padding(3, 2, 3, 2);
+            btnAddDocsControl.Location = new Point(1285, 24);
             btnAddDocsControl.Name = "btnAddDocsControl";
-            btnAddDocsControl.Size = new Size(262, 29);
+            btnAddDocsControl.Size = new Size(299, 39);
             btnAddDocsControl.TabIndex = 93;
             btnAddDocsControl.Text = "Add Document";
             btnAddDocsControl.UseVisualStyleBackColor = false;
@@ -1001,48 +981,45 @@
             panel39.Controls.Add(panel40);
             panel39.Controls.Add(label68);
             panel39.Controls.Add(label69);
-            panel39.Location = new Point(11, 417);
-            panel39.Margin = new Padding(3, 2, 3, 2);
+            panel39.Location = new Point(13, 556);
             panel39.Name = "panel39";
-            panel39.Size = new Size(1308, 103);
+            panel39.Size = new Size(1495, 137);
             panel39.TabIndex = 70;
             // 
             // txtNonFarmingIncome
             // 
             txtNonFarmingIncome.BorderStyle = BorderStyle.None;
             txtNonFarmingIncome.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtNonFarmingIncome.Location = new Point(353, 58);
-            txtNonFarmingIncome.Margin = new Padding(3, 2, 3, 2);
+            txtNonFarmingIncome.Location = new Point(403, 77);
             txtNonFarmingIncome.Name = "txtNonFarmingIncome";
-            txtNonFarmingIncome.Size = new Size(334, 22);
+            txtNonFarmingIncome.Size = new Size(382, 27);
             txtNonFarmingIncome.TabIndex = 77;
             // 
             // txtFarmingIncome
             // 
             txtFarmingIncome.BorderStyle = BorderStyle.None;
             txtFarmingIncome.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtFarmingIncome.Location = new Point(26, 58);
-            txtFarmingIncome.Margin = new Padding(3, 2, 3, 2);
+            txtFarmingIncome.Location = new Point(30, 77);
             txtFarmingIncome.Name = "txtFarmingIncome";
-            txtFarmingIncome.Size = new Size(260, 22);
+            txtFarmingIncome.Size = new Size(297, 27);
             txtFarmingIncome.TabIndex = 76;
             // 
             // rectangleRound45
             // 
             rectangleRound45.BackColor = Color.White;
-            rectangleRound45.Location = new Point(345, 54);
-            rectangleRound45.Margin = new Padding(2);
+            rectangleRound45.Location = new Point(394, 72);
+            rectangleRound45.Margin = new Padding(2, 3, 2, 3);
             rectangleRound45.Name = "rectangleRound45";
-            rectangleRound45.Size = new Size(348, 34);
+            rectangleRound45.Size = new Size(398, 45);
             rectangleRound45.TabIndex = 75;
             // 
             // rectangleRound44
             // 
             rectangleRound44.BackColor = Color.White;
-            rectangleRound44.Location = new Point(19, 54);
-            rectangleRound44.Margin = new Padding(2);
+            rectangleRound44.Location = new Point(22, 72);
+            rectangleRound44.Margin = new Padding(2, 3, 2, 3);
             rectangleRound44.Name = "rectangleRound44";
-            rectangleRound44.Size = new Size(275, 34);
+            rectangleRound44.Size = new Size(314, 45);
             rectangleRound44.TabIndex = 72;
             // 
             // panel40
@@ -1051,9 +1028,8 @@
             panel40.Controls.Add(label67);
             panel40.Dock = DockStyle.Top;
             panel40.Location = new Point(0, 0);
-            panel40.Margin = new Padding(3, 2, 3, 2);
             panel40.Name = "panel40";
-            panel40.Size = new Size(1306, 22);
+            panel40.Size = new Size(1493, 29);
             panel40.TabIndex = 0;
             // 
             // label67
@@ -1061,9 +1037,9 @@
             label67.AutoSize = true;
             label67.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label67.ForeColor = Color.White;
-            label67.Location = new Point(5, 1);
+            label67.Location = new Point(6, 1);
             label67.Name = "label67";
-            label67.Size = new Size(226, 20);
+            label67.Size = new Size(273, 25);
             label67.TabIndex = 28;
             label67.Text = "Gross Annual Income Last Year";
             // 
@@ -1071,9 +1047,9 @@
             // 
             label68.AutoSize = true;
             label68.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label68.Location = new Point(16, 33);
+            label68.Location = new Point(18, 44);
             label68.Name = "label68";
-            label68.Size = new Size(51, 15);
+            label68.Size = new Size(62, 20);
             label68.TabIndex = 71;
             label68.Text = "Farming";
             // 
@@ -1081,9 +1057,9 @@
             // 
             label69.AutoSize = true;
             label69.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label69.Location = new Point(347, 32);
+            label69.Location = new Point(397, 43);
             label69.Name = "label69";
-            label69.Size = new Size(79, 15);
+            label69.Size = new Size(96, 20);
             label69.TabIndex = 74;
             label69.Text = "Non-Farming";
             // 
@@ -1098,30 +1074,27 @@
             panel37.Controls.Add(panel38);
             panel37.Controls.Add(rectangleRound43);
             panel37.Controls.Add(label66);
-            panel37.Location = new Point(1005, 100);
-            panel37.Margin = new Padding(3, 2, 3, 2);
+            panel37.Location = new Point(1149, 133);
             panel37.Name = "panel37";
-            panel37.Size = new Size(313, 305);
+            panel37.Size = new Size(357, 406);
             panel37.TabIndex = 69;
             // 
             // txtInvolvementOthers
             // 
             txtInvolvementOthers.BorderStyle = BorderStyle.FixedSingle;
             txtInvolvementOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtInvolvementOthers.Location = new Point(65, 182);
-            txtInvolvementOthers.Margin = new Padding(3, 2, 3, 2);
+            txtInvolvementOthers.Location = new Point(74, 243);
             txtInvolvementOthers.Name = "txtInvolvementOthers";
-            txtInvolvementOthers.Size = new Size(212, 23);
+            txtInvolvementOthers.Size = new Size(242, 27);
             txtInvolvementOthers.TabIndex = 54;
             // 
             // cbInvolvementOthers
             // 
             cbInvolvementOthers.AutoSize = true;
             cbInvolvementOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbInvolvementOthers.Location = new Point(34, 158);
-            cbInvolvementOthers.Margin = new Padding(3, 2, 3, 2);
+            cbInvolvementOthers.Location = new Point(39, 211);
             cbInvolvementOthers.Name = "cbInvolvementOthers";
-            cbInvolvementOthers.Size = new Size(143, 19);
+            cbInvolvementOthers.Size = new Size(177, 24);
             cbInvolvementOthers.TabIndex = 53;
             cbInvolvementOthers.Text = "Others, please specify:";
             cbInvolvementOthers.UseVisualStyleBackColor = true;
@@ -1130,10 +1103,9 @@
             // 
             cbInvolvementProgram.AutoSize = true;
             cbInvolvementProgram.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbInvolvementProgram.Location = new Point(34, 122);
-            cbInvolvementProgram.Margin = new Padding(3, 2, 3, 2);
+            cbInvolvementProgram.Location = new Point(39, 163);
             cbInvolvementProgram.Name = "cbInvolvementProgram";
-            cbInvolvementProgram.Size = new Size(190, 34);
+            cbInvolvementProgram.Size = new Size(236, 44);
             cbInvolvementProgram.TabIndex = 52;
             cbInvolvementProgram.Text = "Participated in any agricultural \nactivity/program";
             cbInvolvementProgram.TextAlign = ContentAlignment.TopLeft;
@@ -1143,10 +1115,9 @@
             // 
             cbInvolvementFormalCourse.AutoSize = true;
             cbInvolvementFormalCourse.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbInvolvementFormalCourse.Location = new Point(34, 88);
-            cbInvolvementFormalCourse.Margin = new Padding(3, 2, 3, 2);
+            cbInvolvementFormalCourse.Location = new Point(39, 117);
             cbInvolvementFormalCourse.Name = "cbInvolvementFormalCourse";
-            cbInvolvementFormalCourse.Size = new Size(174, 34);
+            cbInvolvementFormalCourse.Size = new Size(217, 44);
             cbInvolvementFormalCourse.TabIndex = 50;
             cbInvolvementFormalCourse.Text = "Attending/Attended formal \nagrifishery related course";
             cbInvolvementFormalCourse.TextAlign = ContentAlignment.TopLeft;
@@ -1156,10 +1127,9 @@
             // 
             cbInvolvementHousehold.AutoSize = true;
             cbInvolvementHousehold.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbInvolvementHousehold.Location = new Point(34, 66);
-            cbInvolvementHousehold.Margin = new Padding(3, 2, 3, 2);
+            cbInvolvementHousehold.Location = new Point(39, 88);
             cbInvolvementHousehold.Name = "cbInvolvementHousehold";
-            cbInvolvementHousehold.Size = new Size(174, 19);
+            cbInvolvementHousehold.Size = new Size(215, 24);
             cbInvolvementHousehold.TabIndex = 49;
             cbInvolvementHousehold.Text = "Part of a farming household";
             cbInvolvementHousehold.UseVisualStyleBackColor = true;
@@ -1170,9 +1140,8 @@
             panel38.Controls.Add(label41);
             panel38.Dock = DockStyle.Top;
             panel38.Location = new Point(0, 0);
-            panel38.Margin = new Padding(3, 2, 3, 2);
             panel38.Name = "panel38";
-            panel38.Size = new Size(311, 22);
+            panel38.Size = new Size(355, 29);
             panel38.TabIndex = 0;
             // 
             // label41
@@ -1180,28 +1149,28 @@
             label41.AutoSize = true;
             label41.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label41.ForeColor = Color.White;
-            label41.Location = new Point(5, 1);
+            label41.Location = new Point(6, 1);
             label41.Name = "label41";
-            label41.Size = new Size(111, 20);
+            label41.Size = new Size(134, 25);
             label41.TabIndex = 28;
             label41.Text = "For Agri Youth";
             // 
             // rectangleRound43
             // 
             rectangleRound43.BackColor = Color.White;
-            rectangleRound43.Location = new Point(14, 54);
-            rectangleRound43.Margin = new Padding(2);
+            rectangleRound43.Location = new Point(16, 72);
+            rectangleRound43.Margin = new Padding(2, 3, 2, 3);
             rectangleRound43.Name = "rectangleRound43";
-            rectangleRound43.Size = new Size(281, 232);
+            rectangleRound43.Size = new Size(321, 309);
             rectangleRound43.TabIndex = 20;
             // 
             // label66
             // 
             label66.AutoSize = true;
             label66.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label66.Location = new Point(14, 33);
+            label66.Location = new Point(16, 44);
             label66.Name = "label66";
-            label66.Size = new Size(116, 15);
+            label66.Size = new Size(148, 20);
             label66.TabIndex = 18;
             label66.Text = "Type of Involvement";
             // 
@@ -1218,20 +1187,18 @@
             panel35.Controls.Add(panel36);
             panel35.Controls.Add(rectangleRound42);
             panel35.Controls.Add(label40);
-            panel35.Location = new Point(672, 100);
-            panel35.Margin = new Padding(3, 2, 3, 2);
+            panel35.Location = new Point(768, 133);
             panel35.Name = "panel35";
-            panel35.Size = new Size(313, 305);
+            panel35.Size = new Size(357, 406);
             panel35.TabIndex = 68;
             // 
             // cbFishingActVending
             // 
             cbFishingActVending.AutoSize = true;
             cbFishingActVending.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFishingActVending.Location = new Point(31, 156);
-            cbFishingActVending.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActVending.Location = new Point(35, 208);
             cbFishingActVending.Name = "cbFishingActVending";
-            cbFishingActVending.Size = new Size(93, 19);
+            cbFishingActVending.Size = new Size(114, 24);
             cbFishingActVending.TabIndex = 59;
             cbFishingActVending.Text = "Fish Vending";
             cbFishingActVending.UseVisualStyleBackColor = true;
@@ -1240,20 +1207,18 @@
             // 
             txtFishingActOthers.BorderStyle = BorderStyle.FixedSingle;
             txtFishingActOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFishingActOthers.Location = new Point(66, 201);
-            txtFishingActOthers.Margin = new Padding(3, 2, 3, 2);
+            txtFishingActOthers.Location = new Point(75, 268);
             txtFishingActOthers.Name = "txtFishingActOthers";
-            txtFishingActOthers.Size = new Size(210, 23);
+            txtFishingActOthers.Size = new Size(240, 27);
             txtFishingActOthers.TabIndex = 58;
             // 
             // cbFishingActOthers
             // 
             cbFishingActOthers.AutoSize = true;
             cbFishingActOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFishingActOthers.Location = new Point(31, 178);
-            cbFishingActOthers.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActOthers.Location = new Point(35, 237);
             cbFishingActOthers.Name = "cbFishingActOthers";
-            cbFishingActOthers.Size = new Size(143, 19);
+            cbFishingActOthers.Size = new Size(177, 24);
             cbFishingActOthers.TabIndex = 57;
             cbFishingActOthers.Text = "Others, please specify:";
             cbFishingActOthers.UseVisualStyleBackColor = true;
@@ -1262,10 +1227,9 @@
             // 
             cbFishingActProcessing.AutoSize = true;
             cbFishingActProcessing.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFishingActProcessing.Location = new Point(31, 134);
-            cbFishingActProcessing.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActProcessing.Location = new Point(35, 179);
             cbFishingActProcessing.Name = "cbFishingActProcessing";
-            cbFishingActProcessing.Size = new Size(107, 19);
+            cbFishingActProcessing.Size = new Size(130, 24);
             cbFishingActProcessing.TabIndex = 56;
             cbFishingActProcessing.Text = "Fish Processing";
             cbFishingActProcessing.UseVisualStyleBackColor = true;
@@ -1274,10 +1238,9 @@
             // 
             cbFishingActGleaning.AutoSize = true;
             cbFishingActGleaning.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFishingActGleaning.Location = new Point(31, 111);
-            cbFishingActGleaning.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActGleaning.Location = new Point(35, 148);
             cbFishingActGleaning.Name = "cbFishingActGleaning";
-            cbFishingActGleaning.Size = new Size(73, 19);
+            cbFishingActGleaning.Size = new Size(90, 24);
             cbFishingActGleaning.TabIndex = 55;
             cbFishingActGleaning.Text = "Gleaning";
             cbFishingActGleaning.UseVisualStyleBackColor = true;
@@ -1286,10 +1249,9 @@
             // 
             cbFishingActAquaculture.AutoSize = true;
             cbFishingActAquaculture.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFishingActAquaculture.Location = new Point(31, 88);
-            cbFishingActAquaculture.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActAquaculture.Location = new Point(35, 117);
             cbFishingActAquaculture.Name = "cbFishingActAquaculture";
-            cbFishingActAquaculture.Size = new Size(91, 19);
+            cbFishingActAquaculture.Size = new Size(111, 24);
             cbFishingActAquaculture.TabIndex = 54;
             cbFishingActAquaculture.Text = "Aquaculture";
             cbFishingActAquaculture.UseVisualStyleBackColor = true;
@@ -1298,10 +1260,9 @@
             // 
             cbFishingActFishCapture.AutoSize = true;
             cbFishingActFishCapture.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFishingActFishCapture.Location = new Point(31, 66);
-            cbFishingActFishCapture.Margin = new Padding(3, 2, 3, 2);
+            cbFishingActFishCapture.Location = new Point(35, 88);
             cbFishingActFishCapture.Name = "cbFishingActFishCapture";
-            cbFishingActFishCapture.Size = new Size(92, 19);
+            cbFishingActFishCapture.Size = new Size(112, 24);
             cbFishingActFishCapture.TabIndex = 53;
             cbFishingActFishCapture.Text = "Fish Capture";
             cbFishingActFishCapture.UseVisualStyleBackColor = true;
@@ -1312,9 +1273,8 @@
             panel36.Controls.Add(label24);
             panel36.Dock = DockStyle.Top;
             panel36.Location = new Point(0, 0);
-            panel36.Margin = new Padding(3, 2, 3, 2);
             panel36.Name = "panel36";
-            panel36.Size = new Size(311, 22);
+            panel36.Size = new Size(355, 29);
             panel36.TabIndex = 0;
             // 
             // label24
@@ -1322,28 +1282,28 @@
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label24.ForeColor = Color.White;
-            label24.Location = new Point(5, 1);
+            label24.Location = new Point(6, 1);
             label24.Name = "label24";
-            label24.Size = new Size(105, 20);
+            label24.Size = new Size(127, 25);
             label24.TabIndex = 28;
             label24.Text = "For Fisherfolk";
             // 
             // rectangleRound42
             // 
             rectangleRound42.BackColor = Color.White;
-            rectangleRound42.Location = new Point(14, 54);
-            rectangleRound42.Margin = new Padding(2);
+            rectangleRound42.Location = new Point(16, 72);
+            rectangleRound42.Margin = new Padding(2, 3, 2, 3);
             rectangleRound42.Name = "rectangleRound42";
-            rectangleRound42.Size = new Size(281, 232);
+            rectangleRound42.Size = new Size(321, 309);
             rectangleRound42.TabIndex = 20;
             // 
             // label40
             // 
             label40.AutoSize = true;
             label40.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label40.Location = new Point(14, 33);
+            label40.Location = new Point(16, 44);
             label40.Name = "label40";
-            label40.Size = new Size(130, 15);
+            label40.Size = new Size(167, 20);
             label40.TabIndex = 18;
             label40.Text = "Type of Fishing Activity";
             // 
@@ -1359,30 +1319,27 @@
             panel33.Controls.Add(panel34);
             panel33.Controls.Add(rectangleRound20);
             panel33.Controls.Add(label45);
-            panel33.Location = new Point(341, 100);
-            panel33.Margin = new Padding(3, 2, 3, 2);
+            panel33.Location = new Point(390, 133);
             panel33.Name = "panel33";
-            panel33.Size = new Size(313, 305);
+            panel33.Size = new Size(357, 406);
             panel33.TabIndex = 67;
             // 
             // txtWorkKindOthers
             // 
             txtWorkKindOthers.BorderStyle = BorderStyle.FixedSingle;
             txtWorkKindOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtWorkKindOthers.Location = new Point(72, 182);
-            txtWorkKindOthers.Margin = new Padding(3, 2, 3, 2);
+            txtWorkKindOthers.Location = new Point(82, 243);
             txtWorkKindOthers.Name = "txtWorkKindOthers";
-            txtWorkKindOthers.Size = new Size(208, 23);
+            txtWorkKindOthers.Size = new Size(237, 27);
             txtWorkKindOthers.TabIndex = 52;
             // 
             // cbWorkKindOthers
             // 
             cbWorkKindOthers.AutoSize = true;
             cbWorkKindOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbWorkKindOthers.Location = new Point(31, 156);
-            cbWorkKindOthers.Margin = new Padding(3, 2, 3, 2);
+            cbWorkKindOthers.Location = new Point(35, 208);
             cbWorkKindOthers.Name = "cbWorkKindOthers";
-            cbWorkKindOthers.Size = new Size(143, 19);
+            cbWorkKindOthers.Size = new Size(177, 24);
             cbWorkKindOthers.TabIndex = 51;
             cbWorkKindOthers.Text = "Others, please specify:";
             cbWorkKindOthers.UseVisualStyleBackColor = true;
@@ -1391,10 +1348,9 @@
             // 
             cbWorkKindHarvesting.AutoSize = true;
             cbWorkKindHarvesting.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbWorkKindHarvesting.Location = new Point(31, 134);
-            cbWorkKindHarvesting.Margin = new Padding(3, 2, 3, 2);
+            cbWorkKindHarvesting.Location = new Point(35, 179);
             cbWorkKindHarvesting.Name = "cbWorkKindHarvesting";
-            cbWorkKindHarvesting.Size = new Size(83, 19);
+            cbWorkKindHarvesting.Size = new Size(102, 24);
             cbWorkKindHarvesting.TabIndex = 50;
             cbWorkKindHarvesting.Text = "Harvesting";
             cbWorkKindHarvesting.UseVisualStyleBackColor = true;
@@ -1403,10 +1359,9 @@
             // 
             cbWorkKindCultivation.AutoSize = true;
             cbWorkKindCultivation.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbWorkKindCultivation.Location = new Point(31, 111);
-            cbWorkKindCultivation.Margin = new Padding(3, 2, 3, 2);
+            cbWorkKindCultivation.Location = new Point(35, 148);
             cbWorkKindCultivation.Name = "cbWorkKindCultivation";
-            cbWorkKindCultivation.Size = new Size(84, 19);
+            cbWorkKindCultivation.Size = new Size(102, 24);
             cbWorkKindCultivation.TabIndex = 49;
             cbWorkKindCultivation.Text = "Cultivation";
             cbWorkKindCultivation.UseVisualStyleBackColor = true;
@@ -1415,10 +1370,9 @@
             // 
             cbWorkKindPlanting.AutoSize = true;
             cbWorkKindPlanting.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbWorkKindPlanting.Location = new Point(31, 88);
-            cbWorkKindPlanting.Margin = new Padding(3, 2, 3, 2);
+            cbWorkKindPlanting.Location = new Point(35, 117);
             cbWorkKindPlanting.Name = "cbWorkKindPlanting";
-            cbWorkKindPlanting.Size = new Size(146, 19);
+            cbWorkKindPlanting.Size = new Size(180, 24);
             cbWorkKindPlanting.TabIndex = 48;
             cbWorkKindPlanting.Text = "Planting/Transplanting";
             cbWorkKindPlanting.UseVisualStyleBackColor = true;
@@ -1427,10 +1381,9 @@
             // 
             cbWorkKindLandPrep.AutoSize = true;
             cbWorkKindLandPrep.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbWorkKindLandPrep.Location = new Point(31, 66);
-            cbWorkKindLandPrep.Margin = new Padding(3, 2, 3, 2);
+            cbWorkKindLandPrep.Location = new Point(35, 88);
             cbWorkKindLandPrep.Name = "cbWorkKindLandPrep";
-            cbWorkKindLandPrep.Size = new Size(116, 19);
+            cbWorkKindLandPrep.Size = new Size(144, 24);
             cbWorkKindLandPrep.TabIndex = 47;
             cbWorkKindLandPrep.Text = "Land Preparation";
             cbWorkKindLandPrep.UseVisualStyleBackColor = true;
@@ -1441,9 +1394,8 @@
             panel34.Controls.Add(label43);
             panel34.Dock = DockStyle.Top;
             panel34.Location = new Point(0, 0);
-            panel34.Margin = new Padding(3, 2, 3, 2);
             panel34.Name = "panel34";
-            panel34.Size = new Size(311, 22);
+            panel34.Size = new Size(355, 29);
             panel34.TabIndex = 0;
             // 
             // label43
@@ -1451,28 +1403,28 @@
             label43.AutoSize = true;
             label43.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label43.ForeColor = Color.White;
-            label43.Location = new Point(5, 1);
+            label43.Location = new Point(6, 1);
             label43.Name = "label43";
-            label43.Size = new Size(143, 20);
+            label43.Size = new Size(170, 25);
             label43.TabIndex = 28;
             label43.Text = "For Farmerworkers";
             // 
             // rectangleRound20
             // 
             rectangleRound20.BackColor = Color.White;
-            rectangleRound20.Location = new Point(14, 54);
-            rectangleRound20.Margin = new Padding(2);
+            rectangleRound20.Location = new Point(16, 72);
+            rectangleRound20.Margin = new Padding(2, 3, 2, 3);
             rectangleRound20.Name = "rectangleRound20";
-            rectangleRound20.Size = new Size(281, 232);
+            rectangleRound20.Size = new Size(321, 309);
             rectangleRound20.TabIndex = 20;
             // 
             // label45
             // 
             label45.AutoSize = true;
             label45.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label45.Location = new Point(14, 33);
+            label45.Location = new Point(16, 44);
             label45.Name = "label45";
-            label45.Size = new Size(77, 15);
+            label45.Size = new Size(99, 20);
             label45.TabIndex = 18;
             label45.Text = "Kind of Work";
             // 
@@ -1493,19 +1445,18 @@
             panel31.Controls.Add(panel32);
             panel31.Controls.Add(rectangleRound47);
             panel31.Controls.Add(label54);
-            panel31.Location = new Point(10, 100);
-            panel31.Margin = new Padding(3, 2, 3, 2);
+            panel31.Location = new Point(11, 133);
             panel31.Name = "panel31";
-            panel31.Size = new Size(313, 305);
+            panel31.Size = new Size(357, 406);
             panel31.TabIndex = 66;
             // 
             // label39
             // 
             label39.AutoSize = true;
             label39.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label39.Location = new Point(60, 220);
+            label39.Location = new Point(69, 293);
             label39.Name = "label39";
-            label39.Size = new Size(80, 15);
+            label39.Size = new Size(102, 20);
             label39.TabIndex = 58;
             label39.Text = "please specify";
             // 
@@ -1513,20 +1464,18 @@
             // 
             txtFarmActPoultry.BorderStyle = BorderStyle.FixedSingle;
             txtFarmActPoultry.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmActPoultry.Location = new Point(154, 219);
-            txtFarmActPoultry.Margin = new Padding(3, 2, 3, 2);
+            txtFarmActPoultry.Location = new Point(176, 292);
             txtFarmActPoultry.Name = "txtFarmActPoultry";
-            txtFarmActPoultry.Size = new Size(124, 23);
+            txtFarmActPoultry.Size = new Size(141, 27);
             txtFarmActPoultry.TabIndex = 57;
             // 
             // cbPoultry
             // 
             cbPoultry.AutoSize = true;
             cbPoultry.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbPoultry.Location = new Point(29, 200);
-            cbPoultry.Margin = new Padding(3, 2, 3, 2);
+            cbPoultry.Location = new Point(33, 267);
             cbPoultry.Name = "cbPoultry";
-            cbPoultry.Size = new Size(67, 19);
+            cbPoultry.Size = new Size(79, 24);
             cbPoultry.TabIndex = 56;
             cbPoultry.Text = "Poultry,";
             cbPoultry.UseVisualStyleBackColor = true;
@@ -1535,9 +1484,9 @@
             // 
             label38.AutoSize = true;
             label38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(60, 176);
+            label38.Location = new Point(69, 235);
             label38.Name = "label38";
-            label38.Size = new Size(80, 15);
+            label38.Size = new Size(102, 20);
             label38.TabIndex = 55;
             label38.Text = "please specify";
             // 
@@ -1545,20 +1494,18 @@
             // 
             txtFarmActLivestock.BorderStyle = BorderStyle.FixedSingle;
             txtFarmActLivestock.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmActLivestock.Location = new Point(154, 175);
-            txtFarmActLivestock.Margin = new Padding(3, 2, 3, 2);
+            txtFarmActLivestock.Location = new Point(176, 233);
             txtFarmActLivestock.Name = "txtFarmActLivestock";
-            txtFarmActLivestock.Size = new Size(123, 23);
+            txtFarmActLivestock.Size = new Size(140, 27);
             txtFarmActLivestock.TabIndex = 54;
             // 
             // cbLivestock
             // 
             cbLivestock.AutoSize = true;
             cbLivestock.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbLivestock.Location = new Point(29, 156);
-            cbLivestock.Margin = new Padding(3, 2, 3, 2);
+            cbLivestock.Location = new Point(33, 208);
             cbLivestock.Name = "cbLivestock";
-            cbLivestock.Size = new Size(78, 19);
+            cbLivestock.Size = new Size(94, 24);
             cbLivestock.TabIndex = 53;
             cbLivestock.Text = "Livestock,";
             cbLivestock.UseVisualStyleBackColor = true;
@@ -1567,9 +1514,9 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(60, 134);
+            label21.Location = new Point(69, 179);
             label21.Name = "label21";
-            label21.Size = new Size(80, 15);
+            label21.Size = new Size(102, 20);
             label21.TabIndex = 52;
             label21.Text = "please specify";
             // 
@@ -1577,20 +1524,18 @@
             // 
             txtFarmActCrops.BorderStyle = BorderStyle.FixedSingle;
             txtFarmActCrops.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmActCrops.Location = new Point(154, 130);
-            txtFarmActCrops.Margin = new Padding(3, 2, 3, 2);
+            txtFarmActCrops.Location = new Point(176, 173);
             txtFarmActCrops.Name = "txtFarmActCrops";
-            txtFarmActCrops.Size = new Size(123, 23);
+            txtFarmActCrops.Size = new Size(140, 27);
             txtFarmActCrops.TabIndex = 51;
             // 
             // cbOtherCrops
             // 
             cbOtherCrops.AutoSize = true;
             cbOtherCrops.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbOtherCrops.Location = new Point(29, 111);
-            cbOtherCrops.Margin = new Padding(3, 2, 3, 2);
+            cbOtherCrops.Location = new Point(33, 148);
             cbOtherCrops.Name = "cbOtherCrops";
-            cbOtherCrops.Size = new Size(91, 19);
+            cbOtherCrops.Size = new Size(111, 24);
             cbOtherCrops.TabIndex = 50;
             cbOtherCrops.Text = "Other crops,";
             cbOtherCrops.UseVisualStyleBackColor = true;
@@ -1599,10 +1544,9 @@
             // 
             cbFarmActCorn.AutoSize = true;
             cbFarmActCorn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFarmActCorn.Location = new Point(29, 88);
-            cbFarmActCorn.Margin = new Padding(3, 2, 3, 2);
+            cbFarmActCorn.Location = new Point(33, 117);
             cbFarmActCorn.Name = "cbFarmActCorn";
-            cbFarmActCorn.Size = new Size(52, 19);
+            cbFarmActCorn.Size = new Size(62, 24);
             cbFarmActCorn.TabIndex = 49;
             cbFarmActCorn.Text = "Corn";
             cbFarmActCorn.UseVisualStyleBackColor = true;
@@ -1611,10 +1555,9 @@
             // 
             cbFarmActRice.AutoSize = true;
             cbFarmActRice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFarmActRice.Location = new Point(29, 66);
-            cbFarmActRice.Margin = new Padding(3, 2, 3, 2);
+            cbFarmActRice.Location = new Point(33, 88);
             cbFarmActRice.Name = "cbFarmActRice";
-            cbFarmActRice.Size = new Size(48, 19);
+            cbFarmActRice.Size = new Size(59, 24);
             cbFarmActRice.TabIndex = 48;
             cbFarmActRice.Text = "Rice";
             cbFarmActRice.UseVisualStyleBackColor = true;
@@ -1625,9 +1568,8 @@
             panel32.Controls.Add(label44);
             panel32.Dock = DockStyle.Top;
             panel32.Location = new Point(0, 0);
-            panel32.Margin = new Padding(3, 2, 3, 2);
             panel32.Name = "panel32";
-            panel32.Size = new Size(311, 22);
+            panel32.Size = new Size(355, 29);
             panel32.TabIndex = 0;
             // 
             // label44
@@ -1635,28 +1577,28 @@
             label44.AutoSize = true;
             label44.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label44.ForeColor = Color.White;
-            label44.Location = new Point(5, 1);
+            label44.Location = new Point(6, 1);
             label44.Name = "label44";
-            label44.Size = new Size(93, 20);
+            label44.Size = new Size(110, 25);
             label44.TabIndex = 28;
             label44.Text = "For Farmers";
             // 
             // rectangleRound47
             // 
             rectangleRound47.BackColor = Color.White;
-            rectangleRound47.Location = new Point(14, 54);
-            rectangleRound47.Margin = new Padding(2);
+            rectangleRound47.Location = new Point(16, 72);
+            rectangleRound47.Margin = new Padding(2, 3, 2, 3);
             rectangleRound47.Name = "rectangleRound47";
-            rectangleRound47.Size = new Size(281, 232);
+            rectangleRound47.Size = new Size(321, 309);
             rectangleRound47.TabIndex = 20;
             // 
             // label54
             // 
             label54.AutoSize = true;
             label54.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label54.Location = new Point(14, 33);
+            label54.Location = new Point(16, 44);
             label54.Name = "label54";
-            label54.Size = new Size(136, 15);
+            label54.Size = new Size(174, 20);
             label54.TabIndex = 18;
             label54.Text = "Type of Farming Activity";
             // 
@@ -1669,20 +1611,18 @@
             panel29.Controls.Add(cbLivelihoodFarmworker);
             panel29.Controls.Add(rectangleRound18);
             panel29.Controls.Add(panel30);
-            panel29.Location = new Point(10, 6);
-            panel29.Margin = new Padding(3, 2, 3, 2);
+            panel29.Location = new Point(11, 8);
             panel29.Name = "panel29";
-            panel29.Size = new Size(1308, 84);
+            panel29.Size = new Size(1495, 111);
             panel29.TabIndex = 65;
             // 
             // cbLivelihoodFisherfolk
             // 
             cbLivelihoodFisherfolk.AutoSize = true;
             cbLivelihoodFisherfolk.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbLivelihoodFisherfolk.Location = new Point(760, 44);
-            cbLivelihoodFisherfolk.Margin = new Padding(3, 2, 3, 2);
+            cbLivelihoodFisherfolk.Location = new Point(869, 59);
             cbLivelihoodFisherfolk.Name = "cbLivelihoodFisherfolk";
-            cbLivelihoodFisherfolk.Size = new Size(100, 25);
+            cbLivelihoodFisherfolk.Size = new Size(122, 32);
             cbLivelihoodFisherfolk.TabIndex = 41;
             cbLivelihoodFisherfolk.Text = "FisherFolk";
             cbLivelihoodFisherfolk.UseVisualStyleBackColor = true;
@@ -1691,10 +1631,9 @@
             // 
             cbLivelihoodAgriyouth.AutoSize = true;
             cbLivelihoodAgriyouth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbLivelihoodAgriyouth.Location = new Point(1084, 41);
-            cbLivelihoodAgriyouth.Margin = new Padding(3, 2, 3, 2);
+            cbLivelihoodAgriyouth.Location = new Point(1239, 55);
             cbLivelihoodAgriyouth.Name = "cbLivelihoodAgriyouth";
-            cbLivelihoodAgriyouth.Size = new Size(102, 25);
+            cbLivelihoodAgriyouth.Size = new Size(126, 32);
             cbLivelihoodAgriyouth.TabIndex = 40;
             cbLivelihoodAgriyouth.Text = "Agri Youth";
             cbLivelihoodAgriyouth.UseVisualStyleBackColor = true;
@@ -1703,10 +1642,9 @@
             // 
             cbLivelihoodFarmer.AutoSize = true;
             cbLivelihoodFarmer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbLivelihoodFarmer.Location = new Point(102, 41);
-            cbLivelihoodFarmer.Margin = new Padding(3, 2, 3, 2);
+            cbLivelihoodFarmer.Location = new Point(117, 55);
             cbLivelihoodFarmer.Name = "cbLivelihoodFarmer";
-            cbLivelihoodFarmer.Size = new Size(78, 25);
+            cbLivelihoodFarmer.Size = new Size(94, 32);
             cbLivelihoodFarmer.TabIndex = 39;
             cbLivelihoodFarmer.Text = "Farmer";
             cbLivelihoodFarmer.UseVisualStyleBackColor = true;
@@ -1715,10 +1653,9 @@
             // 
             cbLivelihoodFarmworker.AutoSize = true;
             cbLivelihoodFarmworker.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbLivelihoodFarmworker.Location = new Point(391, 41);
-            cbLivelihoodFarmworker.Margin = new Padding(3, 2, 3, 2);
+            cbLivelihoodFarmworker.Location = new Point(447, 55);
             cbLivelihoodFarmworker.Name = "cbLivelihoodFarmworker";
-            cbLivelihoodFarmworker.Size = new Size(173, 25);
+            cbLivelihoodFarmworker.Size = new Size(212, 32);
             cbLivelihoodFarmworker.TabIndex = 38;
             cbLivelihoodFarmworker.Text = "Farmworker/Laborer";
             cbLivelihoodFarmworker.UseVisualStyleBackColor = true;
@@ -1726,10 +1663,10 @@
             // rectangleRound18
             // 
             rectangleRound18.BackColor = Color.White;
-            rectangleRound18.Location = new Point(17, 36);
-            rectangleRound18.Margin = new Padding(4, 2, 4, 2);
+            rectangleRound18.Location = new Point(19, 48);
+            rectangleRound18.Margin = new Padding(5, 3, 5, 3);
             rectangleRound18.Name = "rectangleRound18";
-            rectangleRound18.Size = new Size(1274, 34);
+            rectangleRound18.Size = new Size(1456, 45);
             rectangleRound18.TabIndex = 31;
             // 
             // panel30
@@ -1738,9 +1675,8 @@
             panel30.Controls.Add(label37);
             panel30.Dock = DockStyle.Top;
             panel30.Location = new Point(0, 0);
-            panel30.Margin = new Padding(3, 2, 3, 2);
             panel30.Name = "panel30";
-            panel30.Size = new Size(1306, 22);
+            panel30.Size = new Size(1493, 29);
             panel30.TabIndex = 0;
             // 
             // label37
@@ -1748,9 +1684,9 @@
             label37.AutoSize = true;
             label37.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label37.ForeColor = Color.White;
-            label37.Location = new Point(5, 1);
+            label37.Location = new Point(6, 1);
             label37.Name = "label37";
-            label37.Size = new Size(120, 20);
+            label37.Size = new Size(148, 25);
             label37.TabIndex = 28;
             label37.Text = "Main Livelihood";
             // 
@@ -1764,30 +1700,27 @@
             panel23.Controls.Add(label60);
             panel23.Controls.Add(rectangleRound38);
             panel23.Controls.Add(label61);
-            panel23.Location = new Point(919, 482);
-            panel23.Margin = new Padding(3, 2, 3, 2);
+            panel23.Location = new Point(1050, 643);
             panel23.Name = "panel23";
-            panel23.Size = new Size(468, 84);
+            panel23.Size = new Size(535, 111);
             panel23.TabIndex = 76;
             // 
             // txtEcContact
             // 
             txtEcContact.BorderStyle = BorderStyle.None;
             txtEcContact.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEcContact.Location = new Point(279, 50);
-            txtEcContact.Margin = new Padding(3, 2, 3, 2);
+            txtEcContact.Location = new Point(319, 67);
             txtEcContact.Name = "txtEcContact";
-            txtEcContact.Size = new Size(155, 22);
+            txtEcContact.Size = new Size(177, 27);
             txtEcContact.TabIndex = 31;
             // 
             // txtEcName
             // 
             txtEcName.BorderStyle = BorderStyle.None;
             txtEcName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEcName.Location = new Point(23, 50);
-            txtEcName.Margin = new Padding(3, 2, 3, 2);
+            txtEcName.Location = new Point(26, 67);
             txtEcName.Name = "txtEcName";
-            txtEcName.Size = new Size(224, 22);
+            txtEcName.Size = new Size(256, 27);
             txtEcName.TabIndex = 30;
             // 
             // panel24
@@ -1796,9 +1729,8 @@
             panel24.Controls.Add(label58);
             panel24.Dock = DockStyle.Top;
             panel24.Location = new Point(0, 0);
-            panel24.Margin = new Padding(3, 2, 3, 2);
             panel24.Name = "panel24";
-            panel24.Size = new Size(466, 22);
+            panel24.Size = new Size(533, 29);
             panel24.TabIndex = 0;
             // 
             // label58
@@ -1806,47 +1738,47 @@
             label58.AutoSize = true;
             label58.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label58.ForeColor = Color.White;
-            label58.Location = new Point(5, 1);
+            label58.Location = new Point(6, 1);
             label58.Name = "label58";
-            label58.Size = new Size(144, 20);
+            label58.Size = new Size(177, 25);
             label58.TabIndex = 28;
             label58.Text = "Emergency Contact";
             // 
             // rectangleRound36
             // 
             rectangleRound36.BackColor = Color.White;
-            rectangleRound36.Location = new Point(14, 46);
-            rectangleRound36.Margin = new Padding(2);
+            rectangleRound36.Location = new Point(16, 61);
+            rectangleRound36.Margin = new Padding(2, 3, 2, 3);
             rectangleRound36.Name = "rectangleRound36";
-            rectangleRound36.Size = new Size(241, 28);
+            rectangleRound36.Size = new Size(275, 37);
             rectangleRound36.TabIndex = 20;
             // 
             // label60
             // 
             label60.AutoSize = true;
             label60.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label60.Location = new Point(14, 28);
+            label60.Location = new Point(16, 37);
             label60.Name = "label60";
-            label60.Size = new Size(210, 15);
+            label60.Size = new Size(261, 20);
             label60.TabIndex = 18;
             label60.Text = "Person to Notify in Case of Emergency";
             // 
             // rectangleRound38
             // 
             rectangleRound38.BackColor = Color.White;
-            rectangleRound38.Location = new Point(271, 47);
-            rectangleRound38.Margin = new Padding(2);
+            rectangleRound38.Location = new Point(310, 63);
+            rectangleRound38.Margin = new Padding(2, 3, 2, 3);
             rectangleRound38.Name = "rectangleRound38";
-            rectangleRound38.Size = new Size(170, 28);
+            rectangleRound38.Size = new Size(194, 37);
             rectangleRound38.TabIndex = 21;
             // 
             // label61
             // 
             label61.AutoSize = true;
             label61.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label61.Location = new Point(273, 28);
+            label61.Location = new Point(312, 37);
             label61.Name = "label61";
-            label61.Size = new Size(96, 15);
+            label61.Size = new Size(118, 20);
             label61.TabIndex = 23;
             label61.Text = "Contact Number";
             // 
@@ -1881,30 +1813,27 @@
             panel25.Controls.Add(label17);
             panel25.Controls.Add(rectangleRound16);
             panel25.Controls.Add(label20);
-            panel25.Location = new Point(918, 151);
-            panel25.Margin = new Padding(3, 2, 3, 2);
+            panel25.Location = new Point(1049, 201);
             panel25.Name = "panel25";
-            panel25.Size = new Size(469, 325);
+            panel25.Size = new Size(536, 433);
             panel25.TabIndex = 74;
             // 
             // panelCoop
             // 
             panelCoop.Controls.Add(rbAssociationNo);
             panelCoop.Controls.Add(rbAssociationYes);
-            panelCoop.Location = new Point(322, 258);
-            panelCoop.Margin = new Padding(3, 2, 3, 2);
+            panelCoop.Location = new Point(368, 344);
             panelCoop.Name = "panelCoop";
-            panelCoop.Size = new Size(114, 23);
+            panelCoop.Size = new Size(130, 31);
             panelCoop.TabIndex = 64;
             // 
             // rbAssociationNo
             // 
             rbAssociationNo.AutoSize = true;
             rbAssociationNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbAssociationNo.Location = new Point(68, 2);
-            rbAssociationNo.Margin = new Padding(3, 2, 3, 2);
+            rbAssociationNo.Location = new Point(78, 3);
             rbAssociationNo.Name = "rbAssociationNo";
-            rbAssociationNo.Size = new Size(41, 19);
+            rbAssociationNo.Size = new Size(50, 24);
             rbAssociationNo.TabIndex = 59;
             rbAssociationNo.TabStop = true;
             rbAssociationNo.Text = "No";
@@ -1914,10 +1843,9 @@
             // 
             rbAssociationYes.AutoSize = true;
             rbAssociationYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbAssociationYes.Location = new Point(6, 2);
-            rbAssociationYes.Margin = new Padding(3, 2, 3, 2);
+            rbAssociationYes.Location = new Point(7, 3);
             rbAssociationYes.Name = "rbAssociationYes";
-            rbAssociationYes.Size = new Size(42, 19);
+            rbAssociationYes.Size = new Size(51, 24);
             rbAssociationYes.TabIndex = 58;
             rbAssociationYes.TabStop = true;
             rbAssociationYes.Text = "Yes";
@@ -1927,20 +1855,18 @@
             // 
             panelGovId.Controls.Add(rbGovIdNo);
             panelGovId.Controls.Add(rbGovIdYes);
-            panelGovId.Location = new Point(157, 152);
-            panelGovId.Margin = new Padding(3, 2, 3, 2);
+            panelGovId.Location = new Point(179, 203);
             panelGovId.Name = "panelGovId";
-            panelGovId.Size = new Size(114, 23);
+            panelGovId.Size = new Size(130, 31);
             panelGovId.TabIndex = 63;
             // 
             // rbGovIdNo
             // 
             rbGovIdNo.AutoSize = true;
             rbGovIdNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbGovIdNo.Location = new Point(68, 2);
-            rbGovIdNo.Margin = new Padding(3, 2, 3, 2);
+            rbGovIdNo.Location = new Point(78, 3);
             rbGovIdNo.Name = "rbGovIdNo";
-            rbGovIdNo.Size = new Size(41, 19);
+            rbGovIdNo.Size = new Size(50, 24);
             rbGovIdNo.TabIndex = 59;
             rbGovIdNo.TabStop = true;
             rbGovIdNo.Text = "No";
@@ -1950,10 +1876,9 @@
             // 
             rbGovIdYes.AutoSize = true;
             rbGovIdYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbGovIdYes.Location = new Point(6, 2);
-            rbGovIdYes.Margin = new Padding(3, 2, 3, 2);
+            rbGovIdYes.Location = new Point(7, 3);
             rbGovIdYes.Name = "rbGovIdYes";
-            rbGovIdYes.Size = new Size(42, 19);
+            rbGovIdYes.Size = new Size(51, 24);
             rbGovIdYes.TabIndex = 58;
             rbGovIdYes.TabStop = true;
             rbGovIdYes.Text = "Yes";
@@ -1963,20 +1888,18 @@
             // 
             panelIPGroup.Controls.Add(rbIndigenousNo);
             panelIPGroup.Controls.Add(rbIndigenousYes);
-            panelIPGroup.Location = new Point(233, 79);
-            panelIPGroup.Margin = new Padding(3, 2, 3, 2);
+            panelIPGroup.Location = new Point(266, 105);
             panelIPGroup.Name = "panelIPGroup";
-            panelIPGroup.Size = new Size(114, 23);
+            panelIPGroup.Size = new Size(130, 31);
             panelIPGroup.TabIndex = 62;
             // 
             // rbIndigenousNo
             // 
             rbIndigenousNo.AutoSize = true;
             rbIndigenousNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbIndigenousNo.Location = new Point(68, 2);
-            rbIndigenousNo.Margin = new Padding(3, 2, 3, 2);
+            rbIndigenousNo.Location = new Point(78, 3);
             rbIndigenousNo.Name = "rbIndigenousNo";
-            rbIndigenousNo.Size = new Size(41, 19);
+            rbIndigenousNo.Size = new Size(50, 24);
             rbIndigenousNo.TabIndex = 59;
             rbIndigenousNo.TabStop = true;
             rbIndigenousNo.Text = "No";
@@ -1986,10 +1909,9 @@
             // 
             rbIndigenousYes.AutoSize = true;
             rbIndigenousYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbIndigenousYes.Location = new Point(6, 2);
-            rbIndigenousYes.Margin = new Padding(3, 2, 3, 2);
+            rbIndigenousYes.Location = new Point(7, 3);
             rbIndigenousYes.Name = "rbIndigenousYes";
-            rbIndigenousYes.Size = new Size(42, 19);
+            rbIndigenousYes.Size = new Size(51, 24);
             rbIndigenousYes.TabIndex = 58;
             rbIndigenousYes.TabStop = true;
             rbIndigenousYes.Text = "Yes";
@@ -1999,20 +1921,18 @@
             // 
             panel4Ps.Controls.Add(rb4psNo);
             panel4Ps.Controls.Add(rb4psYes);
-            panel4Ps.Location = new Point(316, 34);
-            panel4Ps.Margin = new Padding(3, 2, 3, 2);
+            panel4Ps.Location = new Point(361, 45);
             panel4Ps.Name = "panel4Ps";
-            panel4Ps.Size = new Size(114, 23);
+            panel4Ps.Size = new Size(130, 31);
             panel4Ps.TabIndex = 61;
             // 
             // rb4psNo
             // 
             rb4psNo.AutoSize = true;
             rb4psNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rb4psNo.Location = new Point(68, 2);
-            rb4psNo.Margin = new Padding(3, 2, 3, 2);
+            rb4psNo.Location = new Point(78, 3);
             rb4psNo.Name = "rb4psNo";
-            rb4psNo.Size = new Size(41, 19);
+            rb4psNo.Size = new Size(50, 24);
             rb4psNo.TabIndex = 59;
             rb4psNo.TabStop = true;
             rb4psNo.Text = "No";
@@ -2022,10 +1942,9 @@
             // 
             rb4psYes.AutoSize = true;
             rb4psYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rb4psYes.Location = new Point(6, 2);
-            rb4psYes.Margin = new Padding(3, 2, 3, 2);
+            rb4psYes.Location = new Point(7, 3);
             rb4psYes.Name = "rb4psYes";
-            rb4psYes.Size = new Size(42, 19);
+            rb4psYes.Size = new Size(51, 24);
             rb4psYes.TabIndex = 58;
             rb4psYes.TabStop = true;
             rb4psYes.Text = "Yes";
@@ -2035,20 +1954,18 @@
             // 
             panelPWD.Controls.Add(rbPwdNo);
             panelPWD.Controls.Add(rbPwdYes);
-            panelPWD.Location = new Point(67, 34);
-            panelPWD.Margin = new Padding(3, 2, 3, 2);
+            panelPWD.Location = new Point(77, 45);
             panelPWD.Name = "panelPWD";
-            panelPWD.Size = new Size(114, 23);
+            panelPWD.Size = new Size(130, 31);
             panelPWD.TabIndex = 60;
             // 
             // rbPwdNo
             // 
             rbPwdNo.AutoSize = true;
             rbPwdNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbPwdNo.Location = new Point(68, 2);
-            rbPwdNo.Margin = new Padding(3, 2, 3, 2);
+            rbPwdNo.Location = new Point(78, 3);
             rbPwdNo.Name = "rbPwdNo";
-            rbPwdNo.Size = new Size(41, 19);
+            rbPwdNo.Size = new Size(50, 24);
             rbPwdNo.TabIndex = 59;
             rbPwdNo.TabStop = true;
             rbPwdNo.Text = "No";
@@ -2058,10 +1975,9 @@
             // 
             rbPwdYes.AutoSize = true;
             rbPwdYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbPwdYes.Location = new Point(6, 2);
-            rbPwdYes.Margin = new Padding(3, 2, 3, 2);
+            rbPwdYes.Location = new Point(7, 3);
             rbPwdYes.Name = "rbPwdYes";
-            rbPwdYes.Size = new Size(42, 19);
+            rbPwdYes.Size = new Size(51, 24);
             rbPwdYes.TabIndex = 58;
             rbPwdYes.TabStop = true;
             rbPwdYes.Text = "Yes";
@@ -2071,49 +1987,45 @@
             // 
             txtGovIdNum.BorderStyle = BorderStyle.None;
             txtGovIdNum.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtGovIdNum.Location = new Point(161, 216);
-            txtGovIdNum.Margin = new Padding(3, 2, 3, 2);
+            txtGovIdNum.Location = new Point(184, 288);
             txtGovIdNum.Name = "txtGovIdNum";
-            txtGovIdNum.Size = new Size(274, 22);
+            txtGovIdNum.Size = new Size(313, 27);
             txtGovIdNum.TabIndex = 59;
             // 
             // txtIndigenous
             // 
             txtIndigenous.BorderStyle = BorderStyle.None;
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtIndigenous.Location = new Point(113, 109);
-            txtIndigenous.Margin = new Padding(3, 2, 3, 2);
+            txtIndigenous.Location = new Point(129, 145);
             txtIndigenous.Name = "txtIndigenous";
-            txtIndigenous.Size = new Size(322, 22);
+            txtIndigenous.Size = new Size(368, 27);
             txtIndigenous.TabIndex = 58;
             // 
             // txtAssociation
             // 
             txtAssociation.BorderStyle = BorderStyle.None;
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAssociation.Location = new Point(113, 289);
-            txtAssociation.Margin = new Padding(3, 2, 3, 2);
+            txtAssociation.Location = new Point(129, 385);
             txtAssociation.Name = "txtAssociation";
-            txtAssociation.Size = new Size(322, 22);
+            txtAssociation.Size = new Size(368, 27);
             txtAssociation.TabIndex = 57;
             // 
             // txtGovIdType
             // 
             txtGovIdType.BorderStyle = BorderStyle.None;
             txtGovIdType.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtGovIdType.Location = new Point(161, 184);
-            txtGovIdType.Margin = new Padding(3, 2, 3, 2);
+            txtGovIdType.Location = new Point(184, 245);
             txtGovIdType.Name = "txtGovIdType";
-            txtGovIdType.Size = new Size(274, 22);
+            txtGovIdType.Size = new Size(313, 27);
             txtGovIdType.TabIndex = 56;
             // 
             // label65
             // 
             label65.AutoSize = true;
             label65.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label65.Location = new Point(74, 220);
+            label65.Location = new Point(85, 293);
             label65.Name = "label65";
-            label65.Size = new Size(65, 15);
+            label65.Size = new Size(82, 20);
             label65.TabIndex = 49;
             label65.Text = "ID Number";
             // 
@@ -2121,9 +2033,9 @@
             // 
             label64.AutoSize = true;
             label64.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label64.Location = new Point(15, 189);
+            label64.Location = new Point(17, 252);
             label64.Name = "label64";
-            label64.Size = new Size(118, 15);
+            label64.Size = new Size(150, 20);
             label64.TabIndex = 48;
             label64.Text = "If yes, specify ID Type";
             // 
@@ -2131,74 +2043,74 @@
             // 
             label63.AutoSize = true;
             label63.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label63.Location = new Point(15, 113);
+            label63.Location = new Point(17, 151);
             label63.Name = "label63";
-            label63.Size = new Size(77, 15);
+            label63.Size = new Size(96, 20);
             label63.TabIndex = 45;
             label63.Text = "If yes, specify";
             // 
             // rectangleRoundPWD
             // 
             rectangleRoundPWD.BackColor = Color.White;
-            rectangleRoundPWD.Location = new Point(63, 32);
-            rectangleRoundPWD.Margin = new Padding(2);
+            rectangleRoundPWD.Location = new Point(72, 43);
+            rectangleRoundPWD.Margin = new Padding(2, 3, 2, 3);
             rectangleRoundPWD.Name = "rectangleRoundPWD";
-            rectangleRoundPWD.Size = new Size(122, 28);
+            rectangleRoundPWD.Size = new Size(139, 37);
             rectangleRoundPWD.TabIndex = 42;
             // 
             // label62
             // 
             label62.AutoSize = true;
             label62.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label62.Location = new Point(15, 38);
+            label62.Location = new Point(17, 51);
             label62.Name = "label62";
-            label62.Size = new Size(38, 15);
+            label62.Size = new Size(49, 20);
             label62.TabIndex = 41;
             label62.Text = "PWD?";
             // 
             // rectangleRound40
             // 
             rectangleRound40.BackColor = Color.White;
-            rectangleRound40.Location = new Point(224, 76);
-            rectangleRound40.Margin = new Padding(2);
+            rectangleRound40.Location = new Point(256, 101);
+            rectangleRound40.Margin = new Padding(2, 3, 2, 3);
             rectangleRound40.Name = "rectangleRound40";
-            rectangleRound40.Size = new Size(220, 28);
+            rectangleRound40.Size = new Size(251, 37);
             rectangleRound40.TabIndex = 32;
             // 
             // rectangleRound39
             // 
             rectangleRound39.BackColor = Color.White;
-            rectangleRound39.Location = new Point(152, 150);
-            rectangleRound39.Margin = new Padding(2);
+            rectangleRound39.Location = new Point(174, 200);
+            rectangleRound39.Margin = new Padding(2, 3, 2, 3);
             rectangleRound39.Name = "rectangleRound39";
-            rectangleRound39.Size = new Size(292, 28);
+            rectangleRound39.Size = new Size(334, 37);
             rectangleRound39.TabIndex = 31;
             // 
             // rectangleRound37
             // 
             rectangleRound37.BackColor = Color.White;
-            rectangleRound37.Location = new Point(152, 182);
-            rectangleRound37.Margin = new Padding(2);
+            rectangleRound37.Location = new Point(174, 243);
+            rectangleRound37.Margin = new Padding(2, 3, 2, 3);
             rectangleRound37.Name = "rectangleRound37";
-            rectangleRound37.Size = new Size(292, 28);
+            rectangleRound37.Size = new Size(334, 37);
             rectangleRound37.TabIndex = 30;
             // 
             // rectangleRound35
             // 
             rectangleRound35.BackColor = Color.White;
-            rectangleRound35.Location = new Point(152, 213);
-            rectangleRound35.Margin = new Padding(2);
+            rectangleRound35.Location = new Point(174, 284);
+            rectangleRound35.Margin = new Padding(2, 3, 2, 3);
             rectangleRound35.Name = "rectangleRound35";
-            rectangleRound35.Size = new Size(292, 28);
+            rectangleRound35.Size = new Size(334, 37);
             rectangleRound35.TabIndex = 29;
             // 
             // label59
             // 
             label59.AutoSize = true;
             label59.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label59.Location = new Point(15, 156);
+            label59.Location = new Point(17, 208);
             label59.Name = "label59";
-            label59.Size = new Size(120, 15);
+            label59.Size = new Size(151, 20);
             label59.TabIndex = 28;
             label59.Text = "With Government ID?";
             // 
@@ -2206,37 +2118,37 @@
             // 
             label56.AutoSize = true;
             label56.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label56.Location = new Point(14, 293);
+            label56.Location = new Point(16, 391);
             label56.Name = "label56";
-            label56.Size = new Size(77, 15);
+            label56.Size = new Size(96, 20);
             label56.TabIndex = 27;
             label56.Text = "If yes, specify";
             // 
             // rectangleRound34
             // 
             rectangleRound34.BackColor = Color.White;
-            rectangleRound34.Location = new Point(315, 255);
-            rectangleRound34.Margin = new Padding(2);
+            rectangleRound34.Location = new Point(360, 340);
+            rectangleRound34.Margin = new Padding(2, 3, 2, 3);
             rectangleRound34.Name = "rectangleRound34";
-            rectangleRound34.Size = new Size(130, 28);
+            rectangleRound34.Size = new Size(149, 37);
             rectangleRound34.TabIndex = 26;
             // 
             // rectangleRound19
             // 
             rectangleRound19.BackColor = Color.White;
-            rectangleRound19.Location = new Point(103, 286);
-            rectangleRound19.Margin = new Padding(2);
+            rectangleRound19.Location = new Point(118, 381);
+            rectangleRound19.Margin = new Padding(2, 3, 2, 3);
             rectangleRound19.Name = "rectangleRound19";
-            rectangleRound19.Size = new Size(341, 28);
+            rectangleRound19.Size = new Size(390, 37);
             rectangleRound19.TabIndex = 25;
             // 
             // label55
             // 
             label55.AutoSize = true;
             label55.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label55.Location = new Point(14, 262);
+            label55.Location = new Point(16, 349);
             label55.Name = "label55";
-            label55.Size = new Size(271, 15);
+            label55.Size = new Size(339, 20);
             label55.TabIndex = 24;
             label55.Text = "Member of any Farmers Association/Cooperative?";
             // 
@@ -2246,9 +2158,8 @@
             panel26.Controls.Add(label7);
             panel26.Dock = DockStyle.Top;
             panel26.Location = new Point(0, 0);
-            panel26.Margin = new Padding(3, 2, 3, 2);
             panel26.Name = "panel26";
-            panel26.Size = new Size(467, 22);
+            panel26.Size = new Size(534, 29);
             panel26.TabIndex = 0;
             // 
             // label7
@@ -2256,47 +2167,47 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(5, 1);
+            label7.Location = new Point(6, 1);
             label7.Name = "label7";
-            label7.Size = new Size(87, 20);
+            label7.Size = new Size(106, 25);
             label7.TabIndex = 28;
             label7.Text = "Affiliations";
             // 
             // rectangleRound15
             // 
             rectangleRound15.BackColor = Color.White;
-            rectangleRound15.Location = new Point(310, 32);
-            rectangleRound15.Margin = new Padding(2);
+            rectangleRound15.Location = new Point(354, 43);
+            rectangleRound15.Margin = new Padding(2, 3, 2, 3);
             rectangleRound15.Name = "rectangleRound15";
-            rectangleRound15.Size = new Size(138, 28);
+            rectangleRound15.Size = new Size(158, 37);
             rectangleRound15.TabIndex = 20;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(196, 38);
+            label17.Location = new Point(224, 51);
             label17.Name = "label17";
-            label17.Size = new Size(94, 15);
+            label17.Size = new Size(118, 20);
             label17.TabIndex = 18;
             label17.Text = "4P's Beneficiary?";
             // 
             // rectangleRound16
             // 
             rectangleRound16.BackColor = Color.White;
-            rectangleRound16.Location = new Point(104, 107);
-            rectangleRound16.Margin = new Padding(2);
+            rectangleRound16.Location = new Point(119, 143);
+            rectangleRound16.Margin = new Padding(2, 3, 2, 3);
             rectangleRound16.Name = "rectangleRound16";
-            rectangleRound16.Size = new Size(340, 28);
+            rectangleRound16.Size = new Size(389, 37);
             rectangleRound16.TabIndex = 21;
             // 
             // label20
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(15, 82);
+            label20.Location = new Point(17, 109);
             label20.Name = "label20";
-            label20.Size = new Size(185, 15);
+            label20.Size = new Size(232, 20);
             label20.TabIndex = 23;
             label20.Text = "Member of an Indigenous Group?";
             // 
@@ -2306,20 +2217,18 @@
             panel21.Controls.Add(txtMaidenMother);
             panel21.Controls.Add(panel22);
             panel21.Controls.Add(rectangleRound32);
-            panel21.Location = new Point(8, 497);
-            panel21.Margin = new Padding(3, 2, 3, 2);
+            panel21.Location = new Point(9, 663);
             panel21.Name = "panel21";
-            panel21.Size = new Size(488, 68);
+            panel21.Size = new Size(557, 90);
             panel21.TabIndex = 72;
             // 
             // txtMaidenMother
             // 
             txtMaidenMother.BorderStyle = BorderStyle.None;
             txtMaidenMother.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtMaidenMother.Location = new Point(25, 32);
-            txtMaidenMother.Margin = new Padding(3, 2, 3, 2);
+            txtMaidenMother.Location = new Point(29, 43);
             txtMaidenMother.Name = "txtMaidenMother";
-            txtMaidenMother.Size = new Size(439, 22);
+            txtMaidenMother.Size = new Size(502, 27);
             txtMaidenMother.TabIndex = 28;
             // 
             // panel22
@@ -2328,9 +2237,8 @@
             panel22.Controls.Add(label57);
             panel22.Dock = DockStyle.Top;
             panel22.Location = new Point(0, 0);
-            panel22.Margin = new Padding(3, 2, 3, 2);
             panel22.Name = "panel22";
-            panel22.Size = new Size(486, 22);
+            panel22.Size = new Size(555, 29);
             panel22.TabIndex = 0;
             // 
             // label57
@@ -2338,19 +2246,19 @@
             label57.AutoSize = true;
             label57.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label57.ForeColor = Color.White;
-            label57.Location = new Point(5, 1);
+            label57.Location = new Point(6, 1);
             label57.Name = "label57";
-            label57.Size = new Size(173, 20);
+            label57.Size = new Size(211, 25);
             label57.TabIndex = 28;
             label57.Text = "Mother's Maiden Name";
             // 
             // rectangleRound32
             // 
             rectangleRound32.BackColor = Color.White;
-            rectangleRound32.Location = new Point(16, 30);
-            rectangleRound32.Margin = new Padding(2);
+            rectangleRound32.Location = new Point(18, 40);
+            rectangleRound32.Margin = new Padding(2, 3, 2, 3);
             rectangleRound32.Name = "rectangleRound32";
-            rectangleRound32.Size = new Size(455, 28);
+            rectangleRound32.Size = new Size(520, 37);
             rectangleRound32.TabIndex = 21;
             // 
             // panelHousehold
@@ -2376,20 +2284,18 @@
             panelHousehold.Controls.Add(rectangleRound28);
             panelHousehold.Controls.Add(rectangleRound29);
             panelHousehold.Controls.Add(label52);
-            panelHousehold.Location = new Point(511, 151);
-            panelHousehold.Margin = new Padding(3, 2, 3, 2);
+            panelHousehold.Location = new Point(584, 201);
             panelHousehold.Name = "panelHousehold";
-            panelHousehold.Size = new Size(393, 263);
+            panelHousehold.Size = new Size(449, 350);
             panelHousehold.TabIndex = 71;
             // 
             // rbHouseholdHeadNo
             // 
             rbHouseholdHeadNo.AutoSize = true;
             rbHouseholdHeadNo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbHouseholdHeadNo.Location = new Point(130, 52);
-            rbHouseholdHeadNo.Margin = new Padding(3, 2, 3, 2);
+            rbHouseholdHeadNo.Location = new Point(149, 69);
             rbHouseholdHeadNo.Name = "rbHouseholdHeadNo";
-            rbHouseholdHeadNo.Size = new Size(41, 19);
+            rbHouseholdHeadNo.Size = new Size(50, 24);
             rbHouseholdHeadNo.TabIndex = 57;
             rbHouseholdHeadNo.TabStop = true;
             rbHouseholdHeadNo.Text = "No";
@@ -2399,10 +2305,9 @@
             // 
             rbHouseholdHeadYes.AutoSize = true;
             rbHouseholdHeadYes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbHouseholdHeadYes.Location = new Point(46, 52);
-            rbHouseholdHeadYes.Margin = new Padding(3, 2, 3, 2);
+            rbHouseholdHeadYes.Location = new Point(53, 69);
             rbHouseholdHeadYes.Name = "rbHouseholdHeadYes";
-            rbHouseholdHeadYes.Size = new Size(42, 19);
+            rbHouseholdHeadYes.Size = new Size(51, 24);
             rbHouseholdHeadYes.TabIndex = 56;
             rbHouseholdHeadYes.TabStop = true;
             rbHouseholdHeadYes.Text = "Yes";
@@ -2412,106 +2317,101 @@
             // 
             nudNoLivingHouseMem.BorderStyle = BorderStyle.None;
             nudNoLivingHouseMem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            nudNoLivingHouseMem.Location = new Point(23, 174);
-            nudNoLivingHouseMem.Margin = new Padding(3, 2, 3, 2);
+            nudNoLivingHouseMem.Location = new Point(26, 232);
             nudNoLivingHouseMem.Name = "nudNoLivingHouseMem";
-            nudNoLivingHouseMem.Size = new Size(344, 25);
+            nudNoLivingHouseMem.Size = new Size(393, 30);
             nudNoLivingHouseMem.TabIndex = 47;
             // 
             // nudHouseNoMale
             // 
             nudHouseNoMale.BorderStyle = BorderStyle.None;
             nudHouseNoMale.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            nudHouseNoMale.Location = new Point(24, 227);
-            nudHouseNoMale.Margin = new Padding(3, 2, 3, 2);
+            nudHouseNoMale.Location = new Point(27, 303);
             nudHouseNoMale.Name = "nudHouseNoMale";
-            nudHouseNoMale.Size = new Size(185, 25);
+            nudHouseNoMale.Size = new Size(211, 30);
             nudHouseNoMale.TabIndex = 46;
             // 
             // nudHouseFemale
             // 
             nudHouseFemale.BorderStyle = BorderStyle.None;
             nudHouseFemale.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            nudHouseFemale.Location = new Point(240, 227);
-            nudHouseFemale.Margin = new Padding(3, 2, 3, 2);
+            nudHouseFemale.Location = new Point(274, 303);
             nudHouseFemale.Name = "nudHouseFemale";
-            nudHouseFemale.Size = new Size(127, 25);
+            nudHouseFemale.Size = new Size(145, 30);
             nudHouseFemale.TabIndex = 45;
             // 
             // txtHouseHeadRs
             // 
             txtHouseHeadRs.BorderStyle = BorderStyle.None;
             txtHouseHeadRs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtHouseHeadRs.Location = new Point(240, 116);
-            txtHouseHeadRs.Margin = new Padding(3, 2, 3, 2);
+            txtHouseHeadRs.Location = new Point(274, 155);
             txtHouseHeadRs.Name = "txtHouseHeadRs";
-            txtHouseHeadRs.Size = new Size(127, 22);
+            txtHouseHeadRs.Size = new Size(145, 27);
             txtHouseHeadRs.TabIndex = 44;
             // 
             // txtHouseHeadName
             // 
             txtHouseHeadName.BorderStyle = BorderStyle.None;
             txtHouseHeadName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtHouseHeadName.Location = new Point(23, 116);
-            txtHouseHeadName.Margin = new Padding(3, 2, 3, 2);
+            txtHouseHeadName.Location = new Point(26, 155);
             txtHouseHeadName.Name = "txtHouseHeadName";
-            txtHouseHeadName.Size = new Size(186, 22);
+            txtHouseHeadName.Size = new Size(213, 27);
             txtHouseHeadName.TabIndex = 43;
             // 
             // rectangleRound33
             // 
             rectangleRound33.BackColor = Color.White;
-            rectangleRound33.Location = new Point(232, 224);
-            rectangleRound33.Margin = new Padding(2);
+            rectangleRound33.Location = new Point(265, 299);
+            rectangleRound33.Margin = new Padding(2, 3, 2, 3);
             rectangleRound33.Name = "rectangleRound33";
-            rectangleRound33.Size = new Size(142, 28);
+            rectangleRound33.Size = new Size(162, 37);
             rectangleRound33.TabIndex = 35;
             // 
             // label53
             // 
             label53.AutoSize = true;
             label53.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label53.Location = new Point(232, 207);
+            label53.Location = new Point(265, 276);
             label53.Name = "label53";
-            label53.Size = new Size(81, 15);
+            label53.Size = new Size(102, 20);
             label53.TabIndex = 36;
             label53.Text = "No. of Female";
             // 
             // rectangleRound31
             // 
             rectangleRound31.BackColor = Color.White;
-            rectangleRound31.Location = new Point(16, 224);
-            rectangleRound31.Margin = new Padding(2);
+            rectangleRound31.Location = new Point(18, 299);
+            rectangleRound31.Margin = new Padding(2, 3, 2, 3);
             rectangleRound31.Name = "rectangleRound31";
-            rectangleRound31.Size = new Size(200, 28);
+            rectangleRound31.Size = new Size(229, 37);
             rectangleRound31.TabIndex = 33;
             // 
             // label51
             // 
             label51.AutoSize = true;
             label51.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label51.Location = new Point(16, 207);
+            label51.Location = new Point(18, 276);
             label51.Name = "label51";
-            label51.Size = new Size(69, 15);
+            label51.Size = new Size(87, 20);
             label51.TabIndex = 34;
             label51.Text = "No. of Male";
             // 
             // rectangleRound30
             // 
             rectangleRound30.BackColor = Color.White;
-            rectangleRound30.Location = new Point(16, 171);
-            rectangleRound30.Margin = new Padding(2);
+            rectangleRound30.Location = new Point(18, 228);
+            rectangleRound30.Margin = new Padding(2, 3, 2, 3);
             rectangleRound30.Name = "rectangleRound30";
-            rectangleRound30.Size = new Size(358, 28);
+            rectangleRound30.Size = new Size(409, 37);
             rectangleRound30.TabIndex = 31;
             // 
             // label49
             // 
             label49.AutoSize = true;
             label49.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label49.Location = new Point(16, 154);
+            label49.Location = new Point(18, 205);
             label49.Name = "label49";
-            label49.Size = new Size(189, 15);
+            label49.Size = new Size(235, 20);
             label49.TabIndex = 32;
             label49.Text = "No. of Living Household Members";
             // 
@@ -2519,9 +2419,9 @@
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(16, 96);
+            label25.Location = new Point(18, 128);
             label25.Name = "label25";
-            label25.Size = new Size(169, 15);
+            label25.Size = new Size(211, 20);
             label25.TabIndex = 30;
             label25.Text = "If no, name of household head";
             // 
@@ -2529,19 +2429,19 @@
             // 
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(232, 96);
+            label35.Location = new Point(265, 128);
             label35.Name = "label35";
-            label35.Size = new Size(72, 15);
+            label35.Size = new Size(91, 20);
             label35.TabIndex = 29;
             label35.Text = "Relationship";
             // 
             // rectangleRound25
             // 
             rectangleRound25.BackColor = Color.White;
-            rectangleRound25.Location = new Point(232, 114);
-            rectangleRound25.Margin = new Padding(2);
+            rectangleRound25.Location = new Point(265, 152);
+            rectangleRound25.Margin = new Padding(2, 3, 2, 3);
             rectangleRound25.Name = "rectangleRound25";
-            rectangleRound25.Size = new Size(142, 28);
+            rectangleRound25.Size = new Size(162, 37);
             rectangleRound25.TabIndex = 28;
             // 
             // panel20
@@ -2550,9 +2450,8 @@
             panel20.Controls.Add(label50);
             panel20.Dock = DockStyle.Top;
             panel20.Location = new Point(0, 0);
-            panel20.Margin = new Padding(3, 2, 3, 2);
             panel20.Name = "panel20";
-            panel20.Size = new Size(391, 22);
+            panel20.Size = new Size(447, 29);
             panel20.TabIndex = 0;
             // 
             // label50
@@ -2560,37 +2459,37 @@
             label50.AutoSize = true;
             label50.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label50.ForeColor = Color.White;
-            label50.Location = new Point(5, 1);
+            label50.Location = new Point(6, 1);
             label50.Name = "label50";
-            label50.Size = new Size(84, 20);
+            label50.Size = new Size(104, 25);
             label50.TabIndex = 28;
             label50.Text = "Household";
             // 
             // rectangleRound28
             // 
             rectangleRound28.BackColor = Color.White;
-            rectangleRound28.Location = new Point(16, 114);
-            rectangleRound28.Margin = new Padding(2);
+            rectangleRound28.Location = new Point(18, 152);
+            rectangleRound28.Margin = new Padding(2, 3, 2, 3);
             rectangleRound28.Name = "rectangleRound28";
-            rectangleRound28.Size = new Size(200, 28);
+            rectangleRound28.Size = new Size(229, 37);
             rectangleRound28.TabIndex = 26;
             // 
             // rectangleRound29
             // 
             rectangleRound29.BackColor = Color.White;
-            rectangleRound29.Location = new Point(16, 47);
-            rectangleRound29.Margin = new Padding(2);
+            rectangleRound29.Location = new Point(18, 63);
+            rectangleRound29.Margin = new Padding(2, 3, 2, 3);
             rectangleRound29.Name = "rectangleRound29";
-            rectangleRound29.Size = new Size(200, 28);
+            rectangleRound29.Size = new Size(229, 37);
             rectangleRound29.TabIndex = 21;
             // 
             // label52
             // 
             label52.AutoSize = true;
             label52.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label52.Location = new Point(16, 30);
+            label52.Location = new Point(18, 40);
             label52.Name = "label52";
-            label52.Size = new Size(101, 15);
+            label52.Size = new Size(128, 20);
             label52.TabIndex = 23;
             label52.Text = "Household Head?";
             // 
@@ -2607,20 +2506,18 @@
             panelEduc.Controls.Add(rbEducElementary);
             panelEduc.Controls.Add(rbEducPreschool);
             panelEduc.Controls.Add(panel18);
-            panelEduc.Location = new Point(511, 422);
-            panelEduc.Margin = new Padding(3, 2, 3, 2);
+            panelEduc.Location = new Point(584, 563);
             panelEduc.Name = "panelEduc";
-            panelEduc.Size = new Size(393, 144);
+            panelEduc.Size = new Size(449, 191);
             panelEduc.TabIndex = 70;
             // 
             // rbNone
             // 
             rbNone.AutoSize = true;
             rbNone.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbNone.Location = new Point(239, 94);
-            rbNone.Margin = new Padding(3, 2, 3, 2);
+            rbNone.Location = new Point(273, 125);
             rbNone.Name = "rbNone";
-            rbNone.Size = new Size(54, 19);
+            rbNone.Size = new Size(66, 24);
             rbNone.TabIndex = 55;
             rbNone.TabStop = true;
             rbNone.Text = "None";
@@ -2630,10 +2527,9 @@
             // 
             rbEducPostGraduate.AutoSize = true;
             rbEducPostGraduate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducPostGraduate.Location = new Point(240, 71);
-            rbEducPostGraduate.Margin = new Padding(3, 2, 3, 2);
+            rbEducPostGraduate.Location = new Point(274, 95);
             rbEducPostGraduate.Name = "rbEducPostGraduate";
-            rbEducPostGraduate.Size = new Size(100, 19);
+            rbEducPostGraduate.Size = new Size(123, 24);
             rbEducPostGraduate.TabIndex = 54;
             rbEducPostGraduate.TabStop = true;
             rbEducPostGraduate.Text = "Post-graduate";
@@ -2643,10 +2539,9 @@
             // 
             rbEducVocational.AutoSize = true;
             rbEducVocational.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducVocational.Location = new Point(240, 48);
-            rbEducVocational.Margin = new Padding(3, 2, 3, 2);
+            rbEducVocational.Location = new Point(274, 64);
             rbEducVocational.Name = "rbEducVocational";
-            rbEducVocational.Size = new Size(80, 19);
+            rbEducVocational.Size = new Size(100, 24);
             rbEducVocational.TabIndex = 53;
             rbEducVocational.TabStop = true;
             rbEducVocational.Text = "Vocational";
@@ -2656,10 +2551,9 @@
             // 
             rbEducCollege.AutoSize = true;
             rbEducCollege.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducCollege.Location = new Point(239, 27);
-            rbEducCollege.Margin = new Padding(3, 2, 3, 2);
+            rbEducCollege.Location = new Point(273, 36);
             rbEducCollege.Name = "rbEducCollege";
-            rbEducCollege.Size = new Size(65, 19);
+            rbEducCollege.Size = new Size(81, 24);
             rbEducCollege.TabIndex = 52;
             rbEducCollege.TabStop = true;
             rbEducCollege.Text = "College";
@@ -2669,10 +2563,9 @@
             // 
             rbEducSeniorHigh.AutoSize = true;
             rbEducSeniorHigh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducSeniorHigh.Location = new Point(16, 116);
-            rbEducSeniorHigh.Margin = new Padding(3, 2, 3, 2);
+            rbEducSeniorHigh.Location = new Point(18, 155);
             rbEducSeniorHigh.Name = "rbEducSeniorHigh";
-            rbEducSeniorHigh.Size = new Size(161, 19);
+            rbEducSeniorHigh.Size = new Size(202, 24);
             rbEducSeniorHigh.TabIndex = 51;
             rbEducSeniorHigh.TabStop = true;
             rbEducSeniorHigh.Text = "Senior High School (K-12)";
@@ -2682,10 +2575,9 @@
             // 
             rbEducJuniorHigh.AutoSize = true;
             rbEducJuniorHigh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducJuniorHigh.Location = new Point(16, 94);
-            rbEducJuniorHigh.Margin = new Padding(3, 2, 3, 2);
+            rbEducJuniorHigh.Location = new Point(18, 125);
             rbEducJuniorHigh.Name = "rbEducJuniorHigh";
-            rbEducJuniorHigh.Size = new Size(160, 19);
+            rbEducJuniorHigh.Size = new Size(199, 24);
             rbEducJuniorHigh.TabIndex = 50;
             rbEducJuniorHigh.TabStop = true;
             rbEducJuniorHigh.Text = "Junior High School (K-12)";
@@ -2695,10 +2587,9 @@
             // 
             rbEducHighschool.AutoSize = true;
             rbEducHighschool.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducHighschool.Location = new Point(16, 71);
-            rbEducHighschool.Margin = new Padding(3, 2, 3, 2);
+            rbEducHighschool.Location = new Point(18, 95);
             rbEducHighschool.Name = "rbEducHighschool";
-            rbEducHighschool.Size = new Size(151, 19);
+            rbEducHighschool.Size = new Size(187, 24);
             rbEducHighschool.TabIndex = 49;
             rbEducHighschool.TabStop = true;
             rbEducHighschool.Text = "High School (non-K-12)";
@@ -2708,10 +2599,9 @@
             // 
             rbEducElementary.AutoSize = true;
             rbEducElementary.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducElementary.Location = new Point(16, 48);
-            rbEducElementary.Margin = new Padding(3, 2, 3, 2);
+            rbEducElementary.Location = new Point(18, 64);
             rbEducElementary.Name = "rbEducElementary";
-            rbEducElementary.Size = new Size(84, 19);
+            rbEducElementary.Size = new Size(104, 24);
             rbEducElementary.TabIndex = 48;
             rbEducElementary.TabStop = true;
             rbEducElementary.Text = "Elementary";
@@ -2721,10 +2611,9 @@
             // 
             rbEducPreschool.AutoSize = true;
             rbEducPreschool.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbEducPreschool.Location = new Point(16, 27);
-            rbEducPreschool.Margin = new Padding(3, 2, 3, 2);
+            rbEducPreschool.Location = new Point(18, 36);
             rbEducPreschool.Name = "rbEducPreschool";
-            rbEducPreschool.Size = new Size(82, 19);
+            rbEducPreschool.Size = new Size(100, 24);
             rbEducPreschool.TabIndex = 47;
             rbEducPreschool.TabStop = true;
             rbEducPreschool.Text = "Pre-school";
@@ -2736,9 +2625,8 @@
             panel18.Controls.Add(label18);
             panel18.Dock = DockStyle.Top;
             panel18.Location = new Point(0, 0);
-            panel18.Margin = new Padding(3, 2, 3, 2);
             panel18.Name = "panel18";
-            panel18.Size = new Size(391, 22);
+            panel18.Size = new Size(447, 29);
             panel18.TabIndex = 0;
             // 
             // label18
@@ -2746,9 +2634,9 @@
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(5, 1);
+            label18.Location = new Point(6, 1);
             label18.Name = "label18";
-            label18.Size = new Size(189, 20);
+            label18.Size = new Size(231, 25);
             label18.TabIndex = 28;
             label18.Text = "Highest Formal Education";
             // 
@@ -2764,20 +2652,18 @@
             panelCivilStat.Controls.Add(rectangleRound14);
             panelCivilStat.Controls.Add(panel15);
             panelCivilStat.Controls.Add(rectangleRound24);
-            panelCivilStat.Location = new Point(8, 366);
-            panelCivilStat.Margin = new Padding(3, 2, 3, 2);
+            panelCivilStat.Location = new Point(9, 488);
             panelCivilStat.Name = "panelCivilStat";
-            panelCivilStat.Size = new Size(488, 122);
+            panelCivilStat.Size = new Size(557, 162);
             panelCivilStat.TabIndex = 69;
             // 
             // rbSeparated
             // 
             rbSeparated.AutoSize = true;
             rbSeparated.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbSeparated.Location = new Point(382, 35);
-            rbSeparated.Margin = new Padding(3, 2, 3, 2);
+            rbSeparated.Location = new Point(437, 47);
             rbSeparated.Name = "rbSeparated";
-            rbSeparated.Size = new Size(77, 19);
+            rbSeparated.Size = new Size(98, 24);
             rbSeparated.TabIndex = 38;
             rbSeparated.TabStop = true;
             rbSeparated.Text = "Separated";
@@ -2787,10 +2673,9 @@
             // 
             rbCivilWidowed.AutoSize = true;
             rbCivilWidowed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbCivilWidowed.Location = new Point(243, 35);
-            rbCivilWidowed.Margin = new Padding(3, 2, 3, 2);
+            rbCivilWidowed.Location = new Point(278, 47);
             rbCivilWidowed.Name = "rbCivilWidowed";
-            rbCivilWidowed.Size = new Size(75, 19);
+            rbCivilWidowed.Size = new Size(94, 24);
             rbCivilWidowed.TabIndex = 37;
             rbCivilWidowed.TabStop = true;
             rbCivilWidowed.Text = "Widowed";
@@ -2800,10 +2685,9 @@
             // 
             rbCivilMarried.AutoSize = true;
             rbCivilMarried.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbCivilMarried.Location = new Point(130, 35);
-            rbCivilMarried.Margin = new Padding(3, 2, 3, 2);
+            rbCivilMarried.Location = new Point(149, 47);
             rbCivilMarried.Name = "rbCivilMarried";
-            rbCivilMarried.Size = new Size(66, 19);
+            rbCivilMarried.Size = new Size(82, 24);
             rbCivilMarried.TabIndex = 36;
             rbCivilMarried.TabStop = true;
             rbCivilMarried.Text = "Married";
@@ -2813,10 +2697,9 @@
             // 
             rbCivilSingle.AutoSize = true;
             rbCivilSingle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbCivilSingle.Location = new Point(18, 35);
-            rbCivilSingle.Margin = new Padding(3, 2, 3, 2);
+            rbCivilSingle.Location = new Point(21, 47);
             rbCivilSingle.Name = "rbCivilSingle";
-            rbCivilSingle.Size = new Size(57, 19);
+            rbCivilSingle.Size = new Size(71, 24);
             rbCivilSingle.TabIndex = 35;
             rbCivilSingle.TabStop = true;
             rbCivilSingle.Text = "Single";
@@ -2826,29 +2709,28 @@
             // 
             txtSpouseName.BorderStyle = BorderStyle.None;
             txtSpouseName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSpouseName.Location = new Point(22, 86);
-            txtSpouseName.Margin = new Padding(3, 2, 3, 2);
+            txtSpouseName.Location = new Point(25, 115);
             txtSpouseName.Name = "txtSpouseName";
-            txtSpouseName.Size = new Size(443, 22);
+            txtSpouseName.Size = new Size(506, 27);
             txtSpouseName.TabIndex = 27;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(12, 66);
+            label16.Location = new Point(14, 88);
             label16.Name = "label16";
-            label16.Size = new Size(94, 15);
+            label16.Size = new Size(119, 20);
             label16.TabIndex = 28;
             label16.Text = "Name of Spouse";
             // 
             // rectangleRound14
             // 
             rectangleRound14.BackColor = Color.White;
-            rectangleRound14.Location = new Point(12, 83);
-            rectangleRound14.Margin = new Padding(2);
+            rectangleRound14.Location = new Point(14, 111);
+            rectangleRound14.Margin = new Padding(2, 3, 2, 3);
             rectangleRound14.Name = "rectangleRound14";
-            rectangleRound14.Size = new Size(459, 28);
+            rectangleRound14.Size = new Size(525, 37);
             rectangleRound14.TabIndex = 21;
             // 
             // panel15
@@ -2857,9 +2739,8 @@
             panel15.Controls.Add(label31);
             panel15.Dock = DockStyle.Top;
             panel15.Location = new Point(0, 0);
-            panel15.Margin = new Padding(3, 2, 3, 2);
             panel15.Name = "panel15";
-            panel15.Size = new Size(486, 22);
+            panel15.Size = new Size(555, 29);
             panel15.TabIndex = 0;
             // 
             // label31
@@ -2867,19 +2748,19 @@
             label31.AutoSize = true;
             label31.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label31.ForeColor = Color.White;
-            label31.Location = new Point(5, 1);
+            label31.Location = new Point(6, 1);
             label31.Name = "label31";
-            label31.Size = new Size(86, 20);
+            label31.Size = new Size(106, 25);
             label31.TabIndex = 28;
             label31.Text = "Civil Status";
             // 
             // rectangleRound24
             // 
             rectangleRound24.BackColor = Color.White;
-            rectangleRound24.Location = new Point(12, 30);
-            rectangleRound24.Margin = new Padding(2);
+            rectangleRound24.Location = new Point(14, 40);
+            rectangleRound24.Margin = new Padding(2, 3, 2, 3);
             rectangleRound24.Name = "rectangleRound24";
-            rectangleRound24.Size = new Size(459, 28);
+            rectangleRound24.Size = new Size(525, 37);
             rectangleRound24.TabIndex = 20;
             // 
             // panelReligion
@@ -2892,20 +2773,18 @@
             panelReligion.Controls.Add(txtReligionOthers);
             panelReligion.Controls.Add(panel13);
             panelReligion.Controls.Add(rectangleRound27);
-            panelReligion.Location = new Point(9, 292);
-            panelReligion.Margin = new Padding(3, 2, 3, 2);
+            panelReligion.Location = new Point(10, 389);
             panelReligion.Name = "panelReligion";
-            panelReligion.Size = new Size(488, 66);
+            panelReligion.Size = new Size(557, 87);
             panelReligion.TabIndex = 68;
             // 
             // rbOthers
             // 
             rbOthers.AutoSize = true;
             rbOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbOthers.Location = new Point(216, 35);
-            rbOthers.Margin = new Padding(3, 2, 3, 2);
+            rbOthers.Location = new Point(247, 47);
             rbOthers.Name = "rbOthers";
-            rbOthers.Size = new Size(60, 19);
+            rbOthers.Size = new Size(73, 24);
             rbOthers.TabIndex = 36;
             rbOthers.TabStop = true;
             rbOthers.Text = "Others";
@@ -2915,10 +2794,9 @@
             // 
             rbIslam.AutoSize = true;
             rbIslam.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbIslam.Location = new Point(129, 35);
-            rbIslam.Margin = new Padding(3, 2, 3, 2);
+            rbIslam.Location = new Point(147, 47);
             rbIslam.Name = "rbIslam";
-            rbIslam.Size = new Size(53, 19);
+            rbIslam.Size = new Size(65, 24);
             rbIslam.TabIndex = 35;
             rbIslam.TabStop = true;
             rbIslam.Text = "Islam";
@@ -2928,10 +2806,9 @@
             // 
             rbChristianity.AutoSize = true;
             rbChristianity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rbChristianity.Location = new Point(19, 35);
-            rbChristianity.Margin = new Padding(3, 2, 3, 2);
+            rbChristianity.Location = new Point(22, 47);
             rbChristianity.Name = "rbChristianity";
-            rbChristianity.Size = new Size(85, 19);
+            rbChristianity.Size = new Size(103, 24);
             rbChristianity.TabIndex = 34;
             rbChristianity.TabStop = true;
             rbChristianity.Text = "Christianity";
@@ -2940,20 +2817,18 @@
             // panel16
             // 
             panel16.BackColor = Color.FromArgb(43, 121, 223);
-            panel16.Location = new Point(283, 52);
-            panel16.Margin = new Padding(3, 2, 3, 2);
+            panel16.Location = new Point(323, 69);
             panel16.Name = "panel16";
-            panel16.Size = new Size(183, 1);
+            panel16.Size = new Size(209, 1);
             panel16.TabIndex = 33;
             // 
             // txtReligionOthers
             // 
             txtReligionOthers.BorderStyle = BorderStyle.None;
             txtReligionOthers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtReligionOthers.Location = new Point(284, 36);
-            txtReligionOthers.Margin = new Padding(3, 2, 3, 2);
+            txtReligionOthers.Location = new Point(325, 48);
             txtReligionOthers.Name = "txtReligionOthers";
-            txtReligionOthers.Size = new Size(179, 16);
+            txtReligionOthers.Size = new Size(205, 20);
             txtReligionOthers.TabIndex = 24;
             // 
             // panel13
@@ -2962,9 +2837,8 @@
             panel13.Controls.Add(label36);
             panel13.Dock = DockStyle.Top;
             panel13.Location = new Point(0, 0);
-            panel13.Margin = new Padding(3, 2, 3, 2);
             panel13.Name = "panel13";
-            panel13.Size = new Size(486, 22);
+            panel13.Size = new Size(555, 29);
             panel13.TabIndex = 0;
             // 
             // label36
@@ -2972,19 +2846,19 @@
             label36.AutoSize = true;
             label36.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label36.ForeColor = Color.White;
-            label36.Location = new Point(5, 1);
+            label36.Location = new Point(6, 1);
             label36.Name = "label36";
-            label36.Size = new Size(66, 20);
+            label36.Size = new Size(82, 25);
             label36.TabIndex = 28;
             label36.Text = "Religion";
             // 
             // rectangleRound27
             // 
             rectangleRound27.BackColor = Color.White;
-            rectangleRound27.Location = new Point(12, 30);
-            rectangleRound27.Margin = new Padding(2);
+            rectangleRound27.Location = new Point(14, 40);
+            rectangleRound27.Margin = new Padding(2, 3, 2, 3);
             rectangleRound27.Name = "rectangleRound27";
-            rectangleRound27.Size = new Size(459, 28);
+            rectangleRound27.Size = new Size(525, 37);
             rectangleRound27.TabIndex = 20;
             // 
             // panel10
@@ -3003,49 +2877,45 @@
             panel10.Controls.Add(label32);
             panel10.Controls.Add(rectangleRound26);
             panel10.Controls.Add(label33);
-            panel10.Location = new Point(10, 151);
-            panel10.Margin = new Padding(3, 2, 3, 2);
+            panel10.Location = new Point(11, 201);
             panel10.Name = "panel10";
-            panel10.Size = new Size(488, 136);
+            panel10.Size = new Size(557, 181);
             panel10.TabIndex = 67;
             // 
             // txtBirthCountry
             // 
             txtBirthCountry.BorderStyle = BorderStyle.None;
             txtBirthCountry.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBirthCountry.Location = new Point(341, 100);
-            txtBirthCountry.Margin = new Padding(3, 2, 3, 2);
+            txtBirthCountry.Location = new Point(390, 133);
             txtBirthCountry.Name = "txtBirthCountry";
-            txtBirthCountry.Size = new Size(123, 22);
+            txtBirthCountry.Size = new Size(141, 27);
             txtBirthCountry.TabIndex = 67;
             // 
             // txtBirthProvince
             // 
             txtBirthProvince.BorderStyle = BorderStyle.None;
             txtBirthProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBirthProvince.Location = new Point(176, 100);
-            txtBirthProvince.Margin = new Padding(3, 2, 3, 2);
+            txtBirthProvince.Location = new Point(201, 133);
             txtBirthProvince.Name = "txtBirthProvince";
-            txtBirthProvince.Size = new Size(131, 22);
+            txtBirthProvince.Size = new Size(150, 27);
             txtBirthProvince.TabIndex = 66;
             // 
             // txtBirthMunicipality
             // 
             txtBirthMunicipality.BorderStyle = BorderStyle.None;
             txtBirthMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBirthMunicipality.Location = new Point(176, 48);
-            txtBirthMunicipality.Margin = new Padding(3, 2, 3, 2);
+            txtBirthMunicipality.Location = new Point(201, 64);
             txtBirthMunicipality.Name = "txtBirthMunicipality";
-            txtBirthMunicipality.Size = new Size(287, 22);
+            txtBirthMunicipality.Size = new Size(328, 27);
             txtBirthMunicipality.TabIndex = 65;
             // 
             // label34
             // 
             label34.AutoSize = true;
             label34.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(264, 28);
+            label34.Location = new Point(302, 37);
             label34.Name = "label34";
-            label34.Size = new Size(73, 15);
+            label34.Size = new Size(90, 20);
             label34.TabIndex = 64;
             label34.Text = "Municipality";
             // 
@@ -3053,9 +2923,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(333, 80);
+            label6.Location = new Point(381, 107);
             label6.Name = "label6";
-            label6.Size = new Size(50, 15);
+            label6.Size = new Size(60, 20);
             label6.TabIndex = 29;
             label6.Text = "Country";
             // 
@@ -3063,19 +2933,19 @@
             // 
             label28.AutoSize = true;
             label28.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label28.Location = new Point(167, 80);
+            label28.Location = new Point(191, 107);
             label28.Name = "label28";
-            label28.Size = new Size(84, 15);
+            label28.Size = new Size(105, 20);
             label28.TabIndex = 27;
             label28.Text = "Province/State";
             // 
             // rectangleRound22
             // 
             rectangleRound22.BackColor = Color.White;
-            rectangleRound22.Location = new Point(333, 98);
-            rectangleRound22.Margin = new Padding(2);
+            rectangleRound22.Location = new Point(381, 131);
+            rectangleRound22.Margin = new Padding(2, 3, 2, 3);
             rectangleRound22.Name = "rectangleRound22";
-            rectangleRound22.Size = new Size(138, 28);
+            rectangleRound22.Size = new Size(158, 37);
             rectangleRound22.TabIndex = 28;
             // 
             // panel11
@@ -3084,9 +2954,8 @@
             panel11.Controls.Add(label30);
             panel11.Dock = DockStyle.Top;
             panel11.Location = new Point(0, 0);
-            panel11.Margin = new Padding(3, 2, 3, 2);
             panel11.Name = "panel11";
-            panel11.Size = new Size(486, 22);
+            panel11.Size = new Size(555, 29);
             panel11.TabIndex = 0;
             // 
             // label30
@@ -3094,57 +2963,56 @@
             label30.AutoSize = true;
             label30.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label30.ForeColor = Color.White;
-            label30.Location = new Point(5, 1);
+            label30.Location = new Point(6, 1);
             label30.Name = "label30";
-            label30.Size = new Size(96, 20);
+            label30.Size = new Size(118, 25);
             label30.TabIndex = 28;
             label30.Text = "Birth Details";
             // 
             // rectangleRound23
             // 
             rectangleRound23.BackColor = Color.White;
-            rectangleRound23.Location = new Point(166, 98);
-            rectangleRound23.Margin = new Padding(2);
+            rectangleRound23.Location = new Point(190, 131);
+            rectangleRound23.Margin = new Padding(2, 3, 2, 3);
             rectangleRound23.Name = "rectangleRound23";
-            rectangleRound23.Size = new Size(147, 28);
+            rectangleRound23.Size = new Size(168, 37);
             rectangleRound23.TabIndex = 26;
             // 
             // dtpBirthDate
             // 
             dtpBirthDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpBirthDate.Format = DateTimePickerFormat.Short;
-            dtpBirthDate.Location = new Point(14, 50);
-            dtpBirthDate.Margin = new Padding(3, 2, 3, 2);
+            dtpBirthDate.Location = new Point(16, 67);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(119, 24);
+            dtpBirthDate.Size = new Size(135, 28);
             dtpBirthDate.TabIndex = 63;
             // 
             // label32
             // 
             label32.AutoSize = true;
             label32.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label32.Location = new Point(14, 28);
+            label32.Location = new Point(16, 37);
             label32.Name = "label32";
-            label32.Size = new Size(73, 15);
+            label32.Size = new Size(94, 20);
             label32.TabIndex = 18;
             label32.Text = "Date of Birth";
             // 
             // rectangleRound26
             // 
             rectangleRound26.BackColor = Color.White;
-            rectangleRound26.Location = new Point(166, 45);
-            rectangleRound26.Margin = new Padding(2);
+            rectangleRound26.Location = new Point(190, 60);
+            rectangleRound26.Margin = new Padding(2, 3, 2, 3);
             rectangleRound26.Name = "rectangleRound26";
-            rectangleRound26.Size = new Size(304, 28);
+            rectangleRound26.Size = new Size(347, 37);
             rectangleRound26.TabIndex = 21;
             // 
             // label33
             // 
             label33.AutoSize = true;
             label33.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(166, 28);
+            label33.Location = new Point(190, 37);
             label33.Name = "label33";
-            label33.Size = new Size(80, 15);
+            label33.Size = new Size(100, 20);
             label33.TabIndex = 23;
             label33.Text = "Place of Birth:";
             // 
@@ -3158,49 +3026,46 @@
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(rectangleRound13);
             panel8.Controls.Add(label15);
-            panel8.Location = new Point(1106, 6);
-            panel8.Margin = new Padding(3, 2, 3, 2);
+            panel8.Location = new Point(1264, 8);
             panel8.Name = "panel8";
-            panel8.Size = new Size(281, 137);
+            panel8.Size = new Size(321, 182);
             panel8.TabIndex = 66;
             // 
             // txtLandNo
             // 
             txtLandNo.BorderStyle = BorderStyle.None;
             txtLandNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtLandNo.Location = new Point(27, 101);
-            txtLandNo.Margin = new Padding(3, 2, 3, 2);
+            txtLandNo.Location = new Point(31, 135);
             txtLandNo.Name = "txtLandNo";
-            txtLandNo.Size = new Size(220, 22);
+            txtLandNo.Size = new Size(251, 27);
             txtLandNo.TabIndex = 29;
             // 
             // txtMobNo
             // 
             txtMobNo.BorderStyle = BorderStyle.None;
             txtMobNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtMobNo.Location = new Point(28, 47);
-            txtMobNo.Margin = new Padding(3, 2, 3, 2);
+            txtMobNo.Location = new Point(32, 63);
             txtMobNo.Name = "txtMobNo";
-            txtMobNo.Size = new Size(219, 22);
+            txtMobNo.Size = new Size(250, 27);
             txtMobNo.TabIndex = 28;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(18, 81);
+            label14.Location = new Point(21, 108);
             label14.Name = "label14";
-            label14.Size = new Size(99, 15);
+            label14.Size = new Size(123, 20);
             label14.TabIndex = 27;
             label14.Text = "Landline Number";
             // 
             // rectangleRound12
             // 
             rectangleRound12.BackColor = Color.White;
-            rectangleRound12.Location = new Point(18, 98);
-            rectangleRound12.Margin = new Padding(2);
+            rectangleRound12.Location = new Point(21, 131);
+            rectangleRound12.Margin = new Padding(2, 3, 2, 3);
             rectangleRound12.Name = "rectangleRound12";
-            rectangleRound12.Size = new Size(238, 28);
+            rectangleRound12.Size = new Size(272, 37);
             rectangleRound12.TabIndex = 26;
             // 
             // panel9
@@ -3209,9 +3074,8 @@
             panel9.Controls.Add(label27);
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(0, 0);
-            panel9.Margin = new Padding(3, 2, 3, 2);
             panel9.Name = "panel9";
-            panel9.Size = new Size(279, 22);
+            panel9.Size = new Size(319, 29);
             panel9.TabIndex = 0;
             // 
             // label27
@@ -3219,28 +3083,28 @@
             label27.AutoSize = true;
             label27.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label27.ForeColor = Color.White;
-            label27.Location = new Point(5, 1);
+            label27.Location = new Point(6, 1);
             label27.Name = "label27";
-            label27.Size = new Size(115, 20);
+            label27.Size = new Size(141, 25);
             label27.TabIndex = 28;
             label27.Text = "Contact Details";
             // 
             // rectangleRound13
             // 
             rectangleRound13.BackColor = Color.White;
-            rectangleRound13.Location = new Point(18, 45);
-            rectangleRound13.Margin = new Padding(2);
+            rectangleRound13.Location = new Point(21, 60);
+            rectangleRound13.Margin = new Padding(2, 3, 2, 3);
             rectangleRound13.Name = "rectangleRound13";
-            rectangleRound13.Size = new Size(238, 28);
+            rectangleRound13.Size = new Size(272, 37);
             rectangleRound13.TabIndex = 25;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(18, 28);
+            label15.Location = new Point(21, 37);
             label15.Name = "label15";
-            label15.Size = new Size(91, 15);
+            label15.Size = new Size(114, 20);
             label15.TabIndex = 24;
             label15.Text = "Mobile Number";
             // 
@@ -3266,20 +3130,18 @@
             panel6.Controls.Add(label12);
             panel6.Controls.Add(label11);
             panel6.Controls.Add(rectangleRound9);
-            panel6.Location = new Point(511, 6);
-            panel6.Margin = new Padding(3, 2, 3, 2);
+            panel6.Location = new Point(584, 8);
             panel6.Name = "panel6";
-            panel6.Size = new Size(580, 137);
+            panel6.Size = new Size(663, 182);
             panel6.TabIndex = 0;
             // 
             // txtAddRegion
             // 
             txtAddRegion.BorderStyle = BorderStyle.None;
             txtAddRegion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAddRegion.Location = new Point(396, 101);
-            txtAddRegion.Margin = new Padding(3, 2, 3, 2);
+            txtAddRegion.Location = new Point(453, 135);
             txtAddRegion.Name = "txtAddRegion";
-            txtAddRegion.Size = new Size(155, 22);
+            txtAddRegion.Size = new Size(177, 27);
             txtAddRegion.TabIndex = 68;
             txtAddRegion.Text = "2";
             // 
@@ -3287,10 +3149,9 @@
             // 
             txtAddProvince.BorderStyle = BorderStyle.None;
             txtAddProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAddProvince.Location = new Point(213, 101);
-            txtAddProvince.Margin = new Padding(3, 2, 3, 2);
+            txtAddProvince.Location = new Point(243, 135);
             txtAddProvince.Name = "txtAddProvince";
-            txtAddProvince.Size = new Size(152, 22);
+            txtAddProvince.Size = new Size(174, 27);
             txtAddProvince.TabIndex = 66;
             txtAddProvince.Text = "Nueva Vizcaya";
             // 
@@ -3298,10 +3159,9 @@
             // 
             txtAddMunicipality.BorderStyle = BorderStyle.None;
             txtAddMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAddMunicipality.Location = new Point(24, 101);
-            txtAddMunicipality.Margin = new Padding(3, 2, 3, 2);
+            txtAddMunicipality.Location = new Point(27, 135);
             txtAddMunicipality.Name = "txtAddMunicipality";
-            txtAddMunicipality.Size = new Size(156, 22);
+            txtAddMunicipality.Size = new Size(178, 27);
             txtAddMunicipality.TabIndex = 65;
             txtAddMunicipality.Text = "Solano";
             // 
@@ -3312,39 +3172,36 @@
             cbAddBrgy.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbAddBrgy.Location = new Point(395, 46);
-            cbAddBrgy.Margin = new Padding(3, 2, 3, 2);
+            cbAddBrgy.Location = new Point(451, 61);
             cbAddBrgy.Name = "cbAddBrgy";
-            cbAddBrgy.Size = new Size(161, 28);
+            cbAddBrgy.Size = new Size(183, 33);
             cbAddBrgy.TabIndex = 63;
             // 
             // txtAddStreet
             // 
             txtAddStreet.BorderStyle = BorderStyle.None;
             txtAddStreet.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAddStreet.Location = new Point(211, 47);
-            txtAddStreet.Margin = new Padding(3, 2, 3, 2);
+            txtAddStreet.Location = new Point(241, 63);
             txtAddStreet.Name = "txtAddStreet";
-            txtAddStreet.Size = new Size(154, 22);
+            txtAddStreet.Size = new Size(176, 27);
             txtAddStreet.TabIndex = 62;
             // 
             // txtAddPurok
             // 
             txtAddPurok.BorderStyle = BorderStyle.None;
             txtAddPurok.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAddPurok.Location = new Point(24, 47);
-            txtAddPurok.Margin = new Padding(3, 2, 3, 2);
+            txtAddPurok.Location = new Point(27, 63);
             txtAddPurok.Name = "txtAddPurok";
-            txtAddPurok.Size = new Size(156, 22);
+            txtAddPurok.Size = new Size(178, 27);
             txtAddPurok.TabIndex = 61;
             // 
             // rectangleRound17
             // 
             rectangleRound17.BackColor = Color.White;
-            rectangleRound17.Location = new Point(387, 98);
-            rectangleRound17.Margin = new Padding(2);
+            rectangleRound17.Location = new Point(442, 131);
+            rectangleRound17.Margin = new Padding(2, 3, 2, 3);
             rectangleRound17.Name = "rectangleRound17";
-            rectangleRound17.Size = new Size(172, 28);
+            rectangleRound17.Size = new Size(197, 37);
             rectangleRound17.TabIndex = 0;
             // 
             // panel7
@@ -3353,9 +3210,8 @@
             panel7.Controls.Add(label29);
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(0, 0);
-            panel7.Margin = new Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(578, 22);
+            panel7.Size = new Size(661, 29);
             panel7.TabIndex = 0;
             // 
             // label29
@@ -3363,56 +3219,56 @@
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label29.ForeColor = Color.White;
-            label29.Location = new Point(5, 1);
+            label29.Location = new Point(6, 1);
             label29.Name = "label29";
-            label29.Size = new Size(66, 20);
+            label29.Size = new Size(80, 25);
             label29.TabIndex = 28;
             label29.Text = "Address";
             // 
             // rectangleRound11
             // 
             rectangleRound11.BackColor = Color.White;
-            rectangleRound11.Location = new Point(203, 98);
-            rectangleRound11.Margin = new Padding(2);
+            rectangleRound11.Location = new Point(232, 131);
+            rectangleRound11.Margin = new Padding(2, 3, 2, 3);
             rectangleRound11.Name = "rectangleRound11";
-            rectangleRound11.Size = new Size(170, 28);
+            rectangleRound11.Size = new Size(194, 37);
             rectangleRound11.TabIndex = 0;
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(388, 80);
+            label23.Location = new Point(443, 107);
             label23.Name = "label23";
-            label23.Size = new Size(44, 15);
+            label23.Size = new Size(56, 20);
             label23.TabIndex = 60;
             label23.Text = "Region";
             // 
             // rectangleRound10
             // 
             rectangleRound10.BackColor = Color.White;
-            rectangleRound10.Location = new Point(16, 98);
-            rectangleRound10.Margin = new Padding(2);
+            rectangleRound10.Location = new Point(18, 131);
+            rectangleRound10.Margin = new Padding(2, 3, 2, 3);
             rectangleRound10.Name = "rectangleRound10";
-            rectangleRound10.Size = new Size(172, 28);
+            rectangleRound10.Size = new Size(197, 37);
             rectangleRound10.TabIndex = 0;
             // 
             // rectangleRound7
             // 
             rectangleRound7.BackColor = Color.White;
-            rectangleRound7.Location = new Point(16, 45);
-            rectangleRound7.Margin = new Padding(2);
+            rectangleRound7.Location = new Point(18, 60);
+            rectangleRound7.Margin = new Padding(2, 3, 2, 3);
             rectangleRound7.Name = "rectangleRound7";
-            rectangleRound7.Size = new Size(172, 28);
+            rectangleRound7.Size = new Size(197, 37);
             rectangleRound7.TabIndex = 0;
             // 
             // label19
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(204, 28);
+            label19.Location = new Point(233, 37);
             label19.Name = "label19";
-            label19.Size = new Size(106, 15);
+            label19.Size = new Size(134, 20);
             label19.TabIndex = 52;
             label19.Text = "Street/Sitio/Subdv.";
             // 
@@ -3420,9 +3276,9 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(204, 80);
+            label13.Location = new Point(233, 107);
             label13.Name = "label13";
-            label13.Size = new Size(53, 15);
+            label13.Size = new Size(65, 20);
             label13.TabIndex = 58;
             label13.Text = "Province";
             // 
@@ -3430,28 +3286,28 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(16, 28);
+            label5.Location = new Point(18, 37);
             label5.Name = "label5";
-            label5.Size = new Size(153, 15);
+            label5.Size = new Size(188, 20);
             label5.TabIndex = 21;
             label5.Text = "House/Lot/Bldg. No./Purok";
             // 
             // rectangleRound8
             // 
             rectangleRound8.BackColor = Color.White;
-            rectangleRound8.Location = new Point(203, 45);
-            rectangleRound8.Margin = new Padding(2);
+            rectangleRound8.Location = new Point(232, 60);
+            rectangleRound8.Margin = new Padding(2, 3, 2, 3);
             rectangleRound8.Name = "rectangleRound8";
-            rectangleRound8.Size = new Size(170, 28);
+            rectangleRound8.Size = new Size(194, 37);
             rectangleRound8.TabIndex = 0;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(16, 81);
+            label12.Location = new Point(18, 108);
             label12.Name = "label12";
-            label12.Size = new Size(73, 15);
+            label12.Size = new Size(90, 20);
             label12.TabIndex = 56;
             label12.Text = "Municipality";
             // 
@@ -3459,19 +3315,19 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(389, 28);
+            label11.Location = new Point(445, 37);
             label11.Name = "label11";
-            label11.Size = new Size(56, 15);
+            label11.Size = new Size(71, 20);
             label11.TabIndex = 54;
             label11.Text = "Barangay";
             // 
             // rectangleRound9
             // 
             rectangleRound9.BackColor = Color.White;
-            rectangleRound9.Location = new Point(387, 45);
-            rectangleRound9.Margin = new Padding(2);
+            rectangleRound9.Location = new Point(442, 60);
+            rectangleRound9.Margin = new Padding(2, 3, 2, 3);
             rectangleRound9.Name = "rectangleRound9";
-            rectangleRound9.Size = new Size(172, 28);
+            rectangleRound9.Size = new Size(197, 37);
             rectangleRound9.TabIndex = 0;
             // 
             // panel3
@@ -3493,10 +3349,9 @@
             panel3.Controls.Add(rectangleRound4);
             panel3.Controls.Add(rectangleRound3);
             panel3.Controls.Add(label8);
-            panel3.Location = new Point(10, 6);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(11, 8);
             panel3.Name = "panel3";
-            panel3.Size = new Size(488, 137);
+            panel3.Size = new Size(557, 182);
             panel3.TabIndex = 0;
             // 
             // cbSex
@@ -3506,39 +3361,36 @@
             cbSex.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             cbSex.FormattingEnabled = true;
             cbSex.Items.AddRange(new object[] { "Male", "Female" });
-            cbSex.Location = new Point(341, 100);
-            cbSex.Margin = new Padding(3, 2, 3, 2);
+            cbSex.Location = new Point(390, 133);
             cbSex.Name = "cbSex";
-            cbSex.Size = new Size(126, 28);
+            cbSex.Size = new Size(143, 33);
             cbSex.TabIndex = 33;
             // 
             // txtExtname
             // 
             txtExtname.BorderStyle = BorderStyle.None;
             txtExtname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtExtname.Location = new Point(206, 101);
-            txtExtname.Margin = new Padding(3, 2, 3, 2);
+            txtExtname.Location = new Point(235, 135);
             txtExtname.Name = "txtExtname";
-            txtExtname.Size = new Size(102, 22);
+            txtExtname.Size = new Size(117, 27);
             txtExtname.TabIndex = 4;
             // 
             // txtMiddlename
             // 
             txtMiddlename.BorderStyle = BorderStyle.None;
             txtMiddlename.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtMiddlename.Location = new Point(21, 101);
-            txtMiddlename.Margin = new Padding(3, 2, 3, 2);
+            txtMiddlename.Location = new Point(24, 135);
             txtMiddlename.Name = "txtMiddlename";
-            txtMiddlename.Size = new Size(159, 22);
+            txtMiddlename.Size = new Size(182, 27);
             txtMiddlename.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(333, 80);
+            label4.Location = new Point(381, 107);
             label4.Name = "label4";
-            label4.Size = new Size(25, 15);
+            label4.Size = new Size(32, 20);
             label4.TabIndex = 29;
             label4.Text = "Sex";
             // 
@@ -3546,9 +3398,9 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(202, 81);
+            label10.Location = new Point(231, 108);
             label10.Name = "label10";
-            label10.Size = new Size(93, 15);
+            label10.Size = new Size(116, 20);
             label10.TabIndex = 27;
             label10.Text = "Extension Name";
             // 
@@ -3556,29 +3408,27 @@
             // 
             txtFirstname.BorderStyle = BorderStyle.None;
             txtFirstname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtFirstname.Location = new Point(210, 47);
-            txtFirstname.Margin = new Padding(3, 2, 3, 2);
+            txtFirstname.Location = new Point(240, 63);
             txtFirstname.Name = "txtFirstname";
-            txtFirstname.Size = new Size(257, 22);
+            txtFirstname.Size = new Size(294, 27);
             txtFirstname.TabIndex = 2;
             // 
             // rectangleRound6
             // 
             rectangleRound6.BackColor = Color.White;
-            rectangleRound6.Location = new Point(333, 98);
-            rectangleRound6.Margin = new Padding(2);
+            rectangleRound6.Location = new Point(381, 131);
+            rectangleRound6.Margin = new Padding(2, 3, 2, 3);
             rectangleRound6.Name = "rectangleRound6";
-            rectangleRound6.Size = new Size(138, 28);
+            rectangleRound6.Size = new Size(158, 37);
             rectangleRound6.TabIndex = 0;
             // 
             // txtSurname
             // 
             txtSurname.BorderStyle = BorderStyle.None;
             txtSurname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSurname.Location = new Point(21, 47);
-            txtSurname.Margin = new Padding(3, 2, 3, 2);
+            txtSurname.Location = new Point(24, 63);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(159, 22);
+            txtSurname.Size = new Size(182, 27);
             txtSurname.TabIndex = 2;
             // 
             // panel5
@@ -3587,9 +3437,8 @@
             panel5.Controls.Add(label22);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
-            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(486, 22);
+            panel5.Size = new Size(555, 29);
             panel5.TabIndex = 0;
             // 
             // label22
@@ -3597,37 +3446,37 @@
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label22.ForeColor = Color.White;
-            label22.Location = new Point(5, 1);
+            label22.Location = new Point(6, 1);
             label22.Name = "label22";
-            label22.Size = new Size(121, 20);
+            label22.Size = new Size(147, 25);
             label22.TabIndex = 28;
             label22.Text = "Personal Details";
             // 
             // rectangleRound5
             // 
             rectangleRound5.BackColor = Color.White;
-            rectangleRound5.Location = new Point(202, 98);
-            rectangleRound5.Margin = new Padding(2);
+            rectangleRound5.Location = new Point(231, 131);
+            rectangleRound5.Margin = new Padding(2, 3, 2, 3);
             rectangleRound5.Name = "rectangleRound5";
-            rectangleRound5.Size = new Size(110, 28);
+            rectangleRound5.Size = new Size(126, 37);
             rectangleRound5.TabIndex = 4;
             // 
             // rectangleRound2
             // 
             rectangleRound2.BackColor = Color.White;
-            rectangleRound2.Location = new Point(14, 45);
-            rectangleRound2.Margin = new Padding(2);
+            rectangleRound2.Location = new Point(16, 60);
+            rectangleRound2.Margin = new Padding(2, 3, 2, 3);
             rectangleRound2.Name = "rectangleRound2";
-            rectangleRound2.Size = new Size(172, 28);
+            rectangleRound2.Size = new Size(197, 37);
             rectangleRound2.TabIndex = 1;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(14, 81);
+            label9.Location = new Point(16, 108);
             label9.Name = "label9";
-            label9.Size = new Size(79, 15);
+            label9.Size = new Size(100, 20);
             label9.TabIndex = 25;
             label9.Text = "Middle Name";
             // 
@@ -3635,49 +3484,48 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(14, 28);
+            label1.Location = new Point(16, 37);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(67, 20);
             label1.TabIndex = 18;
             label1.Text = "Surname";
             // 
             // rectangleRound4
             // 
             rectangleRound4.BackColor = Color.White;
-            rectangleRound4.Location = new Point(14, 98);
-            rectangleRound4.Margin = new Padding(2);
+            rectangleRound4.Location = new Point(16, 131);
+            rectangleRound4.Margin = new Padding(2, 3, 2, 3);
             rectangleRound4.Name = "rectangleRound4";
-            rectangleRound4.Size = new Size(172, 28);
+            rectangleRound4.Size = new Size(197, 37);
             rectangleRound4.TabIndex = 3;
             // 
             // rectangleRound3
             // 
             rectangleRound3.BackColor = Color.White;
-            rectangleRound3.Location = new Point(202, 45);
-            rectangleRound3.Margin = new Padding(2);
+            rectangleRound3.Location = new Point(231, 60);
+            rectangleRound3.Margin = new Padding(2, 3, 2, 3);
             rectangleRound3.Name = "rectangleRound3";
-            rectangleRound3.Size = new Size(270, 28);
+            rectangleRound3.Size = new Size(309, 37);
             rectangleRound3.TabIndex = 2;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(202, 28);
+            label8.Location = new Point(231, 37);
             label8.Name = "label8";
-            label8.Size = new Size(64, 15);
+            label8.Size = new Size(80, 20);
             label8.TabIndex = 23;
             label8.Text = "First Name";
             // 
             // RSBSAEditView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1396, 694);
+            ClientSize = new Size(1595, 925);
             Controls.Add(panelPersonalInfo);
             Controls.Add(panel4);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "RSBSAEditView";
             Text = "RSBSAEditView";
             Load += RSBSAEditView_Load;
@@ -4079,5 +3927,6 @@
         private RectangleRound rectangleRound4;
         private RectangleRound rectangleRound3;
         private Label label8;
+        public Label labelRsbsaIdRegion;
     }
 }

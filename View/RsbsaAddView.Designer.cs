@@ -41,13 +41,16 @@
             panelFarmParcelsHeader = new Panel();
             label70 = new Label();
             label71 = new Label();
-            panel43 = new Panel();
+            panelFarmersInRotation = new Panel();
+            txtRotatingFarmer3 = new TextBox();
+            txtRotatingFarmer2 = new TextBox();
+            txtRotatingFarmer1 = new TextBox();
             rectangleRound50 = new RectangleRound();
             label47 = new Label();
             rectangleRound49 = new RectangleRound();
             label42 = new Label();
             rectangleRound46 = new RectangleRound();
-            panel44 = new Panel();
+            panelFarmersInRotationHeader = new Panel();
             label46 = new Label();
             label72 = new Label();
             panelDocument = new Panel();
@@ -326,8 +329,8 @@
             panel17.SuspendLayout();
             panelFarmParcels.SuspendLayout();
             panelFarmParcelsHeader.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
+            panelFarmersInRotation.SuspendLayout();
+            panelFarmersInRotationHeader.SuspendLayout();
             panelDocument.SuspendLayout();
             panel14.SuspendLayout();
             panelAnnuanIncome.SuspendLayout();
@@ -458,7 +461,7 @@
             // panel17
             // 
             panel17.Controls.Add(panelFarmParcels);
-            panel17.Controls.Add(panel43);
+            panel17.Controls.Add(panelFarmersInRotation);
             panel17.Dock = DockStyle.Fill;
             panel17.Location = new Point(10, 10);
             panel17.Name = "panel17";
@@ -532,20 +535,62 @@
             label71.TabIndex = 0;
             label71.Text = "No. of Farm Parcels";
             // 
-            // panel43
+            // panelFarmersInRotation
             // 
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(rectangleRound50);
-            panel43.Controls.Add(label47);
-            panel43.Controls.Add(rectangleRound49);
-            panel43.Controls.Add(label42);
-            panel43.Controls.Add(rectangleRound46);
-            panel43.Controls.Add(panel44);
-            panel43.Controls.Add(label72);
-            panel43.Location = new Point(195, 5);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1368, 128);
-            panel43.TabIndex = 0;
+            panelFarmersInRotation.BorderStyle = BorderStyle.FixedSingle;
+            panelFarmersInRotation.Controls.Add(txtRotatingFarmer3);
+            panelFarmersInRotation.Controls.Add(txtRotatingFarmer2);
+            panelFarmersInRotation.Controls.Add(txtRotatingFarmer1);
+            panelFarmersInRotation.Controls.Add(rectangleRound50);
+            panelFarmersInRotation.Controls.Add(label47);
+            panelFarmersInRotation.Controls.Add(rectangleRound49);
+            panelFarmersInRotation.Controls.Add(label42);
+            panelFarmersInRotation.Controls.Add(rectangleRound46);
+            panelFarmersInRotation.Controls.Add(panelFarmersInRotationHeader);
+            panelFarmersInRotation.Controls.Add(label72);
+            panelFarmersInRotation.Location = new Point(195, 5);
+            panelFarmersInRotation.Name = "panelFarmersInRotation";
+            panelFarmersInRotation.Size = new Size(1368, 128);
+            panelFarmersInRotation.TabIndex = 0;
+            // 
+            // txtRotatingFarmer3
+            // 
+            txtRotatingFarmer3.BorderStyle = BorderStyle.None;
+            txtRotatingFarmer3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtRotatingFarmer3.Location = new Point(591, 77);
+            txtRotatingFarmer3.Name = "txtRotatingFarmer3";
+            txtRotatingFarmer3.Size = new Size(262, 27);
+            txtRotatingFarmer3.TabIndex = 5;
+            txtRotatingFarmer3.TextChanged += AllCaps;
+            txtRotatingFarmer3.Enter += SelectedPanel;
+            txtRotatingFarmer3.KeyPress += AlphaOnly;
+            txtRotatingFarmer3.Leave += UnselectedPanel;
+            // 
+            // txtRotatingFarmer2
+            // 
+            txtRotatingFarmer2.BorderStyle = BorderStyle.None;
+            txtRotatingFarmer2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtRotatingFarmer2.Location = new Point(282, 76);
+            txtRotatingFarmer2.Name = "txtRotatingFarmer2";
+            txtRotatingFarmer2.Size = new Size(265, 27);
+            txtRotatingFarmer2.TabIndex = 4;
+            txtRotatingFarmer2.TextChanged += AllCaps;
+            txtRotatingFarmer2.Enter += SelectedPanel;
+            txtRotatingFarmer2.KeyPress += AlphaOnly;
+            txtRotatingFarmer2.Leave += UnselectedPanel;
+            // 
+            // txtRotatingFarmer1
+            // 
+            txtRotatingFarmer1.BorderStyle = BorderStyle.None;
+            txtRotatingFarmer1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtRotatingFarmer1.Location = new Point(28, 79);
+            txtRotatingFarmer1.Name = "txtRotatingFarmer1";
+            txtRotatingFarmer1.Size = new Size(219, 27);
+            txtRotatingFarmer1.TabIndex = 3;
+            txtRotatingFarmer1.TextChanged += AllCaps;
+            txtRotatingFarmer1.Enter += SelectedPanel;
+            txtRotatingFarmer1.KeyPress += AlphaOnly;
+            txtRotatingFarmer1.Leave += UnselectedPanel;
             // 
             // rectangleRound50
             // 
@@ -594,15 +639,15 @@
             rectangleRound46.Size = new Size(230, 38);
             rectangleRound46.TabIndex = 0;
             // 
-            // panel44
+            // panelFarmersInRotationHeader
             // 
-            panel44.BackColor = Color.FromArgb(43, 121, 223);
-            panel44.Controls.Add(label46);
-            panel44.Dock = DockStyle.Top;
-            panel44.Location = new Point(0, 0);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(1366, 29);
-            panel44.TabIndex = 0;
+            panelFarmersInRotationHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelFarmersInRotationHeader.Controls.Add(label46);
+            panelFarmersInRotationHeader.Dock = DockStyle.Top;
+            panelFarmersInRotationHeader.Location = new Point(0, 0);
+            panelFarmersInRotationHeader.Name = "panelFarmersInRotationHeader";
+            panelFarmersInRotationHeader.Size = new Size(1366, 29);
+            panelFarmersInRotationHeader.TabIndex = 0;
             // 
             // label46
             // 
@@ -3840,6 +3885,8 @@
             pbFarmerPhoto.Size = new Size(140, 140);
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
+            pbFarmerPhoto.Click += pbFarmerPhoto_Click;
+            pbFarmerPhoto.DoubleClick += pbFarmerPhoto_DoubleClick;
             // 
             // openFileDialog1
             // 
@@ -3868,10 +3915,10 @@
             panelFarmParcels.PerformLayout();
             panelFarmParcelsHeader.ResumeLayout(false);
             panelFarmParcelsHeader.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
+            panelFarmersInRotation.ResumeLayout(false);
+            panelFarmersInRotation.PerformLayout();
+            panelFarmersInRotationHeader.ResumeLayout(false);
+            panelFarmersInRotationHeader.PerformLayout();
             panelDocument.ResumeLayout(false);
             panel14.ResumeLayout(false);
             panelAnnuanIncome.ResumeLayout(false);
@@ -4167,9 +4214,9 @@
         private Panel panelFarmParcelsHeader;
         private Label label70;
         private Label label71;
-        private Panel panel43;
+        private Panel panelFarmersInRotation;
         private RectangleRound rectangleRound46;
-        private Panel panel44;
+        private Panel panelFarmersInRotationHeader;
         private Label label46;
         private Label label72;
         private RectangleRound rectangleRound49;
@@ -4257,5 +4304,8 @@
         private Panel panel14;
         private Panel panel17;
         private Panel panel19;
+        private TextBox txtRotatingFarmer3;
+        private TextBox txtRotatingFarmer2;
+        private TextBox txtRotatingFarmer1;
     }
 }

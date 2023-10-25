@@ -29,6 +29,8 @@ namespace AgRecords.View
 
             Instance = this;
             rsbsaId = labelRsbsaId;
+
+            pbFarmerPhoto.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         // Method
@@ -80,7 +82,7 @@ namespace AgRecords.View
 
         // Buttons/Tab
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             //radio buttons in personal info
             RadioButton rbIsHouseholdHead = panelHousehold.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
@@ -94,6 +96,7 @@ namespace AgRecords.View
             RadioButton rbCoop = panelCoop.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             //farmer info
+            Image farmerPhoto = null;
             string rbIsHouseholdHeadText = "";
             string rbCivilStatusText = "";
             string rbEducText = "";
@@ -271,13 +274,22 @@ namespace AgRecords.View
                 isParticipantAgriProgramText = "Yes";
             }
 
+            if (pbFarmerPhoto.Image != null)
+            {
+                farmerPhoto = pbFarmerPhoto.Image;
+            }
+            else
+            {
+                farmerPhoto = null;
+            }
 
-            if (rsbsaController.AddRSBSA(
+
+            if (await rsbsaController.AddRSBSA(
                 //rsbsa info
                 labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
 
                 //farmer info
-                txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
+                farmerPhoto, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
                 txtAddPurok.Text, txtAddStreet.Text, cbAddBrgy.Text, txtAddMunicipality.Text, txtAddProvince.Text, txtAddRegion.Text,
                 rbEducText, txtMobNo.Text, txtLandNo.Text, rbGovIdText, txtGovIdType.Text, txtGovIdNum.Text,
                 dtpBirthDate.Value.Date, txtBirthMunicipality.Text, txtBirthProvince.Text, txtBirthCountry.Text,
@@ -293,8 +305,8 @@ namespace AgRecords.View
                 isAgriYouthText, isPartOfFarmingHouseholdText, isAttendAgrifisheryText, isParticipantAgriProgramText, txtInvolvementOthers.Text,
                 Convert.ToDouble(txtFarmingIncome.Text), Convert.ToDouble(txtNonFarmingIncome.Text),
 
-                //farmland
-                "Test", Convert.ToInt32(labelParcelCount.Text),
+               //farmland
+               txtRotatingFarmer1.Text + ", " + txtRotatingFarmer2.Text + ", " + txtRotatingFarmer3.Text, Convert.ToInt32(labelParcelCount.Text),
 
                 //farmland parcel
                 GetFarmParcelsFromControls(),
@@ -442,6 +454,38 @@ namespace AgRecords.View
         private void UpdateParcelCountLabel()
         {
             labelParcelCount.Text = $"{flowLayoutPanelParcels.Controls.Count}";
+
+            if (labelParcelCount.Text == "1")
+            {
+                txtRotatingFarmer1.Enabled = true;
+                txtRotatingFarmer2.Enabled = false;
+                txtRotatingFarmer3.Enabled = false;
+                txtRotatingFarmer2.Clear();
+                txtRotatingFarmer3.Clear();
+            }
+            else if (labelParcelCount.Text == "2")
+            {
+                txtRotatingFarmer1.Enabled = true;
+                txtRotatingFarmer2.Enabled = true;
+                txtRotatingFarmer3.Enabled = false;
+                txtRotatingFarmer3.Clear();
+            }
+            else if (labelParcelCount.Text == "3")
+            {
+                txtRotatingFarmer1.Enabled = true;
+                txtRotatingFarmer2.Enabled = true;
+                txtRotatingFarmer3.Enabled = true;
+            }
+            else
+            {
+                txtRotatingFarmer1.Clear();
+                txtRotatingFarmer2.Clear();
+                txtRotatingFarmer3.Clear();
+
+                txtRotatingFarmer1.Enabled = false;
+                txtRotatingFarmer2.Enabled = false;
+                txtRotatingFarmer3.Enabled = false;
+            }
         }
 
         private void FarmLandControl_RemoveButtonClick(object sender, EventArgs e)
@@ -568,6 +612,13 @@ namespace AgRecords.View
             panelForFisherfolk.Enabled = false;
             panelForAgriYouth.Enabled = false;
 
+            //farm land
+            txtRotatingFarmer1.Enabled = false;
+            txtRotatingFarmer2.Enabled = false;
+            txtRotatingFarmer3.Enabled = false;
+            txtRotatingFarmer1.BackColor = Color.White;
+            txtRotatingFarmer2.BackColor = Color.White;
+            txtRotatingFarmer3.BackColor = Color.White;
         }
         private void radiobuttonsPreAnswer_PersonalInfo()
         {
@@ -808,6 +859,10 @@ namespace AgRecords.View
             {
                 PanelSelected.Panel_Enter(panelAnnuanIncome, panelAnnuanIncomeHeader);
             }
+            else if (focusedControl.Parent == panelFarmersInRotation)
+            {
+                PanelSelected.Panel_Enter(panelFarmersInRotation, panelFarmersInRotationHeader);
+            }
             else if (focusedControl.Parent == panelFarmParcels)
             {
                 PanelSelected.Panel_Enter(panelFarmParcels, panelFarmParcelsHeader);
@@ -885,6 +940,10 @@ namespace AgRecords.View
             else if (focusedControl.Parent == panelAnnuanIncome)
             {
                 PanelSelected.Panel_Leave(panelAnnuanIncome, panelAnnuanIncomeHeader);
+            }
+            else if (focusedControl.Parent == panelFarmersInRotation)
+            {
+                PanelSelected.Panel_Leave(panelFarmersInRotation, panelFarmersInRotationHeader);
             }
             else if (focusedControl.Parent == panelFarmParcels)
             {
@@ -1056,5 +1115,23 @@ namespace AgRecords.View
             }
         }
 
+        private void pbFarmerPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbFarmerPhoto_DoubleClick(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif) | *.jpg; *.jpeg; *.png; *.gif";
+                openFileDialog.Multiselect = false;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pbFarmerPhoto.Image = Image.FromFile(openFileDialog.FileName);
+                }
+            }
+        }
     }
 }

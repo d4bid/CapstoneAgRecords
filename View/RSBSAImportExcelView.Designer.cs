@@ -35,6 +35,8 @@
             dgvRSBSAtoImport = new DataGridView();
             txtSheetName = new TextBox();
             label1 = new Label();
+            progressBar1 = new ProgressBar();
+            labelProgress = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvRSBSAtoImport).BeginInit();
             SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             txtSheetName.Name = "txtSheetName";
             txtSheetName.Size = new Size(125, 27);
             txtSheetName.TabIndex = 4;
-            txtSheetName.Text = "Solano";
+            txtSheetName.Text = "Sheet1";
             // 
             // label1
             // 
@@ -98,11 +100,30 @@
             label1.TabIndex = 5;
             label1.Text = "Sheet Name";
             // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(640, 5);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(294, 36);
+            progressBar1.TabIndex = 6;
+            // 
+            // labelProgress
+            // 
+            labelProgress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            labelProgress.AutoSize = true;
+            labelProgress.Location = new Point(732, 15);
+            labelProgress.Name = "labelProgress";
+            labelProgress.Size = new Size(103, 20);
+            labelProgress.TabIndex = 7;
+            labelProgress.Text = "progress label";
+            // 
             // RSBSAImportExcelView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1348, 600);
+            Controls.Add(labelProgress);
+            Controls.Add(progressBar1);
             Controls.Add(label1);
             Controls.Add(txtSheetName);
             Controls.Add(dgvRSBSAtoImport);
@@ -125,5 +146,7 @@
         private DataGridView dgvRSBSAtoImport;
         private TextBox txtSheetName;
         private Label label1;
+        private ProgressBar progressBar1;
+        private Label labelProgress;
     }
 }

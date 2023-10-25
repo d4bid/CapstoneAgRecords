@@ -9,13 +9,14 @@ namespace AgRecords.Model
     public class RSBSA
     {
         //RSBSA Info
-        public string rsbsaId { get; set; }
+        public string? rsbsaId { get; set; }
         public string? rsbsaIdLGU { get; set; }
         public string? rsbsaIdRegion { get; set; }
         public DateTime dateCreated { get; set; }
         public string? userId { get; set; }
 
         //Farmer Personal Info
+        public Image? farmerImg { get; set; }
         public string? surname { get; set; }
         public string? firstname { get; set; }
         public string? middlename { get; set; }
