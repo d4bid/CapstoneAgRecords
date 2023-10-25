@@ -369,6 +369,10 @@ namespace AgRecords.Controller
             {
                 dt = letterModel.SearchLetterDateReceived(searchText, letterType);
             }
+            else if (categoryText == "Tag")
+            {
+                dt = letterModel.SearchLetterTags(searchText, letterType);
+            }
 
             return dt;
         }
