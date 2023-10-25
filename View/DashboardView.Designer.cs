@@ -69,9 +69,10 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(824, 183);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 125);
+            panel1.Size = new Size(1575, 906);
             panel1.TabIndex = 4;
             // 
             // DashboardView
