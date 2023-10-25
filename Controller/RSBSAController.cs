@@ -17,6 +17,7 @@ namespace AgRecords.Controller
         private RsbsaAddView rsbsaAddView;
         private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
+        private CertificationsView certificationsView;
         private FarmLandControl farmLandControl;
         private RSBSADocumentControl rsbsaDocumentControl;
         private string fullName = HomeView.Instance.fullName.Text;
@@ -50,6 +51,12 @@ namespace AgRecords.Controller
         public RSBSAController(RSBSADocumentControl rsbsaDocumentControl)
         {
             this.rsbsaDocumentControl = rsbsaDocumentControl;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(CertificationsView certificationsView)
+        {
+            this.certificationsView = certificationsView;
             rsbsaModel = new RSBSAModel();
         }
 
@@ -223,6 +230,7 @@ namespace AgRecords.Controller
             DateTime dateCreated,
 
             // Farmer Personal Info
+            Image? farmerImg,
             string? surname,
             string? firstname,
             string? middlename,
@@ -322,6 +330,7 @@ namespace AgRecords.Controller
                     userId = userId,
 
                     // Farmer Personal Info
+                    farmerImg = farmerImg,
                     surname = surname,
                     firstname = firstname,
                     middlename = middlename,
@@ -812,6 +821,7 @@ namespace AgRecords.Controller
             DateTime dateCreated,
 
             // Farmer Personal Info
+            Image? farmerImg,
             string? surname,
             string? firstname,
             string? middlename,
@@ -909,6 +919,7 @@ namespace AgRecords.Controller
                     userId = userId,
 
                     // Farmer Personal Info
+                    farmerImg = farmerImg,
                     surname = surname,
                     firstname = firstname,
                     middlename = middlename,

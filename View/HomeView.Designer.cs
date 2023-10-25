@@ -169,6 +169,7 @@
             btnCertifications.TextAlign = ContentAlignment.MiddleLeft;
             btnCertifications.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCertifications.UseVisualStyleBackColor = true;
+            btnCertifications.Click += btnCertifications_Click;
             // 
             // btnLetters
             // 

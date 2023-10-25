@@ -29,6 +29,8 @@ namespace AgRecords.View
 
             Instance = this;
             rsbsaId = labelRsbsaId;
+
+            pbFarmerPhoto.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         // Method
@@ -94,6 +96,7 @@ namespace AgRecords.View
             RadioButton rbCoop = panelCoop.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             //farmer info
+            Image farmerPhoto = null;
             string rbIsHouseholdHeadText = "";
             string rbCivilStatusText = "";
             string rbEducText = "";
@@ -271,13 +274,22 @@ namespace AgRecords.View
                 isParticipantAgriProgramText = "Yes";
             }
 
+            if (pbFarmerPhoto.Image != null)
+            {
+                farmerPhoto = pbFarmerPhoto.Image;
+            }
+            else
+            {
+                farmerPhoto = null;
+            }
+
 
             if (await rsbsaController.AddRSBSA(
                 //rsbsa info
                 labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
 
                 //farmer info
-                txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
+                farmerPhoto, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
                 txtAddPurok.Text, txtAddStreet.Text, cbAddBrgy.Text, txtAddMunicipality.Text, txtAddProvince.Text, txtAddRegion.Text,
                 rbEducText, txtMobNo.Text, txtLandNo.Text, rbGovIdText, txtGovIdType.Text, txtGovIdNum.Text,
                 dtpBirthDate.Value.Date, txtBirthMunicipality.Text, txtBirthProvince.Text, txtBirthCountry.Text,
@@ -1103,5 +1115,23 @@ namespace AgRecords.View
             }
         }
 
+        private void pbFarmerPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbFarmerPhoto_DoubleClick(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif) | *.jpg; *.jpeg; *.png; *.gif";
+                openFileDialog.Multiselect = false;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pbFarmerPhoto.Image = Image.FromFile(openFileDialog.FileName);
+                }
+            }
+        }
     }
 }

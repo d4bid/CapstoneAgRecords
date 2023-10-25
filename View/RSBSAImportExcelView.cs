@@ -94,7 +94,7 @@ namespace AgRecords.View
                             rsbsa.middlename = row["MIDDLE NAME"].ToString();
                             rsbsa.extname = row["SUFFIX AND EXTENSION"].ToString();
                             rsbsa.sex = row["SEX"].ToString();
-                            rsbsa.addrPurok = row["FARMER ADDRESS 1"].ToString();
+                            rsbsa.addrBrgy = row["FARMER ADDRESS 1"].ToString();
                             rsbsa.addrMunicipality = row["FARMER ADDRESS 2"].ToString();
                             rsbsa.addrProvince = row["FARMER ADDRESS 3"].ToString();
                             rsbsa.birthDate = excelDate;

@@ -678,6 +678,7 @@
             pbFarmerPhoto.Size = new Size(139, 140);
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
+            pbFarmerPhoto.DoubleClick += pbFarmerPhoto_DoubleClick;
             // 
             // panelPersonalInfo
             // 

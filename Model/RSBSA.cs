@@ -16,6 +16,7 @@ namespace AgRecords.Model
         public string? userId { get; set; }
 
         //Farmer Personal Info
+        public Image? farmerImg { get; set; }
         public string? surname { get; set; }
         public string? firstname { get; set; }
         public string? middlename { get; set; }

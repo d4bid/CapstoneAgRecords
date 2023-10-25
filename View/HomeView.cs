@@ -534,5 +534,24 @@ namespace AgRecords.View
         {
             HideSubMenu();
         }
+
+        private void btnCertifications_Click(object sender, EventArgs e)
+        {
+            CertificationsView certificationsView = new CertificationsView(panelDesktop);
+            //userView.formRefresh();
+            certificationsView.TopLevel = false;
+            certificationsView.FormBorderStyle = FormBorderStyle.None;
+            certificationsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(certificationsView);
+            certificationsView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CertificationsView(panelDesktop));
+            lblTitle.Text = "Certifications";
+
+            HideSubMenu();
+        }
     }
 }

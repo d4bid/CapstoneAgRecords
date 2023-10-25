@@ -341,7 +341,7 @@ namespace AgRecords.Model
                     await db.OpenAsync();
 
                     string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, " +
-                                    "@surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
+                                    "@farmerImg, @surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
                                     "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
                                     "@birthCountry, @religion, @civilStatus, @spouseName, @maidenName, @isHouseHead, " +
@@ -363,6 +363,8 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@userId", rsbsa.userId);
 
                     //for farmer info table
+                    byte[] farmerImgBytes = ConvertImageToByteArray(rsbsa.farmerImg);
+                    command.Parameters.AddWithValue("@farmerImg", farmerImgBytes);
                     command.Parameters.AddWithValue("@surname", rsbsa.surname);
                     command.Parameters.AddWithValue("@firstname", rsbsa.firstname);
                     command.Parameters.AddWithValue("@middlename", rsbsa.middlename);
@@ -455,7 +457,7 @@ namespace AgRecords.Model
                     db.Open();
 
                     string query = "CALL sp_updateRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, " +
-                                    "@surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
+                                    "@farmerImg, @surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
                                     "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
                                     "@birthCountry, @religion, @civilStatus, @spouseName, @maidenName, @isHouseHead, " +
@@ -477,6 +479,8 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@userId", rsbsa.userId);
 
                     //for farmer info table
+                    byte[] farmerImgBytes = ConvertImageToByteArray(rsbsa.farmerImg);
+                    command.Parameters.AddWithValue("@farmerImg", farmerImgBytes);
                     command.Parameters.AddWithValue("@surname", rsbsa.surname);
                     command.Parameters.AddWithValue("@firstname", rsbsa.firstname);
                     command.Parameters.AddWithValue("@middlename", rsbsa.middlename);
@@ -613,6 +617,16 @@ namespace AgRecords.Model
                     if (reader.Read())
                     {
                         farmerInfo = new RSBSA();
+
+                        // Check if "docPhoto" field is not DBNull
+                        if (reader["farmerImg"] != DBNull.Value)
+                        {
+                            // Convert byte array to image
+                            byte[] farmerImgBytes = (byte[])reader["farmerImg"];
+                            Image farmerImg = GetImageFromByteArray(farmerImgBytes);
+                            farmerInfo.farmerImg = farmerImg;
+                        }
+
                         farmerInfo.surname = reader["surname"].ToString();
                         farmerInfo.firstname = reader["firstname"].ToString();
                         farmerInfo.middlename = reader["middlename"].ToString();

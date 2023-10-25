@@ -28,6 +28,8 @@ namespace AgRecords.View
             Instance = this;
             currentRSBSAId = labelRsbsaId;
 
+            pbFarmerPhoto.SizeMode = PictureBoxSizeMode.Zoom;
+
             //to restore data
             //RSBSA Info
             labelRsbsaId.Text = rsbsaInfo.rsbsaId;
@@ -37,6 +39,11 @@ namespace AgRecords.View
             //Farmer Info
             if (farmerInfo != null)
             {
+                if (farmerInfo.farmerImg != null)
+                {
+                    pbFarmerPhoto.Image = farmerInfo.farmerImg;
+                }
+
                 txtSurname.Text = farmerInfo.surname;
                 txtFirstname.Text = farmerInfo.firstname;
                 txtMiddlename.Text = farmerInfo.middlename;
@@ -412,6 +419,7 @@ namespace AgRecords.View
             RadioButton rbCoop = panelCoop.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             //farmer info
+            Image farmerPhoto = null;
             string rbIsHouseholdHeadText = "No";
             string rbCivilStatusText = "";
             string rbEducText = "";
@@ -586,13 +594,22 @@ namespace AgRecords.View
                 isParticipantAgriProgramText = "Yes";
             }
 
+            if (pbFarmerPhoto.Image != null)
+            {
+                farmerPhoto = pbFarmerPhoto.Image;
+            }
+            else
+            {
+                farmerPhoto = null;
+            }
+
 
             if (rsbsaController.EditRSBSA(
                 //rsbsa info
                 labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
 
                 //farmer info
-                txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
+                farmerPhoto, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
                 txtAddPurok.Text, txtAddStreet.Text, cbAddBrgy.Text, txtAddMunicipality.Text, txtAddProvince.Text, txtAddRegion.Text,
                 rbEducText, txtMobNo.Text, txtLandNo.Text, rbGovIdText, txtGovIdType.Text, txtGovIdNum.Text,
                 dtpBirthDate.Value.Date, txtBirthMunicipality.Text, txtBirthProvince.Text, txtBirthCountry.Text,
@@ -622,6 +639,20 @@ namespace AgRecords.View
                 this.Close();
                 FormClosed?.Invoke(this, EventArgs.Empty);
 
+            }
+        }
+
+        private void pbFarmerPhoto_DoubleClick(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif) | *.jpg; *.jpeg; *.png; *.gif";
+                openFileDialog.Multiselect = false;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pbFarmerPhoto.Image = Image.FromFile(openFileDialog.FileName);
+                }
             }
         }
     }
