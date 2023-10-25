@@ -1128,5 +1128,32 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable SearchRSBSA(string searchText, string categoryText, string barangay, string commodityType)
+        {
+            DataTable dt = new DataTable();
+            if (categoryText == "ALL")
+            {
+                dt = rsbsaModel.SearchRSBSAAll(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "ID")
+            {
+                dt = rsbsaModel.SearchRSBSAID(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "SURNAME")
+            {
+                dt = rsbsaModel.SearchRSBSASurname(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "FIRST NAME")
+            {
+                dt = rsbsaModel.SearchRSBSAFirsName(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "MIDDLE NAME")
+            {
+                dt = rsbsaModel.SearchRSBSAMiddleName(searchText, barangay, commodityType);
+            }
+
+            return dt;
+        }
+
     }
 }

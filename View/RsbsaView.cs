@@ -16,7 +16,8 @@ namespace AgRecords.View
     {
         private Panel parentPanel;
         private RSBSAController rsbsaController;
-
+        private string brgy = "";
+        private string commType = "";
 
         public RsbsaView(Control parentControl)
         {
@@ -32,8 +33,13 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
+            comboBoxSearchCategory.SelectedIndex = 0;
+            comboBoxFilterBrgy.SelectedIndex = 0;
+            comboBoxFilterCommodity.SelectedIndex = 0;
+
             DataTable rsbasaTable = rsbsaController.LoadRSBSAView();
             dgvRsbsa.DataSource = rsbasaTable;
+
 
         }
 
@@ -99,6 +105,70 @@ namespace AgRecords.View
                     MessageBox.Show("Null RSBSA ID", "RSBSA is null.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
+            }
+        }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            getBarangay(comboBoxFilterBrgy);
+            getCommType(comboBoxFilterCommodity);
+            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+            dgvRsbsa.DataSource = dt;
+
+
+        }
+
+        private void comboBoxSearchCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getBarangay(comboBoxFilterBrgy);
+            getCommType(comboBoxFilterCommodity);
+            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+            dgvRsbsa.DataSource = dt;
+
+
+        }
+
+        private void comboBoxFilterBrgy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getBarangay(comboBoxFilterBrgy);
+            getCommType(comboBoxFilterCommodity);
+            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+            dgvRsbsa.DataSource = dt;
+
+
+        }
+
+        private void comboBoxFilterCommodity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getBarangay(comboBoxFilterBrgy);
+            getCommType(comboBoxFilterCommodity);
+            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+            dgvRsbsa.DataSource = dt;
+
+        }
+
+        public string getBarangay(ComboBox comboBox)
+        {
+            brgy = comboBox.Text;
+            if (brgy == "ALL")
+            {
+                return brgy = "";
+            }
+            else
+            {
+                return brgy;
+            }
+        }
+        public string getCommType(ComboBox comboBox)
+        {
+            commType = comboBox.Text;
+            if (commType == "ALL")
+            {
+                return commType = "";
+            }
+            else
+            {
+                return commType;
             }
         }
 

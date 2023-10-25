@@ -975,10 +975,125 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable SearchRSBSAAll(string searchText, string barangay, string commodityType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchRSBSAAll(@searchText, @barangay, @commodityType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@barangay", barangay);
+                    command.Parameters.AddWithValue("@commodityType", commodityType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching RSBSA: " + ex.Message, ex);
+            }
+        }
 
+        public DataTable SearchRSBSAID(string searchText, string barangay, string commodityType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchRSBSAID(@searchText, @barangay, @commodityType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@barangay", barangay);
+                    command.Parameters.AddWithValue("@commodityType", commodityType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching RSBSA: " + ex.Message, ex);
+            }
+        }
 
+        public DataTable SearchRSBSASurname(string searchText, string barangay, string commodityType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchRSBSASurname(@searchText, @barangay, @commodityType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@barangay", barangay);
+                    command.Parameters.AddWithValue("@commodityType", commodityType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching RSBSA: " + ex.Message, ex);
+            }
+        }
 
+        public DataTable SearchRSBSAFirsName(string searchText, string barangay, string commodityType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchRSBSAFirstname(@searchText, @barangay, @commodityType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@barangay", barangay);
+                    command.Parameters.AddWithValue("@commodityType", commodityType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching RSBSA: " + ex.Message, ex);
+            }
+        }
 
+        public DataTable SearchRSBSAMiddleName(string searchText, string barangay, string commodityType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchRSBSAMiddleName(@searchText, @barangay, @commodityType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@barangay", barangay);
+                    command.Parameters.AddWithValue("@commodityType", commodityType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching RSBSA: " + ex.Message, ex);
+            }
+        }
 
     }
 }

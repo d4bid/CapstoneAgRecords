@@ -376,6 +376,29 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable SearchLetterTags(string searchText, string letterType)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_searchLetterTags(@searchText, @letterType)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@searchText", searchText);
+                    command.Parameters.AddWithValue("@letterType", letterType);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error Searching Letter: " + ex.Message, ex);
+            }
+        }
+
         public DataTable SearchLetterType(string searchText, string letterType)
         {
             try
