@@ -560,7 +560,7 @@ namespace AgRecords.View
 
         private void btnReportsRsbsa_Click(object sender, EventArgs e)
         {
-            AnalyticsRsbsaView analyticsRsbsaView= new AnalyticsRsbsaView(panelDesktop);
+            AnalyticsRsbsaView analyticsRsbsaView = new AnalyticsRsbsaView(panelDesktop);
             //userView.formRefresh();
             analyticsRsbsaView.TopLevel = false;
             analyticsRsbsaView.FormBorderStyle = FormBorderStyle.None;

@@ -129,7 +129,7 @@
             btnActivities.FlatStyle = FlatStyle.Flat;
             btnActivities.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnActivities.ForeColor = Color.White;
-            btnActivities.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            btnActivities.IconChar = FontAwesome.Sharp.IconChar.ListCheck;
             btnActivities.IconColor = Color.White;
             btnActivities.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnActivities.IconSize = 32;
@@ -267,7 +267,7 @@
             btnReports.FlatStyle = FlatStyle.Flat;
             btnReports.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReports.ForeColor = Color.White;
-            btnReports.IconChar = FontAwesome.Sharp.IconChar.FileText;
+            btnReports.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
             btnReports.IconColor = Color.White;
             btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReports.IconSize = 32;
@@ -514,7 +514,7 @@
             // 
             // btnHome
             // 
-            btnHome.BackgroundImage = Properties.Resources.logo2;
+            btnHome.BackgroundImage = Properties.Resources.tempLogo1;
             btnHome.BackgroundImageLayout = ImageLayout.Zoom;
             btnHome.Location = new Point(60, 13);
             btnHome.Margin = new Padding(3, 4, 3, 4);
@@ -566,7 +566,7 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
             lblUsername.ForeColor = Color.FromArgb(43, 121, 223);
-            lblUsername.Location = new Point(960, 13);
+            lblUsername.Location = new Point(777, 13);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(62, 17);
             lblUsername.TabIndex = 27;
@@ -596,7 +596,7 @@
             btnMin.IconColor = Color.FromArgb(43, 121, 223);
             btnMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMin.IconSize = 15;
-            btnMin.Location = new Point(1028, 7);
+            btnMin.Location = new Point(1066, 7);
             btnMin.Margin = new Padding(3, 4, 3, 4);
             btnMin.Name = "btnMin";
             btnMin.Size = new Size(46, 19);
@@ -614,12 +614,13 @@
             btnMax.IconColor = Color.FromArgb(43, 121, 223);
             btnMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMax.IconSize = 15;
-            btnMax.Location = new Point(1071, 7);
+            btnMax.Location = new Point(832, 13);
             btnMax.Margin = new Padding(3, 4, 3, 4);
             btnMax.Name = "btnMax";
             btnMax.Size = new Size(46, 19);
             btnMax.TabIndex = 24;
             btnMax.UseVisualStyleBackColor = false;
+            btnMax.Visible = false;
             btnMax.Click += btnMax_Click;
             // 
             // btnExit

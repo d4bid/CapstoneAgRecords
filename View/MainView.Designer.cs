@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             pbMap = new PictureBox();
             panelNotif = new Panel();
@@ -45,7 +45,6 @@
             pbLogoDa = new PictureBox();
             pbLogoSolano = new PictureBox();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbMap).BeginInit();
             panelNotif.SuspendLayout();
             panel4.SuspendLayout();
@@ -55,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)pbLogoDa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbLogoSolano).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pbMap
@@ -101,25 +99,25 @@
             dgvNotif.BorderStyle = BorderStyle.None;
             dgvNotif.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvNotif.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvNotif.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvNotif.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvNotif.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNotif.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvNotif.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvNotif.DefaultCellStyle = dataGridViewCellStyle8;
             dgvNotif.Dock = DockStyle.Fill;
             dgvNotif.GridColor = Color.FromArgb(239, 239, 239);
             dgvNotif.Location = new Point(10, 10);
@@ -231,22 +229,12 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(pbLogoSolano);
             panel2.Controls.Add(pbLogoDa);
             panel2.Location = new Point(915, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(668, 236);
             panel2.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Silver;
-            pictureBox1.Location = new Point(26, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 200);
-            pictureBox1.TabIndex = 15;
-            pictureBox1.TabStop = false;
             // 
             // MainView
             // 
@@ -272,7 +260,6 @@
             ((System.ComponentModel.ISupportInitialize)pbLogoDa).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbLogoSolano).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -287,7 +274,6 @@
         private PictureBox pbLogoDa;
         private PictureBox pbLogoSolano;
         private Panel panel2;
-        private PictureBox pictureBox1;
         private Panel panel4;
         private Panel panel3;
         private Label label5;

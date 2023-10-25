@@ -31,7 +31,6 @@
             panelLeft = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label4 = new Label();
             panelRight = new Panel();
             btnShowPass = new FontAwesome.Sharp.IconButton();
@@ -49,19 +48,20 @@
             lblUsername = new Label();
             btnMin = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)systemLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelLeft
             // 
             panelLeft.BackColor = Color.White;
+            panelLeft.Controls.Add(iconPictureBox1);
             panelLeft.Controls.Add(pictureBox1);
             panelLeft.Controls.Add(label3);
-            panelLeft.Controls.Add(iconPictureBox1);
             panelLeft.Controls.Add(label4);
             panelLeft.Dock = DockStyle.Left;
             panelLeft.Location = new Point(0, 0);
@@ -86,23 +86,9 @@
             label3.ForeColor = Color.FromArgb(43, 121, 223);
             label3.Location = new Point(40, 10);
             label3.Name = "label3";
-            label3.Size = new Size(64, 15);
+            label3.Size = new Size(81, 20);
             label3.TabIndex = 43;
             label3.Text = "AgRecords";
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.White;
-            iconPictureBox1.ForeColor = Color.FromArgb(0, 108, 103);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.WheatAwn;
-            iconPictureBox1.IconColor = Color.FromArgb(0, 108, 103);
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 28;
-            iconPictureBox1.Location = new Point(7, 4);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(28, 28);
-            iconPictureBox1.TabIndex = 43;
-            iconPictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -111,7 +97,7 @@
             label4.ForeColor = Color.FromArgb(148, 145, 145);
             label4.Location = new Point(7, 477);
             label4.Name = "label4";
-            label4.Size = new Size(61, 15);
+            label4.Size = new Size(72, 17);
             label4.TabIndex = 13;
             label4.Text = "Version 1.0";
             // 
@@ -180,9 +166,8 @@
             txtPassword.Location = new Point(42, 309);
             txtPassword.Margin = new Padding(5, 3, 3, 3);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(290, 21);
+            txtPassword.Size = new Size(290, 26);
             txtPassword.TabIndex = 2;
-            txtPassword.Text = "david";
             txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -192,9 +177,8 @@
             txtUsername.Location = new Point(42, 227);
             txtUsername.Margin = new Padding(5, 3, 3, 3);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(333, 21);
+            txtUsername.Size = new Size(333, 26);
             txtUsername.TabIndex = 1;
-            txtUsername.Text = "david";
             // 
             // rectangleBlue2
             // 
@@ -213,8 +197,10 @@
             // systemLogo
             // 
             systemLogo.BackColor = Color.White;
+            systemLogo.BackgroundImage = Properties.Resources.tempLogo2;
+            systemLogo.BackgroundImageLayout = ImageLayout.Zoom;
             systemLogo.ForeColor = Color.FromArgb(0, 108, 103);
-            systemLogo.IconChar = FontAwesome.Sharp.IconChar.WheatAwn;
+            systemLogo.IconChar = FontAwesome.Sharp.IconChar.None;
             systemLogo.IconColor = Color.FromArgb(0, 108, 103);
             systemLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             systemLogo.Location = new Point(202, 74);
@@ -231,7 +217,7 @@
             lblError.ImageAlign = ContentAlignment.MiddleLeft;
             lblError.Location = new Point(35, 349);
             lblError.Name = "lblError";
-            lblError.Size = new Size(180, 15);
+            lblError.Size = new Size(232, 20);
             lblError.TabIndex = 39;
             lblError.Text = "Incorrect username or password.";
             lblError.Visible = false;
@@ -243,7 +229,7 @@
             label2.ForeColor = Color.FromArgb(43, 121, 223);
             label2.Location = new Point(140, 143);
             label2.Name = "label2";
-            label2.Size = new Size(124, 15);
+            label2.Size = new Size(153, 20);
             label2.TabIndex = 38;
             label2.Text = "Login to your account";
             // 
@@ -254,7 +240,7 @@
             label1.ForeColor = Color.FromArgb(43, 121, 223);
             label1.Location = new Point(161, 112);
             label1.Name = "label1";
-            label1.Size = new Size(91, 25);
+            label1.Size = new Size(113, 31);
             label1.TabIndex = 37;
             label1.Text = "Welcome";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -281,7 +267,7 @@
             lblPassword.ForeColor = Color.FromArgb(43, 121, 223);
             lblPassword.Location = new Point(34, 275);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(68, 19);
+            lblPassword.Size = new Size(82, 23);
             lblPassword.TabIndex = 33;
             lblPassword.Text = "Password";
             // 
@@ -292,7 +278,7 @@
             lblUsername.ForeColor = Color.FromArgb(43, 121, 223);
             lblUsername.Location = new Point(34, 194);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(71, 19);
+            lblUsername.Size = new Size(87, 23);
             lblUsername.TabIndex = 32;
             lblUsername.Text = "Username";
             // 
@@ -332,10 +318,25 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.White;
+            iconPictureBox1.BackgroundImage = Properties.Resources.tempLogo2;
+            iconPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            iconPictureBox1.ForeColor = Color.FromArgb(0, 108, 103);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox1.IconColor = Color.FromArgb(0, 108, 103);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.Location = new Point(3, 5);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(32, 32);
+            iconPictureBox1.TabIndex = 45;
+            iconPictureBox1.TabStop = false;
+            // 
             // LoginView
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 500);
@@ -349,10 +350,10 @@
             panelLeft.ResumeLayout(false);
             panelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panelRight.ResumeLayout(false);
             panelRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)systemLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -375,9 +376,9 @@
         private TextBox txtPassword;
         private TextBox txtUsername;
         private Label label3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private PictureBox pictureBox1;
         private RectangleBlue rectangleBlue2;
         private RectangleBlue rectangleBlue1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
