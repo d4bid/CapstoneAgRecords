@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
@@ -48,6 +48,10 @@
             panel3 = new Panel();
             panel2 = new Panel();
             panel4 = new Panel();
+            cbGrandTotal = new CheckBox();
+            cbUpland = new CheckBox();
+            cbLowland = new CheckBox();
+            cbIrrigated = new CheckBox();
             panel43 = new Panel();
             labelRiceStandingLogsId = new Label();
             searchBox12 = new SearchBox();
@@ -76,10 +80,6 @@
             panel44 = new Panel();
             label46 = new Label();
             dgvRiceStandLogs = new DataGridView();
-            cbIrrigated = new CheckBox();
-            cbLowland = new CheckBox();
-            cbUpland = new CheckBox();
-            cbGrandTotal = new CheckBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -129,6 +129,7 @@
             btnCancel.TabIndex = 51;
             btnCancel.Text = "Back";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
@@ -282,6 +283,50 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(790, 46);
             panel4.TabIndex = 75;
+            // 
+            // cbGrandTotal
+            // 
+            cbGrandTotal.AutoSize = true;
+            cbGrandTotal.Location = new Point(623, 11);
+            cbGrandTotal.Name = "cbGrandTotal";
+            cbGrandTotal.Size = new Size(108, 24);
+            cbGrandTotal.TabIndex = 3;
+            cbGrandTotal.Text = "Grand Total";
+            cbGrandTotal.UseVisualStyleBackColor = true;
+            cbGrandTotal.CheckedChanged += cbGrandTotal_CheckedChanged;
+            // 
+            // cbUpland
+            // 
+            cbUpland.AutoSize = true;
+            cbUpland.Location = new Point(410, 11);
+            cbUpland.Name = "cbUpland";
+            cbUpland.Size = new Size(134, 24);
+            cbUpland.TabIndex = 2;
+            cbUpland.Text = "Rainfed Upland";
+            cbUpland.UseVisualStyleBackColor = true;
+            cbUpland.CheckedChanged += cbUpland_CheckedChanged;
+            // 
+            // cbLowland
+            // 
+            cbLowland.AutoSize = true;
+            cbLowland.Location = new Point(191, 11);
+            cbLowland.Name = "cbLowland";
+            cbLowland.Size = new Size(142, 24);
+            cbLowland.TabIndex = 1;
+            cbLowland.Text = "Rainfed Lowland";
+            cbLowland.UseVisualStyleBackColor = true;
+            cbLowland.CheckedChanged += cbLowland_CheckedChanged;
+            // 
+            // cbIrrigated
+            // 
+            cbIrrigated.AutoSize = true;
+            cbIrrigated.Location = new Point(37, 11);
+            cbIrrigated.Name = "cbIrrigated";
+            cbIrrigated.Size = new Size(88, 24);
+            cbIrrigated.TabIndex = 0;
+            cbIrrigated.Text = "Irrigated";
+            cbIrrigated.UseVisualStyleBackColor = true;
+            cbIrrigated.CheckedChanged += cbIrrigated_CheckedChanged;
             // 
             // panel43
             // 
@@ -589,24 +634,24 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvRiceStandLogs.Location = new Point(17, 295);
             dgvRiceStandLogs.Name = "dgvRiceStandLogs";
@@ -618,50 +663,6 @@
             dgvRiceStandLogs.Size = new Size(1565, 519);
             dgvRiceStandLogs.TabIndex = 23;
             dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
-            // 
-            // cbIrrigated
-            // 
-            cbIrrigated.AutoSize = true;
-            cbIrrigated.Location = new Point(37, 11);
-            cbIrrigated.Name = "cbIrrigated";
-            cbIrrigated.Size = new Size(88, 24);
-            cbIrrigated.TabIndex = 0;
-            cbIrrigated.Text = "Irrigated";
-            cbIrrigated.UseVisualStyleBackColor = true;
-            cbIrrigated.CheckedChanged += cbIrrigated_CheckedChanged;
-            // 
-            // cbLowland
-            // 
-            cbLowland.AutoSize = true;
-            cbLowland.Location = new Point(191, 11);
-            cbLowland.Name = "cbLowland";
-            cbLowland.Size = new Size(142, 24);
-            cbLowland.TabIndex = 1;
-            cbLowland.Text = "Rainfed Lowland";
-            cbLowland.UseVisualStyleBackColor = true;
-            cbLowland.CheckedChanged += cbLowland_CheckedChanged;
-            // 
-            // cbUpland
-            // 
-            cbUpland.AutoSize = true;
-            cbUpland.Location = new Point(410, 11);
-            cbUpland.Name = "cbUpland";
-            cbUpland.Size = new Size(134, 24);
-            cbUpland.TabIndex = 2;
-            cbUpland.Text = "Rainfed Upland";
-            cbUpland.UseVisualStyleBackColor = true;
-            cbUpland.CheckedChanged += cbUpland_CheckedChanged;
-            // 
-            // cbGrandTotal
-            // 
-            cbGrandTotal.AutoSize = true;
-            cbGrandTotal.Location = new Point(623, 11);
-            cbGrandTotal.Name = "cbGrandTotal";
-            cbGrandTotal.Size = new Size(108, 24);
-            cbGrandTotal.TabIndex = 3;
-            cbGrandTotal.Text = "Grand Total";
-            cbGrandTotal.UseVisualStyleBackColor = true;
-            cbGrandTotal.CheckedChanged += cbGrandTotal_CheckedChanged;
             // 
             // CropsRiceAddView
             // 

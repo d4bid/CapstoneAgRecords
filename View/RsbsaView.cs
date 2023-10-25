@@ -65,20 +65,6 @@ namespace AgRecords.View
             rsbsaView.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RSBSAtry rsbsaTry = new RSBSAtry();
-            //rsbsaTry.FormClosed += RSBSATry_FormClosed;
-
-            rsbsaTry.TopLevel = false;
-            rsbsaTry.FormBorderStyle = FormBorderStyle.None;
-            rsbsaTry.Dock = DockStyle.Fill;
-
-            parentPanel.Controls.Clear();
-            parentPanel.Controls.Add(rsbsaTry);
-            rsbsaTry.Show();
-        }
-
         private void dgvRsbsa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -114,6 +100,12 @@ namespace AgRecords.View
 
                 }
             }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            RSBSAImportExcelView importExcelView = new RSBSAImportExcelView();
+            importExcelView.ShowDialog();
         }
     }
 }

@@ -23,6 +23,8 @@ namespace AgRecords.View
     public partial class CropsRiceEditView : Form
     {
         private CropsRiceController cropsRiceController;
+        public event EventHandler FormClosed;
+
 
         public CropsRiceEditView(RicePlantingRep rpr, RiceStandingRep rsr, RiceHarvestingRep rhr)
         {
@@ -735,7 +737,7 @@ namespace AgRecords.View
             {
 
             }
-            
+
 
             // Optionally, you can quit the Excel application here if needed
             // excelApp.Quit();
@@ -750,6 +752,12 @@ namespace AgRecords.View
         private void cmbSeedTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             HandleCheckboxConditions();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

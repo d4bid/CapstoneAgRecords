@@ -16,6 +16,8 @@ namespace AgRecords.View
     public partial class CropsRiceAddView : Form
     {
         private CropsRiceController cropsRiceController;
+        public event EventHandler FormClosed;
+
         public CropsRiceAddView()
         {
             InitializeComponent();
@@ -317,6 +319,12 @@ namespace AgRecords.View
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

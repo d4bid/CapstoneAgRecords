@@ -112,7 +112,7 @@
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 51;
+            btnCancel.TabIndex = 7;
             btnCancel.Text = "Back";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -312,7 +312,7 @@
             txtSize.Location = new Point(671, 90);
             txtSize.Name = "txtSize";
             txtSize.Size = new Size(148, 24);
-            txtSize.TabIndex = 94;
+            txtSize.TabIndex = 2;
             txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11
@@ -357,7 +357,7 @@
             cmbCropType.Location = new Point(129, 86);
             cmbCropType.Name = "cmbCropType";
             cmbCropType.Size = new Size(200, 33);
-            cmbCropType.TabIndex = 89;
+            cmbCropType.TabIndex = 1;
             // 
             // searchBox8
             // 
@@ -393,11 +393,11 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1410, 51);
+            btnUpdate.Location = new Point(1410, 50);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 39);
-            btnUpdate.TabIndex = 79;
+            btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
@@ -418,7 +418,7 @@
             dtpLogDate.Location = new Point(875, 82);
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(135, 28);
-            dtpLogDate.TabIndex = 53;
+            dtpLogDate.TabIndex = 3;
             // 
             // btnClear
             // 
@@ -434,7 +434,7 @@
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 39);
-            btnClear.TabIndex = 52;
+            btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
@@ -451,7 +451,7 @@
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 39);
-            btnNew.TabIndex = 40;
+            btnNew.TabIndex = 4;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
             btnNew.Click += btnNew_Click;

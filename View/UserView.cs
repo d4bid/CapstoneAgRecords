@@ -103,11 +103,5 @@ namespace AgRecords.View
             parentPanel.Controls.Add(userView);
             userView.Show();
         }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            RSBSAImportExcelView importExcelView = new RSBSAImportExcelView();
-            importExcelView.ShowDialog();
-        }
     }
 }

@@ -154,7 +154,7 @@ namespace AgRecords.View
                             }
                         }
                     }
-                    
+
                 }
             }
             // All rows are saved, update progress label
