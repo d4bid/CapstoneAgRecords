@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using OxyPlot.WindowsForms;
+using OxyPlot;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +16,14 @@ namespace AgRecords.View
     public partial class DashboardView : Form
     {
         private Panel parentPanel;
+        private AnalyticsController analyticsController;
 
         public DashboardView(Control parentControl)
         {
             InitializeComponent();
+
             this.parentPanel = parentControl as Panel;
+            analyticsController = new AnalyticsController(this);
         }
 
         // Methods
@@ -35,7 +41,16 @@ namespace AgRecords.View
 
         private void DashboardView_Load(object sender, EventArgs e)
         {
+            DataTable data = analyticsController.PieCountFarmerBarangay();
 
+            if (data != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChart(data);
+
+                // Set the pie chart model to the PlotView control
+                pieChart1.Model = pieChart;
+            }
         }
     }
 }

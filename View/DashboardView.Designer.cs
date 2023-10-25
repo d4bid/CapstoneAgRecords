@@ -31,41 +31,48 @@
             rectangleFullBlue1 = new RectangleFullBlue();
             rectangleFullGreen1 = new RectangleFullGreen();
             rectangleFullYellow1 = new RectangleFullYellow();
-            plotView1 = new OxyPlot.WindowsForms.PlotView();
+            pieChart1 = new OxyPlot.WindowsForms.PlotView();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // rectangleFullBlue1
             // 
             rectangleFullBlue1.Location = new Point(28, 25);
             rectangleFullBlue1.Name = "rectangleFullBlue1";
-            rectangleFullBlue1.Size = new Size(352, 149);
+            rectangleFullBlue1.Size = new Size(299, 149);
             rectangleFullBlue1.TabIndex = 0;
             // 
             // rectangleFullGreen1
             // 
-            rectangleFullGreen1.Location = new Point(410, 25);
+            rectangleFullGreen1.Location = new Point(352, 25);
             rectangleFullGreen1.Name = "rectangleFullGreen1";
-            rectangleFullGreen1.Size = new Size(381, 149);
+            rectangleFullGreen1.Size = new Size(299, 149);
             rectangleFullGreen1.TabIndex = 1;
             // 
             // rectangleFullYellow1
             // 
-            rectangleFullYellow1.Location = new Point(814, 25);
+            rectangleFullYellow1.Location = new Point(28, 195);
             rectangleFullYellow1.Name = "rectangleFullYellow1";
-            rectangleFullYellow1.Size = new Size(369, 149);
+            rectangleFullYellow1.Size = new Size(299, 149);
             rectangleFullYellow1.TabIndex = 2;
             // 
-            // plotView1
+            // pieChart1
             // 
-            plotView1.Location = new Point(452, 255);
-            plotView1.Name = "plotView1";
-            plotView1.PanCursor = Cursors.Hand;
-            plotView1.Size = new Size(330, 161);
-            plotView1.TabIndex = 3;
-            plotView1.Text = "plotView1";
-            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
+            pieChart1.Location = new Point(107, 455);
+            pieChart1.Name = "pieChart1";
+            pieChart1.PanCursor = Cursors.Hand;
+            pieChart1.Size = new Size(418, 358);
+            pieChart1.TabIndex = 3;
+            pieChart1.ZoomHorizontalCursor = Cursors.SizeWE;
+            pieChart1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            pieChart1.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(824, 183);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 125);
+            panel1.TabIndex = 4;
             // 
             // DashboardView
             // 
@@ -73,11 +80,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
-            Controls.Add(plotView1);
+            Controls.Add(pieChart1);
             Controls.Add(rectangleFullYellow1);
             Controls.Add(rectangleFullGreen1);
             Controls.Add(rectangleFullBlue1);
+            Controls.Add(panel1);
             Name = "DashboardView";
+            Padding = new Padding(10);
             Text = "DashboardView";
             Load += DashboardView_Load;
             ResumeLayout(false);
@@ -88,6 +97,7 @@
         private RectangleFullBlue rectangleFullBlue1;
         private RectangleFullGreen rectangleFullGreen1;
         private RectangleFullYellow rectangleFullYellow1;
-        private OxyPlot.WindowsForms.PlotView plotView1;
+        private OxyPlot.WindowsForms.PlotView pieChart1;
+        private Panel panel1;
     }
 }
