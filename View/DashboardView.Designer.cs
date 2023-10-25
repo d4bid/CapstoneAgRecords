@@ -31,6 +31,7 @@
             rectangleFullBlue1 = new RectangleFullBlue();
             rectangleFullGreen1 = new RectangleFullGreen();
             rectangleFullYellow1 = new RectangleFullYellow();
+            plotView1 = new OxyPlot.WindowsForms.PlotView();
             SuspendLayout();
             // 
             // rectangleFullBlue1
@@ -54,12 +55,25 @@
             rectangleFullYellow1.Size = new Size(369, 149);
             rectangleFullYellow1.TabIndex = 2;
             // 
+            // plotView1
+            // 
+            plotView1.Location = new Point(452, 255);
+            plotView1.Name = "plotView1";
+            plotView1.PanCursor = Cursors.Hand;
+            plotView1.Size = new Size(330, 161);
+            plotView1.TabIndex = 3;
+            plotView1.Text = "plotView1";
+            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
+            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
             // DashboardView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
+            Controls.Add(plotView1);
             Controls.Add(rectangleFullYellow1);
             Controls.Add(rectangleFullGreen1);
             Controls.Add(rectangleFullBlue1);
@@ -74,5 +88,6 @@
         private RectangleFullBlue rectangleFullBlue1;
         private RectangleFullGreen rectangleFullGreen1;
         private RectangleFullYellow rectangleFullYellow1;
+        private OxyPlot.WindowsForms.PlotView plotView1;
     }
 }
