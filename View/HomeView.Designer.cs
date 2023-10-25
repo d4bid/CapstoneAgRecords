@@ -277,8 +277,8 @@
             btnReports.Padding = new Padding(13, 0, 0, 0);
             btnReports.Size = new Size(299, 60);
             btnReports.TabIndex = 19;
-            btnReports.Tag = "Reports";
-            btnReports.Text = "Reports";
+            btnReports.Tag = "Analytics";
+            btnReports.Text = "Analytics";
             btnReports.TextAlign = ContentAlignment.MiddleLeft;
             btnReports.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReports.UseVisualStyleBackColor = true;

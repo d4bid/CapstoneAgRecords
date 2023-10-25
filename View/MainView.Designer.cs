@@ -82,19 +82,20 @@
             // 
             // panel4
             // 
-            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(dgvNotif);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 60);
+            panel4.Location = new Point(0, 40);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(10);
-            panel4.Size = new Size(874, 234);
+            panel4.Size = new Size(874, 254);
             panel4.TabIndex = 17;
             // 
             // dgvNotif
             // 
             dgvNotif.AllowUserToAddRows = false;
             dgvNotif.AllowUserToDeleteRows = false;
+            dgvNotif.AllowUserToResizeColumns = false;
+            dgvNotif.AllowUserToResizeRows = false;
             dgvNotif.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvNotif.BackgroundColor = Color.White;
             dgvNotif.BorderStyle = BorderStyle.None;
@@ -102,7 +103,7 @@
             dgvNotif.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
@@ -110,9 +111,10 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvNotif.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvNotif.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNotif.ColumnHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
@@ -127,7 +129,7 @@
             dgvNotif.RowHeadersWidth = 51;
             dgvNotif.RowTemplate.Height = 40;
             dgvNotif.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvNotif.Size = new Size(852, 212);
+            dgvNotif.Size = new Size(854, 234);
             dgvNotif.TabIndex = 24;
             // 
             // panel3
@@ -136,18 +138,18 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(874, 60);
+            panel3.Size = new Size(874, 40);
             panel3.TabIndex = 16;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(18, 15);
+            label5.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(13, 6);
             label5.Name = "label5";
-            label5.Size = new Size(127, 28);
+            label5.Size = new Size(206, 25);
             label5.TabIndex = 1;
-            label5.Text = "Notifications";
+            label5.Text = "Recently Added Letters";
             // 
             // panel1
             // 
@@ -258,6 +260,7 @@
             Controls.Add(pbMap);
             Name = "MainView";
             Text = "MainView";
+            Load += MainView_Load;
             ((System.ComponentModel.ISupportInitialize)pbMap).EndInit();
             panelNotif.ResumeLayout(false);
             panel4.ResumeLayout(false);

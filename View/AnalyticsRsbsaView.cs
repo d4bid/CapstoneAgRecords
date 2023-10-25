@@ -11,28 +11,36 @@ using System.Windows.Forms;
 
 namespace AgRecords.View
 {
-    public partial class MainView : Form
+    public partial class AnalyticsRsbsaView : Form
     {
         private Panel parentPanel;
         private AnalyticsController analyticsController;
 
-        public MainView(Control parentControl)
+        public AnalyticsRsbsaView(Control parentControl)
         {
             InitializeComponent();
+
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void CountFarmer(string countFarmer)
         {
-
+            labelFarmers.Text = countFarmer.ToString();
         }
 
-        private void MainView_Load(object sender, EventArgs e)
+        public void CountFisherfolk(string countFisherfolk)
         {
-            DataTable lettersTable = analyticsController.LoadLetterNotif();
-            dgvNotif.DataSource = lettersTable;
+            labelFarmers.Text = countFisherfolk.ToString();
+        }
+
+        private void AnalyticsRsbsaView_Load(object sender, EventArgs e)
+        {
+            analyticsController.CountFarmer();
+            analyticsController.CountFisherfolk();
+
+
         }
     }
 }

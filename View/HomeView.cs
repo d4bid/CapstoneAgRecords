@@ -555,11 +555,40 @@ namespace AgRecords.View
 
         private void btnReportsRsbsa_Click(object sender, EventArgs e)
         {
+            AnalyticsRsbsaView analyticsRsbsaView= new AnalyticsRsbsaView(panelDesktop);
+            //userView.formRefresh();
+            analyticsRsbsaView.TopLevel = false;
+            analyticsRsbsaView.FormBorderStyle = FormBorderStyle.None;
+            analyticsRsbsaView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsRsbsaView);
+            analyticsRsbsaView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsRsbsaView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 RSBSA";
+
             HideSubMenu();
         }
 
         private void btnReportsCrops_Click(object sender, EventArgs e)
         {
+            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            //userView.formRefresh();
+            analyticsCropsView.TopLevel = false;
+            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsCropsView);
+            analyticsCropsView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 Crops";
+
+            HideSubMenu();
             HideSubMenu();
         }
 
