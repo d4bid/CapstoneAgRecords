@@ -17,7 +17,7 @@ namespace AgRecords.View
     public partial class CropsCornEditView : Form
     {
         private CropsCornController cropsCornController;
-
+        public event EventHandler FormClosed;
         private string reportType;
 
         public CropsCornEditView(CornReport cr, string reportType)
@@ -651,6 +651,12 @@ namespace AgRecords.View
         private void cmbLandTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayDataTableFilter();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

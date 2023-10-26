@@ -693,45 +693,45 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
             {
-                // Retrieve data from the controller
-                string riceSrId = labelRiceSrId.Text;
-                DataTable data = cropsRiceController.LoadRiceStandingView(riceSrId);
+                //// Retrieve data from the controller
+                //string riceSrId = labelRiceSrId.Text;
+                //DataTable data = cropsRiceController.LoadRiceStandingView(riceSrId);
 
-                string tempPath = "AgRecords/Templates/RiceStandingReport.xlsx";
+                //string tempPath = "AgRecords/Templates/RiceStandingReport.xlsx";
 
-                // Create an instance of Excel Application
-                Excel.Application excelApp = new Excel.Application();
+                //// Create an instance of Excel Application
+                //Excel.Application excelApp = new Excel.Application();
 
-                // Open the Excel template
-                Excel.Workbook workbook = excelApp.Workbooks.Open(tempPath);
+                //// Open the Excel template
+                //Excel.Workbook workbook = excelApp.Workbooks.Open(tempPath);
 
-                // Get the worksheet
-                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
+                //// Get the worksheet
+                //Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
 
-                worksheet.Cells[5, 1].Value = worksheet.Cells[5, 1].Text + labelMonth.Text + " " + labelWeek.Text + ", " + labelYear.Text;
+                //worksheet.Cells[5, 1].Value = worksheet.Cells[5, 1].Text + labelMonth.Text + " " + labelWeek.Text + ", " + labelYear.Text;
 
-                int startRow = 11; // Start at row 12 in the template
-                int startColumn = 2; // Start at column 2 of the MySQL result
+                //int startRow = 11; // Start at row 12 in the template
+                //int startColumn = 2; // Start at column 2 of the MySQL result
 
-                foreach (DataRow row in data.Rows)
-                {
-                    for (int i = 2; i <= 21; i++) // Assuming you want to populate cells from row[2] to row[22]
-                    {
-                        worksheet.Cells[startRow, startColumn] = row[i];
-                        startColumn++;
-                    }
+                //foreach (DataRow row in data.Rows)
+                //{
+                //    for (int i = 2; i <= 21; i++) // Assuming you want to populate cells from row[2] to row[22]
+                //    {
+                //        worksheet.Cells[startRow, startColumn] = row[i];
+                //        startColumn++;
+                //    }
 
-                    startRow++; // Move to the next row in Excel
-                    startColumn = 2; // Reset the column index for the next row
+                //    startRow++; // Move to the next row in Excel
+                //    startColumn = 2; // Reset the column index for the next row
 
-                }
+                //}
 
-                // Display the filled Excel file using Excel application
-                excelApp.Visible = true;
+                //// Display the filled Excel file using Excel application
+                //excelApp.Visible = true;
 
-                // Release Excel objects
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                //// Release Excel objects
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             }
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {

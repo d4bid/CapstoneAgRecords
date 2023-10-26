@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnEdit = new Button();
             btnPrint = new Button();
@@ -66,6 +66,7 @@
             labelGrowthFilter = new Label();
             cmbCornTypeFilter = new ComboBox();
             boxCornTypeFilter = new SearchBox();
+            labelCornTypeFilter = new Label();
             panel43 = new Panel();
             txtAveYield = new TextBox();
             boxAveYield = new SearchBox();
@@ -100,7 +101,6 @@
             panel44 = new Panel();
             labelArea = new Label();
             dgvCornPlanting = new DataGridView();
-            labelCornTypeFilter = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -112,8 +112,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnEdit);
             panel1.Controls.Add(btnPrint);
+            panel1.Controls.Add(btnEdit);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(labelYear);
             panel1.Controls.Add(label12);
@@ -148,7 +148,7 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(1283, 29);
+            btnEdit.Location = new Point(1294, 29);
             btnEdit.Margin = new Padding(3, 4, 3, 4);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(130, 40);
@@ -164,7 +164,7 @@
             btnPrint.FlatStyle = FlatStyle.Flat;
             btnPrint.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnPrint.ForeColor = Color.White;
-            btnPrint.Location = new Point(1116, 29);
+            btnPrint.Location = new Point(1294, 29);
             btnPrint.Margin = new Padding(3, 4, 3, 4);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(130, 40);
@@ -189,6 +189,7 @@
             btnCancel.TabIndex = 51;
             btnCancel.Text = "Back";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // labelYear
             // 
@@ -493,6 +494,15 @@
             boxCornTypeFilter.Size = new Size(229, 33);
             boxCornTypeFilter.TabIndex = 84;
             // 
+            // labelCornTypeFilter
+            // 
+            labelCornTypeFilter.AutoSize = true;
+            labelCornTypeFilter.Location = new Point(27, 13);
+            labelCornTypeFilter.Name = "labelCornTypeFilter";
+            labelCornTypeFilter.Size = new Size(75, 20);
+            labelCornTypeFilter.TabIndex = 83;
+            labelCornTypeFilter.Text = "Corn Type";
+            // 
             // panel43
             // 
             panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -730,6 +740,7 @@
             labelMaxLogId.Size = new Size(102, 28);
             labelMaxLogId.TabIndex = 82;
             labelMaxLogId.Text = "MaxLogId";
+            labelMaxLogId.Visible = false;
             // 
             // btnUpdate
             // 
@@ -859,24 +870,24 @@
             dgvCornPlanting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCornPlanting.BackgroundColor = Color.White;
             dgvCornPlanting.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvCornPlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle6;
             dgvCornPlanting.GridColor = Color.FromArgb(239, 239, 239);
             dgvCornPlanting.Location = new Point(17, 308);
             dgvCornPlanting.Name = "dgvCornPlanting";
@@ -888,15 +899,6 @@
             dgvCornPlanting.Size = new Size(1565, 506);
             dgvCornPlanting.TabIndex = 23;
             dgvCornPlanting.CellDoubleClick += dgvCornPlanting_CellDoubleClick;
-            // 
-            // labelCornTypeFilter
-            // 
-            labelCornTypeFilter.AutoSize = true;
-            labelCornTypeFilter.Location = new Point(27, 13);
-            labelCornTypeFilter.Name = "labelCornTypeFilter";
-            labelCornTypeFilter.Size = new Size(75, 20);
-            labelCornTypeFilter.TabIndex = 83;
-            labelCornTypeFilter.Text = "Corn Type";
             // 
             // CropsCornEditView
             // 

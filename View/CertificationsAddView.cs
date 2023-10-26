@@ -10,19 +10,21 @@ using System.Windows.Forms;
 
 namespace AgRecords.View
 {
-    public partial class RSBSAtry : Form
+    public partial class CertificationsAddView : Form
     {
-        public RSBSAtry()
+        public CertificationsAddView()
         {
             InitializeComponent();
         }
 
-        private void RSBSAtry_Load(object sender, EventArgs e)
+        private void CertificationsAddView_Load(object sender, EventArgs e)
         {
-            this.HorizontalScroll.Enabled = true;
-            this.HorizontalScroll.Visible = true;
-            this.VerticalScroll.Enabled = false;
-            this.VerticalScroll.Visible = false;
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

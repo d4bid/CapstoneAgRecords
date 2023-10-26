@@ -384,6 +384,7 @@
             labelMaxLogId.Size = new Size(102, 28);
             labelMaxLogId.TabIndex = 82;
             labelMaxLogId.Text = "MaxLogId";
+            labelMaxLogId.Visible = false;
             // 
             // btnUpdate
             // 

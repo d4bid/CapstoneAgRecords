@@ -1,6 +1,6 @@
 ﻿namespace AgRecords.View
 {
-    partial class CropsHvcView
+    partial class WeeklyActivitiesView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnAdd = new Button();
             cmbColumn = new ComboBox();
             searchBox2 = new SearchBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -40,17 +39,18 @@
             label1 = new Label();
             panel3 = new Panel();
             panel2 = new Panel();
-            dgvHvc = new DataGridView();
+            dgvActivities = new DataGridView();
+            btnPrint = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvHvc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvActivities).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnAdd);
+            panel1.Controls.Add(btnPrint);
             panel1.Controls.Add(cmbColumn);
             panel1.Controls.Add(searchBox2);
             panel1.Controls.Add(iconPictureBox1);
@@ -62,24 +62,7 @@
             panel1.Name = "panel1";
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
-            panel1.TabIndex = 24;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAdd.BackColor = Color.FromArgb(43, 121, 223);
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(1438, 27);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(139, 39);
-            btnAdd.TabIndex = 18;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
+            panel1.TabIndex = 25;
             // 
             // cmbColumn
             // 
@@ -147,27 +130,27 @@
             panel3.Location = new Point(0, 90);
             panel3.Name = "panel3";
             panel3.Size = new Size(1595, 10);
-            panel3.TabIndex = 26;
+            panel3.TabIndex = 27;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(dgvHvc);
+            panel2.Controls.Add(dgvActivities);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 100);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(10);
             panel2.Size = new Size(1595, 826);
-            panel2.TabIndex = 27;
+            panel2.TabIndex = 28;
             // 
-            // dgvHvc
+            // dgvActivities
             // 
-            dgvHvc.AllowUserToAddRows = false;
-            dgvHvc.AllowUserToDeleteRows = false;
-            dgvHvc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvHvc.BackgroundColor = Color.White;
-            dgvHvc.BorderStyle = BorderStyle.None;
-            dgvHvc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvActivities.AllowUserToAddRows = false;
+            dgvActivities.AllowUserToDeleteRows = false;
+            dgvActivities.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvActivities.BackgroundColor = Color.White;
+            dgvActivities.BorderStyle = BorderStyle.None;
+            dgvActivities.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -176,8 +159,8 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvHvc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvHvc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvActivities.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -185,21 +168,36 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvHvc.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvHvc.Dock = DockStyle.Fill;
-            dgvHvc.GridColor = Color.FromArgb(239, 239, 239);
-            dgvHvc.Location = new Point(10, 10);
-            dgvHvc.Name = "dgvHvc";
-            dgvHvc.ReadOnly = true;
-            dgvHvc.RowHeadersVisible = false;
-            dgvHvc.RowHeadersWidth = 51;
-            dgvHvc.RowTemplate.Height = 40;
-            dgvHvc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHvc.Size = new Size(1575, 806);
-            dgvHvc.TabIndex = 23;
-            dgvHvc.CellDoubleClick += dgvHvc_CellDoubleClick;
+            dgvActivities.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvActivities.Dock = DockStyle.Fill;
+            dgvActivities.GridColor = Color.FromArgb(239, 239, 239);
+            dgvActivities.Location = new Point(10, 10);
+            dgvActivities.Name = "dgvActivities";
+            dgvActivities.ReadOnly = true;
+            dgvActivities.RowHeadersVisible = false;
+            dgvActivities.RowHeadersWidth = 51;
+            dgvActivities.RowTemplate.Height = 40;
+            dgvActivities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvActivities.Size = new Size(1575, 806);
+            dgvActivities.TabIndex = 23;
             // 
-            // CropsHvcView
+            // btnPrint
+            // 
+            btnPrint.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPrint.BackColor = Color.FromArgb(43, 121, 223);
+            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPrint.ForeColor = Color.White;
+            btnPrint.Location = new Point(1442, 34);
+            btnPrint.Margin = new Padding(3, 4, 3, 4);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(130, 40);
+            btnPrint.TabIndex = 55;
+            btnPrint.Text = "Print";
+            btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // WeeklyActivitiesView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -208,21 +206,19 @@
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "CropsHvcView";
-            Text = "CropsHvcView";
-            Load += CropsHvcView_Load;
+            Name = "WeeklyActivitiesView";
+            Text = "WeeklyActivitiesView";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvHvc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvActivities).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Button btnAdd;
         private ComboBox cmbColumn;
         private SearchBox searchBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
@@ -231,6 +227,7 @@
         private Label label1;
         private Panel panel3;
         private Panel panel2;
-        private DataGridView dgvHvc;
+        private DataGridView dgvActivities;
+        private Button btnPrint;
     }
 }
