@@ -16,6 +16,7 @@ namespace AgRecords.View
 {
     public partial class HomeView : Form
     {
+        UserModel userModel = new UserModel();
         private int borderSize = 2;
         private Size formSize;
         private IconButton currentBtn;
@@ -24,6 +25,7 @@ namespace AgRecords.View
         //for accessing the username of the current user
         public static HomeView Instance;
         public Label fullName;
+        public Label username;
 
         public HomeView()
         {
@@ -35,7 +37,8 @@ namespace AgRecords.View
 
             //for accessing the username of the current user
             Instance = this;
-            fullName = lblUserName;
+            fullName = lblFullname;
+            username = lblUsername;
         }
 
         //FORM STYLE
@@ -271,8 +274,9 @@ namespace AgRecords.View
                 picUserPhoto.Image = null;
             }
 
-            lblUserName.Text = user.userFirstname + " " + user.userLastname;
+            lblFullname.Text = user.userFirstname + " " + user.userLastname;
             lblUserRole.Text = user.userRole;
+            lblUsername.Text = user.username;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -365,6 +369,7 @@ namespace AgRecords.View
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                userModel.InserActionLog(lblUsername.Text, "Logout", "Account", $"Logout success ({lblUsername.Text})");
                 //string username = lblUserName.Text;
                 this.Close();
                 LoginView loginView = new LoginView();
@@ -374,7 +379,21 @@ namespace AgRecords.View
 
         private void btnDashoard_Click(object sender, EventArgs e)
         {
+            DashboardView dashboardView = new DashboardView(panelDesktop);
+            //userView.formRefresh();
+            dashboardView.TopLevel = false;
+            dashboardView.FormBorderStyle = FormBorderStyle.None;
+            dashboardView.Dock = DockStyle.Fill;
 
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(dashboardView);
+            dashboardView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new DashboardView(panelDesktop));
+            lblTitle.Text = "Dashboard";
+
+            HideSubMenu();
         }
 
         private void btnRSBSA_Click(object sender, EventArgs e)
@@ -496,6 +515,20 @@ namespace AgRecords.View
 
         private void btnVegetable_Click(object sender, EventArgs e)
         {
+            CropsHvcView cropsHvcView = new CropsHvcView(panelDesktop);
+            //userView.formRefresh();
+            cropsHvcView.TopLevel = false;
+            cropsHvcView.FormBorderStyle = FormBorderStyle.None;
+            cropsHvcView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(cropsHvcView);
+            cropsHvcView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CropsHvcView(panelDesktop));
+            lblTitle.Text = "Crops \u23F5 HVC";
+
             HideSubMenu();
         }
 
@@ -527,11 +560,59 @@ namespace AgRecords.View
 
         private void btnReportsRsbsa_Click(object sender, EventArgs e)
         {
+            AnalyticsRsbsaView analyticsRsbsaView = new AnalyticsRsbsaView(panelDesktop);
+            //userView.formRefresh();
+            analyticsRsbsaView.TopLevel = false;
+            analyticsRsbsaView.FormBorderStyle = FormBorderStyle.None;
+            analyticsRsbsaView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsRsbsaView);
+            analyticsRsbsaView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsRsbsaView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 RSBSA";
+
             HideSubMenu();
         }
 
         private void btnReportsCrops_Click(object sender, EventArgs e)
         {
+            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            //userView.formRefresh();
+            analyticsCropsView.TopLevel = false;
+            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsCropsView);
+            analyticsCropsView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 Crops";
+
+            HideSubMenu();
+            HideSubMenu();
+        }
+
+        private void btnCertifications_Click(object sender, EventArgs e)
+        {
+            CertificationsView certificationsView = new CertificationsView(panelDesktop);
+            //userView.formRefresh();
+            certificationsView.TopLevel = false;
+            certificationsView.FormBorderStyle = FormBorderStyle.None;
+            certificationsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(certificationsView);
+            certificationsView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new CertificationsView(panelDesktop));
+            lblTitle.Text = "Certifications";
+
             HideSubMenu();
         }
     }

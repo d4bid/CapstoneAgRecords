@@ -10,7 +10,7 @@ namespace AgRecords.Model
     {
         // tbl_rice_planting
         public int ricePlantingId { get; set; }
-        public string ricePrId { get; set; }
+        public string riceSrId { get; set; }
         public int brgyId { get; set; }
         public int farmTypeId { get; set; }
         public int seedTypeId { get; set; }

@@ -3885,6 +3885,8 @@
             pbFarmerPhoto.Size = new Size(140, 140);
             pbFarmerPhoto.TabIndex = 1;
             pbFarmerPhoto.TabStop = false;
+            pbFarmerPhoto.Click += pbFarmerPhoto_Click;
+            pbFarmerPhoto.DoubleClick += pbFarmerPhoto_DoubleClick;
             // 
             // openFileDialog1
             // 

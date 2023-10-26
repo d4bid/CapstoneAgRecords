@@ -32,6 +32,7 @@
             btnCancel = new Button();
             btnSave = new Button();
             groupBox1 = new GroupBox();
+            cmbSeason = new ComboBox();
             textboxYear = new TextBox();
             label7 = new Label();
             searchBox6 = new SearchBox();
@@ -43,7 +44,6 @@
             searchBox2 = new SearchBox();
             label4 = new Label();
             searchBox1 = new SearchBox();
-            cmbSeason = new ComboBox();
             cmbMonth = new ComboBox();
             label3 = new Label();
             searchBox4 = new SearchBox();
@@ -74,7 +74,7 @@
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 49;
+            btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -90,13 +90,14 @@
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
-            btnSave.TabIndex = 48;
+            btnSave.TabIndex = 3;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmbSeason);
             groupBox1.Controls.Add(textboxYear);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(searchBox6);
@@ -108,7 +109,6 @@
             groupBox1.Controls.Add(searchBox2);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(searchBox1);
-            groupBox1.Controls.Add(cmbSeason);
             groupBox1.Controls.Add(cmbMonth);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(searchBox4);
@@ -120,6 +120,18 @@
             groupBox1.Size = new Size(399, 348);
             groupBox1.TabIndex = 50;
             groupBox1.TabStop = false;
+            // 
+            // cmbSeason
+            // 
+            cmbSeason.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSeason.FlatStyle = FlatStyle.Flat;
+            cmbSeason.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbSeason.FormattingEnabled = true;
+            cmbSeason.Items.AddRange(new object[] { "Dry", "Wet" });
+            cmbSeason.Location = new Point(19, 286);
+            cmbSeason.Name = "cmbSeason";
+            cmbSeason.Size = new Size(165, 33);
+            cmbSeason.TabIndex = 2;
             // 
             // textboxYear
             // 
@@ -151,9 +163,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(205, 260);
             label6.Name = "label6";
-            label6.Size = new Size(37, 20);
+            label6.Size = new Size(88, 20);
             label6.TabIndex = 62;
-            label6.Text = "Year";
+            label6.Text = "Season Year";
             // 
             // label5
             // 
@@ -168,23 +180,23 @@
             // 
             cmbSeasonYear.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSeasonYear.FlatStyle = FlatStyle.Flat;
-            cmbSeasonYear.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbSeasonYear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbSeasonYear.FormattingEnabled = true;
-            cmbSeasonYear.Location = new Point(213, 288);
+            cmbSeasonYear.Location = new Point(213, 286);
             cmbSeasonYear.Name = "cmbSeasonYear";
-            cmbSeasonYear.Size = new Size(168, 28);
+            cmbSeasonYear.Size = new Size(168, 33);
             cmbSeasonYear.TabIndex = 60;
             // 
             // cmbWeek
             // 
             cmbWeek.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbWeek.FlatStyle = FlatStyle.Flat;
-            cmbWeek.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbWeek.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbWeek.FormattingEnabled = true;
-            cmbWeek.Location = new Point(22, 203);
+            cmbWeek.Location = new Point(22, 201);
             cmbWeek.Name = "cmbWeek";
-            cmbWeek.Size = new Size(162, 28);
-            cmbWeek.TabIndex = 57;
+            cmbWeek.Size = new Size(162, 33);
+            cmbWeek.TabIndex = 1;
             // 
             // searchBox5
             // 
@@ -216,28 +228,16 @@
             searchBox1.Size = new Size(174, 39);
             searchBox1.TabIndex = 51;
             // 
-            // cmbSeason
-            // 
-            cmbSeason.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSeason.FlatStyle = FlatStyle.Flat;
-            cmbSeason.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbSeason.FormattingEnabled = true;
-            cmbSeason.Items.AddRange(new object[] { "Dry", "Wet" });
-            cmbSeason.Location = new Point(19, 288);
-            cmbSeason.Name = "cmbSeason";
-            cmbSeason.Size = new Size(165, 28);
-            cmbSeason.TabIndex = 50;
-            // 
             // cmbMonth
             // 
             cmbMonth.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMonth.FlatStyle = FlatStyle.Flat;
-            cmbMonth.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbMonth.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            cmbMonth.Location = new Point(19, 129);
+            cmbMonth.Location = new Point(19, 127);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(362, 28);
+            cmbMonth.Size = new Size(362, 33);
             cmbMonth.TabIndex = 54;
             cmbMonth.SelectedIndexChanged += cmbMonth_SelectedIndexChanged;
             // 

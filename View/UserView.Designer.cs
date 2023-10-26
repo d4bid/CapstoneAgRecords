@@ -122,7 +122,6 @@ namespace AgRecords.View
             btnImport.TabIndex = 2;
             btnImport.Text = "Import Excel File";
             btnImport.UseVisualStyleBackColor = false;
-            btnImport.Click += btnImport_Click;
             // 
             // UserView
             // 

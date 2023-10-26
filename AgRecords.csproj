@@ -9,10 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>9</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>00020813-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.10" />
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="MySql.Data" Version="8.1.0" />
+    <PackageReference Include="OxyPlot.WindowsForms" Version="2.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +34,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DataSets\RicePlantingDSxsd.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RicePlantingDSxsd.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -31,7 +50,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Reports\DataSets\" />
+    <None Update="Reports\DataSets\RicePlantingDSxsd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RicePlantingDSxsd.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

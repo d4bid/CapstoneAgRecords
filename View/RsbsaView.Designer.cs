@@ -28,13 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            btnImport = new Button();
+            label3 = new Label();
+            comboBoxFilterCommodity = new ComboBox();
+            searchBox4 = new SearchBox();
+            label2 = new Label();
+            comboBoxFilterBrgy = new ComboBox();
+            searchBox3 = new SearchBox();
+            comboBoxSearchCategory = new ComboBox();
+            searchBox2 = new SearchBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            txtBoxSearch = new TextBox();
+            searchBox1 = new SearchBox();
+            label1 = new Label();
             button1 = new Button();
             btnAdd = new Button();
             dgvRsbsa = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRsbsa).BeginInit();
             SuspendLayout();
             // 
@@ -42,30 +56,163 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnImport);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(comboBoxFilterCommodity);
+            panel1.Controls.Add(searchBox4);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(comboBoxFilterBrgy);
+            panel1.Controls.Add(searchBox3);
+            panel1.Controls.Add(comboBoxSearchCategory);
+            panel1.Controls.Add(searchBox2);
+            panel1.Controls.Add(iconPictureBox1);
+            panel1.Controls.Add(txtBoxSearch);
+            panel1.Controls.Add(searchBox1);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnAdd);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(0, 0, 0, 8);
-            panel1.Size = new Size(997, 68);
+            panel1.Padding = new Padding(0, 0, 0, 11);
+            panel1.Size = new Size(1595, 91);
             panel1.TabIndex = 20;
+            // 
+            // btnImport
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(636, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(87, 20);
+            label3.TabIndex = 20;
+            label3.Text = "Commodity";
+            // 
+            // comboBoxFilterCommodity
+            // 
+            comboBoxFilterCommodity.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFilterCommodity.FlatStyle = FlatStyle.Flat;
+            comboBoxFilterCommodity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFilterCommodity.FormattingEnabled = true;
+            comboBoxFilterCommodity.Items.AddRange(new object[] { "ALL", "Rice", "Corn", "HVC" });
+            comboBoxFilterCommodity.Location = new Point(641, 45);
+            comboBoxFilterCommodity.Name = "comboBoxFilterCommodity";
+            comboBoxFilterCommodity.Size = new Size(169, 28);
+            comboBoxFilterCommodity.TabIndex = 18;
+            comboBoxFilterCommodity.SelectedIndexChanged += comboBoxFilterCommodity_SelectedIndexChanged;
+            // 
+            // searchBox4
+            // 
+            searchBox4.Location = new Point(636, 40);
+            searchBox4.Name = "searchBox4";
+            searchBox4.Size = new Size(184, 39);
+            searchBox4.TabIndex = 19;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(441, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(71, 20);
+            label2.TabIndex = 17;
+            label2.Text = "Barangay";
+            // 
+            // comboBoxFilterBrgy
+            // 
+            comboBoxFilterBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFilterBrgy.FlatStyle = FlatStyle.Flat;
+            comboBoxFilterBrgy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFilterBrgy.FormattingEnabled = true;
+            comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            comboBoxFilterBrgy.Location = new Point(446, 45);
+            comboBoxFilterBrgy.Name = "comboBoxFilterBrgy";
+            comboBoxFilterBrgy.Size = new Size(169, 28);
+            comboBoxFilterBrgy.TabIndex = 11;
+            comboBoxFilterBrgy.SelectedIndexChanged += comboBoxFilterBrgy_SelectedIndexChanged;
+            // 
+            // searchBox3
+            // 
+            searchBox3.Location = new Point(441, 40);
+            searchBox3.Name = "searchBox3";
+            searchBox3.Size = new Size(184, 39);
+            searchBox3.TabIndex = 16;
+            // 
+            // comboBoxSearchCategory
+            // 
+            comboBoxSearchCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxSearchCategory.FlatStyle = FlatStyle.Flat;
+            comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxSearchCategory.FormattingEnabled = true;
+            comboBoxSearchCategory.Items.AddRange(new object[] { "ALL", "ID", "FIRST NAME", "MIDDLE NAME", "SURNAME" });
+            comboBoxSearchCategory.Location = new Point(242, 45);
+            comboBoxSearchCategory.Name = "comboBoxSearchCategory";
+            comboBoxSearchCategory.Size = new Size(177, 28);
+            comboBoxSearchCategory.TabIndex = 9;
+            comboBoxSearchCategory.SelectedIndexChanged += comboBoxSearchCategory_SelectedIndexChanged;
+            // 
+            // searchBox2
+            // 
+            searchBox2.Location = new Point(237, 40);
+            searchBox2.Name = "searchBox2";
+            searchBox2.Size = new Size(191, 39);
+            searchBox2.TabIndex = 15;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.White;
+            iconPictureBox1.ForeColor = SystemColors.GrayText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox1.IconColor = SystemColors.GrayText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 25;
+            iconPictureBox1.Location = new Point(14, 45);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(25, 25);
+            iconPictureBox1.TabIndex = 12;
+            iconPictureBox1.TabStop = false;
+            // 
+            // txtBoxSearch
+            // 
+            txtBoxSearch.BorderStyle = BorderStyle.None;
+            txtBoxSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBoxSearch.Location = new Point(41, 42);
+            txtBoxSearch.Name = "txtBoxSearch";
+            txtBoxSearch.PlaceholderText = "Search";
+            txtBoxSearch.Size = new Size(170, 24);
+            txtBoxSearch.TabIndex = 10;
+            txtBoxSearch.TextChanged += txtBoxSearch_TextChanged;
+            // 
+            // searchBox1
+            // 
+            searchBox1.Location = new Point(6, 38);
+            searchBox1.Name = "searchBox1";
+            searchBox1.Size = new Size(220, 39);
+            searchBox1.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(237, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 20);
+            label1.TabIndex = 13;
+            label1.Text = "Category";
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(43, 121, 223);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(738, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(122, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnImport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnImport.BackColor = Color.FromArgb(43, 121, 223);
+            btnImport.FlatAppearance.BorderSize = 0;
+            btnImport.FlatStyle = FlatStyle.Flat;
+            btnImport.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnImport.ForeColor = Color.White;
+            btnImport.Location = new Point(1244, 27);
+            btnImport.Margin = new Padding(3, 4, 3, 4);
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(177, 39);
+            btnImport.TabIndex = 4;
+            btnImport.Text = "Import Excel File";
+            btnImport.UseVisualStyleBackColor = false;
+            btnImport.Click += btnImport_Click;
             // 
             // btnAdd
             // 
@@ -75,9 +222,10 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(864, 20);
+            btnAdd.Location = new Point(1443, 27);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(122, 29);
+            btnAdd.Size = new Size(139, 39);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
@@ -91,47 +239,47 @@
             dgvRsbsa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRsbsa.BackgroundColor = Color.White;
             dgvRsbsa.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 148, 214);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(52, 74, 95);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRsbsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(42, 148, 214);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(52, 74, 95);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvRsbsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvRsbsa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(240, 241, 242);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(52, 74, 95);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(78, 177, 203);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(52, 74, 95);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRsbsa.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvRsbsa.Location = new Point(0, 74);
-            dgvRsbsa.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(240, 241, 242);
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(52, 74, 95);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(78, 177, 203);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(52, 74, 95);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvRsbsa.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvRsbsa.Location = new Point(0, 99);
             dgvRsbsa.Name = "dgvRsbsa";
             dgvRsbsa.ReadOnly = true;
             dgvRsbsa.RowHeadersVisible = false;
             dgvRsbsa.RowHeadersWidth = 51;
             dgvRsbsa.RowTemplate.Height = 25;
-            dgvRsbsa.Size = new Size(997, 390);
+            dgvRsbsa.Size = new Size(1595, 827);
             dgvRsbsa.TabIndex = 19;
             dgvRsbsa.CellDoubleClick += dgvRsbsa_CellDoubleClick;
             // 
             // RsbsaView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
-            ClientSize = new Size(997, 464);
+            ClientSize = new Size(1595, 926);
             Controls.Add(dgvRsbsa);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "RsbsaView";
             Text = "RsbsaView";
             Load += RsbsaView_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvRsbsa).EndInit();
             ResumeLayout(false);
         }
@@ -141,6 +289,19 @@
         private Panel panel1;
         private DataGridView dgvRsbsa;
         private Button btnAdd;
+        private Button btnImport;
         private Button button1;
+        private Label label2;
+        private ComboBox comboBoxFilterBrgy;
+        private SearchBox searchBox3;
+        private ComboBox comboBoxSearchCategory;
+        private SearchBox searchBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private TextBox txtBoxSearch;
+        private SearchBox searchBox1;
+        private Label label1;
+        private Label label3;
+        private ComboBox comboBoxFilterCommodity;
+        private SearchBox searchBox4;
     }
 }

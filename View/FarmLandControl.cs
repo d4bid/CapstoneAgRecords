@@ -83,28 +83,28 @@ namespace AgRecords.View
                         {
                             chCropIsRice.Checked = true;
                             txtLandSizeRice.Text = farmParcelCrop[i].landSize.ToString();
-                            cbRiceFarmType.SelectedIndex = Convert.ToInt32(farmParcelCrop[i].farmType) - 1;
+                            cbRiceFarmType.Text = farmParcelCrop[i].farmType;
                             cbIsOrganicRice.Text = farmParcelCrop[i].isOrganic;
                         }
                         else if (farmParcelCrop[i].commodityType == "Corn")
                         {
                             chCropIsCorn.Checked = true;
                             txtLandSizeCorn.Text = farmParcelCrop[i].landSize.ToString();
-                            cbCornFarmType.SelectedIndex = Convert.ToInt32(farmParcelCrop[i].farmType) - 1;
+                            cbCornFarmType.Text = farmParcelCrop[i].farmType;
                             cbIsOrganicCorn.Text = farmParcelCrop[i].isOrganic;
                         }
                         else if (farmParcelCrop[i].commodityType == "HVC")
                         {
                             chCropIsHVC.Checked = true;
                             txtLandSizeHVC.Text = farmParcelCrop[i].landSize.ToString();
-                            cbHVCFarmType.SelectedIndex = Convert.ToInt32(farmParcelCrop[i].farmType) - 1;
+                            cbHVCFarmType.Text = farmParcelCrop[i].farmType;
                             cbIsOrganicHVC.Text = farmParcelCrop[i].isOrganic;
                         }
                         else if (farmParcelCrop[i].commodityType == "Agri-Fishery")
                         {
                             chIsAgriFishery.Checked = true;
                             txtLandSizeAgriFishery.Text = farmParcelCrop[i].landSize.ToString();
-                            cbAgriFisheryFarmType.SelectedIndex = Convert.ToInt32(farmParcelCrop[i].farmType) - 1;
+                            cbAgriFisheryFarmType.Text = farmParcelCrop[i].farmType;
                             cbIsOrganicAgriFishery.Text = farmParcelCrop[i].isOrganic;
                         }
                         else //if (farmParcelCrop[i].commodityType != "Agri-Fishery" || farmParcelCrop[i].commodityType != "Rice" || farmParcelCrop[i].commodityType != "Corn" || farmParcelCrop[i].commodityType != "HVC")

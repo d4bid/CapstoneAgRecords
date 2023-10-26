@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,25 @@ namespace AgRecords.View
     public partial class MainView : Form
     {
         private Panel parentPanel;
+        private AnalyticsController analyticsController;
 
         public MainView(Control parentControl)
         {
             InitializeComponent();
 
             this.parentPanel = parentControl as Panel;
+            analyticsController = new AnalyticsController(this);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void MainView_Load(object sender, EventArgs e)
+        {
+            DataTable lettersTable = analyticsController.LoadLetterNotif();
+            dgvNotif.DataSource = lettersTable;
         }
     }
 }

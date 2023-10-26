@@ -17,9 +17,11 @@ namespace AgRecords.Controller
         private RsbsaAddView rsbsaAddView;
         private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
+        private CertificationsView certificationsView;
         private FarmLandControl farmLandControl;
         private RSBSADocumentControl rsbsaDocumentControl;
         private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
         private RSBSAModel rsbsaModel;
         UserModel userModel = new UserModel();
 
@@ -50,6 +52,12 @@ namespace AgRecords.Controller
         public RSBSAController(RSBSADocumentControl rsbsaDocumentControl)
         {
             this.rsbsaDocumentControl = rsbsaDocumentControl;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(CertificationsView certificationsView)
+        {
+            this.certificationsView = certificationsView;
             rsbsaModel = new RSBSAModel();
         }
 
@@ -216,13 +224,14 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddRSBSA(
+        public async Task<bool> AddRSBSA(
             string rsbsaId,
             string? rsbsaIdLGU,
             string? rsbsaIdRegion,
             DateTime dateCreated,
 
             // Farmer Personal Info
+            Image? farmerImg,
             string? surname,
             string? firstname,
             string? middlename,
@@ -322,6 +331,7 @@ namespace AgRecords.Controller
                     userId = userId,
 
                     // Farmer Personal Info
+                    farmerImg = farmerImg,
                     surname = surname,
                     firstname = firstname,
                     middlename = middlename,
@@ -773,14 +783,15 @@ namespace AgRecords.Controller
                     DialogResult result = MessageBox.Show("Are you sure you want to save this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
-                        if (rsbsaModel.AddNewRSBSARecord(rsbsa))
+                        if (await rsbsaModel.AddNewRSBSARecordAsync(rsbsa))
                         {
-                            if (rsbsaModel.AddNewFarmParcel(farmParcels))
+                            if (await rsbsaModel.AddNewFarmParcelAsync(farmParcels))
                             {
                                 if (rsbsaModel.AddNewRSBSADocument(rsbsaDocuments))
                                 {
                                     MessageBox.Show("RSBSA Record saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     isDone = true;
+                                    userModel.InserActionLog(username, "Insert", "RSBSA", $"{rsbsaId} added successfully.");
                                 }
                             }
                         }
@@ -792,7 +803,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Add RSBSA Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Insert", "RSBSA", $"{rsbsaId} adding failed.");
                 return false;
             }
         }
@@ -801,9 +812,10 @@ namespace AgRecords.Controller
             string rsbsaId,
             string? rsbsaIdLGU,
             string rsbsaIdRegion,
-            DateTime dateCreated,
+            DateTime dateModified,
 
             // Farmer Personal Info
+            Image? farmerImg,
             string? surname,
             string? firstname,
             string? middlename,
@@ -897,10 +909,12 @@ namespace AgRecords.Controller
                     rsbsaId = rsbsaId,
                     rsbsaIdLGU = rsbsaIdLGU,
                     rsbsaIdRegion = rsbsaIdRegion,
-                    dateCreated = dateCreated,
+                    dateModified = dateModified,
+                    lastModifier = username,
                     userId = userId,
 
                     // Farmer Personal Info
+                    farmerImg = farmerImg,
                     surname = surname,
                     firstname = firstname,
                     middlename = middlename,
@@ -992,6 +1006,7 @@ namespace AgRecords.Controller
                             {
                                 MessageBox.Show("RSBSA Record updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 isDone = true;
+                                userModel.InserActionLog(username, "Update", "RSBSA", $"{rsbsaId} updated successfully.");
                             }
                         }
                     }
@@ -1002,7 +1017,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Updating RSBSA Record Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Update", "RSBSA", $"{rsbsaId} update failed.");
                 return false;
             }
         }
@@ -1103,6 +1118,33 @@ namespace AgRecords.Controller
 
                 return null;
             }
+        }
+
+        public DataTable SearchRSBSA(string searchText, string categoryText, string barangay, string commodityType)
+        {
+            DataTable dt = new DataTable();
+            if (categoryText == "ALL")
+            {
+                dt = rsbsaModel.SearchRSBSAAll(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "ID")
+            {
+                dt = rsbsaModel.SearchRSBSAID(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "SURNAME")
+            {
+                dt = rsbsaModel.SearchRSBSASurname(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "FIRST NAME")
+            {
+                dt = rsbsaModel.SearchRSBSAFirsName(searchText, barangay, commodityType);
+            }
+            else if (categoryText == "MIDDLE NAME")
+            {
+                dt = rsbsaModel.SearchRSBSAMiddleName(searchText, barangay, commodityType);
+            }
+
+            return dt;
         }
 
     }

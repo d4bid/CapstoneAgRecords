@@ -133,6 +133,16 @@ namespace AgRecords.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap map2 {
+            get {
+                object obj = ResourceManager.GetObject("map2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile {
             get {
                 object obj = ResourceManager.GetObject("profile", resourceCulture);
@@ -156,6 +166,26 @@ namespace AgRecords.Properties {
         internal static System.Drawing.Bitmap RSBSA1 {
             get {
                 object obj = ResourceManager.GetObject("RSBSA1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tempLogo1 {
+            get {
+                object obj = ResourceManager.GetObject("tempLogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tempLogo2 {
+            get {
+                object obj = ResourceManager.GetObject("tempLogo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
