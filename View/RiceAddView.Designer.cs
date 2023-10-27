@@ -296,7 +296,7 @@
             MaximizeBox = false;
             Name = "RiceAddView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Rice Standing Accomplishment";
+            Text = "Rice Accomplishment Report";
             Load += RiceAddView_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
