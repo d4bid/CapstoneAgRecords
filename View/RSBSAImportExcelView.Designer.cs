@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             openFileDialog1 = new OpenFileDialog();
             btnSelect = new Button();
             btnSave = new Button();
@@ -188,24 +188,24 @@
             dgvRSBSAtoImport.BackgroundColor = Color.White;
             dgvRSBSAtoImport.BorderStyle = BorderStyle.None;
             dgvRSBSAtoImport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvRSBSAtoImport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAtoImport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRSBSAtoImport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvRSBSAtoImport.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAtoImport.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRSBSAtoImport.Dock = DockStyle.Fill;
             dgvRSBSAtoImport.GridColor = Color.FromArgb(239, 239, 239);
             dgvRSBSAtoImport.Location = new Point(10, 10);
