@@ -145,6 +145,7 @@
             btnActivities.TextAlign = ContentAlignment.MiddleLeft;
             btnActivities.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnActivities.UseVisualStyleBackColor = true;
+            btnActivities.Click += btnActivities_Click;
             // 
             // btnCertifications
             // 

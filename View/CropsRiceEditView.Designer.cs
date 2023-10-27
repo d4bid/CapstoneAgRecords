@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnEdit = new Button();
-            btnCancel = new Button();
-            btnPrint = new Button();
+            btnBack = new FontAwesome.Sharp.IconButton();
+            btnPrint = new FontAwesome.Sharp.IconButton();
             labelYear = new Label();
             label12 = new Label();
             searchBox7 = new SearchBox();
@@ -102,9 +101,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnBack);
             panel1.Controls.Add(btnPrint);
-            panel1.Controls.Add(btnEdit);
-            panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(labelYear);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(searchBox7);
@@ -130,57 +128,51 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 24;
             // 
-            // btnEdit
+            // btnBack
             // 
-            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEdit.BackColor = Color.FromArgb(43, 121, 223);
-            btnEdit.FlatAppearance.BorderSize = 0;
-            btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(1292, 29);
-            btnEdit.Margin = new Padding(3, 4, 3, 4);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(130, 40);
-            btnEdit.TabIndex = 52;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = false;
-            btnEdit.Click += btnEdit_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1428, 29);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 51;
-            btnCancel.Text = "Back";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            btnBack.IconColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(1434, 24);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(148, 40);
+            btnBack.TabIndex = 53;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // btnPrint
             // 
             btnPrint.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnPrint.BackColor = Color.FromArgb(43, 121, 223);
-            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
+            btnPrint.FlatAppearance.BorderSize = 2;
+            btnPrint.FlatAppearance.MouseDownBackColor = Color.White;
+            btnPrint.FlatAppearance.MouseOverBackColor = Color.White;
             btnPrint.FlatStyle = FlatStyle.Flat;
             btnPrint.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPrint.ForeColor = Color.White;
-            btnPrint.Location = new Point(1292, 29);
-            btnPrint.Margin = new Padding(3, 4, 3, 4);
+            btnPrint.ForeColor = Color.FromArgb(3, 0, 67);
+            btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            btnPrint.IconColor = Color.FromArgb(3, 0, 67);
+            btnPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPrint.IconSize = 30;
+            btnPrint.Location = new Point(1274, 24);
             btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(130, 40);
-            btnPrint.TabIndex = 50;
+            btnPrint.Size = new Size(148, 40);
+            btnPrint.TabIndex = 52;
             btnPrint.Text = "Print";
-            btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.TextAlign = ContentAlignment.MiddleRight;
+            btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPrint.UseVisualStyleBackColor = true;
             btnPrint.Click += btnPrint_Click;
             // 
             // labelYear
@@ -479,6 +471,7 @@
             txtAveYield.Name = "txtAveYield";
             txtAveYield.Size = new Size(217, 24);
             txtAveYield.TabIndex = 86;
+            txtAveYield.Text = "0";
             txtAveYield.TextAlign = HorizontalAlignment.Right;
             // 
             // boxAveYield
@@ -541,7 +534,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1274, 86);
+            btnUpdate.Location = new Point(1274, 69);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 36);
@@ -574,9 +567,9 @@
             label9.AutoSize = true;
             label9.Location = new Point(865, 47);
             label9.Name = "label9";
-            label9.Size = new Size(41, 20);
+            label9.Size = new Size(95, 20);
             label9.TabIndex = 54;
-            label9.Text = "Date";
+            label9.Text = "Date Planted";
             // 
             // label8
             // 
@@ -606,7 +599,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1274, 146);
+            btnClear.Location = new Point(1274, 129);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 36);
@@ -623,7 +616,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1274, 86);
+            btnNew.Location = new Point(1274, 69);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 36);
@@ -640,7 +633,7 @@
             txtSize.Name = "txtSize";
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 39;
-            txtSize.Text = "2";
+            txtSize.Text = "0";
             txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11
@@ -760,24 +753,24 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvRiceStandLogs.Location = new Point(17, 295);
             dgvRiceStandLogs.Name = "dgvRiceStandLogs";
@@ -819,8 +812,6 @@
         #endregion
 
         private Panel panel1;
-        private Button btnCancel;
-        private Button btnPrint;
         private Label labelYear;
         private Label label12;
         private SearchBox searchBox7;
@@ -878,6 +869,7 @@
         private ComboBox cmbSeedTypeFilter;
         private SearchBox boxSeedTypeFilter;
         private Label labelSeedTypeFilter;
-        private Button btnEdit;
+        private FontAwesome.Sharp.IconButton btnPrint;
+        private FontAwesome.Sharp.IconButton btnBack;
     }
 }

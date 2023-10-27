@@ -71,11 +71,10 @@
             // 
             textboxYear.BorderStyle = BorderStyle.None;
             textboxYear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            textboxYear.Location = new Point(214, 205);
+            textboxYear.Location = new Point(221, 205);
             textboxYear.Name = "textboxYear";
-            textboxYear.Size = new Size(165, 24);
+            textboxYear.Size = new Size(158, 24);
             textboxYear.TabIndex = 65;
-            textboxYear.Text = "3";
             // 
             // label7
             // 
@@ -108,9 +107,9 @@
             cmbWeek.FlatStyle = FlatStyle.Flat;
             cmbWeek.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbWeek.FormattingEnabled = true;
-            cmbWeek.Location = new Point(22, 201);
+            cmbWeek.Location = new Point(25, 201);
             cmbWeek.Name = "cmbWeek";
-            cmbWeek.Size = new Size(162, 33);
+            cmbWeek.Size = new Size(159, 33);
             cmbWeek.TabIndex = 1;
             // 
             // searchBox5
@@ -136,9 +135,9 @@
             cmbMonth.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            cmbMonth.Location = new Point(19, 127);
+            cmbMonth.Location = new Point(25, 127);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(362, 33);
+            cmbMonth.Size = new Size(356, 33);
             cmbMonth.TabIndex = 2;
             cmbMonth.SelectedIndexChanged += cmbMonth_SelectedIndexChanged;
             // 
@@ -230,7 +229,7 @@
             MaximizeBox = false;
             Name = "HvcAddView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "HVC Accomplishment";
+            Text = "HVC Accomplishment Report";
             Load += HvcAddView_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

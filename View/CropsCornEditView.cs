@@ -17,7 +17,7 @@ namespace AgRecords.View
     public partial class CropsCornEditView : Form
     {
         private CropsCornController cropsCornController;
-
+        public event EventHandler FormClosed;
         private string reportType;
 
         public CropsCornEditView(CornReport cr, string reportType)
@@ -66,7 +66,6 @@ namespace AgRecords.View
             ClearTextControls();
 
             btnPrint.Enabled = true;
-            btnEdit.Enabled = true;
 
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
@@ -236,7 +235,6 @@ namespace AgRecords.View
             {
                 btnNew.Visible = false;
                 btnUpdate.Visible = false;
-                btnEdit.Visible = false;
 
                 labelAveYield.Visible = false;
                 txtAveYield.Visible = false;
@@ -271,7 +269,6 @@ namespace AgRecords.View
             {
                 btnNew.Visible = true;
                 btnUpdate.Visible = true;
-                btnEdit.Visible = true;
 
                 labelAveYield.Visible = true;
                 txtAveYield.Visible = true;
@@ -305,7 +302,6 @@ namespace AgRecords.View
             {
                 btnNew.Visible = true;
                 btnUpdate.Visible = true;
-                btnEdit.Visible = true;
 
                 labelAveYield.Visible = false;
                 txtAveYield.Visible = false;
@@ -651,6 +647,17 @@ namespace AgRecords.View
         private void cmbLandTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayDataTableFilter();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

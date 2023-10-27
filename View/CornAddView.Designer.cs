@@ -295,7 +295,7 @@
             Controls.Add(label1);
             Name = "CornAddView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Corn Accomplishment";
+            Text = "Corn Accomplishment Report";
             Load += CornAddView_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

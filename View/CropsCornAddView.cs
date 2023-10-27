@@ -307,9 +307,10 @@ namespace AgRecords.View
             DisplayDataTableFilter();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

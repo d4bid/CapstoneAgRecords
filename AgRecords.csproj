@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\CropsHvcAddView.cs~RF166f6524.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <COMReference Include="Microsoft.Office.Interop.Excel">
       <WrapperTool>tlbimp</WrapperTool>
       <VersionMinor>9</VersionMinor>
@@ -53,6 +57,12 @@
     <None Update="Reports\DataSets\RicePlantingDSxsd.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RicePlantingDSxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\RicePlantingReport.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\RiceStandingReport.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

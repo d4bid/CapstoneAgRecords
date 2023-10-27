@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnCancel = new Button();
+            btnBack = new FontAwesome.Sharp.IconButton();
             labelYear = new Label();
             label12 = new Label();
             searchBox7 = new SearchBox();
@@ -101,7 +101,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnCancel);
+            panel1.Controls.Add(btnBack);
             panel1.Controls.Add(labelYear);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(searchBox7);
@@ -127,24 +127,28 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 25;
             // 
-            // btnCancel
+            // btnBack
             // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1428, 29);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 51;
-            btnCancel.Text = "Back";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            btnBack.IconColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(1410, 26);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(148, 40);
+            btnBack.TabIndex = 54;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // labelYear
             // 
@@ -152,9 +156,9 @@
             labelYear.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelYear.Location = new Point(571, 38);
             labelYear.Name = "labelYear";
-            labelYear.Size = new Size(56, 28);
+            labelYear.Size = new Size(50, 28);
             labelYear.TabIndex = 36;
-            labelYear.Text = "2025";
+            labelYear.Text = "Year";
             // 
             // label12
             // 
@@ -178,9 +182,9 @@
             labelWeek.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelWeek.Location = new Point(456, 38);
             labelWeek.Name = "labelWeek";
-            labelWeek.Size = new Size(47, 28);
+            labelWeek.Size = new Size(63, 28);
             labelWeek.TabIndex = 33;
-            labelWeek.Text = "1-15";
+            labelWeek.Text = "Week";
             // 
             // label10
             // 
@@ -204,9 +208,9 @@
             labelMonth.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelMonth.Location = new Point(317, 38);
             labelMonth.Name = "labelMonth";
-            labelMonth.Size = new Size(82, 28);
+            labelMonth.Size = new Size(73, 28);
             labelMonth.TabIndex = 30;
-            labelMonth.Text = "January";
+            labelMonth.Text = "Month";
             // 
             // labelSeasonYear
             // 
@@ -214,9 +218,9 @@
             labelSeasonYear.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelSeasonYear.Location = new Point(825, 38);
             labelSeasonYear.Name = "labelSeasonYear";
-            labelSeasonYear.Size = new Size(108, 28);
+            labelSeasonYear.Size = new Size(121, 28);
             labelSeasonYear.TabIndex = 29;
-            labelSeasonYear.Text = "2022-2023";
+            labelSeasonYear.Text = "Season Year";
             // 
             // labelSeason
             // 
@@ -224,9 +228,9 @@
             labelSeason.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelSeason.Location = new Point(698, 38);
             labelSeason.Name = "labelSeason";
-            labelSeason.Size = new Size(48, 28);
+            labelSeason.Size = new Size(77, 28);
             labelSeason.TabIndex = 28;
-            labelSeason.Text = "Wet";
+            labelSeason.Text = "Season";
             // 
             // label5
             // 
@@ -503,6 +507,7 @@
             txtSize.Name = "txtSize";
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 94;
+            txtSize.Text = "0";
             txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11
@@ -602,6 +607,7 @@
             labelMaxLogId.Size = new Size(102, 28);
             labelMaxLogId.TabIndex = 82;
             labelMaxLogId.Text = "MaxLogId";
+            labelMaxLogId.Visible = false;
             // 
             // btnUpdate
             // 
@@ -611,7 +617,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1410, 74);
+            btnUpdate.Location = new Point(1392, 80);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 39);
@@ -644,9 +650,9 @@
             label9.AutoSize = true;
             label9.Location = new Point(881, 47);
             label9.Name = "label9";
-            label9.Size = new Size(41, 20);
+            label9.Size = new Size(95, 20);
             label9.TabIndex = 54;
-            label9.Text = "Date";
+            label9.Text = "Date Planted";
             // 
             // label8
             // 
@@ -676,7 +682,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1410, 137);
+            btnClear.Location = new Point(1392, 143);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 39);
@@ -693,7 +699,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1410, 74);
+            btnNew.Location = new Point(1392, 80);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 39);
@@ -731,24 +737,24 @@
             dgvCornPlanting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCornPlanting.BackgroundColor = Color.White;
             dgvCornPlanting.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             dgvCornPlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.White;
+            dataGridViewCellStyle14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle14;
             dgvCornPlanting.GridColor = Color.FromArgb(239, 239, 239);
             dgvCornPlanting.Location = new Point(17, 308);
             dgvCornPlanting.Name = "dgvCornPlanting";
@@ -789,7 +795,6 @@
         #endregion
 
         private Panel panel1;
-        private Button btnCancel;
         private Label labelYear;
         private Label label12;
         private SearchBox searchBox7;
@@ -848,5 +853,6 @@
         private ComboBox cmbGrowthStageFilter;
         private SearchBox searchBox4;
         private Label label4;
+        private FontAwesome.Sharp.IconButton btnBack;
     }
 }

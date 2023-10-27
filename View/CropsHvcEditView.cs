@@ -67,12 +67,6 @@ namespace AgRecords.View
             DisplayDataTableFilter();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormClosed?.Invoke(this, EventArgs.Empty);
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             btnUpdate.Visible = false;
@@ -195,6 +189,12 @@ namespace AgRecords.View
                     dtpLogDate.Text = hs.logDate.ToString();
                 }
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

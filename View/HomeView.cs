@@ -615,5 +615,24 @@ namespace AgRecords.View
 
             HideSubMenu();
         }
+
+        private void btnActivities_Click(object sender, EventArgs e)
+        {
+            WeeklyActivitiesView weeklyActivitiesView = new WeeklyActivitiesView(panelDesktop);
+            //userView.formRefresh();
+            weeklyActivitiesView.TopLevel = false;
+            weeklyActivitiesView.FormBorderStyle = FormBorderStyle.None;
+            weeklyActivitiesView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(weeklyActivitiesView);
+            weeklyActivitiesView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new WeeklyActivitiesView(panelDesktop));
+            lblTitle.Text = "Weekly Activities";
+
+            HideSubMenu();
+        }
     }
 }

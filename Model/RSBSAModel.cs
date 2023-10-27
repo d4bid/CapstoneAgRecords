@@ -52,7 +52,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rsbsa;", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rsbsa2;", db.GetConnection());
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -347,7 +347,7 @@ namespace AgRecords.Model
                 {
                     await db.OpenAsync();
 
-                    string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, " +
+                    string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, @dateImported, " +
                                     "@farmerImg, @surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
                                     "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
@@ -368,6 +368,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@rsbsaIdRegion", rsbsa.rsbsaIdRegion);
                     command.Parameters.AddWithValue("@dateCreated", rsbsa.dateCreated);
                     command.Parameters.AddWithValue("@userId", rsbsa.userId);
+                    command.Parameters.AddWithValue("@dateImported", rsbsa.dateImported);
 
                     //for farmer info table
                     byte[] farmerImgBytes = ConvertImageToByteArray(rsbsa.farmerImg);

@@ -34,5 +34,11 @@ namespace AgRecords.View
             dgvCert.DataSource = rsbasaTable;
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CertificationsAddView certificationsAddView = new CertificationsAddView();
+            certificationsAddView.ShowDialog();
+        }
     }
 }

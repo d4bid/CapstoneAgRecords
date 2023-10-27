@@ -129,7 +129,7 @@ namespace AgRecords.View
 
                 if (cornPrId != null)
                 {
-                    CornReport cr= null;
+                    CornReport cr = null;
 
                     // Check if the cbPlanting checkbox is checked
                     if (cmbReportType.Text == "Planting")

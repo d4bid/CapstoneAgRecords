@@ -75,7 +75,6 @@ namespace AgRecords.View
             ClearStandingLogsTextControls();
 
             btnPrint.Enabled = true;
-            btnEdit.Enabled = true;
 
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
@@ -107,7 +106,6 @@ namespace AgRecords.View
             {
                 btnNew.Visible = false;
                 btnUpdate.Visible = false;
-                btnEdit.Visible = false;
 
                 labelAveYield.Visible = false;
                 txtAveYield.Visible = false;
@@ -128,7 +126,6 @@ namespace AgRecords.View
             {
                 btnNew.Visible = true;
                 btnUpdate.Visible = true;
-                btnEdit.Visible = true;
 
                 labelAveYield.Visible = true;
                 txtAveYield.Visible = true;
@@ -150,7 +147,6 @@ namespace AgRecords.View
             {
                 btnNew.Visible = true;
                 btnUpdate.Visible = true;
-                btnEdit.Visible = true;
 
                 labelAveYield.Visible = false;
                 txtAveYield.Visible = false;
@@ -554,96 +550,36 @@ namespace AgRecords.View
 
         private void cbIrrigated_CheckedChanged(object sender, EventArgs e)
         {
-            HandleCheckboxConditions();
-            //string riceSrId = labelRiceSrId.Text;
-            //int seedId = MapSeedItemToValue(cmbSeedTypeFilter);
-
-            //if (cbIrrigated.Checked)
-            //{
-            //    cbLowland.Checked = false;
-            //    cbUpland.Checked = false;
-
-            //    if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRicePlantingView(riceSrId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-
-            //    if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRiceStandLogsView(riceSrId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-
-            //    if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRiceHarvestingView(riceSrId, seedId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-            //}
+            if (cbIrrigated.Checked)
+            {
+                HandleCheckboxConditions();
+            }
         }
 
         private void cbLowland_CheckedChanged(object sender, EventArgs e)
         {
-            HandleCheckboxConditions();
-            //string riceSrId = labelRiceSrId.Text;
-            //int seedId = MapSeedItemToValue(cmbSeedTypeFilter);
-
-            //if (cbLowland.Checked)
-            //{
-            //    cbIrrigated.Checked = false;
-            //    cbUpland.Checked = false;
-
-            //    if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRicePlantingView(riceSrId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-
-            //    if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRiceStandLogsView(riceSrId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-
-            //    if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRiceHarvestingView(riceSrId, seedId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-            //}
+            if (cbLowland.Checked)
+            {
+                HandleCheckboxConditions();
+            }
         }
 
         private void cbUpland_CheckedChanged(object sender, EventArgs e)
         {
+            if (cbUpland.Checked)
+            {
+                HandleCheckboxConditions();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnPrint.Enabled = false;
+        }
+
+        private void cmbSeedTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
             HandleCheckboxConditions();
-
-            //string riceSrId = labelRiceSrId.Text;
-            //int seedId = MapSeedItemToValue(cmbSeedTypeFilter);
-
-            //if (cbUpland.Checked)
-            //{
-            //    cbIrrigated.Checked = false;
-            //    cbLowland.Checked = false;
-
-            //    if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadUplandRicePlantingView(riceSrId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-
-            //    if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceStandLogsView(riceSrId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-
-            //    if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            //    {
-            //        DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceHarvestingView(riceSrId, seedId);
-            //        dgvRiceStandLogs.DataSource = riceStandLogsTable;
-            //    }
-            //}
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -654,13 +590,20 @@ namespace AgRecords.View
                 string riceSrId = labelRiceSrId.Text;
                 DataTable data = cropsRiceController.LoadRicePlantingView(riceSrId);
 
-                string templatePath = "AgRecords/Templates/RicePlantingReport.xlsx";
+                // Get the directory where the application executable is located
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Specify the path to the Excel file relative to the executable path
+                string relativePath = Path.Combine("Templates", "RicePlantingReport.xlsx");
+
+                // Combine the executable path with the relative path to get the full file path
+                string filePath = Path.Combine(executablePath, relativePath);
 
                 // Create an instance of Excel Application
                 Excel.Application excelApp = new Excel.Application();
 
                 // Open the Excel template
-                Excel.Workbook workbook = excelApp.Workbooks.Open(templatePath);
+                Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
 
                 // Get the worksheet
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
@@ -673,7 +616,7 @@ namespace AgRecords.View
 
                 foreach (DataRow row in data.Rows)
                 {
-                    for (int i = 2; i <= 21; i++) // Assuming you want to populate cells from row[2] to row[22]
+                    for (int i = 1; i <= 20; i++) // Assuming you want to populate cells from row[2] to row[22]
                     {
                         worksheet.Cells[startRow, startColumn] = row[i];
                         startColumn++;
@@ -697,25 +640,32 @@ namespace AgRecords.View
                 string riceSrId = labelRiceSrId.Text;
                 DataTable data = cropsRiceController.LoadRiceStandingView(riceSrId);
 
-                string tempPath = "AgRecords/Templates/RiceStandingReport.xlsx";
+                // Get the directory where the application executable is located
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Specify the path to the Excel file relative to the executable path
+                string relativePath = Path.Combine("Templates", "RiceStandingReport.xlsx");
+
+                // Combine the executable path with the relative path to get the full file path
+                string filePath = Path.Combine(executablePath, relativePath);
 
                 // Create an instance of Excel Application
                 Excel.Application excelApp = new Excel.Application();
 
                 // Open the Excel template
-                Excel.Workbook workbook = excelApp.Workbooks.Open(tempPath);
+                Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
 
                 // Get the worksheet
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
 
                 worksheet.Cells[5, 1].Value = worksheet.Cells[5, 1].Text + labelMonth.Text + " " + labelWeek.Text + ", " + labelYear.Text;
 
-                int startRow = 11; // Start at row 12 in the template
-                int startColumn = 2; // Start at column 2 of the MySQL result
+                int startRow = 11; // Start at row in the template
+                int startColumn = 2; // Start at column of the MySQL result
 
                 foreach (DataRow row in data.Rows)
                 {
-                    for (int i = 2; i <= 21; i++) // Assuming you want to populate cells from row[2] to row[22]
+                    for (int i = 1; i <= 24; i++) // Assuming you want to populate cells from row[2] to row[22]
                     {
                         worksheet.Cells[startRow, startColumn] = row[i];
                         startColumn++;
@@ -723,8 +673,8 @@ namespace AgRecords.View
 
                     startRow++; // Move to the next row in Excel
                     startColumn = 2; // Reset the column index for the next row
-
                 }
+
 
                 // Display the filled Excel file using Excel application
                 excelApp.Visible = true;
@@ -744,17 +694,7 @@ namespace AgRecords.View
             // System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            btnPrint.Enabled = false;
-        }
-
-        private void cmbSeedTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            HandleCheckboxConditions();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);

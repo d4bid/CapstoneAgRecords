@@ -101,11 +101,6 @@ namespace AgRecords.View
 
         // TRIGGERS
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            getUserPhoto();
-        }
-
         private void picBoxUser_Click(object sender, EventArgs e)
         {
             if (picBoxUser.Image != null)
@@ -151,10 +146,15 @@ namespace AgRecords.View
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            getUserPhoto();
         }
     }
 }
