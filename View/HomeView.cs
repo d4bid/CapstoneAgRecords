@@ -577,26 +577,6 @@ namespace AgRecords.View
             HideSubMenu();
         }
 
-        private void btnReportsCrops_Click(object sender, EventArgs e)
-        {
-            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
-            //userView.formRefresh();
-            analyticsCropsView.TopLevel = false;
-            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
-            analyticsCropsView.Dock = DockStyle.Fill;
-
-            panelDesktop.Controls.Clear();
-            panelDesktop.Controls.Add(analyticsCropsView);
-            analyticsCropsView.Show();
-
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new AnalyticsCropsView(panelDesktop));
-            lblTitle.Text = "Analytics \u23F5 Crops";
-
-            HideSubMenu();
-            HideSubMenu();
-        }
-
         private void btnCertifications_Click(object sender, EventArgs e)
         {
             CertificationsView certificationsView = new CertificationsView(panelDesktop);
@@ -631,6 +611,82 @@ namespace AgRecords.View
             ActivateButton(sender, Color.FromArgb(43, 121, 223));
             OpenChildForm(new WeeklyActivitiesView(panelDesktop));
             lblTitle.Text = "Weekly Activities";
+
+            HideSubMenu();
+        }
+
+        private void btnReportsCorn_Click(object sender, EventArgs e)
+        {
+            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            //userView.formRefresh();
+            analyticsCropsView.TopLevel = false;
+            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsCropsView);
+            analyticsCropsView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 Corn";
+
+            HideSubMenu();
+        }
+
+        private void btnReportsRice_Click(object sender, EventArgs e)
+        {
+            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            //userView.formRefresh();
+            analyticsCropsView.TopLevel = false;
+            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsCropsView);
+            analyticsCropsView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 Rice";
+
+            HideSubMenu();
+        }
+
+        private void btnReportsHVC_Click(object sender, EventArgs e)
+        {
+            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            //userView.formRefresh();
+            analyticsCropsView.TopLevel = false;
+            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsCropsView);
+            analyticsCropsView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 HVC";
+
+            HideSubMenu();
+        }
+
+        private void btnReportsLetters_Click(object sender, EventArgs e)
+        {
+            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            //userView.formRefresh();
+            analyticsCropsView.TopLevel = false;
+            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(analyticsCropsView);
+            analyticsCropsView.Show();
+
+            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 Letters";
 
             HideSubMenu();
         }

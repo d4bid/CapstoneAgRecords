@@ -35,7 +35,7 @@ namespace AgRecords.View
                 PlotModel pieChart = analyticsController.CreatePieChart2(data2);
 
                 // Set the pie chart model to the PlotView control
-                pieChart2.Model = pieChart;
+                riceGraph1.Model = pieChart;
             }
         }
     }

@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelGaiFarming = new Label();
+            labelTotalRiceLandArea = new Label();
             label2 = new Label();
-            labelTotalFarmers = new Label();
+            labelTotalRiceFarmers = new Label();
             label1 = new Label();
             rectangleFullYellow1 = new RectangleFullYellow();
             rectangleFullGreen1 = new RectangleFullGreen();
-            label3 = new Label();
+            labelTotalRiceBarangay = new Label();
             label4 = new Label();
-            label5 = new Label();
+            labelTotalAreaPlanted = new Label();
             label6 = new Label();
             rectangleFullYellow2 = new RectangleFullYellow();
             rectangleFullGreen2 = new RectangleFullGreen();
@@ -54,20 +54,26 @@
             rectangleFullWhite6 = new RectangleFullWhite();
             label13 = new Label();
             rectangleFullWhite7 = new RectangleFullWhite();
-            pieChart2 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph1 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph2 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph3 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph4 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph5 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph7 = new OxyPlot.WindowsForms.PlotView();
+            riceGraph6 = new OxyPlot.WindowsForms.PlotView();
             SuspendLayout();
             // 
-            // labelGaiFarming
+            // labelTotalRiceLandArea
             // 
-            labelGaiFarming.AutoSize = true;
-            labelGaiFarming.BackColor = Color.FromArgb(0, 109, 104);
-            labelGaiFarming.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelGaiFarming.ForeColor = Color.White;
-            labelGaiFarming.Location = new Point(381, 69);
-            labelGaiFarming.Name = "labelGaiFarming";
-            labelGaiFarming.Size = new Size(55, 62);
-            labelGaiFarming.TabIndex = 20;
-            labelGaiFarming.Text = "#";
+            labelTotalRiceLandArea.AutoSize = true;
+            labelTotalRiceLandArea.BackColor = Color.FromArgb(0, 109, 104);
+            labelTotalRiceLandArea.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalRiceLandArea.ForeColor = Color.White;
+            labelTotalRiceLandArea.Location = new Point(381, 69);
+            labelTotalRiceLandArea.Name = "labelTotalRiceLandArea";
+            labelTotalRiceLandArea.Size = new Size(55, 62);
+            labelTotalRiceLandArea.TabIndex = 20;
+            labelTotalRiceLandArea.Text = "#";
             // 
             // label2
             // 
@@ -77,21 +83,21 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(381, 30);
             label2.Name = "label2";
-            label2.Size = new Size(151, 20);
+            label2.Size = new Size(152, 20);
             label2.TabIndex = 19;
-            label2.Text = "No. of Corn Farmers";
+            label2.Text = "Total Rice Land Area";
             // 
-            // labelTotalFarmers
+            // labelTotalRiceFarmers
             // 
-            labelTotalFarmers.AutoSize = true;
-            labelTotalFarmers.BackColor = Color.FromArgb(255, 221, 100);
-            labelTotalFarmers.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotalFarmers.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalFarmers.Location = new Point(29, 69);
-            labelTotalFarmers.Name = "labelTotalFarmers";
-            labelTotalFarmers.Size = new Size(135, 62);
-            labelTotalFarmers.TabIndex = 18;
-            labelTotalFarmers.Text = "8000";
+            labelTotalRiceFarmers.AutoSize = true;
+            labelTotalRiceFarmers.BackColor = Color.FromArgb(255, 221, 100);
+            labelTotalRiceFarmers.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalRiceFarmers.ForeColor = Color.FromArgb(0, 35, 76);
+            labelTotalRiceFarmers.Location = new Point(29, 69);
+            labelTotalRiceFarmers.Name = "labelTotalRiceFarmers";
+            labelTotalRiceFarmers.Size = new Size(135, 62);
+            labelTotalRiceFarmers.TabIndex = 18;
+            labelTotalRiceFarmers.Text = "8000";
             // 
             // label1
             // 
@@ -101,9 +107,9 @@
             label1.ForeColor = Color.FromArgb(0, 35, 76);
             label1.Location = new Point(29, 30);
             label1.Name = "label1";
-            label1.Size = new Size(105, 20);
+            label1.Size = new Size(138, 20);
             label1.TabIndex = 17;
-            label1.Text = "Total Farmers";
+            label1.Text = "Total Rice Farmers";
             // 
             // rectangleFullYellow1
             // 
@@ -119,17 +125,17 @@
             rectangleFullGreen1.Size = new Size(334, 144);
             rectangleFullGreen1.TabIndex = 15;
             // 
-            // label3
+            // labelTotalRiceBarangay
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(0, 109, 104);
-            label3.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(29, 228);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 62);
-            label3.TabIndex = 26;
-            label3.Text = "#";
+            labelTotalRiceBarangay.AutoSize = true;
+            labelTotalRiceBarangay.BackColor = Color.FromArgb(0, 109, 104);
+            labelTotalRiceBarangay.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalRiceBarangay.ForeColor = Color.White;
+            labelTotalRiceBarangay.Location = new Point(29, 228);
+            labelTotalRiceBarangay.Name = "labelTotalRiceBarangay";
+            labelTotalRiceBarangay.Size = new Size(55, 62);
+            labelTotalRiceBarangay.TabIndex = 26;
+            labelTotalRiceBarangay.Text = "#";
             // 
             // label4
             // 
@@ -139,21 +145,21 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(29, 189);
             label4.Name = "label4";
-            label4.Size = new Size(142, 20);
+            label4.Size = new Size(275, 20);
             label4.TabIndex = 25;
-            label4.Text = "No. of Rice Farners";
+            label4.Text = "Total Barangays with Rice Commodity";
             // 
-            // label5
+            // labelTotalAreaPlanted
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(255, 221, 100);
-            label5.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(0, 35, 76);
-            label5.Location = new Point(381, 228);
-            label5.Name = "label5";
-            label5.Size = new Size(135, 62);
-            label5.TabIndex = 24;
-            label5.Text = "8000";
+            labelTotalAreaPlanted.AutoSize = true;
+            labelTotalAreaPlanted.BackColor = Color.FromArgb(255, 221, 100);
+            labelTotalAreaPlanted.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalAreaPlanted.ForeColor = Color.FromArgb(0, 35, 76);
+            labelTotalAreaPlanted.Location = new Point(381, 228);
+            labelTotalAreaPlanted.Name = "labelTotalAreaPlanted";
+            labelTotalAreaPlanted.Size = new Size(55, 62);
+            labelTotalAreaPlanted.TabIndex = 24;
+            labelTotalAreaPlanted.Text = "#";
             // 
             // label6
             // 
@@ -163,9 +169,9 @@
             label6.ForeColor = Color.FromArgb(0, 35, 76);
             label6.Location = new Point(381, 189);
             label6.Name = "label6";
-            label6.Size = new Size(187, 20);
+            label6.Size = new Size(138, 20);
             label6.TabIndex = 23;
-            label6.Text = "No. of Vegetable Farmers";
+            label6.Text = "Total Area Planted";
             // 
             // rectangleFullYellow2
             // 
@@ -189,9 +195,9 @@
             label8.ForeColor = Color.FromArgb(0, 35, 76);
             label8.Location = new Point(34, 628);
             label8.Name = "label8";
-            label8.Size = new Size(216, 20);
+            label8.Size = new Size(268, 20);
             label8.TabIndex = 28;
-            label8.Text = "Cummulative Rice Production";
+            label8.Text = "Comparative Data of Rice Production";
             // 
             // rectangleFullWhite4
             // 
@@ -208,9 +214,9 @@
             label7.ForeColor = Color.FromArgb(0, 35, 76);
             label7.Location = new Point(34, 347);
             label7.Name = "label7";
-            label7.Size = new Size(148, 20);
+            label7.Size = new Size(119, 20);
             label7.TabIndex = 30;
-            label7.Text = "Average Production";
+            label7.Text = "Rice Production";
             // 
             // rectangleFullWhite1
             // 
@@ -227,9 +233,9 @@
             label9.ForeColor = Color.FromArgb(0, 35, 76);
             label9.Location = new Point(738, 30);
             label9.Name = "label9";
-            label9.Size = new Size(186, 20);
+            label9.Size = new Size(149, 20);
             label9.TabIndex = 32;
-            label9.Text = "Farmers By Demographic";
+            label9.Text = "Rice Farmers By Sex";
             // 
             // rectangleFullWhite2
             // 
@@ -272,9 +278,9 @@
             label11.ForeColor = Color.FromArgb(0, 35, 76);
             label11.Location = new Point(1107, 30);
             label11.Name = "label11";
-            label11.Size = new Size(136, 20);
+            label11.Size = new Size(277, 20);
             label11.TabIndex = 36;
-            label11.Text = "HVC Per Barangay";
+            label11.Text = "Number of Rice Farmers Per Barangay";
             // 
             // label12
             // 
@@ -284,9 +290,9 @@
             label12.ForeColor = Color.FromArgb(0, 35, 76);
             label12.Location = new Point(738, 347);
             label12.Name = "label12";
-            label12.Size = new Size(80, 20);
+            label12.Size = new Size(175, 20);
             label12.TabIndex = 38;
-            label12.Text = "Land Type";
+            label12.Text = "Area Planted:Harvested";
             // 
             // rectangleFullWhite6
             // 
@@ -303,9 +309,9 @@
             label13.ForeColor = Color.FromArgb(0, 35, 76);
             label13.Location = new Point(1108, 347);
             label13.Name = "label13";
-            label13.Size = new Size(80, 20);
+            label13.Size = new Size(258, 20);
             label13.TabIndex = 40;
-            label13.Text = "Land Type";
+            label13.Text = "Total Rice Farm Area Per Farm Type";
             // 
             // rectangleFullWhite7
             // 
@@ -314,17 +320,89 @@
             rectangleFullWhite7.Size = new Size(497, 261);
             rectangleFullWhite7.TabIndex = 39;
             // 
-            // pieChart2
+            // riceGraph1
             // 
-            pieChart2.BackColor = Color.White;
-            pieChart2.Location = new Point(738, 69);
-            pieChart2.Name = "pieChart2";
-            pieChart2.PanCursor = Cursors.Hand;
-            pieChart2.Size = new Size(310, 233);
-            pieChart2.TabIndex = 41;
-            pieChart2.ZoomHorizontalCursor = Cursors.SizeWE;
-            pieChart2.ZoomRectangleCursor = Cursors.SizeNWSE;
-            pieChart2.ZoomVerticalCursor = Cursors.SizeNS;
+            riceGraph1.BackColor = Color.White;
+            riceGraph1.Location = new Point(738, 69);
+            riceGraph1.Name = "riceGraph1";
+            riceGraph1.PanCursor = Cursors.Hand;
+            riceGraph1.Size = new Size(310, 233);
+            riceGraph1.TabIndex = 41;
+            riceGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph1.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // riceGraph2
+            // 
+            riceGraph2.BackColor = Color.White;
+            riceGraph2.Location = new Point(1108, 69);
+            riceGraph2.Name = "riceGraph2";
+            riceGraph2.PanCursor = Cursors.Hand;
+            riceGraph2.Size = new Size(458, 233);
+            riceGraph2.TabIndex = 42;
+            riceGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph2.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // riceGraph3
+            // 
+            riceGraph3.BackColor = Color.White;
+            riceGraph3.Location = new Point(34, 380);
+            riceGraph3.Name = "riceGraph3";
+            riceGraph3.PanCursor = Cursors.Hand;
+            riceGraph3.Size = new Size(643, 197);
+            riceGraph3.TabIndex = 43;
+            riceGraph3.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph3.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph3.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // riceGraph4
+            // 
+            riceGraph4.BackColor = Color.White;
+            riceGraph4.Location = new Point(738, 380);
+            riceGraph4.Name = "riceGraph4";
+            riceGraph4.PanCursor = Cursors.Hand;
+            riceGraph4.Size = new Size(310, 197);
+            riceGraph4.TabIndex = 44;
+            riceGraph4.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph4.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph4.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // riceGraph5
+            // 
+            riceGraph5.BackColor = Color.White;
+            riceGraph5.Location = new Point(1107, 380);
+            riceGraph5.Name = "riceGraph5";
+            riceGraph5.PanCursor = Cursors.Hand;
+            riceGraph5.Size = new Size(459, 197);
+            riceGraph5.TabIndex = 45;
+            riceGraph5.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph5.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph5.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // riceGraph7
+            // 
+            riceGraph7.BackColor = Color.White;
+            riceGraph7.Location = new Point(738, 662);
+            riceGraph7.Name = "riceGraph7";
+            riceGraph7.PanCursor = Cursors.Hand;
+            riceGraph7.Size = new Size(828, 237);
+            riceGraph7.TabIndex = 46;
+            riceGraph7.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph7.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph7.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // riceGraph6
+            // 
+            riceGraph6.BackColor = Color.White;
+            riceGraph6.Location = new Point(29, 662);
+            riceGraph6.Name = "riceGraph6";
+            riceGraph6.PanCursor = Cursors.Hand;
+            riceGraph6.Size = new Size(648, 237);
+            riceGraph6.TabIndex = 47;
+            riceGraph6.ZoomHorizontalCursor = Cursors.SizeWE;
+            riceGraph6.ZoomRectangleCursor = Cursors.SizeNWSE;
+            riceGraph6.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // AnalyticsCropsView
             // 
@@ -332,7 +410,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(pieChart2);
+            Controls.Add(riceGraph6);
+            Controls.Add(riceGraph7);
+            Controls.Add(riceGraph5);
+            Controls.Add(riceGraph4);
+            Controls.Add(riceGraph3);
+            Controls.Add(riceGraph2);
+            Controls.Add(riceGraph1);
             Controls.Add(label13);
             Controls.Add(rectangleFullWhite7);
             Controls.Add(label12);
@@ -347,15 +431,15 @@
             Controls.Add(rectangleFullWhite1);
             Controls.Add(label8);
             Controls.Add(rectangleFullWhite4);
-            Controls.Add(label3);
+            Controls.Add(labelTotalRiceBarangay);
             Controls.Add(label4);
-            Controls.Add(label5);
+            Controls.Add(labelTotalAreaPlanted);
             Controls.Add(label6);
             Controls.Add(rectangleFullYellow2);
             Controls.Add(rectangleFullGreen2);
-            Controls.Add(labelGaiFarming);
+            Controls.Add(labelTotalRiceLandArea);
             Controls.Add(label2);
-            Controls.Add(labelTotalFarmers);
+            Controls.Add(labelTotalRiceFarmers);
             Controls.Add(label1);
             Controls.Add(rectangleFullYellow1);
             Controls.Add(rectangleFullGreen1);
@@ -368,15 +452,15 @@
 
         #endregion
 
-        private Label labelGaiFarming;
+        private Label labelTotalRiceLandArea;
         private Label label2;
-        private Label labelTotalFarmers;
+        private Label labelTotalRiceFarmers;
         private Label label1;
         private RectangleFullYellow rectangleFullYellow1;
         private RectangleFullGreen rectangleFullGreen1;
-        private Label label3;
+        private Label labelTotalRiceBarangay;
         private Label label4;
-        private Label label5;
+        private Label labelTotalAreaPlanted;
         private Label label6;
         private RectangleFullYellow rectangleFullYellow2;
         private RectangleFullGreen rectangleFullGreen2;
@@ -394,6 +478,12 @@
         private RectangleFullWhite rectangleFullWhite6;
         private Label label13;
         private RectangleFullWhite rectangleFullWhite7;
-        private OxyPlot.WindowsForms.PlotView pieChart2;
+        private OxyPlot.WindowsForms.PlotView riceGraph1;
+        private OxyPlot.WindowsForms.PlotView riceGraph2;
+        private OxyPlot.WindowsForms.PlotView riceGraph3;
+        private OxyPlot.WindowsForms.PlotView riceGraph4;
+        private OxyPlot.WindowsForms.PlotView riceGraph5;
+        private OxyPlot.WindowsForms.PlotView riceGraph7;
+        private OxyPlot.WindowsForms.PlotView riceGraph6;
     }
 }
