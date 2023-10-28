@@ -31,7 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnCancel = new Button();
+            btnBack = new FontAwesome.Sharp.IconButton();
+            btnPrint = new FontAwesome.Sharp.IconButton();
             labelYear = new Label();
             label12 = new Label();
             searchBox7 = new SearchBox();
@@ -59,7 +60,6 @@
             cmbCropType = new ComboBox();
             searchBox8 = new SearchBox();
             label13 = new Label();
-            labelMaxLogId = new Label();
             btnUpdate = new Button();
             label9 = new Label();
             dtpLogDate = new DateTimePicker();
@@ -78,7 +78,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnCancel);
+            panel1.Controls.Add(btnBack);
+            panel1.Controls.Add(btnPrint);
             panel1.Controls.Add(labelYear);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(searchBox7);
@@ -98,24 +99,51 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 27;
             // 
-            // btnCancel
+            // btnBack
             // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1428, 29);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 51;
-            btnCancel.Text = "Back";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            btnBack.IconColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(1428, 24);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(148, 40);
+            btnBack.TabIndex = 55;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
+            // btnPrint
+            // 
+            btnPrint.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPrint.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
+            btnPrint.FlatAppearance.BorderSize = 2;
+            btnPrint.FlatAppearance.MouseDownBackColor = Color.White;
+            btnPrint.FlatAppearance.MouseOverBackColor = Color.White;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPrint.ForeColor = Color.FromArgb(3, 0, 67);
+            btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            btnPrint.IconColor = Color.FromArgb(3, 0, 67);
+            btnPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPrint.IconSize = 30;
+            btnPrint.Location = new Point(1274, 24);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(148, 40);
+            btnPrint.TabIndex = 54;
+            btnPrint.Text = "Print";
+            btnPrint.TextAlign = ContentAlignment.MiddleRight;
+            btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPrint.UseVisualStyleBackColor = true;
             // 
             // labelYear
             // 
@@ -257,7 +285,6 @@
             panel43.Controls.Add(cmbCropType);
             panel43.Controls.Add(searchBox8);
             panel43.Controls.Add(label13);
-            panel43.Controls.Add(labelMaxLogId);
             panel43.Controls.Add(btnUpdate);
             panel43.Controls.Add(label9);
             panel43.Controls.Add(dtpLogDate);
@@ -375,17 +402,6 @@
             label13.TabIndex = 87;
             label13.Text = "Crop Type";
             // 
-            // labelMaxLogId
-            // 
-            labelMaxLogId.AutoSize = true;
-            labelMaxLogId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelMaxLogId.Location = new Point(1086, 84);
-            labelMaxLogId.Name = "labelMaxLogId";
-            labelMaxLogId.Size = new Size(102, 28);
-            labelMaxLogId.TabIndex = 82;
-            labelMaxLogId.Text = "MaxLogId";
-            labelMaxLogId.Visible = false;
-            // 
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.FromArgb(255, 221, 100);
@@ -407,9 +423,9 @@
             label9.AutoSize = true;
             label9.Location = new Point(875, 59);
             label9.Name = "label9";
-            label9.Size = new Size(41, 20);
+            label9.Size = new Size(122, 20);
             label9.TabIndex = 54;
-            label9.Text = "Date";
+            label9.Text = "Date Transplated";
             // 
             // dtpLogDate
             // 
@@ -417,7 +433,7 @@
             dtpLogDate.Format = DateTimePickerFormat.Short;
             dtpLogDate.Location = new Point(875, 82);
             dtpLogDate.Name = "dtpLogDate";
-            dtpLogDate.Size = new Size(135, 28);
+            dtpLogDate.Size = new Size(167, 28);
             dtpLogDate.TabIndex = 53;
             // 
             // btnClear
@@ -539,7 +555,6 @@
         #endregion
 
         private Panel panel1;
-        private Button btnCancel;
         private Label labelYear;
         private Label label12;
         private SearchBox searchBox7;
@@ -567,7 +582,6 @@
         private ComboBox cmbCropType;
         private SearchBox searchBox8;
         private Label label13;
-        private Label labelMaxLogId;
         private Button btnUpdate;
         private Label label9;
         private DateTimePicker dtpLogDate;
@@ -576,5 +590,7 @@
         private Panel panel44;
         private Label label46;
         private DataGridView dgvHvcStanding;
+        private FontAwesome.Sharp.IconButton btnBack;
+        private FontAwesome.Sharp.IconButton btnPrint;
     }
 }

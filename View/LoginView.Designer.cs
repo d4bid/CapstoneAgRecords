@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelLeft = new Panel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label4 = new Label();
@@ -48,12 +49,11 @@
             lblUsername = new Label();
             btnMin = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)systemLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelLeft
@@ -68,6 +68,21 @@
             panelLeft.Name = "panelLeft";
             panelLeft.Size = new Size(379, 500);
             panelLeft.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.White;
+            iconPictureBox1.BackgroundImage = Properties.Resources.tempLogo2;
+            iconPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            iconPictureBox1.ForeColor = Color.FromArgb(0, 108, 103);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox1.IconColor = Color.FromArgb(0, 108, 103);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.Location = new Point(3, 5);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(32, 32);
+            iconPictureBox1.TabIndex = 45;
+            iconPictureBox1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -168,6 +183,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(290, 26);
             txtPassword.TabIndex = 2;
+            txtPassword.Text = "david";
             txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -179,6 +195,7 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(333, 26);
             txtUsername.TabIndex = 1;
+            txtUsername.Text = "david";
             // 
             // rectangleBlue2
             // 
@@ -318,21 +335,6 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.White;
-            iconPictureBox1.BackgroundImage = Properties.Resources.tempLogo2;
-            iconPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            iconPictureBox1.ForeColor = Color.FromArgb(0, 108, 103);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconPictureBox1.IconColor = Color.FromArgb(0, 108, 103);
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.Location = new Point(3, 5);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(32, 32);
-            iconPictureBox1.TabIndex = 45;
-            iconPictureBox1.TabStop = false;
-            // 
             // LoginView
             // 
             AcceptButton = btnLogin;
@@ -349,11 +351,11 @@
             Text = "Form1";
             panelLeft.ResumeLayout(false);
             panelLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelRight.ResumeLayout(false);
             panelRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)systemLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
         }
 

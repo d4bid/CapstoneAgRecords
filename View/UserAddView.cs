@@ -49,7 +49,9 @@ namespace AgRecords.View
 
             // Hide error label
             lblPasswordStrength.Visible = false;
+            panelPassStrength.Visible = false;
             lblConfirmPassword.Visible = false;
+            panelPassConfirm.Visible = false;
 
             // Disabled control
             txtBoxUserId.Enabled = false;
@@ -58,12 +60,15 @@ namespace AgRecords.View
         public void PasswordStrengthInvalid()
         {
             lblPasswordStrength.Visible = true;
+            panelPassStrength.Visible = true;
         }
 
         public void PasswordNotMatch()
         {
             lblPasswordStrength.Visible = false;
+            panelPassStrength.Visible = false;
             lblConfirmPassword.Visible = true;
+            panelPassConfirm.Visible = true;
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -142,11 +147,15 @@ namespace AgRecords.View
                 FormClosed?.Invoke(this, EventArgs.Empty);
             }
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnBrowse_Click_1(object sender, EventArgs e)
+        {
+            getUserPhoto();
         }
     }
 }

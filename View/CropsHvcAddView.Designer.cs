@@ -31,7 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnCancel = new Button();
+            btnBack = new FontAwesome.Sharp.IconButton();
             labelYear = new Label();
             label12 = new Label();
             searchBox7 = new SearchBox();
@@ -78,7 +78,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnCancel);
+            panel1.Controls.Add(btnBack);
             panel1.Controls.Add(labelYear);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(searchBox7);
@@ -98,24 +98,28 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 26;
             // 
-            // btnCancel
+            // btnBack
             // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1428, 29);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 7;
-            btnCancel.Text = "Back";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            btnBack.IconColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(1410, 26);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(148, 40);
+            btnBack.TabIndex = 54;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // labelYear
             // 
@@ -394,10 +398,10 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1410, 50);
+            btnUpdate.Location = new Point(1392, 54);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(130, 39);
+            btnUpdate.Size = new Size(130, 36);
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -408,9 +412,9 @@
             label9.AutoSize = true;
             label9.Location = new Point(875, 59);
             label9.Name = "label9";
-            label9.Size = new Size(41, 20);
+            label9.Size = new Size(122, 20);
             label9.TabIndex = 54;
-            label9.Text = "Date";
+            label9.Text = "Date Transplated";
             // 
             // dtpLogDate
             // 
@@ -418,7 +422,7 @@
             dtpLogDate.Format = DateTimePickerFormat.Short;
             dtpLogDate.Location = new Point(875, 82);
             dtpLogDate.Name = "dtpLogDate";
-            dtpLogDate.Size = new Size(135, 28);
+            dtpLogDate.Size = new Size(167, 28);
             dtpLogDate.TabIndex = 3;
             // 
             // btnClear
@@ -431,10 +435,10 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1410, 104);
+            btnClear.Location = new Point(1392, 108);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(130, 39);
+            btnClear.Size = new Size(130, 36);
             btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -448,10 +452,10 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1410, 51);
+            btnNew.Location = new Point(1392, 55);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
-            btnNew.Size = new Size(130, 39);
+            btnNew.Size = new Size(130, 36);
             btnNew.TabIndex = 4;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
@@ -542,7 +546,6 @@
         #endregion
 
         private Panel panel1;
-        private Button btnCancel;
         private Label labelYear;
         private Label label12;
         private SearchBox searchBox7;
@@ -579,5 +582,6 @@
         private Panel panel44;
         private Label label46;
         private DataGridView dgvHvcStanding;
+        private FontAwesome.Sharp.IconButton btnBack;
     }
 }

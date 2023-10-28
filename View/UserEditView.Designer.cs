@@ -30,8 +30,6 @@
         {
             openFileDialog1 = new OpenFileDialog();
             btnChangePassword = new Button();
-            btnBrowse = new Button();
-            btnCancel = new Button();
             btnSave = new Button();
             picBoxUser = new RoundedPictureBox();
             groupBox1 = new GroupBox();
@@ -62,6 +60,8 @@
             label12 = new Label();
             label8 = new Label();
             label6 = new Label();
+            btnBack = new FontAwesome.Sharp.IconButton();
+            btnBrowse = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -88,39 +88,6 @@
             btnChangePassword.UseVisualStyleBackColor = false;
             btnChangePassword.Click += btnChangePassword_Click;
             // 
-            // btnBrowse
-            // 
-            btnBrowse.BackColor = Color.FromArgb(43, 121, 223);
-            btnBrowse.FlatAppearance.BorderSize = 0;
-            btnBrowse.FlatStyle = FlatStyle.Flat;
-            btnBrowse.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(102, 362);
-            btnBrowse.Margin = new Padding(3, 4, 3, 4);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(150, 39);
-            btnBrowse.TabIndex = 21;
-            btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = false;
-            btnBrowse.Click += btnBrowse_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1447, 441);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 26;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
             // btnSave
             // 
             btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -129,7 +96,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1311, 441);
+            btnSave.Location = new Point(1311, 442);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
@@ -469,6 +436,52 @@
             label6.TabIndex = 21;
             label6.Text = "UserID";
             // 
+            // btnBack
+            // 
+            btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            btnBack.IconColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(1447, 441);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(130, 40);
+            btnBack.TabIndex = 54;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
+            // btnBrowse
+            // 
+            btnBrowse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBrowse.FlatAppearance.BorderSize = 2;
+            btnBrowse.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBrowse.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBrowse.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBrowse.IconChar = FontAwesome.Sharp.IconChar.Image;
+            btnBrowse.IconColor = Color.FromArgb(43, 121, 223);
+            btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBrowse.IconSize = 30;
+            btnBrowse.Location = new Point(102, 362);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new Size(150, 40);
+            btnBrowse.TabIndex = 55;
+            btnBrowse.Text = "Browse";
+            btnBrowse.TextAlign = ContentAlignment.MiddleRight;
+            btnBrowse.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.Click += btnBrowse_Click;
+            // 
             // UserEditView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -476,12 +489,12 @@
             AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
+            Controls.Add(btnBrowse);
+            Controls.Add(btnBack);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
             Controls.Add(picBoxUser);
-            Controls.Add(btnCancel);
             Controls.Add(btnSave);
-            Controls.Add(btnBrowse);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UserEditView";
             Text = "UserEditView";
@@ -496,9 +509,7 @@
 
         #endregion
         private OpenFileDialog openFileDialog1;
-        private Button btnBrowse;
         private Button btnChangePassword;
-        private Button btnCancel;
         private Button btnSave;
         private RoundedPictureBox picBoxUser;
         private GroupBox groupBox1;
@@ -529,5 +540,7 @@
         private Label label12;
         private Label label8;
         private Label label6;
+        private FontAwesome.Sharp.IconButton btnBack;
+        private FontAwesome.Sharp.IconButton btnBrowse;
     }
 }

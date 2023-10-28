@@ -39,8 +39,6 @@ namespace AgRecords.View
         {
             analyticsController.CountFarmer();
             analyticsController.CountFisherfolk();
-
-
         }
     }
 }

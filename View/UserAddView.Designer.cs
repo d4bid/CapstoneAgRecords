@@ -49,8 +49,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            btnBrowse = new Button();
-            btnCancel = new Button();
             btnSave = new Button();
             label6 = new Label();
             txtBoxUserId = new TextBox();
@@ -59,18 +57,31 @@
             txtBoxUsername = new TextBox();
             txtBoxPassword = new TextBox();
             lblPasswordStrength = new Label();
-            label10 = new Label();
             txtBoxConfirmPassword = new TextBox();
             lblConfirmPassword = new Label();
             groupBox3 = new GroupBox();
-            rectangleRound10 = new RectangleRound();
+            panel1 = new Panel();
+            panelPassConfirm = new Panel();
+            panel3 = new Panel();
+            label13 = new Label();
+            rectangleRound11 = new RectangleRound();
+            textBox1 = new TextBox();
+            panelPassStrength = new Panel();
+            panel2 = new Panel();
             rectangleRound9 = new RectangleRound();
             rectangleRound8 = new RectangleRound();
             rectangleRound7 = new RectangleRound();
             label12 = new Label();
             picBoxUser = new RoundedPictureBox();
+            btnBrowse = new FontAwesome.Sharp.IconButton();
+            btnBack = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
+            panel1.SuspendLayout();
+            panelPassConfirm.SuspendLayout();
+            panel3.SuspendLayout();
+            panelPassStrength.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
             SuspendLayout();
             // 
@@ -307,39 +318,6 @@
             label1.TabIndex = 2;
             label1.Text = "First Name";
             // 
-            // btnBrowse
-            // 
-            btnBrowse.BackColor = Color.FromArgb(43, 121, 223);
-            btnBrowse.FlatAppearance.BorderSize = 0;
-            btnBrowse.FlatStyle = FlatStyle.Flat;
-            btnBrowse.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(102, 362);
-            btnBrowse.Margin = new Padding(3, 4, 3, 4);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(150, 39);
-            btnBrowse.TabIndex = 1;
-            btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = false;
-            btnBrowse.Click += btnBrowse_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1447, 441);
-            btnCancel.Margin = new Padding(3, 4, 3, 4);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(130, 40);
-            btnCancel.TabIndex = 6;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
             // btnSave
             // 
             btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -384,7 +362,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(52, 198);
+            label7.Location = new Point(29, 19);
             label7.Name = "label7";
             label7.Size = new Size(70, 20);
             label7.TabIndex = 23;
@@ -414,11 +392,10 @@
             // 
             // txtBoxPassword
             // 
-            txtBoxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxPassword.BackColor = Color.White;
             txtBoxPassword.BorderStyle = BorderStyle.None;
             txtBoxPassword.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxPassword.Location = new Point(177, 194);
+            txtBoxPassword.Location = new Point(149, 15);
             txtBoxPassword.Margin = new Padding(3, 4, 3, 4);
             txtBoxPassword.Name = "txtBoxPassword";
             txtBoxPassword.Size = new Size(382, 26);
@@ -430,29 +407,18 @@
             lblPasswordStrength.AutoSize = true;
             lblPasswordStrength.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblPasswordStrength.ForeColor = Color.FromArgb(207, 92, 96);
-            lblPasswordStrength.Location = new Point(168, 229);
+            lblPasswordStrength.Location = new Point(142, 5);
             lblPasswordStrength.Name = "lblPasswordStrength";
             lblPasswordStrength.Size = new Size(389, 34);
             lblPasswordStrength.TabIndex = 27;
             lblPasswordStrength.Text = "Password must be 8-16 characters with at least one uppercase \nletter, lowercase letter, number, and special character.";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(52, 276);
-            label10.Name = "label10";
-            label10.Size = new Size(62, 20);
-            label10.TabIndex = 28;
-            label10.Text = "Confirm";
-            // 
             // txtBoxConfirmPassword
             // 
-            txtBoxConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxConfirmPassword.BackColor = Color.White;
             txtBoxConfirmPassword.BorderStyle = BorderStyle.None;
             txtBoxConfirmPassword.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxConfirmPassword.Location = new Point(177, 277);
+            txtBoxConfirmPassword.Location = new Point(149, 12);
             txtBoxConfirmPassword.Margin = new Padding(3, 4, 3, 4);
             txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
             txtBoxConfirmPassword.Size = new Size(382, 26);
@@ -464,7 +430,7 @@
             lblConfirmPassword.AutoSize = true;
             lblConfirmPassword.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblConfirmPassword.ForeColor = Color.FromArgb(207, 92, 96);
-            lblConfirmPassword.Location = new Point(168, 319);
+            lblConfirmPassword.Location = new Point(142, 3);
             lblConfirmPassword.Name = "lblConfirmPassword";
             lblConfirmPassword.Size = new Size(162, 17);
             lblConfirmPassword.TabIndex = 30;
@@ -474,20 +440,13 @@
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox3.BackColor = Color.White;
+            groupBox3.Controls.Add(panel1);
             groupBox3.Controls.Add(txtBoxUsername);
-            groupBox3.Controls.Add(txtBoxConfirmPassword);
-            groupBox3.Controls.Add(rectangleRound10);
-            groupBox3.Controls.Add(txtBoxPassword);
-            groupBox3.Controls.Add(rectangleRound9);
             groupBox3.Controls.Add(rectangleRound8);
             groupBox3.Controls.Add(txtBoxUserId);
             groupBox3.Controls.Add(rectangleRound7);
             groupBox3.Controls.Add(label12);
-            groupBox3.Controls.Add(lblConfirmPassword);
-            groupBox3.Controls.Add(label10);
-            groupBox3.Controls.Add(lblPasswordStrength);
             groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(label6);
             groupBox3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(981, 13);
@@ -498,20 +457,92 @@
             groupBox3.TabIndex = 9;
             groupBox3.TabStop = false;
             // 
-            // rectangleRound10
+            // panel1
             // 
-            rectangleRound10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleRound10.BackColor = Color.White;
-            rectangleRound10.Location = new Point(168, 271);
-            rectangleRound10.Name = "rectangleRound10";
-            rectangleRound10.Size = new Size(401, 38);
-            rectangleRound10.TabIndex = 35;
+            panel1.Controls.Add(panelPassConfirm);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panelPassStrength);
+            panel1.Controls.Add(panel2);
+            panel1.Location = new Point(28, 182);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(551, 206);
+            panel1.TabIndex = 34;
+            // 
+            // panelPassConfirm
+            // 
+            panelPassConfirm.Controls.Add(lblConfirmPassword);
+            panelPassConfirm.Dock = DockStyle.Top;
+            panelPassConfirm.Location = new Point(0, 154);
+            panelPassConfirm.Name = "panelPassConfirm";
+            panelPassConfirm.Size = new Size(551, 50);
+            panelPassConfirm.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(txtBoxConfirmPassword);
+            panel3.Controls.Add(label13);
+            panel3.Controls.Add(rectangleRound11);
+            panel3.Controls.Add(textBox1);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 104);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(551, 50);
+            panel3.TabIndex = 1;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(29, 15);
+            label13.Name = "label13";
+            label13.Size = new Size(62, 20);
+            label13.TabIndex = 23;
+            label13.Text = "Confirm";
+            // 
+            // rectangleRound11
+            // 
+            rectangleRound11.BackColor = Color.White;
+            rectangleRound11.Location = new Point(140, 6);
+            rectangleRound11.Name = "rectangleRound11";
+            rectangleRound11.Size = new Size(401, 38);
+            rectangleRound11.TabIndex = 34;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.White;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(149, 15);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(382, 26);
+            textBox1.TabIndex = 26;
+            textBox1.UseSystemPasswordChar = true;
+            // 
+            // panelPassStrength
+            // 
+            panelPassStrength.Controls.Add(lblPasswordStrength);
+            panelPassStrength.Dock = DockStyle.Top;
+            panelPassStrength.Location = new Point(0, 54);
+            panelPassStrength.Name = "panelPassStrength";
+            panelPassStrength.Size = new Size(551, 50);
+            panelPassStrength.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(rectangleRound9);
+            panel2.Controls.Add(txtBoxPassword);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(551, 54);
+            panel2.TabIndex = 0;
             // 
             // rectangleRound9
             // 
-            rectangleRound9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound9.BackColor = Color.White;
-            rectangleRound9.Location = new Point(168, 188);
+            rectangleRound9.Location = new Point(140, 10);
             rectangleRound9.Name = "rectangleRound9";
             rectangleRound9.Size = new Size(401, 38);
             rectangleRound9.TabIndex = 34;
@@ -557,6 +588,52 @@
             picBoxUser.TabIndex = 10;
             picBoxUser.TabStop = false;
             // 
+            // btnBrowse
+            // 
+            btnBrowse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBrowse.FlatAppearance.BorderSize = 2;
+            btnBrowse.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBrowse.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBrowse.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBrowse.IconChar = FontAwesome.Sharp.IconChar.Image;
+            btnBrowse.IconColor = Color.FromArgb(43, 121, 223);
+            btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBrowse.IconSize = 30;
+            btnBrowse.Location = new Point(102, 362);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new Size(150, 40);
+            btnBrowse.TabIndex = 56;
+            btnBrowse.Text = "Browse";
+            btnBrowse.TextAlign = ContentAlignment.MiddleRight;
+            btnBrowse.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.Click += btnBrowse_Click_1;
+            // 
+            // btnBack
+            // 
+            btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            btnBack.IconColor = Color.FromArgb(43, 121, 223);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(1447, 441);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(130, 40);
+            btnBack.TabIndex = 57;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // UserAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -564,12 +641,12 @@
             AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
+            Controls.Add(btnBack);
+            Controls.Add(btnBrowse);
             Controls.Add(picBoxUser);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
-            Controls.Add(btnCancel);
             Controls.Add(btnSave);
-            Controls.Add(btnBrowse);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UserAddView";
             Text = "UserAddView";
@@ -578,6 +655,15 @@
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            panel1.ResumeLayout(false);
+            panelPassConfirm.ResumeLayout(false);
+            panelPassConfirm.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panelPassStrength.ResumeLayout(false);
+            panelPassStrength.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).EndInit();
             ResumeLayout(false);
         }
@@ -597,8 +683,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button btnBrowse;
-        private Button btnCancel;
         private Button btnSave;
         private Label label6;
         private TextBox txtBoxUserId;
@@ -624,5 +708,15 @@
         private Label label12;
         private RectangleRound rectangleRound10;
         private RoundedPictureBox picBoxUser;
+        private FontAwesome.Sharp.IconButton btnBrowse;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Label label13;
+        private RectangleRound rectangleRound11;
+        private TextBox textBox1;
+        private Panel panelPassStrength;
+        private Panel panelPassConfirm;
+        private FontAwesome.Sharp.IconButton btnBack;
     }
 }
