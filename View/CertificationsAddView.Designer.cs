@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificationsAddView));
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtReferenceNumber = new TextBox();
             label4 = new Label();
             rectangleRound4 = new RectangleRound();
@@ -52,6 +52,7 @@
             panel8 = new Panel();
             panel7 = new Panel();
             groupBox1 = new GroupBox();
+            lblTempParcelCount = new Label();
             txtBarangay = new TextBox();
             txtName = new TextBox();
             label1 = new Label();
@@ -263,10 +264,12 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(12, 6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(773, 683);
             flowLayoutPanel1.TabIndex = 39;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel8
             // 
@@ -287,6 +290,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblTempParcelCount);
             groupBox1.Controls.Add(txtBarangay);
             groupBox1.Controls.Add(txtName);
             groupBox1.Controls.Add(label1);
@@ -298,6 +302,16 @@
             groupBox1.Size = new Size(748, 106);
             groupBox1.TabIndex = 35;
             groupBox1.TabStop = false;
+            // 
+            // lblTempParcelCount
+            // 
+            lblTempParcelCount.AutoSize = true;
+            lblTempParcelCount.Location = new Point(620, 11);
+            lblTempParcelCount.Name = "lblTempParcelCount";
+            lblTempParcelCount.Size = new Size(122, 20);
+            lblTempParcelCount.TabIndex = 29;
+            lblTempParcelCount.Text = "tempParcelCount";
+            lblTempParcelCount.Visible = false;
             // 
             // txtBarangay
             // 
@@ -404,24 +418,24 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.White;
-            dataGridViewCellStyle10.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCert.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCert.Dock = DockStyle.Fill;
             dgvCert.GridColor = Color.FromArgb(239, 239, 239);
             dgvCert.Location = new Point(10, 10);
@@ -497,5 +511,6 @@
         private Label label10;
         private FontAwesome.Sharp.IconButton btnPrint;
         private FontAwesome.Sharp.IconButton btnCancel;
+        private Label lblTempParcelCount;
     }
 }

@@ -79,8 +79,9 @@ namespace AgRecords.View
                 if (rsbsaId != null)
                 {
                     Certifications cert = certController.GetFarmerInfoById(rsbsaId);
+                    List<Certifications> certList = certController.GetCertCommodities(rsbsaId);
 
-                    CertificationsAddView certificationsAddView = new CertificationsAddView(cert);
+                    CertificationsAddView certificationsAddView = new CertificationsAddView(cert, certList);
                     certificationsAddView.FormClosed += CertificationsAddView_FormClosed;
                     certificationsAddView.TopLevel = false;
                     certificationsAddView.FormBorderStyle = FormBorderStyle.None;
@@ -89,6 +90,24 @@ namespace AgRecords.View
                     parentPanel.Controls.Clear();
                     parentPanel.Controls.Add(certificationsAddView);
                     certificationsAddView.Show();
+
+
+                    //DATE TEST
+                    //// Create a StringBuilder to concatenate the information
+                    //// Loop through the certList and concatenate information into the message
+                    //foreach (Certifications item in certList)
+                    //{
+                    //    StringBuilder message = new StringBuilder();
+                    //    message.AppendLine($"RsbsaId: {item.rsbsaId}");
+                    //    message.AppendLine($"RsbsaIdLGU: {item.rsbsaIdLGU}");
+                    //    message.AppendLine($"FarmParcelNo: {item.farmParcelNo}");
+                    //    message.AppendLine($"FarmLocBrgy: {item.farmLocBrgy}");
+                    //    message.AppendLine($"CommodityType: {item.commodityType}");
+                    //    message.AppendLine($"LandSize: {item.landSize}");
+                    //    message.AppendLine($"HeadCount: {item.headCount}");
+                    //    message.AppendLine("----------------------"); // Separate entries with dashes
+                    //    MessageBox.Show(message.ToString(), "Certifications Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
                 }
             }
         }

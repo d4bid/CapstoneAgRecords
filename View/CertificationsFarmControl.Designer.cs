@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
+            btnRemove = new FontAwesome.Sharp.IconButton();
             labelParcelNo = new Label();
             label7 = new Label();
             rectangleRound8 = new RectangleRound();
@@ -38,7 +39,6 @@
             label5 = new Label();
             rectangleRound5 = new RectangleRound();
             label8 = new Label();
-            btnRemove = new FontAwesome.Sharp.IconButton();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +59,21 @@
             groupBox2.Size = new Size(747, 299);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
+            // 
+            // btnRemove
+            // 
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            btnRemove.IconColor = Color.FromArgb(0, 35, 76);
+            btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRemove.IconSize = 30;
+            btnRemove.Location = new Point(720, 13);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(25, 25);
+            btnRemove.TabIndex = 35;
+            btnRemove.TabStop = false;
+            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // labelParcelNo
             // 
@@ -142,20 +157,6 @@
             label8.Size = new Size(71, 20);
             label8.TabIndex = 26;
             label8.Text = "Farm Info";
-            // 
-            // btnRemove
-            // 
-            btnRemove.FlatStyle = FlatStyle.Flat;
-            btnRemove.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            btnRemove.IconColor = Color.FromArgb(0, 35, 76);
-            btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRemove.IconSize = 30;
-            btnRemove.Location = new Point(720, 13);
-            btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(25, 25);
-            btnRemove.TabIndex = 35;
-            btnRemove.TabStop = false;
-            btnRemove.UseVisualStyleBackColor = true;
             // 
             // CertificationsFarmControl
             // 
