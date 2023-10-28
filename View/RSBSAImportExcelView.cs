@@ -31,23 +31,30 @@ namespace AgRecords.View
                 openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (FileStream fs = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    try
                     {
-                        using (IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(fs))
+                        using (FileStream fs = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                         {
-                            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration() { ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true } });
+                            using (IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(fs))
+                            {
+                                DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration() { ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true } });
 
-                            // Check if the DataSet contains tables and if those tables have rows
-                            if (result.Tables.Count > 0 && result.Tables[0].Rows.Count > 0)
-                            {
-                                dgvRSBSAtoImport.DataSource = result.Tables[txtSheetName.Text];
-                            }
-                            else
-                            {
-                                MessageBox.Show("No data found in the Excel file.");
-                            }
-                        } // Reader is automatically disposed of after this block
-                    } // FileStream is automatically closed and disposed of after this block
+                                // Check if the DataSet contains tables and if those tables have rows
+                                if (result.Tables.Count > 0 && result.Tables[0].Rows.Count > 0)
+                                {
+                                    dgvRSBSAtoImport.DataSource = result.Tables[txtSheetName.Text];
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No data found in the Excel file.");
+                                }
+                            } // Reader is automatically disposed of after this block
+                        } // FileStream is automatically closed and disposed of after this block
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}\nPlease close the Excel file and try again.", "File In Use", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             } // OpenFileDialog is automatically closed after this block
         }
