@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnAdd = new Button();
             label2 = new Label();
             cmbShow = new ComboBox();
             searchBox3 = new SearchBox();
@@ -53,7 +52,6 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnAdd);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbShow);
             panel1.Controls.Add(searchBox3);
@@ -69,23 +67,6 @@
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 24;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAdd.BackColor = Color.FromArgb(43, 121, 223);
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(1444, 27);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(139, 39);
-            btnAdd.TabIndex = 18;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
             // 
             // label2
             // 
@@ -121,7 +102,7 @@
             cmbColumn.FlatStyle = FlatStyle.Flat;
             cmbColumn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbColumn.FormattingEnabled = true;
-            cmbColumn.Items.AddRange(new object[] { "All", "RSBSA Number", "Reference Number", "Name", "Barangay" });
+            cmbColumn.Items.AddRange(new object[] { "All", "RSBSA ID", "Reference Number", "Name", "Barangay" });
             cmbColumn.Location = new Point(719, 39);
             cmbColumn.Name = "cmbColumn";
             cmbColumn.Size = new Size(237, 28);
@@ -176,6 +157,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(239, 239, 239);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 90);
             panel3.Name = "panel3";
@@ -201,24 +183,24 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCert.DefaultCellStyle = dataGridViewCellStyle4;
             dgvCert.Dock = DockStyle.Fill;
             dgvCert.GridColor = Color.FromArgb(239, 239, 239);
             dgvCert.Location = new Point(10, 10);
@@ -230,6 +212,7 @@
             dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCert.Size = new Size(1575, 806);
             dgvCert.TabIndex = 23;
+            dgvCert.CellContentDoubleClick += dgvCert_CellContentDoubleClick;
             // 
             // CertificationsView
             // 
@@ -252,7 +235,6 @@
 
         #endregion
         private Panel panel1;
-        private Button btnAdd;
         private Label label2;
         private ComboBox cmbShow;
         private SearchBox searchBox3;

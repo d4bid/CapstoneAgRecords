@@ -92,7 +92,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(3, 4, 3, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(320, 753);
+            panelMenu.Size = new Size(320, 825);
             panelMenu.TabIndex = 0;
             // 
             // btnUsers
@@ -310,6 +310,7 @@
             btnDamages.TextAlign = ContentAlignment.MiddleLeft;
             btnDamages.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDamages.UseVisualStyleBackColor = true;
+            btnDamages.Visible = false;
             btnDamages.Click += btnDamages_Click;
             // 
             // panelCropsSubMenu
@@ -685,14 +686,14 @@
             panelDesktop.Margin = new Padding(3, 4, 3, 4);
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Padding = new Padding(10, 11, 15, 15);
-            panelDesktop.Size = new Size(1162, 666);
+            panelDesktop.Size = new Size(1162, 738);
             panelDesktop.TabIndex = 3;
             // 
             // HomeView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1482, 753);
+            ClientSize = new Size(1482, 825);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);

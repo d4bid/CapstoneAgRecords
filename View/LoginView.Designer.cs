@@ -78,9 +78,10 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
             iconPictureBox1.IconColor = Color.FromArgb(0, 108, 103);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 35;
             iconPictureBox1.Location = new Point(3, 5);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(32, 32);
+            iconPictureBox1.Size = new Size(35, 35);
             iconPictureBox1.TabIndex = 45;
             iconPictureBox1.TabStop = false;
             // 
@@ -99,7 +100,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(43, 121, 223);
-            label3.Location = new Point(40, 10);
+            label3.Location = new Point(43, 14);
             label3.Name = "label3";
             label3.Size = new Size(81, 20);
             label3.TabIndex = 43;
@@ -183,7 +184,6 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(290, 26);
             txtPassword.TabIndex = 2;
-            txtPassword.Text = "david";
             txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -195,7 +195,6 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(333, 26);
             txtUsername.TabIndex = 1;
-            txtUsername.Text = "david";
             // 
             // rectangleBlue2
             // 
@@ -220,9 +219,10 @@
             systemLogo.IconChar = FontAwesome.Sharp.IconChar.None;
             systemLogo.IconColor = Color.FromArgb(0, 108, 103);
             systemLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            systemLogo.Location = new Point(202, 74);
+            systemLogo.IconSize = 35;
+            systemLogo.Location = new Point(200, 74);
             systemLogo.Name = "systemLogo";
-            systemLogo.Size = new Size(32, 32);
+            systemLogo.Size = new Size(35, 35);
             systemLogo.TabIndex = 40;
             systemLogo.TabStop = false;
             // 
