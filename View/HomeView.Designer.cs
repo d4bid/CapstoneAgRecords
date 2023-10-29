@@ -30,15 +30,18 @@
         {
             components = new System.ComponentModel.Container();
             panelMenu = new Panel();
+            btnSettings = new FontAwesome.Sharp.IconButton();
             btnUsers = new FontAwesome.Sharp.IconButton();
             btnActivities = new FontAwesome.Sharp.IconButton();
             btnCertifications = new FontAwesome.Sharp.IconButton();
             btnLetters = new FontAwesome.Sharp.IconButton();
             panelReportsSubMenu = new Panel();
-            btnReportsCrops = new FontAwesome.Sharp.IconButton();
+            btnReportsLetters = new FontAwesome.Sharp.IconButton();
+            btnReportsHVC = new FontAwesome.Sharp.IconButton();
+            btnReportsRice = new FontAwesome.Sharp.IconButton();
+            btnReportsCorn = new FontAwesome.Sharp.IconButton();
             btnReportsRsbsa = new FontAwesome.Sharp.IconButton();
             btnReports = new FontAwesome.Sharp.IconButton();
-            btnDamages = new FontAwesome.Sharp.IconButton();
             panelCropsSubMenu = new Panel();
             btnVegetable = new FontAwesome.Sharp.IconButton();
             btnCorn = new FontAwesome.Sharp.IconButton();
@@ -74,13 +77,13 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = Color.FromArgb(43, 121, 223);
+            panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnUsers);
             panelMenu.Controls.Add(btnActivities);
-            panelMenu.Controls.Add(btnCertifications);
-            panelMenu.Controls.Add(btnLetters);
             panelMenu.Controls.Add(panelReportsSubMenu);
             panelMenu.Controls.Add(btnReports);
-            panelMenu.Controls.Add(btnDamages);
+            panelMenu.Controls.Add(btnCertifications);
+            panelMenu.Controls.Add(btnLetters);
             panelMenu.Controls.Add(panelCropsSubMenu);
             panelMenu.Controls.Add(btnCrops);
             panelMenu.Controls.Add(btnRSBSA);
@@ -95,6 +98,31 @@
             panelMenu.Size = new Size(320, 753);
             panelMenu.TabIndex = 0;
             // 
+            // btnSettings
+            // 
+            btnSettings.Dock = DockStyle.Top;
+            btnSettings.FlatAppearance.BorderSize = 0;
+            btnSettings.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
+            btnSettings.FlatStyle = FlatStyle.Flat;
+            btnSettings.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSettings.ForeColor = Color.White;
+            btnSettings.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            btnSettings.IconColor = Color.White;
+            btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSettings.IconSize = 32;
+            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSettings.Location = new Point(0, 1033);
+            btnSettings.Margin = new Padding(3, 4, 3, 4);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Padding = new Padding(13, 0, 0, 0);
+            btnSettings.Size = new Size(299, 60);
+            btnSettings.TabIndex = 23;
+            btnSettings.Tag = "Settings";
+            btnSettings.Text = "Settings";
+            btnSettings.TextAlign = ContentAlignment.MiddleLeft;
+            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSettings.UseVisualStyleBackColor = true;
+            // 
             // btnUsers
             // 
             btnUsers.Dock = DockStyle.Top;
@@ -108,7 +136,7 @@
             btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUsers.IconSize = 32;
             btnUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsers.Location = new Point(0, 880);
+            btnUsers.Location = new Point(0, 973);
             btnUsers.Margin = new Padding(3, 4, 3, 4);
             btnUsers.Name = "btnUsers";
             btnUsers.Padding = new Padding(13, 0, 0, 0);
@@ -134,7 +162,7 @@
             btnActivities.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnActivities.IconSize = 32;
             btnActivities.ImageAlign = ContentAlignment.MiddleLeft;
-            btnActivities.Location = new Point(0, 820);
+            btnActivities.Location = new Point(0, 913);
             btnActivities.Margin = new Padding(3, 4, 3, 4);
             btnActivities.Name = "btnActivities";
             btnActivities.Padding = new Padding(13, 0, 0, 0);
@@ -145,7 +173,6 @@
             btnActivities.TextAlign = ContentAlignment.MiddleLeft;
             btnActivities.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnActivities.UseVisualStyleBackColor = true;
-            btnActivities.Click += btnActivities_Click;
             // 
             // btnCertifications
             // 
@@ -160,7 +187,7 @@
             btnCertifications.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCertifications.IconSize = 32;
             btnCertifications.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCertifications.Location = new Point(0, 760);
+            btnCertifications.Location = new Point(0, 538);
             btnCertifications.Margin = new Padding(3, 4, 3, 4);
             btnCertifications.Name = "btnCertifications";
             btnCertifications.Padding = new Padding(13, 0, 0, 0);
@@ -186,7 +213,7 @@
             btnLetters.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLetters.IconSize = 32;
             btnLetters.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLetters.Location = new Point(0, 700);
+            btnLetters.Location = new Point(0, 478);
             btnLetters.Margin = new Padding(3, 4, 3, 4);
             btnLetters.Name = "btnLetters";
             btnLetters.Padding = new Padding(13, 0, 0, 0);
@@ -202,38 +229,116 @@
             // panelReportsSubMenu
             // 
             panelReportsSubMenu.BackColor = Color.FromArgb(38, 109, 200);
-            panelReportsSubMenu.Controls.Add(btnReportsCrops);
+            panelReportsSubMenu.Controls.Add(btnReportsLetters);
+            panelReportsSubMenu.Controls.Add(btnReportsHVC);
+            panelReportsSubMenu.Controls.Add(btnReportsRice);
+            panelReportsSubMenu.Controls.Add(btnReportsCorn);
             panelReportsSubMenu.Controls.Add(btnReportsRsbsa);
             panelReportsSubMenu.Dock = DockStyle.Top;
-            panelReportsSubMenu.Location = new Point(0, 598);
+            panelReportsSubMenu.Location = new Point(0, 658);
             panelReportsSubMenu.Name = "panelReportsSubMenu";
-            panelReportsSubMenu.Size = new Size(299, 102);
+            panelReportsSubMenu.Size = new Size(299, 255);
             panelReportsSubMenu.TabIndex = 20;
             // 
-            // btnReportsCrops
+            // btnReportsLetters
             // 
-            btnReportsCrops.Dock = DockStyle.Top;
-            btnReportsCrops.FlatAppearance.BorderSize = 0;
-            btnReportsCrops.FlatStyle = FlatStyle.Flat;
-            btnReportsCrops.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReportsCrops.ForeColor = Color.White;
-            btnReportsCrops.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnReportsCrops.IconColor = Color.White;
-            btnReportsCrops.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnReportsCrops.IconSize = 32;
-            btnReportsCrops.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReportsCrops.Location = new Point(0, 51);
-            btnReportsCrops.Margin = new Padding(3, 4, 3, 4);
-            btnReportsCrops.Name = "btnReportsCrops";
-            btnReportsCrops.Padding = new Padding(40, 0, 0, 0);
-            btnReportsCrops.Size = new Size(299, 51);
-            btnReportsCrops.TabIndex = 17;
-            btnReportsCrops.Tag = "Crops";
-            btnReportsCrops.Text = "Crops";
-            btnReportsCrops.TextAlign = ContentAlignment.MiddleLeft;
-            btnReportsCrops.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnReportsCrops.UseVisualStyleBackColor = true;
-            btnReportsCrops.Click += btnReportsCrops_Click;
+            btnReportsLetters.Dock = DockStyle.Top;
+            btnReportsLetters.FlatAppearance.BorderSize = 0;
+            btnReportsLetters.FlatStyle = FlatStyle.Flat;
+            btnReportsLetters.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReportsLetters.ForeColor = Color.White;
+            btnReportsLetters.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnReportsLetters.IconColor = Color.White;
+            btnReportsLetters.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReportsLetters.IconSize = 32;
+            btnReportsLetters.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReportsLetters.Location = new Point(0, 204);
+            btnReportsLetters.Margin = new Padding(3, 4, 3, 4);
+            btnReportsLetters.Name = "btnReportsLetters";
+            btnReportsLetters.Padding = new Padding(40, 0, 0, 0);
+            btnReportsLetters.Size = new Size(299, 51);
+            btnReportsLetters.TabIndex = 20;
+            btnReportsLetters.Tag = "Letters";
+            btnReportsLetters.Text = "Letters";
+            btnReportsLetters.TextAlign = ContentAlignment.MiddleLeft;
+            btnReportsLetters.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReportsLetters.UseVisualStyleBackColor = true;
+            btnReportsLetters.Click += btnReportsLetters_Click;
+            // 
+            // btnReportsHVC
+            // 
+            btnReportsHVC.Dock = DockStyle.Top;
+            btnReportsHVC.FlatAppearance.BorderSize = 0;
+            btnReportsHVC.FlatStyle = FlatStyle.Flat;
+            btnReportsHVC.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReportsHVC.ForeColor = Color.White;
+            btnReportsHVC.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnReportsHVC.IconColor = Color.White;
+            btnReportsHVC.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReportsHVC.IconSize = 32;
+            btnReportsHVC.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReportsHVC.Location = new Point(0, 153);
+            btnReportsHVC.Margin = new Padding(3, 4, 3, 4);
+            btnReportsHVC.Name = "btnReportsHVC";
+            btnReportsHVC.Padding = new Padding(40, 0, 0, 0);
+            btnReportsHVC.Size = new Size(299, 51);
+            btnReportsHVC.TabIndex = 19;
+            btnReportsHVC.Tag = "HVC";
+            btnReportsHVC.Text = "HVC";
+            btnReportsHVC.TextAlign = ContentAlignment.MiddleLeft;
+            btnReportsHVC.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReportsHVC.UseVisualStyleBackColor = true;
+            btnReportsHVC.Click += btnReportsHVC_Click;
+            // 
+            // btnReportsRice
+            // 
+            btnReportsRice.Dock = DockStyle.Top;
+            btnReportsRice.FlatAppearance.BorderSize = 0;
+            btnReportsRice.FlatStyle = FlatStyle.Flat;
+            btnReportsRice.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReportsRice.ForeColor = Color.White;
+            btnReportsRice.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnReportsRice.IconColor = Color.White;
+            btnReportsRice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReportsRice.IconSize = 32;
+            btnReportsRice.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReportsRice.Location = new Point(0, 102);
+            btnReportsRice.Margin = new Padding(3, 4, 3, 4);
+            btnReportsRice.Name = "btnReportsRice";
+            btnReportsRice.Padding = new Padding(40, 0, 0, 0);
+            btnReportsRice.Size = new Size(299, 51);
+            btnReportsRice.TabIndex = 18;
+            btnReportsRice.Tag = "Corn";
+            btnReportsRice.Text = "Corn";
+            btnReportsRice.TextAlign = ContentAlignment.MiddleLeft;
+            btnReportsRice.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReportsRice.UseVisualStyleBackColor = true;
+            btnReportsRice.Click += btnReportsRice_Click;
+            // 
+            // btnReportsCorn
+            // 
+            btnReportsCorn.Dock = DockStyle.Top;
+            btnReportsCorn.FlatAppearance.BorderSize = 0;
+            btnReportsCorn.FlatStyle = FlatStyle.Flat;
+            btnReportsCorn.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReportsCorn.ForeColor = Color.White;
+            btnReportsCorn.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnReportsCorn.IconColor = Color.White;
+            btnReportsCorn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReportsCorn.IconSize = 32;
+            btnReportsCorn.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReportsCorn.Location = new Point(0, 51);
+            btnReportsCorn.Margin = new Padding(3, 4, 3, 4);
+            btnReportsCorn.Name = "btnReportsCorn";
+            btnReportsCorn.Padding = new Padding(40, 0, 0, 0);
+            btnReportsCorn.Size = new Size(299, 51);
+            btnReportsCorn.TabIndex = 17;
+            btnReportsCorn.Tag = "Rice";
+            btnReportsCorn.Text = "Rice";
+            btnReportsCorn.TextAlign = ContentAlignment.MiddleLeft;
+            btnReportsCorn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReportsCorn.UseVisualStyleBackColor = true;
+            btnReportsCorn.Click += btnReportsCorn_Click;
             // 
             // btnReportsRsbsa
             // 
@@ -273,7 +378,7 @@
             btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReports.IconSize = 32;
             btnReports.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReports.Location = new Point(0, 538);
+            btnReports.Location = new Point(0, 598);
             btnReports.Margin = new Padding(3, 4, 3, 4);
             btnReports.Name = "btnReports";
             btnReports.Padding = new Padding(13, 0, 0, 0);
@@ -285,32 +390,6 @@
             btnReports.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReports.UseVisualStyleBackColor = true;
             btnReports.Click += btnReports_Click;
-            // 
-            // btnDamages
-            // 
-            btnDamages.Dock = DockStyle.Top;
-            btnDamages.FlatAppearance.BorderSize = 0;
-            btnDamages.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
-            btnDamages.FlatStyle = FlatStyle.Flat;
-            btnDamages.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDamages.ForeColor = Color.White;
-            btnDamages.IconChar = FontAwesome.Sharp.IconChar.WheatAwnCircleExclamation;
-            btnDamages.IconColor = Color.White;
-            btnDamages.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDamages.IconSize = 32;
-            btnDamages.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDamages.Location = new Point(0, 478);
-            btnDamages.Margin = new Padding(3, 4, 3, 4);
-            btnDamages.Name = "btnDamages";
-            btnDamages.Padding = new Padding(13, 0, 0, 0);
-            btnDamages.Size = new Size(299, 60);
-            btnDamages.TabIndex = 18;
-            btnDamages.Tag = "Crop Damages";
-            btnDamages.Text = "Crop Damages";
-            btnDamages.TextAlign = ContentAlignment.MiddleLeft;
-            btnDamages.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDamages.UseVisualStyleBackColor = true;
-            btnDamages.Click += btnDamages_Click;
             // 
             // panelCropsSubMenu
             // 
@@ -463,7 +542,7 @@
             btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLogout.IconSize = 32;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(0, 940);
+            btnLogout.Location = new Point(0, 1093);
             btnLogout.Margin = new Padding(3, 4, 3, 4);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(13, 0, 0, 0);
@@ -739,14 +818,17 @@
         public FontAwesome.Sharp.IconButton btnCorn;
         public FontAwesome.Sharp.IconButton btnUsers;
         public FontAwesome.Sharp.IconButton btnLetters;
-        public FontAwesome.Sharp.IconButton btnDamages;
         public FontAwesome.Sharp.IconButton btnReports;
         private Panel panelReportsSubMenu;
         public FontAwesome.Sharp.IconButton btnReportsRsbsa;
-        public FontAwesome.Sharp.IconButton btnReportsCrops;
+        public FontAwesome.Sharp.IconButton btnReportsCorn;
         public FontAwesome.Sharp.IconButton btnActivities;
         public FontAwesome.Sharp.IconButton btnCertifications;
         private ToolTip toolTip1;
         private Label lblUsername;
+        public FontAwesome.Sharp.IconButton btnSettings;
+        public FontAwesome.Sharp.IconButton btnReportsRice;
+        public FontAwesome.Sharp.IconButton btnReportsHVC;
+        public FontAwesome.Sharp.IconButton btnReportsLetters;
     }
 }

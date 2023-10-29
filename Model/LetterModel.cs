@@ -37,6 +37,9 @@ namespace AgRecords.Model
         {
             try
             {
+                DateTime now = DateTime.Now;
+                string formattedNow = now.ToString("yyyyMMdd");
+
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
                     db.Open();
@@ -45,18 +48,23 @@ namespace AgRecords.Model
 
                     object result = command.ExecuteScalar();
 
-                    if (result == null || result == DBNull.Value)
-                    {
-                        return "LTR00001";
-                    }
-                    else
+                    int nextNumber = 1; // Default to 1 if no records are found
+
+                    if (result != null && result != DBNull.Value)
                     {
                         string lastId = result.ToString();
-                        int lastNumber = int.Parse(lastId.Substring(4));
-                        int nextNumber = lastNumber + 1;
-                        string nextId = "LTR" + nextNumber.ToString("00000");
-                        return nextId;
+                        string lastDatePart = lastId.Substring(0, 8);
+
+                        if (lastDatePart == formattedNow)
+                        {
+                            if (int.TryParse(lastId.Substring(8), out int lastNumber))
+                            {
+                                nextNumber = lastNumber + 1;
+                            }
+                        }
                     }
+
+                    return $"{formattedNow}{nextNumber:D5}";
                 }
             }
             catch (Exception ex)

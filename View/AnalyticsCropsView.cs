@@ -27,16 +27,37 @@ namespace AgRecords.View
 
         private void AnalyticsCropsView_Load(object sender, EventArgs e)
         {
-            DataTable data2 = analyticsController.PieCountFarmerSex();
+            labelTotalRiceFarmers.Text = analyticsController.CountRiceFarmers();
+            labelTotalRiceLandArea.Text = analyticsController.TotalRiceLandArea() + " ha";
+            labelTotalRiceBarangay.Text = analyticsController.TotalBarangayRice() + " ha";
+            labelTotalAreaPlanted.Text = analyticsController.TotalRiceAreaPlanted() + " ha";
+
+            DataTable data1 = analyticsController.PieCountRiceFarmerSex();
+
+            if (data1 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChartRice1(data1);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph1.Model = pieChart;
+            }
+
+            DataTable data2 = analyticsController.BarCountRiceFarmerBarangay();
 
             if (data2 != null)
             {
                 // Create the pie chart model
-                PlotModel pieChart = analyticsController.CreatePieChart2(data2);
+                PlotModel barChart = analyticsController.CreateBarChartRice1(data2);
 
                 // Set the pie chart model to the PlotView control
-                pieChart2.Model = pieChart;
+                riceGraph2.Model = barChart;
             }
+        }
+
+        private void riceGraph1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

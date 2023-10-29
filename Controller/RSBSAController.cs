@@ -810,8 +810,7 @@ namespace AgRecords.Controller
 
         public bool EditRSBSA(
             string rsbsaId,
-            string? rsbsaIdLGU,
-            string rsbsaIdRegion,
+            string? rsbsaIdRegion,
             DateTime dateModified,
 
             // Farmer Personal Info
@@ -907,7 +906,6 @@ namespace AgRecords.Controller
                 RSBSA rsbsa = new RSBSA
                 {
                     rsbsaId = rsbsaId,
-                    rsbsaIdLGU = rsbsaIdLGU,
                     rsbsaIdRegion = rsbsaIdRegion,
                     dateModified = dateModified,
                     lastModifier = username,

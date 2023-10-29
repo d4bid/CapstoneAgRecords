@@ -154,26 +154,27 @@ namespace AgRecords.View
         {
             // Create a panel to hold the label and remove button
             Panel panel = new Panel();
-            panel.BackColor = Color.LightGray;
-            panel.Margin = new Padding(3);
-            panel.Height = controlHeight; // Adjust the height as needed
+            panel.BackColor = Color.FromArgb(239, 239, 239);
+            panel.Margin = new Padding(10);
+            panel.Height = controlHeight + 4; // Adjust the height as needed
 
             // Create a label for the tag text
             Label label = new Label();
             label.Text = tagText;
             label.AutoSize = true;
             label.Dock = DockStyle.Left;
+            label.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
 
             // Create a button for removing the tag
             Button removeButton = new Button();
             removeButton.Text = "X";
-            removeButton.BackColor = Color.Red;
+            removeButton.BackColor = Color.FromArgb(207, 92, 96);
             removeButton.ForeColor = Color.White;
             removeButton.FlatStyle = FlatStyle.Flat;
             removeButton.Dock = DockStyle.Right;
             removeButton.Font = new Font(removeButton.Font.FontFamily, 6, FontStyle.Regular); // Adjust font size
             removeButton.Width = 20; // Adjust the width as needed
-            removeButton.Height = controlHeight + 2;
+            removeButton.Height = controlHeight + 6;
 
             // Define the click event for the remove button
             removeButton.Click += (s, args) =>
