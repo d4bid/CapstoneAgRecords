@@ -184,6 +184,7 @@
             // 
             // btnPrint
             // 
+            btnPrint.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnPrint.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
             btnPrint.FlatAppearance.BorderSize = 2;
             btnPrint.FlatAppearance.MouseDownBackColor = Color.White;
@@ -250,7 +251,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 100);
             panel2.Name = "panel2";
-            panel2.Size = new Size(793, 826);
+            panel2.Size = new Size(831, 826);
             panel2.TabIndex = 38;
             // 
             // panel9
@@ -259,7 +260,7 @@
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(0, 127);
             panel9.Name = "panel9";
-            panel9.Size = new Size(793, 699);
+            panel9.Size = new Size(831, 699);
             panel9.TabIndex = 38;
             // 
             // flowLayoutPanel1
@@ -267,7 +268,7 @@
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(12, 6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(773, 683);
+            flowLayoutPanel1.Size = new Size(799, 683);
             flowLayoutPanel1.TabIndex = 39;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -276,7 +277,7 @@
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(0, 117);
             panel8.Name = "panel8";
-            panel8.Size = new Size(793, 10);
+            panel8.Size = new Size(831, 10);
             panel8.TabIndex = 37;
             // 
             // panel7
@@ -285,7 +286,7 @@
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(793, 117);
+            panel7.Size = new Size(831, 117);
             panel7.TabIndex = 36;
             // 
             // groupBox1
@@ -297,9 +298,9 @@
             groupBox1.Controls.Add(rectangleRound2);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(rectangleRound3);
-            groupBox1.Location = new Point(12, 3);
+            groupBox1.Location = new Point(13, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(748, 106);
+            groupBox1.Size = new Size(778, 106);
             groupBox1.TabIndex = 35;
             groupBox1.TabStop = false;
             // 
@@ -320,7 +321,7 @@
             txtBarangay.Location = new Point(469, 50);
             txtBarangay.Margin = new Padding(3, 4, 3, 4);
             txtBarangay.Name = "txtBarangay";
-            txtBarangay.Size = new Size(240, 27);
+            txtBarangay.Size = new Size(271, 27);
             txtBarangay.TabIndex = 28;
             txtBarangay.Text = "Barangay";
             // 
@@ -366,14 +367,14 @@
             rectangleRound3.BackColor = Color.White;
             rectangleRound3.Location = new Point(454, 47);
             rectangleRound3.Name = "rectangleRound3";
-            rectangleRound3.Size = new Size(270, 38);
+            rectangleRound3.Size = new Size(301, 38);
             rectangleRound3.TabIndex = 25;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(239, 239, 239);
             panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(793, 100);
+            panel4.Location = new Point(831, 100);
             panel4.Name = "panel4";
             panel4.Size = new Size(10, 826);
             panel4.TabIndex = 39;
@@ -383,10 +384,10 @@
             panel5.BackColor = Color.White;
             panel5.Controls.Add(label10);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(803, 100);
+            panel5.Location = new Point(841, 100);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(10);
-            panel5.Size = new Size(792, 54);
+            panel5.Size = new Size(754, 54);
             panel5.TabIndex = 40;
             // 
             // label10
@@ -404,10 +405,10 @@
             panel6.BackColor = Color.White;
             panel6.Controls.Add(dgvCert);
             panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(803, 154);
+            panel6.Location = new Point(841, 154);
             panel6.Name = "panel6";
             panel6.Padding = new Padding(10);
-            panel6.Size = new Size(792, 772);
+            panel6.Size = new Size(754, 772);
             panel6.TabIndex = 41;
             // 
             // dgvCert
@@ -445,7 +446,7 @@
             dgvCert.RowHeadersWidth = 51;
             dgvCert.RowTemplate.Height = 40;
             dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCert.Size = new Size(772, 752);
+            dgvCert.Size = new Size(734, 752);
             dgvCert.TabIndex = 24;
             // 
             // CertificationsAddView

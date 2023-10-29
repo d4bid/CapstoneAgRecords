@@ -48,7 +48,6 @@
             rectangleRound2 = new RectangleRound();
             txtBoxTitle = new TextBox();
             rectangleRound1 = new RectangleRound();
-            flowLayoutPanelTags = new FlowLayoutPanel();
             label2 = new Label();
             label1 = new Label();
             labelTitle = new Label();
@@ -64,6 +63,7 @@
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
+            flowLayoutPanelTags = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -180,6 +180,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(flowLayoutPanelTags);
             groupBox2.Controls.Add(comboBoxAction);
             groupBox2.Controls.Add(rectangleRound6);
             groupBox2.Controls.Add(label4);
@@ -189,7 +190,6 @@
             groupBox2.Controls.Add(rectangleRound2);
             groupBox2.Controls.Add(txtBoxTitle);
             groupBox2.Controls.Add(rectangleRound1);
-            groupBox2.Controls.Add(flowLayoutPanelTags);
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(labelTitle);
@@ -289,15 +289,6 @@
             rectangleRound1.Name = "rectangleRound1";
             rectangleRound1.Size = new Size(620, 38);
             rectangleRound1.TabIndex = 0;
-            // 
-            // flowLayoutPanelTags
-            // 
-            flowLayoutPanelTags.AutoScroll = true;
-            flowLayoutPanelTags.Location = new Point(104, 221);
-            flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanelTags.Name = "flowLayoutPanelTags";
-            flowLayoutPanelTags.Size = new Size(620, 86);
-            flowLayoutPanelTags.TabIndex = 0;
             // 
             // label2
             // 
@@ -471,6 +462,15 @@
             label5.TabIndex = 0;
             label5.Text = "To";
             // 
+            // flowLayoutPanelTags
+            // 
+            flowLayoutPanelTags.AutoScroll = true;
+            flowLayoutPanelTags.Location = new Point(104, 221);
+            flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanelTags.Name = "flowLayoutPanelTags";
+            flowLayoutPanelTags.Size = new Size(620, 86);
+            flowLayoutPanelTags.TabIndex = 29;
+            // 
             // LettersEditView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -519,7 +519,6 @@
         private RectangleRound rectangleRound2;
         private TextBox txtBoxTitle;
         private RectangleRound rectangleRound1;
-        private FlowLayoutPanel flowLayoutPanelTags;
         private Label label2;
         private Label label1;
         private Label labelTitle;
@@ -535,5 +534,6 @@
         private Label label7;
         private Label label6;
         private Label label5;
+        private FlowLayoutPanel flowLayoutPanelTags;
     }
 }

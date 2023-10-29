@@ -30,6 +30,19 @@ namespace AgRecords.View
             labelTotalCornLandArea.Text = analyticsController.TotalCornLandArea() + " ha";
             labelTotalCornBarangay.Text = analyticsController.TotalBarangayCorn() + " ha";
             labelTotalCornAreaPlanted.Text = analyticsController.TotalCornAreaPlanted() + " ha";
+            labelTotalYellowCorn.Text = analyticsController.TotalCornAreaPlantedYellow() + " ha";
+            labelTotalWhiteCorn.Text = analyticsController.TotalCornAreaPlantedWhite() + " ha";
+
+            DataTable data2 = analyticsController.BarCountRiceFarmerBarangay();
+
+            if (data2 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChartCorn1(data2);
+
+                // Set the pie chart model to the PlotView control
+                cornGraph1.Model = barChart;
+            }
 
             DataTable data1 = analyticsController.PieCountRiceFarmerSex();
 
@@ -39,7 +52,7 @@ namespace AgRecords.View
                 PlotModel pieChart = analyticsController.CreatePieChartRice1(data1);
 
                 // Set the pie chart model to the PlotView control
-                cornGraph1.Model = pieChart;
+                cornGraph2.Model = pieChart;
             }
         }
     }

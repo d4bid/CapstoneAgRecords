@@ -54,20 +54,23 @@
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(rectangleRound5);
             groupBox2.Controls.Add(label8);
-            groupBox2.Location = new Point(3, 3);
+            groupBox2.Location = new Point(2, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(747, 299);
+            groupBox2.Size = new Size(747, 301);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             // 
             // btnRemove
             // 
+            btnRemove.FlatAppearance.BorderSize = 0;
+            btnRemove.FlatAppearance.MouseDownBackColor = Color.White;
+            btnRemove.FlatAppearance.MouseOverBackColor = Color.White;
             btnRemove.FlatStyle = FlatStyle.Flat;
             btnRemove.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             btnRemove.IconColor = Color.FromArgb(0, 35, 76);
             btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRemove.IconSize = 30;
-            btnRemove.Location = new Point(720, 13);
+            btnRemove.Location = new Point(716, 17);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(25, 25);
             btnRemove.TabIndex = 35;
@@ -79,7 +82,7 @@
             // 
             labelParcelNo.AutoSize = true;
             labelParcelNo.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelParcelNo.Location = new Point(31, 60);
+            labelParcelNo.Location = new Point(31, 67);
             labelParcelNo.Name = "labelParcelNo";
             labelParcelNo.Size = new Size(41, 25);
             labelParcelNo.TabIndex = 34;
@@ -88,7 +91,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(189, 31);
+            label7.Location = new Point(189, 38);
             label7.Name = "label7";
             label7.Size = new Size(98, 20);
             label7.TabIndex = 33;
@@ -97,7 +100,7 @@
             // rectangleRound8
             // 
             rectangleRound8.BackColor = Color.White;
-            rectangleRound8.Location = new Point(22, 54);
+            rectangleRound8.Location = new Point(22, 61);
             rectangleRound8.Name = "rectangleRound8";
             rectangleRound8.Size = new Size(146, 38);
             rectangleRound8.TabIndex = 32;
@@ -106,7 +109,7 @@
             // 
             txtFarmInfo.BorderStyle = BorderStyle.None;
             txtFarmInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtFarmInfo.Location = new Point(36, 132);
+            txtFarmInfo.Location = new Point(36, 139);
             txtFarmInfo.Margin = new Padding(3, 4, 3, 4);
             txtFarmInfo.Multiline = true;
             txtFarmInfo.Name = "txtFarmInfo";
@@ -117,7 +120,7 @@
             // 
             txtFarmAddress.BorderStyle = BorderStyle.None;
             txtFarmAddress.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtFarmAddress.Location = new Point(203, 57);
+            txtFarmAddress.Location = new Point(203, 64);
             txtFarmAddress.Margin = new Padding(3, 4, 3, 4);
             txtFarmAddress.Name = "txtFarmAddress";
             txtFarmAddress.Size = new Size(506, 27);
@@ -127,7 +130,7 @@
             // rectangleRound6
             // 
             rectangleRound6.BackColor = Color.White;
-            rectangleRound6.Location = new Point(22, 129);
+            rectangleRound6.Location = new Point(22, 136);
             rectangleRound6.Name = "rectangleRound6";
             rectangleRound6.Size = new Size(699, 150);
             rectangleRound6.TabIndex = 27;
@@ -135,7 +138,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(22, 31);
+            label5.Location = new Point(22, 38);
             label5.Name = "label5";
             label5.Size = new Size(75, 20);
             label5.TabIndex = 28;
@@ -144,7 +147,7 @@
             // rectangleRound5
             // 
             rectangleRound5.BackColor = Color.White;
-            rectangleRound5.Location = new Point(189, 54);
+            rectangleRound5.Location = new Point(189, 61);
             rectangleRound5.Name = "rectangleRound5";
             rectangleRound5.Size = new Size(532, 38);
             rectangleRound5.TabIndex = 29;
@@ -152,7 +155,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(22, 106);
+            label8.Location = new Point(22, 113);
             label8.Name = "label8";
             label8.Size = new Size(71, 20);
             label8.TabIndex = 26;

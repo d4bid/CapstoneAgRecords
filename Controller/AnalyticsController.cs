@@ -542,6 +542,82 @@ namespace AgRecords.Controller
             }
         }
 
+        public string TotalCornAreaPlantedYellow()
+        {
+            try
+            {
+                return analyticsModel.TotalCornAreaPlantedYellow();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalCornAreaPlantedWhite()
+        {
+            try
+            {
+                return analyticsModel.TotalCornAreaPlantedWhite();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public PlotModel CreateBarChartCorn1(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries();
+
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left
+            };
+
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Count"
+            };
+
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            OxyColor barColor = OxyColor.FromRgb(255, 221, 100);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string barangay = row["Barangay"].ToString();
+                int count = Convert.ToInt32(row["FarmerCount"]);
+
+                // Create a bar item with the specific color
+                var barItem = new BarItem { Value = count, Color = barColor };
+
+                barSeries.Items.Add(barItem);
+                categoryAxis.Labels.Add(barangay);
+            }
+
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
+        public DataTable BarCountCornFarmerBarangay()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountCornFarmerBarangay();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
         public DataTable PieCountCornFarmerSex()
         {
             try

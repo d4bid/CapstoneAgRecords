@@ -527,6 +527,82 @@ namespace AgRecords.Model
             }
         }
 
+        public string TotalCornAreaPlantedYellow()
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_dataTotalCornAreaPlantedYellow();", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString(); // Convert the result to a string
+                    }
+
+                    return "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalCornAreaPlantedWhite()
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_dataTotalCornAreaPlantedWhite();", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString(); // Convert the result to a string
+                    }
+
+                    return "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountCornFarmerBarangay()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountCornFarmerBarangay()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading corn farmers per barangay: " + ex.Message, ex);
+            }
+        }
+
         public DataTable CountCornFarmerSex()
         {
             try
