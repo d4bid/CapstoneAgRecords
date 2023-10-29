@@ -142,7 +142,7 @@ namespace AgRecords.View
                 // Create a panel to hold the label and remove button
                 Panel panel = new Panel();
                 panel.BackColor = Color.FromArgb(239, 239, 239);
-                panel.Margin = new Padding(5);
+                panel.Margin = new Padding(10);
                 panel.Height = controlHeight; // Adjust the height as needed
 
                 // Create a label for the tag text
@@ -150,7 +150,7 @@ namespace AgRecords.View
                 label.Text = tagText;
                 label.AutoSize = true;
                 label.Dock = DockStyle.Left;
-                label.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+                label.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
                 //label.TextAlign = ContentAlignment.MiddleLeft;
 
                 // Create a button for removing the tag

@@ -184,6 +184,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(290, 26);
             txtPassword.TabIndex = 2;
+            txtPassword.Text = "P@ssw0rd1234";
             txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -195,6 +196,7 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(333, 26);
             txtUsername.TabIndex = 1;
+            txtUsername.Text = "darynne";
             // 
             // rectangleBlue2
             // 

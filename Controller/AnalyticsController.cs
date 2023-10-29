@@ -22,6 +22,8 @@ namespace AgRecords.Controller
         private MainView mainView;
         private AnalyticsRsbsaView analyticsRsbsaView;
         private AnalyticsCropsView analyticsCropsView;
+        private AnalyticsCropsCornView analyticsCropsCornView;
+        private AnalyticsCropsHvcView analyticsCropsHvcView;
         private AnalyticsModel analyticsModel;
 
         public AnalyticsController(DashboardView dashboardView)
@@ -45,6 +47,12 @@ namespace AgRecords.Controller
         public AnalyticsController(AnalyticsCropsView analyticsCropsView)
         {
             this.analyticsCropsView = analyticsCropsView;
+            analyticsModel = new AnalyticsModel();
+        }
+
+        public AnalyticsController(AnalyticsCropsCornView analyticsCornCropsView)
+        {
+            this.analyticsCropsCornView = analyticsCropsCornView;
             analyticsModel = new AnalyticsModel();
         }
 
@@ -325,6 +333,353 @@ namespace AgRecords.Controller
         }
 
 
+        // ---------------- RICE --------------------
+        public string CountRiceFarmers()
+        {
+            try
+            {
+                return analyticsModel.CountRiceFarmers();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
 
+        public string TotalRiceLandArea()
+        {
+            try
+            {
+                return analyticsModel.TotalRiceLandArea();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalBarangayRice()
+        {
+            try
+            {
+                return analyticsModel.TotalBarangayRice();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalRiceAreaPlanted()
+        {
+            try
+            {
+                return analyticsModel.TotalRiceAreaPlanted();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public PlotModel CreatePieChartRice1(DataTable data)
+        {
+            var model = new PlotModel();
+            var pieSeries = new PieSeries();
+
+            var colors = new List<OxyColor>
+            {
+                OxyColor.FromRgb(0, 109, 104),
+                OxyColor.FromRgb(255, 221, 100),
+                OxyColor.FromRgb(43, 121, 223)
+            };
+
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                DataRow row = data.Rows[i];
+
+                // Assuming that the column names match the data in your stored procedure result
+                double maleCount = Convert.ToDouble(row["male_count"]);
+                double femaleCount = Convert.ToDouble(row["female_count"]);
+
+                if (maleCount > 0)
+                {
+                    pieSeries.Slices.Add(new PieSlice("Male", maleCount)
+                    {
+                        Fill = colors[0]
+                    });
+                }
+
+                if (femaleCount > 0)
+                {
+                    pieSeries.Slices.Add(new PieSlice("Female", femaleCount)
+                    {
+                        Fill = colors[1]
+                    });
+                }
+            }
+
+            model.Series.Add(pieSeries);
+
+            return model;
+        }
+
+        public DataTable PieCountRiceFarmerSex()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountRiceFarmerSex();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateBarChartRice1(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries();
+
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left
+            };
+
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Count"
+            };
+
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            OxyColor barColor = OxyColor.FromRgb(0, 109, 104);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string barangay = row["Barangay"].ToString();
+                int count = Convert.ToInt32(row["FarmerCount"]);
+
+                // Create a bar item with the specific color
+                var barItem = new BarItem { Value = count, Color = barColor };
+
+                barSeries.Items.Add(barItem);
+                categoryAxis.Labels.Add(barangay);
+            }
+
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
+        public DataTable BarCountRiceFarmerBarangay()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountRiceFarmerBarangay();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+
+
+
+        // ---------------- CORN --------------------
+        public string CountCornFarmers()
+        {
+            try
+            {
+                return analyticsModel.CountCornFarmers();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalCornLandArea()
+        {
+            try
+            {
+                return analyticsModel.TotalCornLandArea();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalBarangayCorn()
+        {
+            try
+            {
+                return analyticsModel.TotalBarangayCorn();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalCornAreaPlanted()
+        {
+            try
+            {
+                return analyticsModel.TotalCornAreaPlanted();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalCornAreaPlantedYellow()
+        {
+            try
+            {
+                return analyticsModel.TotalCornAreaPlantedYellow();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalCornAreaPlantedWhite()
+        {
+            try
+            {
+                return analyticsModel.TotalCornAreaPlantedWhite();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public PlotModel CreateBarChartCorn1(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries();
+
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left
+            };
+
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Count"
+            };
+
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            OxyColor barColor = OxyColor.FromRgb(255, 221, 100);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string barangay = row["Barangay"].ToString();
+                int count = Convert.ToInt32(row["FarmerCount"]);
+
+                // Create a bar item with the specific color
+                var barItem = new BarItem { Value = count, Color = barColor };
+
+                barSeries.Items.Add(barItem);
+                categoryAxis.Labels.Add(barangay);
+            }
+
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
+        public DataTable BarCountCornFarmerBarangay()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountCornFarmerBarangay();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable PieCountCornFarmerSex()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountCornFarmerSex();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+
+        // ---------------- HVC --------------------
+        public string CountHvcFarmers()
+        {
+            try
+            {
+                return analyticsModel.CountHvcFarmers();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalHvcLandArea()
+        {
+            try
+            {
+                return analyticsModel.TotalHvcLandArea();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalBarangayHvc()
+        {
+            try
+            {
+                return analyticsModel.TotalBarangayHvc();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public string TotalHvcAreaPlanted()
+        {
+            try
+            {
+                return analyticsModel.TotalHvcAreaPlanted();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
     }
 }
