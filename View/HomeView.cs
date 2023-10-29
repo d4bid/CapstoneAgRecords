@@ -629,26 +629,26 @@ namespace AgRecords.View
 
             ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
             OpenChildForm(new AnalyticsCropsView(panelDesktop));
-            lblTitle.Text = "Analytics \u23F5 Corn";
+            lblTitle.Text = "Analytics \u23F5 Rice";
 
             HideSubMenu();
         }
 
         private void btnReportsRice_Click(object sender, EventArgs e)
         {
-            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            AnalyticsCropsCornView analyticsCropsCornView = new AnalyticsCropsCornView(panelDesktop);
             //userView.formRefresh();
-            analyticsCropsView.TopLevel = false;
-            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
-            analyticsCropsView.Dock = DockStyle.Fill;
+            analyticsCropsCornView.TopLevel = false;
+            analyticsCropsCornView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsCornView.Dock = DockStyle.Fill;
 
             panelDesktop.Controls.Clear();
-            panelDesktop.Controls.Add(analyticsCropsView);
-            analyticsCropsView.Show();
+            panelDesktop.Controls.Add(analyticsCropsCornView);
+            analyticsCropsCornView.Show();
 
             ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new AnalyticsCropsView(panelDesktop));
-            lblTitle.Text = "Analytics \u23F5 Rice";
+            OpenChildForm(new AnalyticsCropsCornView(panelDesktop));
+            lblTitle.Text = "Analytics \u23F5 Corn";
 
             HideSubMenu();
         }

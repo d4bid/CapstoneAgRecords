@@ -95,9 +95,9 @@
             labelTotalRiceFarmers.ForeColor = Color.FromArgb(0, 35, 76);
             labelTotalRiceFarmers.Location = new Point(29, 69);
             labelTotalRiceFarmers.Name = "labelTotalRiceFarmers";
-            labelTotalRiceFarmers.Size = new Size(135, 62);
+            labelTotalRiceFarmers.Size = new Size(55, 62);
             labelTotalRiceFarmers.TabIndex = 18;
-            labelTotalRiceFarmers.Text = "8000";
+            labelTotalRiceFarmers.Text = "#";
             // 
             // label1
             // 
@@ -290,9 +290,9 @@
             label12.ForeColor = Color.FromArgb(0, 35, 76);
             label12.Location = new Point(738, 347);
             label12.Name = "label12";
-            label12.Size = new Size(175, 20);
+            label12.Size = new Size(222, 20);
             label12.TabIndex = 38;
-            label12.Text = "Area Planted:Harvested";
+            label12.Text = "Area Harvested out of Planted";
             // 
             // rectangleFullWhite6
             // 
@@ -323,14 +323,15 @@
             // riceGraph1
             // 
             riceGraph1.BackColor = Color.White;
-            riceGraph1.Location = new Point(738, 69);
+            riceGraph1.Location = new Point(728, 69);
             riceGraph1.Name = "riceGraph1";
             riceGraph1.PanCursor = Cursors.Hand;
-            riceGraph1.Size = new Size(310, 233);
+            riceGraph1.Size = new Size(329, 233);
             riceGraph1.TabIndex = 41;
             riceGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
             riceGraph1.ZoomVerticalCursor = Cursors.SizeNS;
+            riceGraph1.Click += riceGraph1_Click;
             // 
             // riceGraph2
             // 

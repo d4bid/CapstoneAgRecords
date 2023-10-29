@@ -37,13 +37,13 @@
             rectangleFullWhite2 = new RectangleFullWhite();
             label8 = new Label();
             rectangleFullWhite4 = new RectangleFullWhite();
-            labelTotalCornBarangay = new Label();
+            labelTotalCornAreaPlanted = new Label();
             label4 = new Label();
-            label5 = new Label();
+            labelTotalCornBarangay = new Label();
             label6 = new Label();
             rectangleFullYellow2 = new RectangleFullYellow();
             rectangleFullGreen2 = new RectangleFullGreen();
-            labelGaiFarming = new Label();
+            labelTotalCornLandArea = new Label();
             labelTotalCornLand = new Label();
             labelTotalCornFarmers = new Label();
             label1 = new Label();
@@ -150,17 +150,17 @@
             rectangleFullWhite4.Size = new Size(760, 423);
             rectangleFullWhite4.TabIndex = 54;
             // 
-            // labelTotalCornBarangay
+            // labelTotalCornAreaPlanted
             // 
-            labelTotalCornBarangay.AutoSize = true;
-            labelTotalCornBarangay.BackColor = Color.FromArgb(0, 109, 104);
-            labelTotalCornBarangay.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotalCornBarangay.ForeColor = Color.White;
-            labelTotalCornBarangay.Location = new Point(1196, 70);
-            labelTotalCornBarangay.Name = "labelTotalCornBarangay";
-            labelTotalCornBarangay.Size = new Size(55, 62);
-            labelTotalCornBarangay.TabIndex = 53;
-            labelTotalCornBarangay.Text = "#";
+            labelTotalCornAreaPlanted.AutoSize = true;
+            labelTotalCornAreaPlanted.BackColor = Color.FromArgb(0, 109, 104);
+            labelTotalCornAreaPlanted.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalCornAreaPlanted.ForeColor = Color.White;
+            labelTotalCornAreaPlanted.Location = new Point(1196, 70);
+            labelTotalCornAreaPlanted.Name = "labelTotalCornAreaPlanted";
+            labelTotalCornAreaPlanted.Size = new Size(55, 62);
+            labelTotalCornAreaPlanted.TabIndex = 53;
+            labelTotalCornAreaPlanted.Text = "#";
             // 
             // label4
             // 
@@ -174,17 +174,17 @@
             label4.TabIndex = 52;
             label4.Text = "Total Area Planted";
             // 
-            // label5
+            // labelTotalCornBarangay
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(255, 221, 100);
-            label5.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(0, 35, 76);
-            label5.Location = new Point(808, 70);
-            label5.Name = "label5";
-            label5.Size = new Size(55, 62);
-            label5.TabIndex = 51;
-            label5.Text = "#";
+            labelTotalCornBarangay.AutoSize = true;
+            labelTotalCornBarangay.BackColor = Color.FromArgb(255, 221, 100);
+            labelTotalCornBarangay.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalCornBarangay.ForeColor = Color.FromArgb(0, 35, 76);
+            labelTotalCornBarangay.Location = new Point(808, 70);
+            labelTotalCornBarangay.Name = "labelTotalCornBarangay";
+            labelTotalCornBarangay.Size = new Size(55, 62);
+            labelTotalCornBarangay.TabIndex = 51;
+            labelTotalCornBarangay.Text = "#";
             // 
             // label6
             // 
@@ -213,17 +213,17 @@
             rectangleFullGreen2.Size = new Size(404, 144);
             rectangleFullGreen2.TabIndex = 48;
             // 
-            // labelGaiFarming
+            // labelTotalCornLandArea
             // 
-            labelGaiFarming.AutoSize = true;
-            labelGaiFarming.BackColor = Color.FromArgb(0, 109, 104);
-            labelGaiFarming.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelGaiFarming.ForeColor = Color.White;
-            labelGaiFarming.Location = new Point(419, 70);
-            labelGaiFarming.Name = "labelGaiFarming";
-            labelGaiFarming.Size = new Size(55, 62);
-            labelGaiFarming.TabIndex = 47;
-            labelGaiFarming.Text = "#";
+            labelTotalCornLandArea.AutoSize = true;
+            labelTotalCornLandArea.BackColor = Color.FromArgb(0, 109, 104);
+            labelTotalCornLandArea.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalCornLandArea.ForeColor = Color.White;
+            labelTotalCornLandArea.Location = new Point(419, 70);
+            labelTotalCornLandArea.Name = "labelTotalCornLandArea";
+            labelTotalCornLandArea.Size = new Size(55, 62);
+            labelTotalCornLandArea.TabIndex = 47;
+            labelTotalCornLandArea.Text = "#";
             // 
             // labelTotalCornLand
             // 
@@ -398,13 +398,13 @@
             Controls.Add(rectangleFullWhite2);
             Controls.Add(label8);
             Controls.Add(rectangleFullWhite4);
-            Controls.Add(labelTotalCornBarangay);
+            Controls.Add(labelTotalCornAreaPlanted);
             Controls.Add(label4);
-            Controls.Add(label5);
+            Controls.Add(labelTotalCornBarangay);
             Controls.Add(label6);
             Controls.Add(rectangleFullYellow2);
             Controls.Add(rectangleFullGreen2);
-            Controls.Add(labelGaiFarming);
+            Controls.Add(labelTotalCornLandArea);
             Controls.Add(labelTotalCornLand);
             Controls.Add(labelTotalCornFarmers);
             Controls.Add(label1);
@@ -412,6 +412,7 @@
             Controls.Add(rectangleFullGreen1);
             Name = "AnalyticsCropsCornView";
             Text = "AnalyticsCropsCornView";
+            Load += AnalyticsCropsCornView_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -427,13 +428,13 @@
         private RectangleFullWhite rectangleFullWhite2;
         private Label label8;
         private RectangleFullWhite rectangleFullWhite4;
-        private Label labelTotalCornBarangay;
+        private Label labelTotalCornAreaPlanted;
         private Label label4;
-        private Label label5;
+        private Label labelTotalCornBarangay;
         private Label label6;
         private RectangleFullYellow rectangleFullYellow2;
         private RectangleFullGreen rectangleFullGreen2;
-        private Label labelGaiFarming;
+        private Label labelTotalCornLandArea;
         private Label labelTotalCornLand;
         private Label labelTotalCornFarmers;
         private Label label1;
