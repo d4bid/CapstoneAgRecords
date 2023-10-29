@@ -1,4 +1,5 @@
-﻿using AgRecords.Model;
+﻿
+using AgRecords.Model;
 using AgRecords.View;
 using MySql.Data.MySqlClient;
 using System;
@@ -88,6 +89,20 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Finding ID Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public List<Certifications> GetCertCommodities(string rsbsaId)
+        {
+            try
+            {
+                return certModel.GetCertCommodities(rsbsaId);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Certificate Info Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return null;
             }
         }

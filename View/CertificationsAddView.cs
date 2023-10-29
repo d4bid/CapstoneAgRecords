@@ -17,15 +17,29 @@ namespace AgRecords.View
     {
         private CertificationsController certController;
         public event EventHandler FormClosed;
+        private List<string> setCertDataList = new List<string>();
 
-        public CertificationsAddView(Certifications cert)
+        public CertificationsAddView(Certifications cert, List<Certifications> certList)
         {
             InitializeComponent();
 
             labelRsbsaId.Text = cert.rsbsaId;
-            txtReferenceNumber.Text = cert.refNumber;
+            txtReferenceNumber.Text = cert.rsbsaIdLGU;
             txtName.Text = cert.name;
             txtBarangay.Text = cert.barangay;
+            lblTempParcelCount.Text = cert.farmParcelCount.ToString();
+
+            if (certList != null)
+            {
+                for (int i = 0; i < cert.farmParcelCount; i++)
+                {
+                    CertificationsFarmControl certificationsFarmControl = new CertificationsFarmControl();
+                    certificationsFarmControl.SetData(certList[i]);
+                    certificationsFarmControl.RemoveButtonClick += CertificationsFarmControl_RemoveButtonClick;
+                    flowLayoutPanel1.Controls.Add(certificationsFarmControl);
+                }
+            }
+
         }
 
         private string GetSuperscript(int day)
@@ -88,6 +102,20 @@ namespace AgRecords.View
 
         private void rectangleRound5_Load(object sender, EventArgs e)
         {
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CertificationsFarmControl_RemoveButtonClick(object sender, EventArgs e)
+        {
+            if (sender is CertificationsFarmControl certificationsFarmControl)
+            {
+                // Remove the documentControl from the flowLayoutPanelDocs
+                flowLayoutPanel1.Controls.Remove(certificationsFarmControl);
+            }
         }
     }
 }

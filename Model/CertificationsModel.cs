@@ -97,9 +97,10 @@ namespace AgRecords.Model
                     {
                         cert = new Certifications();
                         cert.rsbsaId = reader["ID"].ToString();
-                        cert.refNumber = reader["Reference Number"].ToString();
+                        cert.rsbsaIdLGU = reader["Reference Number"].ToString();
                         cert.name = reader["Name"].ToString();
                         cert.barangay = reader["Barangay"].ToString();
+                        cert.farmParcelCount = Convert.ToInt32(reader["farmParcelCount"].ToString());
                     }
 
                     reader.Close();
@@ -110,6 +111,45 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error getting farmer info by ID: " + ex.Message, ex);
+            }
+        }
+
+        public List<Certifications> GetCertCommodities(string rsbsaId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getFarmInfoForCert(@ID)", db.GetConnection());
+                    command.Parameters.AddWithValue("@ID", rsbsaId);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    List<Certifications> commoditiesList = new List<Certifications>();
+
+                    while (reader.Read())
+                    {
+                        Certifications cert = new Certifications
+                        {
+                            rsbsaId = reader["rsbsaId"].ToString(),
+                            rsbsaIdLGU = reader["rsbsaIdLGU"].ToString(),
+                            farmParcelNo = reader["farmParcelNo"].ToString(),
+                            farmLocBrgy = reader["farmLocBrgy"].ToString(),
+                            commodityInfo = reader["commodityInfo"].ToString(),
+                        };
+
+                        commoditiesList.Add(cert);
+                    }
+
+                    reader.Close();
+                    return commoditiesList;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting farm parcel commodities by ID: " + ex.Message, ex);
             }
         }
     }
