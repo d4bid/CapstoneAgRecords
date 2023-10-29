@@ -265,6 +265,9 @@
             // 
             dgvRsbsa.AllowUserToAddRows = false;
             dgvRsbsa.AllowUserToDeleteRows = false;
+            dgvRsbsa.AllowUserToResizeColumns = false;
+            dgvRsbsa.AllowUserToResizeRows = false;
+            dgvRsbsa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRsbsa.BackgroundColor = Color.White;
             dgvRsbsa.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -279,7 +282,7 @@
             dgvRsbsa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
@@ -293,7 +296,7 @@
             dgvRsbsa.RowHeadersVisible = false;
             dgvRsbsa.RowHeadersWidth = 51;
             dgvRsbsa.RowTemplate.Height = 25;
-            dgvRsbsa.ScrollBars = ScrollBars.None;
+            dgvRsbsa.ScrollBars = ScrollBars.Vertical;
             dgvRsbsa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRsbsa.Size = new Size(1575, 805);
             dgvRsbsa.TabIndex = 19;
