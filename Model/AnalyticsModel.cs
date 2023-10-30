@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AgRecords.View;
+using MySql.Data.MySqlClient;
 using OxyPlot;
 using System;
 using System.Collections.Generic;
@@ -193,6 +194,33 @@ namespace AgRecords.Model
             }
         }
 
+        public string CountRsbsaFarmers()
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_dataCountFarmers();", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString(); // Convert the result to a string
+                    }
+
+                    return "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
         // CHARTS
 
         public DataTable CountFarmerBarangay()
@@ -258,6 +286,124 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error loading farmer sex: " + ex.Message, ex);
+            }
+        }
+
+        // ---------------- RSBSA -----------------------
+
+        public string CountRsbsaWeeklyReg()
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_dataCountWeeklyReg();", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString(); // Convert the result to a string
+                    }
+
+                    return "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountCommodityBarangay(string brgy)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountCommodityBarangay(?)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("brgy", brgy);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading farmer commodity: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountRsbsaRegBrgy()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountRsbsaRegBrgy()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading RSBSA registration: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountLivelihoodBarangay()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountLivelihoodBarangay()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading livelihood per barangay: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountFarmerBrgy()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountFarmerBarangay()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading farmer count: " + ex.Message, ex);
             }
         }
 
@@ -733,6 +879,76 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountHvcFarmerSex()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountHvcFarmerSex()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading HVC farmers data: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable CountHvcFarmerBarangay()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartCountHvcFarmerBarangay()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading HVC farmers per barangay: " + ex.Message, ex);
+            }
+        }
+
+        // ---------------- Letters -----------------------
+
+        // ---------------- HVC -----------------------
+
+        public DataTable LoadWeeklyActivitiesDtaGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "SELECT * FROM vw_get_all_weekly_activities";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading weekly activities: " + ex.Message, ex);
             }
         }
     }

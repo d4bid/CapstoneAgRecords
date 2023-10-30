@@ -72,7 +72,7 @@
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.White;
-            iconPictureBox1.BackgroundImage = Properties.Resources.tempLogo2;
+            iconPictureBox1.BackgroundImage = Properties.Resources.tempLogo5;
             iconPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             iconPictureBox1.ForeColor = Color.FromArgb(0, 108, 103);
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -215,7 +215,7 @@
             // systemLogo
             // 
             systemLogo.BackColor = Color.White;
-            systemLogo.BackgroundImage = Properties.Resources.tempLogo2;
+            systemLogo.BackgroundImage = Properties.Resources.tempLogo5;
             systemLogo.BackgroundImageLayout = ImageLayout.Zoom;
             systemLogo.ForeColor = Color.FromArgb(0, 108, 103);
             systemLogo.IconChar = FontAwesome.Sharp.IconChar.None;

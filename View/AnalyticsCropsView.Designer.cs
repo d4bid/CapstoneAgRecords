@@ -258,6 +258,7 @@
             // 
             // rectangleFullWhite3
             // 
+            rectangleFullWhite3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite3.Location = new Point(716, 610);
             rectangleFullWhite3.Name = "rectangleFullWhite3";
             rectangleFullWhite3.Size = new Size(867, 304);
@@ -265,6 +266,7 @@
             // 
             // rectangleFullWhite5
             // 
+            rectangleFullWhite5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite5.Location = new Point(1086, 12);
             rectangleFullWhite5.Name = "rectangleFullWhite5";
             rectangleFullWhite5.Size = new Size(497, 304);
@@ -315,6 +317,7 @@
             // 
             // rectangleFullWhite7
             // 
+            rectangleFullWhite7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite7.Location = new Point(1086, 332);
             rectangleFullWhite7.Name = "rectangleFullWhite7";
             rectangleFullWhite7.Size = new Size(497, 261);
@@ -335,6 +338,7 @@
             // 
             // riceGraph2
             // 
+            riceGraph2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             riceGraph2.BackColor = Color.White;
             riceGraph2.Location = new Point(1108, 69);
             riceGraph2.Name = "riceGraph2";
@@ -371,6 +375,7 @@
             // 
             // riceGraph5
             // 
+            riceGraph5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             riceGraph5.BackColor = Color.White;
             riceGraph5.Location = new Point(1107, 380);
             riceGraph5.Name = "riceGraph5";
@@ -383,6 +388,7 @@
             // 
             // riceGraph7
             // 
+            riceGraph7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             riceGraph7.BackColor = Color.White;
             riceGraph7.Location = new Point(738, 662);
             riceGraph7.Name = "riceGraph7";

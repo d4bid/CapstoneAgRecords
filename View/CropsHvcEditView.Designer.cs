@@ -338,6 +338,7 @@
             txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtSize.Location = new Point(671, 90);
             txtSize.Name = "txtSize";
+            txtSize.PlaceholderText = "0.00";
             txtSize.Size = new Size(148, 24);
             txtSize.TabIndex = 94;
             txtSize.TextAlign = HorizontalAlignment.Right;

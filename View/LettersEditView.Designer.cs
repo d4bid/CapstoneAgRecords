@@ -39,6 +39,7 @@
             labelLetterId = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            flowLayoutPanelTags = new FlowLayoutPanel();
             comboBoxAction = new ComboBox();
             rectangleRound6 = new RectangleRound();
             label4 = new Label();
@@ -63,7 +64,6 @@
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
-            flowLayoutPanelTags = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -200,6 +200,15 @@
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
+            // flowLayoutPanelTags
+            // 
+            flowLayoutPanelTags.AutoScroll = true;
+            flowLayoutPanelTags.Location = new Point(104, 221);
+            flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanelTags.Name = "flowLayoutPanelTags";
+            flowLayoutPanelTags.Size = new Size(620, 86);
+            flowLayoutPanelTags.TabIndex = 29;
+            // 
             // comboBoxAction
             // 
             comboBoxAction.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -207,7 +216,7 @@
             comboBoxAction.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxAction.FormattingEnabled = true;
             comboBoxAction.Items.AddRange(new object[] { "Pending", "Reviewed", "Responded", "Archived" });
-            comboBoxAction.Location = new Point(115, 126);
+            comboBoxAction.Location = new Point(116, 126);
             comboBoxAction.Margin = new Padding(3, 4, 3, 4);
             comboBoxAction.Name = "comboBoxAction";
             comboBoxAction.Size = new Size(603, 33);
@@ -257,7 +266,7 @@
             comboBoxType.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Incoming", "Outgoing", "Internal" });
-            comboBoxType.Location = new Point(115, 77);
+            comboBoxType.Location = new Point(116, 77);
             comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(603, 33);
@@ -461,15 +470,6 @@
             label5.Size = new Size(25, 20);
             label5.TabIndex = 0;
             label5.Text = "To";
-            // 
-            // flowLayoutPanelTags
-            // 
-            flowLayoutPanelTags.AutoScroll = true;
-            flowLayoutPanelTags.Location = new Point(104, 221);
-            flowLayoutPanelTags.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanelTags.Name = "flowLayoutPanelTags";
-            flowLayoutPanelTags.Size = new Size(620, 86);
-            flowLayoutPanelTags.TabIndex = 29;
             // 
             // LettersEditView
             // 

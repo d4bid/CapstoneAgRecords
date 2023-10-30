@@ -214,7 +214,7 @@
             txtOrNo.Name = "txtOrNo";
             txtOrNo.Size = new Size(195, 27);
             txtOrNo.TabIndex = 31;
-            txtOrNo.Text = "OR NO";
+            txtOrNo.Text = "O.R. No";
             // 
             // label2
             // 
