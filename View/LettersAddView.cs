@@ -270,7 +270,6 @@ namespace AgRecords.View
         {
             //setting the e.Handled to true removes the 'ding' sound
             e.Handled = false;
-            TextboxValidation.TextBox_AlpaNumeric(sender, e);
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = registerTag();

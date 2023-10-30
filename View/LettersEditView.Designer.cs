@@ -249,7 +249,6 @@
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(597, 27);
             txtBoxTags.TabIndex = 4;
-            txtBoxTags.TextChanged += TextBox_TextChanged;
             // 
             // rectangleRound3
             // 
