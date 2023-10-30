@@ -846,9 +846,9 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool EditRSBSA(
+        public async Task<bool> EditRSBSA(
             string rsbsaId,
-            string? rsbsaIdRegion,
+            string? rsbsaIdLGU,
             DateTime dateModified,
 
             // Farmer Personal Info
@@ -944,10 +944,9 @@ namespace AgRecords.Controller
                 RSBSA rsbsa = new RSBSA
                 {
                     rsbsaId = rsbsaId,
-                    rsbsaIdRegion = rsbsaIdRegion,
+                    rsbsaIdLGU= rsbsaIdLGU,
                     dateModified = dateModified,
                     lastModifier = username,
-                    userId = userId,
 
                     // Farmer Personal Info
                     farmerImg = farmerImg,
@@ -1034,9 +1033,9 @@ namespace AgRecords.Controller
                 DialogResult result = MessageBox.Show("Are you sure you want to update this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
-                    if (rsbsaModel.EditRSBSARecord(rsbsa))
+                    if (await rsbsaModel.EditRSBSARecord(rsbsa))
                     {
-                        if (rsbsaModel.EditFarmParcel(farmParcels))
+                        if (await rsbsaModel.EditFarmParcelAsync(farmParcels))
                         {
                             if (rsbsaModel.EditRSBSADocument(rsbsaDocuments))
                             {

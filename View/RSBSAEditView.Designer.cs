@@ -42,7 +42,7 @@
             btnFarmLand = new Button();
             btnDocuments = new Button();
             panel27 = new Panel();
-            labelRsbsaIdRegion = new Label();
+            txtBoxRSBSAIdLGU = new TextBox();
             btnCancel = new Button();
             btnSave = new Button();
             label26 = new Label();
@@ -537,7 +537,7 @@
             // 
             // panel27
             // 
-            panel27.Controls.Add(labelRsbsaIdRegion);
+            panel27.Controls.Add(txtBoxRSBSAIdLGU);
             panel27.Controls.Add(btnCancel);
             panel27.Controls.Add(btnSave);
             panel27.Controls.Add(label26);
@@ -553,15 +553,15 @@
             panel27.Size = new Size(1437, 83);
             panel27.TabIndex = 1;
             // 
-            // labelRsbsaIdRegion
+            // txtBoxRSBSAIdLGU
             // 
-            labelRsbsaIdRegion.AutoSize = true;
-            labelRsbsaIdRegion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRsbsaIdRegion.Location = new Point(557, 35);
-            labelRsbsaIdRegion.Name = "labelRsbsaIdRegion";
-            labelRsbsaIdRegion.Size = new Size(63, 28);
-            labelRsbsaIdRegion.TabIndex = 93;
-            labelRsbsaIdRegion.Text = "label1";
+            txtBoxRSBSAIdLGU.BorderStyle = BorderStyle.None;
+            txtBoxRSBSAIdLGU.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBoxRSBSAIdLGU.Location = new Point(561, 38);
+            txtBoxRSBSAIdLGU.Name = "txtBoxRSBSAIdLGU";
+            txtBoxRSBSAIdLGU.Size = new Size(174, 24);
+            txtBoxRSBSAIdLGU.TabIndex = 94;
+            txtBoxRSBSAIdLGU.Text = "02-50";
             // 
             // btnCancel
             // 
@@ -3927,6 +3927,6 @@
         private RectangleRound rectangleRound4;
         private RectangleRound rectangleRound3;
         private Label label8;
-        public Label labelRsbsaIdRegion;
+        private TextBox txtBoxRSBSAIdLGU;
     }
 }
