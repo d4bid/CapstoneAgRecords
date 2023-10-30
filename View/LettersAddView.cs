@@ -38,82 +38,6 @@ namespace AgRecords.View
             dtpDateReceived.MinDate = minDate;
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Multiselect = true;
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif|All Files|*.*";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    List<string> potentialDuplicates = new List<string>(); // Track potential duplicates.
-
-                    foreach (string filePath in openFileDialog.FileNames)
-                    {
-                        // Get the file name without extension.
-                        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
-
-                        // Generate a new file name with the format "[existingID]-XX" where XX is the imageCounter.
-                        string newFileName = $"{labelLetterId.Text}-{imageCounter:D2}";
-                        imageCounter++; // Increment the counter for the next image.
-
-                        // Check if the image is already in the imageDictionary.
-                        if (!imageDictionary.ContainsKey(newFileName))
-                        {
-                            // Load the image and add it to the ImageList with the new file name as the key.
-                            Image image = Image.FromFile(filePath);
-                            imageList1.Images.Add(newFileName, image);
-
-                            // Add the new file name and image to the dictionary.
-                            imageDictionary.Add(newFileName, image);
-
-                            // Add the new file name to the ListView along with the new image key.
-                            ListViewItem item = new ListViewItem(newFileName);
-                            item.ImageKey = newFileName; // Set the ImageKey to associate the image.
-                            listViewLetters.Items.Add(item);
-                        }
-                        else
-                        {
-                            // Add potential duplicate file name to the list.
-                            potentialDuplicates.Add(newFileName);
-                        }
-                    }
-
-                    // Check if there are potential duplicates and display them in a single message box.
-                    if (potentialDuplicates.Count > 0)
-                    {
-                        string duplicatesMessage = $"The following images are potential duplicates and were not added:\n\n";
-                        duplicatesMessage += string.Join("\n", potentialDuplicates);
-
-                        MessageBox.Show(duplicatesMessage, "Potential Duplicate Images", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-        }
-
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            // To remove an item(s) in the listView using button
-            foreach (ListViewItem item in listViewLetters.SelectedItems)
-            {
-                // Get the file name of the removed item.
-                string fileName = item.Text;
-
-                // Remove the item from the ListView.
-                listViewLetters.Items.Remove(item);
-
-                // Remove the corresponding image from imageDictionary.
-                if (imageDictionary.ContainsKey(fileName))
-                {
-                    Image removedImage = imageDictionary[fileName];
-                    removedImage.Dispose(); // Dispose of the image to free up resources.
-                    imageDictionary.Remove(fileName);
-                }
-            }
-        }
-
         private void listView1_KeyDown(object sender, KeyEventArgs e)
         {
             // To remove an item(s) in the listView using Delete key
@@ -141,7 +65,7 @@ namespace AgRecords.View
         private Boolean registerTag()
         {
             string tagText = txtBoxTags.Text.Trim();
-            int controlHeight = 20;
+            int controlHeight = 25;
 
             if (!string.IsNullOrEmpty(tagText))
             {
@@ -289,6 +213,81 @@ namespace AgRecords.View
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             TextboxValidation.TextBox_AllCaps(sender, e);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            // To remove an item(s) in the listView using button
+            foreach (ListViewItem item in listViewLetters.SelectedItems)
+            {
+                // Get the file name of the removed item.
+                string fileName = item.Text;
+
+                // Remove the item from the ListView.
+                listViewLetters.Items.Remove(item);
+
+                // Remove the corresponding image from imageDictionary.
+                if (imageDictionary.ContainsKey(fileName))
+                {
+                    Image removedImage = imageDictionary[fileName];
+                    removedImage.Dispose(); // Dispose of the image to free up resources.
+                    imageDictionary.Remove(fileName);
+                }
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Multiselect = true;
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif|All Files|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    List<string> potentialDuplicates = new List<string>(); // Track potential duplicates.
+
+                    foreach (string filePath in openFileDialog.FileNames)
+                    {
+                        // Get the file name without extension.
+                        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
+
+                        // Generate a new file name with the format "[existingID]-XX" where XX is the imageCounter.
+                        string newFileName = $"{labelLetterId.Text}-{imageCounter:D2}";
+                        imageCounter++; // Increment the counter for the next image.
+
+                        // Check if the image is already in the imageDictionary.
+                        if (!imageDictionary.ContainsKey(newFileName))
+                        {
+                            // Load the image and add it to the ImageList with the new file name as the key.
+                            Image image = Image.FromFile(filePath);
+                            imageList1.Images.Add(newFileName, image);
+
+                            // Add the new file name and image to the dictionary.
+                            imageDictionary.Add(newFileName, image);
+
+                            // Add the new file name to the ListView along with the new image key.
+                            ListViewItem item = new ListViewItem(newFileName);
+                            item.ImageKey = newFileName; // Set the ImageKey to associate the image.
+                            listViewLetters.Items.Add(item);
+                        }
+                        else
+                        {
+                            // Add potential duplicate file name to the list.
+                            potentialDuplicates.Add(newFileName);
+                        }
+                    }
+
+                    // Check if there are potential duplicates and display them in a single message box.
+                    if (potentialDuplicates.Count > 0)
+                    {
+                        string duplicatesMessage = $"The following images are potential duplicates and were not added:\n\n";
+                        duplicatesMessage += string.Join("\n", potentialDuplicates);
+
+                        MessageBox.Show(duplicatesMessage, "Potential Duplicate Images", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
         }
     }
 }

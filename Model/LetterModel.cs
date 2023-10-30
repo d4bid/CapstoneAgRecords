@@ -37,25 +37,22 @@ namespace AgRecords.Model
         {
             try
             {
-                DateTime now = DateTime.Now;
-                string formattedNow = now.ToString("yyyyMMdd");
-
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
                     db.Open();
 
-                    MySqlCommand command = new MySqlCommand("CALL sp_selectMaxLetterId", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("CALL sp_selectMaxLetterId()", db.GetConnection());
 
                     object result = command.ExecuteScalar();
 
+                    string formattedDate = DateTime.Now.ToString("yyyyMMdd");
                     int nextNumber = 1; // Default to 1 if no records are found
 
                     if (result != null && result != DBNull.Value)
                     {
                         string lastId = result.ToString();
-                        string lastDatePart = lastId.Substring(0, 8);
 
-                        if (lastDatePart == formattedNow)
+                        if (lastId.Length == 13 && lastId.StartsWith(formattedDate))
                         {
                             if (int.TryParse(lastId.Substring(8), out int lastNumber))
                             {
@@ -64,7 +61,8 @@ namespace AgRecords.Model
                         }
                     }
 
-                    return $"{formattedNow}{nextNumber:D5}";
+                    return $"{formattedDate}{nextNumber:D5}";
+
                 }
             }
             catch (Exception ex)

@@ -21,7 +21,7 @@ namespace AgRecords.View
         private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
         private List<TagItem> tagItems = new List<TagItem>();
         private List<string> letterTags = new List<string>();
-        private int controlHeight = 20;
+        private int controlHeight = 25;
         public event EventHandler FormClosed;
 
         public LettersEditView(Letters letters, LettersPages lettersPages)
