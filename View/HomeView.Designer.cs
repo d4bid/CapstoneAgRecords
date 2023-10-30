@@ -595,7 +595,7 @@
             // 
             // btnHome
             // 
-            btnHome.BackgroundImage = Properties.Resources.tempLogo4;
+            btnHome.BackgroundImage = Properties.Resources.tempLogo6;
             btnHome.BackgroundImageLayout = ImageLayout.Zoom;
             btnHome.Location = new Point(60, 13);
             btnHome.Margin = new Padding(3, 4, 3, 4);

@@ -176,6 +176,34 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable BarCountDailyActivities()
+        {
+            try
+            {
+                DataTable lettersTable = analyticsModel.CountDailyActivities();
+                return lettersTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Daily Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable BarCountActivitiesSection()
+        {
+            try
+            {
+                DataTable lettersTable = analyticsModel.CountActivitiesSection();
+                return lettersTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Daily Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
 
         // CHARTS
 
@@ -310,6 +338,146 @@ namespace AgRecords.Controller
             }
 
             model.Series.Add(pieSeries);
+
+            return model;
+        }
+
+        public PlotModel CreateStackedBarChart1(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Create a series for each day of the week
+            var daysOfWeek = new[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+            var seriesList = new List<BarSeries>();
+
+            foreach (var day in daysOfWeek)
+            {
+                var daySeries = new BarSeries { Title = day };
+                seriesList.Add(daySeries);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                string section = row["Section"].ToString();
+                for (int i = 0; i < daysOfWeek.Length; i++)
+                {
+                    int progress = Convert.ToInt32(row[daysOfWeek[i]]);
+                    if (progress > 0)
+                    {
+                        seriesList[i].Items.Add(new BarItem { Value = progress });
+                    }
+                }
+            }
+
+            // Add the sections as category labels
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                IsPanEnabled = false,
+                IsZoomEnabled = false
+            };
+
+            foreach (DataRow row in data.Rows)
+            {
+                string section = row["Section"].ToString();
+                categoryAxis.Labels.Add(section);
+            }
+
+            model.Axes.Add(categoryAxis);
+
+            // Set series to the model
+            foreach (var series in seriesList)
+            {
+                model.Series.Add(series);
+            }
+
+            return model;
+        }
+
+        public PlotModel CreateLineChart1(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Create a series for each day of the week
+            var daySeries = new LineSeries
+            {
+                Title = "Progress",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Black,
+                MarkerFill = OxyColors.LightBlue
+            };
+
+            // Set the line color to RGB(43, 121, 223) using OxyColor
+            daySeries.Color = OxyColor.FromRgb(43, 121, 223);
+
+            // Days of the week
+            var daysOfWeek = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+
+            // Add data points to the series for each day
+            for (int i = 1; i <= 7; i++)
+            {
+                // Convert the day's count from the data table
+                int dayCount = Convert.ToInt32(data.Rows[0][daysOfWeek[i % 7]]);
+
+                // Add a data point with X as the day's index (1-7) and Y as the count
+                daySeries.Points.Add(new DataPoint(i, dayCount));
+            }
+
+            // Set axis titles
+            // Create an X-axis for days of the week
+            var dayAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Key = "DayAxis",
+                //Title = "Day"
+            };
+
+            // Set the labels for the X-axis
+            dayAxis.Labels.AddRange(daysOfWeek);
+
+            model.Axes.Add(dayAxis);
+
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Key = "CountAxis",
+                //Title = "Progress"
+            });
+
+            // Add the day series to the model
+            model.Series.Add(daySeries);
+
+            return model;
+        }
+
+        public PlotModel CreateBarChart2(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries
+            {
+                FillColor = OxyColor.FromRgb(43, 121, 223) // Set the bar color to RGB(43, 121, 223)
+            };
+
+            // Create an X-axis for sections
+            var sectionAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Section"
+            };
+
+            model.Axes.Add(sectionAxis);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string section = row["Section"].ToString();
+                int count = Convert.ToInt32(row["Count"]);
+
+                barSeries.Items.Add(new BarItem { Value = count });
+                sectionAxis.Labels.Add(section);
+            }
+
+            model.Series.Add(barSeries);
 
             return model;
         }

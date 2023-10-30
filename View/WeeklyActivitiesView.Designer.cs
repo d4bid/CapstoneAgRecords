@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnPrint = new FontAwesome.Sharp.IconButton();
             cmbColumn = new ComboBox();
@@ -44,11 +44,11 @@
             panel4 = new Panel();
             panel5 = new Panel();
             label9 = new Label();
-            plotView1 = new OxyPlot.WindowsForms.PlotView();
+            weekGraph2 = new OxyPlot.WindowsForms.PlotView();
             panel6 = new Panel();
             panel7 = new Panel();
             label2 = new Label();
-            hvcGraph1 = new OxyPlot.WindowsForms.PlotView();
+            weekGraph1 = new OxyPlot.WindowsForms.PlotView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -184,24 +184,24 @@
             dgvActivities.BackgroundColor = Color.White;
             dgvActivities.BorderStyle = BorderStyle.None;
             dgvActivities.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvActivities.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvActivities.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvActivities.DefaultCellStyle = dataGridViewCellStyle4;
             dgvActivities.Dock = DockStyle.Fill;
             dgvActivities.GridColor = Color.FromArgb(239, 239, 239);
             dgvActivities.Location = new Point(10, 10);
@@ -227,7 +227,7 @@
             // 
             panel5.BackColor = Color.White;
             panel5.Controls.Add(label9);
-            panel5.Controls.Add(plotView1);
+            panel5.Controls.Add(weekGraph2);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(896, 100);
             panel5.Name = "panel5";
@@ -246,17 +246,17 @@
             label9.TabIndex = 47;
             label9.Text = "Daily Progress";
             // 
-            // plotView1
+            // weekGraph2
             // 
-            plotView1.BackColor = Color.White;
-            plotView1.Location = new Point(29, 50);
-            plotView1.Name = "plotView1";
-            plotView1.PanCursor = Cursors.Hand;
-            plotView1.Size = new Size(640, 313);
-            plotView1.TabIndex = 46;
-            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
+            weekGraph2.BackColor = Color.White;
+            weekGraph2.Location = new Point(29, 50);
+            weekGraph2.Name = "weekGraph2";
+            weekGraph2.PanCursor = Cursors.Hand;
+            weekGraph2.Size = new Size(640, 313);
+            weekGraph2.TabIndex = 46;
+            weekGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
+            weekGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
+            weekGraph2.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // panel6
             // 
@@ -271,7 +271,7 @@
             // 
             panel7.BackColor = Color.White;
             panel7.Controls.Add(label2);
-            panel7.Controls.Add(hvcGraph1);
+            panel7.Controls.Add(weekGraph1);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(896, 490);
             panel7.Name = "panel7";
@@ -286,21 +286,21 @@
             label2.ForeColor = Color.FromArgb(0, 35, 76);
             label2.Location = new Point(20, 16);
             label2.Name = "label2";
-            label2.Size = new Size(125, 20);
+            label2.Size = new Size(74, 20);
             label2.TabIndex = 48;
-            label2.Text = "Weekly Progress";
+            label2.Text = "Activities";
             // 
-            // hvcGraph1
+            // weekGraph1
             // 
-            hvcGraph1.BackColor = Color.White;
-            hvcGraph1.Location = new Point(36, 48);
-            hvcGraph1.Name = "hvcGraph1";
-            hvcGraph1.PanCursor = Cursors.Hand;
-            hvcGraph1.Size = new Size(640, 363);
-            hvcGraph1.TabIndex = 45;
-            hvcGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
-            hvcGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
-            hvcGraph1.ZoomVerticalCursor = Cursors.SizeNS;
+            weekGraph1.BackColor = Color.White;
+            weekGraph1.Location = new Point(29, 48);
+            weekGraph1.Name = "weekGraph1";
+            weekGraph1.PanCursor = Cursors.Hand;
+            weekGraph1.Size = new Size(647, 363);
+            weekGraph1.TabIndex = 45;
+            weekGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
+            weekGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            weekGraph1.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // WeeklyActivitiesView
             // 
@@ -346,8 +346,8 @@
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
-        private OxyPlot.WindowsForms.PlotView plotView1;
-        private OxyPlot.WindowsForms.PlotView hvcGraph1;
+        private OxyPlot.WindowsForms.PlotView weekGraph2;
+        private OxyPlot.WindowsForms.PlotView weekGraph1;
         private Label label9;
         private Label label2;
         private FontAwesome.Sharp.IconButton btnPrint;

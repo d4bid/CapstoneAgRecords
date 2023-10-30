@@ -21,6 +21,8 @@ namespace AgRecords.View
         private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
         public event EventHandler FormClosed;
 
+        private int imageCounter = 1;
+
         public LettersAddView()
         {
             InitializeComponent();
@@ -49,28 +51,32 @@ namespace AgRecords.View
 
                     foreach (string filePath in openFileDialog.FileNames)
                     {
-                        // Get the file name.
-                        string fileName = Path.GetFileName(filePath);
+                        // Get the file name without extension.
+                        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
+
+                        // Generate a new file name with the format "[existingID]-XX" where XX is the imageCounter.
+                        string newFileName = $"{labelLetterId.Text}-{imageCounter:D2}";
+                        imageCounter++; // Increment the counter for the next image.
 
                         // Check if the image is already in the imageDictionary.
-                        if (!imageDictionary.ContainsKey(fileName))
+                        if (!imageDictionary.ContainsKey(newFileName))
                         {
-                            // Load the image and add it to the ImageList with a unique key (use the file name as the key).
+                            // Load the image and add it to the ImageList with the new file name as the key.
                             Image image = Image.FromFile(filePath);
-                            imageList1.Images.Add(fileName, image);
+                            imageList1.Images.Add(newFileName, image);
 
-                            // Add the file name and image to the dictionary.
-                            imageDictionary.Add(fileName, image);
+                            // Add the new file name and image to the dictionary.
+                            imageDictionary.Add(newFileName, image);
 
-                            // Add the file name to the ListView along with the image key.
-                            ListViewItem item = new ListViewItem(fileName);
-                            item.ImageKey = fileName; // Set the ImageKey to associate the image.
+                            // Add the new file name to the ListView along with the new image key.
+                            ListViewItem item = new ListViewItem(newFileName);
+                            item.ImageKey = newFileName; // Set the ImageKey to associate the image.
                             listViewLetters.Items.Add(item);
                         }
                         else
                         {
                             // Add potential duplicate file name to the list.
-                            potentialDuplicates.Add(fileName);
+                            potentialDuplicates.Add(newFileName);
                         }
                     }
 
