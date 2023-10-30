@@ -159,83 +159,93 @@ namespace AgRecords.Model
                 // Log the exception, etc.
                 return false;
             }
-
-            
-
         }
 
-        public bool EditFarmParcel(List<FarmParcel> farmParcels)
+        public async Task<bool> EditFarmParcelAsync(List<FarmParcel> farmParcels)
         {
-            using (DatabaseConnection db = new DatabaseConnection())
+            try
             {
-                db.Open();
-                MySqlTransaction transaction = null;
-
-                try
+                // Use Task.Run to run synchronous code asynchronously
+                bool result = await Task.Run(() =>
                 {
-                    // Begin the transaction
-                    transaction = db.GetConnection().BeginTransaction();
-
-                    // Call the stored procedure to delete farm parcels by ID
-                    if (farmParcels.Count != 0)
+                    using (DatabaseConnection db = new DatabaseConnection())
                     {
-                        MySqlCommand deleteCommand = new MySqlCommand("sp_deleteFarmParcelById", db.GetConnection(), transaction);
-                        deleteCommand.CommandType = CommandType.StoredProcedure;
-                        deleteCommand.Parameters.AddWithValue("_rsbsaId", farmParcels[0].rsbsaId);
-                        deleteCommand.ExecuteNonQuery();
-                    }
+                        db.Open();
+                        MySqlTransaction transaction = null;
 
-                    foreach (FarmParcel farmParcel in farmParcels)
-                    {
-                        // Save data to tbl_farmland_parcel using sp_addNewFarmParcel stored procedure
-                        MySqlCommand parcelCommand = new MySqlCommand("sp_addNewFarmParcel", db.GetConnection());
-                        parcelCommand.CommandType = CommandType.StoredProcedure;
-
-                        parcelCommand.Parameters.AddWithValue("_rsbsaId", farmParcel.rsbsaId);
-                        parcelCommand.Parameters.AddWithValue("_farmParcelNo", farmParcel.farmParcelNo);
-                        parcelCommand.Parameters.AddWithValue("_farmLocBrgy", farmParcel.farmLocBrgy);
-                        parcelCommand.Parameters.AddWithValue("_farmLocMunicipality", farmParcel.farmLocMunicipality);
-                        parcelCommand.Parameters.AddWithValue("_farmSize", farmParcel.farmSize);
-                        parcelCommand.Parameters.AddWithValue("_isAncestralDomain", farmParcel.isAncestralDomain);
-                        parcelCommand.Parameters.AddWithValue("_isAgrarianBeneficiary", farmParcel.isAgrarianBeneficiary);
-                        parcelCommand.Parameters.AddWithValue("_ownershipNo", farmParcel.ownershipNo);
-                        parcelCommand.Parameters.AddWithValue("_isRegisteredOwner", farmParcel.isRegisteredOwner);
-                        parcelCommand.Parameters.AddWithValue("_ownershipType", farmParcel.ownershipType);
-                        parcelCommand.Parameters.AddWithValue("_ownerName", farmParcel.ownerName);
-                        parcelCommand.Parameters.AddWithValue("_remarks", farmParcel.remarks);
-
-                        parcelCommand.ExecuteNonQuery();
-
-                        // Save data to tbl_farmland_parcel_crops using sp_addNewFarmParcelCrops stored procedure
-                        foreach (FarmParcelCrop crop in farmParcel.Crops)
+                        try
                         {
-                            MySqlCommand cropCommand = new MySqlCommand("sp_addNewFarmParcelCrops", db.GetConnection());
-                            cropCommand.CommandType = CommandType.StoredProcedure;
+                            // Begin the transaction
+                            transaction = db.GetConnection().BeginTransaction();
 
-                            cropCommand.Parameters.AddWithValue("_rsbsaId", crop.rsbsaId);
-                            cropCommand.Parameters.AddWithValue("_farmParcelNo", crop.farmParcelNo);
-                            cropCommand.Parameters.AddWithValue("_commodityType", crop.commodityType);
-                            cropCommand.Parameters.AddWithValue("_landSize", crop.landSize);
-                            cropCommand.Parameters.AddWithValue("_headCount", crop.headCount);
-                            cropCommand.Parameters.AddWithValue("_farmType", crop.farmType);
-                            cropCommand.Parameters.AddWithValue("_isOrganic", crop.isOrganic);
+                            // Call the stored procedure to delete farm parcels by ID
+                            if (farmParcels.Count != 0)
+                            {
+                                MySqlCommand deleteCommand = new MySqlCommand("sp_deleteFarmParcelById", db.GetConnection(), transaction);
+                                deleteCommand.CommandType = CommandType.StoredProcedure;
+                                deleteCommand.Parameters.AddWithValue("_rsbsaId", farmParcels[0].rsbsaId);
+                                deleteCommand.ExecuteNonQuery();
+                            }
 
-                            cropCommand.ExecuteNonQuery();
+                            foreach (FarmParcel farmParcel in farmParcels)
+                            {
+                                // Save data to tbl_farmland_parcel using sp_addNewFarmParcel stored procedure
+                                MySqlCommand parcelCommand = new MySqlCommand("sp_addNewFarmParcel", db.GetConnection());
+                                parcelCommand.CommandType = CommandType.StoredProcedure;
+
+                                parcelCommand.Parameters.AddWithValue("_rsbsaId", farmParcel.rsbsaId);
+                                parcelCommand.Parameters.AddWithValue("_farmParcelNo", farmParcel.farmParcelNo);
+                                parcelCommand.Parameters.AddWithValue("_farmLocBrgy", farmParcel.farmLocBrgy);
+                                parcelCommand.Parameters.AddWithValue("_farmLocMunicipality", farmParcel.farmLocMunicipality);
+                                parcelCommand.Parameters.AddWithValue("_farmSize", farmParcel.farmSize);
+                                parcelCommand.Parameters.AddWithValue("_isAncestralDomain", farmParcel.isAncestralDomain);
+                                parcelCommand.Parameters.AddWithValue("_isAgrarianBeneficiary", farmParcel.isAgrarianBeneficiary);
+                                parcelCommand.Parameters.AddWithValue("_ownershipNo", farmParcel.ownershipNo);
+                                parcelCommand.Parameters.AddWithValue("_isRegisteredOwner", farmParcel.isRegisteredOwner);
+                                parcelCommand.Parameters.AddWithValue("_ownershipType", farmParcel.ownershipType);
+                                parcelCommand.Parameters.AddWithValue("_ownerName", farmParcel.ownerName);
+                                parcelCommand.Parameters.AddWithValue("_remarks", farmParcel.remarks);
+
+                                parcelCommand.ExecuteNonQuery();
+
+                                // Save data to tbl_farmland_parcel_crops using sp_addNewFarmParcelCrops stored procedure
+                                foreach (FarmParcelCrop crop in farmParcel.Crops)
+                                {
+                                    MySqlCommand cropCommand = new MySqlCommand("sp_addNewFarmParcelCrops", db.GetConnection());
+                                    cropCommand.CommandType = CommandType.StoredProcedure;
+
+                                    cropCommand.Parameters.AddWithValue("_rsbsaId", crop.rsbsaId);
+                                    cropCommand.Parameters.AddWithValue("_farmParcelNo", crop.farmParcelNo);
+                                    cropCommand.Parameters.AddWithValue("_commodityType", crop.commodityType);
+                                    cropCommand.Parameters.AddWithValue("_landSize", crop.landSize);
+                                    cropCommand.Parameters.AddWithValue("_headCount", crop.headCount);
+                                    cropCommand.Parameters.AddWithValue("_farmType", crop.farmType);
+                                    cropCommand.Parameters.AddWithValue("_isOrganic", crop.isOrganic);
+
+                                    cropCommand.ExecuteNonQuery();
+                                }
+                            }
+
+                            // Commit the transaction
+                            transaction.Commit();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            // Rollback the transaction if an exception occurs
+                            transaction?.Rollback();
+                            throw new ApplicationException("Error updating farm parcels: " + ex.Message, ex);
                         }
                     }
-
-                    // Commit the transaction
-                    transaction.Commit();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    // Rollback the transaction if an exception occurs
-                    transaction?.Rollback();
-                    throw new ApplicationException("Error updating farm parcels: " + ex.Message, ex);
-                }
+                });
+                return result;
             }
-
+            catch (Exception ex)
+            {
+                // Handle exceptions here if needed
+                // Log the exception, etc.
+                return false;
+            }
         }
 
         public bool AddNewRSBSADocument(List<RSBSADocuments> rsbsaDocuments)
@@ -456,15 +466,15 @@ namespace AgRecords.Model
             }
         }
 
-        public Boolean EditRSBSARecord(RSBSA rsbsa)
+        public async Task<bool> EditRSBSARecord(RSBSA rsbsa)
         {
             try
             {
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
-                    db.Open();
+                    await db.OpenAsync();
 
-                    string query = "CALL sp_updateRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateModified, @lastModifier, @userId, " +
+                    string query = "CALL sp_updateRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateModified, @lastModifier, " +
                                     "@farmerImg, @surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
                                     "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
@@ -485,7 +495,6 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@rsbsaIdRegion", rsbsa.rsbsaIdRegion);
                     command.Parameters.AddWithValue("@dateModified", rsbsa.dateModified);
                     command.Parameters.AddWithValue("@lastModifier", rsbsa.lastModifier);
-                    command.Parameters.AddWithValue("@userId", rsbsa.userId);
 
                     //for farmer info table
                     byte[] farmerImgBytes = ConvertImageToByteArray(rsbsa.farmerImg);
@@ -562,7 +571,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@rotatingFarmers", rsbsa.rotatingFarmers);
                     command.Parameters.AddWithValue("@farmParcelCount", rsbsa.farmParcelCount);
 
-                    command.ExecuteNonQuery();
+                    await command.ExecuteNonQueryAsync();
                     return true;
                 }
             }
@@ -592,7 +601,7 @@ namespace AgRecords.Model
                     {
                         rsbsaInfo = new RSBSA();
                         rsbsaInfo.rsbsaId = reader["rsbsaId"].ToString();
-                        rsbsaInfo.rsbsaIdRegion = reader["rsbsaIdRegion"].ToString();
+                        rsbsaInfo.rsbsaIdLGU = reader["rsbsaIdLGU"].ToString();
                         rsbsaInfo.userId = reader["userId"].ToString();
                         rsbsaInfo.dateCreated = DateTime.Parse(reader["dateCreated"].ToString());
                     }
@@ -976,6 +985,39 @@ namespace AgRecords.Model
             }
         }
 
+        public bool CheckRefNoExistence(string refNo)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("sp_isRefNoExist", db.GetConnection());
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Add input parameters
+                    command.Parameters.AddWithValue("@_refNo", refNo);
+
+                    // Add output parameter
+                    MySqlParameter outputParameter = new MySqlParameter("@IsFarmerAlreadySaved", MySqlDbType.Bit);
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    command.ExecuteNonQuery();
+
+                    // Get the boolean result from the output parameter
+                    bool isFarmerAlreadySaved = Convert.ToBoolean(outputParameter.Value);
+
+                    return isFarmerAlreadySaved;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error checking farmer existence: " + ex.Message, ex);
+            }
+        }
+
         public DataTable SearchRSBSAAll(string searchText, string barangay, string commodityType)
         {
             try
@@ -1093,6 +1135,36 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error Searching RSBSA: " + ex.Message, ex);
+            }
+        }
+
+        public string GetRSBSAIDByRefNo(string refNo)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getRSBSAIdByRefNo(@refNo)", db.GetConnection());
+                    command.Parameters.AddWithValue("@refNo", refNo);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    string rsbsaId = "";
+
+                    if (reader.Read())
+                    {
+                        rsbsaId = reader["rsbsaId"].ToString();
+                    }
+                    reader.Close();
+                    return rsbsaId;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting RSBSA ID by Reference No.: " + ex.Message, ex);
             }
         }
 

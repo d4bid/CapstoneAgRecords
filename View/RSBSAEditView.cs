@@ -33,7 +33,7 @@ namespace AgRecords.View
             //to restore data
             //RSBSA Info
             labelRsbsaId.Text = rsbsaInfo.rsbsaId;
-            labelRsbsaIdRegion.Text = rsbsaInfo.rsbsaIdRegion;
+            txtBoxRSBSAIdLGU.Text = rsbsaInfo.rsbsaIdLGU;
             dtDateAdm.Value = rsbsaInfo.dateCreated;
 
             //Farmer Info
@@ -405,7 +405,7 @@ namespace AgRecords.View
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             //radio buttons in personal info
             RadioButton rbIsHouseholdHead = panelHousehold.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
@@ -604,9 +604,9 @@ namespace AgRecords.View
             }
 
 
-            if (rsbsaController.EditRSBSA(
+            if (await rsbsaController.EditRSBSA(
                 //rsbsa info
-                labelRsbsaId.Text, null, DateTime.Now,
+                labelRsbsaId.Text, txtBoxRSBSAIdLGU.Text, DateTime.Now,
 
                 //farmer info
                 farmerPhoto, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,

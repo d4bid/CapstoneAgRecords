@@ -308,6 +308,7 @@
             btnFarmLand = new Button();
             btnDocuments = new Button();
             panel27 = new Panel();
+            txtBoxRSBSAIdLGU = new TextBox();
             btnCancel = new Button();
             btnSave = new Button();
             label26 = new Label();
@@ -3749,6 +3750,7 @@
             // 
             // panel27
             // 
+            panel27.Controls.Add(txtBoxRSBSAIdLGU);
             panel27.Controls.Add(btnCancel);
             panel27.Controls.Add(btnSave);
             panel27.Controls.Add(label26);
@@ -3763,6 +3765,16 @@
             panel27.Name = "panel27";
             panel27.Size = new Size(1437, 83);
             panel27.TabIndex = 2;
+            // 
+            // txtBoxRSBSAIdLGU
+            // 
+            txtBoxRSBSAIdLGU.BorderStyle = BorderStyle.None;
+            txtBoxRSBSAIdLGU.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBoxRSBSAIdLGU.Location = new Point(561, 39);
+            txtBoxRSBSAIdLGU.Name = "txtBoxRSBSAIdLGU";
+            txtBoxRSBSAIdLGU.Size = new Size(174, 24);
+            txtBoxRSBSAIdLGU.TabIndex = 95;
+            txtBoxRSBSAIdLGU.Text = "02-50";
             // 
             // btnCancel
             // 
@@ -4307,5 +4319,6 @@
         private TextBox txtRotatingFarmer3;
         private TextBox txtRotatingFarmer2;
         private TextBox txtRotatingFarmer1;
+        private TextBox txtBoxRSBSAIdLGU;
     }
 }
