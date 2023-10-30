@@ -286,7 +286,7 @@ namespace AgRecords.View
 
             if (await rsbsaController.AddRSBSA(
                 //rsbsa info
-                labelRsbsaId.Text, null, null, dtDateAdm.Value.Date,
+                labelRsbsaId.Text, txtBoxRSBSAIdLGU.Text, null, dtDateAdm.Value.Date,
 
                 //farmer info
                 farmerPhoto, txtSurname.Text, txtFirstname.Text, txtMiddlename.Text, txtExtname.Text, cbSex.Text,
