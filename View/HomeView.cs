@@ -570,7 +570,7 @@ namespace AgRecords.View
             panelDesktop.Controls.Add(analyticsRsbsaView);
             analyticsRsbsaView.Show();
 
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
             OpenChildForm(new AnalyticsRsbsaView(panelDesktop));
             lblTitle.Text = "Analytics \u23F5 RSBSA";
 
@@ -596,25 +596,6 @@ namespace AgRecords.View
             HideSubMenu();
         }
 
-        private void btnActivities_Click(object sender, EventArgs e)
-        {
-            WeeklyActivitiesView weeklyActivitiesView = new WeeklyActivitiesView(panelDesktop);
-            //userView.formRefresh();
-            weeklyActivitiesView.TopLevel = false;
-            weeklyActivitiesView.FormBorderStyle = FormBorderStyle.None;
-            weeklyActivitiesView.Dock = DockStyle.Fill;
-
-            panelDesktop.Controls.Clear();
-            panelDesktop.Controls.Add(weeklyActivitiesView);
-            weeklyActivitiesView.Show();
-
-            ActivateButton(sender, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new WeeklyActivitiesView(panelDesktop));
-            lblTitle.Text = "Weekly Activities";
-
-            HideSubMenu();
-        }
-
         private void btnReportsCorn_Click(object sender, EventArgs e)
         {
             AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
@@ -627,7 +608,7 @@ namespace AgRecords.View
             panelDesktop.Controls.Add(analyticsCropsView);
             analyticsCropsView.Show();
 
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
             OpenChildForm(new AnalyticsCropsView(panelDesktop));
             lblTitle.Text = "Analytics \u23F5 Rice";
 
@@ -646,7 +627,7 @@ namespace AgRecords.View
             panelDesktop.Controls.Add(analyticsCropsCornView);
             analyticsCropsCornView.Show();
 
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
             OpenChildForm(new AnalyticsCropsCornView(panelDesktop));
             lblTitle.Text = "Analytics \u23F5 Corn";
 
@@ -655,17 +636,17 @@ namespace AgRecords.View
 
         private void btnReportsHVC_Click(object sender, EventArgs e)
         {
-            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+            AnalyticsCropsHvcView analyticsCropsHvcView = new AnalyticsCropsHvcView(panelDesktop);
             //userView.formRefresh();
-            analyticsCropsView.TopLevel = false;
-            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
-            analyticsCropsView.Dock = DockStyle.Fill;
+            analyticsCropsHvcView.TopLevel = false;
+            analyticsCropsHvcView.FormBorderStyle = FormBorderStyle.None;
+            analyticsCropsHvcView.Dock = DockStyle.Fill;
 
             panelDesktop.Controls.Clear();
-            panelDesktop.Controls.Add(analyticsCropsView);
-            analyticsCropsView.Show();
+            panelDesktop.Controls.Add(analyticsCropsHvcView);
+            analyticsCropsHvcView.Show();
 
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
             OpenChildForm(new AnalyticsCropsView(panelDesktop));
             lblTitle.Text = "Analytics \u23F5 HVC";
 
@@ -684,9 +665,28 @@ namespace AgRecords.View
             panelDesktop.Controls.Add(analyticsCropsView);
             analyticsCropsView.Show();
 
-            ActivateButton(btnCrops, Color.FromArgb(43, 121, 223));
+            ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
             OpenChildForm(new AnalyticsCropsView(panelDesktop));
             lblTitle.Text = "Analytics \u23F5 Letters";
+
+            HideSubMenu();
+        }
+
+        private void btnActivities_Click(object sender, EventArgs e)
+        {
+            WeeklyActivitiesView weeklyActivitiesView = new WeeklyActivitiesView(panelDesktop);
+            //userView.formRefresh();
+            weeklyActivitiesView.TopLevel = false;
+            weeklyActivitiesView.FormBorderStyle = FormBorderStyle.None;
+            weeklyActivitiesView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(weeklyActivitiesView);
+            weeklyActivitiesView.Show();
+
+            ActivateButton(sender, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new WeeklyActivitiesView(panelDesktop));
+            lblTitle.Text = "Weekly Activities";
 
             HideSubMenu();
         }

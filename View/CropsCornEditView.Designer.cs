@@ -543,9 +543,9 @@
             txtAveYield.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtAveYield.Location = new Point(886, 159);
             txtAveYield.Name = "txtAveYield";
+            txtAveYield.PlaceholderText = "0.00";
             txtAveYield.Size = new Size(217, 24);
             txtAveYield.TabIndex = 104;
-            txtAveYield.Text = "0";
             txtAveYield.TextAlign = HorizontalAlignment.Right;
             // 
             // boxAveYield
@@ -634,9 +634,9 @@
             txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtSize.Location = new Point(637, 158);
             txtSize.Name = "txtSize";
+            txtSize.PlaceholderText = "0.00";
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 94;
-            txtSize.Text = "0";
             txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11

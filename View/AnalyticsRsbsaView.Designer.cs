@@ -47,6 +47,12 @@
             rectangleFullWhite4 = new RectangleFullWhite();
             rectangleFullWhite5 = new RectangleFullWhite();
             label9 = new Label();
+            rsbsa3 = new OxyPlot.WindowsForms.PlotView();
+            rsbsa4 = new OxyPlot.WindowsForms.PlotView();
+            rsbsa5 = new OxyPlot.WindowsForms.PlotView();
+            rsbsa1 = new OxyPlot.WindowsForms.PlotView();
+            cmbBrgy1 = new ComboBox();
+            labelTotalWeeklyReg = new Label();
             SuspendLayout();
             // 
             // labelFarmers
@@ -81,9 +87,9 @@
             labelTotalFarmers.ForeColor = Color.FromArgb(0, 35, 76);
             labelTotalFarmers.Location = new Point(29, 69);
             labelTotalFarmers.Name = "labelTotalFarmers";
-            labelTotalFarmers.Size = new Size(135, 62);
+            labelTotalFarmers.Size = new Size(55, 62);
             labelTotalFarmers.TabIndex = 12;
-            labelTotalFarmers.Text = "8000";
+            labelTotalFarmers.Text = "#";
             // 
             // label1
             // 
@@ -93,9 +99,9 @@
             label1.ForeColor = Color.FromArgb(0, 35, 76);
             label1.Location = new Point(29, 30);
             label1.Name = "label1";
-            label1.Size = new Size(95, 20);
+            label1.Size = new Size(158, 20);
             label1.TabIndex = 11;
-            label1.Text = "Total RSBSA";
+            label1.Text = "Total RSBSA Registry";
             // 
             // rectangleFullYellow1
             // 
@@ -150,9 +156,9 @@
             label5.ForeColor = Color.FromArgb(0, 35, 76);
             label5.Location = new Point(30, 193);
             label5.Name = "label5";
-            label5.Size = new Size(192, 20);
+            label5.Size = new Size(247, 20);
             label5.TabIndex = 19;
-            label5.Text = "Registration Per Barangay";
+            label5.Text = "Weekly Registration Per Barangay";
             // 
             // rectangleFullWhite1
             // 
@@ -208,9 +214,9 @@
             label8.ForeColor = Color.FromArgb(0, 35, 76);
             label8.Location = new Point(1090, 30);
             label8.Name = "label8";
-            label8.Size = new Size(91, 20);
+            label8.Size = new Size(260, 20);
             label8.TabIndex = 25;
-            label8.Text = "Commodity";
+            label8.Text = "Number of Farmers Per Commodity";
             // 
             // rectangleFullWhite4
             // 
@@ -239,12 +245,93 @@
             label9.TabIndex = 27;
             label9.Text = "Registration This Week";
             // 
+            // rsbsa3
+            // 
+            rsbsa3.BackColor = Color.White;
+            rsbsa3.Location = new Point(30, 227);
+            rsbsa3.Name = "rsbsa3";
+            rsbsa3.PanCursor = Cursors.Hand;
+            rsbsa3.Size = new Size(650, 272);
+            rsbsa3.TabIndex = 28;
+            rsbsa3.ZoomHorizontalCursor = Cursors.SizeWE;
+            rsbsa3.ZoomRectangleCursor = Cursors.SizeNWSE;
+            rsbsa3.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // rsbsa4
+            // 
+            rsbsa4.BackColor = Color.White;
+            rsbsa4.Location = new Point(30, 591);
+            rsbsa4.Name = "rsbsa4";
+            rsbsa4.PanCursor = Cursors.Hand;
+            rsbsa4.Size = new Size(650, 305);
+            rsbsa4.TabIndex = 29;
+            rsbsa4.ZoomHorizontalCursor = Cursors.SizeWE;
+            rsbsa4.ZoomRectangleCursor = Cursors.SizeNWSE;
+            rsbsa4.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // rsbsa5
+            // 
+            rsbsa5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rsbsa5.BackColor = Color.White;
+            rsbsa5.Location = new Point(742, 591);
+            rsbsa5.Name = "rsbsa5";
+            rsbsa5.PanCursor = Cursors.Hand;
+            rsbsa5.Size = new Size(819, 305);
+            rsbsa5.TabIndex = 30;
+            rsbsa5.ZoomHorizontalCursor = Cursors.SizeWE;
+            rsbsa5.ZoomRectangleCursor = Cursors.SizeNWSE;
+            rsbsa5.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // rsbsa1
+            // 
+            rsbsa1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rsbsa1.BackColor = Color.White;
+            rsbsa1.Location = new Point(1099, 69);
+            rsbsa1.Name = "rsbsa1";
+            rsbsa1.PanCursor = Cursors.Hand;
+            rsbsa1.Size = new Size(462, 430);
+            rsbsa1.TabIndex = 31;
+            rsbsa1.ZoomHorizontalCursor = Cursors.SizeWE;
+            rsbsa1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            rsbsa1.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // cmbBrgy1
+            // 
+            cmbBrgy1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBrgy1.FlatStyle = FlatStyle.Flat;
+            cmbBrgy1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbBrgy1.FormattingEnabled = true;
+            cmbBrgy1.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            cmbBrgy1.Location = new Point(1382, 22);
+            cmbBrgy1.Name = "cmbBrgy1";
+            cmbBrgy1.Size = new Size(179, 28);
+            cmbBrgy1.TabIndex = 85;
+            cmbBrgy1.SelectedIndexChanged += cmbBrgy1_SelectedIndexChanged;
+            // 
+            // labelTotalWeeklyReg
+            // 
+            labelTotalWeeklyReg.AutoSize = true;
+            labelTotalWeeklyReg.BackColor = Color.White;
+            labelTotalWeeklyReg.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTotalWeeklyReg.ForeColor = Color.FromArgb(0, 35, 76);
+            labelTotalWeeklyReg.Location = new Point(837, 294);
+            labelTotalWeeklyReg.Name = "labelTotalWeeklyReg";
+            labelTotalWeeklyReg.Size = new Size(91, 106);
+            labelTotalWeeklyReg.TabIndex = 86;
+            labelTotalWeeklyReg.Text = "0";
+            // 
             // AnalyticsRsbsaView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
+            Controls.Add(labelTotalWeeklyReg);
+            Controls.Add(cmbBrgy1);
+            Controls.Add(rsbsa1);
+            Controls.Add(rsbsa5);
+            Controls.Add(rsbsa4);
+            Controls.Add(rsbsa3);
             Controls.Add(label9);
             Controls.Add(rectangleFullWhite5);
             Controls.Add(label8);
@@ -292,5 +379,11 @@
         private RectangleFullWhite rectangleFullWhite4;
         private RectangleFullWhite rectangleFullWhite5;
         private Label label9;
+        private OxyPlot.WindowsForms.PlotView rsbsa3;
+        private OxyPlot.WindowsForms.PlotView rsbsa4;
+        private OxyPlot.WindowsForms.PlotView rsbsa5;
+        private OxyPlot.WindowsForms.PlotView rsbsa1;
+        private ComboBox cmbBrgy1;
+        private Label labelTotalWeeklyReg;
     }
 }

@@ -469,9 +469,9 @@
             txtAveYield.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtAveYield.Location = new Point(610, 158);
             txtAveYield.Name = "txtAveYield";
+            txtAveYield.PlaceholderText = "0.00";
             txtAveYield.Size = new Size(217, 24);
             txtAveYield.TabIndex = 86;
-            txtAveYield.Text = "0";
             txtAveYield.TextAlign = HorizontalAlignment.Right;
             // 
             // boxAveYield
@@ -631,9 +631,9 @@
             txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtSize.Location = new Point(370, 158);
             txtSize.Name = "txtSize";
+            txtSize.PlaceholderText = "0.00";
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 39;
-            txtSize.Text = "0";
             txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11
@@ -753,9 +753,9 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
@@ -765,7 +765,7 @@
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);

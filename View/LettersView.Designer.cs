@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             btnAdd = new Button();
             panel1 = new Panel();
             label2 = new Label();
@@ -43,9 +43,11 @@
             label1 = new Label();
             dgvLetters = new DataGridView();
             panel2 = new Panel();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // btnAdd
@@ -54,9 +56,9 @@
             btnAdd.BackColor = Color.FromArgb(43, 121, 223);
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(1443, 27);
+            btnAdd.Location = new Point(1444, 33);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(139, 39);
@@ -88,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(638, 13);
+            label2.Location = new Point(382, 13);
             label2.Name = "label2";
             label2.Size = new Size(40, 20);
             label2.TabIndex = 8;
@@ -101,7 +103,7 @@
             comboBoxFilterType.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterType.FormattingEnabled = true;
             comboBoxFilterType.Items.AddRange(new object[] { "All", "Incoming", "Outgoing", "Internal" });
-            comboBoxFilterType.Location = new Point(643, 41);
+            comboBoxFilterType.Location = new Point(387, 41);
             comboBoxFilterType.Name = "comboBoxFilterType";
             comboBoxFilterType.Size = new Size(237, 28);
             comboBoxFilterType.TabIndex = 3;
@@ -109,7 +111,7 @@
             // 
             // searchBox3
             // 
-            searchBox3.Location = new Point(638, 36);
+            searchBox3.Location = new Point(382, 36);
             searchBox3.Name = "searchBox3";
             searchBox3.Size = new Size(246, 39);
             searchBox3.TabIndex = 7;
@@ -121,7 +123,7 @@
             comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSearchCategory.FormattingEnabled = true;
             comboBoxSearchCategory.Items.AddRange(new object[] { "All", "ID", "Title", "Receiver", "Sender", "Tag", "Date Received" });
-            comboBoxSearchCategory.Location = new Point(380, 41);
+            comboBoxSearchCategory.Location = new Point(652, 40);
             comboBoxSearchCategory.Name = "comboBoxSearchCategory";
             comboBoxSearchCategory.Size = new Size(237, 28);
             comboBoxSearchCategory.TabIndex = 0;
@@ -129,7 +131,7 @@
             // 
             // searchBox2
             // 
-            searchBox2.Location = new Point(375, 36);
+            searchBox2.Location = new Point(647, 35);
             searchBox2.Name = "searchBox2";
             searchBox2.Size = new Size(246, 39);
             searchBox2.TabIndex = 6;
@@ -169,11 +171,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(375, 13);
+            label1.Location = new Point(647, 12);
             label1.Name = "label1";
-            label1.Size = new Size(69, 20);
+            label1.Size = new Size(42, 20);
             label1.TabIndex = 4;
-            label1.Text = "Category";
+            label1.Text = "Filter";
             // 
             // dgvLetters
             // 
@@ -183,34 +185,34 @@
             dgvLetters.BackgroundColor = Color.White;
             dgvLetters.BorderStyle = BorderStyle.None;
             dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgvLetters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvLetters.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dgvLetters.DefaultCellStyle = dataGridViewCellStyle12;
             dgvLetters.Dock = DockStyle.Fill;
             dgvLetters.GridColor = Color.FromArgb(239, 239, 239);
-            dgvLetters.Location = new Point(0, 101);
+            dgvLetters.Location = new Point(10, 10);
             dgvLetters.Name = "dgvLetters";
             dgvLetters.ReadOnly = true;
             dgvLetters.RowHeadersVisible = false;
             dgvLetters.RowHeadersWidth = 51;
             dgvLetters.RowTemplate.Height = 40;
             dgvLetters.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLetters.Size = new Size(1595, 825);
+            dgvLetters.Size = new Size(1575, 805);
             dgvLetters.TabIndex = 22;
             dgvLetters.CellDoubleClick += dgvLetters_CellDoubleClick;
             // 
@@ -222,13 +224,24 @@
             panel2.Size = new Size(1595, 10);
             panel2.TabIndex = 23;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(dgvLetters);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 101);
+            panel3.Name = "panel3";
+            panel3.Padding = new Padding(10);
+            panel3.Size = new Size(1595, 825);
+            panel3.TabIndex = 24;
+            // 
             // LettersView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(dgvLetters);
+            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Margin = new Padding(3, 4, 3, 4);
@@ -239,6 +252,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvLetters).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -256,5 +270,6 @@
         private SearchBox searchBox2;
         private SearchBox searchBox3;
         private Label label2;
+        private Panel panel3;
     }
 }

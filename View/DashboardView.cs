@@ -57,6 +57,7 @@ namespace AgRecords.View
 
             analyticsController.AvgGaiFarming();
             analyticsController.AvgGaiNonFarming();
+            labelTotalFarmers.Text = analyticsController.CountRsbsaFarmers();
 
             // A
             DataTable coopTable = analyticsController.CountCoopFarmerBarangay();
