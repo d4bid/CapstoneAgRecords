@@ -611,20 +611,19 @@ namespace AgRecords.View
                 worksheet.Cells[3, 1].Value = worksheet.Cells[3, 1].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text;
                 worksheet.Cells[4, 1].Value = worksheet.Cells[4, 1].Text + labelMonth.Text + " " + labelWeek.Text + ", " + labelYear.Text;
 
-                int startRow = 12; // Start at row 12 in the template
-                int startColumn = 2; // Start at column 2 of the MySQL result
+                int startRow = 12;
+                int startColumn = 2;
 
                 foreach (DataRow row in data.Rows)
                 {
-                    for (int i = 1; i <= 20; i++) // Assuming you want to populate cells from row[2] to row[22]
+                    for (int i = 2; i <= 21; i++) // Loop through all columns, including the first column
                     {
-                        worksheet.Cells[startRow, startColumn] = row[i];
+                        worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
                         startColumn++;
                     }
 
                     startRow++; // Move to the next row in Excel
                     startColumn = 2; // Reset the column index for the next row
-
                 }
 
                 // Display the filled Excel file using Excel application
@@ -660,14 +659,14 @@ namespace AgRecords.View
 
                 worksheet.Cells[5, 1].Value = worksheet.Cells[5, 1].Text + labelMonth.Text + " " + labelWeek.Text + ", " + labelYear.Text;
 
-                int startRow = 11; // Start at row in the template
-                int startColumn = 2; // Start at column of the MySQL result
+                int startRow = 11;
+                int startColumn = 2;
 
                 foreach (DataRow row in data.Rows)
                 {
-                    for (int i = 1; i <= 24; i++) // Assuming you want to populate cells from row[2] to row[22]
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
                     {
-                        worksheet.Cells[startRow, startColumn] = row[i];
+                        worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
                         startColumn++;
                     }
 
@@ -675,6 +674,101 @@ namespace AgRecords.View
                     startColumn = 2; // Reset the column index for the next row
                 }
 
+                // Display the filled Excel file using Excel application
+                excelApp.Visible = true;
+
+                // Release Excel objects
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                // Optionally, you can quit the Excel application here if needed
+                //excelApp.Quit();
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            }
+            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                // Retrieve data from the controller
+                string riceSrId = labelRiceSrId.Text;
+                DataTable data = cropsRiceController.LoadRiceIrrigatedHarvestingView(riceSrId);
+                DataTable data1 = cropsRiceController.LoadRiceLowlandHarvestingView(riceSrId);
+                DataTable data2 = cropsRiceController.LoadRiceUplandHarvestingView(riceSrId);
+
+                // Get the directory where the application executable is located
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Specify the path to the Excel file relative to the executable path
+                string relativePath = Path.Combine("Templates", "RiceHarvestingReport.xlsx");
+
+                // Combine the executable path with the relative path to get the full file path
+                string filePath = Path.Combine(executablePath, relativePath);
+
+                // Create an instance of Excel Application
+                Excel.Application excelApp = new Excel.Application();
+
+                // Open the Excel template
+                Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+
+                // Get the worksheet
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
+
+                worksheet.Cells[3, 1].Value = worksheet.Cells[3, 1].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text;
+                worksheet.Cells[4, 1].Value = worksheet.Cells[4, 1].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text;
+
+                int startRow = 9;
+                int startColumn = 2;
+
+                foreach (DataRow row in data.Rows)
+                {
+                    for (int i = 1; i <= 15; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn++;
+                    }
+
+                    startRow++; // Move to the next row in Excel
+                    startColumn = 2; // Reset the column index for the next row
+                }
+
+                // Get the worksheet
+                Excel.Worksheet worksheet1 = (Excel.Worksheet)workbook.Worksheets[2];
+
+                worksheet1.Cells[3, 1].Value = worksheet1.Cells[3, 1].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text;
+                worksheet1.Cells[4, 1].Value = worksheet1.Cells[4, 1].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text;
+
+                int startRow1 = 9;
+                int startColumn1 = 2;
+
+                foreach (DataRow row in data1.Rows)
+                {
+                    for (int i = 1; i <= 15; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet1.Cells[startRow1, startColumn1] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn1++;
+                    }
+
+                    startRow1++; // Move to the next row in Excel
+                    startColumn1 = 2; // Reset the column index for the next row
+                }
+
+                // Get the worksheet
+                Excel.Worksheet worksheet2 = (Excel.Worksheet)workbook.Worksheets[3];
+
+                worksheet2.Cells[3, 1].Value = worksheet2.Cells[3, 1].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text;
+                worksheet2.Cells[4, 1].Value = worksheet2.Cells[4, 1].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text;
+
+                int startRow2 = 9;
+                int startColumn2 = 2;
+
+                foreach (DataRow row in data2.Rows)
+                {
+                    for (int i = 1; i <= 15; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet2.Cells[startRow2, startColumn2] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn2++;
+                    }
+
+                    startRow2++; // Move to the next row in Excel
+                    startColumn2 = 2; // Reset the column index for the next row
+                }
 
                 // Display the filled Excel file using Excel application
                 excelApp.Visible = true;
@@ -683,15 +777,6 @@ namespace AgRecords.View
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             }
-            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            {
-
-            }
-
-
-            // Optionally, you can quit the Excel application here if needed
-            // excelApp.Quit();
-            // System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
         }
 
         private void btnBack_Click(object sender, EventArgs e)

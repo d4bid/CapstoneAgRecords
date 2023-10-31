@@ -56,7 +56,7 @@
             groupBox2.Controls.Add(label8);
             groupBox2.Location = new Point(2, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(747, 301);
+            groupBox2.Size = new Size(770, 301);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             // 
@@ -70,7 +70,7 @@
             btnRemove.IconColor = Color.FromArgb(0, 35, 76);
             btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRemove.IconSize = 30;
-            btnRemove.Location = new Point(716, 17);
+            btnRemove.Location = new Point(739, 17);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(25, 25);
             btnRemove.TabIndex = 35;
@@ -113,7 +113,7 @@
             txtFarmInfo.Margin = new Padding(3, 4, 3, 4);
             txtFarmInfo.Multiline = true;
             txtFarmInfo.Name = "txtFarmInfo";
-            txtFarmInfo.Size = new Size(673, 134);
+            txtFarmInfo.Size = new Size(693, 134);
             txtFarmInfo.TabIndex = 31;
             // 
             // txtFarmAddress
@@ -123,7 +123,7 @@
             txtFarmAddress.Location = new Point(203, 64);
             txtFarmAddress.Margin = new Padding(3, 4, 3, 4);
             txtFarmAddress.Name = "txtFarmAddress";
-            txtFarmAddress.Size = new Size(506, 27);
+            txtFarmAddress.Size = new Size(526, 27);
             txtFarmAddress.TabIndex = 29;
             txtFarmAddress.Text = "Address";
             // 
@@ -132,7 +132,7 @@
             rectangleRound6.BackColor = Color.White;
             rectangleRound6.Location = new Point(22, 136);
             rectangleRound6.Name = "rectangleRound6";
-            rectangleRound6.Size = new Size(699, 150);
+            rectangleRound6.Size = new Size(719, 150);
             rectangleRound6.TabIndex = 27;
             // 
             // label5
@@ -149,7 +149,7 @@
             rectangleRound5.BackColor = Color.White;
             rectangleRound5.Location = new Point(189, 61);
             rectangleRound5.Name = "rectangleRound5";
-            rectangleRound5.Size = new Size(532, 38);
+            rectangleRound5.Size = new Size(552, 38);
             rectangleRound5.TabIndex = 29;
             // 
             // label8
@@ -168,7 +168,7 @@
             BackColor = Color.White;
             Controls.Add(groupBox2);
             Name = "CertificationsFarmControl";
-            Size = new Size(754, 307);
+            Size = new Size(779, 307);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);

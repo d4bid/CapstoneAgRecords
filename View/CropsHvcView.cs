@@ -26,6 +26,17 @@ namespace AgRecords.View
         }
 
         // Methods
+        private void CropsHvcAddView_FormClosed(object sender, EventArgs e)
+        {
+            CropsHvcView cropsHvcView = new CropsHvcView(parentPanel);
+            cropsHvcView.TopLevel = false;
+            cropsHvcView.FormBorderStyle = FormBorderStyle.None;
+            cropsHvcView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(cropsHvcView);
+            cropsHvcView.Show();
+        }
 
         private void CropsHvcEditView_FormClosed(object sender, EventArgs e)
         {
@@ -61,6 +72,7 @@ namespace AgRecords.View
                 this.Close(); // Close the current form (CropsRiceView)
 
                 CropsHvcAddView cropsHvcAddView = new CropsHvcAddView();
+                cropsHvcAddView.FormClosed += CropsHvcAddView_FormClosed;
                 cropsHvcAddView.TopLevel = false;
                 cropsHvcAddView.FormBorderStyle = FormBorderStyle.None;
                 cropsHvcAddView.Dock = DockStyle.Fill;

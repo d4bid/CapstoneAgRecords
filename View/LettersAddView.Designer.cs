@@ -386,9 +386,9 @@
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(19, 43);
             label3.Name = "label3";
-            label3.Size = new Size(106, 20);
+            label3.Size = new Size(41, 20);
             label3.TabIndex = 31;
-            label3.Text = "Date Received";
+            label3.Text = "Date";
             // 
             // dtpDateReceived
             // 

@@ -427,14 +427,14 @@
             panelFarmLand.Controls.Add(panelDocument);
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1595, 767);
+            panelFarmLand.Size = new Size(1595, 0);
             panelFarmLand.TabIndex = 14;
             // 
             // panel19
             // 
             panel19.Controls.Add(flowLayoutPanelParcels);
             panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 927);
+            panel19.Location = new Point(0, 160);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(10);
             panel19.Size = new Size(1595, 0);
@@ -453,7 +453,7 @@
             // 
             panel12.Controls.Add(panel17);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 767);
+            panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
             panel12.Padding = new Padding(10);
             panel12.Size = new Size(1595, 160);
@@ -678,7 +678,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 767);
+            panelDocument.Size = new Size(1595, 0);
             panelDocument.TabIndex = 0;
             // 
             // flowLayoutPanelDocs
@@ -687,7 +687,7 @@
             flowLayoutPanelDocs.Dock = DockStyle.Fill;
             flowLayoutPanelDocs.Location = new Point(0, 87);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1595, 680);
+            flowLayoutPanelDocs.Size = new Size(1595, 0);
             flowLayoutPanelDocs.TabIndex = 0;
             // 
             // panel14
@@ -701,6 +701,7 @@
             // 
             // btnAddDocsControl
             // 
+            btnAddDocsControl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAddDocsControl.BackColor = Color.FromArgb(255, 221, 100);
             btnAddDocsControl.FlatAppearance.BorderSize = 0;
             btnAddDocsControl.FlatStyle = FlatStyle.Flat;
@@ -711,16 +712,18 @@
             btnAddDocsControl.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAddDocsControl.IconSize = 30;
             btnAddDocsControl.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddDocsControl.Location = new Point(1285, 24);
+            btnAddDocsControl.Location = new Point(1394, 38);
             btnAddDocsControl.Name = "btnAddDocsControl";
-            btnAddDocsControl.Size = new Size(300, 39);
+            btnAddDocsControl.Size = new Size(187, 34);
             btnAddDocsControl.TabIndex = 0;
             btnAddDocsControl.Text = "Add Document";
+            btnAddDocsControl.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddDocsControl.UseVisualStyleBackColor = false;
             btnAddDocsControl.Click += btnAddDocsControl_Click;
             // 
             // panelAnnuanIncome
             // 
+            panelAnnuanIncome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAnnuanIncome.BorderStyle = BorderStyle.FixedSingle;
             panelAnnuanIncome.Controls.Add(txtNonFarmingIncome);
             panelAnnuanIncome.Controls.Add(txtFarmingIncome);
@@ -731,7 +734,7 @@
             panelAnnuanIncome.Controls.Add(label69);
             panelAnnuanIncome.Location = new Point(13, 556);
             panelAnnuanIncome.Name = "panelAnnuanIncome";
-            panelAnnuanIncome.Size = new Size(1494, 137);
+            panelAnnuanIncome.Size = new Size(1570, 137);
             panelAnnuanIncome.TabIndex = 17;
             // 
             // txtNonFarmingIncome
@@ -789,7 +792,7 @@
             panelAnnuanIncomeHeader.Dock = DockStyle.Top;
             panelAnnuanIncomeHeader.Location = new Point(0, 0);
             panelAnnuanIncomeHeader.Name = "panelAnnuanIncomeHeader";
-            panelAnnuanIncomeHeader.Size = new Size(1492, 29);
+            panelAnnuanIncomeHeader.Size = new Size(1568, 29);
             panelAnnuanIncomeHeader.TabIndex = 0;
             // 
             // label67
@@ -825,6 +828,7 @@
             // 
             // panelForAgriYouth
             // 
+            panelForAgriYouth.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelForAgriYouth.BorderStyle = BorderStyle.FixedSingle;
             panelForAgriYouth.Controls.Add(txtInvolvementOthers);
             panelForAgriYouth.Controls.Add(cbInvolvementOthers);
@@ -834,7 +838,7 @@
             panelForAgriYouth.Controls.Add(panelForAgriYouthHeader);
             panelForAgriYouth.Controls.Add(rectangleRound43);
             panelForAgriYouth.Controls.Add(label66);
-            panelForAgriYouth.Location = new Point(1149, 133);
+            panelForAgriYouth.Location = new Point(1227, 133);
             panelForAgriYouth.Name = "panelForAgriYouth";
             panelForAgriYouth.Size = new Size(357, 406);
             panelForAgriYouth.TabIndex = 16;
@@ -963,7 +967,7 @@
             panelForFisherfolk.Controls.Add(panelForFisherfolkHeader);
             panelForFisherfolk.Controls.Add(rectangleRound42);
             panelForFisherfolk.Controls.Add(label40);
-            panelForFisherfolk.Location = new Point(768, 133);
+            panelForFisherfolk.Location = new Point(820, 134);
             panelForFisherfolk.Name = "panelForFisherfolk";
             panelForFisherfolk.Size = new Size(357, 406);
             panelForFisherfolk.TabIndex = 15;
@@ -1115,7 +1119,7 @@
             panelForFarmerworkers.Controls.Add(panelForFarmerworkersHeader);
             panelForFarmerworkers.Controls.Add(rectangleRound20);
             panelForFarmerworkers.Controls.Add(label45);
-            panelForFarmerworkers.Location = new Point(390, 133);
+            panelForFarmerworkers.Location = new Point(417, 133);
             panelForFarmerworkers.Name = "panelForFarmerworkers";
             panelForFarmerworkers.Size = new Size(357, 406);
             panelForFarmerworkers.TabIndex = 14;
@@ -1446,6 +1450,7 @@
             // 
             // panelMainLivelihood
             // 
+            panelMainLivelihood.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelMainLivelihood.BorderStyle = BorderStyle.FixedSingle;
             panelMainLivelihood.Controls.Add(cbLivelihoodFisherfolk);
             panelMainLivelihood.Controls.Add(cbLivelihoodAgriyouth);
@@ -1455,7 +1460,7 @@
             panelMainLivelihood.Controls.Add(panelMainLivelihoodHeader);
             panelMainLivelihood.Location = new Point(11, 8);
             panelMainLivelihood.Name = "panelMainLivelihood";
-            panelMainLivelihood.Size = new Size(1494, 112);
+            panelMainLivelihood.Size = new Size(1574, 112);
             panelMainLivelihood.TabIndex = 12;
             // 
             // cbLivelihoodFisherfolk
@@ -1476,7 +1481,7 @@
             // 
             cbLivelihoodAgriyouth.AutoSize = true;
             cbLivelihoodAgriyouth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbLivelihoodAgriyouth.Location = new Point(1239, 55);
+            cbLivelihoodAgriyouth.Location = new Point(1291, 55);
             cbLivelihoodAgriyouth.Name = "cbLivelihoodAgriyouth";
             cbLivelihoodAgriyouth.Size = new Size(126, 32);
             cbLivelihoodAgriyouth.TabIndex = 4;
@@ -1516,11 +1521,12 @@
             // 
             // rectangleRound18
             // 
+            rectangleRound18.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound18.BackColor = Color.White;
             rectangleRound18.Location = new Point(19, 48);
             rectangleRound18.Margin = new Padding(5, 3, 5, 3);
             rectangleRound18.Name = "rectangleRound18";
-            rectangleRound18.Size = new Size(1456, 46);
+            rectangleRound18.Size = new Size(1536, 46);
             rectangleRound18.TabIndex = 0;
             // 
             // panelMainLivelihoodHeader
@@ -1530,7 +1536,7 @@
             panelMainLivelihoodHeader.Dock = DockStyle.Top;
             panelMainLivelihoodHeader.Location = new Point(0, 0);
             panelMainLivelihoodHeader.Name = "panelMainLivelihoodHeader";
-            panelMainLivelihoodHeader.Size = new Size(1492, 29);
+            panelMainLivelihoodHeader.Size = new Size(1572, 29);
             panelMainLivelihoodHeader.TabIndex = 0;
             // 
             // label37
@@ -1546,6 +1552,7 @@
             // 
             // panelEmergencyCon
             // 
+            panelEmergencyCon.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelEmergencyCon.BorderStyle = BorderStyle.FixedSingle;
             panelEmergencyCon.Controls.Add(txtEcContact);
             panelEmergencyCon.Controls.Add(txtEcName);
@@ -1648,6 +1655,7 @@
             // 
             // panelAffiliations
             // 
+            panelAffiliations.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAffiliations.BorderStyle = BorderStyle.FixedSingle;
             panelAffiliations.Controls.Add(panelCoop);
             panelAffiliations.Controls.Add(panelGovId);
@@ -1686,7 +1694,7 @@
             // 
             panelCoop.Controls.Add(rbAssociationNo);
             panelCoop.Controls.Add(rbAssociationYes);
-            panelCoop.Location = new Point(368, 344);
+            panelCoop.Location = new Point(368, 343);
             panelCoop.Name = "panelCoop";
             panelCoop.Size = new Size(130, 31);
             panelCoop.TabIndex = 8;
@@ -1725,7 +1733,7 @@
             // 
             panelGovId.Controls.Add(rbGovIdNo);
             panelGovId.Controls.Add(rbGovIdYes);
-            panelGovId.Location = new Point(179, 203);
+            panelGovId.Location = new Point(185, 204);
             panelGovId.Name = "panelGovId";
             panelGovId.Size = new Size(130, 31);
             panelGovId.TabIndex = 5;
@@ -1803,7 +1811,7 @@
             // 
             panel4Ps.Controls.Add(rb4psNo);
             panel4Ps.Controls.Add(rb4psYes);
-            panel4Ps.Location = new Point(361, 45);
+            panel4Ps.Location = new Point(362, 46);
             panel4Ps.Name = "panel4Ps";
             panel4Ps.Size = new Size(130, 31);
             panel4Ps.TabIndex = 2;
@@ -1841,7 +1849,7 @@
             // 
             panelPWD.Controls.Add(rbPwdNo);
             panelPWD.Controls.Add(rbPwdYes);
-            panelPWD.Location = new Point(77, 45);
+            panelPWD.Location = new Point(77, 46);
             panelPWD.Name = "panelPWD";
             panelPWD.Size = new Size(130, 31);
             panelPWD.TabIndex = 1;
@@ -1877,6 +1885,7 @@
             // 
             // txtGovIdNum
             // 
+            txtGovIdNum.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGovIdNum.BorderStyle = BorderStyle.None;
             txtGovIdNum.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(184, 288);
@@ -1890,6 +1899,7 @@
             // 
             // txtIndigenous
             // 
+            txtIndigenous.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtIndigenous.BorderStyle = BorderStyle.None;
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtIndigenous.Location = new Point(129, 145);
@@ -1903,6 +1913,7 @@
             // 
             // txtAssociation
             // 
+            txtAssociation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtAssociation.BackColor = Color.White;
             txtAssociation.BorderStyle = BorderStyle.None;
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1917,6 +1928,7 @@
             // 
             // txtGovIdType
             // 
+            txtGovIdType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGovIdType.BorderStyle = BorderStyle.None;
             txtGovIdType.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdType.Location = new Point(184, 246);
@@ -1980,6 +1992,7 @@
             // 
             // rectangleRound40
             // 
+            rectangleRound40.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound40.BackColor = Color.White;
             rectangleRound40.Location = new Point(256, 101);
             rectangleRound40.Margin = new Padding(2, 3, 2, 3);
@@ -1990,6 +2003,7 @@
             // 
             // rectangleRound39
             // 
+            rectangleRound39.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound39.BackColor = Color.White;
             rectangleRound39.Location = new Point(174, 200);
             rectangleRound39.Margin = new Padding(2, 3, 2, 3);
@@ -2000,6 +2014,7 @@
             // 
             // rectangleRound37
             // 
+            rectangleRound37.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound37.BackColor = Color.White;
             rectangleRound37.Location = new Point(174, 242);
             rectangleRound37.Margin = new Padding(2, 3, 2, 3);
@@ -2010,6 +2025,7 @@
             // 
             // rectangleRound35
             // 
+            rectangleRound35.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound35.BackColor = Color.White;
             rectangleRound35.Location = new Point(174, 284);
             rectangleRound35.Margin = new Padding(2, 3, 2, 3);
@@ -2040,6 +2056,7 @@
             // 
             // rectangleRound34
             // 
+            rectangleRound34.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound34.BackColor = Color.White;
             rectangleRound34.Location = new Point(360, 340);
             rectangleRound34.Margin = new Padding(2, 3, 2, 3);
@@ -2050,6 +2067,7 @@
             // 
             // rectangleRound19
             // 
+            rectangleRound19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound19.BackColor = Color.White;
             rectangleRound19.Location = new Point(118, 382);
             rectangleRound19.Margin = new Padding(2, 3, 2, 3);
@@ -2092,6 +2110,7 @@
             // 
             // rectangleRound15
             // 
+            rectangleRound15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound15.BackColor = Color.White;
             rectangleRound15.Location = new Point(354, 42);
             rectangleRound15.Margin = new Padding(2, 3, 2, 3);
@@ -2112,6 +2131,7 @@
             // 
             // rectangleRound16
             // 
+            rectangleRound16.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound16.BackColor = Color.White;
             rectangleRound16.Location = new Point(119, 143);
             rectangleRound16.Margin = new Padding(2, 3, 2, 3);
@@ -3036,6 +3056,7 @@
             // 
             // panelContactDetails
             // 
+            panelContactDetails.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelContactDetails.BorderStyle = BorderStyle.FixedSingle;
             panelContactDetails.Controls.Add(txtLandNo);
             panelContactDetails.Controls.Add(txtMobNo);
@@ -3051,6 +3072,7 @@
             // 
             // txtLandNo
             // 
+            txtLandNo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtLandNo.BorderStyle = BorderStyle.None;
             txtLandNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtLandNo.Location = new Point(31, 135);
@@ -3063,6 +3085,7 @@
             // 
             // txtMobNo
             // 
+            txtMobNo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtMobNo.BorderStyle = BorderStyle.None;
             txtMobNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtMobNo.Location = new Point(32, 63);
@@ -3085,6 +3108,7 @@
             // 
             // rectangleRound12
             // 
+            rectangleRound12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound12.BackColor = Color.White;
             rectangleRound12.Location = new Point(20, 131);
             rectangleRound12.Margin = new Padding(2, 3, 2, 3);
@@ -3116,6 +3140,7 @@
             // 
             // rectangleRound13
             // 
+            rectangleRound13.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound13.BackColor = Color.White;
             rectangleRound13.Location = new Point(20, 60);
             rectangleRound13.Margin = new Padding(2, 3, 2, 3);
@@ -3206,12 +3231,12 @@
             // 
             cbAddBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAddBrgy.FlatStyle = FlatStyle.Flat;
-            cbAddBrgy.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            cbAddBrgy.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbAddBrgy.Location = new Point(451, 62);
+            cbAddBrgy.Location = new Point(451, 63);
             cbAddBrgy.Name = "cbAddBrgy";
-            cbAddBrgy.Size = new Size(183, 33);
+            cbAddBrgy.Size = new Size(183, 31);
             cbAddBrgy.TabIndex = 8;
             cbAddBrgy.Enter += SelectedPanel;
             cbAddBrgy.Leave += UnselectedPanel;
@@ -3411,12 +3436,12 @@
             // 
             cbSex.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSex.FlatStyle = FlatStyle.Flat;
-            cbSex.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            cbSex.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold, GraphicsUnit.Point);
             cbSex.FormattingEnabled = true;
             cbSex.Items.AddRange(new object[] { "MALE ", "FEMALE" });
-            cbSex.Location = new Point(390, 133);
+            cbSex.Location = new Point(390, 134);
             cbSex.Name = "cbSex";
-            cbSex.Size = new Size(144, 33);
+            cbSex.Size = new Size(144, 31);
             cbSex.TabIndex = 5;
             cbSex.Enter += SelectedPanel;
             cbSex.Leave += UnselectedPanel;
@@ -3774,16 +3799,17 @@
             txtBoxRSBSAIdLGU.Name = "txtBoxRSBSAIdLGU";
             txtBoxRSBSAIdLGU.Size = new Size(174, 24);
             txtBoxRSBSAIdLGU.TabIndex = 95;
-            txtBoxRSBSAIdLGU.Text = "02-50";
+            txtBoxRSBSAIdLGU.Text = "02-50-13-002-00";
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
             btnCancel.FlatAppearance.BorderSize = 2;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1277, 19);
+            btnCancel.Location = new Point(1303, 39);
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(130, 40);
@@ -3794,12 +3820,13 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1137, 19);
+            btnSave.Location = new Point(1166, 39);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
             btnSave.TabIndex = 0;

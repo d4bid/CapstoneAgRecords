@@ -45,23 +45,19 @@ namespace AgRecords.Model
 
                     object result = command.ExecuteScalar();
 
-                    string formattedDate = DateTime.Now.ToString("yyyyMMdd");
-                    int nextNumber = 1; // Default to 1 if no records are found
-
-                    if (result != null && result != DBNull.Value)
+                    if (result == null || result == DBNull.Value)
+                    {
+                        string today = DateTime.Now.ToString("yyyyMMdd");
+                        return today + "00001";
+                    }
+                    else
                     {
                         string lastId = result.ToString();
-
-                        if (lastId.Length == 13 && lastId.StartsWith(formattedDate))
-                        {
-                            if (int.TryParse(lastId.Substring(8), out int lastNumber))
-                            {
-                                nextNumber = lastNumber + 1;
-                            }
-                        }
+                        int lastNumber = int.Parse(lastId.Substring(8));
+                        int nextNumber = lastNumber + 1;
+                        string nextId = DateTime.Now.ToString("yyyyMMdd") + nextNumber.ToString("00000");
+                        return nextId;
                     }
-
-                    return $"{formattedDate}{nextNumber:D5}";
 
                 }
             }

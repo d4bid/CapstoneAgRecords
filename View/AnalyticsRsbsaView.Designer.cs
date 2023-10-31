@@ -314,11 +314,11 @@
             labelTotalWeeklyReg.BackColor = Color.White;
             labelTotalWeeklyReg.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalWeeklyReg.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalWeeklyReg.Location = new Point(837, 294);
+            labelTotalWeeklyReg.Location = new Point(793, 294);
             labelTotalWeeklyReg.Name = "labelTotalWeeklyReg";
-            labelTotalWeeklyReg.Size = new Size(91, 106);
+            labelTotalWeeklyReg.Size = new Size(186, 106);
             labelTotalWeeklyReg.TabIndex = 86;
-            labelTotalWeeklyReg.Text = "0";
+            labelTotalWeeklyReg.Text = "###";
             // 
             // AnalyticsRsbsaView
             // 

@@ -82,6 +82,7 @@
             // 
             // btnExport
             // 
+            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExport.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
             btnExport.FlatAppearance.BorderSize = 2;
             btnExport.FlatAppearance.MouseDownBackColor = Color.White;
@@ -93,7 +94,7 @@
             btnExport.IconColor = Color.FromArgb(3, 0, 67);
             btnExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnExport.IconSize = 30;
-            btnExport.Location = new Point(1250, 33);
+            btnExport.Location = new Point(1269, 32);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(148, 40);
             btnExport.TabIndex = 56;
@@ -105,6 +106,7 @@
             // 
             // btnImport
             // 
+            btnImport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnImport.FlatAppearance.BorderColor = Color.FromArgb(3, 0, 67);
             btnImport.FlatAppearance.BorderSize = 2;
             btnImport.FlatAppearance.MouseDownBackColor = Color.White;
@@ -116,7 +118,7 @@
             btnImport.IconColor = Color.FromArgb(3, 0, 67);
             btnImport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnImport.IconSize = 30;
-            btnImport.Location = new Point(1096, 33);
+            btnImport.Location = new Point(1115, 32);
             btnImport.Name = "btnImport";
             btnImport.Size = new Size(148, 40);
             btnImport.TabIndex = 55;
@@ -170,7 +172,7 @@
             comboBoxFilterBrgy.FlatStyle = FlatStyle.Flat;
             comboBoxFilterBrgy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterBrgy.FormattingEnabled = true;
-            comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             comboBoxFilterBrgy.Location = new Point(374, 42);
             comboBoxFilterBrgy.Name = "comboBoxFilterBrgy";
             comboBoxFilterBrgy.Size = new Size(174, 28);
@@ -247,12 +249,13 @@
             // 
             // btnAdd
             // 
+            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAdd.BackColor = Color.FromArgb(43, 121, 223);
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(1433, 33);
+            btnAdd.Location = new Point(1446, 33);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(139, 40);
