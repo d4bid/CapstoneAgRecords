@@ -144,6 +144,7 @@
             btnPrint.TextAlign = ContentAlignment.MiddleRight;
             btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPrint.UseVisualStyleBackColor = true;
+            btnPrint.Click += btnPrint_Click;
             // 
             // labelYear
             // 

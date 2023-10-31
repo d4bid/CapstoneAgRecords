@@ -313,5 +313,62 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        public DataTable LoadHvcStandingTotalView(string hvcSrId)
+        {
+            try
+            {
+                DataTable hvcStandingTable = hvcModel.LoadHvcStandingTotalDataGrid(hvcSrId);
+                return hvcStandingTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "HVC Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        // PRINTING
+        public DataTable LoadStandingHvcPinakbetView(string hvcSrId)
+        {
+            try
+            {
+                DataTable hvcStandingTable = hvcModel.LoadStandingHvcPinakbetDataGrid(hvcSrId);
+                return hvcStandingTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "HVC Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadStandingHvcRootcropsView(string hvcSrId)
+        {
+            try
+            {
+                DataTable hvcStandingTable = hvcModel.LoadStandingHvcRootcropsDataGrid(hvcSrId);
+                return hvcStandingTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "HVC Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadStandingHvcPlantationView(string hvcSrId)
+        {
+            try
+            {
+                DataTable hvcStandingTable = hvcModel.LoadStandingHvcPlantationDataGrid(hvcSrId);
+                return hvcStandingTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "HVC Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
     }
 }
