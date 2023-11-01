@@ -34,11 +34,11 @@ namespace AgRecords.Utilities
                 e.KeyChar = char.ToUpper(enteredChar);
             }
 
-            if ((enteredChar == ' ' && text.EndsWith(" ") || enteredChar == '.' && text.EndsWith(".") || enteredChar == '-' && text.EndsWith("-")))
+            if ((enteredChar == ' ' && text.EndsWith(" ") || enteredChar == '.' && text.EndsWith(".") || enteredChar == '-' && text.EndsWith("-") || enteredChar == '/' && text.EndsWith("/")))
             {
                 e.Handled = true;
             }
-            else if (!char.IsLetterOrDigit(enteredChar) && !char.IsControl(enteredChar) && enteredChar != ' ' && enteredChar != '.' && enteredChar != '-')
+            else if (!char.IsLetterOrDigit(enteredChar) && !char.IsControl(enteredChar) && enteredChar != ' ' && enteredChar != '.' && enteredChar != '-' && enteredChar != '/')
             {
                 e.Handled = true;
             }

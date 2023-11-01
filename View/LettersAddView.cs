@@ -201,7 +201,7 @@ namespace AgRecords.View
         }
 
         //restrict accepted textbox input
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void AlphaNum(object sender, KeyPressEventArgs e)
         {
             TextboxValidation.TextBox_AlpaNumeric(sender, e);
         }
@@ -210,7 +210,7 @@ namespace AgRecords.View
             TextboxValidation.TextBox_AlphaOnly(sender, e);
         }
         //convert all Alpabets to Uppercase in textbox
-        private void TextBox_TextChanged(object sender, EventArgs e)
+        private void AllCaps(object sender, EventArgs e)
         {
             TextboxValidation.TextBox_AllCaps(sender, e);
         }
