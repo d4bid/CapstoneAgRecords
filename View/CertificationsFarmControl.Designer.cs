@@ -32,13 +32,13 @@
             btnRemove = new FontAwesome.Sharp.IconButton();
             labelParcelNo = new Label();
             label7 = new Label();
-            rectangleRound8 = new RectangleRound();
             txtFarmInfo = new TextBox();
             txtFarmAddress = new TextBox();
-            rectangleRound6 = new RectangleRound();
             label5 = new Label();
-            rectangleRound5 = new RectangleRound();
             label8 = new Label();
+            rectangleBlue1 = new RectangleBlue();
+            rectangleBlue2 = new RectangleBlue();
+            rectangleBlue3 = new RectangleBlue();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,13 +47,13 @@
             groupBox2.Controls.Add(btnRemove);
             groupBox2.Controls.Add(labelParcelNo);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(rectangleRound8);
             groupBox2.Controls.Add(txtFarmInfo);
             groupBox2.Controls.Add(txtFarmAddress);
-            groupBox2.Controls.Add(rectangleRound6);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(rectangleRound5);
             groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(rectangleBlue1);
+            groupBox2.Controls.Add(rectangleBlue2);
+            groupBox2.Controls.Add(rectangleBlue3);
             groupBox2.Location = new Point(2, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(770, 301);
@@ -97,14 +97,6 @@
             label7.TabIndex = 33;
             label7.Text = "Farm Address";
             // 
-            // rectangleRound8
-            // 
-            rectangleRound8.BackColor = Color.White;
-            rectangleRound8.Location = new Point(22, 61);
-            rectangleRound8.Name = "rectangleRound8";
-            rectangleRound8.Size = new Size(146, 38);
-            rectangleRound8.TabIndex = 32;
-            // 
             // txtFarmInfo
             // 
             txtFarmInfo.BorderStyle = BorderStyle.None;
@@ -127,14 +119,6 @@
             txtFarmAddress.TabIndex = 29;
             txtFarmAddress.Text = "Address";
             // 
-            // rectangleRound6
-            // 
-            rectangleRound6.BackColor = Color.White;
-            rectangleRound6.Location = new Point(22, 136);
-            rectangleRound6.Name = "rectangleRound6";
-            rectangleRound6.Size = new Size(719, 150);
-            rectangleRound6.TabIndex = 27;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -144,14 +128,6 @@
             label5.TabIndex = 28;
             label5.Text = "Parcel No.";
             // 
-            // rectangleRound5
-            // 
-            rectangleRound5.BackColor = Color.White;
-            rectangleRound5.Location = new Point(189, 61);
-            rectangleRound5.Name = "rectangleRound5";
-            rectangleRound5.Size = new Size(552, 38);
-            rectangleRound5.TabIndex = 29;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -160,6 +136,27 @@
             label8.Size = new Size(71, 20);
             label8.TabIndex = 26;
             label8.Text = "Farm Info";
+            // 
+            // rectangleBlue1
+            // 
+            rectangleBlue1.Location = new Point(22, 61);
+            rectangleBlue1.Name = "rectangleBlue1";
+            rectangleBlue1.Size = new Size(146, 38);
+            rectangleBlue1.TabIndex = 36;
+            // 
+            // rectangleBlue2
+            // 
+            rectangleBlue2.Location = new Point(189, 61);
+            rectangleBlue2.Name = "rectangleBlue2";
+            rectangleBlue2.Size = new Size(552, 38);
+            rectangleBlue2.TabIndex = 37;
+            // 
+            // rectangleBlue3
+            // 
+            rectangleBlue3.Location = new Point(22, 136);
+            rectangleBlue3.Name = "rectangleBlue3";
+            rectangleBlue3.Size = new Size(719, 150);
+            rectangleBlue3.TabIndex = 38;
             // 
             // CertificationsFarmControl
             // 
@@ -177,15 +174,15 @@
         #endregion
 
         private GroupBox groupBox2;
-        private Label labelParcelNo;
+        public Label labelParcelNo;
         private Label label7;
-        private RectangleRound rectangleRound8;
-        private TextBox txtFarmInfo;
-        private TextBox txtFarmAddress;
-        private RectangleRound rectangleRound6;
+        public TextBox txtFarmInfo;
+        public TextBox txtFarmAddress;
         private Label label5;
-        private RectangleRound rectangleRound5;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnRemove;
+        private RectangleBlue rectangleBlue1;
+        private RectangleBlue rectangleBlue2;
+        private RectangleBlue rectangleBlue3;
     }
 }

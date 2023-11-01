@@ -30,10 +30,20 @@
         {
             openFileDialog1 = new OpenFileDialog();
             groupBox1 = new GroupBox();
-            comboBoxRole = new ComboBox();
-            comboBoxStatus = new ComboBox();
-            rectangleRound6 = new RectangleRound();
-            rectangleRound5 = new RectangleRound();
+            label18 = new Label();
+            comboBox1 = new ComboBox();
+            rectangleRound15 = new RectangleRound();
+            label17 = new Label();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            rectangleRound14 = new RectangleRound();
+            label16 = new Label();
+            textBox3 = new TextBox();
+            rectangleRound13 = new RectangleRound();
+            label15 = new Label();
+            txtMiddlename = new TextBox();
+            label10 = new Label();
+            rectangleRound12 = new RectangleRound();
             txtBoxContact = new TextBox();
             rectangleRound4 = new RectangleRound();
             comboBoxGender = new ComboBox();
@@ -43,10 +53,8 @@
             label11 = new Label();
             rectangleRound2 = new RectangleRound();
             rectangleRound1 = new RectangleRound();
-            label9 = new Label();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             btnSave = new Button();
@@ -60,6 +68,7 @@
             txtBoxConfirmPassword = new TextBox();
             lblConfirmPassword = new Label();
             groupBox3 = new GroupBox();
+            comboBoxRole = new ComboBox();
             panel1 = new Panel();
             panelPassConfirm = new Panel();
             panel3 = new Panel();
@@ -69,7 +78,12 @@
             panelPassStrength = new Panel();
             panel2 = new Panel();
             rectangleRound9 = new RectangleRound();
+            comboBoxStatus = new ComboBox();
+            rectangleRound6 = new RectangleRound();
+            rectangleRound5 = new RectangleRound();
             rectangleRound8 = new RectangleRound();
+            label3 = new Label();
+            label9 = new Label();
             rectangleRound7 = new RectangleRound();
             label12 = new Label();
             picBoxUser = new RoundedPictureBox();
@@ -91,10 +105,20 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBoxRole);
-            groupBox1.Controls.Add(comboBoxStatus);
-            groupBox1.Controls.Add(rectangleRound6);
-            groupBox1.Controls.Add(rectangleRound5);
+            groupBox1.Controls.Add(label18);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(rectangleRound15);
+            groupBox1.Controls.Add(label17);
+            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(rectangleRound14);
+            groupBox1.Controls.Add(label16);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(rectangleRound13);
+            groupBox1.Controls.Add(label15);
+            groupBox1.Controls.Add(txtMiddlename);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(rectangleRound12);
             groupBox1.Controls.Add(txtBoxContact);
             groupBox1.Controls.Add(rectangleRound4);
             groupBox1.Controls.Add(comboBoxGender);
@@ -104,10 +128,8 @@
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(rectangleRound2);
             groupBox1.Controls.Add(rectangleRound1);
-            groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -115,70 +137,172 @@
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(575, 420);
+            groupBox1.Size = new Size(1192, 381);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
-            // comboBoxRole
+            // label18
             // 
-            comboBoxRole.BackColor = Color.White;
-            comboBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxRole.FlatStyle = FlatStyle.Flat;
-            comboBoxRole.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBoxRole.FormattingEnabled = true;
-            comboBoxRole.Location = new Point(173, 361);
-            comboBoxRole.Margin = new Padding(3, 4, 3, 4);
-            comboBoxRole.Name = "comboBoxRole";
-            comboBoxRole.Size = new Size(371, 33);
-            comboBoxRole.TabIndex = 14;
+            label18.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(202, 329);
+            label18.Name = "label18";
+            label18.Size = new Size(89, 17);
+            label18.TabIndex = 40;
+            label18.Text = "Dr., Engr., etc.";
             // 
-            // comboBoxStatus
+            // comboBox1
             // 
-            comboBoxStatus.BackColor = Color.White;
-            comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxStatus.FlatStyle = FlatStyle.Flat;
-            comboBoxStatus.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-            comboBoxStatus.Location = new Point(173, 316);
-            comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
-            comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(371, 33);
-            comboBoxStatus.TabIndex = 13;
+            comboBox1.BackColor = Color.White;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Admin Aide", "Agricultural Technologist", "Agricultturist", "Municipal Agriculturist" });
+            comboBox1.Location = new Point(841, 169);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(264, 33);
+            comboBox1.TabIndex = 38;
             // 
-            // rectangleRound6
+            // rectangleRound15
             // 
-            rectangleRound6.BackColor = Color.White;
-            rectangleRound6.Location = new Point(164, 359);
-            rectangleRound6.Name = "rectangleRound6";
-            rectangleRound6.Size = new Size(385, 38);
-            rectangleRound6.TabIndex = 26;
+            rectangleRound15.BackColor = Color.White;
+            rectangleRound15.Location = new Point(832, 167);
+            rectangleRound15.Name = "rectangleRound15";
+            rectangleRound15.Size = new Size(278, 38);
+            rectangleRound15.TabIndex = 39;
             // 
-            // rectangleRound5
+            // label17
             // 
-            rectangleRound5.BackColor = Color.White;
-            rectangleRound5.Location = new Point(164, 314);
-            rectangleRound5.Name = "rectangleRound5";
-            rectangleRound5.Size = new Size(385, 38);
-            rectangleRound5.TabIndex = 25;
+            label17.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(710, 176);
+            label17.Name = "label17";
+            label17.Size = new Size(61, 20);
+            label17.TabIndex = 37;
+            label17.Text = "Position";
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.White;
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox5.Location = new Point(211, 294);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(366, 26);
+            textBox5.TabIndex = 36;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.White;
+            textBox4.BorderStyle = BorderStyle.None;
+            textBox4.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox4.Location = new Point(211, 293);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(366, 26);
+            textBox4.TabIndex = 35;
+            // 
+            // rectangleRound14
+            // 
+            rectangleRound14.BackColor = Color.White;
+            rectangleRound14.Location = new Point(202, 288);
+            rectangleRound14.Name = "rectangleRound14";
+            rectangleRound14.Size = new Size(385, 38);
+            rectangleRound14.TabIndex = 34;
+            // 
+            // label16
+            // 
+            label16.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(47, 299);
+            label16.Name = "label16";
+            label16.Size = new Size(38, 20);
+            label16.TabIndex = 33;
+            label16.Text = "Title";
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.White;
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox3.Location = new Point(211, 221);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(366, 26);
+            textBox3.TabIndex = 32;
+            // 
+            // rectangleRound13
+            // 
+            rectangleRound13.BackColor = Color.White;
+            rectangleRound13.Location = new Point(202, 216);
+            rectangleRound13.Name = "rectangleRound13";
+            rectangleRound13.Size = new Size(385, 38);
+            rectangleRound13.TabIndex = 31;
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(47, 227);
+            label15.Name = "label15";
+            label15.Size = new Size(116, 20);
+            label15.TabIndex = 30;
+            label15.Text = "Extension Name";
+            // 
+            // txtMiddlename
+            // 
+            txtMiddlename.BackColor = Color.White;
+            txtMiddlename.BorderStyle = BorderStyle.None;
+            txtMiddlename.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            txtMiddlename.Location = new Point(211, 123);
+            txtMiddlename.Margin = new Padding(3, 4, 3, 4);
+            txtMiddlename.Name = "txtMiddlename";
+            txtMiddlename.Size = new Size(366, 26);
+            txtMiddlename.TabIndex = 29;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(47, 176);
+            label10.Name = "label10";
+            label10.Size = new Size(79, 20);
+            label10.TabIndex = 28;
+            label10.Text = "Last Name";
+            // 
+            // rectangleRound12
+            // 
+            rectangleRound12.BackColor = Color.White;
+            rectangleRound12.Location = new Point(202, 117);
+            rectangleRound12.Name = "rectangleRound12";
+            rectangleRound12.Size = new Size(385, 38);
+            rectangleRound12.TabIndex = 27;
             // 
             // txtBoxContact
             // 
             txtBoxContact.BackColor = Color.White;
             txtBoxContact.BorderStyle = BorderStyle.None;
             txtBoxContact.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxContact.Location = new Point(173, 248);
+            txtBoxContact.Location = new Point(841, 123);
             txtBoxContact.Margin = new Padding(3, 4, 3, 4);
             txtBoxContact.Name = "txtBoxContact";
-            txtBoxContact.Size = new Size(366, 26);
+            txtBoxContact.Size = new Size(259, 26);
             txtBoxContact.TabIndex = 19;
             // 
             // rectangleRound4
             // 
             rectangleRound4.BackColor = Color.White;
-            rectangleRound4.Location = new Point(164, 242);
+            rectangleRound4.Location = new Point(832, 117);
             rectangleRound4.Name = "rectangleRound4";
-            rectangleRound4.Size = new Size(385, 38);
+            rectangleRound4.Size = new Size(278, 38);
             rectangleRound4.TabIndex = 24;
             // 
             // comboBoxGender
@@ -189,10 +313,10 @@
             comboBoxGender.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxGender.Location = new Point(173, 194);
+            comboBoxGender.Location = new Point(841, 69);
             comboBoxGender.Margin = new Padding(3, 4, 3, 4);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(371, 33);
+            comboBoxGender.Size = new Size(264, 33);
             comboBoxGender.TabIndex = 12;
             // 
             // txtBoxLastName
@@ -200,7 +324,7 @@
             txtBoxLastName.BackColor = Color.White;
             txtBoxLastName.BorderStyle = BorderStyle.None;
             txtBoxLastName.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxLastName.Location = new Point(173, 123);
+            txtBoxLastName.Location = new Point(211, 172);
             txtBoxLastName.Margin = new Padding(3, 4, 3, 4);
             txtBoxLastName.Name = "txtBoxLastName";
             txtBoxLastName.Size = new Size(366, 26);
@@ -211,7 +335,7 @@
             txtBoxFirstName.BackColor = Color.White;
             txtBoxFirstName.BorderStyle = BorderStyle.None;
             txtBoxFirstName.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxFirstName.Location = new Point(173, 75);
+            txtBoxFirstName.Location = new Point(211, 75);
             txtBoxFirstName.Margin = new Padding(3, 4, 3, 4);
             txtBoxFirstName.Name = "txtBoxFirstName";
             txtBoxFirstName.Size = new Size(366, 26);
@@ -220,9 +344,9 @@
             // rectangleRound3
             // 
             rectangleRound3.BackColor = Color.White;
-            rectangleRound3.Location = new Point(164, 192);
+            rectangleRound3.Location = new Point(832, 67);
             rectangleRound3.Name = "rectangleRound3";
-            rectangleRound3.Size = new Size(385, 38);
+            rectangleRound3.Size = new Size(278, 38);
             rectangleRound3.TabIndex = 23;
             // 
             // label11
@@ -239,7 +363,7 @@
             // rectangleRound2
             // 
             rectangleRound2.BackColor = Color.White;
-            rectangleRound2.Location = new Point(164, 117);
+            rectangleRound2.Location = new Point(202, 166);
             rectangleRound2.Name = "rectangleRound2";
             rectangleRound2.Size = new Size(385, 38);
             rectangleRound2.TabIndex = 21;
@@ -247,28 +371,17 @@
             // rectangleRound1
             // 
             rectangleRound1.BackColor = Color.White;
-            rectangleRound1.Location = new Point(164, 69);
+            rectangleRound1.Location = new Point(202, 69);
             rectangleRound1.Name = "rectangleRound1";
             rectangleRound1.Size = new Size(385, 38);
             rectangleRound1.TabIndex = 20;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(47, 368);
-            label9.Name = "label9";
-            label9.Size = new Size(39, 20);
-            label9.TabIndex = 11;
-            label9.Text = "Role";
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(47, 201);
+            label5.Location = new Point(710, 76);
             label5.Name = "label5";
             label5.Size = new Size(57, 20);
             label5.TabIndex = 6;
@@ -279,22 +392,11 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(47, 251);
+            label4.Location = new Point(710, 126);
             label4.Name = "label4";
             label4.Size = new Size(60, 20);
             label4.TabIndex = 5;
             label4.Text = "Contact";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(47, 322);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Status";
             // 
             // label2
             // 
@@ -303,9 +405,9 @@
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(47, 127);
             label2.Name = "label2";
-            label2.Size = new Size(79, 20);
+            label2.Size = new Size(100, 20);
             label2.TabIndex = 3;
-            label2.Text = "Last Name";
+            label2.Text = "Middle Name";
             // 
             // label1
             // 
@@ -326,7 +428,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1311, 441);
+            btnSave.Location = new Point(1311, 867);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
@@ -347,15 +449,14 @@
             // 
             // txtBoxUserId
             // 
-            txtBoxUserId.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxUserId.BackColor = Color.White;
             txtBoxUserId.BorderStyle = BorderStyle.None;
             txtBoxUserId.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxUserId.Location = new Point(177, 75);
+            txtBoxUserId.Location = new Point(211, 75);
             txtBoxUserId.Margin = new Padding(3, 4, 3, 4);
             txtBoxUserId.Name = "txtBoxUserId";
             txtBoxUserId.ReadOnly = true;
-            txtBoxUserId.Size = new Size(382, 26);
+            txtBoxUserId.Size = new Size(366, 26);
             txtBoxUserId.TabIndex = 22;
             // 
             // label7
@@ -380,14 +481,13 @@
             // 
             // txtBoxUsername
             // 
-            txtBoxUsername.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBoxUsername.BackColor = Color.White;
             txtBoxUsername.BorderStyle = BorderStyle.None;
             txtBoxUsername.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxUsername.Location = new Point(177, 123);
+            txtBoxUsername.Location = new Point(211, 123);
             txtBoxUsername.Margin = new Padding(3, 4, 3, 4);
             txtBoxUsername.Name = "txtBoxUsername";
-            txtBoxUsername.Size = new Size(382, 26);
+            txtBoxUsername.Size = new Size(366, 26);
             txtBoxUsername.TabIndex = 25;
             // 
             // txtBoxPassword
@@ -407,7 +507,7 @@
             lblPasswordStrength.AutoSize = true;
             lblPasswordStrength.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblPasswordStrength.ForeColor = Color.FromArgb(207, 92, 96);
-            lblPasswordStrength.Location = new Point(142, 5);
+            lblPasswordStrength.Location = new Point(176, 3);
             lblPasswordStrength.Name = "lblPasswordStrength";
             lblPasswordStrength.Size = new Size(389, 34);
             lblPasswordStrength.TabIndex = 27;
@@ -418,10 +518,10 @@
             txtBoxConfirmPassword.BackColor = Color.White;
             txtBoxConfirmPassword.BorderStyle = BorderStyle.None;
             txtBoxConfirmPassword.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxConfirmPassword.Location = new Point(149, 12);
+            txtBoxConfirmPassword.Location = new Point(185, 12);
             txtBoxConfirmPassword.Margin = new Padding(3, 4, 3, 4);
             txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
-            txtBoxConfirmPassword.Size = new Size(382, 26);
+            txtBoxConfirmPassword.Size = new Size(366, 26);
             txtBoxConfirmPassword.TabIndex = 29;
             txtBoxConfirmPassword.UseSystemPasswordChar = true;
             // 
@@ -430,7 +530,7 @@
             lblConfirmPassword.AutoSize = true;
             lblConfirmPassword.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblConfirmPassword.ForeColor = Color.FromArgb(207, 92, 96);
-            lblConfirmPassword.Location = new Point(142, 3);
+            lblConfirmPassword.Location = new Point(176, 3);
             lblConfirmPassword.Name = "lblConfirmPassword";
             lblConfirmPassword.Size = new Size(162, 17);
             lblConfirmPassword.TabIndex = 30;
@@ -440,22 +540,41 @@
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox3.BackColor = Color.White;
+            groupBox3.Controls.Add(comboBoxRole);
             groupBox3.Controls.Add(panel1);
+            groupBox3.Controls.Add(comboBoxStatus);
+            groupBox3.Controls.Add(rectangleRound6);
             groupBox3.Controls.Add(txtBoxUsername);
+            groupBox3.Controls.Add(rectangleRound5);
             groupBox3.Controls.Add(rectangleRound8);
+            groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(txtBoxUserId);
+            groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(rectangleRound7);
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label6);
             groupBox3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox3.Location = new Point(981, 13);
+            groupBox3.Location = new Point(385, 402);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(596, 420);
+            groupBox3.Size = new Size(1192, 457);
             groupBox3.TabIndex = 9;
             groupBox3.TabStop = false;
+            // 
+            // comboBoxRole
+            // 
+            comboBoxRole.BackColor = Color.White;
+            comboBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxRole.FlatStyle = FlatStyle.Flat;
+            comboBoxRole.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxRole.FormattingEnabled = true;
+            comboBoxRole.Location = new Point(841, 116);
+            comboBoxRole.Margin = new Padding(3, 4, 3, 4);
+            comboBoxRole.Name = "comboBoxRole";
+            comboBoxRole.Size = new Size(264, 33);
+            comboBoxRole.TabIndex = 38;
             // 
             // panel1
             // 
@@ -463,9 +582,9 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panelPassStrength);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(28, 182);
+            panel1.Location = new Point(26, 176);
             panel1.Name = "panel1";
-            panel1.Size = new Size(551, 206);
+            panel1.Size = new Size(580, 234);
             panel1.TabIndex = 34;
             // 
             // panelPassConfirm
@@ -474,7 +593,7 @@
             panelPassConfirm.Dock = DockStyle.Top;
             panelPassConfirm.Location = new Point(0, 154);
             panelPassConfirm.Name = "panelPassConfirm";
-            panelPassConfirm.Size = new Size(551, 50);
+            panelPassConfirm.Size = new Size(580, 50);
             panelPassConfirm.TabIndex = 3;
             // 
             // panel3
@@ -486,7 +605,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 104);
             panel3.Name = "panel3";
-            panel3.Size = new Size(551, 50);
+            panel3.Size = new Size(580, 50);
             panel3.TabIndex = 1;
             // 
             // label13
@@ -502,9 +621,9 @@
             // rectangleRound11
             // 
             rectangleRound11.BackColor = Color.White;
-            rectangleRound11.Location = new Point(140, 6);
+            rectangleRound11.Location = new Point(176, 6);
             rectangleRound11.Name = "rectangleRound11";
-            rectangleRound11.Size = new Size(401, 38);
+            rectangleRound11.Size = new Size(385, 38);
             rectangleRound11.TabIndex = 34;
             // 
             // textBox1
@@ -525,7 +644,7 @@
             panelPassStrength.Dock = DockStyle.Top;
             panelPassStrength.Location = new Point(0, 54);
             panelPassStrength.Name = "panelPassStrength";
-            panelPassStrength.Size = new Size(551, 50);
+            panelPassStrength.Size = new Size(580, 50);
             panelPassStrength.TabIndex = 2;
             // 
             // panel2
@@ -536,33 +655,83 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(551, 54);
+            panel2.Size = new Size(580, 54);
             panel2.TabIndex = 0;
             // 
             // rectangleRound9
             // 
             rectangleRound9.BackColor = Color.White;
-            rectangleRound9.Location = new Point(140, 10);
+            rectangleRound9.Location = new Point(176, 10);
             rectangleRound9.Name = "rectangleRound9";
-            rectangleRound9.Size = new Size(401, 38);
+            rectangleRound9.Size = new Size(385, 38);
             rectangleRound9.TabIndex = 34;
+            // 
+            // comboBoxStatus
+            // 
+            comboBoxStatus.BackColor = Color.White;
+            comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxStatus.FlatStyle = FlatStyle.Flat;
+            comboBoxStatus.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxStatus.FormattingEnabled = true;
+            comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
+            comboBoxStatus.Location = new Point(841, 71);
+            comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
+            comboBoxStatus.Name = "comboBoxStatus";
+            comboBoxStatus.Size = new Size(264, 33);
+            comboBoxStatus.TabIndex = 37;
+            // 
+            // rectangleRound6
+            // 
+            rectangleRound6.BackColor = Color.White;
+            rectangleRound6.Location = new Point(832, 114);
+            rectangleRound6.Name = "rectangleRound6";
+            rectangleRound6.Size = new Size(278, 38);
+            rectangleRound6.TabIndex = 40;
+            // 
+            // rectangleRound5
+            // 
+            rectangleRound5.BackColor = Color.White;
+            rectangleRound5.Location = new Point(832, 69);
+            rectangleRound5.Name = "rectangleRound5";
+            rectangleRound5.Size = new Size(278, 38);
+            rectangleRound5.TabIndex = 39;
             // 
             // rectangleRound8
             // 
-            rectangleRound8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound8.BackColor = Color.White;
-            rectangleRound8.Location = new Point(168, 117);
+            rectangleRound8.Location = new Point(202, 117);
             rectangleRound8.Name = "rectangleRound8";
-            rectangleRound8.Size = new Size(401, 38);
+            rectangleRound8.Size = new Size(385, 38);
             rectangleRound8.TabIndex = 33;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(710, 78);
+            label3.Name = "label3";
+            label3.Size = new Size(49, 20);
+            label3.TabIndex = 35;
+            label3.Text = "Status";
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(710, 127);
+            label9.Name = "label9";
+            label9.Size = new Size(39, 20);
+            label9.TabIndex = 36;
+            label9.Text = "Role";
             // 
             // rectangleRound7
             // 
-            rectangleRound7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound7.BackColor = Color.White;
-            rectangleRound7.Location = new Point(168, 69);
+            rectangleRound7.Location = new Point(202, 69);
             rectangleRound7.Name = "rectangleRound7";
-            rectangleRound7.Size = new Size(401, 38);
+            rectangleRound7.Size = new Size(385, 38);
             rectangleRound7.TabIndex = 32;
             // 
             // label12
@@ -581,7 +750,7 @@
             picBoxUser.BackgroundImageLayout = ImageLayout.Zoom;
             picBoxUser.BorderStyle = BorderStyle.FixedSingle;
             picBoxUser.Image = Properties.Resources.profile;
-            picBoxUser.Location = new Point(28, 41);
+            picBoxUser.Location = new Point(28, 33);
             picBoxUser.Name = "picBoxUser";
             picBoxUser.Size = new Size(300, 300);
             picBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -601,7 +770,7 @@
             btnBrowse.IconColor = Color.FromArgb(43, 121, 223);
             btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBrowse.IconSize = 30;
-            btnBrowse.Location = new Point(102, 362);
+            btnBrowse.Location = new Point(109, 354);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(150, 40);
             btnBrowse.TabIndex = 56;
@@ -624,7 +793,7 @@
             btnBack.IconColor = Color.FromArgb(43, 121, 223);
             btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBack.IconSize = 30;
-            btnBack.Location = new Point(1447, 441);
+            btnBack.Location = new Point(1447, 866);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(130, 40);
             btnBack.TabIndex = 57;
@@ -638,15 +807,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
             Controls.Add(btnBack);
             Controls.Add(btnBrowse);
             Controls.Add(picBoxUser);
             Controls.Add(groupBox3);
-            Controls.Add(groupBox1);
             Controls.Add(btnSave);
+            Controls.Add(groupBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UserAddView";
             Text = "UserAddView";
@@ -674,13 +842,9 @@
         private TextBox txtBoxContact;
         private TextBox txtBoxLastName;
         private TextBox txtBoxFirstName;
-        private ComboBox comboBoxRole;
-        private ComboBox comboBoxStatus;
         private ComboBox comboBoxGender;
-        private Label label9;
         private Label label5;
         private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
         private Button btnSave;
@@ -700,13 +864,10 @@
         private RectangleRound rectangleRound2;
         private RectangleRound rectangleRound3;
         private RectangleRound rectangleRound4;
-        private RectangleRound rectangleRound5;
-        private RectangleRound rectangleRound6;
         private RectangleRound rectangleRound9;
         private RectangleRound rectangleRound8;
         private RectangleRound rectangleRound7;
         private Label label12;
-        private RectangleRound rectangleRound10;
         private RoundedPictureBox picBoxUser;
         private FontAwesome.Sharp.IconButton btnBrowse;
         private Panel panel1;
@@ -718,5 +879,24 @@
         private Panel panelPassStrength;
         private Panel panelPassConfirm;
         private FontAwesome.Sharp.IconButton btnBack;
+        private RectangleRound rectangleRound12;
+        private TextBox txtMiddlename;
+        private TextBox textBox3;
+        private RectangleRound rectangleRound13;
+        private Label label15;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private RectangleRound rectangleRound14;
+        private Label label16;
+        private ComboBox comboBox1;
+        private RectangleRound rectangleRound15;
+        private Label label17;
+        private ComboBox comboBoxRole;
+        private ComboBox comboBoxStatus;
+        private RectangleRound rectangleRound6;
+        private RectangleRound rectangleRound5;
+        private Label label3;
+        private Label label9;
+        private Label label18;
     }
 }
