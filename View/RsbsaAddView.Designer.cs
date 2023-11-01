@@ -427,14 +427,14 @@
             panelFarmLand.Controls.Add(panelDocument);
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1595, 0);
+            panelFarmLand.Size = new Size(1595, 767);
             panelFarmLand.TabIndex = 14;
             // 
             // panel19
             // 
             panel19.Controls.Add(flowLayoutPanelParcels);
             panel19.Dock = DockStyle.Fill;
-            panel19.Location = new Point(0, 160);
+            panel19.Location = new Point(0, 927);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(10);
             panel19.Size = new Size(1595, 0);
@@ -453,7 +453,7 @@
             // 
             panel12.Controls.Add(panel17);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 0);
+            panel12.Location = new Point(0, 767);
             panel12.Name = "panel12";
             panel12.Padding = new Padding(10);
             panel12.Size = new Size(1595, 160);
@@ -479,7 +479,7 @@
             panelFarmParcels.Location = new Point(2, 5);
             panelFarmParcels.Name = "panelFarmParcels";
             panelFarmParcels.Size = new Size(179, 128);
-            panelFarmParcels.TabIndex = 0;
+            panelFarmParcels.TabIndex = 1;
             // 
             // btnAddFarmParcel
             // 
@@ -490,7 +490,7 @@
             btnAddFarmParcel.Location = new Point(91, 75);
             btnAddFarmParcel.Name = "btnAddFarmParcel";
             btnAddFarmParcel.Size = new Size(31, 31);
-            btnAddFarmParcel.TabIndex = 0;
+            btnAddFarmParcel.TabIndex = 2;
             btnAddFarmParcel.UseVisualStyleBackColor = true;
             btnAddFarmParcel.Click += btnAddFarmParcel_Click;
             btnAddFarmParcel.Enter += SelectedPanel;
@@ -552,7 +552,7 @@
             panelFarmersInRotation.Location = new Point(195, 5);
             panelFarmersInRotation.Name = "panelFarmersInRotation";
             panelFarmersInRotation.Size = new Size(1368, 128);
-            panelFarmersInRotation.TabIndex = 0;
+            panelFarmersInRotation.TabIndex = 2;
             // 
             // txtRotatingFarmer3
             // 
@@ -678,7 +678,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 0);
+            panelDocument.Size = new Size(1595, 767);
             panelDocument.TabIndex = 0;
             // 
             // flowLayoutPanelDocs
@@ -687,7 +687,7 @@
             flowLayoutPanelDocs.Dock = DockStyle.Fill;
             flowLayoutPanelDocs.Location = new Point(0, 87);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1595, 0);
+            flowLayoutPanelDocs.Size = new Size(1595, 680);
             flowLayoutPanelDocs.TabIndex = 0;
             // 
             // panel14
@@ -1358,7 +1358,7 @@
             txtFarmActCrops.BorderStyle = BorderStyle.FixedSingle;
             txtFarmActCrops.Enabled = false;
             txtFarmActCrops.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFarmActCrops.Location = new Point(176, 174);
+            txtFarmActCrops.Location = new Point(176, 172);
             txtFarmActCrops.Name = "txtFarmActCrops";
             txtFarmActCrops.Size = new Size(140, 27);
             txtFarmActCrops.TabIndex = 4;
@@ -1900,6 +1900,9 @@
             // txtIndigenous
             // 
             txtIndigenous.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtIndigenous.AutoCompleteCustomSource.AddRange(new string[] { "AGTA", "AITA", "AYTA", "BADJAO", "BAGOBO", "B'LAAN", "BUKIDNON", "GADANG", "HIGAONON", "HILIGAYNON", "IGOROT", "IFUGAO", "ILOCANO", "ISNEG", "ITNEG", "IVATAN", "KALINGA", "KANKANA-EY", "MANOBO", "MANGYAN", "PALAWAN", "SUBANEN", "TAGABAWA", "TAGAKAULO", "T'BOLI", "TEDURAY", "TIRURAY", "TUMANDOK", "YAKAN" });
+            txtIndigenous.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtIndigenous.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtIndigenous.BorderStyle = BorderStyle.None;
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtIndigenous.Location = new Point(129, 145);
@@ -1914,6 +1917,9 @@
             // txtAssociation
             // 
             txtAssociation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtAssociation.AutoCompleteCustomSource.AddRange(new string[] { "ACACIA", "ALAY KAPWA", "ALPHACHEM TRADING CORPORATION", "APAD II I.A", "BACIA-BARANGAY AGGUB COMMUNAL I.A", "BANGAR A.I", "BANGAR DADAP CURIFANG AI", "BASCARAN SOLANO I.A INC.", "BISLLA-BAUANG IPONG SAN LUIS LACTAWAN I.A", "BUKOD SULPHUR SPRING MULTI PURPOSE COOP", "CAUPLIGAN", "CAUPLIGAN LOWER", "CAMCAM NORFI I.A", "CAMCAM WEST LA", "COMMONAL I.A", "CONCEPCION I.A", "COTUG FARMERS ASSN", "CURIFANG DADAP", "CUBCUB NAMPAYAKAN I.A", "CUBCUB QUILING PAULINGAN I.A", "DIDIANGAT", "EASTERN CORN CLUSTER", "GATAFANG I.A", "HOMESTEAD NIA", "LACTAWAN BINTAWAN I.A", "LACTAWAN I.A", "LOWER BANGAAN", "LOWER MOTON", "MAGARANG BAGAHABAG LOWER MOTON I.A INC.", "MONGCOL NORTH", "MONGCOL SUR", "MUSTIA- MAPAINA UDDIAWAN SALAMAGUE TANAP I.A", "NAMPAYAKAN OSMENA GAUD IA", "P.D GALIMA LACTAWAN I.A", "PUROK 4 LACTAWAN I.A", "PUROK 5 BAGAHABAG FARMERS ASSN. INC.", "RAMOS I.A", "ROXAS", "SAN JUAN I.A", "SILAP IRRIGATORS I.A", "STA ROSA GAYONG GAYONG I.A", "TANGGAL BATO I.A", "TANGGAL BUTARIT APAD CUBCUB QUILING PAULINGAN I.A", "TLBIA-TUCAL LACTAWAN BINTAWAN I.A", "UCIA-UDDIAWAN COMMONAL I.A", "UPPER BANGAAN", "UPPER MOTON", "WACAL LAUD TENGNGA I.A", "WACAL TANGGAL BATO I.A", "WACAL UYAD", "WESTERN CORN CLUSTER" });
+            txtAssociation.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtAssociation.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtAssociation.BackColor = Color.White;
             txtAssociation.BorderStyle = BorderStyle.None;
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1929,6 +1935,9 @@
             // txtGovIdType
             // 
             txtGovIdType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGovIdType.AutoCompleteCustomSource.AddRange(new string[] { "ALAY KAPWA ID", "BARANGAY CERT", "BFP ID", "BIR ID", "CERTIFICATE OF LIVE BIRTH", "DRIVER'S LICENSE", "DSWD ID", "GOV'T ID", "NATIONAL ID (PHILSYS)", "OEC", "OSCA ID", "PAG IBIG ID", "PASSPORT ID", "PHILHEALTH ID", "PRC ID", "PNP ID", "POSTAL ID", "RED CROSS ID", "SCHOOL ID", "SSS ID", "TIN ID", "UMID", "VETERAN'S ID", "VOTER'S CERT", "VOTER'S ID", "WOMANS CLUB" });
+            txtGovIdType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtGovIdType.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtGovIdType.BorderStyle = BorderStyle.None;
             txtGovIdType.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdType.Location = new Point(184, 246);
@@ -2301,6 +2310,9 @@
             // 
             // txtHouseHeadRs
             // 
+            txtHouseHeadRs.AutoCompleteCustomSource.AddRange(new string[] { "AUNT", "BROTHER", "COUSIN", "DAUGHTER", "FATHER", "GRANDFATHER", "GRANDMOTHER", "HUSBAND", "MOTHER", "NIECE", "NEPHEW", "SISTER", "SON", "UNCLE", "WIFE" });
+            txtHouseHeadRs.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtHouseHeadRs.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtHouseHeadRs.BorderStyle = BorderStyle.None;
             txtHouseHeadRs.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtHouseHeadRs.Location = new Point(274, 154);
@@ -2917,6 +2929,9 @@
             // 
             // txtBirthProvince
             // 
+            txtBirthProvince.AutoCompleteCustomSource.AddRange(new string[] { "ABRA", "AGUSAN DEL NORTE", "AGUSAN DEL SUR", "AKLAN", "ALBAY", "ANTIQUE", "APAYAO", "AURORA", "BASILAN", "BATANES", "BATANGAS", "BENGUET", "BILIRAN", "BOHOL", "BUKIDNON", "BULACAN", "CAGAYAN", "CAMARINES NORTE", "CAMARINES SUR", "CAMIGUIN", "CAPIZ", "CATANDUANES", "CAVITE", "CEBU", "COTABATO", "DAVAO DE ORO", "DAVAO DEL NORTE", "DAVAO DEL SUR", "DAVAO OCCIDENTAL", "DAVAO ORIENTAL", "DINAGAT ISLANDS", "EASTERN SAMAR", "GUIMARAS", "IFUGAO", "ILOCOS NORTE", "ILOCOS SUR", "ILOILO", "ISABELA", "KALINGA", "LA UNION", "LANAO DEL NORTE", "LANAO DEL SUR", "LEYTE", "MAGUINDANAO", "MARINDUQUE", "MASBATE", "METRO MANILA", "MISAMIS OCCIDENTAL", "MISAMIS ORIENTAL", "MOUNTAIN PROVINCE", "NEGROS OCCIDENTAL", "NEGROS ORIENTAL", "NUEVA ECIJA", "NUEVA VIZCAYA", "OCCIDENTAL MINDORO", "ORIENTAL MINDORO", "PALAWAN", "PAMPANGA", "PANGASINAN", "QUEZON", "QUIRINO", "RIZAL", "ROMBLON", "SAMAR (WESTERN SAMAR)", "SARANGANI", "SIQUIJOR", "SORSOGON", "SOUTH COTABO", "SOUTHERN LEYTE", "SULTAN KUDARAT", "SULU", "SURIGAO DEL NORTE", "SURIGAO DEL SUR", "TARLAC", "TAWI-TAWI", "ZAMBOANGA DEL NORTE", "ZAMBOANGA DEL SUR", "ZAMBOANGA SIBUGAY" });
+            txtBirthProvince.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtBirthProvince.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtBirthProvince.BorderStyle = BorderStyle.None;
             txtBirthProvince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtBirthProvince.Location = new Point(201, 134);
@@ -2930,6 +2945,9 @@
             // 
             // txtBirthMunicipality
             // 
+            txtBirthMunicipality.AutoCompleteCustomSource.AddRange(new string[] { "ALFONSO CASTANEDA", "AMBAGUIO", "ARITAO", "BAGABAG", "BAMBANG", "BAYOMBONG", "DIADI", "DUPAX DEL NORTE", "DUPAX DEL SUR", "KASIBU", "KAYAPA", "QUEZON", "SANTA FE", "SOLANO", "VILLAVERDE" });
+            txtBirthMunicipality.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtBirthMunicipality.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtBirthMunicipality.BorderStyle = BorderStyle.None;
             txtBirthMunicipality.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtBirthMunicipality.Location = new Point(201, 64);
@@ -3194,9 +3212,9 @@
             txtAddRegion.Name = "txtAddRegion";
             txtAddRegion.Size = new Size(177, 27);
             txtAddRegion.TabIndex = 11;
-            txtAddRegion.Text = "2";
+            txtAddRegion.Text = "02";
             txtAddRegion.Enter += SelectedPanel;
-            txtAddRegion.KeyPress += NumOnly;
+            txtAddRegion.KeyPress += NumOnlyLimited;
             txtAddRegion.Leave += UnselectedPanel;
             // 
             // txtAddProvince
@@ -3233,8 +3251,8 @@
             cbAddBrgy.FlatStyle = FlatStyle.Flat;
             cbAddBrgy.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
-            cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbAddBrgy.Location = new Point(451, 63);
+            cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            cbAddBrgy.Location = new Point(452, 65);
             cbAddBrgy.Name = "cbAddBrgy";
             cbAddBrgy.Size = new Size(183, 31);
             cbAddBrgy.TabIndex = 8;
@@ -3243,6 +3261,8 @@
             // 
             // txtAddStreet
             // 
+            txtAddStreet.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtAddStreet.AutoCompleteSource = AutoCompleteSource.HistoryList;
             txtAddStreet.BorderStyle = BorderStyle.None;
             txtAddStreet.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddStreet.Location = new Point(241, 63);
@@ -3256,6 +3276,9 @@
             // 
             // txtAddPurok
             // 
+            txtAddPurok.AutoCompleteCustomSource.AddRange(new string[] { "PUROK 1", "PUROK 2", "PUROK 3", "PUROK 4", "PUROK 5", "PUROK 6", "PUROK 7" });
+            txtAddPurok.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtAddPurok.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtAddPurok.BorderStyle = BorderStyle.None;
             txtAddPurok.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddPurok.Location = new Point(28, 63);
@@ -3817,6 +3840,7 @@
             btnCancel.TabStop = false;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
