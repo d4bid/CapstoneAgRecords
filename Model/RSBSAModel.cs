@@ -93,13 +93,9 @@ namespace AgRecords.Model
                     using (DatabaseConnection db = new DatabaseConnection())
                     {
                         db.Open();
-                        MySqlTransaction transaction = null;
 
                         try
                         {
-                            // Begin the transaction
-                            transaction = db.GetConnection().BeginTransaction();
-
                             foreach (FarmParcel farmParcel in farmParcels)
                             {
                                 // Save data to tbl_farmland_parcel using sp_addNewFarmParcel stored procedure
@@ -139,14 +135,11 @@ namespace AgRecords.Model
                                 }
                             }
 
-                            // Commit the transaction
-                            transaction.Commit();
                             return true;
                         }
                         catch (Exception ex)
                         {
                             // Rollback the transaction if an exception occurs
-                            transaction?.Rollback();
                             throw new ApplicationException("Error adding new farm parcels: " + ex.Message, ex);
                         }
                     }
@@ -604,6 +597,7 @@ namespace AgRecords.Model
                         rsbsaInfo.rsbsaIdLGU = reader["rsbsaIdLGU"].ToString();
                         rsbsaInfo.userId = reader["userId"].ToString();
                         rsbsaInfo.dateCreated = DateTime.Parse(reader["dateCreated"].ToString());
+                        rsbsaInfo.dateImported = DateTime.Parse(reader["dateImported"].ToString());
                     }
 
                     reader.Close();

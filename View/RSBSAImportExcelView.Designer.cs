@@ -230,6 +230,7 @@
             Name = "RSBSAImportExcelView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RSBSAImportExcelView";
+            Load += RSBSAImportExcelView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
