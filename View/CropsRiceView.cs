@@ -102,6 +102,7 @@ namespace AgRecords.View
                 this.Close(); // Close the current form (CropsRiceView)
 
                 CropsRiceAddView cropsRiceAddView = new CropsRiceAddView();
+                cropsRiceAddView.FormClosed += CropsRiceAddView_FormClosed;
                 cropsRiceAddView.TopLevel = false;
                 cropsRiceAddView.FormBorderStyle = FormBorderStyle.None;
                 cropsRiceAddView.Dock = DockStyle.Fill;

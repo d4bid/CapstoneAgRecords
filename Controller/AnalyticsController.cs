@@ -20,6 +20,7 @@ namespace AgRecords.Controller
     {
         private DashboardView dashboardView;
         private MainView mainView;
+        private WeeklyActivitiesView weeklyActView;
         private AnalyticsRsbsaView analyticsRsbsaView;
         private AnalyticsCropsView analyticsCropsView;
         private AnalyticsCropsCornView analyticsCropsCornView;
@@ -38,6 +39,12 @@ namespace AgRecords.Controller
             analyticsModel = new AnalyticsModel();
         }
 
+        public AnalyticsController(WeeklyActivitiesView weeklyActView)
+        {
+            this.weeklyActView = weeklyActView;
+            analyticsModel = new AnalyticsModel();
+        }
+
         public AnalyticsController(AnalyticsRsbsaView analyticsRsbsaView)
         {
             this.analyticsRsbsaView = analyticsRsbsaView;
@@ -50,9 +57,15 @@ namespace AgRecords.Controller
             analyticsModel = new AnalyticsModel();
         }
 
-        public AnalyticsController(AnalyticsCropsCornView analyticsCornCropsView)
+        public AnalyticsController(AnalyticsCropsCornView analyticsCropsCornView)
         {
             this.analyticsCropsCornView = analyticsCropsCornView;
+            analyticsModel = new AnalyticsModel();
+        }
+
+        public AnalyticsController(AnalyticsCropsHvcView analyticsCropsHvcView)
+        {
+            this.analyticsCropsHvcView = analyticsCropsHvcView;
             analyticsModel = new AnalyticsModel();
         }
 
@@ -150,6 +163,47 @@ namespace AgRecords.Controller
                 MessageBox.Show(ex.Message, "Getting Value Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        public string CountRsbsaFarmers()
+        {
+            try
+            {
+                return analyticsModel.CountRsbsaFarmers();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable BarCountDailyActivities()
+        {
+            try
+            {
+                DataTable lettersTable = analyticsModel.CountDailyActivities();
+                return lettersTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Daily Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable BarCountActivitiesSection()
+        {
+            try
+            {
+                DataTable lettersTable = analyticsModel.CountActivitiesSection();
+                return lettersTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Daily Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
 
         // CHARTS
 
@@ -288,6 +342,146 @@ namespace AgRecords.Controller
             return model;
         }
 
+        public PlotModel CreateStackedBarChart1(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Create a series for each day of the week
+            var daysOfWeek = new[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+            var seriesList = new List<BarSeries>();
+
+            foreach (var day in daysOfWeek)
+            {
+                var daySeries = new BarSeries { Title = day };
+                seriesList.Add(daySeries);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                string section = row["Section"].ToString();
+                for (int i = 0; i < daysOfWeek.Length; i++)
+                {
+                    int progress = Convert.ToInt32(row[daysOfWeek[i]]);
+                    if (progress > 0)
+                    {
+                        seriesList[i].Items.Add(new BarItem { Value = progress });
+                    }
+                }
+            }
+
+            // Add the sections as category labels
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                IsPanEnabled = false,
+                IsZoomEnabled = false
+            };
+
+            foreach (DataRow row in data.Rows)
+            {
+                string section = row["Section"].ToString();
+                categoryAxis.Labels.Add(section);
+            }
+
+            model.Axes.Add(categoryAxis);
+
+            // Set series to the model
+            foreach (var series in seriesList)
+            {
+                model.Series.Add(series);
+            }
+
+            return model;
+        }
+
+        public PlotModel CreateLineChart1(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Create a series for each day of the week
+            var daySeries = new LineSeries
+            {
+                Title = "Progress",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Black,
+                MarkerFill = OxyColors.LightBlue
+            };
+
+            // Set the line color to RGB(43, 121, 223) using OxyColor
+            daySeries.Color = OxyColor.FromRgb(43, 121, 223);
+
+            // Days of the week
+            var daysOfWeek = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+
+            // Add data points to the series for each day
+            for (int i = 1; i <= 7; i++)
+            {
+                // Convert the day's count from the data table
+                int dayCount = Convert.ToInt32(data.Rows[0][daysOfWeek[i % 7]]);
+
+                // Add a data point with X as the day's index (1-7) and Y as the count
+                daySeries.Points.Add(new DataPoint(i, dayCount));
+            }
+
+            // Set axis titles
+            // Create an X-axis for days of the week
+            var dayAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Key = "DayAxis",
+                //Title = "Day"
+            };
+
+            // Set the labels for the X-axis
+            dayAxis.Labels.AddRange(daysOfWeek);
+
+            model.Axes.Add(dayAxis);
+
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Key = "CountAxis",
+                //Title = "Progress"
+            });
+
+            // Add the day series to the model
+            model.Series.Add(daySeries);
+
+            return model;
+        }
+
+        public PlotModel CreateBarChart2(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries
+            {
+                FillColor = OxyColor.FromRgb(43, 121, 223) // Set the bar color to RGB(43, 121, 223)
+            };
+
+            // Create an X-axis for sections
+            var sectionAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Section"
+            };
+
+            model.Axes.Add(sectionAxis);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string section = row["Section"].ToString();
+                int count = Convert.ToInt32(row["Count"]);
+
+                barSeries.Items.Add(new BarItem { Value = count });
+                sectionAxis.Labels.Add(section);
+            }
+
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
         // DATATABLE
 
         public DataTable BarCountFarmerBarangay()
@@ -332,6 +526,331 @@ namespace AgRecords.Controller
             }
         }
 
+        // ---------------- RSBSA --------------------
+        public string CountRsbsaWeeklyReg()
+        {
+            try
+            {
+                return analyticsModel.CountRsbsaWeeklyReg();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public PlotModel CreatePieChartRsbsa1(DataTable data)
+        {
+            var model = new PlotModel();
+            var pieSeries = new PieSeries();
+
+            var greenColors = new[]
+            {
+                Color.FromArgb(1, 97, 94),
+                Color.FromArgb(1, 108, 104), // Dark green
+                Color.FromArgb(26, 123, 119), // Green
+                Color.FromArgb(52, 137, 134),
+            };
+
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                DataRow row = data.Rows[i];
+
+                string barangay = row["Barangay"].ToString();
+                int count = Convert.ToInt32(row["Count"]);
+
+                // Use a green color from the predefined set
+                Color sliceColor = greenColors[i % greenColors.Length];
+
+                var slice = new PieSlice(barangay, count)
+                {
+                    Fill = OxyColor.FromArgb(sliceColor.A, sliceColor.R, sliceColor.G, sliceColor.B),
+                };
+
+                pieSeries.Slices.Add(slice);
+            }
+
+            // Set the LabelField to display labels outside the pie chart
+            pieSeries.LabelField = "Category";
+            pieSeries.TickDistance = 0.3; // Adjust the distance of labels from the pie chart
+
+            model.Series.Add(pieSeries);
+
+            return model;
+        }
+
+        public PlotModel CreatePieChartRsbsa2(DataTable data)
+        {
+            var model = new PlotModel();
+            var pieSeries = new PieSeries();
+
+            var commodityColors = new Dictionary<string, OxyColor>
+    {
+        { "Rice", OxyColor.FromArgb(255, 1, 97, 94) },   // Green
+        { "Corn", OxyColor.FromArgb(255, 1, 108, 104) },  // Dark Green
+        { "HVC", OxyColor.FromArgb(255, 26, 123, 119) },  // Green
+        { "Livestocks", OxyColor.FromArgb(255, 52, 137, 134) }, // Greenish Blue
+        { "Poultry", OxyColor.FromArgb(255, 78, 151, 149) } // Light Green
+    };
+
+            foreach (DataRow row in data.Rows)
+            {
+                string barangay = row["addrBrgy"].ToString();
+
+                for (int i = 1; i < data.Columns.Count; i++)
+                {
+                    string commodity = data.Columns[i].ColumnName;
+                    int count = Convert.ToInt32(row[commodity]);
+
+                    if (count > 0)
+                    {
+                        if (commodityColors.TryGetValue(commodity, out OxyColor sliceColor))
+                        {
+                            var slice = new PieSlice(commodity, count)
+                            {
+                                Fill = sliceColor
+                            };
+
+                            pieSeries.Slices.Add(slice);
+                        }
+                    }
+                }
+            }
+
+            // Set the border color to transparent to remove the borders
+            model.PlotAreaBorderColor = OxyColors.Transparent;
+
+            model.Axes.Add(new CategoryAxis()); // Remove labels
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.None }); // Remove the Y-axis
+
+            model.Series.Add(pieSeries);
+
+            return model;
+        }
+
+        public DataTable PieCountCommodityBarangay(string brgy)
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountCommodityBarangay(brgy);
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Commodity Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateLineChartRsbsa1(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Create the X-axis (category axis) for barangay labels
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Barangay"
+            };
+
+            // Create the Y-axis (linear axis) for the count values
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Count"
+            };
+
+            // Add the axes to the model
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            // Create a line series to display the data points
+            var lineSeries = new LineSeries
+            {
+                Title = "Weekly Counts",
+                StrokeThickness = 2
+            };
+
+            // Populate the line series with data from the DataTable
+            foreach (DataRow row in data.Rows)
+            {
+                string barangay = row["Barangay"].ToString();
+                int count = Convert.ToInt32(row["Count"]);
+
+                // Add the barangay label to the category axis
+                categoryAxis.Labels.Add(barangay);
+
+                // Add the data point to the line series
+                lineSeries.Points.Add(new DataPoint(categoryAxis.Labels.IndexOf(barangay), count));
+            }
+
+            // Add the line series to the model
+            model.Series.Add(lineSeries);
+
+            return model;
+        }
+
+        public DataTable LineCountRsbsaRegBrgy()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountRsbsaRegBrgy();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Weekly Registration Count Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateGroupedBarChartRsbsa1(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Create the category axis for barangay labels on the Y-axis
+            var categoryAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Barangay",
+                IsTickCentered = true
+            };
+
+            // Create the value axis for the count values on the X-axis
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Count"
+            };
+
+            // Add the axes to the model
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            // Define the categories (e.g., 'Farmer', 'Laborer', 'Fisherfolk', 'AgriYouth')
+            var categories = new string[] { "Farmer", "Laborer", "Fisherfolk", "AgriYouth" };
+
+            // Define the custom ARGB colors
+            var customColors = new OxyColor[]
+            {
+        OxyColor.FromArgb(255, 0, 35, 76), // ARGB format
+        OxyColor.FromArgb(255, 255, 221, 100),
+        OxyColor.FromArgb(255, 0, 109, 104),
+        OxyColor.FromArgb(255, 43, 121, 223)
+            };
+
+            // Create a list to keep track of added barangays
+            var addedBarangays = new List<string>();
+
+            // Create a bar series for each category
+            for (int i = 0; i < categories.Length; i++)
+            {
+                var category = categories[i];
+
+                var barSeries = new BarSeries
+                {
+                    Title = category, // Set the legend title
+                    FillColor = customColors[i % customColors.Length]
+                };
+
+                // Populate the bar series with data for each barangay
+                foreach (DataRow row in data.Rows)
+                {
+                    string barangay = row["Barangay"].ToString();
+
+                    // Ensure each barangay is added only once
+                    if (!addedBarangays.Contains(barangay))
+                    {
+                        int count = Convert.ToInt32(row[category]);
+                        barSeries.Items.Add(new BarItem { Value = count });
+                        categoryAxis.Labels.Add(barangay);
+                        addedBarangays.Add(barangay);
+                    }
+                }
+
+                // Add the bar series to the model
+                model.Series.Add(barSeries);
+            }
+
+            // Add a legend to the model
+            model.Legends.Add(new Legend
+            {
+                LegendOrientation = LegendOrientation.Horizontal,
+                LegendPlacement = LegendPlacement.Outside,
+                LegendPosition = LegendPosition.TopCenter
+            });
+
+            return model;
+        }
+
+        public DataTable BarCountLivelihoodBarangay()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountLivelihoodBarangay();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Livelihood Count Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateBarChartRsbsa1(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries();
+
+            // Create an X-axis for category labels
+            var categoryAxis = new CategoryAxis { Position = AxisPosition.Left };
+
+            // Create a Y-axis for values
+            var valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                MinimumPadding = 0.1,
+                MaximumPadding = 0.1,
+                IsAxisVisible = false  // Hide the Y-axis
+            };
+
+            //// Remove all border-like lines for the entire plot model
+            //model.PlotAreaBorderColor = OxyColors.Transparent;
+
+            model.Axes.Add(categoryAxis);
+            model.Axes.Add(valueAxis);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string label = row["addrBrgy"].ToString();
+                double value = Convert.ToDouble(row["FarmerCount"]);
+
+                // Create a bar item with a specific color (43, 121, 223)
+                var barItem = new BarItem { Value = value };
+                barItem.Color = OxyColor.FromRgb(0, 109, 104);
+
+                barSeries.Items.Add(barItem);
+                categoryAxis.Labels.Add(label); // Add the category label
+            }
+
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
+        public DataTable BarCountFarmerBrgy()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountFarmerBarangay();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Farmer Count Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
 
         // ---------------- RICE --------------------
         public string CountRiceFarmers()
@@ -679,6 +1198,51 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable BarCountHvcFarmerBarangay()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountHvcFarmerBarangay();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable PieCountHvcFarmerSex()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountHvcFarmerSex();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+
+        // ---------------- WEEKLY ACTIVITIES --------------------
+
+        public DataTable LoadWeeklyActivities()
+        {
+            try
+            {
+                DataTable actsTable = analyticsModel.LoadWeeklyActivitiesDtaGrid();
+                return actsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Weekly Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
         }
     }

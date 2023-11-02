@@ -52,7 +52,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rsbsa2;", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_rsbsa;", db.GetConnection());
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;

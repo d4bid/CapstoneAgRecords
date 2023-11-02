@@ -37,34 +37,28 @@ namespace AgRecords.Model
         {
             try
             {
-                DateTime now = DateTime.Now;
-                string formattedNow = now.ToString("yyyyMMdd");
-
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
                     db.Open();
 
-                    MySqlCommand command = new MySqlCommand("CALL sp_selectMaxLetterId", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("CALL sp_selectMaxLetterId()", db.GetConnection());
 
                     object result = command.ExecuteScalar();
 
-                    int nextNumber = 1; // Default to 1 if no records are found
-
-                    if (result != null && result != DBNull.Value)
+                    if (result == null || result == DBNull.Value)
+                    {
+                        string today = DateTime.Now.ToString("yyyyMMdd");
+                        return today + "00001";
+                    }
+                    else
                     {
                         string lastId = result.ToString();
-                        string lastDatePart = lastId.Substring(0, 8);
-
-                        if (lastDatePart == formattedNow)
-                        {
-                            if (int.TryParse(lastId.Substring(8), out int lastNumber))
-                            {
-                                nextNumber = lastNumber + 1;
-                            }
-                        }
+                        int lastNumber = int.Parse(lastId.Substring(8));
+                        int nextNumber = lastNumber + 1;
+                        string nextId = DateTime.Now.ToString("yyyyMMdd") + nextNumber.ToString("00000");
+                        return nextId;
                     }
 
-                    return $"{formattedNow}{nextNumber:D5}";
                 }
             }
             catch (Exception ex)

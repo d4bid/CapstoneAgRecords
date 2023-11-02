@@ -881,5 +881,47 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        public DataTable LoadRiceIrrigatedHarvestingView(string riceSrId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceIrrigatedHarvestingDataGrid(riceSrId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceLowlandHarvestingView(string riceSrId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceLowlandHarvestingDataGrid(riceSrId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceUplandHarvestingView(string riceSrId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceUplandHarvestingDataGrid(riceSrId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             labelYear = new Label();
@@ -505,9 +505,9 @@
             txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtSize.Location = new Point(637, 158);
             txtSize.Name = "txtSize";
+            txtSize.PlaceholderText = "0.00";
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 94;
-            txtSize.Text = "0";
             txtSize.TextAlign = HorizontalAlignment.Right;
             // 
             // searchBox11
@@ -737,24 +737,24 @@
             dgvCornPlanting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCornPlanting.BackgroundColor = Color.White;
             dgvCornPlanting.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCornPlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.White;
-            dataGridViewCellStyle14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
-            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCornPlanting.GridColor = Color.FromArgb(239, 239, 239);
             dgvCornPlanting.Location = new Point(17, 308);
             dgvCornPlanting.Name = "dgvCornPlanting";

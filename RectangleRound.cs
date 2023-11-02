@@ -12,7 +12,7 @@ namespace AgRecords
         }
 
         private int borderRadius = 5; // Adjust this value to control the roundness of corners.
-        private float borderWidth = 1; // Adjust the border width as needed
+        private float borderWidth = 2; // Adjust the border width as needed
         private Color customColor = Color.FromArgb(0, 35, 76); // Custom color with ARGB values
 
         protected override void OnPaint(PaintEventArgs e)

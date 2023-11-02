@@ -26,6 +26,17 @@ namespace AgRecords.View
         }
 
         // Methods
+        private void CropsCornAddView_FormClosed(object sender, EventArgs e)
+        {
+            CropsCornView cropsCornView = new CropsCornView(parentPanel);
+            cropsCornView.TopLevel = false;
+            cropsCornView.FormBorderStyle = FormBorderStyle.None;
+            cropsCornView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(cropsCornView);
+            cropsCornView.Show();
+        }
 
         private void CropsCornEditView_FormClosed(object sender, EventArgs e)
         {
@@ -82,6 +93,7 @@ namespace AgRecords.View
                 this.Close(); // Close the current form (CropsRiceView)
 
                 CropsCornAddView cropsCornAddView = new CropsCornAddView();
+                cropsCornAddView.FormClosed += CropsCornAddView_FormClosed;
                 cropsCornAddView.TopLevel = false;
                 cropsCornAddView.FormBorderStyle = FormBorderStyle.None;
                 cropsCornAddView.Dock = DockStyle.Fill;

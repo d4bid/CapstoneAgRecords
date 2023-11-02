@@ -21,7 +21,7 @@ namespace AgRecords.View
         private Dictionary<string, Image> imageDictionary = new Dictionary<string, Image>();
         private List<TagItem> tagItems = new List<TagItem>();
         private List<string> letterTags = new List<string>();
-        private int controlHeight = 20;
+        private int controlHeight = 25;
         public event EventHandler FormClosed;
 
         public LettersEditView(Letters letters, LettersPages lettersPages)
@@ -230,6 +230,19 @@ namespace AgRecords.View
                 e.Handled = RegisterTag(txtBoxTags.Text.Trim());
             }
         }
+        private void AlphaNum(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlpaNumeric(sender, e);
+        }
+        private void AlphaOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlphaOnly(sender, e);
+        }
+        //convert all Alpabets to Uppercase in textbox
+        private void AllCaps(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -315,21 +328,5 @@ namespace AgRecords.View
             }
         }
 
-        //restrict accepted textbox input
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextboxValidation.TextBox_AlpaNumeric(sender, e);
-        }
-        private void AlphaOnly(object sender, KeyPressEventArgs e)
-        {
-            TextboxValidation.TextBox_AlphaOnly(sender, e);
-        }
-        //convert all Alpabets to Uppercase in textbox
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextboxValidation.TextBox_AllCaps(sender, e);
-        }
-
-        ///
     }
 }

@@ -1039,5 +1039,74 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error loading rice standing records: " + ex.Message, ex);
             }
         }
+
+        public DataTable LoadRiceIrrigatedHarvestingDataGrid(string riceSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getAllRiceIrrigatedHarvest(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading irrigated rice harvesting records: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadRiceLowlandHarvestingDataGrid(string riceSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getAllRiceLowlandHarvest(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading lowland rice harvesting records: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadRiceUplandHarvestingDataGrid(string riceSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getAllRiceUplandHarvest(@riceSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@riceSrId", riceSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading upland rice harvesting records: " + ex.Message, ex);
+            }
+        }
     }
 }

@@ -273,8 +273,5 @@ namespace AgRecords.Model
         }
 
 
-
-
-
     }
 }

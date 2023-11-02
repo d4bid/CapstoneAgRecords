@@ -238,7 +238,7 @@
             cbFarmLocBarangay.FlatStyle = FlatStyle.Flat;
             cbFarmLocBarangay.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             cbFarmLocBarangay.FormattingEnabled = true;
-            cbFarmLocBarangay.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            cbFarmLocBarangay.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             cbFarmLocBarangay.Location = new Point(250, 44);
             cbFarmLocBarangay.Name = "cbFarmLocBarangay";
             cbFarmLocBarangay.Size = new Size(394, 33);
