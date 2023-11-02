@@ -379,7 +379,7 @@ namespace AgRecords.View
 
                             if (await rsbsaModel.AddNewRSBSARecordAsync(rsbsa))
                             {
-                                
+
                                 if (await rsbsaModel.AddNewFarmParcelAsync(rsbsa.farmParcels))
                                 {
                                     // Increment the ProgressBar value and update the label

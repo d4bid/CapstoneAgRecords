@@ -31,10 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnExport = new Button();
-            panel3 = new Panel();
-            panel2 = new Panel();
-            dgvRsbsa = new DataGridView();
             label3 = new Label();
             comboBoxFilterCommodity = new ComboBox();
             searchBox4 = new SearchBox();
@@ -47,10 +43,14 @@
             txtBoxSearch = new TextBox();
             searchBox1 = new SearchBox();
             label1 = new Label();
+            btnExport = new Button();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            dgvRSBSAExport = new DataGridView();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRsbsa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRSBSAExport).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -75,78 +75,6 @@
             panel1.Padding = new Padding(0, 0, 0, 11);
             panel1.Size = new Size(1595, 200);
             panel1.TabIndex = 21;
-            // 
-            // btnExport
-            // 
-            btnExport.BackColor = Color.FromArgb(43, 121, 223);
-            btnExport.FlatAppearance.BorderSize = 0;
-            btnExport.FlatStyle = FlatStyle.Flat;
-            btnExport.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnExport.ForeColor = Color.White;
-            btnExport.Location = new Point(1433, 33);
-            btnExport.Margin = new Padding(3, 4, 3, 4);
-            btnExport.Name = "btnExport";
-            btnExport.Size = new Size(139, 40);
-            btnExport.TabIndex = 3;
-            btnExport.Text = "Export";
-            btnExport.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(239, 239, 239);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 200);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1595, 10);
-            panel3.TabIndex = 29;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(dgvRsbsa);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 210);
-            panel2.Name = "panel2";
-            panel2.Padding = new Padding(10);
-            panel2.Size = new Size(1595, 716);
-            panel2.TabIndex = 30;
-            // 
-            // dgvRsbsa
-            // 
-            dgvRsbsa.AllowUserToAddRows = false;
-            dgvRsbsa.AllowUserToDeleteRows = false;
-            dgvRsbsa.BackgroundColor = Color.White;
-            dgvRsbsa.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRsbsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvRsbsa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRsbsa.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvRsbsa.Dock = DockStyle.Fill;
-            dgvRsbsa.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRsbsa.Location = new Point(10, 10);
-            dgvRsbsa.Name = "dgvRsbsa";
-            dgvRsbsa.ReadOnly = true;
-            dgvRsbsa.RowHeadersVisible = false;
-            dgvRsbsa.RowHeadersWidth = 51;
-            dgvRsbsa.RowTemplate.Height = 25;
-            dgvRsbsa.ScrollBars = ScrollBars.None;
-            dgvRsbsa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRsbsa.Size = new Size(1575, 696);
-            dgvRsbsa.TabIndex = 19;
             // 
             // label3
             // 
@@ -263,6 +191,80 @@
             label1.TabIndex = 25;
             label1.Text = "Category";
             // 
+            // btnExport
+            // 
+            btnExport.BackColor = Color.FromArgb(43, 121, 223);
+            btnExport.FlatAppearance.BorderSize = 0;
+            btnExport.FlatStyle = FlatStyle.Flat;
+            btnExport.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExport.ForeColor = Color.White;
+            btnExport.Location = new Point(1433, 33);
+            btnExport.Margin = new Padding(3, 4, 3, 4);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(139, 40);
+            btnExport.TabIndex = 3;
+            btnExport.Text = "Export";
+            btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += btnExport_Click;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(239, 239, 239);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 200);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1595, 10);
+            panel3.TabIndex = 29;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(dgvRSBSAExport);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 210);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(10);
+            panel2.Size = new Size(1595, 716);
+            panel2.TabIndex = 30;
+            // 
+            // dgvRSBSAExport
+            // 
+            dgvRSBSAExport.AllowUserToAddRows = false;
+            dgvRSBSAExport.AllowUserToDeleteRows = false;
+            dgvRSBSAExport.AllowUserToResizeRows = false;
+            dgvRSBSAExport.BackgroundColor = Color.White;
+            dgvRSBSAExport.BorderStyle = BorderStyle.None;
+            dgvRSBSAExport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvRSBSAExport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvRSBSAExport.Dock = DockStyle.Fill;
+            dgvRSBSAExport.GridColor = Color.FromArgb(239, 239, 239);
+            dgvRSBSAExport.Location = new Point(10, 10);
+            dgvRSBSAExport.Name = "dgvRSBSAExport";
+            dgvRSBSAExport.ReadOnly = true;
+            dgvRSBSAExport.RowHeadersVisible = false;
+            dgvRSBSAExport.RowHeadersWidth = 51;
+            dgvRSBSAExport.RowTemplate.Height = 40;
+            dgvRSBSAExport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRSBSAExport.Size = new Size(1575, 696);
+            dgvRSBSAExport.TabIndex = 24;
+            // 
             // RSBSAExportView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -274,11 +276,12 @@
             Controls.Add(panel1);
             Name = "RSBSAExportView";
             Text = "RSBSAExportView";
+            Load += RSBSAExportView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRsbsa).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRSBSAExport).EndInit();
             ResumeLayout(false);
         }
 
@@ -288,7 +291,6 @@
         private Button btnExport;
         private Panel panel3;
         private Panel panel2;
-        private DataGridView dgvRsbsa;
         private Label label3;
         private ComboBox comboBoxFilterCommodity;
         private SearchBox searchBox4;
@@ -301,5 +303,6 @@
         private TextBox txtBoxSearch;
         private SearchBox searchBox1;
         private Label label1;
+        private DataGridView dgvRSBSAExport;
     }
 }

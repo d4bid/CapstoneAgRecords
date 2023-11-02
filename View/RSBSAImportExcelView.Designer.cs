@@ -185,6 +185,7 @@
             // 
             dgvRSBSAtoImport.AllowUserToAddRows = false;
             dgvRSBSAtoImport.AllowUserToDeleteRows = false;
+            dgvRSBSAtoImport.AllowUserToResizeRows = false;
             dgvRSBSAtoImport.BackgroundColor = Color.White;
             dgvRSBSAtoImport.BorderStyle = BorderStyle.None;
             dgvRSBSAtoImport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;

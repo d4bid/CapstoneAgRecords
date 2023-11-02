@@ -64,6 +64,26 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable LoadRSBSAExportDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_rsbsa_export;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading RSBSA records: " + ex.Message, ex);
+            }
+        }
+
         public byte[] ConvertImageToByteArray(Image image)
         {
             if (image != null)
