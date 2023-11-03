@@ -18,6 +18,7 @@ namespace AgRecords.Controller
         private RsbsaAddView rsbsaAddView;
         private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
+        private RSBSAExportView rsbsaExportView;
         private CertificationsView certificationsView;
         private FarmLandControl farmLandControl;
         private RSBSADocumentControl rsbsaDocumentControl;
@@ -41,6 +42,12 @@ namespace AgRecords.Controller
         public RSBSAController(RSBSAEditView rsbsaEditView)
         {
             this.rsbsaEditView = rsbsaEditView;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(RSBSAExportView rsbsaExportView)
+        {
+            this.rsbsaExportView = rsbsaExportView;
             rsbsaModel = new RSBSAModel();
         }
 
@@ -95,6 +102,22 @@ namespace AgRecords.Controller
             try
             {
                 DataTable rsbsaTable = rsbsaModel.LoadRSBSADataGrid();
+                return rsbsaTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "RSBSA Records Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
+        }
+
+        public DataTable LoadRSBSAExportView()
+        {
+            try
+            {
+                DataTable rsbsaTable = rsbsaModel.LoadRSBSAExportDataGrid();
                 return rsbsaTable;
             }
             catch (ApplicationException ex)
