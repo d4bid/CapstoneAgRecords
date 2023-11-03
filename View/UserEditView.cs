@@ -34,6 +34,10 @@ namespace AgRecords.View
             txtBoxUserId.Text = user.userId.ToString();
             txtBoxFirstName.Text = user.userFirstname;
             txtBoxLastName.Text = user.userLastname;
+            txtMiddlename.Text = user.userMiddlename;
+            txtExtension.Text = user.userExtension;
+            txtTitle.Text = user.userTitle;
+            cmbJobTitle.Text = user.userJobTitle;
             comboBoxGender.Text = user.userGender;
             txtBoxContact.Text = user.userContact;
             txtBoxUsername.Text = user.username;
@@ -138,7 +142,9 @@ namespace AgRecords.View
             }
 
 
-            if (userController.UpdateUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, comboBoxGender.Text, txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto))
+            if (userController.UpdateUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text,
+                    txtMiddlename.Text, txtExtension.Text,
+                    txtTitle.Text, cmbJobTitle.Text, comboBoxGender.Text, txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto))
             {
                 //MessageBox.Show("User added successfully.", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

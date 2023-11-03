@@ -47,7 +47,7 @@ namespace AgRecords.Model
                         }
                     }
 
-                    return $"CORN-{currentYear}-{nextNumber:D2}";
+                    return $"CERT-{currentYear}-{nextNumber:D2}";
                 }
             }
             catch (Exception ex)
@@ -114,6 +114,41 @@ namespace AgRecords.Model
             }
         }
 
+        public Certifications GetEmployeeInfoByUsername(string username)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_getCertEmployeeInfo(@username)", db.GetConnection());
+                    command.Parameters.AddWithValue("@username", username);
+
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    Certifications cert = null;
+
+                    if (reader.Read())
+                    {
+                        cert = new Certifications();
+                        cert.username = reader["username"].ToString();
+                        cert.employeeName = reader["Employee"].ToString();
+                        cert.employeePosition = reader["Position"].ToString();
+                        cert.headName = reader["Head"].ToString();
+                    }
+
+                    reader.Close();
+                    return cert;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting employee info by ID: " + ex.Message, ex);
+            }
+        }
+
         public List<Certifications> GetCertCommodities(string rsbsaId)
         {
             try
@@ -136,7 +171,7 @@ namespace AgRecords.Model
                             rsbsaId = reader["rsbsaId"].ToString(),
                             rsbsaIdLGU = reader["rsbsaIdLGU"].ToString(),
                             farmParcelNo = reader["farmParcelNo"].ToString(),
-                            farmLocBrgy = reader["farmLocBrgy"].ToString(),
+                            farmLocBrgy = reader["farmAddress"].ToString(),
                             commodityInfo = reader["commodityInfo"].ToString(),
                         };
 
@@ -150,6 +185,35 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error getting farm parcel commodities by ID: " + ex.Message, ex);
+            }
+        }
+
+        public Boolean AddCertificate(Certifications cert)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_addCertifications(@orNo, @referenceNumber, @name, @farmInfo, @date, @employeeName, @headName)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@referenceNumber", cert.rsbsaIdLGU);
+                    command.Parameters.AddWithValue("@orNo", cert.orderNumber);
+                    command.Parameters.AddWithValue("@name", cert.name);
+                    command.Parameters.AddWithValue("@farmInfo", cert.farmInfo);
+                    command.Parameters.AddWithValue("@date", cert.date);
+                    command.Parameters.AddWithValue("@employeeName", cert.employeeName);
+                    command.Parameters.AddWithValue("@headName", cert.headName);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error adding new rice standing report: " + ex.Message, ex);
             }
         }
     }

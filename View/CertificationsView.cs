@@ -52,19 +52,6 @@ namespace AgRecords.View
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            //CertificationsAddView certificationsAddView = new CertificationsAddView();
-            //certificationsAddView.FormClosed += CertificationsAddView_FormClosed;
-            //certificationsAddView.TopLevel = false;
-            //certificationsAddView.FormBorderStyle = FormBorderStyle.None;
-            //certificationsAddView.Dock = DockStyle.Fill;
-
-            //parentPanel.Controls.Clear();
-            //parentPanel.Controls.Add(certificationsAddView);
-            //certificationsAddView.Show();
-        }
-
         private void dgvCert_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Check if the user clicked on a cell in a row, not on the header row

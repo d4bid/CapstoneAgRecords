@@ -14,6 +14,14 @@ namespace AgRecords.Model
         public string? name { get; set; }
         public string? barangay { get; set; }
         public int? farmParcelCount { get; set; }
+        public string? employeeName { get; set; }
+        public string? employeePosition { get; set; }
+        public string? headName { get; set; }
+        public string? username { get; set; }
+
+        public string? orderNumber { get; set; }
+        public DateTime date { get; set; }
+        public string? farmInfo { get; set; }
 
         //parcel
         public string? farmParcelNo { get; set; }

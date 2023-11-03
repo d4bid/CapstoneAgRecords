@@ -31,14 +31,13 @@
             openFileDialog1 = new OpenFileDialog();
             groupBox1 = new GroupBox();
             label18 = new Label();
-            comboBox1 = new ComboBox();
+            cmbJobTitle = new ComboBox();
             rectangleRound15 = new RectangleRound();
             label17 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            txtTitle = new TextBox();
             rectangleRound14 = new RectangleRound();
             label16 = new Label();
-            textBox3 = new TextBox();
+            txtExtension = new TextBox();
             rectangleRound13 = new RectangleRound();
             label15 = new Label();
             txtMiddlename = new TextBox();
@@ -74,7 +73,6 @@
             panel3 = new Panel();
             label13 = new Label();
             rectangleRound11 = new RectangleRound();
-            textBox1 = new TextBox();
             panelPassStrength = new Panel();
             panel2 = new Panel();
             rectangleRound9 = new RectangleRound();
@@ -106,14 +104,13 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label18);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cmbJobTitle);
             groupBox1.Controls.Add(rectangleRound15);
             groupBox1.Controls.Add(label17);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(txtTitle);
             groupBox1.Controls.Add(rectangleRound14);
             groupBox1.Controls.Add(label16);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtExtension);
             groupBox1.Controls.Add(rectangleRound13);
             groupBox1.Controls.Add(label15);
             groupBox1.Controls.Add(txtMiddlename);
@@ -152,19 +149,19 @@
             label18.TabIndex = 40;
             label18.Text = "Dr., Engr., etc.";
             // 
-            // comboBox1
+            // cmbJobTitle
             // 
-            comboBox1.BackColor = Color.White;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Admin Aide", "Agricultural Technologist", "Agricultturist", "Municipal Agriculturist" });
-            comboBox1.Location = new Point(841, 169);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(264, 33);
-            comboBox1.TabIndex = 38;
+            cmbJobTitle.BackColor = Color.White;
+            cmbJobTitle.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbJobTitle.FlatStyle = FlatStyle.Flat;
+            cmbJobTitle.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbJobTitle.FormattingEnabled = true;
+            cmbJobTitle.Items.AddRange(new object[] { "Admin Aide", "Agricultural Technologist", "Agricultturist", "Municipal Agriculturist" });
+            cmbJobTitle.Location = new Point(841, 170);
+            cmbJobTitle.Margin = new Padding(3, 4, 3, 4);
+            cmbJobTitle.Name = "cmbJobTitle";
+            cmbJobTitle.Size = new Size(264, 31);
+            cmbJobTitle.TabIndex = 38;
             // 
             // rectangleRound15
             // 
@@ -185,27 +182,16 @@
             label17.TabIndex = 37;
             label17.Text = "Position";
             // 
-            // textBox5
+            // txtTitle
             // 
-            textBox5.BackColor = Color.White;
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox5.Location = new Point(211, 294);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(366, 26);
-            textBox5.TabIndex = 36;
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.White;
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(211, 293);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(366, 26);
-            textBox4.TabIndex = 35;
+            txtTitle.BackColor = Color.White;
+            txtTitle.BorderStyle = BorderStyle.None;
+            txtTitle.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTitle.Location = new Point(211, 294);
+            txtTitle.Margin = new Padding(3, 4, 3, 4);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(366, 26);
+            txtTitle.TabIndex = 36;
             // 
             // rectangleRound14
             // 
@@ -226,16 +212,16 @@
             label16.TabIndex = 33;
             label16.Text = "Title";
             // 
-            // textBox3
+            // txtExtension
             // 
-            textBox3.BackColor = Color.White;
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.Location = new Point(211, 221);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(366, 26);
-            textBox3.TabIndex = 32;
+            txtExtension.BackColor = Color.White;
+            txtExtension.BorderStyle = BorderStyle.None;
+            txtExtension.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
+            txtExtension.Location = new Point(211, 221);
+            txtExtension.Margin = new Padding(3, 4, 3, 4);
+            txtExtension.Name = "txtExtension";
+            txtExtension.Size = new Size(366, 26);
+            txtExtension.TabIndex = 32;
             // 
             // rectangleRound13
             // 
@@ -310,13 +296,13 @@
             comboBoxGender.BackColor = Color.White;
             comboBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxGender.FlatStyle = FlatStyle.Flat;
-            comboBoxGender.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxGender.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxGender.Location = new Point(841, 69);
+            comboBoxGender.Location = new Point(841, 70);
             comboBoxGender.Margin = new Padding(3, 4, 3, 4);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(264, 33);
+            comboBoxGender.Size = new Size(264, 31);
             comboBoxGender.TabIndex = 12;
             // 
             // txtBoxLastName
@@ -495,10 +481,10 @@
             txtBoxPassword.BackColor = Color.White;
             txtBoxPassword.BorderStyle = BorderStyle.None;
             txtBoxPassword.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxPassword.Location = new Point(149, 15);
+            txtBoxPassword.Location = new Point(185, 15);
             txtBoxPassword.Margin = new Padding(3, 4, 3, 4);
             txtBoxPassword.Name = "txtBoxPassword";
-            txtBoxPassword.Size = new Size(382, 26);
+            txtBoxPassword.Size = new Size(366, 26);
             txtBoxPassword.TabIndex = 26;
             txtBoxPassword.UseSystemPasswordChar = true;
             // 
@@ -568,12 +554,12 @@
             comboBoxRole.BackColor = Color.White;
             comboBoxRole.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxRole.FlatStyle = FlatStyle.Flat;
-            comboBoxRole.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxRole.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxRole.FormattingEnabled = true;
             comboBoxRole.Location = new Point(841, 116);
             comboBoxRole.Margin = new Padding(3, 4, 3, 4);
             comboBoxRole.Name = "comboBoxRole";
-            comboBoxRole.Size = new Size(264, 33);
+            comboBoxRole.Size = new Size(264, 31);
             comboBoxRole.TabIndex = 38;
             // 
             // panel1
@@ -601,7 +587,6 @@
             panel3.Controls.Add(txtBoxConfirmPassword);
             panel3.Controls.Add(label13);
             panel3.Controls.Add(rectangleRound11);
-            panel3.Controls.Add(textBox1);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 104);
             panel3.Name = "panel3";
@@ -626,18 +611,6 @@
             rectangleRound11.Size = new Size(385, 38);
             rectangleRound11.TabIndex = 34;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI Semibold", 11.7F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(149, 15);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(382, 26);
-            textBox1.TabIndex = 26;
-            textBox1.UseSystemPasswordChar = true;
-            // 
             // panelPassStrength
             // 
             panelPassStrength.Controls.Add(lblPasswordStrength);
@@ -649,9 +622,9 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(txtBoxPassword);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(rectangleRound9);
-            panel2.Controls.Add(txtBoxPassword);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -671,13 +644,13 @@
             comboBoxStatus.BackColor = Color.White;
             comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxStatus.FlatStyle = FlatStyle.Flat;
-            comboBoxStatus.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxStatus.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
             comboBoxStatus.Location = new Point(841, 71);
             comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
             comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(264, 33);
+            comboBoxStatus.Size = new Size(264, 31);
             comboBoxStatus.TabIndex = 37;
             // 
             // rectangleRound6
@@ -875,20 +848,18 @@
         private Panel panel3;
         private Label label13;
         private RectangleRound rectangleRound11;
-        private TextBox textBox1;
         private Panel panelPassStrength;
         private Panel panelPassConfirm;
         private FontAwesome.Sharp.IconButton btnBack;
         private RectangleRound rectangleRound12;
         private TextBox txtMiddlename;
-        private TextBox textBox3;
+        private TextBox txtExtension;
         private RectangleRound rectangleRound13;
         private Label label15;
-        private TextBox textBox5;
-        private TextBox textBox4;
+        private TextBox txtTitle;
         private RectangleRound rectangleRound14;
         private Label label16;
-        private ComboBox comboBox1;
+        private ComboBox cmbJobTitle;
         private RectangleRound rectangleRound15;
         private Label label17;
         private ComboBox comboBoxRole;

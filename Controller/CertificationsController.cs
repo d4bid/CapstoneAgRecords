@@ -37,6 +37,20 @@ namespace AgRecords.Controller
             certModel = new CertificationsModel();
         }
 
+        public Certifications GetEmployeeInfoByUsername(string username)
+        {
+            try
+            {
+                return certModel.GetEmployeeInfoByUsername(username);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Finding Username Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
         // Get createdBy
         public string GetUserIdByFullName(string fullName)
         {

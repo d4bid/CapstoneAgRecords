@@ -11,6 +11,10 @@ namespace AgRecords.Model
         public string userId { get; set; }
         public string userFirstname { get; set; }
         public string userLastname { get; set; }
+        public string userMiddlename { get; set; }
+        public string userExtension { get; set; }
+        public string userTitle { get; set; }
+        public string userJobTitle { get; set; }
         public string userGender { get; set; }
         public string userRole { get; set; }
         public string userContact { get; set; }

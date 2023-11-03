@@ -61,6 +61,7 @@
             label10 = new Label();
             panel6 = new Panel();
             dgvCert = new DataGridView();
+            labelClickCount = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
@@ -113,6 +114,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(labelClickCount);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(btnPrint);
             panel1.Controls.Add(txtOrNo);
@@ -152,6 +154,7 @@
             btnCancel.TextAlign = ContentAlignment.MiddleRight;
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnPrint
             // 
@@ -431,6 +434,15 @@
             dgvCert.Size = new Size(734, 752);
             dgvCert.TabIndex = 24;
             // 
+            // labelClickCount
+            // 
+            labelClickCount.AutoSize = true;
+            labelClickCount.Location = new Point(1281, 13);
+            labelClickCount.Name = "labelClickCount";
+            labelClickCount.Size = new Size(18, 20);
+            labelClickCount.TabIndex = 63;
+            labelClickCount.Text = "#";
+            // 
             // CertificationsAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -493,5 +505,6 @@
         private RectangleBlue rectangleBlue3;
         private RectangleBlue rectangleBlue4;
         private RectangleBlue rectangleBlue5;
+        private Label labelClickCount;
     }
 }

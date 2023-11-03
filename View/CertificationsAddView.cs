@@ -22,6 +22,8 @@ namespace AgRecords.View
         private CertificationsController certController;
         public event EventHandler FormClosed;
         private List<string> setCertDataList = new List<string>();
+        //to get the username of the current user
+        private string username = HomeView.Instance.username.Text;
 
         public CertificationsAddView(Certifications cert, List<Certifications> certList)
         {
@@ -43,7 +45,7 @@ namespace AgRecords.View
                     flowLayoutPanel1.Controls.Add(certificationsFarmControl);
                 }
             }
-
+            certController = new CertificationsController(this);
         }
 
         private string GetSuperscript(int day)
@@ -147,8 +149,8 @@ namespace AgRecords.View
                         prefix = "Livestock grower";
                     }
 
-                    // Create a string with the desired format
-                    string farmInfoText = $"{prefix} {farmInfo} located at {farmAddress}";
+                    // Create a string with the desired format for farmInfo
+                    string farmInfoText = $"{prefix} {farmInfo}";
 
                     // Use regular expressions to replace the last comma with "and" if there are more than two commas
                     if (Regex.Matches(farmInfoText, ",").Count > 1)
@@ -157,8 +159,48 @@ namespace AgRecords.View
                         farmInfoText = farmInfoText.Substring(0, lastCommaIndex) + " and" + farmInfoText.Substring(lastCommaIndex + 1);
                     }
 
+                    // Split the address into words
+                    string[] words2 = farmAddress.Split(' ');
+
+                    // Initialize a TextInfo object for the current culture
+                    TextInfo textInfo2 = CultureInfo.CurrentCulture.TextInfo;
+
+                    // Capitalize the first letter of each word, preserving acronyms
+                    for (int i = 0; i < words2.Length; i++)
+                    {
+                        if (!words2[i].Contains(".") || words2[i].Length == 1)
+                        {
+                            words2[i] = textInfo.ToTitleCase(words2[i].ToLower());
+                        }
+                    }
+
+                    // Rejoin the words to form the updated address
+                    farmAddress = string.Join(" ", words2);
+
+                    // Add farmAddress to the formatted farmInfo
+                    farmInfoText += $" located at Barangay {farmAddress}";
+
+
                     // Add the farm info text to the list
                     farmInfoList.Add(farmInfoText);
+                }
+            }
+
+            string combinedFarmInfo = string.Empty;
+
+            if (farmInfoList.Count > 0)
+            {
+                if (farmInfoList.Count == 1)
+                {
+                    combinedFarmInfo = farmInfoList[0];
+                }
+                else if (farmInfoList.Count == 2)
+                {
+                    combinedFarmInfo = string.Join(" and ", farmInfoList);
+                }
+                else
+                {
+                    combinedFarmInfo = string.Join(", ", farmInfoList.Take(farmInfoList.Count - 1)) + ", and " + farmInfoList.Last();
                 }
             }
 
@@ -182,19 +224,25 @@ namespace AgRecords.View
                         day = dayValue + "ˢᵗ";
                         break;
                     case 2:
-                        day = dayValue + "nd";
+                        day = dayValue + "ⁿᵈ";
                         break;
                     case 3:
-                        day = dayValue + "rd";
+                        day = dayValue + "ʳᵈ";
                         break;
                     default:
-                        day = dayValue + "th";
+                        day = dayValue + "ᵗʰ";
                         break;
                 }
             }
 
             // Format Date (e.g., October 10, 2023)
             string date = currentDate.ToString("MMMM dd, yyyy");
+
+
+            Certifications cert = certController.GetEmployeeInfoByUsername(username);
+            string empName = cert.employeeName;
+            string empPosition = cert.employeePosition;
+            string head = cert.headName;
 
             // Perform the replacements
             FindAndReplace(doc, "<<name>>", farmerName);
@@ -204,11 +252,17 @@ namespace AgRecords.View
             FindAndReplace(doc, "<<orNo>>", orNumber);
             FindAndReplace(doc, "<<referenceNumber>>", referenceNumber);
             FindAndReplace(doc, "<<date>>", date);
+            FindAndReplace(doc, "<<employeePosition>>", empPosition);
+            FindAndReplace(doc, "<<employeeName>>", empName);
+            FindAndReplace(doc, "<<headName>>", head);
+            FindAndReplace(doc, "<<date>>", date);
 
-            foreach (string farmInfo in farmInfoList)
-            {
-                FindAndReplace(doc, "<<farmInfo>>", farmInfo);
-            }
+            //foreach (string farmInfo in farmInfoList)
+            //{
+            //    FindAndReplace(doc, "<<farmInfo>>", farmInfo);
+            //}
+
+            FindAndReplace(doc, "<<farmInfo>>", combinedFarmInfo);
 
             // Clean up
             Marshal.ReleaseComObject(doc);
@@ -221,6 +275,12 @@ namespace AgRecords.View
             {
                 range.Find.Execute(FindText: findText, ReplaceWith: replaceText, Replace: WdReplace.wdReplaceAll);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }
