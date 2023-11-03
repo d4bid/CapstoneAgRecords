@@ -647,7 +647,7 @@ namespace AgRecords.View
             analyticsCropsHvcView.Show();
 
             ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new AnalyticsCropsView(panelDesktop));
+            OpenChildForm(new AnalyticsCropsHvcView(panelDesktop));
             lblTitle.Text = "Analytics \u23F5 HVC";
 
             HideSubMenu();

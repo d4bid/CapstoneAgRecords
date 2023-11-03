@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace AgRecords.Controller
 {
@@ -25,6 +26,7 @@ namespace AgRecords.Controller
 
         //to get the username of the current user
         private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
 
         public CropsRiceController(CropsRiceView cropsRiceView)
         {
@@ -262,6 +264,7 @@ namespace AgRecords.Controller
                     {
                         isDone = true;
                         //MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        userModel.InserActionLog(username, "Insert", "Crops Rice Report", $"{riceSrId} added successfully.");
                     }
                 }
 
@@ -271,7 +274,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Add Rice Standing Accomplishment Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Insert", "Crops Rice Report", $"{riceSrId} adding failed.");
                 return false;
             }
         }

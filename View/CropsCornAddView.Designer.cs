@@ -617,7 +617,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1392, 80);
+            btnUpdate.Location = new Point(1410, 56);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 39);
@@ -682,7 +682,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1392, 143);
+            btnClear.Location = new Point(1410, 151);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 39);
@@ -699,7 +699,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1392, 80);
+            btnNew.Location = new Point(1410, 104);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 39);

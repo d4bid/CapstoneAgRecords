@@ -53,6 +53,17 @@ namespace AgRecords.View
                 // Set the pie chart model to the PlotView control
                 riceGraph2.Model = barChart;
             }
+
+            DataTable data4 = analyticsController.PieCountHarvestedOutOfPlanted();
+
+            if (data4 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreateCircularProgressChartRice1(data4);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph4.Model = pieChart;
+            }
         }
 
         private void riceGraph1_Click(object sender, EventArgs e)

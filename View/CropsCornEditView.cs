@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace AgRecords.View
 {
@@ -410,7 +411,7 @@ namespace AgRecords.View
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
 
             int brgyIndex = cmbBrgy.SelectedIndex;
             int landTypeIndex = cmbLandType.SelectedIndex;
@@ -435,6 +436,8 @@ namespace AgRecords.View
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearTextControls();
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = false;
         }
 
         private void dgvCornPlanting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -442,7 +445,7 @@ namespace AgRecords.View
             if (labelGrowthStage.Text == "Newly Planted/Seedling Stage")
             {
                 btnUpdate.Enabled = true;
-                btnNew.Enabled = true;
+                btnNew.Enabled = false;
             }
             else
             {
@@ -657,7 +660,297 @@ namespace AgRecords.View
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                // Retrieve data from the controller
+                string cornPrId = labelCornPrId.Text;
+                DataTable data = cropsCornController.LoadCornPlantingGmoHybridView(cornPrId);
 
+                // Get the directory where the application executable is located
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Specify the path to the Excel file relative to the executable path
+                string relativePath = Path.Combine("Templates", "CornPlantingReport.xlsx");
+
+                // Combine the executable path with the relative path to get the full file path
+                string filePath = Path.Combine(executablePath, relativePath);
+
+                // Create an instance of Excel Application
+                Excel.Application excelApp = new Excel.Application();
+
+                // Open the Excel template
+                Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+
+                // Get the worksheet
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
+
+                worksheet.Cells[3, 2].Value = worksheet.Cells[3, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text + 
+                    "(" + labelSeason.Text.ToUpper() + " SEASON CY " + labelSeasonYear.Text + ")";
+
+                int startRow = 12;
+                int startColumn = 2;
+
+                foreach (DataRow row in data.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn++;
+                    }
+
+                    startRow++; // Move to the next row in Excel
+                    startColumn = 2; // Reset the column index for the next row
+                }
+
+                DataTable data1 = cropsCornController.LoadCornPlantingOpvGreenSweetView(cornPrId);
+                int startRow1 = 12;
+                int startColumn1 = 26;
+
+                foreach (DataRow row in data1.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow1, startColumn1] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn1++;
+                    }
+
+                    startRow1++; // Move to the next row in Excel
+                    startColumn1 = 26; // Reset the column index for the next row
+                }
+
+                DataTable data2 = cropsCornController.LoadCornPlantingTraditionalGrandTotalView(cornPrId);
+                int startRow2 = 12;
+                int startColumn2 = 50;
+
+                foreach (DataRow row in data2.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow2, startColumn2] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn2++;
+                    }
+
+                    startRow2++; // Move to the next row in Excel
+                    startColumn2 = 50; // Reset the column index for the next row
+                }
+
+                // Display the filled Excel file using Excel application
+                excelApp.Visible = true;
+
+                // Release Excel objects
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+            }
+            else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
+            {
+                // Retrieve data from the controller
+                string cornPrId = labelCornPrId.Text;
+                DataTable data = cropsCornController.LoadCornPlantingEcoYellowView(cornPrId);
+
+                // Get the directory where the application executable is located
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Specify the path to the Excel file relative to the executable path
+                string relativePath = Path.Combine("Templates", "CornPlantingByEcologicalZoneReport.xlsx");
+
+                // Combine the executable path with the relative path to get the full file path
+                string filePath = Path.Combine(executablePath, relativePath);
+
+                // Create an instance of Excel Application
+                Excel.Application excelApp = new Excel.Application();
+
+                // Open the Excel template
+                Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+
+                // Get the worksheet
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
+
+                worksheet.Cells[2, 2].Value = worksheet.Cells[2, 2].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text ;
+                worksheet.Cells[5, 2].Value = worksheet.Cells[5, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text;
+
+                int startRow = 13;
+                int startColumn = 2;
+
+                foreach (DataRow row in data.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn++;
+                    }
+
+                    startRow++; // Move to the next row in Excel
+                    startColumn = 2; // Reset the column index for the next row
+                }
+
+                DataTable data1 = cropsCornController.LoadCornPlantingEcoWhiteView(cornPrId);
+                int startRow1 = 13;
+                int startColumn1 = 26;
+
+                foreach (DataRow row in data1.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow1, startColumn1] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn1++;
+                    }
+
+                    startRow1++; // Move to the next row in Excel
+                    startColumn1 = 26; // Reset the column index for the next row
+                }
+
+                DataTable data2 = cropsCornController.LoadCornPlantingEcoTotalView(cornPrId);
+                int startRow2 = 13;
+                int startColumn2 = 50;
+
+                foreach (DataRow row in data2.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow2, startColumn2] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn2++;
+                    }
+
+                    startRow2++; // Move to the next row in Excel
+                    startColumn2 = 50; // Reset the column index for the next row
+                }
+
+                // Display the filled Excel file using Excel application
+                excelApp.Visible = true;
+
+                // Release Excel objects
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+            }
+            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                // Retrieve data from the controller
+                string cornPrId = labelCornPrId.Text;
+                DataTable data = cropsCornController.LoadCornHarvestingGmoView(cornPrId);
+
+                // Get the directory where the application executable is located
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Specify the path to the Excel file relative to the executable path
+                string relativePath = Path.Combine("Templates", "CornHarvestingReport.xlsx");
+
+                // Combine the executable path with the relative path to get the full file path
+                string filePath = Path.Combine(executablePath, relativePath);
+
+                // Create an instance of Excel Application
+                Excel.Application excelApp = new Excel.Application();
+
+                // Open the Excel template
+                Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+
+                // Get the worksheet
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
+
+                worksheet.Cells[3, 2].Value = worksheet.Cells[3, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text +
+                   "(" + labelSeason.Text.ToUpper() + " SEASON CY " + labelSeasonYear.Text + ")";
+
+                int startRow = 12;
+                int startColumn = 2;
+
+                foreach (DataRow row in data.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn++;
+                    }
+
+                    startRow++; // Move to the next row in Excel
+                    startColumn = 2; // Reset the column index for the next row
+                }
+
+                DataTable data1 = cropsCornController.LoadCornHarvestingHybridView(cornPrId);
+                int startRow1 = 12;
+                int startColumn1 = 26;
+
+                foreach (DataRow row in data1.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow1, startColumn1] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn1++;
+                    }
+
+                    startRow1++; // Move to the next row in Excel
+                    startColumn1 = 26; // Reset the column index for the next row
+                }
+
+                DataTable data2 = cropsCornController.LoadCornHarvestingOpvView(cornPrId);
+                int startRow2 = 12;
+                int startColumn2 = 50;
+
+                foreach (DataRow row in data2.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow2, startColumn2] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn2++;
+                    }
+
+                    startRow2++; // Move to the next row in Excel
+                    startColumn2 = 50; // Reset the column index for the next row
+                }
+
+                DataTable data3 = cropsCornController.LoadCornHarvestingGreenSweetView(cornPrId);
+                int startRow3 = 12;
+                int startColumn3 = 74;
+
+                foreach (DataRow row in data3.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow3, startColumn3] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn3++;
+                    }
+
+                    startRow3++; // Move to the next row in Excel
+                    startColumn3 = 74; // Reset the column index for the next row
+                }
+
+                DataTable data4 = cropsCornController.LoadCornHarvestingTraditionalView(cornPrId);
+                int startRow4 = 12;
+                int startColumn4 = 98;
+
+                foreach (DataRow row in data4.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow4, startColumn4] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn4++;
+                    }
+
+                    startRow4++; // Move to the next row in Excel
+                    startColumn4 = 98; // Reset the column index for the next row
+                }
+
+                DataTable data5 = cropsCornController.LoadCornHarvestingTotalView(cornPrId);
+                int startRow5 = 12;
+                int startColumn5 = 122;
+
+                foreach (DataRow row in data4.Rows)
+                {
+                    for (int i = 2; i <= 25; i++) // Loop through all columns, including the first column
+                    {
+                        worksheet.Cells[startRow5, startColumn5] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                        startColumn5++;
+                    }
+
+                    startRow5++; // Move to the next row in Excel
+                    startColumn5 = 122; // Reset the column index for the next row
+                }
+
+                // Display the filled Excel file using Excel application
+                excelApp.Visible = true;
+
+                // Release Excel objects
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+            }
         }
     }
 }

@@ -151,7 +151,7 @@
             btnBack.IconColor = Color.FromArgb(43, 121, 223);
             btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBack.IconSize = 30;
-            btnBack.Location = new Point(1434, 24);
+            btnBack.Location = new Point(1435, 34);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(148, 40);
             btnBack.TabIndex = 55;
@@ -175,7 +175,7 @@
             btnPrint.IconColor = Color.FromArgb(3, 0, 67);
             btnPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnPrint.IconSize = 30;
-            btnPrint.Location = new Point(1280, 24);
+            btnPrint.Location = new Point(1280, 34);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(148, 40);
             btnPrint.TabIndex = 54;
@@ -731,7 +731,7 @@
             // 
             labelMaxLogId.AutoSize = true;
             labelMaxLogId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelMaxLogId.Location = new Point(1200, 105);
+            labelMaxLogId.Location = new Point(1067, 77);
             labelMaxLogId.Name = "labelMaxLogId";
             labelMaxLogId.Size = new Size(102, 28);
             labelMaxLogId.TabIndex = 82;
@@ -746,7 +746,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1410, 74);
+            btnUpdate.Location = new Point(1417, 59);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 39);
@@ -811,7 +811,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1410, 137);
+            btnClear.Location = new Point(1417, 153);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 39);
@@ -828,7 +828,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1410, 74);
+            btnNew.Location = new Point(1417, 106);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 39);

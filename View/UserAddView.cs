@@ -106,11 +106,6 @@ namespace AgRecords.View
             }
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            getUserPhoto();
-        }
-
         private void picBoxUser_Click(object sender, EventArgs e)
         {
             if (picBoxUser.Image != null)
@@ -138,7 +133,8 @@ namespace AgRecords.View
                 userPhoto = ImageToByteArray(userImg);
             }
 
-            if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, comboBoxGender.Text,
+            if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, txtMiddlename.Text, txtExtension.Text,
+                    txtTitle.Text, cmbJobTitle.Text, comboBoxGender.Text,
                     txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto, txtBoxUsername.Text,
                     txtBoxPassword.Text, txtBoxConfirmPassword.Text))
             {

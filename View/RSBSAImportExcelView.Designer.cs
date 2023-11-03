@@ -59,7 +59,7 @@
             btnSelect.FlatStyle = FlatStyle.Flat;
             btnSelect.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSelect.ForeColor = Color.White;
-            btnSelect.Location = new Point(330, 42);
+            btnSelect.Location = new Point(325, 41);
             btnSelect.Name = "btnSelect";
             btnSelect.Size = new Size(195, 39);
             btnSelect.TabIndex = 0;
@@ -75,9 +75,9 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1252, 39);
+            btnSave.Location = new Point(1285, 41);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(146, 42);
+            btnSave.Size = new Size(146, 39);
             btnSave.TabIndex = 1;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1413, 39);
+            btnCancel.Location = new Point(1437, 41);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(146, 42);
+            btnCancel.Size = new Size(146, 40);
             btnCancel.TabIndex = 2;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -121,18 +121,20 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(742, 42);
+            progressBar1.Location = new Point(728, 41);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(294, 36);
+            progressBar1.Size = new Size(355, 40);
             progressBar1.TabIndex = 6;
             // 
             // labelProgress
             // 
             labelProgress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelProgress.AutoSize = true;
-            labelProgress.Location = new Point(834, 52);
+            labelProgress.BackColor = Color.Transparent;
+            labelProgress.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelProgress.Location = new Point(725, 84);
             labelProgress.Name = "labelProgress";
-            labelProgress.Size = new Size(103, 20);
+            labelProgress.Size = new Size(93, 17);
             labelProgress.TabIndex = 7;
             labelProgress.Text = "progress label";
             // 
@@ -189,9 +191,9 @@
             dgvRSBSAtoImport.BackgroundColor = Color.White;
             dgvRSBSAtoImport.BorderStyle = BorderStyle.None;
             dgvRSBSAtoImport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
@@ -201,7 +203,7 @@
             dgvRSBSAtoImport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);

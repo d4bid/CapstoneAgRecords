@@ -69,12 +69,16 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addNewUser(@userPhoto, @userId, @userFirstname, @userLastname, @userGender, @userContact, @userRole, @username, @userPassword, @userActive)";
+                    string query = "CALL sp_addNewUser(@userPhoto, @userId, @userFirstname, @userLastname, @userMiddlename, @userExtension, @userTitle, @userJobTitle, @userGender, @userContact, @userRole, @username, @userPassword, @userActive)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@userPhoto", user.userPhoto);
                     command.Parameters.AddWithValue("@userId", user.userId);
                     command.Parameters.AddWithValue("@userFirstname", user.userFirstname);
                     command.Parameters.AddWithValue("@userLastname", user.userLastname);
+                    command.Parameters.AddWithValue("@userMiddlename", user.userMiddlename);
+                    command.Parameters.AddWithValue("@userExtension", user.userExtension);
+                    command.Parameters.AddWithValue("@userTitle", user.userTitle);
+                    command.Parameters.AddWithValue("@userJobTitle", user.userJobTitle);
                     command.Parameters.AddWithValue("@userGender", user.userGender);
                     command.Parameters.AddWithValue("@userContact", user.userContact);
                     command.Parameters.AddWithValue("@userRole", user.userRole);
@@ -161,12 +165,16 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_updateUser(@userId, @userPhoto, @userFirstname, @userLastname, @userGender, @userContact, @userRole, @userActive)";
+                    string query = "CALL sp_updateUser(@userId, @userPhoto, @userFirstname, @userLastname, @userMiddlename, @userExtension, @userTitle, @userJobTitle, @userGender, @userContact, @userRole, @userActive)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@userId", user.userId);
                     command.Parameters.AddWithValue("@userPhoto", user.userPhoto);
                     command.Parameters.AddWithValue("@userFirstname", user.userFirstname);
                     command.Parameters.AddWithValue("@userLastname", user.userLastname);
+                    command.Parameters.AddWithValue("@userMiddlename", user.userMiddlename);
+                    command.Parameters.AddWithValue("@userExtension", user.userExtension);
+                    command.Parameters.AddWithValue("@userTitle", user.userTitle);
+                    command.Parameters.AddWithValue("@userJobTitle", user.userJobTitle);
                     command.Parameters.AddWithValue("@userGender", user.userGender);
                     command.Parameters.AddWithValue("@userContact", user.userContact);
                     command.Parameters.AddWithValue("@userRole", user.userRole);

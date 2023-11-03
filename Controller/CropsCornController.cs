@@ -680,5 +680,178 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        // PRINTING REPORTS
+
+        // Planting
+        public DataTable LoadCornPlantingGmoHybridView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornPlantingGmoHybridDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornPlantingOpvGreenSweetView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornPlantingOpvGreenSweetDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornPlantingTraditionalGrandTotalView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornPlantingTraditionalGrandTotalDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        // Planting Eco
+        public DataTable LoadCornPlantingEcoYellowView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornPlantingEcoYellowDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting By Ecological Zone Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornPlantingEcoWhiteView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornPlantingEcoWhiteDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting By Ecological Zone Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornPlantingEcoTotalView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornPlantingEcoTotalDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting By Ecological Zone Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        // Harvesting
+        public DataTable LoadCornHarvestingGmoView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornHarvestingGmoDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornHarvestingHybridView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornHarvestingHybridDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornHarvestingOpvView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornHarvestingOpvDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornHarvestingGreenSweetView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornHarvestingGreenSweetDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornHarvestingTraditionalView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornHarvestingTraditionalDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornHarvestingTotalView(string cornPrId)
+        {
+            try
+            {
+                DataTable cornTable = cornModel.LoadCornHarvestingTotalDataGrid(cornPrId);
+                return cornTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
     }
 }

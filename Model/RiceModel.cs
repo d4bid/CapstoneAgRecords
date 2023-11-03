@@ -325,6 +325,41 @@ namespace AgRecords.Model
             }
         }
 
+        public Boolean CheckRiceReportExist(RiceStandingRep rsr)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "CALL sp_checkRiceReportExist(@month, @week, @year)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@month", rsr.month);
+                    command.Parameters.AddWithValue("@week", rsr.week);
+                    command.Parameters.AddWithValue("@year", rsr.year);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int recordExists = Convert.ToInt32(reader["recordExists"]);
+
+                            // Return true if record exists (1), false if not (0)
+                            return recordExists == 1;
+                        }
+                    }
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error checking rice standing report existence: " + ex.Message, ex);
+            }
+        }
+
         // get rice standing report details
         public RiceStandingRep GetRiceStandReportById(string riceSrId)
         {

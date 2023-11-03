@@ -28,23 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificationsAddView));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             txtReferenceNumber = new TextBox();
             label4 = new Label();
-            rectangleRound4 = new RectangleRound();
-            printDocument1 = new System.Drawing.Printing.PrintDocument();
-            printPreviewDialog1 = new PrintPreviewDialog();
             label6 = new Label();
-            rectangleRound7 = new RectangleRound();
             labelRsbsaId = new Label();
             panel1 = new Panel();
             btnCancel = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
             txtOrNo = new TextBox();
             label2 = new Label();
-            rectangleRound1 = new RectangleRound();
+            rectangleBlue1 = new RectangleBlue();
+            rectangleBlue2 = new RectangleBlue();
+            rectangleBlue3 = new RectangleBlue();
             panel3 = new Panel();
             panel2 = new Panel();
             panel9 = new Panel();
@@ -56,14 +53,15 @@
             txtBarangay = new TextBox();
             txtName = new TextBox();
             label1 = new Label();
-            rectangleRound2 = new RectangleRound();
             label3 = new Label();
-            rectangleRound3 = new RectangleRound();
+            rectangleBlue4 = new RectangleBlue();
+            rectangleBlue5 = new RectangleBlue();
             panel4 = new Panel();
             panel5 = new Panel();
             label10 = new Label();
             panel6 = new Panel();
             dgvCert = new DataGridView();
+            labelClickCount = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
@@ -94,24 +92,6 @@
             label4.TabIndex = 22;
             label4.Text = "Reference Number";
             // 
-            // rectangleRound4
-            // 
-            rectangleRound4.BackColor = Color.White;
-            rectangleRound4.Location = new Point(391, 39);
-            rectangleRound4.Name = "rectangleRound4";
-            rectangleRound4.Size = new Size(346, 38);
-            rectangleRound4.TabIndex = 23;
-            // 
-            // printPreviewDialog1
-            // 
-            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
-            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
-            printPreviewDialog1.ClientSize = new Size(400, 300);
-            printPreviewDialog1.Enabled = true;
-            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
-            printPreviewDialog1.Name = "printPreviewDialog1";
-            printPreviewDialog1.Visible = false;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -120,14 +100,6 @@
             label6.Size = new Size(72, 20);
             label6.TabIndex = 31;
             label6.Text = "RSBSA ID";
-            // 
-            // rectangleRound7
-            // 
-            rectangleRound7.BackColor = Color.White;
-            rectangleRound7.Location = new Point(13, 39);
-            rectangleRound7.Name = "rectangleRound7";
-            rectangleRound7.Size = new Size(346, 38);
-            rectangleRound7.TabIndex = 32;
             // 
             // labelRsbsaId
             // 
@@ -142,17 +114,18 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(labelClickCount);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(btnPrint);
             panel1.Controls.Add(txtOrNo);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(txtReferenceNumber);
-            panel1.Controls.Add(rectangleRound1);
             panel1.Controls.Add(labelRsbsaId);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(rectangleRound4);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(rectangleRound7);
+            panel1.Controls.Add(rectangleBlue1);
+            panel1.Controls.Add(rectangleBlue2);
+            panel1.Controls.Add(rectangleBlue3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -181,6 +154,7 @@
             btnCancel.TextAlign = ContentAlignment.MiddleRight;
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnPrint
             // 
@@ -204,6 +178,7 @@
             btnPrint.TextAlign = ContentAlignment.MiddleRight;
             btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPrint.UseVisualStyleBackColor = true;
+            btnPrint.Click += btnPrint_Click;
             // 
             // txtOrNo
             // 
@@ -225,13 +200,26 @@
             label2.TabIndex = 22;
             label2.Text = "O.R. No.";
             // 
-            // rectangleRound1
+            // rectangleBlue1
             // 
-            rectangleRound1.BackColor = Color.White;
-            rectangleRound1.Location = new Point(769, 39);
-            rectangleRound1.Name = "rectangleRound1";
-            rectangleRound1.Size = new Size(225, 38);
-            rectangleRound1.TabIndex = 23;
+            rectangleBlue1.Location = new Point(13, 39);
+            rectangleBlue1.Name = "rectangleBlue1";
+            rectangleBlue1.Size = new Size(346, 38);
+            rectangleBlue1.TabIndex = 60;
+            // 
+            // rectangleBlue2
+            // 
+            rectangleBlue2.Location = new Point(391, 39);
+            rectangleBlue2.Name = "rectangleBlue2";
+            rectangleBlue2.Size = new Size(346, 38);
+            rectangleBlue2.TabIndex = 61;
+            // 
+            // rectangleBlue3
+            // 
+            rectangleBlue3.Location = new Point(769, 39);
+            rectangleBlue3.Name = "rectangleBlue3";
+            rectangleBlue3.Size = new Size(225, 38);
+            rectangleBlue3.TabIndex = 62;
             // 
             // panel3
             // 
@@ -270,7 +258,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(799, 683);
             flowLayoutPanel1.TabIndex = 39;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel8
             // 
@@ -295,9 +282,9 @@
             groupBox1.Controls.Add(txtBarangay);
             groupBox1.Controls.Add(txtName);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(rectangleRound2);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(rectangleRound3);
+            groupBox1.Controls.Add(rectangleBlue4);
+            groupBox1.Controls.Add(rectangleBlue5);
             groupBox1.Location = new Point(13, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(778, 106);
@@ -345,14 +332,6 @@
             label1.TabIndex = 22;
             label1.Text = "Name";
             // 
-            // rectangleRound2
-            // 
-            rectangleRound2.BackColor = Color.White;
-            rectangleRound2.Location = new Point(19, 46);
-            rectangleRound2.Name = "rectangleRound2";
-            rectangleRound2.Size = new Size(408, 38);
-            rectangleRound2.TabIndex = 23;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -362,13 +341,19 @@
             label3.TabIndex = 24;
             label3.Text = "Address (Barangay)";
             // 
-            // rectangleRound3
+            // rectangleBlue4
             // 
-            rectangleRound3.BackColor = Color.White;
-            rectangleRound3.Location = new Point(454, 47);
-            rectangleRound3.Name = "rectangleRound3";
-            rectangleRound3.Size = new Size(301, 38);
-            rectangleRound3.TabIndex = 25;
+            rectangleBlue4.Location = new Point(19, 46);
+            rectangleBlue4.Name = "rectangleBlue4";
+            rectangleBlue4.Size = new Size(408, 38);
+            rectangleBlue4.TabIndex = 61;
+            // 
+            // rectangleBlue5
+            // 
+            rectangleBlue5.Location = new Point(454, 46);
+            rectangleBlue5.Name = "rectangleBlue5";
+            rectangleBlue5.Size = new Size(301, 38);
+            rectangleBlue5.TabIndex = 62;
             // 
             // panel4
             // 
@@ -419,24 +404,24 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCert.DefaultCellStyle = dataGridViewCellStyle4;
             dgvCert.Dock = DockStyle.Fill;
             dgvCert.GridColor = Color.FromArgb(239, 239, 239);
             dgvCert.Location = new Point(10, 10);
@@ -448,6 +433,15 @@
             dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCert.Size = new Size(734, 752);
             dgvCert.TabIndex = 24;
+            // 
+            // labelClickCount
+            // 
+            labelClickCount.AutoSize = true;
+            labelClickCount.Location = new Point(1281, 13);
+            labelClickCount.Name = "labelClickCount";
+            labelClickCount.Size = new Size(18, 20);
+            labelClickCount.TabIndex = 63;
+            labelClickCount.Text = "#";
             // 
             // CertificationsAddView
             // 
@@ -481,26 +475,19 @@
 
         #endregion
         private Label label4;
-        private RectangleRound rectangleRound4;
         private TextBox txtReferenceNumber;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private PrintPreviewDialog printPreviewDialog1;
         private Label label6;
-        private RectangleRound rectangleRound7;
         private Label labelRsbsaId;
         private Panel panel1;
         private Panel panel3;
         private Panel panel2;
         private TextBox txtOrNo;
         private Label label2;
-        private RectangleRound rectangleRound1;
         private GroupBox groupBox1;
         private TextBox txtBarangay;
         private TextBox txtName;
         private Label label1;
-        private RectangleRound rectangleRound2;
         private Label label3;
-        private RectangleRound rectangleRound3;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
@@ -513,5 +500,11 @@
         private FontAwesome.Sharp.IconButton btnPrint;
         private FontAwesome.Sharp.IconButton btnCancel;
         private Label lblTempParcelCount;
+        private RectangleBlue rectangleBlue1;
+        private RectangleBlue rectangleBlue2;
+        private RectangleBlue rectangleBlue3;
+        private RectangleBlue rectangleBlue4;
+        private RectangleBlue rectangleBlue5;
+        private Label labelClickCount;
     }
 }

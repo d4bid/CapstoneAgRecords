@@ -280,6 +280,97 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable LoadHvcStandingTotalDataGrid(string hvcSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getHvcStandingTotal(@hvcSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@hvcSrId", hvcSrId);
 
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading HVC standing records: " + ex.Message, ex);
+            }
+        }
+
+        // REPORT PRINTING
+        public DataTable LoadStandingHvcPinakbetDataGrid(string hvcSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getAllHvcPinakbetStand(@hvcSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@hvcSrId", hvcSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading HVC standing records: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadStandingHvcRootcropsDataGrid(string hvcSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getAllHvcRootcropsStand(@hvcSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@hvcSrId", hvcSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading HVC standing records: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadStandingHvcPlantationDataGrid(string hvcSrId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getAllHvcPlantationStand(@hvcSrId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@hvcSrId", hvcSrId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading HVC standing records: " + ex.Message, ex);
+            }
+        }
     }
 }

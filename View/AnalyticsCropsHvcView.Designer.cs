@@ -358,9 +358,9 @@
             label7.ForeColor = Color.FromArgb(0, 35, 76);
             label7.Location = new Point(627, 511);
             label7.Name = "label7";
-            label7.Size = new Size(189, 20);
+            label7.Size = new Size(208, 20);
             label7.TabIndex = 55;
-            label7.Text = "Area Planted by HVC type";
+            label7.Text = "Area Harvested by HVC type";
             // 
             // rectangleFullWhite4
             // 

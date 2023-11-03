@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace AgRecords.View
 {
@@ -195,6 +196,87 @@ namespace AgRecords.View
         {
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // Retrieve data from the controller
+            string hvcSrId = labelHvcSrId.Text;
+            DataTable data = cropsHvcController.LoadStandingHvcPinakbetView(hvcSrId);
+            DataTable data1 = cropsHvcController.LoadStandingHvcRootcropsView(hvcSrId);
+            DataTable data2 = cropsHvcController.LoadStandingHvcPlantationView(hvcSrId);
+
+            // Get the directory where the application executable is located
+            string executablePath = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Specify the path to the Excel file relative to the executable path
+            string relativePath = Path.Combine("Templates", "HVCStandingReport.xlsx");
+
+            // Combine the executable path with the relative path to get the full file path
+            string filePath = Path.Combine(executablePath, relativePath);
+
+            // Create an instance of Excel Application
+            Excel.Application excelApp = new Excel.Application();
+
+            // Open the Excel template
+            Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+
+            // Get the worksheet
+            Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
+
+            worksheet.Cells[6, 1].Value = worksheet.Cells[6, 1].Text + labelMonth.Text + " " + labelWeek.Text + ", " + labelYear.Text;
+
+            int startRow = 10;
+            int startColumn = 4;
+
+            foreach (DataRow row in data.Rows)
+            {
+                for (int i = 2; i <= 6; i++) // Loop through all columns, including the first column
+                {
+                    worksheet.Cells[startRow, startColumn] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                    startColumn++;
+                }
+
+                startRow++; // Move to the next row in Excel
+                startColumn = 4; // Reset the column index for the next row
+            }
+
+            int startRow1 = 21;
+            int startColumn1 = 4;
+
+            foreach (DataRow row in data1.Rows)
+            {
+                for (int i = 2; i <= 6; i++) // Loop through all columns, including the first column
+                {
+                    worksheet.Cells[startRow1, startColumn1] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                    startColumn1++;
+                }
+
+                startRow1++; // Move to the next row in Excel
+                startColumn1 = 4; // Reset the column index for the next row
+            }
+
+            int startRow2 = 25;
+            int startColumn2 = 4;
+
+            foreach (DataRow row in data2.Rows)
+            {
+                for (int i = 2; i <= 6; i++) // Loop through all columns, including the first column
+                {
+                    worksheet.Cells[startRow2, startColumn2] = row[i] != DBNull.Value ? row[i].ToString() : string.Empty;
+                    startColumn2++;
+                }
+
+                startRow2++; // Move to the next row in Excel
+                startColumn2 = 4; // Reset the column index for the next row
+            }
+
+            // Display the filled Excel file using Excel application
+            excelApp.Visible = true;
+
+            // Release Excel objects
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
         }
     }
 }

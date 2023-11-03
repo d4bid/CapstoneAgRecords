@@ -91,7 +91,9 @@ namespace AgRecords.Controller
             }
         }
 
-        public bool AddUser(string userId, string userFirstName, string userLastName, string userGender, string userContact, string userActive, string userRole, byte[] userPhoto, string username, string userPassword, string confirmPassword)
+        public bool AddUser(string userId, string userFirstName, string userLastName, string userMiddlename, string userExtension, 
+            string userTitle, string userJobTitle, string userGender, string userContact, string userActive, string userRole, 
+            byte[] userPhoto, string username, string userPassword, string confirmPassword)
         {
             try
             {
@@ -101,6 +103,10 @@ namespace AgRecords.Controller
                     userPhoto = userPhoto,
                     userFirstname = userFirstName,
                     userLastname = userLastName,
+                    userMiddlename = userMiddlename,
+                    userExtension = userExtension,
+                    userTitle = userTitle,
+                    userJobTitle = userJobTitle,
                     userGender = userGender,
                     userContact = userContact,
                     userRole = userRole,
@@ -124,9 +130,14 @@ namespace AgRecords.Controller
                     MessageBox.Show("Last name is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userContact == "")
+                else if (user.userRole != "Admin" && user.userJobTitle == "")
                 {
-                    MessageBox.Show("Contact information is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Position is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (user.userRole == "")
+                {
+                    MessageBox.Show("User Role is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (user.username == "")
@@ -182,7 +193,8 @@ namespace AgRecords.Controller
         }
 
 
-        public Boolean UpdateUser(string userId, string userFirstName, string userLastName, string userGender, string userContact,  string userActive, string userRole, byte[] userPhoto)
+        public Boolean UpdateUser(string userId, string userFirstName, string userLastName, string userMiddlename, string userExtension,
+            string userTitle, string userJobTitle, string userGender, string userContact,  string userActive, string userRole, byte[] userPhoto)
         {
             try
             {
@@ -192,6 +204,10 @@ namespace AgRecords.Controller
                     userPhoto = userPhoto,
                     userFirstname = userFirstName,
                     userLastname = userLastName,
+                    userMiddlename = userMiddlename,
+                    userExtension = userExtension,
+                    userTitle = userTitle,
+                    userJobTitle = userJobTitle,
                     userGender = userGender,
                     userContact = userContact,
                     userRole = userRole,
@@ -213,9 +229,14 @@ namespace AgRecords.Controller
                     MessageBox.Show("Last name is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userContact == "")
+                else if (user.userRole != "Admin" && user.userJobTitle == "")
                 {
-                    MessageBox.Show("Contact information is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Position is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (user.userRole == "")
+                {
+                    MessageBox.Show("User Role is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (user.userPhoto != null && user.userFirstname != "" && user.userLastname != "" && user.userContact != "")

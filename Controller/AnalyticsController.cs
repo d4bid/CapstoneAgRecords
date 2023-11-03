@@ -1009,8 +1009,63 @@ namespace AgRecords.Controller
             }
         }
 
+        public PlotModel CreateCircularProgressChartRice1(DataTable data)
+        {
+            var model = new PlotModel();
 
+            var areaPlanted = Convert.ToDouble(data.Rows[0]["Area Planted"]);
+            var areaHarvested = Convert.ToDouble(data.Rows[0]["Area Harvested"]);
+            var remaining = Convert.ToDouble(data.Rows[0]["Remaining"]);
 
+            // Calculate percentages
+            var harvestedPercentage = (areaHarvested / areaPlanted) * 100;
+            var remainingPercentage = 100 - harvestedPercentage;
+
+            var pieSeries = new PieSeries
+            {
+                StartAngle = 0,
+                Diameter = 0.8,
+                InnerDiameter = 0.6,
+                ExplodedDistance = 0.0 // Set to 0 for a donut-like appearance
+            };
+
+            // Add the harvested slice
+            pieSeries.Slices.Add(new PieSlice(null, harvestedPercentage)
+            {
+                Fill = OxyColor.FromRgb(0, 109, 104) // Color for harvested
+            });
+
+            // Add the remaining slice
+            pieSeries.Slices.Add(new PieSlice(null, remainingPercentage)
+            {
+                Fill = OxyColor.FromRgb(255, 221, 100) // Color for remaining
+            });
+
+            // Add the legend
+            var legend = new Legend();
+            legend.LegendPosition = LegendPosition.BottomCenter;
+            legend.LegendOrientation = LegendOrientation.Horizontal;
+            legend.LegendPlacement = LegendPlacement.Outside;
+
+            model.Legends.Add(legend);
+            model.Series.Add(pieSeries);
+
+            return model;
+        }
+
+        public DataTable PieCountHarvestedOutOfPlanted()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.CountHarvestedOutOfPlanted();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
 
         // ---------------- CORN --------------------
         public string CountCornFarmers()

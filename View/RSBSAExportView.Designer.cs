@@ -73,13 +73,13 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(0, 0, 0, 11);
-            panel1.Size = new Size(1595, 200);
+            panel1.Size = new Size(1595, 105);
             panel1.TabIndex = 21;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(771, 6);
+            label3.Location = new Point(771, 20);
             label3.Name = "label3";
             label3.Size = new Size(87, 20);
             label3.TabIndex = 32;
@@ -92,14 +92,14 @@
             comboBoxFilterCommodity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterCommodity.FormattingEnabled = true;
             comboBoxFilterCommodity.Items.AddRange(new object[] { "ALL", "Rice", "Corn", "HVC" });
-            comboBoxFilterCommodity.Location = new Point(778, 34);
+            comboBoxFilterCommodity.Location = new Point(778, 48);
             comboBoxFilterCommodity.Name = "comboBoxFilterCommodity";
             comboBoxFilterCommodity.Size = new Size(174, 28);
             comboBoxFilterCommodity.TabIndex = 30;
             // 
             // searchBox4
             // 
-            searchBox4.Location = new Point(771, 29);
+            searchBox4.Location = new Point(771, 43);
             searchBox4.Name = "searchBox4";
             searchBox4.Size = new Size(184, 39);
             searchBox4.TabIndex = 31;
@@ -107,7 +107,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(365, 6);
+            label2.Location = new Point(365, 20);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 29;
@@ -120,14 +120,14 @@
             comboBoxFilterBrgy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterBrgy.FormattingEnabled = true;
             comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            comboBoxFilterBrgy.Location = new Point(371, 34);
+            comboBoxFilterBrgy.Location = new Point(371, 48);
             comboBoxFilterBrgy.Name = "comboBoxFilterBrgy";
             comboBoxFilterBrgy.Size = new Size(174, 28);
             comboBoxFilterBrgy.TabIndex = 23;
             // 
             // searchBox3
             // 
-            searchBox3.Location = new Point(365, 29);
+            searchBox3.Location = new Point(365, 43);
             searchBox3.Name = "searchBox3";
             searchBox3.Size = new Size(184, 39);
             searchBox3.TabIndex = 28;
@@ -139,14 +139,14 @@
             comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSearchCategory.FormattingEnabled = true;
             comboBoxSearchCategory.Items.AddRange(new object[] { "ALL", "ID", "FIRST NAME", "MIDDLE NAME", "SURNAME" });
-            comboBoxSearchCategory.Location = new Point(570, 34);
+            comboBoxSearchCategory.Location = new Point(570, 48);
             comboBoxSearchCategory.Name = "comboBoxSearchCategory";
             comboBoxSearchCategory.Size = new Size(183, 28);
             comboBoxSearchCategory.TabIndex = 21;
             // 
             // searchBox2
             // 
-            searchBox2.Location = new Point(565, 29);
+            searchBox2.Location = new Point(565, 43);
             searchBox2.Name = "searchBox2";
             searchBox2.Size = new Size(191, 39);
             searchBox2.TabIndex = 27;
@@ -169,7 +169,7 @@
             // 
             txtBoxSearch.BorderStyle = BorderStyle.None;
             txtBoxSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxSearch.Location = new Point(43, 33);
+            txtBoxSearch.Location = new Point(43, 47);
             txtBoxSearch.Name = "txtBoxSearch";
             txtBoxSearch.PlaceholderText = "Search";
             txtBoxSearch.Size = new Size(291, 24);
@@ -177,7 +177,7 @@
             // 
             // searchBox1
             // 
-            searchBox1.Location = new Point(8, 29);
+            searchBox1.Location = new Point(8, 43);
             searchBox1.Name = "searchBox1";
             searchBox1.Size = new Size(341, 39);
             searchBox1.TabIndex = 26;
@@ -185,7 +185,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(565, 6);
+            label1.Location = new Point(565, 20);
             label1.Name = "label1";
             label1.Size = new Size(69, 20);
             label1.TabIndex = 25;
@@ -198,7 +198,7 @@
             btnExport.FlatStyle = FlatStyle.Flat;
             btnExport.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnExport.ForeColor = Color.White;
-            btnExport.Location = new Point(1433, 33);
+            btnExport.Location = new Point(1433, 43);
             btnExport.Margin = new Padding(3, 4, 3, 4);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(139, 40);
@@ -211,7 +211,7 @@
             // 
             panel3.BackColor = Color.FromArgb(239, 239, 239);
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 200);
+            panel3.Location = new Point(0, 105);
             panel3.Name = "panel3";
             panel3.Size = new Size(1595, 10);
             panel3.TabIndex = 29;
@@ -221,10 +221,10 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(dgvRSBSAExport);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 210);
+            panel2.Location = new Point(0, 115);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(10);
-            panel2.Size = new Size(1595, 716);
+            panel2.Size = new Size(1595, 811);
             panel2.TabIndex = 30;
             // 
             // dgvRSBSAExport
@@ -262,7 +262,7 @@
             dgvRSBSAExport.RowHeadersWidth = 51;
             dgvRSBSAExport.RowTemplate.Height = 40;
             dgvRSBSAExport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRSBSAExport.Size = new Size(1575, 696);
+            dgvRSBSAExport.Size = new Size(1575, 791);
             dgvRSBSAExport.TabIndex = 24;
             // 
             // RSBSAExportView
