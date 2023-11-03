@@ -605,7 +605,27 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable CountHarvestedOutOfPlanted()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartRiceHarvestedOutOfPlanted()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
 
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice farmers data: " + ex.Message, ex);
+            }
+        }
 
         // ---------------- CORN -----------------------
 

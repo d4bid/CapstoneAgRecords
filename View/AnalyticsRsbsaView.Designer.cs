@@ -53,6 +53,8 @@
             rsbsa1 = new OxyPlot.WindowsForms.PlotView();
             cmbBrgy1 = new ComboBox();
             labelTotalWeeklyReg = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // labelFarmers
@@ -310,15 +312,25 @@
             // 
             // labelTotalWeeklyReg
             // 
+            labelTotalWeeklyReg.Anchor = AnchorStyles.None;
             labelTotalWeeklyReg.AutoSize = true;
             labelTotalWeeklyReg.BackColor = Color.White;
             labelTotalWeeklyReg.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalWeeklyReg.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalWeeklyReg.Location = new Point(793, 294);
+            labelTotalWeeklyReg.Location = new Point(58, 74);
             labelTotalWeeklyReg.Name = "labelTotalWeeklyReg";
             labelTotalWeeklyReg.Size = new Size(186, 106);
             labelTotalWeeklyReg.TabIndex = 86;
             labelTotalWeeklyReg.Text = "###";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(labelTotalWeeklyReg);
+            panel1.Location = new Point(733, 227);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(297, 272);
+            panel1.TabIndex = 87;
             // 
             // AnalyticsRsbsaView
             // 
@@ -326,7 +338,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(labelTotalWeeklyReg);
+            Controls.Add(panel1);
             Controls.Add(cmbBrgy1);
             Controls.Add(rsbsa1);
             Controls.Add(rsbsa5);
@@ -354,6 +366,8 @@
             Name = "AnalyticsRsbsaView";
             Text = "AnalyticsRsbsaView";
             Load += AnalyticsRsbsaView_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -385,5 +399,6 @@
         private OxyPlot.WindowsForms.PlotView rsbsa1;
         private ComboBox cmbBrgy1;
         private Label labelTotalWeeklyReg;
+        private Panel panel1;
     }
 }

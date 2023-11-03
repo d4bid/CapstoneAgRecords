@@ -288,7 +288,7 @@ namespace AgRecords.View
 
         private void dgvRiceStandLogs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnUpdate.Visible = true;
+            btnNew.Enabled = false;
             labelRiceStandingLogsId.Visible = true;
 
             // Check if the user clicked on a cell in a row, not on the header row
@@ -299,8 +299,8 @@ namespace AgRecords.View
 
                 if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
                 {
-                    btnNew.Visible = false;
-                    btnUpdate.Visible = false;
+                    btnNew.Enabled = false;
+                    btnUpdate.Enabled = false;
                     int ricePlantingId = Convert.ToInt32(row.Cells[0].Value);
 
                     labelRiceStandingLogsId.Text = ricePlantingId.ToString();
@@ -405,9 +405,7 @@ namespace AgRecords.View
 
                 if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
                 {
-                    btnNew.Visible = false;
                     btnNew.Enabled = false;
-                    btnUpdate.Visible = true;
                     btnUpdate.Enabled = true;
 
                     int riceHarvestingId = Convert.ToInt32(row.Cells[0].Value);
@@ -447,18 +445,18 @@ namespace AgRecords.View
         {
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
-                btnUpdate.Visible = true;
-                btnNew.Visible = false;
+                btnUpdate.Enabled = true;
+                btnNew.Enabled = false;
             }
             else if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
-                btnUpdate.Visible = false;
-                btnNew.Visible = false;
+                btnUpdate.Enabled = false;
+                btnNew.Enabled = false;
             }
             else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
             {
-                btnUpdate.Visible = false;
-                btnNew.Visible = true;
+                btnUpdate.Enabled  = false;
+                btnNew.Enabled = true;
             }
 
             int brgyIndex = cmbBrgy.SelectedIndex;
@@ -542,9 +540,8 @@ namespace AgRecords.View
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
-            btnNew.Visible = true;
-            labelRiceStandingLogsId.Visible = false;
+            btnUpdate.Enabled = false;
+            btnNew.Enabled = true;
             ClearStandingLogsTextControls();
         }
 
