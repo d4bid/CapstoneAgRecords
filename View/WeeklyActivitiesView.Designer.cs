@@ -182,6 +182,8 @@
             // 
             dgvActivities.AllowUserToAddRows = false;
             dgvActivities.AllowUserToDeleteRows = false;
+            dgvActivities.AllowUserToResizeColumns = false;
+            dgvActivities.AllowUserToResizeRows = false;
             dgvActivities.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvActivities.BackgroundColor = Color.White;
             dgvActivities.BorderStyle = BorderStyle.None;

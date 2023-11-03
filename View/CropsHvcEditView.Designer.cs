@@ -294,14 +294,14 @@
             panel43.Controls.Add(panel44);
             panel43.Location = new Point(17, 14);
             panel43.Name = "panel43";
-            panel43.Size = new Size(1566, 171);
+            panel43.Size = new Size(1566, 205);
             panel43.TabIndex = 74;
             // 
             // labelHvcStandingId
             // 
             labelHvcStandingId.AutoSize = true;
             labelHvcStandingId.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelHvcStandingId.Location = new Point(31, 88);
+            labelHvcStandingId.Location = new Point(31, 100);
             labelHvcStandingId.Name = "labelHvcStandingId";
             labelHvcStandingId.Size = new Size(32, 28);
             labelHvcStandingId.TabIndex = 95;
@@ -309,7 +309,7 @@
             // 
             // searchBox12
             // 
-            searchBox12.Location = new Point(26, 84);
+            searchBox12.Location = new Point(26, 96);
             searchBox12.Name = "searchBox12";
             searchBox12.Size = new Size(80, 39);
             searchBox12.TabIndex = 98;
@@ -317,7 +317,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(26, 61);
+            label6.Location = new Point(26, 73);
             label6.Name = "label6";
             label6.Size = new Size(24, 20);
             label6.TabIndex = 97;
@@ -327,7 +327,7 @@
             // 
             labelCropStage.AutoSize = true;
             labelCropStage.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCropStage.Location = new Point(357, 89);
+            labelCropStage.Location = new Point(357, 101);
             labelCropStage.Name = "labelCropStage";
             labelCropStage.Size = new Size(177, 25);
             labelCropStage.TabIndex = 96;
@@ -337,7 +337,7 @@
             // 
             txtSize.BorderStyle = BorderStyle.None;
             txtSize.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSize.Location = new Point(671, 90);
+            txtSize.Location = new Point(671, 102);
             txtSize.Name = "txtSize";
             txtSize.PlaceholderText = "0.00";
             txtSize.Size = new Size(148, 24);
@@ -346,7 +346,7 @@
             // 
             // searchBox11
             // 
-            searchBox11.Location = new Point(664, 84);
+            searchBox11.Location = new Point(664, 96);
             searchBox11.Name = "searchBox11";
             searchBox11.Size = new Size(162, 39);
             searchBox11.TabIndex = 93;
@@ -354,7 +354,7 @@
             // LabelSize
             // 
             LabelSize.AutoSize = true;
-            LabelSize.Location = new Point(664, 61);
+            LabelSize.Location = new Point(664, 73);
             LabelSize.Name = "LabelSize";
             LabelSize.Size = new Size(66, 20);
             LabelSize.TabIndex = 92;
@@ -362,7 +362,7 @@
             // 
             // searchBox9
             // 
-            searchBox9.Location = new Point(352, 84);
+            searchBox9.Location = new Point(352, 96);
             searchBox9.Name = "searchBox9";
             searchBox9.Size = new Size(282, 39);
             searchBox9.TabIndex = 91;
@@ -370,7 +370,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(352, 59);
+            label14.Location = new Point(352, 71);
             label14.Name = "label14";
             label14.Size = new Size(99, 20);
             label14.TabIndex = 90;
@@ -383,14 +383,14 @@
             cmbCropType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             cmbCropType.FormattingEnabled = true;
             cmbCropType.Items.AddRange(new object[] { "Bittergourd", "Eggplant", "Okra", "Patola (Loofah/Sponge gouard)", "Squash", "Tomato", "Upo (bottled gourd)", "Pole sitao", "Mungbean", "Sweet Potato", "Yam/ube", "Peanut", "Plantation Crops", "Banana" });
-            cmbCropType.Location = new Point(129, 86);
+            cmbCropType.Location = new Point(129, 98);
             cmbCropType.Name = "cmbCropType";
             cmbCropType.Size = new Size(200, 33);
             cmbCropType.TabIndex = 89;
             // 
             // searchBox8
             // 
-            searchBox8.Location = new Point(124, 84);
+            searchBox8.Location = new Point(124, 96);
             searchBox8.Name = "searchBox8";
             searchBox8.Size = new Size(208, 39);
             searchBox8.TabIndex = 88;
@@ -398,7 +398,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(124, 61);
+            label13.Location = new Point(124, 73);
             label13.Name = "label13";
             label13.Size = new Size(76, 20);
             label13.TabIndex = 87;
@@ -411,7 +411,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1410, 50);
+            btnUpdate.Location = new Point(1274, 47);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 39);
@@ -423,7 +423,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(875, 59);
+            label9.Location = new Point(875, 71);
             label9.Name = "label9";
             label9.Size = new Size(122, 20);
             label9.TabIndex = 54;
@@ -433,7 +433,7 @@
             // 
             dtpLogDate.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpLogDate.Format = DateTimePickerFormat.Short;
-            dtpLogDate.Location = new Point(875, 82);
+            dtpLogDate.Location = new Point(875, 94);
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(167, 28);
             dtpLogDate.TabIndex = 53;
@@ -447,7 +447,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1410, 104);
+            btnClear.Location = new Point(1274, 141);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 39);
@@ -463,7 +463,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1410, 51);
+            btnNew.Location = new Point(1274, 94);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 39);
@@ -520,14 +520,14 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle2;
             dgvHvcStanding.GridColor = Color.FromArgb(239, 239, 239);
-            dgvHvcStanding.Location = new Point(17, 203);
+            dgvHvcStanding.Location = new Point(17, 239);
             dgvHvcStanding.Name = "dgvHvcStanding";
             dgvHvcStanding.ReadOnly = true;
             dgvHvcStanding.RowHeadersVisible = false;
             dgvHvcStanding.RowHeadersWidth = 51;
             dgvHvcStanding.RowTemplate.Height = 40;
             dgvHvcStanding.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHvcStanding.Size = new Size(1566, 611);
+            dgvHvcStanding.Size = new Size(1566, 575);
             dgvHvcStanding.TabIndex = 23;
             dgvHvcStanding.CellDoubleClick += dgvHvcStanding_CellDoubleClick;
             // 

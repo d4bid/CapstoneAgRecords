@@ -106,18 +106,11 @@ namespace AgRecords.View
             // Define the custom table layout.
             int tableX = e.MarginBounds.Left;
             int tableY = e.MarginBounds.Top + 80;
-            int cellWidth = 150; // Adjust the cell width as needed
-            int cellHeight = 20; // Adjust the cell height as needed
+            int tableWidth = e.MarginBounds.Width; // Width between the left and right margins
 
-            // Define headers for your custom table.
-            string[] headers = { "Column 1", "Column 2", "Column 3", "Column 4" };
-
-            // Define the data rows for your custom table.
-            List<string[]> data = new List<string[]>
-    {
-        new string[] { "Data 1", "Data 2", "Data 3", "Data 4" },
-        // Add more data rows as needed
-    };
+            // Calculate the cell width for even distribution.
+            int numColumns = dgvActivities.Columns.Count;
+            int cellWidth = tableWidth / numColumns;
 
             // Define fonts for table headers and data.
             Font headerFont = new Font("Arial", 12, FontStyle.Bold);
@@ -126,28 +119,48 @@ namespace AgRecords.View
             // Draw the custom table headers.
             int headerX = tableX;
             int headerY = tableY;
-            foreach (string header in headers)
+            foreach (DataGridViewColumn column in dgvActivities.Columns)
             {
+                string header = column.HeaderText;
                 e.Graphics.DrawString(header, headerFont, brush, headerX, headerY);
                 headerX += cellWidth;
             }
 
             // Draw the custom table data rows.
-            int dataY = tableY + cellHeight;
-            foreach (string[] row in data)
+            int dataY = tableY + 20; // Adjust the starting Y position for data rows
+            foreach (DataGridViewRow row in dgvActivities.Rows)
             {
                 int dataX = tableX;
-                foreach (string cell in row)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    e.Graphics.DrawString(cell, dataFont, brush, dataX, dataY);
+                    string cellText = cell.Value.ToString();
+
+                    // Scale the font size to fit the content within the cell.
+                    float fontSize = 12;
+                    Font scaledFont = new Font(dataFont.FontFamily, fontSize);
+                    SizeF cellSize = e.Graphics.MeasureString(cellText, scaledFont);
+
+                    while (cellSize.Width > cellWidth)
+                    {
+                        fontSize -= 1;
+                        scaledFont = new Font(dataFont.FontFamily, fontSize);
+                        cellSize = e.Graphics.MeasureString(cellText, scaledFont);
+                    }
+
+                    // Word-wrap the cell content.
+                    StringFormat sf = new StringFormat();
+                    sf.Trimming = StringTrimming.Word;
+                    sf.FormatFlags = StringFormatFlags.NoWrap;
+
+                    RectangleF cellRect = new RectangleF(dataX, dataY, cellWidth, 20); // 20 is the cell height
+                    e.Graphics.DrawString(cellText, scaledFont, brush, cellRect, sf);
                     dataX += cellWidth;
                 }
-                dataY += cellHeight;
+                dataY += 20; // Adjust the row height
             }
 
             // Check if there are more pages to print.
             e.HasMorePages = false;
         }
-
     }
 }
