@@ -250,8 +250,8 @@
             txtBoxTitle.Name = "txtBoxTitle";
             txtBoxTitle.Size = new Size(597, 27);
             txtBoxTitle.TabIndex = 1;
-            txtBoxTitle.TextChanged += TextBox_TextChanged;
-            txtBoxTitle.KeyPress += TextBox_KeyPress;
+            txtBoxTitle.TextChanged += AllCaps;
+            txtBoxTitle.KeyPress += AlphaNum;
             // 
             // flowLayoutPanelTags
             // 
@@ -363,7 +363,7 @@
             txtBoxFrom.Name = "txtBoxFrom";
             txtBoxFrom.Size = new Size(601, 27);
             txtBoxFrom.TabIndex = 6;
-            txtBoxFrom.TextChanged += TextBox_TextChanged;
+            txtBoxFrom.TextChanged += AllCaps;
             txtBoxFrom.KeyPress += AlphaOnly;
             // 
             // txtBoxTo
@@ -376,7 +376,7 @@
             txtBoxTo.Name = "txtBoxTo";
             txtBoxTo.Size = new Size(601, 27);
             txtBoxTo.TabIndex = 5;
-            txtBoxTo.TextChanged += TextBox_TextChanged;
+            txtBoxTo.TextChanged += AllCaps ;
             txtBoxTo.KeyPress += AlphaOnly;
             // 
             // label3

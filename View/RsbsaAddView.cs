@@ -623,7 +623,7 @@ namespace AgRecords.View
         private void radiobuttonsPreAnswer_PersonalInfo()
         {
             rbGovIdYes.Checked = true;
-            rb4psYes.Checked = true;
+            rb4psNo.Checked = true;
             rbHouseholdHeadYes.Checked = true;
 
             rbPwdNo.Checked = true;
@@ -660,6 +660,8 @@ namespace AgRecords.View
             if (rbIndigenousYes.Checked)
             {
                 txtIndigenous.Enabled = true;
+                txtIndigenous.Focus();
+
             }
             else
             {
@@ -688,6 +690,7 @@ namespace AgRecords.View
             {
                 txtGovIdType.Enabled = true;
                 txtGovIdNum.Enabled = true;
+                txtGovIdType.Focus();
             }
             else
             {
@@ -703,6 +706,7 @@ namespace AgRecords.View
             if (rbOthers.Checked)
             {
                 txtReligionOthers.Enabled = true;
+                txtReligionOthers.Focus();
             }
             else
             {
@@ -768,15 +772,19 @@ namespace AgRecords.View
         {
             if (txtEcContact.Focused)
             {
-                TextboxValidation.TextBox_NumericOnlyLimited(txtEcContact, e, 11);
+                TextboxValidation.TextBox_NumericOnlyLimited(txtEcContact, e, 10);
             }
             else if (txtMobNo.Focused)
             {
-                TextboxValidation.TextBox_NumericOnlyLimited(txtMobNo, e, 11);
+                TextboxValidation.TextBox_NumericOnlyLimited(txtMobNo, e, 10);
             }
             else if (txtLandNo.Focused)
             {
                 TextboxValidation.TextBox_NumericOnlyLimited(txtLandNo, e, 7);
+            }
+            else if (txtAddRegion.Focused)
+            {
+                TextboxValidation.TextBox_NumericOnlyLimited(txtAddRegion, e, 2);
             }
         }
 
@@ -958,6 +966,110 @@ namespace AgRecords.View
             {
                 txtNonFarmingIncome.Text = "0";
             }
+            if (focusedControl == txtReligionOthers)
+            {
+
+                if (rbOthers.Checked && string.IsNullOrEmpty(txtReligionOthers.Text))
+                {
+                    rbOthers.Checked = false;
+                }
+            }
+
+            if (focusedControl == txtIndigenous)
+            {
+
+                if (rbIndigenousYes.Checked && string.IsNullOrEmpty(txtIndigenous.Text))
+                {
+                    rbIndigenousYes.Checked = false;
+                }
+            }
+            if (focusedControl == txtAddRegion)
+            {
+                if (int.TryParse(txtAddRegion.Text, out int regionValue))
+                {
+                    if (regionValue > 12)
+                    {
+                        txtAddRegion.Clear();
+                    }
+                }
+                else
+                {
+                    txtAddRegion.Clear();
+                }
+            }
+            if (focusedControl == txtAddRegion)
+            {
+                if (int.TryParse(txtAddRegion.Text, out int regionValue))
+                {
+                    if (regionValue >= 1 && regionValue <= 9)
+                    {
+                        txtAddRegion.Text = "0" + regionValue.ToString();
+                    }
+                }
+            }
+
+            if (focusedControl == txtBirthMunicipality)
+            {
+                string enteredMunicipality = txtBirthMunicipality.Text;
+
+                if (txtBirthMunicipality.AutoCompleteCustomSource.Contains(enteredMunicipality))
+                {
+                    txtBirthProvince.Text = "NUEVA VIZCAYA";
+                    txtBirthCountry.Text = "PHILIPPINES";
+                }
+            }
+
+            if (focusedControl == txtFarmActCrops)
+            {
+
+                if (cbFarmActCrops.Checked && string.IsNullOrEmpty(txtFarmActCrops.Text))
+                {
+                    cbFarmActCrops.Checked = false;
+                }
+            }
+            if (focusedControl == txtFarmActLivestock)
+            {
+
+                if (cbFarmActLivestock.Checked && string.IsNullOrEmpty(txtFarmActLivestock.Text))
+                {
+                    cbFarmActLivestock.Checked = false;
+                }
+            }
+            if (focusedControl == txtFarmActPoultry)
+            {
+
+                if (cbFarmActPoultry.Checked && string.IsNullOrEmpty(txtFarmActPoultry.Text))
+                {
+                    cbFarmActPoultry.Checked = false;
+                }
+            }
+            if (focusedControl == txtWorkKindOthers)
+            {
+
+                if (cbWorkKindOthers.Checked && string.IsNullOrEmpty(txtWorkKindOthers.Text))
+                {
+                    cbWorkKindOthers.Checked = false;
+
+                }
+            }
+            if (focusedControl == txtFishingActOthers)
+            {
+
+                if (cbFishingActOthers.Checked && string.IsNullOrEmpty(txtFishingActOthers.Text))
+                {
+                    cbFishingActOthers.Checked = false;
+
+                }
+            }
+            if (focusedControl == txtInvolvementOthers)
+            {
+
+                if (cbInvolvementOthers.Checked && string.IsNullOrEmpty(txtInvolvementOthers.Text))
+                {
+                    cbInvolvementOthers.Checked = false;
+
+                }
+            }
         }
 
         private void nudHouseNoMale_ValueChanged(object sender, EventArgs e)
@@ -1131,6 +1243,21 @@ namespace AgRecords.View
                 {
                     pbFarmerPhoto.Image = Image.FromFile(openFileDialog.FileName);
                 }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to exit? Any unsaved changes will be lost.", "Confirm Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                FormClosed?.Invoke(this, EventArgs.Empty);
+            }
+            else if (result == DialogResult.No)
+            {
+
             }
         }
     }

@@ -18,6 +18,7 @@ namespace AgRecords.Controller
         private RsbsaAddView rsbsaAddView;
         private RSBSAEditView rsbsaEditView;
         private RsbsaView rsbsaView;
+        private RSBSAExportView rsbsaExportView;
         private CertificationsView certificationsView;
         private FarmLandControl farmLandControl;
         private RSBSADocumentControl rsbsaDocumentControl;
@@ -41,6 +42,12 @@ namespace AgRecords.Controller
         public RSBSAController(RSBSAEditView rsbsaEditView)
         {
             this.rsbsaEditView = rsbsaEditView;
+            rsbsaModel = new RSBSAModel();
+        }
+
+        public RSBSAController(RSBSAExportView rsbsaExportView)
+        {
+            this.rsbsaExportView = rsbsaExportView;
             rsbsaModel = new RSBSAModel();
         }
 
@@ -95,6 +102,22 @@ namespace AgRecords.Controller
             try
             {
                 DataTable rsbsaTable = rsbsaModel.LoadRSBSADataGrid();
+                return rsbsaTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "RSBSA Records Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
+        }
+
+        public DataTable LoadRSBSAExportView()
+        {
+            try
+            {
+                DataTable rsbsaTable = rsbsaModel.LoadRSBSAExportDataGrid();
                 return rsbsaTable;
             }
             catch (ApplicationException ex)
@@ -441,14 +464,14 @@ namespace AgRecords.Controller
                 //    MessageBox.Show("Please enter a valid extension name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 //}
                 //address
-                else if (string.IsNullOrEmpty(rsbsa.addrPurok))
-                {
-                    MessageBox.Show("Please enter purok in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (string.IsNullOrEmpty(rsbsa.addrStreet))
-                {
-                    MessageBox.Show("Please enter street in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                //else if (string.IsNullOrEmpty(rsbsa.addrPurok))
+                //{
+                //    MessageBox.Show("Please enter purok in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.addrStreet))
+                //{
+                //    MessageBox.Show("Please enter street in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
                 else if (string.IsNullOrEmpty(rsbsa.addrBrgy))
                 {
                     MessageBox.Show("Please enter barangay in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -470,7 +493,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please enter a contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (!Regex.IsMatch(rsbsa.contactNo, @"^\d{11}$"))
+                else if (!Regex.IsMatch(rsbsa.contactNo, @"^\d{10}$"))
                 {
                     MessageBox.Show("Please enter a valid 11-digit contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -588,7 +611,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please enter emergency contact number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (!Regex.IsMatch(rsbsa.emergContactNo, @"^\d{11}$"))
+                else if (!Regex.IsMatch(rsbsa.emergContactNo, @"^\d{10}$"))
                 {
                     MessageBox.Show("Please enter a valid 11-digit contact number for emergency number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -617,20 +640,20 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please select at least one Agri Youth activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                //gross annual income
-                else if (rsbsa.annualIncomeFarming == 0 && rsbsa.annualIncomeNonFarming == 0)
-                {
-                    MessageBox.Show("Please enter farming gross annual income.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                ////gross annual income
+                //else if (rsbsa.annualIncomeFarming == 0 && rsbsa.annualIncomeNonFarming == 0)
+                //{
+                //    MessageBox.Show("Please enter farming gross annual income.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
                 //farm parcels
-                else if (rsbsa.farmParcelCount == 0)
+                else if ( rsbsa.farmParcelCount == 0 && rsbsa.isFarmer == "Yes" || rsbsa.isFisherfolk == "Yes" )
                 {
                     MessageBox.Show("Please add at least one farm parcel.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (string.IsNullOrEmpty(rsbsa.rotatingFarmers))
-                {
-                    MessageBox.Show("Pleas add at least one farmer in rotation");
-                }
+                //else if (string.IsNullOrEmpty(rsbsa.rotatingFarmers))
+                //{
+                //    MessageBox.Show("Pleas add at least one farmer in rotation");
+                //}
 
                 else if (isFarmParcelValidated == false)
                 {
@@ -1045,7 +1068,419 @@ namespace AgRecords.Controller
                     // RSBSA Docs
                     rsbsaDocuments = rsbsaDocuments,
                 };
+                //VALIDATION IS CURRENTLY ALIGNED TO THE IMPORTED EXCEL DATA ONLY
+                //personal info
+                if (string.IsNullOrEmpty(rsbsa.surname))
+                {
+                    MessageBox.Show("Please enter surname.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
 
+                else if (string.IsNullOrEmpty(rsbsa.firstname))
+                {
+                    MessageBox.Show("Please enter firstname.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.middlename))
+                {
+                    MessageBox.Show("Please enter middlename.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.sex))
+                {
+                    MessageBox.Show("Please select a gender.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //else if(!Regex.IsMatch(rsbsa.extname, @"[CDILSJRXV.]"))
+                //{
+                //    MessageBox.Show("Please enter a valid extension name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //address
+                //else if (string.IsNullOrEmpty(rsbsa.addrPurok))
+                //{
+                //    MessageBox.Show("Please enter purok in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.addrStreet))
+                //{
+                //    MessageBox.Show("Please enter street in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                else if (string.IsNullOrEmpty(rsbsa.addrBrgy))
+                {
+                    MessageBox.Show("Please enter barangay in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrMunicipality))
+                {
+                    MessageBox.Show("Please enter municipality in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrProvince))
+                {
+                    MessageBox.Show("Please enter province in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.addrRegion))
+                {
+                    MessageBox.Show("Please enter region in the address.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                // contact
+                else if (string.IsNullOrEmpty(rsbsa.contactNo))
+                {
+                    MessageBox.Show("Please enter a contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (!Regex.IsMatch(rsbsa.contactNo, @"^\d{10}$"))
+                {
+                    MessageBox.Show("Please enter a valid 11-digit contact number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                //birth details
+                else if (rsbsa.birthDate == DateTime.Today)
+                {
+                    MessageBox.Show("Please enter a valid birth date.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.birthMunicipality))
+                {
+                    MessageBox.Show("Please enter the birth municipality.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.birthProvince))
+                {
+                    MessageBox.Show("Please enter the birth province.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.birthCountry))
+                {
+                    MessageBox.Show("Please enter the birth country.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //religion
+                else if (string.IsNullOrEmpty(rsbsa.religion))
+                {
+                    MessageBox.Show("Please select/specify the religion.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //civil status
+                //else if (string.IsNullOrEmpty(rsbsa.civilStatus))
+                //{
+                //    MessageBox.Show("Please select a civil status.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.spouseName) && rsbsa.civilStatus != "Single")
+                //{
+                //    MessageBox.Show("Please enter spouse's name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //mother's maiden name
+                else if (string.IsNullOrEmpty(rsbsa.maidenName))
+                {
+                    MessageBox.Show("Please enter mother's maiden name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //household
+                //else if (string.IsNullOrEmpty(rsbsa.isHouseHead))
+                //{
+                //    MessageBox.Show("Please select if person is the house head or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(houseHeadName) && rsbsa.isHouseHead == "No")
+                //{
+                //    MessageBox.Show("Please enter the house head's name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(houseHeadRs) && rsbsa.isHouseHead == "No")
+                //{
+                //    MessageBox.Show("Please enter the house head's relationship status.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (rsbsa.houseLivingMemCount == 0)
+                //{
+                //    MessageBox.Show("Please indicate number of living house hold members.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (rsbsa.houseMaleCount == 0)
+                //{
+                //    MessageBox.Show("Please indicate number of living male house hold members.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (rsbsa.houseFemCount == 0)
+                //{
+                //    MessageBox.Show("Please indicate nummber of living female house hold members.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+
+                //educational attaiment
+                //else if (string.IsNullOrEmpty(rsbsa.educAttainment))
+                //{
+                //    MessageBox.Show("Please select an education attainment.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //affiliations
+                //else if (string.IsNullOrEmpty(rsbsa.isPWD))
+                //{
+                //    MessageBox.Show("Please select if PWD or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.is4Ps))
+                //{
+                //    MessageBox.Show("Please select if 4P's beneficiary or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.isIp))
+                //{
+                //    MessageBox.Show("Please select if IP or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.ipGroupName) && rsbsa.isIp == "Yes")
+                //{
+                //    MessageBox.Show("Please enter the IP group name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                else if (string.IsNullOrEmpty(rsbsa.withGovId))
+                {
+                    MessageBox.Show("Please select if with government ID or not.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.govIdType) && rsbsa.withGovId == "Yes")
+                {
+                    MessageBox.Show("Please enter ID type.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (string.IsNullOrEmpty(rsbsa.govIdNo) && rsbsa.withGovId == "Yes")
+                {
+                    MessageBox.Show("Please enter ID number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //else if (string.IsNullOrEmpty(rsbsa.isCoopMember))
+                //{
+                //    MessageBox.Show("Please select if an association/cooperative member.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.coopName) && rsbsa.isCoopMember == "Yes")
+                //{
+                //    MessageBox.Show("Please enter the cooperative name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //emergency contact
+                //else if (string.IsNullOrEmpty(rsbsa.emergContactName))
+                //{
+                //    MessageBox.Show("Please enter emergency contact name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (string.IsNullOrEmpty(rsbsa.emergContactNo))
+                //{
+                //    MessageBox.Show("Please enter emergency contact number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else if (!Regex.IsMatch(rsbsa.emergContactNo, @"^\d{10}$"))
+                //{
+                //    MessageBox.Show("Please enter a valid 11-digit contact number for emergency number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //main livelihood
+                else if (rsbsa.isFarmer == "No" && rsbsa.isLaborer == "No" && rsbsa.isFisherfolk == "No" && rsbsa.isAgriYouth == "No")
+                {
+                    MessageBox.Show("Please select at least one main livelihood.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for farmers
+                else if (rsbsa.isFarmer == "Yes" && rsbsa.isRiceFarmer == "No" && rsbsa.isCornFarmer == "No" && rsbsa.otherCrops == "" && rsbsa.hasLivestocks == "" && rsbsa.hasPoultry == "")
+                {
+                    MessageBox.Show("Please select at least one farmer activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for farmerworker/laborer
+                else if (rsbsa.isLaborer == "Yes" && rsbsa.isPreparingLand == "No" && rsbsa.isPlanting == "No" && rsbsa.isCultivating == "No" && rsbsa.isHarvesting == "No" && rsbsa.otherLaborWork == "")
+                {
+                    MessageBox.Show("Please select at least one farmworker/laborer activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for fisherfolk
+                else if (rsbsa.isFisherfolk == "Yes" && rsbsa.isFishCapturing == "No" && rsbsa.isAquaculture == "No" && rsbsa.isGleaning == "No" && rsbsa.isFishProcessing == "No" && rsbsa.isFishVending == "No" && rsbsa.otherFishingAct == "")
+                {
+                    MessageBox.Show("Please select at least one fisherfolk activity .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //for agriyouth
+                else if (rsbsa.isAgriYouth == "Yes" && rsbsa.isPartOfFarmingHousehold == "No" && rsbsa.isAttendAgrifishery == "No" && rsbsa.isParticipantAgriProgram == "No" && rsbsa.otherAgriYouthAct == "")
+                {
+                    MessageBox.Show("Please select at least one Agri Youth activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                ////gross annual income
+                //else if (rsbsa.annualIncomeFarming == 0 && rsbsa.annualIncomeNonFarming == 0)
+                //{
+                //    MessageBox.Show("Please enter farming gross annual income.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //farm parcels
+                else if (rsbsa.farmParcelCount == 0 && rsbsa.isFarmer == "Yes" || rsbsa.isFisherfolk == "Yes")
+                {
+                    MessageBox.Show("Please add at least one farm parcel.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //else if (string.IsNullOrEmpty(rsbsa.rotatingFarmers))
+                //{
+                //    MessageBox.Show("Pleas add at least one farmer in rotation");
+                //}
+
+                else if (isFarmParcelValidated == false)
+                {
+                    bool continueValidation = true;
+                    bool ParcelhasError = false;
+                    foreach (FarmParcel parcel in farmParcels)
+                    {
+                        if (!continueValidation)
+                        {
+                            break;
+                        }
+                        // Farm Parcel validation
+                        else if (string.IsNullOrEmpty(parcel.farmLocBrgy))
+                        {
+                            MessageBox.Show($"Please enter the location (Barangay) of the farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (string.IsNullOrEmpty(parcel.farmLocMunicipality))
+                        {
+                            MessageBox.Show($"Please enter the location (Municipality) of the farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (parcel.farmSize == null)
+                        {
+                            MessageBox.Show($"Please enter the Total Farm Size in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (string.IsNullOrEmpty(parcel.ownershipNo))
+                        {
+                            MessageBox.Show($"Please enter ownership document number of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (string.IsNullOrEmpty(parcel.ownershipType))
+                        {
+                            MessageBox.Show($"Please select ownership type of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (parcel.ownershipType != "Registered Owner" && string.IsNullOrEmpty(parcel.ownerName))
+                        {
+                            MessageBox.Show($"Please enter the name of the land owner in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        if (ParcelhasError)
+                        {
+                            continue;
+                        }
+                        else if (parcel.Crops == null || !parcel.Crops.Any(c => !string.IsNullOrEmpty(c.commodityType)))
+                        {
+                            MessageBox.Show($"No commodity has been selected for farm parcel #{parcel.farmParcelNo}.", "warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (isFarmParcelValidated == false)
+                        {
+                            double? totalLandSize = 0;
+                            // Crop validation (assuming FarmParcel has a List<FarmParcelCrop> property named Crops)
+                            foreach (FarmParcelCrop crop in parcel.Crops)
+                            {
+                                if (ParcelhasError)
+                                {
+                                    continue;
+                                }
+                                // Check if the commodity type is not empty
+                                if (!string.IsNullOrEmpty(crop.commodityType))
+                                {
+
+                                    if (crop.commodityType == "Rice")
+                                    {
+                                        if (crop.landSize == null)
+                                        {
+                                            MessageBox.Show($"Please enter land size for the RICE farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        if (crop.landSize > parcel.farmSize)
+                                        {
+                                            MessageBox.Show($"Invalid RICE farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType == "Corn")
+                                    {
+                                        if (crop.landSize == null)
+                                        {
+                                            MessageBox.Show($"Please enter land size for the CORN farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        if (crop.landSize > parcel.farmSize)
+                                        {
+                                            MessageBox.Show($"Invalid CORN farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType == "HVC")
+                                    {
+                                        if (crop.landSize == null)
+                                        {
+                                            MessageBox.Show($"Please enter land size for the HVC farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        if (crop.landSize > parcel.farmSize)
+                                        {
+                                            MessageBox.Show($"Invalid HVC farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType == "Agri-Fishery")
+                                    {
+                                        if (crop.landSize == null)
+                                        {
+                                            MessageBox.Show($"Please enter a land size for the AGRI-FISHERY farm in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        if (crop.landSize > parcel.farmSize)
+                                        {
+                                            MessageBox.Show($"Invalid AGRI-FISHERY farm size in Parcel #{parcel.farmParcelNo}.\nEnsure it does not exceed total farm area.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                        totalLandSize += crop.landSize;
+                                    }
+                                    if (crop.commodityType != "Rice" && crop.commodityType != "Corn" && crop.commodityType != "HVC" && crop.commodityType != "Agri-Fishery")
+                                    {
+                                        if (crop.headCount == 0)
+                                        {
+                                            MessageBox.Show($"Please enter a head count for {crop.commodityType} in farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            ParcelhasError = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            if (!ParcelhasError && (totalLandSize ?? 0.0) > (parcel.farmSize ?? 0.0))
+                            {
+                                MessageBox.Show($"Total land size of all crops in farm parcel #{parcel.farmParcelNo} exceeds declared farm size.\nPlease ensure it does not exceed total farm area", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                ParcelhasError = true;
+                                continueValidation = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (!ParcelhasError)
+                    {
+                        isFarmParcelValidated = true;
+                    }
+                }
+
+                if (isFarmParcelValidated == true && isDocsValidated == false)
+                {
+                    bool DocumentshasError = false;
+                    if (rsbsaDocuments == null || !rsbsaDocuments.Any())
+                    {
+                        // Handle the case where no documents have been attached
+                        MessageBox.Show("No documents have been attached.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+
+                        for (int index = 0; index < rsbsaDocuments.Count; index++)
+                        {
+                            RSBSADocuments document = rsbsaDocuments[index];
+                            if (string.IsNullOrEmpty(document.docType))
+                            {
+                                // Handle the case where docType is empty
+                                DocumentshasError = true;
+                                MessageBox.Show($"Please enter the document type for at document #{index + 1}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                            }
+
+                            else if (document.docPhotoDictionary == null || !document.docPhotoDictionary.Any())
+                            {
+                                // Handle the case where no images are attached to the document
+                                DocumentshasError = true;
+                                MessageBox.Show($"No images have been attached to document #{index + 1}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                            }
+                        }
+                        if (!DocumentshasError)
+                        {
+                            MessageBox.Show($"Documents validated", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            isDocsValidated = true;
+                        }
+                    }
+                }
                 DialogResult result = MessageBox.Show("Are you sure you want to update this RSBSA record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
