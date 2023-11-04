@@ -71,6 +71,18 @@ namespace AgRecords.View
             rsbsaView.Show();
         }
 
+        private void RSBSAEditView_FormClosed(object sender, EventArgs e)
+        {
+            RsbsaView rsbsaView = new RsbsaView(parentPanel);
+            rsbsaView.TopLevel = false;
+            rsbsaView.FormBorderStyle = FormBorderStyle.None;
+            rsbsaView.Dock = DockStyle.Fill;
+
+            parentPanel.Controls.Clear();
+            parentPanel.Controls.Add(rsbsaView);
+            rsbsaView.Show();
+        }
+
         private void RSBSAImportExcelView_FormClosed(object sender, EventArgs e)
         {
             RsbsaView rsbsaView = new RsbsaView(parentPanel);
@@ -114,7 +126,7 @@ namespace AgRecords.View
                     RSBSA rsbsaDocs = rsbsaController.GetDocsByRSBSAId(rsbsaId);
 
                     RSBSAEditView rsbsaEditView = new RSBSAEditView(rsbsaInfo, farmerInfo, farmProfile, farmland, farmlandParcel, farmlandParcelCrops, rsbsaDocs);
-                    //rsbsaEditView.FormClosed += RSBSAEditView_FormClosed;
+                    rsbsaEditView.FormClosed += RSBSAEditView_FormClosed;
 
                     rsbsaEditView.TopLevel = false;
                     rsbsaEditView.FormBorderStyle = FormBorderStyle.None;

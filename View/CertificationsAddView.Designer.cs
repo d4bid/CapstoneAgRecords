@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
             txtReferenceNumber = new TextBox();
             label4 = new Label();
             label6 = new Label();
             labelRsbsaId = new Label();
             panel1 = new Panel();
+            labelClickCount = new Label();
             btnCancel = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
             txtOrNo = new TextBox();
@@ -56,20 +57,27 @@
             label3 = new Label();
             rectangleBlue4 = new RectangleBlue();
             rectangleBlue5 = new RectangleBlue();
+            label10 = new Label();
             panel4 = new Panel();
             panel5 = new Panel();
-            label10 = new Label();
             panel6 = new Panel();
+            panel10 = new Panel();
+            panel11 = new Panel();
             dgvCert = new DataGridView();
-            labelClickCount = new Label();
+            groupBox2 = new GroupBox();
+            label7 = new Label();
+            rectangleBlue6 = new RectangleBlue();
+            cmbCornType = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
             panel7.SuspendLayout();
             groupBox1.SuspendLayout();
             panel5.SuspendLayout();
-            panel6.SuspendLayout();
+            panel10.SuspendLayout();
+            panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCert).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // txtReferenceNumber
@@ -79,9 +87,9 @@
             txtReferenceNumber.Location = new Point(406, 42);
             txtReferenceNumber.Margin = new Padding(3, 4, 3, 4);
             txtReferenceNumber.Name = "txtReferenceNumber";
+            txtReferenceNumber.PlaceholderText = "Reference Number";
             txtReferenceNumber.Size = new Size(316, 27);
             txtReferenceNumber.TabIndex = 30;
-            txtReferenceNumber.Text = "Ref Number";
             // 
             // label4
             // 
@@ -114,6 +122,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(lblTempParcelCount);
             panel1.Controls.Add(labelClickCount);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(btnPrint);
@@ -132,6 +141,16 @@
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 36;
+            // 
+            // labelClickCount
+            // 
+            labelClickCount.AutoSize = true;
+            labelClickCount.Location = new Point(1281, 13);
+            labelClickCount.Name = "labelClickCount";
+            labelClickCount.Size = new Size(18, 20);
+            labelClickCount.TabIndex = 63;
+            labelClickCount.Text = "#";
+            labelClickCount.Visible = false;
             // 
             // btnCancel
             // 
@@ -187,9 +206,9 @@
             txtOrNo.Location = new Point(784, 42);
             txtOrNo.Margin = new Padding(3, 4, 3, 4);
             txtOrNo.Name = "txtOrNo";
+            txtOrNo.PlaceholderText = "O.R. No.";
             txtOrNo.Size = new Size(195, 27);
             txtOrNo.TabIndex = 31;
-            txtOrNo.Text = "O.R. No";
             // 
             // label2
             // 
@@ -261,6 +280,7 @@
             // 
             // panel8
             // 
+            panel8.BackColor = Color.FromArgb(239, 239, 239);
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(0, 117);
             panel8.Name = "panel8";
@@ -278,7 +298,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(lblTempParcelCount);
             groupBox1.Controls.Add(txtBarangay);
             groupBox1.Controls.Add(txtName);
             groupBox1.Controls.Add(label1);
@@ -294,7 +313,7 @@
             // lblTempParcelCount
             // 
             lblTempParcelCount.AutoSize = true;
-            lblTempParcelCount.Location = new Point(620, 11);
+            lblTempParcelCount.Location = new Point(1029, 57);
             lblTempParcelCount.Name = "lblTempParcelCount";
             lblTempParcelCount.Size = new Size(122, 20);
             lblTempParcelCount.TabIndex = 29;
@@ -304,22 +323,22 @@
             // txtBarangay
             // 
             txtBarangay.BorderStyle = BorderStyle.None;
-            txtBarangay.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBarangay.Location = new Point(469, 50);
+            txtBarangay.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBarangay.Location = new Point(469, 52);
             txtBarangay.Margin = new Padding(3, 4, 3, 4);
             txtBarangay.Name = "txtBarangay";
-            txtBarangay.Size = new Size(271, 27);
+            txtBarangay.Size = new Size(271, 24);
             txtBarangay.TabIndex = 28;
             txtBarangay.Text = "Barangay";
             // 
             // txtName
             // 
             txtName.BorderStyle = BorderStyle.None;
-            txtName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtName.Location = new Point(34, 50);
+            txtName.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtName.Location = new Point(34, 52);
             txtName.Margin = new Padding(3, 4, 3, 4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(316, 27);
+            txtName.Size = new Size(379, 24);
             txtName.TabIndex = 27;
             txtName.Text = "NAME";
             // 
@@ -328,18 +347,18 @@
             label1.AutoSize = true;
             label1.Location = new Point(19, 23);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(107, 20);
             label1.TabIndex = 22;
-            label1.Text = "Name";
+            label1.Text = "Farmer's Name";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(454, 21);
             label3.Name = "label3";
-            label3.Size = new Size(138, 20);
+            label3.Size = new Size(129, 20);
             label3.TabIndex = 24;
-            label3.Text = "Address (Barangay)";
+            label3.Text = "Farmer's Barangay";
             // 
             // rectangleBlue4
             // 
@@ -355,6 +374,16 @@
             rectangleBlue5.Size = new Size(301, 38);
             rectangleBlue5.TabIndex = 62;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(13, 17);
+            label10.Name = "label10";
+            label10.Size = new Size(159, 20);
+            label10.TabIndex = 32;
+            label10.Text = "Requested Certificates";
+            // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(239, 239, 239);
@@ -367,34 +396,44 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Controls.Add(label10);
+            panel5.Controls.Add(groupBox2);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(841, 100);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(10);
-            panel5.Size = new Size(754, 54);
+            panel5.Size = new Size(754, 117);
             panel5.TabIndex = 40;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(13, 24);
-            label10.Name = "label10";
-            label10.Size = new Size(159, 20);
-            label10.TabIndex = 32;
-            label10.Text = "Requested Certificates";
             // 
             // panel6
             // 
-            panel6.BackColor = Color.White;
-            panel6.Controls.Add(dgvCert);
-            panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(841, 154);
+            panel6.BackColor = Color.FromArgb(239, 239, 239);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(841, 217);
             panel6.Name = "panel6";
-            panel6.Padding = new Padding(10);
-            panel6.Size = new Size(754, 772);
+            panel6.Size = new Size(754, 10);
             panel6.TabIndex = 41;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.White;
+            panel10.Controls.Add(label10);
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(841, 227);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(10);
+            panel10.Size = new Size(754, 53);
+            panel10.TabIndex = 42;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.White;
+            panel11.Controls.Add(dgvCert);
+            panel11.Dock = DockStyle.Fill;
+            panel11.Location = new Point(841, 280);
+            panel11.Name = "panel11";
+            panel11.Padding = new Padding(10);
+            panel11.Size = new Size(754, 646);
+            panel11.TabIndex = 43;
             // 
             // dgvCert
             // 
@@ -404,24 +443,24 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle16.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            dgvCert.DefaultCellStyle = dataGridViewCellStyle16;
             dgvCert.Dock = DockStyle.Fill;
             dgvCert.GridColor = Color.FromArgb(239, 239, 239);
             dgvCert.Location = new Point(10, 10);
@@ -431,17 +470,47 @@
             dgvCert.RowHeadersWidth = 51;
             dgvCert.RowTemplate.Height = 40;
             dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCert.Size = new Size(734, 752);
-            dgvCert.TabIndex = 24;
+            dgvCert.Size = new Size(734, 626);
+            dgvCert.TabIndex = 25;
             // 
-            // labelClickCount
+            // groupBox2
             // 
-            labelClickCount.AutoSize = true;
-            labelClickCount.Location = new Point(1281, 13);
-            labelClickCount.Name = "labelClickCount";
-            labelClickCount.Size = new Size(18, 20);
-            labelClickCount.TabIndex = 63;
-            labelClickCount.Text = "#";
+            groupBox2.Controls.Add(cmbCornType);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(rectangleBlue6);
+            groupBox2.Location = new Point(13, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(728, 106);
+            groupBox2.TabIndex = 36;
+            groupBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(19, 21);
+            label7.Name = "label7";
+            label7.Size = new Size(174, 20);
+            label7.TabIndex = 22;
+            label7.Text = "Agricultural Technologist";
+            // 
+            // rectangleBlue6
+            // 
+            rectangleBlue6.Location = new Point(19, 46);
+            rectangleBlue6.Name = "rectangleBlue6";
+            rectangleBlue6.Size = new Size(361, 38);
+            rectangleBlue6.TabIndex = 61;
+            // 
+            // cmbCornType
+            // 
+            cmbCornType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCornType.FlatStyle = FlatStyle.Flat;
+            cmbCornType.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbCornType.FormattingEnabled = true;
+            cmbCornType.Items.AddRange(new object[] { "Yellow", "White" });
+            cmbCornType.Location = new Point(33, 49);
+            cmbCornType.Name = "cmbCornType";
+            cmbCornType.Size = new Size(342, 31);
+            cmbCornType.TabIndex = 100;
             // 
             // CertificationsAddView
             // 
@@ -449,6 +518,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
+            Controls.Add(panel11);
+            Controls.Add(panel10);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -467,9 +538,12 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCert).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -488,10 +562,6 @@
         private TextBox txtName;
         private Label label1;
         private Label label3;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
-        private DataGridView dgvCert;
         private Panel panel9;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel8;
@@ -506,5 +576,15 @@
         private RectangleBlue rectangleBlue4;
         private RectangleBlue rectangleBlue5;
         private Label labelClickCount;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel10;
+        private Panel panel11;
+        private DataGridView dgvCert;
+        private GroupBox groupBox2;
+        private Label label7;
+        private RectangleBlue rectangleBlue6;
+        private ComboBox cmbCornType;
     }
 }

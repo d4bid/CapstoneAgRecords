@@ -37,7 +37,7 @@ namespace AgRecords.View
 
             if (certList != null)
             {
-                for (int i = 0; i < cert.farmParcelCount; i++)
+                for (int i = 0; i < certList.Count; i++)
                 {
                     CertificationsFarmControl certificationsFarmControl = new CertificationsFarmControl();
                     certificationsFarmControl.SetData(certList[i]);

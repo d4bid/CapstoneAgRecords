@@ -237,7 +237,7 @@ namespace AgRecords.Controller
 
                 // Create a bar item with a specific color (43, 121, 223)
                 var barItem = new BarItem { Value = value };
-                barItem.Color = OxyColor.FromRgb(43, 121, 223);
+                barItem.Color = OxyColor.FromRgb(0, 109, 104);
 
                 barSeries.Items.Add(barItem);
                 categoryAxis.Labels.Add(label); // Add the category label
@@ -1047,6 +1047,7 @@ namespace AgRecords.Controller
             legend.LegendOrientation = LegendOrientation.Horizontal;
             legend.LegendPlacement = LegendPlacement.Outside;
 
+
             model.Legends.Add(legend);
             model.Series.Add(pieSeries);
 
@@ -1058,6 +1059,57 @@ namespace AgRecords.Controller
             try
             {
                 DataTable dataTable = analyticsModel.CountHarvestedOutOfPlanted();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateBarChartRiceLandArea(DataTable data)
+        {
+            var model = new PlotModel();
+
+            var barSeries = new BarSeries();
+            var categoryAxis = new CategoryAxis { Position = AxisPosition.Left };
+
+            // Define custom colors for each bar
+            OxyColor irrigatedColor = OxyColor.FromRgb(43, 121, 223);   // Green
+            OxyColor uplandColor = OxyColor.FromRgb(255, 221, 100);     // Yellow
+            OxyColor lowlandColor = OxyColor.FromRgb(0, 109, 104);    // Blue
+
+            foreach (DataRow row in data.Rows)
+            {
+                double irrigated = Convert.ToDouble(row["Irrigated"]);
+                double rainfedUpland = Convert.ToDouble(row["Rainfed Upland"]);
+                double rainfedLowland = Convert.ToDouble(row["Rainfed Lowland"]);
+
+                // Adding data to the bar series with custom colors
+                barSeries.Items.Add(new BarItem { Value = irrigated, Color = irrigatedColor });
+                barSeries.Items.Add(new BarItem { Value = rainfedUpland, Color = uplandColor });
+                barSeries.Items.Add(new BarItem { Value = rainfedLowland, Color = lowlandColor });
+
+                // Adding category labels
+                categoryAxis.Labels.Add("Irrigated");
+                categoryAxis.Labels.Add("Rainfed Upland");
+                categoryAxis.Labels.Add("Rainfed Lowland");
+            }
+
+            model.Axes.Add(categoryAxis);
+
+            // Adding the bar series to the model
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
+        public DataTable BarTotalRiceLandAreaPerFarmType()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.TotalRiceLandAreaPerFarmType();
                 return dataTable;
             }
             catch (ApplicationException ex)

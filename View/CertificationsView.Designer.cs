@@ -213,6 +213,7 @@
             dgvCert.Size = new Size(1575, 806);
             dgvCert.TabIndex = 23;
             dgvCert.CellContentDoubleClick += dgvCert_CellContentDoubleClick;
+            dgvCert.CellDoubleClick += dgvCert_CellDoubleClick;
             // 
             // CertificationsView
             // 
@@ -225,6 +226,7 @@
             Name = "CertificationsView";
             Text = "CertificationsView";
             Load += CertificationsView_Load;
+            DoubleClick += CertificationsView_DoubleClick;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

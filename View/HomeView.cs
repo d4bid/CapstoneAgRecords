@@ -653,24 +653,24 @@ namespace AgRecords.View
             HideSubMenu();
         }
 
-        private void btnReportsLetters_Click(object sender, EventArgs e)
-        {
-            AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
-            //userView.formRefresh();
-            analyticsCropsView.TopLevel = false;
-            analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
-            analyticsCropsView.Dock = DockStyle.Fill;
+        //private void btnReportsLetters_Click(object sender, EventArgs e)
+        //{
+        //    AnalyticsCropsView analyticsCropsView = new AnalyticsCropsView(panelDesktop);
+        //    //userView.formRefresh();
+        //    analyticsCropsView.TopLevel = false;
+        //    analyticsCropsView.FormBorderStyle = FormBorderStyle.None;
+        //    analyticsCropsView.Dock = DockStyle.Fill;
 
-            panelDesktop.Controls.Clear();
-            panelDesktop.Controls.Add(analyticsCropsView);
-            analyticsCropsView.Show();
+        //    panelDesktop.Controls.Clear();
+        //    panelDesktop.Controls.Add(analyticsCropsView);
+        //    analyticsCropsView.Show();
 
-            ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
-            OpenChildForm(new AnalyticsCropsView(panelDesktop));
-            lblTitle.Text = "Analytics \u23F5 Letters";
+        //    ActivateButton(btnReports, Color.FromArgb(43, 121, 223));
+        //    OpenChildForm(new AnalyticsCropsView(panelDesktop));
+        //    lblTitle.Text = "Analytics \u23F5 Letters";
 
-            HideSubMenu();
-        }
+        //    HideSubMenu();
+        //}
 
         private void btnActivities_Click(object sender, EventArgs e)
         {

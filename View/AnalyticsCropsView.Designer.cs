@@ -61,6 +61,8 @@
             riceGraph5 = new OxyPlot.WindowsForms.PlotView();
             riceGraph7 = new OxyPlot.WindowsForms.PlotView();
             riceGraph6 = new OxyPlot.WindowsForms.PlotView();
+            panel1 = new Panel();
+            panel2 = new Panel();
             SuspendLayout();
             // 
             // labelTotalRiceLandArea
@@ -311,9 +313,9 @@
             label13.ForeColor = Color.FromArgb(0, 35, 76);
             label13.Location = new Point(1108, 347);
             label13.Name = "label13";
-            label13.Size = new Size(258, 20);
+            label13.Size = new Size(256, 20);
             label13.TabIndex = 40;
-            label13.Text = "Total Rice Farm Area Per Farm Type";
+            label13.Text = "Total Rice Land Area Per Farm Type";
             // 
             // rectangleFullWhite7
             // 
@@ -364,10 +366,10 @@
             // riceGraph4
             // 
             riceGraph4.BackColor = Color.White;
-            riceGraph4.Location = new Point(738, 380);
+            riceGraph4.Location = new Point(738, 390);
             riceGraph4.Name = "riceGraph4";
             riceGraph4.PanCursor = Cursors.Hand;
-            riceGraph4.Size = new Size(310, 197);
+            riceGraph4.Size = new Size(310, 187);
             riceGraph4.TabIndex = 44;
             riceGraph4.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph4.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -411,12 +413,30 @@
             riceGraph6.ZoomRectangleCursor = Cursors.SizeNWSE;
             riceGraph6.ZoomVerticalCursor = Cursors.SizeNS;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 109, 104);
+            panel1.Location = new Point(779, 368);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(71, 2);
+            panel1.TabIndex = 48;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(255, 221, 100);
+            panel2.Location = new Point(902, 368);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(52, 2);
+            panel2.TabIndex = 49;
+            // 
             // AnalyticsCropsView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(riceGraph6);
             Controls.Add(riceGraph7);
             Controls.Add(riceGraph5);
@@ -492,5 +512,7 @@
         private OxyPlot.WindowsForms.PlotView riceGraph5;
         private OxyPlot.WindowsForms.PlotView riceGraph7;
         private OxyPlot.WindowsForms.PlotView riceGraph6;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
