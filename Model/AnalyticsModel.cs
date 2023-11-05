@@ -1016,7 +1016,7 @@ namespace AgRecords.Model
 
         // ---------------- HVC -----------------------
 
-        public DataTable LoadWeeklyActivitiesDtaGrid()
+        public DataTable LoadWeeklyActivitiesDtaGrid(DateTime fromDate, DateTime toDate)
         {
             try
             {
@@ -1024,8 +1024,10 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    string query = "SELECT * FROM vw_get_all_weekly_activities";
+                    string query = "CALL sp_getWeeklyActivities(@fromDate, @toDate)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@fromDate", fromDate);
+                    command.Parameters.AddWithValue("@toDate", toDate);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
@@ -1037,5 +1039,50 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error loading weekly activities: " + ex.Message, ex);
             }
         }
+
+        public DataTable LoadActivitiesSummaryDtaGrid(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getActivitiesSummary(@fromDate, @toDate)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@fromDate", fromDate);
+                    command.Parameters.AddWithValue("@toDate", toDate);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading summary: " + ex.Message, ex);
+            }
+        }
+        //public DataTable LoadWeeklyActivitiesDtaGrid()
+        //{
+        //    try
+        //    {
+        //        using (DatabaseConnection db = new DatabaseConnection())
+        //        {
+        //            db.Open();
+        //            DataTable dataTable = new DataTable();
+        //            string query = "SELECT * FROM vw_get_all_weekly_activities";
+        //            MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+        //            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+        //            adapter.Fill(dataTable);
+        //            return dataTable;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ApplicationException("Error loading weekly activities: " + ex.Message, ex);
+        //    }
+        //}
     }
 }

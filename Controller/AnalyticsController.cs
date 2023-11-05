@@ -454,25 +454,38 @@ namespace AgRecords.Controller
         public PlotModel CreateBarChart2(DataTable data)
         {
             var model = new PlotModel();
+
+            // Create a bar series
             var barSeries = new BarSeries
             {
-                FillColor = OxyColor.FromRgb(43, 121, 223) // Set the bar color to RGB(43, 121, 223)
+                FillColor = OxyColor.FromRgb(0, 109, 104) // Set the bar color to a custom RGB color (green)
             };
 
-            // Create an X-axis for sections
+            // Create a category axis for sections on the y-axis
             var sectionAxis = new CategoryAxis
             {
+                Position = AxisPosition.Left,
+                Title = "Section",
+            };
+
+            // Create a linear axis for count on the x-axis
+            var countAxis = new LinearAxis
+            {
                 Position = AxisPosition.Bottom,
-                Title = "Section"
+                Title = "Count",
+                TitleColor = OxyColors.Black, // Set the title color
+                TextColor = OxyColors.Black,  // Set the axis label color
             };
 
             model.Axes.Add(sectionAxis);
+            model.Axes.Add(countAxis);
 
             foreach (DataRow row in data.Rows)
             {
                 string section = row["Section"].ToString();
                 int count = Convert.ToInt32(row["Count"]);
 
+                // Add data to the bar series
                 barSeries.Items.Add(new BarItem { Value = count });
                 sectionAxis.Labels.Add(section);
             }
@@ -481,6 +494,7 @@ namespace AgRecords.Controller
 
             return model;
         }
+
 
         // DATATABLE
 
@@ -585,13 +599,13 @@ namespace AgRecords.Controller
             var pieSeries = new PieSeries();
 
             var commodityColors = new Dictionary<string, OxyColor>
-    {
-        { "Rice", OxyColor.FromArgb(255, 1, 97, 94) },   // Green
-        { "Corn", OxyColor.FromArgb(255, 1, 108, 104) },  // Dark Green
-        { "HVC", OxyColor.FromArgb(255, 26, 123, 119) },  // Green
-        { "Livestocks", OxyColor.FromArgb(255, 52, 137, 134) }, // Greenish Blue
-        { "Poultry", OxyColor.FromArgb(255, 78, 151, 149) } // Light Green
-    };
+            {
+                { "Rice", OxyColor.FromRgb(1, 97, 94) },   // Green
+                { "Corn", OxyColor.FromRgb(1, 108, 104) },  // Dark Green
+                { "HVC", OxyColor.FromRgb(26, 123, 119) },  // Green
+                { "Livestocks", OxyColor.FromRgb(52, 137, 134) }, // Greenish Blue
+                { "Poultry", OxyColor.FromRgb(78, 151, 149) } // Light Green
+            };
 
             foreach (DataRow row in data.Rows)
             {
@@ -617,8 +631,8 @@ namespace AgRecords.Controller
                 }
             }
 
-            // Set the border color to transparent to remove the borders
-            model.PlotAreaBorderColor = OxyColors.Transparent;
+            // Set the border color to undefined to remove the borders
+            pieSeries.Stroke = OxyColors.Undefined;
 
             model.Axes.Add(new CategoryAxis()); // Remove labels
             model.Axes.Add(new LinearAxis { Position = AxisPosition.None }); // Remove the Y-axis
@@ -1339,16 +1353,30 @@ namespace AgRecords.Controller
 
         // ---------------- WEEKLY ACTIVITIES --------------------
 
-        public DataTable LoadWeeklyActivities()
+        public DataTable LoadWeeklyActivities(DateTime fromDate, DateTime toDate)
         {
             try
             {
-                DataTable actsTable = analyticsModel.LoadWeeklyActivitiesDtaGrid();
+                DataTable actsTable = analyticsModel.LoadWeeklyActivitiesDtaGrid(fromDate, toDate);
                 return actsTable;
             }
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Weekly Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadActivitiesSummary(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                DataTable actsTable = analyticsModel.LoadActivitiesSummaryDtaGrid(fromDate, toDate);
+                return actsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Summary Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }

@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             txtReferenceNumber = new TextBox();
             label4 = new Label();
             label6 = new Label();
             labelRsbsaId = new Label();
             panel1 = new Panel();
+            txtAmount = new TextBox();
+            label8 = new Label();
+            rectangleBlue8 = new RectangleBlue();
             lblTempParcelCount = new Label();
             labelClickCount = new Label();
             btnCancel = new FontAwesome.Sharp.IconButton();
@@ -61,7 +64,10 @@
             panel4 = new Panel();
             panel5 = new Panel();
             groupBox2 = new GroupBox();
-            cmbCornType = new ComboBox();
+            label5 = new Label();
+            txtPosition = new TextBox();
+            rectangleBlue7 = new RectangleBlue();
+            cmbEmployee = new ComboBox();
             label7 = new Label();
             rectangleBlue6 = new RectangleBlue();
             panel6 = new Panel();
@@ -84,7 +90,7 @@
             // 
             txtReferenceNumber.BorderStyle = BorderStyle.None;
             txtReferenceNumber.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtReferenceNumber.Location = new Point(406, 42);
+            txtReferenceNumber.Location = new Point(287, 42);
             txtReferenceNumber.Margin = new Padding(3, 4, 3, 4);
             txtReferenceNumber.Name = "txtReferenceNumber";
             txtReferenceNumber.PlaceholderText = "Reference Number";
@@ -94,7 +100,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(391, 16);
+            label4.Location = new Point(272, 16);
             label4.Name = "label4";
             label4.Size = new Size(133, 20);
             label4.TabIndex = 22;
@@ -122,6 +128,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(txtAmount);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(rectangleBlue8);
             panel1.Controls.Add(lblTempParcelCount);
             panel1.Controls.Add(labelClickCount);
             panel1.Controls.Add(btnCancel);
@@ -142,10 +151,37 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 36;
             // 
+            // txtAmount
+            // 
+            txtAmount.BorderStyle = BorderStyle.None;
+            txtAmount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAmount.Location = new Point(893, 42);
+            txtAmount.Margin = new Padding(3, 4, 3, 4);
+            txtAmount.Name = "txtAmount";
+            txtAmount.PlaceholderText = "₱ 0.00";
+            txtAmount.Size = new Size(129, 27);
+            txtAmount.TabIndex = 65;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(878, 16);
+            label8.Name = "label8";
+            label8.Size = new Size(94, 20);
+            label8.TabIndex = 64;
+            label8.Text = "Amount Paid";
+            // 
+            // rectangleBlue8
+            // 
+            rectangleBlue8.Location = new Point(878, 39);
+            rectangleBlue8.Name = "rectangleBlue8";
+            rectangleBlue8.Size = new Size(159, 38);
+            rectangleBlue8.TabIndex = 66;
+            // 
             // lblTempParcelCount
             // 
             lblTempParcelCount.AutoSize = true;
-            lblTempParcelCount.Location = new Point(1029, 57);
+            lblTempParcelCount.Location = new Point(1082, 13);
             lblTempParcelCount.Name = "lblTempParcelCount";
             lblTempParcelCount.Size = new Size(122, 20);
             lblTempParcelCount.TabIndex = 29;
@@ -213,7 +249,7 @@
             // 
             txtOrNo.BorderStyle = BorderStyle.None;
             txtOrNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtOrNo.Location = new Point(784, 42);
+            txtOrNo.Location = new Point(651, 42);
             txtOrNo.Margin = new Padding(3, 4, 3, 4);
             txtOrNo.Name = "txtOrNo";
             txtOrNo.PlaceholderText = "O.R. No.";
@@ -223,7 +259,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(769, 16);
+            label2.Location = new Point(636, 16);
             label2.Name = "label2";
             label2.Size = new Size(62, 20);
             label2.TabIndex = 22;
@@ -233,19 +269,19 @@
             // 
             rectangleBlue1.Location = new Point(13, 39);
             rectangleBlue1.Name = "rectangleBlue1";
-            rectangleBlue1.Size = new Size(346, 38);
+            rectangleBlue1.Size = new Size(239, 38);
             rectangleBlue1.TabIndex = 60;
             // 
             // rectangleBlue2
             // 
-            rectangleBlue2.Location = new Point(391, 39);
+            rectangleBlue2.Location = new Point(272, 39);
             rectangleBlue2.Name = "rectangleBlue2";
             rectangleBlue2.Size = new Size(346, 38);
             rectangleBlue2.TabIndex = 61;
             // 
             // rectangleBlue3
             // 
-            rectangleBlue3.Location = new Point(769, 39);
+            rectangleBlue3.Location = new Point(636, 39);
             rectangleBlue3.Name = "rectangleBlue3";
             rectangleBlue3.Size = new Size(225, 38);
             rectangleBlue3.TabIndex = 62;
@@ -406,7 +442,10 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(cmbCornType);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(txtPosition);
+            groupBox2.Controls.Add(rectangleBlue7);
+            groupBox2.Controls.Add(cmbEmployee);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(rectangleBlue6);
             groupBox2.Location = new Point(13, 3);
@@ -415,25 +454,50 @@
             groupBox2.TabIndex = 36;
             groupBox2.TabStop = false;
             // 
-            // cmbCornType
+            // label5
             // 
-            cmbCornType.FlatStyle = FlatStyle.Flat;
-            cmbCornType.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbCornType.FormattingEnabled = true;
-            cmbCornType.Items.AddRange(new object[] { "Yellow", "White" });
-            cmbCornType.Location = new Point(33, 49);
-            cmbCornType.Name = "cmbCornType";
-            cmbCornType.Size = new Size(342, 31);
-            cmbCornType.TabIndex = 100;
+            label5.AutoSize = true;
+            label5.Location = new Point(400, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(61, 20);
+            label5.TabIndex = 103;
+            label5.Text = "Position";
+            // 
+            // txtPosition
+            // 
+            txtPosition.BorderStyle = BorderStyle.None;
+            txtPosition.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPosition.Location = new Point(415, 52);
+            txtPosition.Margin = new Padding(3, 4, 3, 4);
+            txtPosition.Name = "txtPosition";
+            txtPosition.Size = new Size(271, 24);
+            txtPosition.TabIndex = 101;
+            // 
+            // rectangleBlue7
+            // 
+            rectangleBlue7.Location = new Point(400, 46);
+            rectangleBlue7.Name = "rectangleBlue7";
+            rectangleBlue7.Size = new Size(301, 38);
+            rectangleBlue7.TabIndex = 102;
+            // 
+            // cmbEmployee
+            // 
+            cmbEmployee.FlatStyle = FlatStyle.Flat;
+            cmbEmployee.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbEmployee.FormattingEnabled = true;
+            cmbEmployee.Location = new Point(33, 49);
+            cmbEmployee.Name = "cmbEmployee";
+            cmbEmployee.Size = new Size(342, 31);
+            cmbEmployee.TabIndex = 100;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(19, 21);
             label7.Name = "label7";
-            label7.Size = new Size(174, 20);
+            label7.Size = new Size(252, 20);
             label7.TabIndex = 22;
-            label7.Text = "Agricultural Technologist";
+            label7.Text = "Agricultural Technologist/Agriclturist";
             // 
             // rectangleBlue6
             // 
@@ -481,24 +545,24 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCert.DefaultCellStyle = dataGridViewCellStyle4;
             dgvCert.Dock = DockStyle.Fill;
             dgvCert.GridColor = Color.FromArgb(239, 239, 239);
             dgvCert.Location = new Point(10, 10);
@@ -584,6 +648,12 @@
         private GroupBox groupBox2;
         private Label label7;
         private RectangleBlue rectangleBlue6;
-        private ComboBox cmbCornType;
+        private ComboBox cmbEmployee;
+        private Label label5;
+        private TextBox txtPosition;
+        private RectangleBlue rectangleBlue7;
+        private TextBox txtAmount;
+        private Label label8;
+        private RectangleBlue rectangleBlue8;
     }
 }
