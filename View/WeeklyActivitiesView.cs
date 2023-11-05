@@ -27,11 +27,22 @@ namespace AgRecords.View
             analyticsController = new AnalyticsController(this);
         }
 
+        public void changeDateTable()
+        {
+            DataTable actsTable = analyticsController.LoadWeeklyActivities(dtpFrom.Value.Date, dtpTo.Value.Date);
+            dgvActivities.DataSource = actsTable;
+        }
+
+        public void changeSummaryTable()
+        {
+            DataTable actsTable = analyticsController.LoadActivitiesSummary(dtpFrom1.Value.Date, dtpTo1.Value.Date);
+            dgvSummary.DataSource = actsTable;
+        }
+
         private void WeeklyActivitiesView_Load(object sender, EventArgs e)
         {
-            DataTable actsTable = analyticsController.LoadWeeklyActivities();
-            dgvActivities.DataSource = actsTable;
-
+            changeDateTable();
+            changeSummaryTable();
 
             DataTable data1 = analyticsController.BarCountDailyActivities();
 
@@ -161,6 +172,26 @@ namespace AgRecords.View
 
             // Check if there are more pages to print.
             e.HasMorePages = false;
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+            changeDateTable();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            changeDateTable();
+        }
+
+        private void dtpFrom1_ValueChanged(object sender, EventArgs e)
+        {
+            changeSummaryTable();
+        }
+
+        private void dtpTo1_ValueChanged(object sender, EventArgs e)
+        {
+            changeSummaryTable();
         }
     }
 }

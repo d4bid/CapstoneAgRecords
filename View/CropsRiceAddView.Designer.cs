@@ -32,7 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
-            btnSave = new Button();
             labelYear = new Label();
             label12 = new Label();
             searchBox7 = new SearchBox();
@@ -95,7 +94,6 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(btnCancel);
-            panel1.Controls.Add(btnSave);
             panel1.Controls.Add(labelYear);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(searchBox7);
@@ -133,23 +131,6 @@
             btnCancel.Text = "Back";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
-            // 
-            // btnSave
-            // 
-            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSave.BackColor = Color.FromArgb(43, 121, 223);
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1288, 29);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(130, 40);
-            btnSave.TabIndex = 50;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click;
             // 
             // labelYear
             // 
@@ -714,7 +695,6 @@
         private SearchBox searchBox5;
         private SearchBox searchBox3;
         private Button btnCancel;
-        private Button btnSave;
         private Panel panel43;
         private Label labelRiceStandingLogsId;
         private SearchBox searchBox12;

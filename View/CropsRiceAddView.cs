@@ -28,6 +28,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
+            btnUpdate.Enabled = false;
             string riceSrId = labelRiceSrId.Text;
 
             //DataTable riceStandLogsTable = cropsRiceController.LoadRiceStandLogsView(riceSrId);
@@ -41,7 +42,6 @@ namespace AgRecords.View
                 labelYear.Text = rsr.year;
             }
 
-            btnUpdate.Enabled = false;
             ClearStandingLogsTextControls();
 
             DisplayDataTableFilter();
@@ -155,6 +155,7 @@ namespace AgRecords.View
 
         private void dgvRiceStandLogs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnUpdate.Enabled = true;
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)
             {
@@ -236,14 +237,14 @@ namespace AgRecords.View
                     MessageBox.Show("Rice Standing ID is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-               
+
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
-            labelRiceStandingLogsId.Visible = false;
+            btnUpdate.Enabled = false;
+            btnNew.Enabled = true;
 
             int brgyIndex = cmbBrgy.SelectedIndex;
             int farmTypeIndex = cmbFarmType.SelectedIndex;

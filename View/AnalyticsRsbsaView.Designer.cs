@@ -288,10 +288,10 @@
             // 
             rsbsa1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rsbsa1.BackColor = Color.White;
-            rsbsa1.Location = new Point(1099, 69);
+            rsbsa1.Location = new Point(1090, 69);
             rsbsa1.Name = "rsbsa1";
             rsbsa1.PanCursor = Cursors.Hand;
-            rsbsa1.Size = new Size(462, 430);
+            rsbsa1.Size = new Size(471, 430);
             rsbsa1.TabIndex = 31;
             rsbsa1.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa1.ZoomRectangleCursor = Cursors.SizeNWSE;

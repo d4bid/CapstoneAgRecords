@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnPrint = new FontAwesome.Sharp.IconButton();
             cmbColumn = new ComboBox();
@@ -40,7 +42,21 @@
             label1 = new Label();
             panel3 = new Panel();
             panel2 = new Panel();
+            panel15 = new Panel();
+            dgvSummary = new DataGridView();
+            panel10 = new Panel();
+            label5 = new Label();
+            dtpTo1 = new DateTimePicker();
+            label6 = new Label();
+            dtpFrom1 = new DateTimePicker();
+            panel9 = new Panel();
+            panel8 = new Panel();
             dgvActivities = new DataGridView();
+            panel11 = new Panel();
+            label4 = new Label();
+            dtpTo = new DateTimePicker();
+            label3 = new Label();
+            dtpFrom = new DateTimePicker();
             panel4 = new Panel();
             panel5 = new Panel();
             label9 = new Label();
@@ -53,7 +69,12 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
+            panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSummary).BeginInit();
+            panel10.SuspendLayout();
+            panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivities).BeginInit();
+            panel11.SuspendLayout();
             panel5.SuspendLayout();
             panel7.SuspendLayout();
             SuspendLayout();
@@ -105,7 +126,7 @@
             cmbColumn.FlatStyle = FlatStyle.Flat;
             cmbColumn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbColumn.FormattingEnabled = true;
-            cmbColumn.Items.AddRange(new object[] { "All", "ID", "Month", "Week", "Year", "Created By", "Date" });
+            cmbColumn.Items.AddRange(new object[] { "All", "RSBSA", "Certification", "Letter" });
             cmbColumn.Location = new Point(391, 38);
             cmbColumn.Name = "cmbColumn";
             cmbColumn.Size = new Size(237, 28);
@@ -170,13 +191,147 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(dgvActivities);
+            panel2.Controls.Add(panel15);
+            panel2.Controls.Add(panel10);
+            panel2.Controls.Add(panel9);
+            panel2.Controls.Add(panel8);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 100);
             panel2.Name = "panel2";
-            panel2.Padding = new Padding(10);
             panel2.Size = new Size(886, 826);
             panel2.TabIndex = 28;
+            // 
+            // panel15
+            // 
+            panel15.BackColor = Color.White;
+            panel15.Controls.Add(dgvSummary);
+            panel15.Dock = DockStyle.Fill;
+            panel15.Location = new Point(0, 501);
+            panel15.Name = "panel15";
+            panel15.Padding = new Padding(10);
+            panel15.Size = new Size(886, 325);
+            panel15.TabIndex = 35;
+            // 
+            // dgvSummary
+            // 
+            dgvSummary.AllowUserToAddRows = false;
+            dgvSummary.AllowUserToDeleteRows = false;
+            dgvSummary.AllowUserToResizeColumns = false;
+            dgvSummary.AllowUserToResizeRows = false;
+            dgvSummary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSummary.BackgroundColor = Color.White;
+            dgvSummary.BorderStyle = BorderStyle.None;
+            dgvSummary.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvSummary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvSummary.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvSummary.Dock = DockStyle.Fill;
+            dgvSummary.GridColor = Color.FromArgb(239, 239, 239);
+            dgvSummary.Location = new Point(10, 10);
+            dgvSummary.Name = "dgvSummary";
+            dgvSummary.ReadOnly = true;
+            dgvSummary.RowHeadersVisible = false;
+            dgvSummary.RowHeadersWidth = 51;
+            dgvSummary.RowTemplate.Height = 40;
+            dgvSummary.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSummary.Size = new Size(866, 305);
+            dgvSummary.TabIndex = 37;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.White;
+            panel10.Controls.Add(label5);
+            panel10.Controls.Add(dtpTo1);
+            panel10.Controls.Add(label6);
+            panel10.Controls.Add(dtpFrom1);
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(0, 436);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(10);
+            panel10.Size = new Size(886, 65);
+            panel10.TabIndex = 34;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(261, 26);
+            label5.Name = "label5";
+            label5.Size = new Size(25, 20);
+            label5.TabIndex = 69;
+            label5.Text = "To";
+            // 
+            // dtpTo1
+            // 
+            dtpTo1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpTo1.Format = DateTimePickerFormat.Short;
+            dtpTo1.Location = new Point(296, 22);
+            dtpTo1.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpTo1.Name = "dtpTo1";
+            dtpTo1.RightToLeft = RightToLeft.No;
+            dtpTo1.Size = new Size(150, 28);
+            dtpTo1.TabIndex = 68;
+            dtpTo1.Value = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpTo1.ValueChanged += dtpTo1_ValueChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(21, 26);
+            label6.Name = "label6";
+            label6.Size = new Size(45, 20);
+            label6.TabIndex = 67;
+            label6.Text = "From";
+            // 
+            // dtpFrom1
+            // 
+            dtpFrom1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFrom1.Format = DateTimePickerFormat.Short;
+            dtpFrom1.Location = new Point(74, 22);
+            dtpFrom1.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpFrom1.Name = "dtpFrom1";
+            dtpFrom1.RightToLeft = RightToLeft.No;
+            dtpFrom1.Size = new Size(150, 28);
+            dtpFrom1.TabIndex = 66;
+            dtpFrom1.Value = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpFrom1.ValueChanged += dtpFrom1_ValueChanged;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(239, 239, 239);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(0, 426);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(886, 10);
+            panel9.TabIndex = 33;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Controls.Add(dgvActivities);
+            panel8.Controls.Add(panel11);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Padding = new Padding(10);
+            panel8.Size = new Size(886, 426);
+            panel8.TabIndex = 32;
             // 
             // dgvActivities
             // 
@@ -188,35 +343,94 @@
             dgvActivities.BackgroundColor = Color.White;
             dgvActivities.BorderStyle = BorderStyle.None;
             dgvActivities.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvActivities.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvActivities.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvActivities.DefaultCellStyle = dataGridViewCellStyle8;
             dgvActivities.Dock = DockStyle.Fill;
             dgvActivities.GridColor = Color.FromArgb(239, 239, 239);
-            dgvActivities.Location = new Point(10, 10);
+            dgvActivities.Location = new Point(10, 77);
             dgvActivities.Name = "dgvActivities";
             dgvActivities.ReadOnly = true;
             dgvActivities.RowHeadersVisible = false;
             dgvActivities.RowHeadersWidth = 51;
             dgvActivities.RowTemplate.Height = 40;
             dgvActivities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvActivities.Size = new Size(866, 806);
-            dgvActivities.TabIndex = 23;
+            dgvActivities.Size = new Size(866, 339);
+            dgvActivities.TabIndex = 36;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.White;
+            panel11.Controls.Add(label4);
+            panel11.Controls.Add(dtpTo);
+            panel11.Controls.Add(label3);
+            panel11.Controls.Add(dtpFrom);
+            panel11.Dock = DockStyle.Top;
+            panel11.Location = new Point(10, 10);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(866, 67);
+            panel11.TabIndex = 35;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(251, 24);
+            label4.Name = "label4";
+            label4.Size = new Size(25, 20);
+            label4.TabIndex = 57;
+            label4.Text = "To";
+            // 
+            // dtpTo
+            // 
+            dtpTo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpTo.Format = DateTimePickerFormat.Short;
+            dtpTo.Location = new Point(286, 20);
+            dtpTo.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpTo.Name = "dtpTo";
+            dtpTo.RightToLeft = RightToLeft.No;
+            dtpTo.Size = new Size(150, 28);
+            dtpTo.TabIndex = 56;
+            dtpTo.Value = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpTo.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(11, 24);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 20);
+            label3.TabIndex = 55;
+            label3.Text = "From";
+            // 
+            // dtpFrom
+            // 
+            dtpFrom.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFrom.Format = DateTimePickerFormat.Short;
+            dtpFrom.Location = new Point(64, 20);
+            dtpFrom.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpFrom.Name = "dtpFrom";
+            dtpFrom.RightToLeft = RightToLeft.No;
+            dtpFrom.Size = new Size(150, 28);
+            dtpFrom.TabIndex = 54;
+            dtpFrom.Value = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpFrom.ValueChanged += dtpFrom_ValueChanged;
             // 
             // panel4
             // 
@@ -326,7 +540,14 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvSummary).EndInit();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvActivities).EndInit();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel7.ResumeLayout(false);
@@ -345,7 +566,6 @@
         private Label label1;
         private Panel panel3;
         private Panel panel2;
-        private DataGridView dgvActivities;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
@@ -356,5 +576,20 @@
         private Label label2;
         private FontAwesome.Sharp.IconButton btnPrint;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private Panel panel8;
+        private Panel panel9;
+        private Panel panel10;
+        private Panel panel11;
+        private DataGridView dgvActivities;
+        private DateTimePicker dtpFrom;
+        private Label label3;
+        private Label label4;
+        private DateTimePicker dtpTo;
+        private Panel panel15;
+        private Label label5;
+        private DateTimePicker dtpTo1;
+        private Label label6;
+        private DateTimePicker dtpFrom1;
+        private DataGridView dgvSummary;
     }
 }

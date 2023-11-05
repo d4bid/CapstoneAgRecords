@@ -408,81 +408,6 @@ namespace AgRecords.View
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            {
-                btnUpdate.Enabled = true;
-                btnNew.Enabled = false;
-            }
-            else if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = false;
-            }
-            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = true;
-            }
-
-            int brgyIndex = cmbBrgy.SelectedIndex;
-            int farmTypeIndex = cmbFarmType.SelectedIndex;
-            //int growthStageIndex = cmbGrowthStage.SelectedIndex;
-            int seedTypeIndex = cmbSeedType.SelectedIndex;
-
-            // Retrieve the corresponding integer values based on the indices
-            int brgyId = brgyIndex + 1; // Add 1 to convert from 0-based index to 1-based ID
-            int farmTypeId = farmTypeIndex + 1;
-            //int growthStageId = growthStageIndex + 1;
-            int seedTypeId = seedTypeIndex + 1;
-
-            string growthStageText = labelGrowthStage.Text;
-            int growthStageId = 0;
-
-            switch (growthStageText)
-            {
-                case "Newly Planted/Seedling Stage":
-                    growthStageId = 1;
-                    break;
-                case "Vegetative Stage":
-                    growthStageId = 2;
-                    break;
-                case "Reproductive Stage":
-                    growthStageId = 3;
-                    break;
-                case "Maturing Stage":
-                    growthStageId = 4;
-                    break;
-                case "Harvested":
-                    growthStageId = 5;
-                    break;
-                default:
-                    break;
-            }
-
-            float size = float.Parse(txtSize.Text);
-            float yield = float.Parse(txtAveYield.Text);
-            int riceStandingLogsId = int.Parse(labelRiceStandingLogsId.Text);
-            int riceHarvestingId = int.Parse(labelRiceStandingLogsId.Text);
-
-
-            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            {
-                if (cropsRiceController.UpdateRiceHarvesting(riceHarvestingId, yield))
-                {
-                    FormRefresh();
-                }
-            }
-            else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
-            {
-                if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
-                {
-                    FormRefresh();
-                }
-            }
-        }
-
         private void btnNew_Click(object sender, EventArgs e)
         {
             int brgyIndex = cmbBrgy.SelectedIndex;
@@ -770,6 +695,83 @@ namespace AgRecords.View
             else
             {
                 DisplayStandingDataTableFilter();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                btnUpdate.Enabled = true;
+                btnNew.Enabled = false;
+            }
+            else if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                btnUpdate.Enabled = false;
+                btnNew.Enabled = false;
+            }
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
+            {
+                btnUpdate.Enabled = false;
+                btnNew.Enabled = true;
+            }
+
+            int brgyIndex = cmbBrgy.SelectedIndex;
+            int farmTypeIndex = cmbFarmType.SelectedIndex;
+            //int growthStageIndex = cmbGrowthStage.SelectedIndex;
+            int seedTypeIndex = cmbSeedType.SelectedIndex;
+
+            // Retrieve the corresponding integer values based on the indices
+            int brgyId = brgyIndex + 1; // Add 1 to convert from 0-based index to 1-based ID
+            int farmTypeId = farmTypeIndex + 1;
+            //int growthStageId = growthStageIndex + 1;
+            int seedTypeId = seedTypeIndex + 1;
+
+            string growthStageText = labelGrowthStage.Text;
+            int growthStageId = 0;
+
+            switch (growthStageText)
+            {
+                case "Newly Planted/Seedling Stage":
+                    growthStageId = 1;
+                    break;
+                case "Vegetative Stage":
+                    growthStageId = 2;
+                    break;
+                case "Reproductive Stage":
+                    growthStageId = 3;
+                    break;
+                case "Maturing Stage":
+                    growthStageId = 4;
+                    break;
+                case "Harvested":
+                    growthStageId = 5;
+                    break;
+                default:
+                    break;
+            }
+
+            float size = float.Parse(txtSize.Text);
+            int riceStandingLogsId = int.Parse(labelRiceStandingLogsId.Text);
+
+
+            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                float yield = float.Parse(txtAveYield.Text);
+                int riceHarvestingId = int.Parse(labelRiceStandingLogsId.Text);
+
+                if (cropsRiceController.UpdateRiceHarvesting(riceHarvestingId, yield))
+                {
+                    FormRefresh();
+                }
+            }
+            
+            if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
+            {
+                if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
+                {
+                    FormRefresh();
+                }
             }
         }
     }

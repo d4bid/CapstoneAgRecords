@@ -364,16 +364,16 @@ namespace AgRecords.Controller
             }
         }
 
-        public DataTable LoadCornPlantingEcoView(string cornPrId, int colorId, int growthId)
+        public DataTable LoadCornPlantingEcoView(string cornPrId, int colorId, int growthId, int seedId)
         {
             try
             {
-                DataTable cornPlantingTable = cornModel.LoadCornPlantingEcoDataGrid(cornPrId, colorId, growthId);
+                DataTable cornPlantingTable = cornModel.LoadCornPlantingEcoDataGrid(cornPrId, colorId, growthId, seedId);
                 return cornPlantingTable;
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Corn Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Corn Planting By Ecological Zone Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }
