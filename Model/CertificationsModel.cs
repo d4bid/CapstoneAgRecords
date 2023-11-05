@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -75,6 +76,26 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 throw new ApplicationException("Error loading list of farmers: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable GetEmployees()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable empTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("CALL sp_getCertAt()", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(empTable);
+                    return empTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting employees: " + ex.Message, ex);
             }
         }
 
@@ -196,12 +217,12 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_addCertifications(@orNo, @referenceNumber, @name, @farmInfo, @date, @employeeName, @headName)";
+                    string query = "CALL sp_addCertifications(@orNo, @referenceNumber, @name, @farmerAddress, @date, @employeeName, @headName)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@referenceNumber", cert.rsbsaIdLGU);
                     command.Parameters.AddWithValue("@orNo", cert.orderNumber);
                     command.Parameters.AddWithValue("@name", cert.name);
-                    command.Parameters.AddWithValue("@farmInfo", cert.farmInfo);
+                    command.Parameters.AddWithValue("@farmerAddress", cert.barangay);
                     command.Parameters.AddWithValue("@date", cert.date);
                     command.Parameters.AddWithValue("@employeeName", cert.employeeName);
                     command.Parameters.AddWithValue("@headName", cert.headName);
@@ -213,7 +234,73 @@ namespace AgRecords.Model
             catch (Exception ex)
             {
                 // Wrap the original exception in a custom exception with a meaningful message.
-                throw new ApplicationException("Error adding new rice standing report: " + ex.Message, ex);
+                throw new ApplicationException("Error adding new certification: " + ex.Message, ex);
+            }
+        }
+
+        public bool AddFarmInfo(List<Certifications> farmDataList)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    using (MySqlTransaction transaction = db.GetConnection().BeginTransaction())
+                    {
+                        try
+                        {
+                            foreach (Certifications farmData in farmDataList)
+                            {
+                                string query = "CALL sp_addCertFarm(@orNo, @farmParcelNo, @farmInfo, @farmAddress)";
+                                MySqlCommand command = new MySqlCommand(query, db.GetConnection(), transaction);
+                                command.Parameters.AddWithValue("@orNo", farmData.orderNumber);
+                                command.Parameters.AddWithValue("@farmParcelNo", farmData.farmParcelNo); // Make sure to add this parameter
+                                command.Parameters.AddWithValue("@farmInfo", farmData.farmInfo);
+                                command.Parameters.AddWithValue("@farmAddress", farmData.farmLocBrgy);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            // Rollback the transaction if an exception occurs
+                            transaction.Rollback();
+                            throw new ApplicationException("Error adding farm info: " + ex.Message, ex);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here if needed
+                // Log the exception, etc.
+                return false;
+            }
+        }
+
+        public DataTable LoadCertificationsByRsbsaNumberDataGrid(string refNumber)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "SELECT `O.R. No.`, `Farm Info`, `Farm Address` FROM vw_get_all_cert WHERE `Reference Number` = @refNumber";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@refNumber", refNumber);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading certificates: " + ex.Message, ex);
             }
         }
     }

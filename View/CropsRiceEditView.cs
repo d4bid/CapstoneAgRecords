@@ -70,8 +70,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            btnUpdate.Visible = false;
-            labelRiceStandingLogsId.Visible = false;
+            btnUpdate.Enabled = false;
             ClearStandingLogsTextControls();
 
             btnPrint.Enabled = true;
@@ -79,12 +78,17 @@ namespace AgRecords.View
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
                 btnNew.Enabled = false;
-                btnNew.Visible = false;
+                btnNew.Enabled = false;
             }
             else
             {
                 btnNew.Enabled = true;
-                btnNew.Visible = true;
+                btnNew.Enabled = true;
+            }
+
+            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                labelGrowthStage.Text = "Vegetative Stage";
             }
         }
 
@@ -100,76 +104,32 @@ namespace AgRecords.View
             txtAveYield.Text = "";
         }
 
-        public void HideControls()
+        private int MapRiceLandItemToValue(ComboBox comboBox)
         {
-            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            string selectedLandItem = comboBox.SelectedItem?.ToString(); // Use ?. to handle potential null value
+            int landId = 1; // Default value or value for unhandled cases
+
+            if (selectedLandItem != null)
             {
-                btnNew.Visible = false;
-                btnUpdate.Visible = false;
-
-                labelAveYield.Visible = false;
-                txtAveYield.Visible = false;
-                boxAveYield.Visible = false;
-
-                labelSeedTypeFilter.Visible = false;
-                boxSeedTypeFilter.Visible = false;
-                cmbSeedTypeFilter.Visible = false;
-
-                txtSize.ReadOnly = true;
-                txtSize.ForeColor = SystemColors.WindowText;
-                txtSize.BackColor = Color.White;
-
-                labelGrowthStage.Text = "Vegetative Stage";
-                labelSize.Text = "Size (ha)";
-            }
-            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            {
-                btnNew.Visible = true;
-                btnUpdate.Visible = true;
-
-                labelAveYield.Visible = true;
-                txtAveYield.Visible = true;
-                boxAveYield.Visible = true;
-
-                labelSeedTypeFilter.Visible = true;
-                boxSeedTypeFilter.Visible = true;
-                cmbSeedTypeFilter.Visible = true;
-
-                txtSize.ReadOnly = true;
-                txtSize.ForeColor = SystemColors.WindowText;
-                txtSize.BackColor = Color.White;
-
-                labelGrowthStage.Text = "Harvested";
-
-                labelSize.Text = "Area Harvested (ha)";
-            }
-            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-            {
-                btnNew.Visible = true;
-                btnUpdate.Visible = true;
-
-                labelAveYield.Visible = false;
-                txtAveYield.Visible = false;
-                boxAveYield.Visible = false;
-
-                labelSeedTypeFilter.Visible = false;
-                boxSeedTypeFilter.Visible = false;
-                cmbSeedTypeFilter.Visible = false;
-
-                labelSeason.Visible = false;
-                labelSeasonl.Visible = false;
-                boxSeason.Visible = false;
-
-                labelSeasonYearl.Visible = false;
-                labelSeasonYear.Visible = false;
-                boxSeasonYear.Visible = false;
-
-                labelSize.Text = "Size (ha)";
+                switch (selectedLandItem)
+                {
+                    case "Irrigated":
+                        landId = 1;
+                        break;
+                    case "Rainfed Lowland":
+                        landId = 2;
+                        break;
+                    case "Rainfed Upland":
+                        landId = 3;
+                        break;
+                        // Handle other cases here if needed
+                }
             }
 
+            return landId;
         }
 
-        private int MapSeedItemToValue(ComboBox comboBox)
+        private int MapRiceSeedItemToValue(ComboBox comboBox)
         {
             string selectedSeedItem = comboBox.SelectedItem?.ToString(); // Use ?. to handle potential null value
             int seedId = 1; // Default value or value for unhandled cases
@@ -197,93 +157,100 @@ namespace AgRecords.View
             return seedId;
         }
 
-        private void HandleCheckboxConditions()
+        public void DisplayStandingDataTableFilter()
         {
             string riceSrId = labelRiceSrId.Text;
-            int seedId = MapSeedItemToValue(cmbSeedTypeFilter);
+            int farmId = MapRiceLandItemToValue(cmbFarmType);
+            int seedId = MapRiceSeedItemToValue(cmbSeedType);
 
-            if (cbIrrigated.Checked)
+            if (cbTotal.Checked)
             {
-                cbLowland.Checked = false;
-                cbUpland.Checked = false;
-
-                // Handle your logic for the selected area
-                if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRicePlantingView(riceSrId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
-                else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRiceStandLogsView(riceSrId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
-                else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadIrrigatedRiceHarvestingView(riceSrId, seedId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
+                cbGrandTotal.Checked = false;
+                DataTable riceStandingTable = cropsRiceController.LoadRiceStandingTotalView(riceSrId, farmId, seedId);
+                dgvRiceStandLogs.DataSource = riceStandingTable;
             }
-
-            if (cbLowland.Checked)
+            else if (cbGrandTotal.Checked)
             {
-                cbIrrigated.Checked = false;
-                cbUpland.Checked = false;
-
-                // Handle your logic for the selected area
-                if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRicePlantingView(riceSrId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
-                else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRiceStandLogsView(riceSrId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
-                else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadLowlandRiceHarvestingView(riceSrId, seedId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
+                cbTotal.Checked = false;
+                DataTable riceStandingTable = cropsRiceController.LoadRiceStandingGrandTotalView(riceSrId);
+                dgvRiceStandLogs.DataSource = riceStandingTable;
             }
-
-            if (cbUpland.Checked)
+            else if (cbTotal.Checked == false && cbGrandTotal.Checked == false)
             {
-                cbIrrigated.Checked = false;
-                cbLowland.Checked = false;
-
-                // Handle your logic for the selected area
-                if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadUplandRicePlantingView(riceSrId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
-                else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceStandLogsView(riceSrId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
-                else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-                {
-                    DataTable riceStandLogsTable = cropsRiceController.LoadUplandRiceHarvestingView(riceSrId, seedId);
-                    dgvRiceStandLogs.DataSource = riceStandLogsTable;
-                }
+                DataTable riceStandingTable = cropsRiceController.LoadRiceStandingView(riceSrId, farmId, seedId);
+                dgvRiceStandLogs.DataSource = riceStandingTable;
             }
         }
 
+        public void DisplayPlantingDataTableFilter()
+        {
+            string riceSrId = labelRiceSrId.Text;
+            int farmId = MapRiceLandItemToValue(cmbFarmType);
+
+            cbGrandTotal.Checked = false;
+            DataTable riceStandingTable = cropsRiceController.LoadRicePlantingView(riceSrId, farmId);
+            dgvRiceStandLogs.DataSource = riceStandingTable;
+        }
+
+        public void DisplayHarvestingDataTableFilter()
+        {
+            string riceSrId = labelRiceSrId.Text;
+            int farmId = MapRiceLandItemToValue(cmbFarmType);
+            int seedId = MapRiceSeedItemToValue(cmbSeedType);
+
+            DataTable riceStandingTable = cropsRiceController.LoadRiceHarvestinglView(riceSrId, farmId, seedId);
+            dgvRiceStandLogs.DataSource = riceStandingTable;
+        }
         // Events
 
         private void CropsRiceEditView_Load(object sender, EventArgs e)
         {
             FormRefresh();
-            cbIrrigated.Checked = true;
 
-            cmbSeedTypeFilter.SelectedIndex = 0;
+            cmbFarmType.SelectedIndex = 0;
+            cmbSeedType.SelectedIndex = 0;
 
             btnUpdate.Enabled = false;
 
-            HideControls();
+            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                cbTotal.Visible = false;
+                cbGrandTotal.Visible = false;
+                DisplayPlantingDataTableFilter();
+
+                labelAveYield.Visible = false;
+                boxAveYield.Visible = false;
+                txtAveYield.Visible = false;
+
+                label9.Visible = false;
+                dtpLogDate.Visible = false;
+            }
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
+            {
+                cbTotal.Visible = true;
+                cbGrandTotal.Visible = true;
+                cbTotal.Checked = true;
+                DisplayStandingDataTableFilter();
+
+                labelAveYield.Visible = false;
+                boxAveYield.Visible = false;
+                txtAveYield.Visible = false;
+
+                label9.Visible = true;
+                dtpLogDate.Visible = true;
+            }
+            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                cbTotal.Visible = false;
+                cbGrandTotal.Visible = true;
+
+                labelAveYield.Visible = true;
+                boxAveYield.Visible = true;
+                txtAveYield.Visible = true;
+
+                label9.Visible = false;
+                dtpLogDate.Visible = false;
+            }
         }
 
         private void dgvRiceStandLogs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -455,7 +422,7 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
             {
-                btnUpdate.Enabled  = false;
+                btnUpdate.Enabled = false;
                 btnNew.Enabled = true;
             }
 
@@ -543,40 +510,6 @@ namespace AgRecords.View
             btnUpdate.Enabled = false;
             btnNew.Enabled = true;
             ClearStandingLogsTextControls();
-        }
-
-        private void cbIrrigated_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbIrrigated.Checked)
-            {
-                HandleCheckboxConditions();
-            }
-        }
-
-        private void cbLowland_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbLowland.Checked)
-            {
-                HandleCheckboxConditions();
-            }
-        }
-
-        private void cbUpland_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbUpland.Checked)
-            {
-                HandleCheckboxConditions();
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            btnPrint.Enabled = false;
-        }
-
-        private void cmbSeedTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            HandleCheckboxConditions();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -780,6 +713,64 @@ namespace AgRecords.View
         {
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void cmbFarmType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                DisplayPlantingDataTableFilter();
+            }
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
+            {
+                DisplayStandingDataTableFilter();
+            }
+            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                DisplayHarvestingDataTableFilter();
+            }
+        }
+
+        private void cmbSeedType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                DisplayPlantingDataTableFilter();
+            }
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
+            {
+                DisplayStandingDataTableFilter();
+            }
+            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                DisplayHarvestingDataTableFilter();
+            }
+        }
+
+        private void cbTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTotal.Checked)
+            {
+                cbGrandTotal.Checked = false;
+                DisplayStandingDataTableFilter();
+            }
+            else
+            {
+                DisplayStandingDataTableFilter();
+            }
+        }
+
+        private void cbGrandTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbGrandTotal.Checked)
+            {
+                cbTotal.Checked = false;
+                DisplayStandingDataTableFilter();
+            }
+            else
+            {
+                DisplayStandingDataTableFilter();
+            }
         }
     }
 }
