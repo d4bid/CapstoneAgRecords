@@ -54,6 +54,7 @@
             cmbBrgy1 = new ComboBox();
             labelTotalWeeklyReg = new Label();
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,9 +159,9 @@
             label5.ForeColor = Color.FromArgb(0, 35, 76);
             label5.Location = new Point(30, 193);
             label5.Name = "label5";
-            label5.Size = new Size(247, 20);
+            label5.Size = new Size(192, 20);
             label5.TabIndex = 19;
-            label5.Text = "Weekly Registration Per Barangay";
+            label5.Text = "Registration Per Barangay";
             // 
             // rectangleFullWhite1
             // 
@@ -243,9 +244,9 @@
             label9.ForeColor = Color.FromArgb(0, 35, 76);
             label9.Location = new Point(733, 193);
             label9.Name = "label9";
-            label9.Size = new Size(171, 20);
+            label9.Size = new Size(136, 20);
             label9.TabIndex = 27;
-            label9.Text = "Registration This Week";
+            label9.Text = "Farming Activities";
             // 
             // rsbsa3
             // 
@@ -332,12 +333,25 @@
             panel1.Size = new Size(297, 272);
             panel1.TabIndex = 87;
             // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Weekly", "Yearly" });
+            comboBox1.Location = new Point(501, 185);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(179, 28);
+            comboBox1.TabIndex = 88;
+            // 
             // AnalyticsRsbsaView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
+            Controls.Add(comboBox1);
             Controls.Add(panel1);
             Controls.Add(cmbBrgy1);
             Controls.Add(rsbsa1);
@@ -400,5 +414,6 @@
         private ComboBox cmbBrgy1;
         private Label labelTotalWeeklyReg;
         private Panel panel1;
+        private ComboBox comboBox1;
     }
 }
