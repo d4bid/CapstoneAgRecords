@@ -1008,7 +1008,7 @@ namespace AgRecords.View
                 }
             }
 
-            if (focusedControl == txtBirthMunicipality)
+            if (focusedControl == txtBirthMunicipality || focusedControl == txtBirthProvince)
             {
                 string enteredMunicipality = txtBirthMunicipality.Text;
 
@@ -1018,6 +1018,30 @@ namespace AgRecords.View
                     txtBirthCountry.Text = "PHILIPPINES";
                 }
             }
+
+            if (focusedControl == txtAddMunicipality || focusedControl == txtAddProvince || focusedControl == txtAddRegion)
+            {
+                string enteredMunicipality = txtAddMunicipality.Text;
+
+                if (txtBirthMunicipality.AutoCompleteCustomSource.Contains(enteredMunicipality))
+                {
+                    txtAddProvince.Text = "NUEVA VIZCAYA";
+                    txtAddRegion.Text = "02";
+                }
+            }
+
+            if (focusedControl == cbAddBrgy)
+            {
+                string enteredBarangay = cbAddBrgy.Text;
+
+                if (cbAddBrgy.Items.Contains(enteredBarangay))
+                {
+                    txtAddMunicipality.Text = "SOLANO";
+                    txtAddProvince.Text = "NUEVA VIZCAYA";
+                    txtAddRegion.Text = "02";
+                }
+            }
+
 
             if (focusedControl == txtFarmActCrops)
             {

@@ -1084,7 +1084,7 @@ namespace AgRecords.View
                     }
                 }
             }
-            if (focusedControl == txtBirthMunicipality)
+            if (focusedControl == txtBirthMunicipality || focusedControl == txtBirthProvince)
             {
                 string enteredMunicipality = txtBirthMunicipality.Text;
 
@@ -1092,6 +1092,29 @@ namespace AgRecords.View
                 {
                     txtBirthProvince.Text = "NUEVA VIZCAYA";
                     txtBirthCountry.Text = "PHILIPPINES";
+                }
+            }
+
+            if (focusedControl == txtAddMunicipality || focusedControl == txtAddProvince || focusedControl == txtAddRegion)
+            {
+                string enteredMunicipality = txtAddMunicipality.Text;
+
+                if (txtBirthMunicipality.AutoCompleteCustomSource.Contains(enteredMunicipality))
+                {
+                    txtAddProvince.Text = "NUEVA VIZCAYA";
+                    txtAddRegion.Text = "02";
+                }
+            }
+
+            if (focusedControl == cbAddBrgy)
+            {
+                string enteredBarangay = cbAddBrgy.Text;
+
+                if (cbAddBrgy.Items.Contains(enteredBarangay))
+                {
+                    txtAddMunicipality.Text = "SOLANO";
+                    txtAddProvince.Text = "NUEVA VIZCAYA";
+                    txtAddRegion.Text = "02";
                 }
             }
 
@@ -1151,11 +1174,24 @@ namespace AgRecords.View
         private void nudHouseNoMale_ValueChanged(object sender, EventArgs e)
         {
             nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
+
+
+            if (string.IsNullOrEmpty(nudHouseNoMale.Text))
+            {
+                nudHouseNoMale.Text = "";
+                nudHouseNoMale.Value = 0;
+            }
         }
 
         private void nudHouseFemale_ValueChanged(object sender, EventArgs e)
         {
             nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
+
+            if (string.IsNullOrEmpty(nudHouseFemale.Text))
+            {
+                nudHouseFemale.Text = "";
+                nudHouseFemale.Value = 0;
+            }
         }
 
 
@@ -1287,11 +1323,20 @@ namespace AgRecords.View
             }
         }
 
+
         private void txtFarmingIncome_Click(object sender, EventArgs e)
         {
             if (txtFarmingIncome.Text == "0")
             {
                 txtFarmingIncome.Text = string.Empty;
+            }
+        }
+
+        private void txtNonFarmingIncome_Click(object sender, EventArgs e)
+        {
+            if (txtNonFarmingIncome.Text == "0")
+            {
+                txtNonFarmingIncome.Text = string.Empty;
             }
         }
 

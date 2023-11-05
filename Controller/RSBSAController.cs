@@ -640,7 +640,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Please select at least one Agri Youth activity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                ////gross annual income
+                //gross annual income
                 //else if (rsbsa.annualIncomeFarming == 0 && rsbsa.annualIncomeNonFarming == 0)
                 //{
                 //    MessageBox.Show("Please enter farming gross annual income.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -661,12 +661,12 @@ namespace AgRecords.Controller
                     bool ParcelhasError = false;
                     foreach (FarmParcel parcel in farmParcels)
                     {
-                        if (!continueValidation)
-                        {
-                            break; 
-                        }
+                        //if (!continueValidation)
+                        //{
+                        //    break; 
+                        //}
                         // Farm Parcel validation
-                        else if (string.IsNullOrEmpty(parcel.farmLocBrgy))
+                        if (string.IsNullOrEmpty(parcel.farmLocBrgy))
                         {
                             MessageBox.Show($"Please enter the location (Barangay) of the farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             ParcelhasError = true;
@@ -684,15 +684,16 @@ namespace AgRecords.Controller
                             ParcelhasError = true;
                             break;
                         }
-                        else if (string.IsNullOrEmpty(parcel.ownershipNo))
-                        {
-                            MessageBox.Show($"Please enter ownership document number of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            ParcelhasError = true;
-                            break;
-                        }
+
                         else if (string.IsNullOrEmpty(parcel.ownershipType))
                         {
                             MessageBox.Show($"Please select ownership type of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ParcelhasError = true;
+                            break;
+                        }
+                        else if (parcel.ownershipType == "Registered Owner" && string.IsNullOrEmpty(parcel.ownershipNo))
+                        {
+                            MessageBox.Show($"Please enter ownership document number of farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             ParcelhasError = true;
                             break;
                         }
@@ -706,6 +707,7 @@ namespace AgRecords.Controller
                         {
                             continue;
                         }
+
                         else if (parcel.Crops == null || !parcel.Crops.Any(c => !string.IsNullOrEmpty(c.commodityType)))
                         {
                             MessageBox.Show($"No commodity has been selected for farm parcel #{parcel.farmParcelNo}.", "warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -805,7 +807,12 @@ namespace AgRecords.Controller
                             {
                                 MessageBox.Show($"Total land size of all crops in farm parcel #{parcel.farmParcelNo} exceeds declared farm size.\nPlease ensure it does not exceed total farm area", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 ParcelhasError = true;
-                                continueValidation = false;
+                                continueValidation = true;
+                                break;
+                            }
+
+                            if (ParcelhasError == true && continueValidation == true)
+                            {
                                 break;
                             }
                         }
@@ -822,7 +829,7 @@ namespace AgRecords.Controller
                     if (rsbsaDocuments == null || !rsbsaDocuments.Any())
                     {
                         // Handle the case where no documents have been attached
-                        MessageBox.Show("No documents have been attached.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("No documents have been attached.Please attach documents.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
@@ -1289,12 +1296,12 @@ namespace AgRecords.Controller
                     bool ParcelhasError = false;
                     foreach (FarmParcel parcel in farmParcels)
                     {
-                        if (!continueValidation)
-                        {
-                            break;
-                        }
+                        //if (!continueValidation)
+                        //{
+                        //    break;
+                        //}
                         // Farm Parcel validation
-                        else if (string.IsNullOrEmpty(parcel.farmLocBrgy))
+                        if (string.IsNullOrEmpty(parcel.farmLocBrgy))
                         {
                             MessageBox.Show($"Please enter the location (Barangay) of the farm parcel #{parcel.farmParcelNo}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             ParcelhasError = true;
@@ -1433,9 +1440,13 @@ namespace AgRecords.Controller
                             {
                                 MessageBox.Show($"Total land size of all crops in farm parcel #{parcel.farmParcelNo} exceeds declared farm size.\nPlease ensure it does not exceed total farm area", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 ParcelhasError = true;
-                                continueValidation = false;
+                                continueValidation = true;
                                 break;
                             }
+                        }
+                        if (ParcelhasError == true && continueValidation == true)
+                        {
+                            break;
                         }
                     }
                     if (!ParcelhasError)
