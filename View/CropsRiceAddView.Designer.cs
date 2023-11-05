@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
@@ -52,7 +52,7 @@
             cbUpland = new CheckBox();
             cbLowland = new CheckBox();
             cbIrrigated = new CheckBox();
-            panel43 = new Panel();
+            panelStandingAccomplishments = new Panel();
             labelRiceStandingLogsId = new Label();
             searchBox12 = new SearchBox();
             label6 = new Label();
@@ -77,14 +77,14 @@
             dtpLogDate = new DateTimePicker();
             btnClear = new Button();
             btnNew = new Button();
-            panel44 = new Panel();
+            panelStandingAccomplishmentsHeader = new Panel();
             label46 = new Label();
             dgvRiceStandLogs = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
+            panelStandingAccomplishments.SuspendLayout();
+            panelStandingAccomplishmentsHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).BeginInit();
             SuspendLayout();
             // 
@@ -265,7 +265,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(panel4);
-            panel2.Controls.Add(panel43);
+            panel2.Controls.Add(panelStandingAccomplishments);
             panel2.Controls.Add(dgvRiceStandLogs);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 100);
@@ -328,39 +328,39 @@
             cbIrrigated.UseVisualStyleBackColor = true;
             cbIrrigated.CheckedChanged += cbIrrigated_CheckedChanged;
             // 
-            // panel43
+            // panelStandingAccomplishments
             // 
-            panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(labelRiceStandingLogsId);
-            panel43.Controls.Add(searchBox12);
-            panel43.Controls.Add(label6);
-            panel43.Controls.Add(labelGrowthStage);
-            panel43.Controls.Add(txtSize);
-            panel43.Controls.Add(searchBox11);
-            panel43.Controls.Add(LabelSize);
-            panel43.Controls.Add(searchBox9);
-            panel43.Controls.Add(label14);
-            panel43.Controls.Add(cmbBrgy);
-            panel43.Controls.Add(searchBox8);
-            panel43.Controls.Add(label13);
-            panel43.Controls.Add(cmbFarmType);
-            panel43.Controls.Add(searchBox2);
-            panel43.Controls.Add(label3);
-            panel43.Controls.Add(labelMaxLogId);
-            panel43.Controls.Add(btnUpdate);
-            panel43.Controls.Add(cmbSeedType);
-            panel43.Controls.Add(searchBox10);
-            panel43.Controls.Add(label9);
-            panel43.Controls.Add(label8);
-            panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(btnClear);
-            panel43.Controls.Add(btnNew);
-            panel43.Controls.Add(panel44);
-            panel43.Location = new Point(17, 14);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1566, 222);
-            panel43.TabIndex = 74;
+            panelStandingAccomplishments.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelStandingAccomplishments.BorderStyle = BorderStyle.FixedSingle;
+            panelStandingAccomplishments.Controls.Add(labelRiceStandingLogsId);
+            panelStandingAccomplishments.Controls.Add(searchBox12);
+            panelStandingAccomplishments.Controls.Add(label6);
+            panelStandingAccomplishments.Controls.Add(labelGrowthStage);
+            panelStandingAccomplishments.Controls.Add(txtSize);
+            panelStandingAccomplishments.Controls.Add(searchBox11);
+            panelStandingAccomplishments.Controls.Add(LabelSize);
+            panelStandingAccomplishments.Controls.Add(searchBox9);
+            panelStandingAccomplishments.Controls.Add(label14);
+            panelStandingAccomplishments.Controls.Add(cmbBrgy);
+            panelStandingAccomplishments.Controls.Add(searchBox8);
+            panelStandingAccomplishments.Controls.Add(label13);
+            panelStandingAccomplishments.Controls.Add(cmbFarmType);
+            panelStandingAccomplishments.Controls.Add(searchBox2);
+            panelStandingAccomplishments.Controls.Add(label3);
+            panelStandingAccomplishments.Controls.Add(labelMaxLogId);
+            panelStandingAccomplishments.Controls.Add(btnUpdate);
+            panelStandingAccomplishments.Controls.Add(cmbSeedType);
+            panelStandingAccomplishments.Controls.Add(searchBox10);
+            panelStandingAccomplishments.Controls.Add(label9);
+            panelStandingAccomplishments.Controls.Add(label8);
+            panelStandingAccomplishments.Controls.Add(dtpLogDate);
+            panelStandingAccomplishments.Controls.Add(btnClear);
+            panelStandingAccomplishments.Controls.Add(btnNew);
+            panelStandingAccomplishments.Controls.Add(panelStandingAccomplishmentsHeader);
+            panelStandingAccomplishments.Location = new Point(17, 14);
+            panelStandingAccomplishments.Name = "panelStandingAccomplishments";
+            panelStandingAccomplishments.Size = new Size(1566, 222);
+            panelStandingAccomplishments.TabIndex = 74;
             // 
             // labelRiceStandingLogsId
             // 
@@ -408,6 +408,8 @@
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 94;
             txtSize.TextAlign = HorizontalAlignment.Right;
+            txtSize.Enter += SelectedPanel;
+            txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11
             // 
@@ -452,6 +454,8 @@
             cmbBrgy.Name = "cmbBrgy";
             cmbBrgy.Size = new Size(200, 33);
             cmbBrgy.TabIndex = 89;
+            cmbBrgy.Enter += SelectedPanel;
+            cmbBrgy.Leave += UnselectedPanel;
             // 
             // searchBox8
             // 
@@ -480,6 +484,8 @@
             cmbFarmType.Name = "cmbFarmType";
             cmbFarmType.Size = new Size(207, 33);
             cmbFarmType.TabIndex = 84;
+            cmbFarmType.Enter += SelectedPanel;
+            cmbFarmType.Leave += UnselectedPanel;
             // 
             // searchBox2
             // 
@@ -523,6 +529,8 @@
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
+            btnUpdate.Enter += SelectedPanel;
+            btnUpdate.Leave += UnselectedPanel;
             // 
             // cmbSeedType
             // 
@@ -535,6 +543,8 @@
             cmbSeedType.Name = "cmbSeedType";
             cmbSeedType.Size = new Size(220, 33);
             cmbSeedType.TabIndex = 76;
+            cmbSeedType.Enter += SelectedPanel;
+            cmbSeedType.Leave += UnselectedPanel;
             // 
             // searchBox10
             // 
@@ -569,6 +579,8 @@
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(135, 28);
             dtpLogDate.TabIndex = 53;
+            dtpLogDate.Enter += SelectedPanel;
+            dtpLogDate.Leave += UnselectedPanel;
             // 
             // btnClear
             // 
@@ -588,6 +600,8 @@
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.Enter += SelectedPanel;
+            btnClear.Leave += UnselectedPanel;
             // 
             // btnNew
             // 
@@ -605,16 +619,18 @@
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
             btnNew.Click += btnNew_Click;
+            btnNew.Enter += SelectedPanel;
+            btnNew.Leave += UnselectedPanel;
             // 
-            // panel44
+            // panelStandingAccomplishmentsHeader
             // 
-            panel44.BackColor = Color.FromArgb(43, 121, 223);
-            panel44.Controls.Add(label46);
-            panel44.Dock = DockStyle.Top;
-            panel44.Location = new Point(0, 0);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(1564, 29);
-            panel44.TabIndex = 0;
+            panelStandingAccomplishmentsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelStandingAccomplishmentsHeader.Controls.Add(label46);
+            panelStandingAccomplishmentsHeader.Dock = DockStyle.Top;
+            panelStandingAccomplishmentsHeader.Location = new Point(0, 0);
+            panelStandingAccomplishmentsHeader.Name = "panelStandingAccomplishmentsHeader";
+            panelStandingAccomplishmentsHeader.Size = new Size(1564, 29);
+            panelStandingAccomplishmentsHeader.TabIndex = 0;
             // 
             // label46
             // 
@@ -635,24 +651,24 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvRiceStandLogs.Location = new Point(17, 295);
             dgvRiceStandLogs.Name = "dgvRiceStandLogs";
@@ -681,10 +697,10 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
+            panelStandingAccomplishments.ResumeLayout(false);
+            panelStandingAccomplishments.PerformLayout();
+            panelStandingAccomplishmentsHeader.ResumeLayout(false);
+            panelStandingAccomplishmentsHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).EndInit();
             ResumeLayout(false);
         }
@@ -710,7 +726,7 @@
         private Panel panel4;
         private Button btnCancel;
         private Button btnSave;
-        private Panel panel43;
+        private Panel panelStandingAccomplishments;
         private Label labelRiceStandingLogsId;
         private SearchBox searchBox12;
         private Label label6;
@@ -735,7 +751,7 @@
         private DateTimePicker dtpLogDate;
         private Button btnClear;
         private Button btnNew;
-        private Panel panel44;
+        private Panel panelStandingAccomplishmentsHeader;
         private Label label46;
         private CheckBox cbGrandTotal;
         private CheckBox cbUpland;

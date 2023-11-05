@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
@@ -47,7 +47,7 @@
             searchBox3 = new SearchBox();
             panel3 = new Panel();
             panel2 = new Panel();
-            panel43 = new Panel();
+            panelStandingAccomplishments = new Panel();
             labelHvcStandingId = new Label();
             searchBox12 = new SearchBox();
             label6 = new Label();
@@ -65,13 +65,13 @@
             dtpLogDate = new DateTimePicker();
             btnClear = new Button();
             btnNew = new Button();
-            panel44 = new Panel();
+            panelStandingAccomplishmentsHeader = new Panel();
             label46 = new Label();
             dgvHvcStanding = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
+            panelStandingAccomplishments.SuspendLayout();
+            panelStandingAccomplishmentsHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).BeginInit();
             SuspendLayout();
             // 
@@ -262,7 +262,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(panel43);
+            panel2.Controls.Add(panelStandingAccomplishments);
             panel2.Controls.Add(dgvHvcStanding);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 100);
@@ -270,32 +270,32 @@
             panel2.Size = new Size(1595, 826);
             panel2.TabIndex = 29;
             // 
-            // panel43
+            // panelStandingAccomplishments
             // 
-            panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(labelHvcStandingId);
-            panel43.Controls.Add(searchBox12);
-            panel43.Controls.Add(label6);
-            panel43.Controls.Add(labelCropStage);
-            panel43.Controls.Add(txtSize);
-            panel43.Controls.Add(searchBox11);
-            panel43.Controls.Add(LabelSize);
-            panel43.Controls.Add(searchBox9);
-            panel43.Controls.Add(label14);
-            panel43.Controls.Add(cmbCropType);
-            panel43.Controls.Add(searchBox8);
-            panel43.Controls.Add(label13);
-            panel43.Controls.Add(btnUpdate);
-            panel43.Controls.Add(label9);
-            panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(btnClear);
-            panel43.Controls.Add(btnNew);
-            panel43.Controls.Add(panel44);
-            panel43.Location = new Point(17, 14);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1566, 205);
-            panel43.TabIndex = 74;
+            panelStandingAccomplishments.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelStandingAccomplishments.BorderStyle = BorderStyle.FixedSingle;
+            panelStandingAccomplishments.Controls.Add(labelHvcStandingId);
+            panelStandingAccomplishments.Controls.Add(searchBox12);
+            panelStandingAccomplishments.Controls.Add(label6);
+            panelStandingAccomplishments.Controls.Add(labelCropStage);
+            panelStandingAccomplishments.Controls.Add(txtSize);
+            panelStandingAccomplishments.Controls.Add(searchBox11);
+            panelStandingAccomplishments.Controls.Add(LabelSize);
+            panelStandingAccomplishments.Controls.Add(searchBox9);
+            panelStandingAccomplishments.Controls.Add(label14);
+            panelStandingAccomplishments.Controls.Add(cmbCropType);
+            panelStandingAccomplishments.Controls.Add(searchBox8);
+            panelStandingAccomplishments.Controls.Add(label13);
+            panelStandingAccomplishments.Controls.Add(btnUpdate);
+            panelStandingAccomplishments.Controls.Add(label9);
+            panelStandingAccomplishments.Controls.Add(dtpLogDate);
+            panelStandingAccomplishments.Controls.Add(btnClear);
+            panelStandingAccomplishments.Controls.Add(btnNew);
+            panelStandingAccomplishments.Controls.Add(panelStandingAccomplishmentsHeader);
+            panelStandingAccomplishments.Location = new Point(17, 14);
+            panelStandingAccomplishments.Name = "panelStandingAccomplishments";
+            panelStandingAccomplishments.Size = new Size(1566, 205);
+            panelStandingAccomplishments.TabIndex = 74;
             // 
             // labelHvcStandingId
             // 
@@ -332,6 +332,8 @@
             labelCropStage.Size = new Size(177, 25);
             labelCropStage.TabIndex = 96;
             labelCropStage.Text = "Newly Transplanted";
+            labelCropStage.Enter += SelectedPanel;
+            labelCropStage.Leave += UnselectedPanel;
             // 
             // txtSize
             // 
@@ -343,6 +345,8 @@
             txtSize.Size = new Size(148, 24);
             txtSize.TabIndex = 94;
             txtSize.TextAlign = HorizontalAlignment.Right;
+            txtSize.Enter += SelectedPanel;
+            txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11
             // 
@@ -387,6 +391,8 @@
             cmbCropType.Name = "cmbCropType";
             cmbCropType.Size = new Size(200, 33);
             cmbCropType.TabIndex = 89;
+            cmbCropType.Enter += SelectedPanel;
+            cmbCropType.Leave += UnselectedPanel;
             // 
             // searchBox8
             // 
@@ -419,6 +425,8 @@
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
+            btnUpdate.Enter += SelectedPanel;
+            btnUpdate.Leave += UnselectedPanel;
             // 
             // label9
             // 
@@ -437,6 +445,8 @@
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(167, 28);
             dtpLogDate.TabIndex = 53;
+            dtpLogDate.Enter += SelectedPanel;
+            dtpLogDate.Leave += UnselectedPanel;
             // 
             // btnClear
             // 
@@ -455,6 +465,8 @@
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.Enter += SelectedPanel;
+            btnClear.Leave += UnselectedPanel;
             // 
             // btnNew
             // 
@@ -471,16 +483,18 @@
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
             btnNew.Click += btnNew_Click;
+            btnNew.Enter += SelectedPanel;
+            btnNew.Leave += UnselectedPanel;
             // 
-            // panel44
+            // panelStandingAccomplishmentsHeader
             // 
-            panel44.BackColor = Color.FromArgb(43, 121, 223);
-            panel44.Controls.Add(label46);
-            panel44.Dock = DockStyle.Top;
-            panel44.Location = new Point(0, 0);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(1564, 29);
-            panel44.TabIndex = 0;
+            panelStandingAccomplishmentsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelStandingAccomplishmentsHeader.Controls.Add(label46);
+            panelStandingAccomplishmentsHeader.Dock = DockStyle.Top;
+            panelStandingAccomplishmentsHeader.Location = new Point(0, 0);
+            panelStandingAccomplishmentsHeader.Name = "panelStandingAccomplishmentsHeader";
+            panelStandingAccomplishmentsHeader.Size = new Size(1564, 29);
+            panelStandingAccomplishmentsHeader.TabIndex = 0;
             // 
             // label46
             // 
@@ -501,24 +515,24 @@
             dgvHvcStanding.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHvcStanding.BackgroundColor = Color.White;
             dgvHvcStanding.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvHvcStanding.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle4;
             dgvHvcStanding.GridColor = Color.FromArgb(239, 239, 239);
             dgvHvcStanding.Location = new Point(17, 239);
             dgvHvcStanding.Name = "dgvHvcStanding";
@@ -546,10 +560,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
+            panelStandingAccomplishments.ResumeLayout(false);
+            panelStandingAccomplishments.PerformLayout();
+            panelStandingAccomplishmentsHeader.ResumeLayout(false);
+            panelStandingAccomplishmentsHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).EndInit();
             ResumeLayout(false);
         }
@@ -571,7 +585,7 @@
         private SearchBox searchBox3;
         private Panel panel3;
         private Panel panel2;
-        private Panel panel43;
+        private Panel panelStandingAccomplishments;
         private Label labelHvcStandingId;
         private SearchBox searchBox12;
         private Label label6;
@@ -589,7 +603,7 @@
         private DateTimePicker dtpLogDate;
         private Button btnClear;
         private Button btnNew;
-        private Panel panel44;
+        private Panel panelStandingAccomplishmentsHeader;
         private Label label46;
         private DataGridView dgvHvcStanding;
         private FontAwesome.Sharp.IconButton btnBack;

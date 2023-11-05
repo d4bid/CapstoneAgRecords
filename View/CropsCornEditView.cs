@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -684,7 +685,7 @@ namespace AgRecords.View
                 // Get the worksheet
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
 
-                worksheet.Cells[3, 2].Value = worksheet.Cells[3, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text + 
+                worksheet.Cells[3, 2].Value = worksheet.Cells[3, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text +
                     "(" + labelSeason.Text.ToUpper() + " SEASON CY " + labelSeasonYear.Text + ")";
 
                 int startRow = 12;
@@ -765,7 +766,7 @@ namespace AgRecords.View
                 // Get the worksheet
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
 
-                worksheet.Cells[2, 2].Value = worksheet.Cells[2, 2].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text ;
+                worksheet.Cells[2, 2].Value = worksheet.Cells[2, 2].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text;
                 worksheet.Cells[5, 2].Value = worksheet.Cells[5, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text;
 
                 int startRow = 13;
@@ -951,6 +952,27 @@ namespace AgRecords.View
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             }
+        }
+
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPlantingByEcoZone)
+            {
+                PanelSelected.Panel_Enter(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
+            }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPlantingByEcoZone)
+            {
+                PanelSelected.Panel_Leave(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
+            }
+
         }
     }
 }

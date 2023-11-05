@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
@@ -60,7 +60,7 @@
             cbUpland = new CheckBox();
             cbLowland = new CheckBox();
             cbIrrigated = new CheckBox();
-            panel43 = new Panel();
+            panelStandingAccomplishments = new Panel();
             txtAveYield = new TextBox();
             boxAveYield = new SearchBox();
             labelAveYield = new Label();
@@ -84,7 +84,7 @@
             cmbBrgy = new ComboBox();
             searchBox8 = new SearchBox();
             label13 = new Label();
-            panel44 = new Panel();
+            panelStandingAccomplishmentsHeader = new Panel();
             labelArea = new Label();
             cmbFarmType = new ComboBox();
             searchBox2 = new SearchBox();
@@ -93,8 +93,8 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
+            panelStandingAccomplishments.SuspendLayout();
+            panelStandingAccomplishmentsHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).BeginInit();
             SuspendLayout();
             // 
@@ -347,7 +347,7 @@
             panel2.Controls.Add(boxSeedTypeFilter);
             panel2.Controls.Add(labelSeedTypeFilter);
             panel2.Controls.Add(panel4);
-            panel2.Controls.Add(panel43);
+            panel2.Controls.Add(panelStandingAccomplishments);
             panel2.Controls.Add(dgvRiceStandLogs);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 100);
@@ -427,41 +427,41 @@
             cbIrrigated.UseVisualStyleBackColor = true;
             cbIrrigated.CheckedChanged += cbIrrigated_CheckedChanged;
             // 
-            // panel43
+            // panelStandingAccomplishments
             // 
-            panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(txtAveYield);
-            panel43.Controls.Add(boxAveYield);
-            panel43.Controls.Add(labelAveYield);
-            panel43.Controls.Add(labelRiceStandingLogsId);
-            panel43.Controls.Add(searchBox12);
-            panel43.Controls.Add(label6);
-            panel43.Controls.Add(labelGrowthStage);
-            panel43.Controls.Add(btnUpdate);
-            panel43.Controls.Add(cmbSeedType);
-            panel43.Controls.Add(searchBox10);
-            panel43.Controls.Add(label9);
-            panel43.Controls.Add(label8);
-            panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(btnClear);
-            panel43.Controls.Add(btnNew);
-            panel43.Controls.Add(txtSize);
-            panel43.Controls.Add(searchBox11);
-            panel43.Controls.Add(labelSize);
-            panel43.Controls.Add(searchBox9);
-            panel43.Controls.Add(label14);
-            panel43.Controls.Add(cmbBrgy);
-            panel43.Controls.Add(searchBox8);
-            panel43.Controls.Add(label13);
-            panel43.Controls.Add(panel44);
-            panel43.Controls.Add(cmbFarmType);
-            panel43.Controls.Add(searchBox2);
-            panel43.Controls.Add(label1);
-            panel43.Location = new Point(17, 14);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1566, 222);
-            panel43.TabIndex = 74;
+            panelStandingAccomplishments.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelStandingAccomplishments.BorderStyle = BorderStyle.FixedSingle;
+            panelStandingAccomplishments.Controls.Add(txtAveYield);
+            panelStandingAccomplishments.Controls.Add(boxAveYield);
+            panelStandingAccomplishments.Controls.Add(labelAveYield);
+            panelStandingAccomplishments.Controls.Add(labelRiceStandingLogsId);
+            panelStandingAccomplishments.Controls.Add(searchBox12);
+            panelStandingAccomplishments.Controls.Add(label6);
+            panelStandingAccomplishments.Controls.Add(labelGrowthStage);
+            panelStandingAccomplishments.Controls.Add(btnUpdate);
+            panelStandingAccomplishments.Controls.Add(cmbSeedType);
+            panelStandingAccomplishments.Controls.Add(searchBox10);
+            panelStandingAccomplishments.Controls.Add(label9);
+            panelStandingAccomplishments.Controls.Add(label8);
+            panelStandingAccomplishments.Controls.Add(dtpLogDate);
+            panelStandingAccomplishments.Controls.Add(btnClear);
+            panelStandingAccomplishments.Controls.Add(btnNew);
+            panelStandingAccomplishments.Controls.Add(txtSize);
+            panelStandingAccomplishments.Controls.Add(searchBox11);
+            panelStandingAccomplishments.Controls.Add(labelSize);
+            panelStandingAccomplishments.Controls.Add(searchBox9);
+            panelStandingAccomplishments.Controls.Add(label14);
+            panelStandingAccomplishments.Controls.Add(cmbBrgy);
+            panelStandingAccomplishments.Controls.Add(searchBox8);
+            panelStandingAccomplishments.Controls.Add(label13);
+            panelStandingAccomplishments.Controls.Add(panelStandingAccomplishmentsHeader);
+            panelStandingAccomplishments.Controls.Add(cmbFarmType);
+            panelStandingAccomplishments.Controls.Add(searchBox2);
+            panelStandingAccomplishments.Controls.Add(label1);
+            panelStandingAccomplishments.Location = new Point(17, 14);
+            panelStandingAccomplishments.Name = "panelStandingAccomplishments";
+            panelStandingAccomplishments.Size = new Size(1566, 222);
+            panelStandingAccomplishments.TabIndex = 74;
             // 
             // txtAveYield
             // 
@@ -473,6 +473,8 @@
             txtAveYield.Size = new Size(217, 24);
             txtAveYield.TabIndex = 86;
             txtAveYield.TextAlign = HorizontalAlignment.Right;
+            txtAveYield.Enter += SelectedPanel;
+            txtAveYield.Leave += UnselectedPanel;
             // 
             // boxAveYield
             // 
@@ -542,6 +544,8 @@
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
+            btnUpdate.Enter += SelectedPanel;
+            btnUpdate.Leave += UnselectedPanel;
             // 
             // cmbSeedType
             // 
@@ -554,6 +558,8 @@
             cmbSeedType.Name = "cmbSeedType";
             cmbSeedType.Size = new Size(220, 33);
             cmbSeedType.TabIndex = 76;
+            cmbSeedType.Enter += SelectedPanel;
+            cmbSeedType.Leave += UnselectedPanel;
             // 
             // searchBox10
             // 
@@ -588,6 +594,8 @@
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(135, 28);
             dtpLogDate.TabIndex = 53;
+            dtpLogDate.Enter += SelectedPanel;
+            dtpLogDate.Leave += UnselectedPanel;
             // 
             // btnClear
             // 
@@ -607,6 +615,8 @@
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.Enter += SelectedPanel;
+            btnClear.Leave += UnselectedPanel;
             // 
             // btnNew
             // 
@@ -624,6 +634,8 @@
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
             btnNew.Click += btnNew_Click;
+            btnNew.Enter += SelectedPanel;
+            btnNew.Leave += UnselectedPanel;
             // 
             // txtSize
             // 
@@ -635,6 +647,8 @@
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 39;
             txtSize.TextAlign = HorizontalAlignment.Right;
+            txtSize.Enter += SelectedPanel;
+            txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11
             // 
@@ -679,6 +693,8 @@
             cmbBrgy.Name = "cmbBrgy";
             cmbBrgy.Size = new Size(200, 33);
             cmbBrgy.TabIndex = 30;
+            cmbBrgy.Enter += SelectedPanel;
+            cmbBrgy.Leave += UnselectedPanel;
             // 
             // searchBox8
             // 
@@ -696,15 +712,15 @@
             label13.TabIndex = 28;
             label13.Text = "Barangay";
             // 
-            // panel44
+            // panelStandingAccomplishmentsHeader
             // 
-            panel44.BackColor = Color.FromArgb(43, 121, 223);
-            panel44.Controls.Add(labelArea);
-            panel44.Dock = DockStyle.Top;
-            panel44.Location = new Point(0, 0);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(1564, 29);
-            panel44.TabIndex = 0;
+            panelStandingAccomplishmentsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelStandingAccomplishmentsHeader.Controls.Add(labelArea);
+            panelStandingAccomplishmentsHeader.Dock = DockStyle.Top;
+            panelStandingAccomplishmentsHeader.Location = new Point(0, 0);
+            panelStandingAccomplishmentsHeader.Name = "panelStandingAccomplishmentsHeader";
+            panelStandingAccomplishmentsHeader.Size = new Size(1564, 29);
+            panelStandingAccomplishmentsHeader.TabIndex = 0;
             // 
             // labelArea
             // 
@@ -728,6 +744,8 @@
             cmbFarmType.Name = "cmbFarmType";
             cmbFarmType.Size = new Size(207, 33);
             cmbFarmType.TabIndex = 25;
+            cmbFarmType.Enter += SelectedPanel;
+            cmbFarmType.Leave += UnselectedPanel;
             // 
             // searchBox2
             // 
@@ -753,24 +771,24 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvRiceStandLogs.Location = new Point(17, 295);
             dgvRiceStandLogs.Name = "dgvRiceStandLogs";
@@ -801,10 +819,10 @@
             panel2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
+            panelStandingAccomplishments.ResumeLayout(false);
+            panelStandingAccomplishments.PerformLayout();
+            panelStandingAccomplishmentsHeader.ResumeLayout(false);
+            panelStandingAccomplishmentsHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRiceStandLogs).EndInit();
             ResumeLayout(false);
         }
@@ -833,7 +851,7 @@
         private Panel panel3;
         private Panel panel2;
         private Panel panel4;
-        private Panel panel43;
+        private Panel panelStandingAccomplishments;
         private Label labelGrowthStage;
         private Label labelRiceStandingLogsId;
         private Button btnUpdate;
@@ -852,7 +870,7 @@
         private ComboBox cmbBrgy;
         private SearchBox searchBox8;
         private Label label13;
-        private Panel panel44;
+        private Panel panelStandingAccomplishmentsHeader;
         private Label labelArea;
         private ComboBox cmbFarmType;
         private SearchBox searchBox2;

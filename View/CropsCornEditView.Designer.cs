@@ -66,7 +66,7 @@
             cmbCornTypeFilter = new ComboBox();
             boxCornTypeFilter = new SearchBox();
             labelCornTypeFilter = new Label();
-            panel43 = new Panel();
+            panelPlantingByEcoZone = new Panel();
             txtAveYield = new TextBox();
             boxAveYield = new SearchBox();
             labelAveYield = new Label();
@@ -97,14 +97,14 @@
             dtpLogDate = new DateTimePicker();
             btnClear = new Button();
             btnNew = new Button();
-            panel44 = new Panel();
+            panelPlantingByEcoZoneHeader = new Panel();
             labelArea = new Label();
             dgvCornPlanting = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
+            panelPlantingByEcoZone.SuspendLayout();
+            panelPlantingByEcoZoneHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCornPlanting).BeginInit();
             SuspendLayout();
             // 
@@ -354,7 +354,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(panel4);
-            panel2.Controls.Add(panel43);
+            panel2.Controls.Add(panelPlantingByEcoZone);
             panel2.Controls.Add(dgvCornPlanting);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 100);
@@ -497,45 +497,45 @@
             labelCornTypeFilter.TabIndex = 83;
             labelCornTypeFilter.Text = "Corn Type";
             // 
-            // panel43
+            // panelPlantingByEcoZone
             // 
-            panel43.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(txtAveYield);
-            panel43.Controls.Add(boxAveYield);
-            panel43.Controls.Add(labelAveYield);
-            panel43.Controls.Add(cmbCornType);
-            panel43.Controls.Add(searchBox1);
-            panel43.Controls.Add(label1);
-            panel43.Controls.Add(labelCornPlantingId);
-            panel43.Controls.Add(searchBox12);
-            panel43.Controls.Add(label6);
-            panel43.Controls.Add(labelGrowthStage);
-            panel43.Controls.Add(txtSize);
-            panel43.Controls.Add(searchBox11);
-            panel43.Controls.Add(labelSize);
-            panel43.Controls.Add(searchBox9);
-            panel43.Controls.Add(label14);
-            panel43.Controls.Add(cmbBrgy);
-            panel43.Controls.Add(searchBox8);
-            panel43.Controls.Add(label13);
-            panel43.Controls.Add(cmbLandType);
-            panel43.Controls.Add(searchBox2);
-            panel43.Controls.Add(label3);
-            panel43.Controls.Add(labelMaxLogId);
-            panel43.Controls.Add(btnUpdate);
-            panel43.Controls.Add(cmbSeedType);
-            panel43.Controls.Add(searchBox10);
-            panel43.Controls.Add(label9);
-            panel43.Controls.Add(label8);
-            panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(btnClear);
-            panel43.Controls.Add(btnNew);
-            panel43.Controls.Add(panel44);
-            panel43.Location = new Point(17, 14);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1566, 222);
-            panel43.TabIndex = 74;
+            panelPlantingByEcoZone.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelPlantingByEcoZone.BorderStyle = BorderStyle.FixedSingle;
+            panelPlantingByEcoZone.Controls.Add(txtAveYield);
+            panelPlantingByEcoZone.Controls.Add(boxAveYield);
+            panelPlantingByEcoZone.Controls.Add(labelAveYield);
+            panelPlantingByEcoZone.Controls.Add(cmbCornType);
+            panelPlantingByEcoZone.Controls.Add(searchBox1);
+            panelPlantingByEcoZone.Controls.Add(label1);
+            panelPlantingByEcoZone.Controls.Add(labelCornPlantingId);
+            panelPlantingByEcoZone.Controls.Add(searchBox12);
+            panelPlantingByEcoZone.Controls.Add(label6);
+            panelPlantingByEcoZone.Controls.Add(labelGrowthStage);
+            panelPlantingByEcoZone.Controls.Add(txtSize);
+            panelPlantingByEcoZone.Controls.Add(searchBox11);
+            panelPlantingByEcoZone.Controls.Add(labelSize);
+            panelPlantingByEcoZone.Controls.Add(searchBox9);
+            panelPlantingByEcoZone.Controls.Add(label14);
+            panelPlantingByEcoZone.Controls.Add(cmbBrgy);
+            panelPlantingByEcoZone.Controls.Add(searchBox8);
+            panelPlantingByEcoZone.Controls.Add(label13);
+            panelPlantingByEcoZone.Controls.Add(cmbLandType);
+            panelPlantingByEcoZone.Controls.Add(searchBox2);
+            panelPlantingByEcoZone.Controls.Add(label3);
+            panelPlantingByEcoZone.Controls.Add(labelMaxLogId);
+            panelPlantingByEcoZone.Controls.Add(btnUpdate);
+            panelPlantingByEcoZone.Controls.Add(cmbSeedType);
+            panelPlantingByEcoZone.Controls.Add(searchBox10);
+            panelPlantingByEcoZone.Controls.Add(label9);
+            panelPlantingByEcoZone.Controls.Add(label8);
+            panelPlantingByEcoZone.Controls.Add(dtpLogDate);
+            panelPlantingByEcoZone.Controls.Add(btnClear);
+            panelPlantingByEcoZone.Controls.Add(btnNew);
+            panelPlantingByEcoZone.Controls.Add(panelPlantingByEcoZoneHeader);
+            panelPlantingByEcoZone.Location = new Point(17, 14);
+            panelPlantingByEcoZone.Name = "panelPlantingByEcoZone";
+            panelPlantingByEcoZone.Size = new Size(1566, 222);
+            panelPlantingByEcoZone.TabIndex = 74;
             // 
             // txtAveYield
             // 
@@ -547,6 +547,8 @@
             txtAveYield.Size = new Size(217, 24);
             txtAveYield.TabIndex = 104;
             txtAveYield.TextAlign = HorizontalAlignment.Right;
+            txtAveYield.Enter += SelectedPanel;
+            txtAveYield.Leave += UnselectedPanel;
             // 
             // boxAveYield
             // 
@@ -575,6 +577,8 @@
             cmbCornType.Name = "cmbCornType";
             cmbCornType.Size = new Size(220, 33);
             cmbCornType.TabIndex = 99;
+            cmbCornType.Enter += SelectedPanel;
+            cmbCornType.Leave += UnselectedPanel;
             // 
             // searchBox1
             // 
@@ -638,6 +642,8 @@
             txtSize.Size = new Size(202, 24);
             txtSize.TabIndex = 94;
             txtSize.TextAlign = HorizontalAlignment.Right;
+            txtSize.Enter += SelectedPanel;
+            txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11
             // 
@@ -682,6 +688,8 @@
             cmbBrgy.Name = "cmbBrgy";
             cmbBrgy.Size = new Size(200, 33);
             cmbBrgy.TabIndex = 89;
+            cmbBrgy.Enter += SelectedPanel;
+            cmbBrgy.Leave += UnselectedPanel;
             // 
             // searchBox8
             // 
@@ -710,6 +718,8 @@
             cmbLandType.Name = "cmbLandType";
             cmbLandType.Size = new Size(207, 33);
             cmbLandType.TabIndex = 84;
+            cmbLandType.Enter += SelectedPanel;
+            cmbLandType.Leave += UnselectedPanel;
             // 
             // searchBox2
             // 
@@ -754,6 +764,8 @@
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
+            btnUpdate.Enter += SelectedPanel;
+            btnUpdate.Leave += UnselectedPanel;
             // 
             // cmbSeedType
             // 
@@ -766,6 +778,8 @@
             cmbSeedType.Name = "cmbSeedType";
             cmbSeedType.Size = new Size(220, 33);
             cmbSeedType.TabIndex = 76;
+            cmbSeedType.Enter += SelectedPanel;
+            cmbSeedType.Leave += UnselectedPanel;
             // 
             // searchBox10
             // 
@@ -800,6 +814,8 @@
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(135, 28);
             dtpLogDate.TabIndex = 53;
+            dtpLogDate.Enter += SelectedPanel;
+            dtpLogDate.Leave += UnselectedPanel;
             // 
             // btnClear
             // 
@@ -819,6 +835,8 @@
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.Enter += SelectedPanel;
+            btnClear.Leave += UnselectedPanel;
             // 
             // btnNew
             // 
@@ -836,16 +854,18 @@
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
             btnNew.Click += btnNew_Click;
+            btnNew.Enter += SelectedPanel;
+            btnNew.Leave += UnselectedPanel;
             // 
-            // panel44
+            // panelPlantingByEcoZoneHeader
             // 
-            panel44.BackColor = Color.FromArgb(43, 121, 223);
-            panel44.Controls.Add(labelArea);
-            panel44.Dock = DockStyle.Top;
-            panel44.Location = new Point(0, 0);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(1564, 29);
-            panel44.TabIndex = 0;
+            panelPlantingByEcoZoneHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelPlantingByEcoZoneHeader.Controls.Add(labelArea);
+            panelPlantingByEcoZoneHeader.Dock = DockStyle.Top;
+            panelPlantingByEcoZoneHeader.Location = new Point(0, 0);
+            panelPlantingByEcoZoneHeader.Name = "panelPlantingByEcoZoneHeader";
+            panelPlantingByEcoZoneHeader.Size = new Size(1564, 29);
+            panelPlantingByEcoZoneHeader.TabIndex = 0;
             // 
             // labelArea
             // 
@@ -878,7 +898,7 @@
             dgvCornPlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
@@ -913,10 +933,10 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
+            panelPlantingByEcoZone.ResumeLayout(false);
+            panelPlantingByEcoZone.PerformLayout();
+            panelPlantingByEcoZoneHeader.ResumeLayout(false);
+            panelPlantingByEcoZoneHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCornPlanting).EndInit();
             ResumeLayout(false);
         }
@@ -950,7 +970,7 @@
         private Label labelGrowthFilter;
         private ComboBox cmbCornTypeFilter;
         private SearchBox boxCornTypeFilter;
-        private Panel panel43;
+        private Panel panelPlantingByEcoZone;
         private ComboBox cmbCornType;
         private SearchBox searchBox1;
         private Label label1;
@@ -978,7 +998,7 @@
         private DateTimePicker dtpLogDate;
         private Button btnClear;
         private Button btnNew;
-        private Panel panel44;
+        private Panel panelPlantingByEcoZoneHeader;
         private Label labelArea;
         private DataGridView dgvCornPlanting;
         private TextBox txtAveYield;
