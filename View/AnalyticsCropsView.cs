@@ -64,6 +64,17 @@ namespace AgRecords.View
                 // Set the pie chart model to the PlotView control
                 riceGraph4.Model = pieChart;
             }
+
+            DataTable data5 = analyticsController.BarTotalRiceLandAreaPerFarmType();
+
+            if (data5 != null)
+            {
+                // Create the pie chart model
+                PlotModel lineChart = analyticsController.CreateBarChartRiceLandArea(data5);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph5.Model = lineChart;
+            }
         }
 
         private void riceGraph1_Click(object sender, EventArgs e)

@@ -54,6 +54,16 @@ namespace AgRecords.View
 
         private void dgvCert_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void CertificationsView_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCert_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)
             {
@@ -97,6 +107,7 @@ namespace AgRecords.View
                     //}
                 }
             }
+
         }
     }
 }

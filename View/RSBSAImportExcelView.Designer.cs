@@ -134,9 +134,9 @@
             labelProgress.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelProgress.Location = new Point(725, 84);
             labelProgress.Name = "labelProgress";
-            labelProgress.Size = new Size(93, 17);
+            labelProgress.Size = new Size(37, 17);
             labelProgress.TabIndex = 7;
-            labelProgress.Text = "progress label";
+            labelProgress.Text = "Load";
             // 
             // panel1
             // 

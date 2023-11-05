@@ -55,11 +55,11 @@
             rectangleBlue1 = new RectangleBlue();
             label8 = new Label();
             groupBox3 = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
             txtBoxDescription = new TextBox();
             txtBoxFrom = new TextBox();
             txtBoxTo = new TextBox();
             label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -349,11 +349,11 @@
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.Controls.Add(dateTimePicker1);
             groupBox3.Controls.Add(txtBoxDescription);
             groupBox3.Controls.Add(txtBoxFrom);
             groupBox3.Controls.Add(txtBoxTo);
             groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(dateTimePicker1);
             groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label5);
@@ -366,6 +366,14 @@
             groupBox3.Size = new Size(799, 438);
             groupBox3.TabIndex = 35;
             groupBox3.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Location = new Point(152, 36);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(620, 28);
+            dateTimePicker1.TabIndex = 54;
             // 
             // txtBoxDescription
             // 
@@ -390,7 +398,7 @@
             txtBoxFrom.Size = new Size(601, 27);
             txtBoxFrom.TabIndex = 6;
             txtBoxFrom.TextChanged += AllCaps;
-            txtBoxFrom.KeyPress += this.AlphaOnly;
+            txtBoxFrom.KeyPress += AlphaOnly;
             // 
             // txtBoxTo
             // 
@@ -403,7 +411,7 @@
             txtBoxTo.Size = new Size(601, 27);
             txtBoxTo.TabIndex = 5;
             txtBoxTo.TextChanged += AllCaps;
-            txtBoxTo.KeyPress += this.AlphaOnly;
+            txtBoxTo.KeyPress += AlphaOnly;
             // 
             // label3
             // 
@@ -415,18 +423,6 @@
             label3.Size = new Size(41, 20);
             label3.TabIndex = 31;
             label3.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Checked = false;
-            dateTimePicker1.Location = new Point(162, 41);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(623, 28);
-            dateTimePicker1.TabIndex = 30;
-            dateTimePicker1.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -544,12 +540,12 @@
         private TextBox txtBoxFrom;
         private TextBox txtBoxTo;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
         private Label label7;
         private Label label6;
         private Label label5;
         private RectangleBlue rectangleBlue6;
         private RectangleBlue rectangleBlue7;
         private RectangleBlue rectangleBlue8;
+        private DateTimePicker dateTimePicker1;
     }
 }
