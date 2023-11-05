@@ -1186,7 +1186,7 @@ namespace AgRecords.View
         private void nudHouseFemale_ValueChanged(object sender, EventArgs e)
         {
             nudNoLivingHouseMem.Value = (nudHouseNoMale.Value + nudHouseFemale.Value);
-            
+
             if (string.IsNullOrEmpty(nudHouseFemale.Text))
             {
                 nudHouseFemale.Text = "";

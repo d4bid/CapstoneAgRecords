@@ -719,7 +719,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 0);
+            panelFarmProfile.Size = new Size(1595, 767);
             panelFarmProfile.TabIndex = 0;
             // 
             // panelFarmLand
