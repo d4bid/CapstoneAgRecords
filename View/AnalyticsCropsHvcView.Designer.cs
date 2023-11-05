@@ -46,7 +46,7 @@
             label9 = new Label();
             rectangleFullWhite2 = new RectangleFullWhite();
             rectangleFullWhite1 = new RectangleFullWhite();
-            dgvLetters = new DataGridView();
+            dgvHvc = new DataGridView();
             label3 = new Label();
             hvcGraph2 = new OxyPlot.WindowsForms.PlotView();
             label11 = new Label();
@@ -60,7 +60,7 @@
             hvcGraph6 = new OxyPlot.WindowsForms.PlotView();
             label8 = new Label();
             rectangleFullWhite6 = new RectangleFullWhite();
-            ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHvc).BeginInit();
             SuspendLayout();
             // 
             // labelTotalHvcLandArea
@@ -225,16 +225,16 @@
             rectangleFullWhite1.Size = new Size(325, 465);
             rectangleFullWhite1.TabIndex = 45;
             // 
-            // dgvLetters
+            // dgvHvc
             // 
-            dgvLetters.AllowUserToAddRows = false;
-            dgvLetters.AllowUserToDeleteRows = false;
-            dgvLetters.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dgvLetters.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvLetters.BackgroundColor = Color.White;
-            dgvLetters.BorderStyle = BorderStyle.None;
-            dgvLetters.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvHvc.AllowUserToAddRows = false;
+            dgvHvc.AllowUserToDeleteRows = false;
+            dgvHvc.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgvHvc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHvc.BackgroundColor = Color.White;
+            dgvHvc.BorderStyle = BorderStyle.None;
+            dgvHvc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvHvc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -243,26 +243,27 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvLetters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHvc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvHvc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHvc.ColumnHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvLetters.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvLetters.GridColor = Color.FromArgb(239, 239, 239);
-            dgvLetters.Location = new Point(1279, 69);
-            dgvLetters.Name = "dgvLetters";
-            dgvLetters.ReadOnly = true;
-            dgvLetters.RowHeadersVisible = false;
-            dgvLetters.RowHeadersWidth = 51;
-            dgvLetters.RowTemplate.Height = 40;
-            dgvLetters.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLetters.Size = new Size(288, 395);
-            dgvLetters.TabIndex = 47;
+            dgvHvc.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvHvc.GridColor = Color.FromArgb(239, 239, 239);
+            dgvHvc.Location = new Point(1279, 69);
+            dgvHvc.Name = "dgvHvc";
+            dgvHvc.ReadOnly = true;
+            dgvHvc.RowHeadersVisible = false;
+            dgvHvc.RowHeadersWidth = 51;
+            dgvHvc.RowTemplate.Height = 40;
+            dgvHvc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvHvc.Size = new Size(288, 395);
+            dgvHvc.TabIndex = 47;
             // 
             // label3
             // 
@@ -418,7 +419,7 @@
             Controls.Add(hvcGraph2);
             Controls.Add(label11);
             Controls.Add(rectangleFullWhite5);
-            Controls.Add(dgvLetters);
+            Controls.Add(dgvHvc);
             Controls.Add(label3);
             Controls.Add(rectangleFullWhite1);
             Controls.Add(hvcGraph1);
@@ -439,7 +440,7 @@
             Name = "AnalyticsCropsHvcView";
             Text = "AnalyticsCropsHvcView";
             Load += AnalyticsCropsHvcView_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvLetters).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHvc).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -462,7 +463,7 @@
         private Label label9;
         private RectangleFullWhite rectangleFullWhite2;
         private RectangleFullWhite rectangleFullWhite1;
-        private DataGridView dgvLetters;
+        private DataGridView dgvHvc;
         private Label label3;
         private OxyPlot.WindowsForms.PlotView hvcGraph2;
         private Label label11;

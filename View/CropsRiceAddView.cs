@@ -285,7 +285,7 @@ namespace AgRecords.View
             float size = 0.00f;
             if (!string.IsNullOrEmpty(txtSize.Text))
             {
-                size=float.Parse(txtSize.Text);
+                size = float.Parse(txtSize.Text);
             }
 
             int riceStandingLogsId = int.Parse(labelRiceStandingLogsId.Text);

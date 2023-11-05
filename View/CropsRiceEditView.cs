@@ -91,14 +91,23 @@ namespace AgRecords.View
             {
                 labelGrowthStage.Text = "Vegetative Stage";
             }
+
+            if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
+            {
+                DisplayPlantingDataTableFilter();
+            }
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
+            {
+                DisplayStandingDataTableFilter();
+            }
+            else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
+            {
+                DisplayHarvestingDataTableFilter();
+            }
         }
 
         public void ClearStandingLogsTextControls()
         {
-            cmbBrgy.SelectedIndex = -1;
-            cmbFarmType.SelectedIndex = -1;
-            //cmbGrowthStage.SelectedIndex = -1;
-            cmbSeedType.SelectedIndex = -1;
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Now;
             labelRiceStandingLogsId.Text = "";
@@ -706,21 +715,8 @@ namespace AgRecords.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
-            {
-                btnUpdate.Enabled = true;
-                btnNew.Enabled = false;
-            }
-            else if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = false;
-            }
-            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = true;
-            }
+            btnUpdate.Enabled = false;
+            btnNew.Enabled = true;
 
             int brgyIndex = cmbBrgy.SelectedIndex;
             int farmTypeIndex = cmbFarmType.SelectedIndex;
@@ -771,8 +767,7 @@ namespace AgRecords.View
                     FormRefresh();
                 }
             }
-
-            if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
+            else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
             {
                 if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
                 {
@@ -780,6 +775,7 @@ namespace AgRecords.View
                 }
             }
         }
+
         private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
         {
             TextboxValidation.TextBox_NumericWithDecimal(sender, e);

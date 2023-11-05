@@ -32,6 +32,8 @@ namespace AgRecords.View
             labelTotalHvcBarangay.Text = analyticsController.TotalBarangayHvc() + " ha";
             labelTotalAreaPlanted.Text = analyticsController.TotalHvcAreaPlanted() + " ha";
 
+            DataTable coopTable = analyticsController.ListHvc();
+            dgvHvc.DataSource = coopTable;
 
             DataTable data1 = analyticsController.PieCountHvcFarmerSex();
 

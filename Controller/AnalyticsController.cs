@@ -414,14 +414,17 @@ namespace AgRecords.Controller
             // Days of the week
             var daysOfWeek = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 
-            // Add data points to the series for each day
-            for (int i = 1; i <= 7; i++)
+            if (data != null && data.Rows.Count > 0)
             {
-                // Convert the day's count from the data table
-                int dayCount = Convert.ToInt32(data.Rows[0][daysOfWeek[i % 7]]);
+                // Add data points to the series for each day
+                for (int i = 1; i <= 7; i++)
+                {
+                    // Convert the day's count from the data table
+                    int dayCount = Convert.ToInt32(data.Rows[0][daysOfWeek[i % 7]]);
 
-                // Add a data point with X as the day's index (1-7) and Y as the count
-                daySeries.Points.Add(new DataPoint(i, dayCount));
+                    // Add a data point with X as the day's index (1-7) and Y as the count
+                    daySeries.Points.Add(new DataPoint(i, dayCount));
+                }
             }
 
             // Set axis titles
@@ -1027,12 +1030,25 @@ namespace AgRecords.Controller
         {
             var model = new PlotModel();
 
-            var areaPlanted = Convert.ToDouble(data.Rows[0]["Area Planted"]);
-            var areaHarvested = Convert.ToDouble(data.Rows[0]["Area Harvested"]);
-            var remaining = Convert.ToDouble(data.Rows[0]["Remaining"]);
+            double areaPlanted = 0;
+            double areaHarvested = 0;
+            double remaining = 0;
+
+            if (data != null && data.Rows.Count > 0)
+            {
+                if (data.Columns.Contains("Area Planted") && data.Rows[0]["Area Planted"] != DBNull.Value)
+                {
+                    areaPlanted = Convert.ToDouble(data.Rows[0]["Area Planted"]);
+                }
+
+                if (data.Columns.Contains("Area Harvested") && data.Rows[0]["Area Harvested"] != DBNull.Value)
+                {
+                    areaHarvested = Convert.ToDouble(data.Rows[0]["Area Harvested"]);
+                }
+            }
 
             // Calculate percentages
-            var harvestedPercentage = (areaHarvested / areaPlanted) * 100;
+            var harvestedPercentage = areaPlanted > 0 ? (areaHarvested / areaPlanted) * 100 : 0;
             var remainingPercentage = 100 - harvestedPercentage;
 
             var pieSeries = new PieSeries
@@ -1060,7 +1076,6 @@ namespace AgRecords.Controller
             legend.LegendPosition = LegendPosition.BottomCenter;
             legend.LegendOrientation = LegendOrientation.Horizontal;
             legend.LegendPlacement = LegendPlacement.Outside;
-
 
             model.Legends.Add(legend);
             model.Series.Add(pieSeries);
@@ -1274,6 +1289,7 @@ namespace AgRecords.Controller
 
 
         // ---------------- HVC --------------------
+
         public string CountHvcFarmers()
         {
             try
@@ -1319,6 +1335,20 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable ListHvc()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.GetHvcList();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
         }
 

@@ -41,6 +41,14 @@ namespace AgRecords.View
 
         private void WeeklyActivitiesView_Load(object sender, EventArgs e)
         {
+            // Calculate the date one week ago from the current date
+            DateTime oneWeekAgo = DateTime.Now.AddDays(-7);
+
+            // Set the value of your DateTimePicker control to the calculated date
+            dtpFrom.Value = oneWeekAgo;
+            dtpFrom1.Value = oneWeekAgo;
+
+
             changeDateTable();
             changeSummaryTable();
 
