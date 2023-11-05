@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using OxyPlot;
 using MySqlX.XDevAPI.Relational;
+using AgRecords.Utilities;
 
 namespace AgRecords.View
 {
@@ -361,5 +362,16 @@ namespace AgRecords.View
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
         }
+
+        private void AlphaOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlphaOnly(sender, e);
+        }
+
+        private void AllCaps(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
+
     }
 }

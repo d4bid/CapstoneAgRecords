@@ -343,7 +343,13 @@ namespace AgRecords.View
                     break;
             }
 
-            float size = float.Parse(txtSize.Text);
+             float size = float.Parse(txtSize.Text);
+            //float size = 0.00f;
+            //if (!string.IsNullOrEmpty(txtSize.Text))
+            //{
+            //    size = float.Parse(txtSize.Text);
+            //}
+            MessageBox.Show($"{txtAveYield}");
             float yield = float.Parse(txtAveYield.Text);
             int cornPlantingEcoId = int.Parse(labelCornPlantingId.Text);
             int cornHarvestingId = int.Parse(labelCornPlantingId.Text);
@@ -380,7 +386,12 @@ namespace AgRecords.View
             int seedTypeId = seedTypeIndex + 1;
 
             int growthStageId = 1;
-            float size = float.Parse(txtSize.Text);
+               float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size = float.Parse(txtSize.Text);
+            }
+
 
             if (cropsCornController.AddCornPlantingEco(labelCornPrId.Text, brgyId, landTypeId, growthStageId, seedTypeId, colorTypeId, size, dtpLogDate.Value.Date))
             {
@@ -906,6 +917,10 @@ namespace AgRecords.View
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             }
+        }
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
         }
 
         private void SelectedPanel(object sender, EventArgs e)

@@ -59,7 +59,7 @@
             label8 = new Label();
             searchBox10 = new SearchBox();
             panel6 = new Panel();
-            panel43 = new Panel();
+            panelStandingAccomplishments = new Panel();
             labelRiceStandingLogsId = new Label();
             searchBox12 = new SearchBox();
             label6 = new Label();
@@ -77,7 +77,7 @@
             dtpLogDate = new DateTimePicker();
             btnClear = new Button();
             btnNew = new Button();
-            panel44 = new Panel();
+            panelStandingAccomplishmentsHeader = new Panel();
             label46 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -86,8 +86,8 @@
             panel7.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            panel43.SuspendLayout();
-            panel44.SuspendLayout();
+            panelStandingAccomplishments.SuspendLayout();
+            panelStandingAccomplishmentsHeader.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -111,7 +111,7 @@
             panel1.Name = "panel1";
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
-            panel1.TabIndex = 23;
+            panel1.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -243,7 +243,7 @@
             panel3.Location = new Point(0, 90);
             panel3.Name = "panel3";
             panel3.Size = new Size(1595, 10);
-            panel3.TabIndex = 25;
+            panel3.TabIndex = 2;
             // 
             // panel2
             // 
@@ -255,7 +255,7 @@
             panel2.Location = new Point(0, 100);
             panel2.Name = "panel2";
             panel2.Size = new Size(1595, 826);
-            panel2.TabIndex = 26;
+            panel2.TabIndex = 3;
             // 
             // panel8
             // 
@@ -265,7 +265,7 @@
             panel8.Name = "panel8";
             panel8.Padding = new Padding(10);
             panel8.Size = new Size(1595, 551);
-            panel8.TabIndex = 79;
+            panel8.TabIndex = 3;
             // 
             // dgvRiceStandLogs
             // 
@@ -313,7 +313,7 @@
             panel7.Name = "panel7";
             panel7.Padding = new Padding(10);
             panel7.Size = new Size(1595, 107);
-            panel7.TabIndex = 78;
+            panel7.TabIndex = 2;
             // 
             // panel5
             // 
@@ -338,10 +338,12 @@
             cbGrandTotal.Location = new Point(1428, 41);
             cbGrandTotal.Name = "cbGrandTotal";
             cbGrandTotal.Size = new Size(120, 27);
-            cbGrandTotal.TabIndex = 87;
+            cbGrandTotal.TabIndex = 4;
             cbGrandTotal.Text = "Grand Total";
             cbGrandTotal.UseVisualStyleBackColor = true;
             cbGrandTotal.CheckedChanged += cbGrandTotal_CheckedChanged_1;
+            cbGrandTotal.Enter += SelectedPanel;
+            cbGrandTotal.Leave += UnselectedPanel;
             // 
             // cbTotal
             // 
@@ -354,6 +356,8 @@
             cbTotal.Text = "Total";
             cbTotal.UseVisualStyleBackColor = true;
             cbTotal.CheckedChanged += cbTotal_CheckedChanged;
+            cbTotal.Enter += SelectedPanel;
+            cbTotal.Leave += UnselectedPanel;
             // 
             // cmbFarmType
             // 
@@ -365,8 +369,10 @@
             cmbFarmType.Location = new Point(32, 37);
             cmbFarmType.Name = "cmbFarmType";
             cmbFarmType.Size = new Size(298, 33);
-            cmbFarmType.TabIndex = 84;
+            cmbFarmType.TabIndex = 1;
             cmbFarmType.SelectedIndexChanged += cmbFarmType_SelectedIndexChanged;
+            cmbFarmType.Enter += SelectedPanel;
+            cmbFarmType.Leave += UnselectedPanel;
             // 
             // label3
             // 
@@ -374,7 +380,7 @@
             label3.Location = new Point(26, 11);
             label3.Name = "label3";
             label3.Size = new Size(76, 20);
-            label3.TabIndex = 85;
+            label3.TabIndex = 0;
             label3.Text = "Farm Type";
             // 
             // searchBox2
@@ -382,7 +388,7 @@
             searchBox2.Location = new Point(26, 34);
             searchBox2.Name = "searchBox2";
             searchBox2.Size = new Size(307, 39);
-            searchBox2.TabIndex = 86;
+            searchBox2.TabIndex = 0;
             // 
             // cmbSeedType
             // 
@@ -394,8 +400,10 @@
             cmbSeedType.Location = new Point(361, 37);
             cmbSeedType.Name = "cmbSeedType";
             cmbSeedType.Size = new Size(298, 33);
-            cmbSeedType.TabIndex = 76;
+            cmbSeedType.TabIndex = 2;
             cmbSeedType.SelectedIndexChanged += cmbSeedType_SelectedIndexChanged;
+            cmbSeedType.Enter += SelectedPanel;
+            cmbSeedType.Leave += UnselectedPanel;
             // 
             // label8
             // 
@@ -403,7 +411,7 @@
             label8.Location = new Point(354, 11);
             label8.Name = "label8";
             label8.Size = new Size(77, 20);
-            label8.TabIndex = 77;
+            label8.TabIndex = 0;
             label8.Text = "Seed Type";
             // 
             // searchBox10
@@ -411,44 +419,45 @@
             searchBox10.Location = new Point(354, 34);
             searchBox10.Name = "searchBox10";
             searchBox10.Size = new Size(309, 39);
-            searchBox10.TabIndex = 78;
+            searchBox10.TabIndex = 0;
+            searchBox10.TabStop = false;
             // 
             // panel6
             // 
-            panel6.Controls.Add(panel43);
+            panel6.Controls.Add(panelStandingAccomplishments);
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
             panel6.Padding = new Padding(10);
             panel6.Size = new Size(1595, 168);
-            panel6.TabIndex = 77;
+            panel6.TabIndex = 1;
             // 
-            // panel43
+            // panelStandingAccomplishments
             // 
-            panel43.BorderStyle = BorderStyle.FixedSingle;
-            panel43.Controls.Add(labelRiceStandingLogsId);
-            panel43.Controls.Add(searchBox12);
-            panel43.Controls.Add(label6);
-            panel43.Controls.Add(labelGrowthStage);
-            panel43.Controls.Add(txtSize);
-            panel43.Controls.Add(searchBox11);
-            panel43.Controls.Add(LabelSize);
-            panel43.Controls.Add(searchBox9);
-            panel43.Controls.Add(label14);
-            panel43.Controls.Add(cmbBrgy);
-            panel43.Controls.Add(searchBox8);
-            panel43.Controls.Add(label13);
-            panel43.Controls.Add(btnUpdate);
-            panel43.Controls.Add(label9);
-            panel43.Controls.Add(dtpLogDate);
-            panel43.Controls.Add(btnClear);
-            panel43.Controls.Add(btnNew);
-            panel43.Controls.Add(panel44);
-            panel43.Dock = DockStyle.Fill;
-            panel43.Location = new Point(10, 10);
-            panel43.Name = "panel43";
-            panel43.Size = new Size(1575, 148);
-            panel43.TabIndex = 74;
+            panelStandingAccomplishments.BorderStyle = BorderStyle.FixedSingle;
+            panelStandingAccomplishments.Controls.Add(labelRiceStandingLogsId);
+            panelStandingAccomplishments.Controls.Add(searchBox12);
+            panelStandingAccomplishments.Controls.Add(label6);
+            panelStandingAccomplishments.Controls.Add(labelGrowthStage);
+            panelStandingAccomplishments.Controls.Add(txtSize);
+            panelStandingAccomplishments.Controls.Add(searchBox11);
+            panelStandingAccomplishments.Controls.Add(LabelSize);
+            panelStandingAccomplishments.Controls.Add(searchBox9);
+            panelStandingAccomplishments.Controls.Add(label14);
+            panelStandingAccomplishments.Controls.Add(cmbBrgy);
+            panelStandingAccomplishments.Controls.Add(searchBox8);
+            panelStandingAccomplishments.Controls.Add(label13);
+            panelStandingAccomplishments.Controls.Add(btnUpdate);
+            panelStandingAccomplishments.Controls.Add(label9);
+            panelStandingAccomplishments.Controls.Add(dtpLogDate);
+            panelStandingAccomplishments.Controls.Add(btnClear);
+            panelStandingAccomplishments.Controls.Add(btnNew);
+            panelStandingAccomplishments.Controls.Add(panelStandingAccomplishmentsHeader);
+            panelStandingAccomplishments.Dock = DockStyle.Fill;
+            panelStandingAccomplishments.Location = new Point(10, 10);
+            panelStandingAccomplishments.Name = "panelStandingAccomplishments";
+            panelStandingAccomplishments.Size = new Size(1575, 148);
+            panelStandingAccomplishments.TabIndex = 1;
             // 
             // labelRiceStandingLogsId
             // 
@@ -457,7 +466,7 @@
             labelRiceStandingLogsId.Location = new Point(31, 82);
             labelRiceStandingLogsId.Name = "labelRiceStandingLogsId";
             labelRiceStandingLogsId.Size = new Size(32, 28);
-            labelRiceStandingLogsId.TabIndex = 95;
+            labelRiceStandingLogsId.TabIndex = 0;
             labelRiceStandingLogsId.Text = "ID";
             // 
             // searchBox12
@@ -465,7 +474,8 @@
             searchBox12.Location = new Point(26, 78);
             searchBox12.Name = "searchBox12";
             searchBox12.Size = new Size(80, 39);
-            searchBox12.TabIndex = 98;
+            searchBox12.TabIndex = 0;
+            searchBox12.TabStop = false;
             // 
             // label6
             // 
@@ -473,7 +483,7 @@
             label6.Location = new Point(26, 55);
             label6.Name = "label6";
             label6.Size = new Size(24, 20);
-            label6.TabIndex = 97;
+            label6.TabIndex = 0;
             label6.Text = "ID";
             // 
             // labelGrowthStage
@@ -483,8 +493,10 @@
             labelGrowthStage.Location = new Point(361, 85);
             labelGrowthStage.Name = "labelGrowthStage";
             labelGrowthStage.Size = new Size(264, 25);
-            labelGrowthStage.TabIndex = 96;
+            labelGrowthStage.TabIndex = 0;
             labelGrowthStage.Text = "Newly Planted/Seedling Stage";
+            labelGrowthStage.Enter += SelectedPanel;
+            labelGrowthStage.Leave += UnselectedPanel;
             // 
             // txtSize
             // 
@@ -494,15 +506,18 @@
             txtSize.Name = "txtSize";
             txtSize.PlaceholderText = "0.00";
             txtSize.Size = new Size(202, 24);
-            txtSize.TabIndex = 94;
+            txtSize.TabIndex = 2;
             txtSize.TextAlign = HorizontalAlignment.Right;
+            txtSize.Enter += SelectedPanel;
+            txtSize.KeyPress += NumOrDecimalsOnly;
+            txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11
             // 
             searchBox11.Location = new Point(685, 79);
             searchBox11.Name = "searchBox11";
             searchBox11.Size = new Size(216, 39);
-            searchBox11.TabIndex = 93;
+            searchBox11.TabIndex = 0;
             // 
             // LabelSize
             // 
@@ -510,7 +525,7 @@
             LabelSize.Location = new Point(685, 56);
             LabelSize.Name = "LabelSize";
             LabelSize.Size = new Size(66, 20);
-            LabelSize.TabIndex = 92;
+            LabelSize.TabIndex = 0;
             LabelSize.Text = "Size (ha)";
             // 
             // searchBox9
@@ -518,7 +533,7 @@
             searchBox9.Location = new Point(354, 79);
             searchBox9.Name = "searchBox9";
             searchBox9.Size = new Size(309, 39);
-            searchBox9.TabIndex = 91;
+            searchBox9.TabIndex = 0;
             // 
             // label14
             // 
@@ -526,7 +541,7 @@
             label14.Location = new Point(354, 56);
             label14.Name = "label14";
             label14.Size = new Size(99, 20);
-            label14.TabIndex = 90;
+            label14.TabIndex = 0;
             label14.Text = "Growth Stage";
             // 
             // cmbBrgy
@@ -539,14 +554,16 @@
             cmbBrgy.Location = new Point(130, 81);
             cmbBrgy.Name = "cmbBrgy";
             cmbBrgy.Size = new Size(200, 33);
-            cmbBrgy.TabIndex = 89;
+            cmbBrgy.TabIndex = 1;
+            cmbBrgy.Enter += SelectedPanel;
+            cmbBrgy.Leave += UnselectedPanel;
             // 
             // searchBox8
             // 
             searchBox8.Location = new Point(125, 78);
             searchBox8.Name = "searchBox8";
             searchBox8.Size = new Size(208, 39);
-            searchBox8.TabIndex = 88;
+            searchBox8.TabIndex = 0;
             // 
             // label13
             // 
@@ -554,7 +571,7 @@
             label13.Location = new Point(125, 55);
             label13.Name = "label13";
             label13.Size = new Size(71, 20);
-            label13.TabIndex = 87;
+            label13.TabIndex = 0;
             label13.Text = "Barangay";
             // 
             // btnUpdate
@@ -569,10 +586,12 @@
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 37);
-            btnUpdate.TabIndex = 79;
+            btnUpdate.TabIndex = 4;
             btnUpdate.Text = "Save";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
+            btnUpdate.Enter += SelectedPanel;
+            btnUpdate.Leave += UnselectedPanel;
             // 
             // label9
             // 
@@ -580,7 +599,7 @@
             label9.Location = new Point(948, 56);
             label9.Name = "label9";
             label9.Size = new Size(95, 20);
-            label9.TabIndex = 54;
+            label9.TabIndex = 0;
             label9.Text = "Date Planted";
             // 
             // dtpLogDate
@@ -590,7 +609,9 @@
             dtpLogDate.Location = new Point(948, 85);
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(170, 28);
-            dtpLogDate.TabIndex = 53;
+            dtpLogDate.TabIndex = 3;
+            dtpLogDate.Enter += SelectedPanel;
+            dtpLogDate.Leave += UnselectedPanel;
             // 
             // btnClear
             // 
@@ -606,10 +627,12 @@
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 37);
-            btnClear.TabIndex = 52;
+            btnClear.TabIndex = 6;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.Enter += SelectedPanel;
+            btnClear.Leave += UnselectedPanel;
             // 
             // btnNew
             // 
@@ -623,20 +646,22 @@
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 37);
-            btnNew.TabIndex = 40;
+            btnNew.TabIndex = 5;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
             btnNew.Click += btnNew_Click;
+            btnNew.Enter += SelectedPanel;
+            btnNew.Leave += UnselectedPanel;
             // 
-            // panel44
+            // panelStandingAccomplishmentsHeader
             // 
-            panel44.BackColor = Color.FromArgb(43, 121, 223);
-            panel44.Controls.Add(label46);
-            panel44.Dock = DockStyle.Top;
-            panel44.Location = new Point(0, 0);
-            panel44.Name = "panel44";
-            panel44.Size = new Size(1573, 29);
-            panel44.TabIndex = 0;
+            panelStandingAccomplishmentsHeader.BackColor = Color.FromArgb(43, 121, 223);
+            panelStandingAccomplishmentsHeader.Controls.Add(label46);
+            panelStandingAccomplishmentsHeader.Dock = DockStyle.Top;
+            panelStandingAccomplishmentsHeader.Location = new Point(0, 0);
+            panelStandingAccomplishmentsHeader.Name = "panelStandingAccomplishmentsHeader";
+            panelStandingAccomplishmentsHeader.Size = new Size(1573, 29);
+            panelStandingAccomplishmentsHeader.TabIndex = 0;
             // 
             // label46
             // 
@@ -669,10 +694,10 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
-            panel43.ResumeLayout(false);
-            panel43.PerformLayout();
-            panel44.ResumeLayout(false);
-            panel44.PerformLayout();
+            panelStandingAccomplishments.ResumeLayout(false);
+            panelStandingAccomplishments.PerformLayout();
+            panelStandingAccomplishmentsHeader.ResumeLayout(false);
+            panelStandingAccomplishmentsHeader.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -695,7 +720,7 @@
         private SearchBox searchBox5;
         private SearchBox searchBox3;
         private Button btnCancel;
-        private Panel panel43;
+        private Panel panelStandingAccomplishments;
         private Label labelRiceStandingLogsId;
         private SearchBox searchBox12;
         private Label label6;
@@ -719,7 +744,7 @@
         private DateTimePicker dtpLogDate;
         private Button btnClear;
         private Button btnNew;
-        private Panel panel44;
+        private Panel panelStandingAccomplishmentsHeader;
         private Label label46;
         private CheckBox cbTotal;
         private Panel panel5;

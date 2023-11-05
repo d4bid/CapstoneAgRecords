@@ -322,6 +322,7 @@
             txtSize.TabIndex = 2;
             txtSize.TextAlign = HorizontalAlignment.Right;
             txtSize.Enter += SelectedPanel;
+            txtSize.KeyPress += NumOrDecimalsOnly;
             txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11

@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -306,7 +307,12 @@ namespace AgRecords.View
             int seedTypeId = seedTypeIndex + 1;
 
             int growthStageId = 1;
-            float size = float.Parse(txtSize.Text);
+
+            float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size = float.Parse(txtSize.Text);
+            }
 
             if (cropsCornController.AddCornPlantingEco(labelCornPrId.Text, brgyId, landTypeId, growthStageId, seedTypeId, colorTypeId, size, dtpLogDate.Value.Date))
             {
@@ -353,7 +359,12 @@ namespace AgRecords.View
                     break;
             }
 
-            float size = float.Parse(txtSize.Text);
+
+            float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size = float.Parse(txtSize.Text);
+            }
             int cornPlantingEcoId = int.Parse(labelCornPlantingId.Text);
 
             if (cropsCornController.UpdateCornPlantingEco(cornPlantingEcoId, brgyId, landTypeId, growthStageId, seedTypeId, colorTypeId, size, dtpLogDate.Value.Date))
@@ -407,6 +418,32 @@ namespace AgRecords.View
         private void cmbLandType_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayDataTableFilter();
+        }
+
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+        }
+
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPlantingByEcoZone || focusedControl == dtpLogDate)
+            {
+                PanelSelected.Panel_Enter(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
+            }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPlantingByEcoZone)
+            {
+                PanelSelected.Panel_Leave(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
+            }
+
         }
     }
 }

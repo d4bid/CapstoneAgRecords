@@ -316,7 +316,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.size == 0)
+                else if (rs.size == 0.00f)
                 {
                     MessageBox.Show("Size is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

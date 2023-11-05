@@ -17,6 +17,7 @@ using System.IO.Packaging;
 using System.Reflection.Metadata;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Diagnostics;
+using AgRecords.Utilities;
 
 namespace AgRecords.View
 {
@@ -422,7 +423,12 @@ namespace AgRecords.View
             int seedTypeId = seedTypeIndex + 1;
 
             int growthStageId = 1;
-            float size = float.Parse(txtSize.Text);
+            float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size = float.Parse(txtSize.Text);
+            }
+
 
             if (cropsRiceController.AddRiceStandingLogs(labelRiceSrId.Text, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
             {
@@ -765,7 +771,7 @@ namespace AgRecords.View
                     FormRefresh();
                 }
             }
-            
+
             if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
             {
                 if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
@@ -773,6 +779,31 @@ namespace AgRecords.View
                     FormRefresh();
                 }
             }
+        }
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+        }
+
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelStandingAccomplishments || focusedControl == dtpLogDate)
+            {
+                PanelSelected.Panel_Enter(panelStandingAccomplishments, panelStandingAccomplishmentsHeader);
+            }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelStandingAccomplishments)
+            {
+                PanelSelected.Panel_Leave(panelStandingAccomplishments, panelStandingAccomplishmentsHeader);
+            }
+
         }
     }
 }

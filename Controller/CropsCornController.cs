@@ -230,7 +230,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Color is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (cpe.size == 0)
+                else if (cpe.size == 0.00f)
                 {
                     MessageBox.Show("Size is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

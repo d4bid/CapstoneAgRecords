@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
@@ -346,6 +346,7 @@
             txtSize.TabIndex = 94;
             txtSize.TextAlign = HorizontalAlignment.Right;
             txtSize.Enter += SelectedPanel;
+            txtSize.KeyPress += NumOrDecimalsOnly;
             txtSize.Leave += UnselectedPanel;
             // 
             // searchBox11
@@ -515,24 +516,24 @@
             dgvHvcStanding.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHvcStanding.BackgroundColor = Color.White;
             dgvHvcStanding.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvHvcStanding.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle2;
             dgvHvcStanding.GridColor = Color.FromArgb(239, 239, 239);
             dgvHvcStanding.Location = new Point(17, 239);
             dgvHvcStanding.Name = "dgvHvcStanding";

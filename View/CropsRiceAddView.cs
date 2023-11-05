@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
@@ -281,7 +282,12 @@ namespace AgRecords.View
                     break;
             }
 
-            float size = float.Parse(txtSize.Text);
+            float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size=float.Parse(txtSize.Text);
+            }
+
             int riceStandingLogsId = int.Parse(labelRiceStandingLogsId.Text);
 
             if (cropsRiceController.UpdateRiceStandingLog(riceStandingLogsId, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
@@ -304,7 +310,12 @@ namespace AgRecords.View
             int seedTypeId = seedTypeIndex + 1;
 
             int growthStageId = 1;
-            float size = float.Parse(txtSize.Text);
+            float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size = float.Parse(txtSize.Text);
+            }
+
 
             if (cropsRiceController.AddRiceStandingLogs(labelRiceSrId.Text, brgyId, farmTypeId, growthStageId, seedTypeId, size, dtpLogDate.Value.Date))
             {
@@ -364,6 +375,32 @@ namespace AgRecords.View
             {
                 DisplayDataTableFilter();
             }
+        }
+
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+        }
+
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelStandingAccomplishments || focusedControl == dtpLogDate)
+            {
+                PanelSelected.Panel_Enter(panelStandingAccomplishments, panelStandingAccomplishmentsHeader);
+            }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelStandingAccomplishments)
+            {
+                PanelSelected.Panel_Leave(panelStandingAccomplishments, panelStandingAccomplishmentsHeader);
+            }
+
         }
     }
 }
