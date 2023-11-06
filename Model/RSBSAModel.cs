@@ -617,7 +617,7 @@ namespace AgRecords.Model
                         rsbsaInfo.rsbsaIdLGU = reader["rsbsaIdLGU"].ToString();
                         rsbsaInfo.userId = reader["userId"].ToString();
                         rsbsaInfo.dateCreated = DateTime.Parse(reader["dateCreated"].ToString());
-                        //rsbsaInfo.dateImported = DateTime.Parse(reader["dateImported"].ToString());
+                       // rsbsaInfo.dateImported = DateTime.Parse(reader["dateImported"].ToString());
                     }
 
                     reader.Close();

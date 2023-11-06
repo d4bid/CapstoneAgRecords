@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
             ClearTextControls();
 
             btnPrint.Enabled = true;
@@ -71,12 +72,12 @@ namespace AgRecords.View
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
                 btnNew.Enabled = false;
-                btnNew.Visible = false;
+                btnNew.Enabled = false;
             }
             else
             {
                 btnNew.Enabled = true;
-                btnNew.Visible = true;
+                btnNew.Enabled = true;
             }
 
             DisplayDataTableFilter();
@@ -208,10 +209,10 @@ namespace AgRecords.View
         public void DisplayDataTableFilter()
         {
             string cornPrId = labelCornPrId.Text;
-            int colorId = MapCornItemToValue(cmbCornTypeFilter);
+            int colorId = MapCornItemToValue(cmbCornType);
             int growthId = MapGrowthItemToValue(cmbGrowthStageFilter);
-            int seedId = MapGrowthItemToValue(cmbSeedTypeFilter);
-            int landId = MapGrowthItemToValue(cmbLandTypeFilter);
+            int seedId = MapGrowthItemToValue(cmbSeedType);
+            int landId = MapGrowthItemToValue(cmbLandType);
 
             if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
@@ -220,7 +221,7 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
             {
-                DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoView(cornPrId, colorId, growthId);
+                DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoView(cornPrId, colorId, growthId, seedId);
                 dgvCornPlanting.DataSource = cornPlantingTable;
             }
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
@@ -234,16 +235,14 @@ namespace AgRecords.View
         {
             if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
-                btnNew.Visible = false;
-                btnUpdate.Visible = false;
+                btnNew.Enabled = false;
+                btnUpdate.Enabled = false;
 
                 labelAveYield.Visible = false;
                 txtAveYield.Visible = false;
                 boxAveYield.Visible = false;
 
-                labelGrowthFilter.Visible = false;
-                boxGrowthFilter.Visible = false;
-                cmbGrowthStageFilter.Visible = false;
+                panelGrowth.Visible = false;
 
                 txtSize.ReadOnly = true;
                 txtSize.ForeColor = SystemColors.WindowText;
@@ -251,41 +250,19 @@ namespace AgRecords.View
 
                 labelGrowthStage.Text = "Newly Planted/Vegetative Stage";
                 labelSize.Text = "Size (ha)";
-
-                // cmbGrowthStageFilter Location
-
-                labelSeedTypeFilter.Location = new Point(384, 13);
-                boxSeedTypeFilter.Location = new Point(489, 6);
-                cmbSeedTypeFilter.Location = new Point(495, 8);
-
-                // cmbSeedTypeFilter Location
-
-                labelLandFilter.Location = new Point(796, 13);
-                boxLandFilter.Location = new Point(885, 6);
-                cmbLandTypeFilter.Location = new Point(891, 8);
-
-
             }
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
-                btnNew.Visible = true;
-                btnUpdate.Visible = true;
+                btnNew.Enabled = true;
+                btnUpdate.Enabled = true;
 
-                labelAveYield.Visible = true;
+                labelAveYield.Enabled = true;
                 txtAveYield.Visible = true;
                 boxAveYield.Visible = true;
 
-                labelSeedTypeFilter.Visible = true;
-                boxSeedTypeFilter.Visible = true;
-                cmbSeedTypeFilter.Visible = true;
+                panelSeed.Visible = true;
 
-                labelGrowthFilter.Visible = false;
-                boxGrowthFilter.Visible = false;
-                cmbGrowthStageFilter.Visible = false;
-
-                labelLandFilter.Visible = false;
-                boxLandFilter.Visible = false;
-                cmbLandTypeFilter.Visible = false;
+                panelGrowth.Visible = false;
 
                 txtSize.ReadOnly = true;
                 txtSize.ForeColor = SystemColors.WindowText;
@@ -294,10 +271,6 @@ namespace AgRecords.View
                 labelGrowthStage.Text = "Harvested";
 
                 labelSize.Text = "Area Harvested (ha)";
-
-                labelSeedTypeFilter.Location = new Point(384, 13);
-                boxSeedTypeFilter.Location = new Point(489, 6);
-                cmbSeedTypeFilter.Location = new Point(495, 8);
             }
             else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
             {
@@ -308,25 +281,7 @@ namespace AgRecords.View
                 txtAveYield.Visible = false;
                 boxAveYield.Visible = false;
 
-                labelSeedTypeFilter.Visible = false;
-                boxSeedTypeFilter.Visible = false;
-                cmbSeedTypeFilter.Visible = false;
-
-                labelSeason.Visible = false;
-                labelSeasonl.Visible = false;
-                boxSeason.Visible = false;
-
-                labelSeasonYearl.Visible = false;
-                labelSeasonYear.Visible = false;
-                boxSeasonYear.Visible = false;
-
-                labelLandFilter.Visible = false;
-                boxLandFilter.Visible = false;
-                cmbLandTypeFilter.Visible = false;
-
-                labelSeedTypeFilter.Visible = false;
-                boxSeedTypeFilter.Visible = false;
-                cmbSeedTypeFilter.Visible = false;
+                panelSeed.Visible = true;
 
                 labelSize.Text = "Size (ha)";
             }
@@ -388,7 +343,13 @@ namespace AgRecords.View
                     break;
             }
 
-            float size = float.Parse(txtSize.Text);
+             float size = float.Parse(txtSize.Text);
+            //float size = 0.00f;
+            //if (!string.IsNullOrEmpty(txtSize.Text))
+            //{
+            //    size = float.Parse(txtSize.Text);
+            //}
+            MessageBox.Show($"{txtAveYield}");
             float yield = float.Parse(txtAveYield.Text);
             int cornPlantingEcoId = int.Parse(labelCornPlantingId.Text);
             int cornHarvestingId = int.Parse(labelCornPlantingId.Text);
@@ -425,7 +386,12 @@ namespace AgRecords.View
             int seedTypeId = seedTypeIndex + 1;
 
             int growthStageId = 1;
-            float size = float.Parse(txtSize.Text);
+               float size = 0.00f;
+            if (!string.IsNullOrEmpty(txtSize.Text))
+            {
+                size = float.Parse(txtSize.Text);
+            }
+
 
             if (cropsCornController.AddCornPlantingEco(labelCornPrId.Text, brgyId, landTypeId, growthStageId, seedTypeId, colorTypeId, size, dtpLogDate.Value.Date))
             {
@@ -442,16 +408,8 @@ namespace AgRecords.View
 
         private void dgvCornPlanting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (labelGrowthStage.Text == "Newly Planted/Seedling Stage")
-            {
-                btnUpdate.Enabled = true;
-                btnNew.Enabled = false;
-            }
-            else
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = false;
-            }
+            btnUpdate.Enabled = true;
+            btnNew.Enabled = false;
 
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)
@@ -620,9 +578,9 @@ namespace AgRecords.View
         {
             FormRefresh();
 
-            cmbSeedTypeFilter.SelectedIndex = 0;
-            cmbCornTypeFilter.SelectedIndex = 0;
-            cmbLandTypeFilter.SelectedIndex = 0;
+            cmbSeedType.SelectedIndex = 0;
+            cmbCornType.SelectedIndex = 0;
+            cmbLandType.SelectedIndex = 0;
             cmbGrowthStageFilter.SelectedIndex = 0;
 
             btnUpdate.Enabled = false;
@@ -684,7 +642,7 @@ namespace AgRecords.View
                 // Get the worksheet
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
 
-                worksheet.Cells[3, 2].Value = worksheet.Cells[3, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text + 
+                worksheet.Cells[3, 2].Value = worksheet.Cells[3, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text +
                     "(" + labelSeason.Text.ToUpper() + " SEASON CY " + labelSeasonYear.Text + ")";
 
                 int startRow = 12;
@@ -765,7 +723,7 @@ namespace AgRecords.View
                 // Get the worksheet
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1]; // Assuming the first worksheet
 
-                worksheet.Cells[2, 2].Value = worksheet.Cells[2, 2].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text ;
+                worksheet.Cells[2, 2].Value = worksheet.Cells[2, 2].Text + labelSeason.Text.ToUpper() + " SEASON " + labelSeasonYear.Text;
                 worksheet.Cells[5, 2].Value = worksheet.Cells[5, 2].Text + labelMonth.Text.ToUpper() + " " + labelWeek.Text + ", " + labelYear.Text;
 
                 int startRow = 13;
@@ -951,6 +909,31 @@ namespace AgRecords.View
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             }
+        }
+        private void NumOrDecimalsOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_NumericWithDecimal(sender, e);
+        }
+
+        private void SelectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPlantingByEcoZone)
+            {
+                PanelSelected.Panel_Enter(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
+            }
+        }
+
+        private void UnselectedPanel(object sender, EventArgs e)
+        {
+            Control focusedControl = sender as Control;
+
+            if (focusedControl.Parent == panelPlantingByEcoZone)
+            {
+                PanelSelected.Panel_Leave(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
+            }
+
         }
     }
 }

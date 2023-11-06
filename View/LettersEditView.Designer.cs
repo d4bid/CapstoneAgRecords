@@ -188,7 +188,7 @@
             comboBoxAction.FlatStyle = FlatStyle.Flat;
             comboBoxAction.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxAction.FormattingEnabled = true;
-            comboBoxAction.Items.AddRange(new object[] { "Pending", "Reviewed", "Responded", "Archived" });
+            comboBoxAction.Items.AddRange(new object[] { "Pending", "Archived" });
             comboBoxAction.Location = new Point(115, 135);
             comboBoxAction.Margin = new Padding(3, 4, 3, 4);
             comboBoxAction.Name = "comboBoxAction";

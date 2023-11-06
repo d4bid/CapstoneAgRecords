@@ -22,6 +22,7 @@ namespace AgRecords.Controller
 
         //to get the username of the current user
         private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
 
         public CropsHvcController(CropsHvcView cropsHvcView)
         {
@@ -115,6 +116,7 @@ namespace AgRecords.Controller
                     if (hvcModel.AddHvcStandingRep(hr))
                     {
                         isDone = true;
+                        userModel.InserActionLog(username, "Insert", "Crops HVC Report", $"{hvcSrId} added successfully.");
                     }
                 }
 
@@ -124,7 +126,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Add Accomplishment Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Insert", "Crops HVC Report", $"{hvcSrId} adding failed.");
                 return false;
             }
         }
@@ -168,7 +170,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (hs.size == 0)
+                else if (hs.size == 0.00f)
                 {
                     MessageBox.Show("Size is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

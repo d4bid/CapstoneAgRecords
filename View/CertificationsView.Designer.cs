@@ -183,9 +183,9 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
@@ -195,7 +195,7 @@
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
@@ -212,7 +212,6 @@
             dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCert.Size = new Size(1575, 806);
             dgvCert.TabIndex = 23;
-            dgvCert.CellContentDoubleClick += dgvCert_CellContentDoubleClick;
             dgvCert.CellDoubleClick += dgvCert_CellDoubleClick;
             // 
             // CertificationsView
@@ -226,7 +225,6 @@
             Name = "CertificationsView";
             Text = "CertificationsView";
             Load += CertificationsView_Load;
-            DoubleClick += CertificationsView_DoubleClick;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

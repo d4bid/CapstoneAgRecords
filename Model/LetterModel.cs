@@ -493,7 +493,26 @@ namespace AgRecords.Model
             }
         }
 
+        public Boolean UpdateLetterStatus()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
 
+                    string query = "CALL sp_updateLetter()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
 
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Wrap the original exception in a custom exception with a meaningful message.
+                throw new ApplicationException("Error updating letter: " + ex.Message, ex);
+            }
+        }
     }
 }

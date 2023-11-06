@@ -316,7 +316,7 @@ namespace AgRecords.Controller
                 {
                     MessageBox.Show("Seed Type is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rs.size == 0)
+                else if (rs.size == 0.00f)
                 {
                     MessageBox.Show("Size is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -503,26 +503,6 @@ namespace AgRecords.Controller
             }
         }
 
-        public DataTable LoadGrandTotalRiceStandLogsView(string riceSrId)
-        {
-            try
-            {
-                RiceStanding rs = new RiceStanding()
-                {
-                    riceSrId = riceSrId,
-                };
-
-                DataTable riceStandLogsTable = riceModel.LoadGrandTotalRiceStandLogsDataGrid(rs);
-                return riceStandLogsTable;
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
         public DataTable LoadLowlandUplandRiceStandLogsView(string riceSrId)
         {
             try
@@ -538,6 +518,49 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceStandingView(string riceSrId, int farmId, int seedId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceStandingDataGrid(riceSrId, farmId, seedId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceStandingTotalView(string riceSrId, int farmId, int seedId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceStandingTotalDataGrid(riceSrId, farmId, seedId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadRiceStandingGrandTotalView(string riceSrId)
+        {
+            try
+            {
+                DataTable riceStandLogsTable = riceModel.LoadRiceStandingGrandTotalDataGrid(riceSrId);
+                return riceStandLogsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Rice Standing Record Grand Total Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return null;
             }
@@ -639,62 +662,16 @@ namespace AgRecords.Controller
             }
         }
 
-        public DataTable LoadIrrigatedRicePlantingView(string riceSrId)
+        public DataTable LoadRicePlantingView(string riceSrId, int farmId)
         {
             try
             {
-                RicePlanting rp = new RicePlanting()
-                {
-                    riceSrId = riceSrId,
-                };
-
-                DataTable riceStandLogsTable = riceModel.LoadIrrigatedRicePlantingDataGrid(rp);
+                DataTable riceStandLogsTable = riceModel.LoadRicePlantingDataGrid(riceSrId, farmId);
                 return riceStandLogsTable;
             }
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public DataTable LoadLowlandRicePlantingView(string riceSrId)
-        {
-            try
-            {
-                RicePlanting rp = new RicePlanting()
-                {
-                    riceSrId = riceSrId,
-                };
-
-                DataTable riceStandLogsTable = riceModel.LoadLowlandRicePlantingDataGrid(rp);
-                return riceStandLogsTable;
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return null;
-            }
-        }
-
-        public DataTable LoadUplandRicePlantingView(string riceSrId)
-        {
-            try
-            {
-                RicePlanting rp = new RicePlanting()
-                {
-                    riceSrId = riceSrId,
-                };
-
-                DataTable riceStandLogsTable = riceModel.LoadUplandRicePlantingDataGrid(rp);
-                return riceStandLogsTable;
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Rice Planting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return null;
             }
         }
@@ -723,30 +700,30 @@ namespace AgRecords.Controller
                     MessageBox.Show("ID is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rhr.season == null)
+                else if (rhr.season == "")
                 {
                     MessageBox.Show("Season is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rhr.seasonYear == null)
+                else if (rhr.seasonYear == "")
                 {
                     MessageBox.Show("Season Year is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rhr.month == null)
+                else if (rhr.month == "")
                 {
                     MessageBox.Show("Month is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (rhr.week == null)
+                else if (rhr.week == "")
                 {
                     MessageBox.Show("Week is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rhr.year == null)
+                else if (rhr.year == "")
                 {
                     MessageBox.Show("Growth Stage is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (rhr.riceSrId != null && rhr.month != null && rhr.week != null && rhr.year != null)
+                else if (rhr.riceSrId != "" && rhr.month != "" && rhr.week != "" && rhr.year != "" )
                 {
                     if (riceModel.AddRiceHarvestingRep(rhr))
                     {
@@ -813,39 +790,11 @@ namespace AgRecords.Controller
             }
         }
 
-        public DataTable LoadIrrigatedRiceHarvestingView(string riceSrId, int seedId)
+        public DataTable LoadRiceHarvestinglView(string riceSrId, int farmId, int seedId)
         {
             try
             {
-                DataTable riceStandLogsTable = riceModel.LoadIrrigatedRiceHarvestingDataGrid(riceSrId, seedId);
-                return riceStandLogsTable;
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
-            }
-        }
-
-        public DataTable LoadLowlandRiceHarvestingView(string riceSrId, int seedId)
-        {
-            try
-            {
-                DataTable riceStandLogsTable = riceModel.LoadLowlandRiceHarvestingDataGrid(riceSrId, seedId);
-                return riceStandLogsTable;
-            }
-            catch (ApplicationException ex)
-            {
-                MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
-            }
-        }
-
-        public DataTable LoadUplandRiceHarvestingView(string riceSrId, int seedId)
-        {
-            try
-            {
-                DataTable riceStandLogsTable = riceModel.LoadUplandRiceHarvestingDataGrid(riceSrId, seedId);
+                DataTable riceStandLogsTable = riceModel.LoadRiceHarvestingDataGrid(riceSrId, farmId, seedId);
                 return riceStandLogsTable;
             }
             catch (ApplicationException ex)

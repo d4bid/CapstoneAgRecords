@@ -14,6 +14,9 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using OxyPlot;
+using MySqlX.XDevAPI.Relational;
+using AgRecords.Utilities;
 
 namespace AgRecords.View
 {
@@ -74,7 +77,24 @@ namespace AgRecords.View
 
         private void CertificationsAddView_Load(object sender, EventArgs e)
         {
+            // Call the GetEmployees method from your controller
+            System.Data.DataTable employeeTable = certController.GetEmployees();
 
+            if (employeeTable != null && employeeTable.Rows.Count > 0)
+            {
+                // Data is available, populate the ComboBox
+                cmbEmployee.DataSource = employeeTable;
+                cmbEmployee.DisplayMember = "Employee";
+                cmbEmployee.ValueMember = "Employee"; // You can set this to another column if needed
+            }
+            else
+            {
+                // Handle the case when there is no data
+                cmbEmployee.Items.Add("");
+            }
+
+            System.Data.DataTable certTable = certController.LoadCertificatesByRsbsaNumberView(txtReferenceNumber.Text);
+            dgvCert.DataSource = certTable;
         }
 
         private void CertificationsFarmControl_RemoveButtonClick(object sender, EventArgs e)
@@ -131,7 +151,7 @@ namespace AgRecords.View
                 {
                     string farmInfo = certFarmControl.txtFarmInfo.Text;
                     string farmAddress = certFarmControl.txtFarmAddress.Text;
-                    string farmBarangay = certFarmControl.labelParcelNo.Text;
+                    string farmParcel = certFarmControl.labelParcelNo.Text;
 
                     // Check if specific words are present in farmInfo and set the prefix accordingly
                     string prefix = "actual farm tiller of";
@@ -149,15 +169,21 @@ namespace AgRecords.View
                         prefix = "Livestock grower";
                     }
 
-                    // Create a string with the desired format for farmInfo
                     string farmInfoText = $"{prefix} {farmInfo}";
 
                     // Use regular expressions to replace the last comma with "and" if there are more than two commas
-                    if (Regex.Matches(farmInfoText, ",").Count > 1)
+                    MatchCollection commaMatches = Regex.Matches(farmInfoText, ",");
+                    if (commaMatches.Count > 1)
                     {
                         int lastCommaIndex = farmInfoText.LastIndexOf(",");
                         farmInfoText = farmInfoText.Substring(0, lastCommaIndex) + " and" + farmInfoText.Substring(lastCommaIndex + 1);
                     }
+                    else if (commaMatches.Count == 1)
+                    {
+                        // If there's only one comma, replace it with "and"
+                        farmInfoText = farmInfoText.Replace(",", " and");
+                    }
+
 
                     // Split the address into words
                     string[] words2 = farmAddress.Split(' ');
@@ -240,9 +266,23 @@ namespace AgRecords.View
 
 
             Certifications cert = certController.GetEmployeeInfoByUsername(username);
-            string empName = cert.employeeName;
-            string empPosition = cert.employeePosition;
+            //string empName = cert.employeeName;
+            //string empPosition = cert.employeePosition;
             string head = cert.headName;
+
+            string empName = cmbEmployee.Text;
+            string empPosition = txtPosition.Text;
+
+            if (float.TryParse(txtAmount.Text, out float amount))
+            {
+                txtAmount.Text = amount.ToString("0.00");
+            }
+            else
+            {
+                txtAmount.Text = "0.00"; // Set the default value of "0.00" when the input is not a valid float.
+            }
+
+            string amountPaid = txtAmount.Text;
 
             // Perform the replacements
             FindAndReplace(doc, "<<name>>", farmerName);
@@ -256,6 +296,7 @@ namespace AgRecords.View
             FindAndReplace(doc, "<<employeeName>>", empName);
             FindAndReplace(doc, "<<headName>>", head);
             FindAndReplace(doc, "<<date>>", date);
+            FindAndReplace(doc, "<<amountPaid>>", amountPaid);
 
             //foreach (string farmInfo in farmInfoList)
             //{
@@ -267,6 +308,45 @@ namespace AgRecords.View
             // Clean up
             Marshal.ReleaseComObject(doc);
             Marshal.ReleaseComObject(wordApp);
+
+            DialogResult result = MessageBox.Show("Do you want to continue generating certificate?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                // Collect data from CertificationsFarmControl instances into a list
+                List<Certifications> farmDataList = new List<Certifications>();
+
+                foreach (Control control in flowLayoutPanel1.Controls)
+                {
+                    if (control is CertificationsFarmControl certFarmControl)
+                    {
+                        string farmInfo = certFarmControl.txtFarmInfo.Text;
+                        string farmAddress = certFarmControl.txtFarmAddress.Text;
+                        string farmParcel = certFarmControl.labelParcelNo.Text;
+
+                        Certifications cert2 = new Certifications
+                        {
+                            orderNumber = orNumber, // Assign the same orderNumber as the main certificate
+                            farmParcelNo = farmParcel,
+                            farmInfo = farmInfo,
+                            farmLocBrgy = farmAddress,
+                        };
+
+                        farmDataList.Add(cert2);
+                    }
+                }
+
+                // Call the AddCertificate method in the controller
+                if (certController.AddCertificate(orNumber, referenceNumber, farmerName, farmerAddress, DateTime.Now, empName, head, empPosition))
+                {
+                    // Call the AddFarmInfo method in the controller
+                    if (certController.AddFarmInfo(farmDataList))
+                    {
+                        this.Close();
+                        FormClosed?.Invoke(this, EventArgs.Empty);
+                    }
+                }
+            }
         }
 
         private void FindAndReplace(Document doc, string findText, string replaceText)
@@ -282,5 +362,16 @@ namespace AgRecords.View
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
         }
+
+        private void AlphaOnly(object sender, KeyPressEventArgs e)
+        {
+            TextboxValidation.TextBox_AlphaOnly(sender, e);
+        }
+
+        private void AllCaps(object sender, EventArgs e)
+        {
+            TextboxValidation.TextBox_AllCaps(sender, e);
+        }
+
     }
 }

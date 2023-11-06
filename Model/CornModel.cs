@@ -273,7 +273,7 @@ namespace AgRecords.Model
             }
         }
 
-        public DataTable LoadCornPlantingEcoDataGrid(string cornPrId, int colorId, int growthId)
+        public DataTable LoadCornPlantingEcoDataGrid(string cornPrId, int colorId, int growthId, int seedId)
         {
             try
             {
@@ -281,11 +281,12 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    string query = "CALL sp_getCornPlantingEco(@cornPrId, @colorId, @growthId)";
+                    string query = "CALL sp_getCornPlantingEco(@cornPrId, @colorId, @growthId, @seedId)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@cornPrId", cornPrId);
                     command.Parameters.AddWithValue("@colorId", colorId);
                     command.Parameters.AddWithValue("@growthId", growthId);
+                    command.Parameters.AddWithValue("@seedId", seedId);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
@@ -294,7 +295,7 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading corn planting records: " + ex.Message, ex);
+                throw new ApplicationException("Error loading corn planting by ecological zone records: " + ex.Message, ex);
             }
         }
 

@@ -414,14 +414,17 @@ namespace AgRecords.Controller
             // Days of the week
             var daysOfWeek = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 
-            // Add data points to the series for each day
-            for (int i = 1; i <= 7; i++)
+            if (data != null && data.Rows.Count > 0)
             {
-                // Convert the day's count from the data table
-                int dayCount = Convert.ToInt32(data.Rows[0][daysOfWeek[i % 7]]);
+                // Add data points to the series for each day
+                for (int i = 1; i <= 7; i++)
+                {
+                    // Convert the day's count from the data table
+                    int dayCount = Convert.ToInt32(data.Rows[0][daysOfWeek[i % 7]]);
 
-                // Add a data point with X as the day's index (1-7) and Y as the count
-                daySeries.Points.Add(new DataPoint(i, dayCount));
+                    // Add a data point with X as the day's index (1-7) and Y as the count
+                    daySeries.Points.Add(new DataPoint(i, dayCount));
+                }
             }
 
             // Set axis titles
@@ -454,25 +457,38 @@ namespace AgRecords.Controller
         public PlotModel CreateBarChart2(DataTable data)
         {
             var model = new PlotModel();
+
+            // Create a bar series
             var barSeries = new BarSeries
             {
-                FillColor = OxyColor.FromRgb(43, 121, 223) // Set the bar color to RGB(43, 121, 223)
+                FillColor = OxyColor.FromRgb(0, 109, 104) // Set the bar color to a custom RGB color (green)
             };
 
-            // Create an X-axis for sections
+            // Create a category axis for sections on the y-axis
             var sectionAxis = new CategoryAxis
             {
+                Position = AxisPosition.Left,
+                Title = "Section",
+            };
+
+            // Create a linear axis for count on the x-axis
+            var countAxis = new LinearAxis
+            {
                 Position = AxisPosition.Bottom,
-                Title = "Section"
+                Title = "Count",
+                TitleColor = OxyColors.Black, // Set the title color
+                TextColor = OxyColors.Black,  // Set the axis label color
             };
 
             model.Axes.Add(sectionAxis);
+            model.Axes.Add(countAxis);
 
             foreach (DataRow row in data.Rows)
             {
                 string section = row["Section"].ToString();
                 int count = Convert.ToInt32(row["Count"]);
 
+                // Add data to the bar series
                 barSeries.Items.Add(new BarItem { Value = count });
                 sectionAxis.Labels.Add(section);
             }
@@ -481,6 +497,7 @@ namespace AgRecords.Controller
 
             return model;
         }
+
 
         // DATATABLE
 
@@ -585,13 +602,13 @@ namespace AgRecords.Controller
             var pieSeries = new PieSeries();
 
             var commodityColors = new Dictionary<string, OxyColor>
-    {
-        { "Rice", OxyColor.FromArgb(255, 1, 97, 94) },   // Green
-        { "Corn", OxyColor.FromArgb(255, 1, 108, 104) },  // Dark Green
-        { "HVC", OxyColor.FromArgb(255, 26, 123, 119) },  // Green
-        { "Livestocks", OxyColor.FromArgb(255, 52, 137, 134) }, // Greenish Blue
-        { "Poultry", OxyColor.FromArgb(255, 78, 151, 149) } // Light Green
-    };
+            {
+                { "Rice", OxyColor.FromRgb(1, 97, 94) },   // Green
+                { "Corn", OxyColor.FromRgb(1, 108, 104) },  // Dark Green
+                { "HVC", OxyColor.FromRgb(26, 123, 119) },  // Green
+                { "Livestocks", OxyColor.FromRgb(52, 137, 134) }, // Greenish Blue
+                { "Poultry", OxyColor.FromRgb(78, 151, 149) } // Light Green
+            };
 
             foreach (DataRow row in data.Rows)
             {
@@ -617,8 +634,8 @@ namespace AgRecords.Controller
                 }
             }
 
-            // Set the border color to transparent to remove the borders
-            model.PlotAreaBorderColor = OxyColors.Transparent;
+            // Set the border color to undefined to remove the borders
+            pieSeries.Stroke = OxyColors.Undefined;
 
             model.Axes.Add(new CategoryAxis()); // Remove labels
             model.Axes.Add(new LinearAxis { Position = AxisPosition.None }); // Remove the Y-axis
@@ -1013,12 +1030,25 @@ namespace AgRecords.Controller
         {
             var model = new PlotModel();
 
-            var areaPlanted = Convert.ToDouble(data.Rows[0]["Area Planted"]);
-            var areaHarvested = Convert.ToDouble(data.Rows[0]["Area Harvested"]);
-            var remaining = Convert.ToDouble(data.Rows[0]["Remaining"]);
+            double areaPlanted = 0;
+            double areaHarvested = 0;
+            double remaining = 0;
+
+            if (data != null && data.Rows.Count > 0)
+            {
+                if (data.Columns.Contains("Area Planted") && data.Rows[0]["Area Planted"] != DBNull.Value)
+                {
+                    areaPlanted = Convert.ToDouble(data.Rows[0]["Area Planted"]);
+                }
+
+                if (data.Columns.Contains("Area Harvested") && data.Rows[0]["Area Harvested"] != DBNull.Value)
+                {
+                    areaHarvested = Convert.ToDouble(data.Rows[0]["Area Harvested"]);
+                }
+            }
 
             // Calculate percentages
-            var harvestedPercentage = (areaHarvested / areaPlanted) * 100;
+            var harvestedPercentage = areaPlanted > 0 ? (areaHarvested / areaPlanted) * 100 : 0;
             var remainingPercentage = 100 - harvestedPercentage;
 
             var pieSeries = new PieSeries
@@ -1046,7 +1076,6 @@ namespace AgRecords.Controller
             legend.LegendPosition = LegendPosition.BottomCenter;
             legend.LegendOrientation = LegendOrientation.Horizontal;
             legend.LegendPlacement = LegendPlacement.Outside;
-
 
             model.Legends.Add(legend);
             model.Series.Add(pieSeries);
@@ -1260,6 +1289,7 @@ namespace AgRecords.Controller
 
 
         // ---------------- HVC --------------------
+
         public string CountHvcFarmers()
         {
             try
@@ -1308,6 +1338,20 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable ListHvc()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.GetHvcList();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
         public DataTable BarCountHvcFarmerBarangay()
         {
             try
@@ -1339,16 +1383,30 @@ namespace AgRecords.Controller
 
         // ---------------- WEEKLY ACTIVITIES --------------------
 
-        public DataTable LoadWeeklyActivities()
+        public DataTable LoadWeeklyActivities(DateTime fromDate, DateTime toDate)
         {
             try
             {
-                DataTable actsTable = analyticsModel.LoadWeeklyActivitiesDtaGrid();
+                DataTable actsTable = analyticsModel.LoadWeeklyActivitiesDtaGrid(fromDate, toDate);
                 return actsTable;
             }
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Weekly Activities Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadActivitiesSummary(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                DataTable actsTable = analyticsModel.LoadActivitiesSummaryDtaGrid(fromDate, toDate);
+                return actsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Summary Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }
