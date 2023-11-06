@@ -74,8 +74,6 @@ namespace AgRecords.View
             btnUpdate.Enabled = false;
             ClearStandingLogsTextControls();
 
-            btnPrint.Enabled = true;
-
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
                 btnNew.Enabled = false;

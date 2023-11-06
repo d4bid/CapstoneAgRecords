@@ -64,7 +64,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
             ClearTextControls();
 
             btnPrint.Enabled = true;
@@ -72,12 +72,12 @@ namespace AgRecords.View
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS" || labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
                 btnNew.Enabled = false;
-                btnNew.Visible = false;
+                btnNew.Enabled = false;
             }
             else
             {
                 btnNew.Enabled = true;
-                btnNew.Visible = true;
+                btnNew.Enabled = true;
             }
 
             DisplayDataTableFilter();
@@ -408,16 +408,8 @@ namespace AgRecords.View
 
         private void dgvCornPlanting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (labelGrowthStage.Text == "Newly Planted/Seedling Stage")
-            {
-                btnUpdate.Enabled = true;
-                btnNew.Enabled = false;
-            }
-            else
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = false;
-            }
+            btnUpdate.Enabled = true;
+            btnNew.Enabled = false;
 
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)

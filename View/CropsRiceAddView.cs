@@ -50,7 +50,7 @@ namespace AgRecords.View
 
         public void ClearStandingLogsTextControls()
         {
-            cmbBrgy.SelectedIndex = -1;
+            cmbBrgy.SelectedIndex = 0;
             //cmbGrowthStage.SelectedIndex = -1;
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Now;
