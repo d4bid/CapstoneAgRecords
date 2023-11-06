@@ -38,7 +38,7 @@ namespace AgRecords.Model
         public string? withGovId { get; set; }
         public string? govIdType { get; set; }
         public string? govIdNo { get; set; }
-        public DateTime birthDate { get; set; }
+        public DateTime? birthDate { get; set; }
         public string? birthMunicipality { get; set; }
         public string? birthProvince { get; set; }
         public string? birthCountry { get; set; }

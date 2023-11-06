@@ -77,7 +77,11 @@ namespace AgRecords.View
                 txtGovIdType.Text = farmerInfo.govIdType;
                 txtGovIdNum.Text = farmerInfo.govIdNo;
 
-                dtpBirthDate.Value = farmerInfo.birthDate;
+                if (farmerInfo.birthDate != null)
+                {
+                    dtpBirthDate.Value = farmerInfo.birthDate ?? DateTime.MinValue;
+                }
+
                 txtBirthMunicipality.Text = farmerInfo.birthMunicipality;
                 txtBirthProvince.Text = farmerInfo.birthProvince;
                 txtBirthCountry.Text = farmerInfo.birthCountry;
