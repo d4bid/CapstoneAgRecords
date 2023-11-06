@@ -61,18 +61,28 @@ namespace AgRecords.View
                 ExcelPackage package = new ExcelPackage();
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
 
-                // Get the column headers from the DataGridView and add them to the worksheet
+                // Get the visible column headers from the DataGridView and add them to the worksheet
+                int columnIndex = 1;
                 for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
                 {
-                    worksheet.Cells[1, i + 1].Value = dgvRSBSAExport.Columns[i].HeaderText;
+                    if (dgvRSBSAExport.Columns[i].Visible)
+                    {
+                        worksheet.Cells[1, columnIndex].Value = dgvRSBSAExport.Columns[i].HeaderText;
+                        columnIndex++;
+                    }
                 }
 
-                // Get the data from the DataGridView and add it to the worksheet
+                // Get the visible data from the DataGridView and add it to the worksheet
                 for (int i = 0; i < dgvRSBSAExport.Rows.Count; i++)
                 {
+                    columnIndex = 1;
                     for (int j = 0; j < dgvRSBSAExport.Columns.Count; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1].Value = dgvRSBSAExport.Rows[i].Cells[j].Value.ToString();
+                        if (dgvRSBSAExport.Columns[j].Visible)
+                        {
+                            worksheet.Cells[i + 2, columnIndex].Value = dgvRSBSAExport.Rows[i].Cells[j].Value.ToString();
+                            columnIndex++;
+                        }
                     }
                 }
 
@@ -82,6 +92,83 @@ namespace AgRecords.View
                 // Inform the user that the data has been exported successfully
                 MessageBox.Show("Data exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+
+        private void cbMunicipality_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["PERMANENT CITY"].Visible = cbMunicipality.Checked;
+        }
+
+        private void cbProvince_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["PERMANENT PROVINCE"].Visible = cbProvince.Checked;
+
+        }
+
+        private void cbStreet_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["PERMANENT ADDRESS 1- NO., STREET"].Visible = cbStreet.Checked;
+        }
+
+        private void cbIdNumber_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["RSBSA REFERENCE NUMBER"].Visible = cbIdNumber.Checked;
+
+        }
+
+        private void cbBirthDate_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["BIRTHDATE"].Visible = cbBirthDate.Checked;
+
+        }
+
+        private void cbPlaceOfBirth_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["PLACE OF BIRTH"].Visible = cbPlaceOfBirth.Checked;
+
+        }
+
+        private void cbMobileNo_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["MOBILE NO."].Visible = cbMobileNo.Checked;
+
+        }
+
+        private void cbFarmParcelNo_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["# OF FARM PARCEL"].Visible = cbFarmParcelNo.Checked;
+
+        }
+
+        private void cbTotalFarmArea_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["TOTAL FARM AREA (Ha)"].Visible = cbTotalFarmArea.Checked;
+
+        }
+
+        private void cbRice_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["RICE"].Visible = cbRice.Checked;
+
+        }
+
+        private void cbCorn_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["CORN"].Visible = cbCorn.Checked;
+
+        }
+
+        private void cbHVC_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["HVC"].Visible = cbHVC.Checked;
+
+        }
+
+        private void cbAgriFishery_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["AGRI-FISHERY"].Visible = cbAgriFishery.Checked;
+
         }
     }
 }

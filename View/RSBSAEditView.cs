@@ -26,7 +26,6 @@ namespace AgRecords.View
             rsbsaController = new RSBSAController(this);
 
             Instance = this;
-            currentRSBSAId = labelRsbsaId;
 
             pbFarmerPhoto.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -35,6 +34,7 @@ namespace AgRecords.View
             labelRsbsaId.Text = rsbsaInfo.rsbsaId;
             txtBoxRSBSAIdLGU.Text = rsbsaInfo.rsbsaIdLGU;
             dtDateAdm.Value = rsbsaInfo.dateCreated;
+            currentRSBSAId = labelRsbsaId;
 
             //Farmer Info
             if (farmerInfo != null)

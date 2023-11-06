@@ -43,9 +43,22 @@ namespace AgRecords.View
                                 DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration() { ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true } });
 
                                 // Check if the DataSet contains tables and if those tables have rows
-                                if (result.Tables.Count > 0 && result.Tables[0].Rows.Count > 0)
+                                if (result.Tables.Count > 0)
                                 {
-                                    dgvRSBSAtoImport.DataSource = result.Tables[txtSheetName.Text];
+                                    if (string.IsNullOrEmpty(txtSheetName.Text))
+                                    {
+                                        // Import all sheets if txtSheetName.Text is empty
+                                        dgvRSBSAtoImport.DataSource = result.Tables[0]; // Display the first sheet
+                                    }
+                                    else if (result.Tables.Contains(txtSheetName.Text))
+                                    {
+                                        // Import the specified sheet if it exists
+                                        dgvRSBSAtoImport.DataSource = result.Tables[txtSheetName.Text];
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show($"Sheet '{txtSheetName.Text}' not found in the Excel file.");
+                                    }
                                 }
                                 else
                                 {

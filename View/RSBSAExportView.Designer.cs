@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            btnCancel = new Button();
             label3 = new Label();
             comboBoxFilterCommodity = new ComboBox();
             searchBox4 = new SearchBox();
@@ -48,29 +49,29 @@
             panel2 = new Panel();
             dgvRSBSAExport = new DataGridView();
             panel4 = new Panel();
-            panel5 = new Panel();
-            cbIdNumber = new CheckBox();
-            cbIdNoType = new CheckBox();
-            cbStreet = new CheckBox();
-            cbMunicipality = new CheckBox();
-            cbProvince = new CheckBox();
-            groupBox2 = new GroupBox();
-            cbBirthDate = new CheckBox();
-            cbPlaceOfBirth = new CheckBox();
             groupBox1 = new GroupBox();
+            cbAgriFishery = new CheckBox();
+            cbHVC = new CheckBox();
+            cbCorn = new CheckBox();
+            cbRice = new CheckBox();
             cbFarmParcelNo = new CheckBox();
             cbTotalFarmArea = new CheckBox();
-            checkBox4 = new CheckBox();
-            cbFarmType = new CheckBox();
-            cbFarmArea = new CheckBox();
-            btnCancel = new Button();
+            groupBox2 = new GroupBox();
+            cbMobileNo = new CheckBox();
+            cbBirthDate = new CheckBox();
+            cbPlaceOfBirth = new CheckBox();
+            cbProvince = new CheckBox();
+            cbIdNumber = new CheckBox();
+            cbMunicipality = new CheckBox();
+            cbStreet = new CheckBox();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRSBSAExport).BeginInit();
             panel4.SuspendLayout();
-            groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -96,6 +97,23 @@
             panel1.Padding = new Padding(0, 0, 0, 11);
             panel1.Size = new Size(1595, 105);
             panel1.TabIndex = 21;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
+            btnCancel.FlatAppearance.BorderSize = 2;
+            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
+            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
+            btnCancel.Location = new Point(1437, 42);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(146, 40);
+            btnCancel.TabIndex = 33;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -256,24 +274,24 @@
             dgvRSBSAExport.BackgroundColor = Color.White;
             dgvRSBSAExport.BorderStyle = BorderStyle.None;
             dgvRSBSAExport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle27.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle27.ForeColor = Color.White;
-            dataGridViewCellStyle27.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle27.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle27.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle27.WrapMode = DataGridViewTriState.True;
-            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvRSBSAExport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = Color.White;
-            dataGridViewCellStyle28.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle28.ForeColor = Color.Black;
-            dataGridViewCellStyle28.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle28.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle28.WrapMode = DataGridViewTriState.False;
-            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle8;
             dgvRSBSAExport.Dock = DockStyle.Fill;
             dgvRSBSAExport.GridColor = Color.FromArgb(239, 239, 239);
             dgvRSBSAExport.Location = new Point(10, 10);
@@ -297,74 +315,107 @@
             panel4.Size = new Size(1595, 135);
             panel4.TabIndex = 31;
             // 
-            // panel5
+            // groupBox1
             // 
-            panel5.BackColor = Color.FromArgb(239, 239, 239);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 250);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1595, 10);
-            panel5.TabIndex = 32;
+            groupBox1.Controls.Add(cbAgriFishery);
+            groupBox1.Controls.Add(cbHVC);
+            groupBox1.Controls.Add(cbCorn);
+            groupBox1.Controls.Add(cbRice);
+            groupBox1.Controls.Add(cbFarmParcelNo);
+            groupBox1.Controls.Add(cbTotalFarmArea);
+            groupBox1.Location = new Point(755, 6);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(565, 116);
+            groupBox1.TabIndex = 38;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Farm Info";
             // 
-            // cbIdNumber
+            // cbAgriFishery
             // 
-            cbIdNumber.AutoSize = true;
-            cbIdNumber.Location = new Point(25, 38);
-            cbIdNumber.Name = "cbIdNumber";
-            cbIdNumber.Size = new Size(104, 24);
-            cbIdNumber.TabIndex = 1;
-            cbIdNumber.Text = "ID Number";
-            cbIdNumber.UseVisualStyleBackColor = true;
+            cbAgriFishery.AutoSize = true;
+            cbAgriFishery.Checked = true;
+            cbAgriFishery.CheckState = CheckState.Checked;
+            cbAgriFishery.Location = new Point(448, 76);
+            cbAgriFishery.Name = "cbAgriFishery";
+            cbAgriFishery.Size = new Size(110, 24);
+            cbAgriFishery.TabIndex = 6;
+            cbAgriFishery.Text = "Agri-Fishery";
+            cbAgriFishery.UseVisualStyleBackColor = true;
+            cbAgriFishery.CheckedChanged += cbAgriFishery_CheckedChanged;
             // 
-            // cbIdNoType
+            // cbHVC
             // 
-            cbIdNoType.AutoSize = true;
-            cbIdNoType.Location = new Point(161, 38);
-            cbIdNoType.Name = "cbIdNoType";
-            cbIdNoType.Size = new Size(108, 24);
-            cbIdNoType.TabIndex = 2;
-            cbIdNoType.Text = "ID No. Type";
-            cbIdNoType.UseVisualStyleBackColor = true;
+            cbHVC.AutoSize = true;
+            cbHVC.Checked = true;
+            cbHVC.CheckState = CheckState.Checked;
+            cbHVC.Location = new Point(340, 76);
+            cbHVC.Name = "cbHVC";
+            cbHVC.Size = new Size(60, 24);
+            cbHVC.TabIndex = 5;
+            cbHVC.Text = "HVC";
+            cbHVC.UseVisualStyleBackColor = true;
+            cbHVC.CheckedChanged += cbHVC_CheckedChanged;
             // 
-            // cbStreet
+            // cbCorn
             // 
-            cbStreet.AutoSize = true;
-            cbStreet.Location = new Point(312, 38);
-            cbStreet.Name = "cbStreet";
-            cbStreet.Size = new Size(70, 24);
-            cbStreet.TabIndex = 3;
-            cbStreet.Text = "Street";
-            cbStreet.UseVisualStyleBackColor = true;
+            cbCorn.AutoSize = true;
+            cbCorn.Checked = true;
+            cbCorn.CheckState = CheckState.Checked;
+            cbCorn.Location = new Point(193, 76);
+            cbCorn.Name = "cbCorn";
+            cbCorn.Size = new Size(62, 24);
+            cbCorn.TabIndex = 4;
+            cbCorn.Text = "Corn";
+            cbCorn.UseVisualStyleBackColor = true;
+            cbCorn.CheckedChanged += cbCorn_CheckedChanged;
             // 
-            // cbMunicipality
+            // cbRice
             // 
-            cbMunicipality.AutoSize = true;
-            cbMunicipality.Location = new Point(471, 38);
-            cbMunicipality.Name = "cbMunicipality";
-            cbMunicipality.Size = new Size(112, 24);
-            cbMunicipality.TabIndex = 4;
-            cbMunicipality.Text = "Municipality";
-            cbMunicipality.UseVisualStyleBackColor = true;
+            cbRice.AutoSize = true;
+            cbRice.Checked = true;
+            cbRice.CheckState = CheckState.Checked;
+            cbRice.Location = new Point(25, 76);
+            cbRice.Name = "cbRice";
+            cbRice.Size = new Size(59, 24);
+            cbRice.TabIndex = 3;
+            cbRice.Text = "Rice";
+            cbRice.UseVisualStyleBackColor = true;
+            cbRice.CheckedChanged += cbRice_CheckedChanged;
             // 
-            // cbProvince
+            // cbFarmParcelNo
             // 
-            cbProvince.AutoSize = true;
-            cbProvince.Location = new Point(614, 38);
-            cbProvince.Name = "cbProvince";
-            cbProvince.Size = new Size(87, 24);
-            cbProvince.TabIndex = 5;
-            cbProvince.Text = "Province";
-            cbProvince.UseVisualStyleBackColor = true;
+            cbFarmParcelNo.AutoSize = true;
+            cbFarmParcelNo.Checked = true;
+            cbFarmParcelNo.CheckState = CheckState.Checked;
+            cbFarmParcelNo.Location = new Point(25, 38);
+            cbFarmParcelNo.Name = "cbFarmParcelNo";
+            cbFarmParcelNo.Size = new Size(149, 24);
+            cbFarmParcelNo.TabIndex = 1;
+            cbFarmParcelNo.Text = "Farm Parcel Count";
+            cbFarmParcelNo.UseVisualStyleBackColor = true;
+            cbFarmParcelNo.CheckedChanged += cbFarmParcelNo_CheckedChanged;
+            // 
+            // cbTotalFarmArea
+            // 
+            cbTotalFarmArea.AutoSize = true;
+            cbTotalFarmArea.Checked = true;
+            cbTotalFarmArea.CheckState = CheckState.Checked;
+            cbTotalFarmArea.Location = new Point(193, 38);
+            cbTotalFarmArea.Name = "cbTotalFarmArea";
+            cbTotalFarmArea.Size = new Size(135, 24);
+            cbTotalFarmArea.TabIndex = 2;
+            cbTotalFarmArea.Text = "Total Farm Area";
+            cbTotalFarmArea.UseVisualStyleBackColor = true;
+            cbTotalFarmArea.CheckedChanged += cbTotalFarmArea_CheckedChanged;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(checkBox4);
+            groupBox2.Controls.Add(cbMobileNo);
             groupBox2.Controls.Add(cbBirthDate);
             groupBox2.Controls.Add(cbPlaceOfBirth);
             groupBox2.Controls.Add(cbProvince);
             groupBox2.Controls.Add(cbIdNumber);
             groupBox2.Controls.Add(cbMunicipality);
-            groupBox2.Controls.Add(cbIdNoType);
             groupBox2.Controls.Add(cbStreet);
             groupBox2.Location = new Point(10, 6);
             groupBox2.Name = "groupBox2";
@@ -373,105 +424,105 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Farmer Info";
             // 
+            // cbMobileNo
+            // 
+            cbMobileNo.AutoSize = true;
+            cbMobileNo.Checked = true;
+            cbMobileNo.CheckState = CheckState.Checked;
+            cbMobileNo.Location = new Point(312, 76);
+            cbMobileNo.Name = "cbMobileNo";
+            cbMobileNo.Size = new Size(136, 24);
+            cbMobileNo.TabIndex = 8;
+            cbMobileNo.Text = "Mobile Number";
+            cbMobileNo.UseVisualStyleBackColor = true;
+            cbMobileNo.CheckedChanged += cbMobileNo_CheckedChanged;
+            // 
             // cbBirthDate
             // 
             cbBirthDate.AutoSize = true;
+            cbBirthDate.Checked = true;
+            cbBirthDate.CheckState = CheckState.Checked;
             cbBirthDate.Location = new Point(25, 76);
             cbBirthDate.Name = "cbBirthDate";
             cbBirthDate.Size = new Size(98, 24);
             cbBirthDate.TabIndex = 7;
             cbBirthDate.Text = "Birth Date";
             cbBirthDate.UseVisualStyleBackColor = true;
+            cbBirthDate.CheckedChanged += cbBirthDate_CheckedChanged;
             // 
             // cbPlaceOfBirth
             // 
             cbPlaceOfBirth.AutoSize = true;
+            cbPlaceOfBirth.Checked = true;
+            cbPlaceOfBirth.CheckState = CheckState.Checked;
             cbPlaceOfBirth.Location = new Point(161, 76);
             cbPlaceOfBirth.Name = "cbPlaceOfBirth";
             cbPlaceOfBirth.Size = new Size(119, 24);
             cbPlaceOfBirth.TabIndex = 6;
             cbPlaceOfBirth.Text = "Place of Birth";
             cbPlaceOfBirth.UseVisualStyleBackColor = true;
+            cbPlaceOfBirth.CheckedChanged += cbPlaceOfBirth_CheckedChanged;
             // 
-            // groupBox1
+            // cbProvince
             // 
-            groupBox1.Controls.Add(cbFarmArea);
-            groupBox1.Controls.Add(cbFarmType);
-            groupBox1.Controls.Add(cbFarmParcelNo);
-            groupBox1.Controls.Add(cbTotalFarmArea);
-            groupBox1.Location = new Point(755, 6);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(388, 116);
-            groupBox1.TabIndex = 38;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Farm Info";
+            cbProvince.AutoSize = true;
+            cbProvince.Checked = true;
+            cbProvince.CheckState = CheckState.Checked;
+            cbProvince.Location = new Point(483, 38);
+            cbProvince.Name = "cbProvince";
+            cbProvince.Size = new Size(87, 24);
+            cbProvince.TabIndex = 5;
+            cbProvince.Text = "Province";
+            cbProvince.UseVisualStyleBackColor = true;
+            cbProvince.CheckedChanged += cbProvince_CheckedChanged;
             // 
-            // cbFarmParcelNo
+            // cbIdNumber
             // 
-            cbFarmParcelNo.AutoSize = true;
-            cbFarmParcelNo.Location = new Point(25, 38);
-            cbFarmParcelNo.Name = "cbFarmParcelNo";
-            cbFarmParcelNo.Size = new Size(133, 24);
-            cbFarmParcelNo.TabIndex = 1;
-            cbFarmParcelNo.Text = "Farm Parcel No.";
-            cbFarmParcelNo.UseVisualStyleBackColor = true;
+            cbIdNumber.AutoSize = true;
+            cbIdNumber.Checked = true;
+            cbIdNumber.CheckState = CheckState.Checked;
+            cbIdNumber.Location = new Point(25, 38);
+            cbIdNumber.Name = "cbIdNumber";
+            cbIdNumber.Size = new Size(104, 24);
+            cbIdNumber.TabIndex = 1;
+            cbIdNumber.Text = "ID Number";
+            cbIdNumber.UseVisualStyleBackColor = true;
+            cbIdNumber.CheckedChanged += cbIdNumber_CheckedChanged;
             // 
-            // cbTotalFarmArea
+            // cbMunicipality
             // 
-            cbTotalFarmArea.AutoSize = true;
-            cbTotalFarmArea.Location = new Point(193, 38);
-            cbTotalFarmArea.Name = "cbTotalFarmArea";
-            cbTotalFarmArea.Size = new Size(135, 24);
-            cbTotalFarmArea.TabIndex = 2;
-            cbTotalFarmArea.Text = "Total Farm Area";
-            cbTotalFarmArea.UseVisualStyleBackColor = true;
+            cbMunicipality.AutoSize = true;
+            cbMunicipality.Checked = true;
+            cbMunicipality.CheckState = CheckState.Checked;
+            cbMunicipality.Location = new Point(312, 38);
+            cbMunicipality.Name = "cbMunicipality";
+            cbMunicipality.Size = new Size(112, 24);
+            cbMunicipality.TabIndex = 4;
+            cbMunicipality.Text = "Municipality";
+            cbMunicipality.UseVisualStyleBackColor = true;
+            cbMunicipality.CheckedChanged += cbMunicipality_CheckedChanged;
             // 
-            // checkBox4
+            // cbStreet
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(312, 76);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(136, 24);
-            checkBox4.TabIndex = 8;
-            checkBox4.Text = "Mobile Number";
-            checkBox4.UseVisualStyleBackColor = true;
+            cbStreet.AutoSize = true;
+            cbStreet.Checked = true;
+            cbStreet.CheckState = CheckState.Checked;
+            cbStreet.Location = new Point(161, 38);
+            cbStreet.Name = "cbStreet";
+            cbStreet.Size = new Size(70, 24);
+            cbStreet.TabIndex = 3;
+            cbStreet.Text = "Street";
+            cbStreet.UseVisualStyleBackColor = true;
+            cbStreet.CheckedChanged += cbStreet_CheckedChanged;
             // 
-            // cbFarmType
+            // panel5
             // 
-            cbFarmType.AutoSize = true;
-            cbFarmType.Location = new Point(25, 76);
-            cbFarmType.Name = "cbFarmType";
-            cbFarmType.Size = new Size(98, 24);
-            cbFarmType.TabIndex = 3;
-            cbFarmType.Text = "Farm Type";
-            cbFarmType.UseVisualStyleBackColor = true;
-            // 
-            // cbFarmArea
-            // 
-            cbFarmArea.AutoSize = true;
-            cbFarmArea.Location = new Point(193, 76);
-            cbFarmArea.Name = "cbFarmArea";
-            cbFarmArea.Size = new Size(98, 24);
-            cbFarmArea.TabIndex = 4;
-            cbFarmArea.Text = "Farm Area";
-            cbFarmArea.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
-            btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1437, 42);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(146, 40);
-            btnCancel.TabIndex = 33;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            panel5.BackColor = Color.FromArgb(239, 239, 239);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 250);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1595, 10);
+            panel5.TabIndex = 32;
             // 
             // RSBSAExportView
             // 
@@ -493,10 +544,10 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRSBSAExport).EndInit();
             panel4.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -522,7 +573,6 @@
         private Panel panel4;
         private Panel panel5;
         private CheckBox cbStreet;
-        private CheckBox cbIdNoType;
         private CheckBox cbIdNumber;
         private CheckBox cbMunicipality;
         private CheckBox cbProvince;
@@ -532,9 +582,11 @@
         private GroupBox groupBox1;
         private CheckBox cbFarmParcelNo;
         private CheckBox cbTotalFarmArea;
-        private CheckBox checkBox4;
-        private CheckBox cbFarmType;
-        private CheckBox cbFarmArea;
+        private CheckBox cbMobileNo;
         private Button btnCancel;
+        private CheckBox cbAgriFishery;
+        private CheckBox cbHVC;
+        private CheckBox cbCorn;
+        private CheckBox cbRice;
     }
 }
