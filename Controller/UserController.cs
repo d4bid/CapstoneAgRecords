@@ -20,7 +20,8 @@ namespace AgRecords.Controller
 
         private UserModel userModel;
         private Boolean isDone = false; //for processing CRUD operations
-
+        private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
 
         public UserController(UserView userView)
         {
@@ -163,6 +164,7 @@ namespace AgRecords.Controller
                                 {
                                     MessageBox.Show("Account created succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     isDone = true;
+                                    userModel.InserActionLog(username, "Insert", "User", $"{userId} added successfully.");
                                 }
                             }
                             else //cancel adding
@@ -187,6 +189,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Add User Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                userModel.InserActionLog(username, "Insert", "User", $"{userId} adding failed.");
 
                 return false;
             }
@@ -251,6 +254,7 @@ namespace AgRecords.Controller
                         {
                             MessageBox.Show("Account updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isDone = true;
+                            userModel.InserActionLog(username, "Update", "User", $"{userId} updated successfully.");
                         }
                     }
                     else //cancel updating
@@ -265,7 +269,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Update User Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Update", "User", $"{userId} update failed.");
                 return false;
             }
 
@@ -303,6 +307,7 @@ namespace AgRecords.Controller
                                 if (userModel.UpdateUserPassword(user))
                                 {
                                     MessageBox.Show("Account password updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    userModel.InserActionLog(username, "Update", "User", $"{userId} password updated successfully.");
                                     isDone = true;
                                 }
                             }
@@ -328,7 +333,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Update Password Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Update", "User", $"{userId} password update failed.");
                 return false;
             }
         }
@@ -341,7 +346,7 @@ namespace AgRecords.Controller
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Finding Nemo Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Finding Account Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return null;
             }

@@ -145,6 +145,7 @@ namespace AgRecords.View
 
                     // Inform the user that the data has been exported successfully
                     MessageBox.Show("Data exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    userModel.InserActionLog(username, "Export", "RSBSA", $"Excel exported successfully.");
                 }
             }
 

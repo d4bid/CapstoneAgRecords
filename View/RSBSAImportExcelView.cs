@@ -430,6 +430,7 @@ namespace AgRecords.View
 
                 // Display a completion message
                 MessageBox.Show("RSBSA Records saved successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                userModel.InserActionLog(username, "Import", "RSBSA", $"Excel imported successfully.");
                 labelProgress.Visible = false;
                 progressBar1.Value = 0;
             }
