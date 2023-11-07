@@ -34,6 +34,8 @@ namespace AgRecords.View
         {
             DataTable userTable = userController.LoadUserView();
             dgvUsers.DataSource = userTable;
+
+            comboBoxSearchCategory.SelectedIndex = 0;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -103,5 +105,50 @@ namespace AgRecords.View
             parentPanel.Controls.Add(userView);
             userView.Show();
         }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            PerformSearch(txtBoxSearch.Text, comboBoxSearchCategory.Text);
+        }
+
+        public void PerformSearch(string searchValue, string searchCategory)
+        {
+            // Filter the DataGridView based on the search value and category
+            if (dgvUsers.DataSource is DataTable dataTable)
+            {
+                string filterExpression = "";
+
+                if (searchCategory == "ALL")
+                {
+                    filterExpression = $"[ID] LIKE '%{searchValue}%' OR " +
+                                       $"[Username] LIKE '%{searchValue}%' OR " +
+                                       $"[First Name] LIKE '%{searchValue}%' OR " +
+                                       $"[Last Name] LIKE '%{searchValue}%'";
+                }
+                else
+                {
+                    // Filter based on the selected category
+                    switch (searchCategory)
+                    {
+                        case "ID":
+                            filterExpression = $"[ID] LIKE '%{searchValue}%'";
+                            break;
+                        case "USERNAME":
+                            filterExpression = $"[Username] LIKE '%{searchValue}%'";
+                            break;
+                        case "FIRST NAME":
+                            filterExpression = $"[First Name] LIKE '%{searchValue}%'";
+                            break;
+                        case "LAST NAME":
+                            filterExpression = $"[Last Name] LIKE '%{searchValue}%'";
+                            break;
+                    }
+                }
+
+                dataTable.DefaultView.RowFilter = filterExpression;
+            }
+        }
+
+
     }
 }

@@ -35,14 +35,14 @@ namespace AgRecords.View
             btnAdd = new Button();
             dgvUsers = new DataGridView();
             panel1 = new Panel();
-            cmbColumn = new ComboBox();
-            searchBox2 = new SearchBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtBoxSearch = new TextBox();
             searchBox1 = new SearchBox();
-            label1 = new Label();
             panel3 = new Panel();
             panel2 = new Panel();
+            comboBoxSearchCategory = new ComboBox();
+            searchBox2 = new SearchBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -108,12 +108,12 @@ namespace AgRecords.View
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(cmbColumn);
+            panel1.Controls.Add(comboBoxSearchCategory);
             panel1.Controls.Add(searchBox2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(txtBoxSearch);
             panel1.Controls.Add(searchBox1);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(btnAdd);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -121,25 +121,6 @@ namespace AgRecords.View
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 21;
-            // 
-            // cmbColumn
-            // 
-            cmbColumn.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbColumn.FlatStyle = FlatStyle.Flat;
-            cmbColumn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbColumn.FormattingEnabled = true;
-            cmbColumn.Items.AddRange(new object[] { "All", "ID", "Month", "Week", "Year", "Created By", "Date" });
-            cmbColumn.Location = new Point(400, 40);
-            cmbColumn.Name = "cmbColumn";
-            cmbColumn.Size = new Size(237, 28);
-            cmbColumn.TabIndex = 16;
-            // 
-            // searchBox2
-            // 
-            searchBox2.Location = new Point(395, 35);
-            searchBox2.Name = "searchBox2";
-            searchBox2.Size = new Size(246, 39);
-            searchBox2.TabIndex = 21;
             // 
             // iconPictureBox1
             // 
@@ -164,6 +145,7 @@ namespace AgRecords.View
             txtBoxSearch.PlaceholderText = "Search";
             txtBoxSearch.Size = new Size(297, 24);
             txtBoxSearch.TabIndex = 17;
+            txtBoxSearch.TextChanged += txtBoxSearch_TextChanged;
             // 
             // searchBox1
             // 
@@ -171,15 +153,6 @@ namespace AgRecords.View
             searchBox1.Name = "searchBox1";
             searchBox1.Size = new Size(343, 39);
             searchBox1.TabIndex = 20;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(395, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 20);
-            label1.TabIndex = 19;
-            label1.Text = "Filter";
             // 
             // panel3
             // 
@@ -200,6 +173,34 @@ namespace AgRecords.View
             panel2.Padding = new Padding(10);
             panel2.Size = new Size(1595, 826);
             panel2.TabIndex = 28;
+            // 
+            // comboBoxSearchCategory
+            // 
+            comboBoxSearchCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxSearchCategory.FlatStyle = FlatStyle.Flat;
+            comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxSearchCategory.FormattingEnabled = true;
+            comboBoxSearchCategory.Items.AddRange(new object[] { "ALL", "ID", "USERNAME", "FIRST NAME", "LAST NAME" });
+            comboBoxSearchCategory.Location = new Point(385, 41);
+            comboBoxSearchCategory.Name = "comboBoxSearchCategory";
+            comboBoxSearchCategory.Size = new Size(183, 28);
+            comboBoxSearchCategory.TabIndex = 21;
+            // 
+            // searchBox2
+            // 
+            searchBox2.Location = new Point(380, 36);
+            searchBox2.Name = "searchBox2";
+            searchBox2.Size = new Size(191, 39);
+            searchBox2.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(380, 13);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 20);
+            label1.TabIndex = 22;
+            label1.Text = "Category";
             // 
             // UserView
             // 
@@ -226,13 +227,13 @@ namespace AgRecords.View
         private Button btnAdd;
         private DataGridView dgvUsers;
         private Panel panel1;
-        private ComboBox cmbColumn;
-        private SearchBox searchBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private TextBox txtBoxSearch;
         private SearchBox searchBox1;
-        private Label label1;
         private Panel panel3;
         private Panel panel2;
+        private ComboBox comboBoxSearchCategory;
+        private SearchBox searchBox2;
+        private Label label1;
     }
 }

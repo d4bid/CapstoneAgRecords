@@ -219,6 +219,10 @@ namespace AgRecords.Model
                         user.username = reader["username"].ToString();
                         user.userPassword = reader["userPassword"].ToString();
                         user.userActive = reader["userActive"].ToString();
+                        user.userTitle = reader["userTitle"].ToString();
+                        user.userMiddlename = reader["userMiddlename"].ToString();
+                        user.userExtension = reader["userExtension"].ToString();
+                        user.userJobTitle = reader["userJobTitle"].ToString();
 
                         // Check if userPhoto column is null before attempting to retrieve it
                         if (reader["userPhoto"] != DBNull.Value)

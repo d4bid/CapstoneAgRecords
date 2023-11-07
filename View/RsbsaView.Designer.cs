@@ -131,7 +131,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(774, 14);
+            label3.Location = new Point(759, 14);
             label3.Name = "label3";
             label3.Size = new Size(87, 20);
             label3.TabIndex = 20;
@@ -144,7 +144,7 @@
             comboBoxFilterCommodity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterCommodity.FormattingEnabled = true;
             comboBoxFilterCommodity.Items.AddRange(new object[] { "ALL", "Rice", "Corn", "HVC" });
-            comboBoxFilterCommodity.Location = new Point(781, 42);
+            comboBoxFilterCommodity.Location = new Point(766, 42);
             comboBoxFilterCommodity.Name = "comboBoxFilterCommodity";
             comboBoxFilterCommodity.Size = new Size(174, 28);
             comboBoxFilterCommodity.TabIndex = 18;
@@ -152,7 +152,7 @@
             // 
             // searchBox4
             // 
-            searchBox4.Location = new Point(774, 37);
+            searchBox4.Location = new Point(759, 37);
             searchBox4.Name = "searchBox4";
             searchBox4.Size = new Size(184, 39);
             searchBox4.TabIndex = 19;
@@ -160,7 +160,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(368, 14);
+            label2.Location = new Point(565, 14);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 17;
@@ -173,7 +173,7 @@
             comboBoxFilterBrgy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterBrgy.FormattingEnabled = true;
             comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            comboBoxFilterBrgy.Location = new Point(374, 42);
+            comboBoxFilterBrgy.Location = new Point(571, 42);
             comboBoxFilterBrgy.Name = "comboBoxFilterBrgy";
             comboBoxFilterBrgy.Size = new Size(174, 28);
             comboBoxFilterBrgy.TabIndex = 11;
@@ -181,7 +181,7 @@
             // 
             // searchBox3
             // 
-            searchBox3.Location = new Point(368, 37);
+            searchBox3.Location = new Point(565, 37);
             searchBox3.Name = "searchBox3";
             searchBox3.Size = new Size(184, 39);
             searchBox3.TabIndex = 16;
@@ -193,7 +193,7 @@
             comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSearchCategory.FormattingEnabled = true;
             comboBoxSearchCategory.Items.AddRange(new object[] { "ALL", "ID", "FIRST NAME", "MIDDLE NAME", "SURNAME" });
-            comboBoxSearchCategory.Location = new Point(573, 42);
+            comboBoxSearchCategory.Location = new Point(367, 42);
             comboBoxSearchCategory.Name = "comboBoxSearchCategory";
             comboBoxSearchCategory.Size = new Size(183, 28);
             comboBoxSearchCategory.TabIndex = 9;
@@ -201,7 +201,7 @@
             // 
             // searchBox2
             // 
-            searchBox2.Location = new Point(568, 37);
+            searchBox2.Location = new Point(362, 37);
             searchBox2.Name = "searchBox2";
             searchBox2.Size = new Size(191, 39);
             searchBox2.TabIndex = 15;
@@ -241,7 +241,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(568, 14);
+            label1.Location = new Point(362, 14);
             label1.Name = "label1";
             label1.Size = new Size(69, 20);
             label1.TabIndex = 13;

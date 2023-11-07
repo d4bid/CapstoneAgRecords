@@ -22,6 +22,7 @@ namespace AgRecords.View
             InitializeComponent();
             certController = new CertificationsController(this);
             this.parentPanel = parentControl as Panel;
+
         }
 
         // Methods
@@ -49,6 +50,9 @@ namespace AgRecords.View
         {
             DataTable certTable = certController.LoadFarmerView();
             dgvCert.DataSource = certTable;
+
+            comboBoxFilterBrgy.SelectedIndex = 0;
+            comboBoxSearchCategory.SelectedIndex = 0;
 
         }
 
@@ -99,5 +103,90 @@ namespace AgRecords.View
             }
 
         }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void comboBoxSearchCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void comboBoxFilterBrgy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void PerformSearch()
+        {
+            string searchValue = txtBoxSearch.Text;
+            string selectedCategory = comboBoxSearchCategory.SelectedItem != null
+                                     ? comboBoxSearchCategory.SelectedItem.ToString()
+                                     : string.Empty;
+            string selectedBrgy = comboBoxFilterBrgy.SelectedItem != null
+                                  ? comboBoxFilterBrgy.SelectedItem.ToString()
+                                  : string.Empty;
+
+            // Filter the DataGridView based on search criteria
+            (dgvCert.DataSource as DataTable).DefaultView.RowFilter =
+                GetSearchFilterExpression(searchValue, selectedCategory, selectedBrgy);
+        }
+
+
+        private string GetSearchFilterExpression(string searchValue, string selectedCategory, string selectedBrgy)
+        {
+            string filterExpression = "";
+
+            // Create filter expression based on selected category and search value
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                switch (selectedCategory)
+                {
+                    case "RSBSA ID":
+                        filterExpression = $"CONVERT([RSBSA ID], System.String) LIKE '%{searchValue}%'";
+                        break;
+                    case "FIRST NAME":
+                        filterExpression = $"[First Name] LIKE '%{searchValue}%'";
+                        break;
+                    case "LAST NAME":
+                        filterExpression = $"[Last Name] LIKE '%{searchValue}%'";
+                        break;
+                    case "NO. OF FARM PARCEL":
+                        // Convert integer column to string before performing 'LIKE' comparison
+                        filterExpression = $"CONVERT([No. of Farm Parcel], System.String) LIKE '%{searchValue}%'";
+                        break;
+                    case "BIRTHDATE":
+                        // Format the search value as a string and perform partial matching with 'LIKE' operator
+                        string formattedSearchDate = searchValue;
+                        filterExpression = $"CONVERT([Birthdate], System.String) LIKE '%{formattedSearchDate}%'";
+                        break;
+                    default:
+                        filterExpression = $"[RSBSA ID] LIKE '%{searchValue}%' OR [FIRST NAME] LIKE '%{searchValue}%' OR " +
+                                           $"[LAST NAME] LIKE '%{searchValue}%' OR " +
+                                           $"CONVERT([NO. OF FARM PARCEL], System.String) LIKE '%{searchValue}%' OR " +
+                                           $"CONVERT([Birthdate], System.String) LIKE '%{searchValue}%'";
+                        break;
+                }
+            }
+
+            // Add additional filtering based on selected barangay if applicable
+            if (!string.IsNullOrEmpty(selectedBrgy) && selectedBrgy != "ALL")
+            {
+                if (!string.IsNullOrEmpty(filterExpression))
+                {
+                    filterExpression += $" AND [Barangay] = '{selectedBrgy}'";
+                }
+                else
+                {
+                    filterExpression = $"[Barangay] = '{selectedBrgy}'";
+                }
+            }
+
+            return filterExpression;
+        }
+
+
     }
 }

@@ -35,12 +35,11 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            comboBoxSearchCategory.SelectedIndex = 0;
-            comboBoxFilterBrgy.SelectedIndex = 0;
-            comboBoxFilterCommodity.SelectedIndex = 0;
 
             DataTable rsbasaTable = rsbsaController.LoadRSBSAExportView();
             dgvRSBSAExport.DataSource = rsbasaTable;
+
+            comboBoxFilterBrgy.SelectedIndex = 0;
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -226,6 +225,27 @@ namespace AgRecords.View
         {
             dgvRSBSAExport.Columns["AGRI-FISHERY"].Visible = cbAgriFishery.Checked;
 
+        }
+
+        private void PerformSearch()
+        {
+            string selectedBrgy = comboBoxFilterBrgy.SelectedItem?.ToString() ?? "ALL";
+
+            // Filter the DataGridView based on selected barangay
+            if (selectedBrgy == "ALL")
+            {
+                (dgvRSBSAExport.DataSource as DataTable).DefaultView.RowFilter = "";
+            }
+            else
+            {
+                (dgvRSBSAExport.DataSource as DataTable).DefaultView.RowFilter = $"[PERMANENT ADDRESS 2- BRGY/VILL] = '{selectedBrgy}'";
+            }
+        }
+
+
+        private void comboBoxFilterBrgy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
         }
     }
 }

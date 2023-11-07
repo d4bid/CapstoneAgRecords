@@ -32,9 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label2 = new Label();
-            cmbShow = new ComboBox();
+            comboBoxFilterBrgy = new ComboBox();
             searchBox3 = new SearchBox();
-            cmbColumn = new ComboBox();
+            comboBoxSearchCategory = new ComboBox();
             searchBox2 = new SearchBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtBoxSearch = new TextBox();
@@ -53,9 +53,9 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(cmbShow);
+            panel1.Controls.Add(comboBoxFilterBrgy);
             panel1.Controls.Add(searchBox3);
-            panel1.Controls.Add(cmbColumn);
+            panel1.Controls.Add(comboBoxSearchCategory);
             panel1.Controls.Add(searchBox2);
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(txtBoxSearch);
@@ -71,49 +71,51 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(380, 11);
+            label2.Location = new Point(566, 15);
             label2.Name = "label2";
-            label2.Size = new Size(45, 20);
-            label2.TabIndex = 17;
-            label2.Text = "Show";
+            label2.Size = new Size(71, 20);
+            label2.TabIndex = 29;
+            label2.Text = "Barangay";
             // 
-            // cmbShow
+            // comboBoxFilterBrgy
             // 
-            cmbShow.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbShow.FlatStyle = FlatStyle.Flat;
-            cmbShow.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbShow.FormattingEnabled = true;
-            cmbShow.Items.AddRange(new object[] { "Farmers", "Certificates" });
-            cmbShow.Location = new Point(385, 39);
-            cmbShow.Name = "cmbShow";
-            cmbShow.Size = new Size(305, 28);
-            cmbShow.TabIndex = 11;
+            comboBoxFilterBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFilterBrgy.FlatStyle = FlatStyle.Flat;
+            comboBoxFilterBrgy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFilterBrgy.FormattingEnabled = true;
+            comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            comboBoxFilterBrgy.Location = new Point(572, 43);
+            comboBoxFilterBrgy.Name = "comboBoxFilterBrgy";
+            comboBoxFilterBrgy.Size = new Size(174, 28);
+            comboBoxFilterBrgy.TabIndex = 23;
+            comboBoxFilterBrgy.SelectedIndexChanged += comboBoxFilterBrgy_SelectedIndexChanged;
             // 
             // searchBox3
             // 
-            searchBox3.Location = new Point(380, 34);
+            searchBox3.Location = new Point(566, 38);
             searchBox3.Name = "searchBox3";
-            searchBox3.Size = new Size(314, 39);
-            searchBox3.TabIndex = 16;
+            searchBox3.Size = new Size(184, 39);
+            searchBox3.TabIndex = 28;
             // 
-            // cmbColumn
+            // comboBoxSearchCategory
             // 
-            cmbColumn.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbColumn.FlatStyle = FlatStyle.Flat;
-            cmbColumn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbColumn.FormattingEnabled = true;
-            cmbColumn.Items.AddRange(new object[] { "All", "RSBSA ID", "Reference Number", "Name", "Barangay" });
-            cmbColumn.Location = new Point(719, 39);
-            cmbColumn.Name = "cmbColumn";
-            cmbColumn.Size = new Size(237, 28);
-            cmbColumn.TabIndex = 9;
+            comboBoxSearchCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxSearchCategory.FlatStyle = FlatStyle.Flat;
+            comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxSearchCategory.FormattingEnabled = true;
+            comboBoxSearchCategory.Items.AddRange(new object[] { "ALL", "RSBSA ID", "FIRST NAME", "LAST NAME", "BIRTHDATE", "NO. OF FARM PARCEL" });
+            comboBoxSearchCategory.Location = new Point(368, 43);
+            comboBoxSearchCategory.Name = "comboBoxSearchCategory";
+            comboBoxSearchCategory.Size = new Size(183, 28);
+            comboBoxSearchCategory.TabIndex = 21;
+            comboBoxSearchCategory.SelectedIndexChanged += comboBoxSearchCategory_SelectedIndexChanged;
             // 
             // searchBox2
             // 
-            searchBox2.Location = new Point(714, 34);
+            searchBox2.Location = new Point(363, 38);
             searchBox2.Name = "searchBox2";
-            searchBox2.Size = new Size(246, 39);
-            searchBox2.TabIndex = 15;
+            searchBox2.Size = new Size(191, 39);
+            searchBox2.TabIndex = 27;
             // 
             // iconPictureBox1
             // 
@@ -123,37 +125,38 @@
             iconPictureBox1.IconColor = SystemColors.GrayText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 25;
-            iconPictureBox1.Location = new Point(21, 41);
+            iconPictureBox1.Location = new Point(20, 45);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(25, 25);
-            iconPictureBox1.TabIndex = 12;
+            iconPictureBox1.TabIndex = 24;
             iconPictureBox1.TabStop = false;
             // 
             // txtBoxSearch
             // 
             txtBoxSearch.BorderStyle = BorderStyle.None;
             txtBoxSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxSearch.Location = new Point(48, 38);
+            txtBoxSearch.Location = new Point(47, 42);
             txtBoxSearch.Name = "txtBoxSearch";
             txtBoxSearch.PlaceholderText = "Search";
-            txtBoxSearch.Size = new Size(297, 24);
-            txtBoxSearch.TabIndex = 10;
+            txtBoxSearch.Size = new Size(291, 24);
+            txtBoxSearch.TabIndex = 22;
+            txtBoxSearch.TextChanged += txtBoxSearch_TextChanged;
             // 
             // searchBox1
             // 
-            searchBox1.Location = new Point(13, 34);
+            searchBox1.Location = new Point(12, 38);
             searchBox1.Name = "searchBox1";
-            searchBox1.Size = new Size(343, 39);
-            searchBox1.TabIndex = 14;
+            searchBox1.Size = new Size(341, 39);
+            searchBox1.TabIndex = 26;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(714, 11);
+            label1.Location = new Point(363, 15);
             label1.Name = "label1";
-            label1.Size = new Size(42, 20);
-            label1.TabIndex = 13;
-            label1.Text = "Filter";
+            label1.Size = new Size(69, 20);
+            label1.TabIndex = 25;
+            label1.Text = "Category";
             // 
             // panel3
             // 
@@ -235,17 +238,17 @@
 
         #endregion
         private Panel panel1;
+        private Panel panel3;
+        private Panel panel2;
+        private DataGridView dgvCert;
         private Label label2;
-        private ComboBox cmbShow;
+        private ComboBox comboBoxFilterBrgy;
         private SearchBox searchBox3;
-        private ComboBox cmbColumn;
+        private ComboBox comboBoxSearchCategory;
         private SearchBox searchBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private TextBox txtBoxSearch;
         private SearchBox searchBox1;
         private Label label1;
-        private Panel panel3;
-        private Panel panel2;
-        private DataGridView dgvCert;
     }
 }
