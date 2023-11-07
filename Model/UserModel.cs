@@ -38,6 +38,46 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable LoadUserLogsDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_audit_trails;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading user logs: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadBackupLogsDataGrid()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_backup_logs;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading backup logs: " + ex.Message, ex);
+            }
+        }
+
 
         public DataTable GetAllRoles()
         {
@@ -284,6 +324,50 @@ namespace AgRecords.Model
             }
         }
 
+        public Boolean BackupDatabase(string filepath)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    List<string> list = new List<string>();
+                    list.Add("tbl_user_logs");
 
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = db.GetConnection();
+                    MySqlBackup mb = new MySqlBackup(cmd);
+                    mb.ExportInfo.ExcludeTables = list;
+                    mb.ExportToFile(filepath);
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Backup Error: " + ex.Message, ex);
+            }
+        }
+
+        public Boolean RestoreDatabase(string filepath)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = db.GetConnection();
+                    MySqlBackup mb = new MySqlBackup(cmd);
+                    mb.ImportFromFile(filepath);
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Restore Error: " + ex.Message, ex);
+            }
+        }
     }
 }

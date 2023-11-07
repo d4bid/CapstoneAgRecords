@@ -17,6 +17,8 @@ namespace AgRecords.Controller
         private UserAddView userAddView;
         private UserEditView userEditView;
         private UserPasswordView userPasswordView;
+        private AuditLogsView auditLogsView;
+        private BackupAndRestoreView backupAndRestoreView;
 
         private UserModel userModel;
         private Boolean isDone = false; //for processing CRUD operations
@@ -46,6 +48,15 @@ namespace AgRecords.Controller
             this.userPasswordView = userPasswordView;
             userModel = new UserModel();
         }
+        public UserController(AuditLogsView auditLogsView)
+        {
+            this.auditLogsView = auditLogsView;
+            userModel = new UserModel();
+        }public UserController(BackupAndRestoreView backupAndRestoreView)
+        {
+            this.backupAndRestoreView = backupAndRestoreView;
+            userModel = new UserModel();
+        }
 
         public DataTable LoadUserView()
         {
@@ -61,6 +72,37 @@ namespace AgRecords.Controller
                 return null;
             }
             
+        }
+
+        public DataTable LoadUserLogsView()
+        {
+            try
+            {
+                DataTable logsTable = userModel.LoadUserLogsDataGrid();
+                return logsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "User Logs Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
+        }
+        public DataTable LoadBackupLogsView()
+        {
+            try
+            {
+                DataTable logsTable = userModel.LoadBackupLogsDataGrid();
+                return logsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Backup Logs Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
         }
 
         public DataTable GetAllRoles()
@@ -216,9 +258,6 @@ namespace AgRecords.Controller
                     userRole = userRole,
                     userActive = userActive
                 };
-                MessageBox.Show(userJobTitle, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-
 
                 if (user.userPhoto == null)
                 {
