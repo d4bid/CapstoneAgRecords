@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             cornGraph1 = new OxyPlot.WindowsForms.PlotView();
             label13 = new Label();
             rectangleFullWhite7 = new RectangleFullWhite();
@@ -56,8 +58,9 @@
             label7 = new Label();
             rectangleFullWhite1 = new RectangleFullWhite();
             cornGraph2 = new OxyPlot.WindowsForms.PlotView();
-            plotView1 = new OxyPlot.WindowsForms.PlotView();
             plotView2 = new OxyPlot.WindowsForms.PlotView();
+            dgvCornProd = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCornProd).BeginInit();
             SuspendLayout();
             // 
             // cornGraph1
@@ -66,7 +69,7 @@
             cornGraph1.Location = new Point(34, 230);
             cornGraph1.Name = "cornGraph1";
             cornGraph1.PanCursor = Cursors.Hand;
-            cornGraph1.Size = new Size(718, 233);
+            cornGraph1.Size = new Size(718, 257);
             cornGraph1.TabIndex = 68;
             cornGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
             cornGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -89,7 +92,7 @@
             rectangleFullWhite7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite7.Location = new Point(1179, 172);
             rectangleFullWhite7.Name = "rectangleFullWhite7";
-            rectangleFullWhite7.Size = new Size(404, 144);
+            rectangleFullWhite7.Size = new Size(404, 154);
             rectangleFullWhite7.TabIndex = 66;
             // 
             // label10
@@ -98,7 +101,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 35, 76);
-            label10.Location = new Point(807, 513);
+            label10.Location = new Point(808, 548);
             label10.Name = "label10";
             label10.Size = new Size(166, 20);
             label10.TabIndex = 61;
@@ -107,9 +110,9 @@
             // rectangleFullWhite3
             // 
             rectangleFullWhite3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleFullWhite3.Location = new Point(791, 492);
+            rectangleFullWhite3.Location = new Point(791, 526);
             rectangleFullWhite3.Name = "rectangleFullWhite3";
-            rectangleFullWhite3.Size = new Size(792, 422);
+            rectangleFullWhite3.Size = new Size(792, 388);
             rectangleFullWhite3.TabIndex = 60;
             // 
             // label9
@@ -128,7 +131,7 @@
             // 
             rectangleFullWhite2.Location = new Point(12, 172);
             rectangleFullWhite2.Name = "rectangleFullWhite2";
-            rectangleFullWhite2.Size = new Size(760, 304);
+            rectangleFullWhite2.Size = new Size(760, 335);
             rectangleFullWhite2.TabIndex = 58;
             // 
             // label8
@@ -137,7 +140,7 @@
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(0, 35, 76);
-            label8.Location = new Point(34, 513);
+            label8.Location = new Point(34, 548);
             label8.Name = "label8";
             label8.Size = new Size(123, 20);
             label8.TabIndex = 55;
@@ -145,9 +148,9 @@
             // 
             // rectangleFullWhite4
             // 
-            rectangleFullWhite4.Location = new Point(12, 492);
+            rectangleFullWhite4.Location = new Point(12, 526);
             rectangleFullWhite4.Name = "rectangleFullWhite4";
-            rectangleFullWhite4.Size = new Size(760, 423);
+            rectangleFullWhite4.Size = new Size(760, 389);
             rectangleFullWhite4.TabIndex = 54;
             // 
             // labelTotalCornAreaPlanted
@@ -279,7 +282,7 @@
             // 
             rectangleFullWhite6.Location = new Point(791, 172);
             rectangleFullWhite6.Name = "rectangleFullWhite6";
-            rectangleFullWhite6.Size = new Size(370, 304);
+            rectangleFullWhite6.Size = new Size(370, 335);
             rectangleFullWhite6.TabIndex = 64;
             // 
             // label12
@@ -300,7 +303,7 @@
             labelTotalYellowCorn.BackColor = Color.White;
             labelTotalYellowCorn.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalYellowCorn.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalYellowCorn.Location = new Point(1196, 230);
+            labelTotalYellowCorn.Location = new Point(1196, 240);
             labelTotalYellowCorn.Name = "labelTotalYellowCorn";
             labelTotalYellowCorn.Size = new Size(55, 62);
             labelTotalYellowCorn.TabIndex = 69;
@@ -312,7 +315,7 @@
             labelTotalWhiteCorn.BackColor = Color.White;
             labelTotalWhiteCorn.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalWhiteCorn.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalWhiteCorn.Location = new Point(1196, 390);
+            labelTotalWhiteCorn.Location = new Point(1196, 409);
             labelTotalWhiteCorn.Name = "labelTotalWhiteCorn";
             labelTotalWhiteCorn.Size = new Size(55, 62);
             labelTotalWhiteCorn.TabIndex = 72;
@@ -324,7 +327,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(1196, 347);
+            label7.Location = new Point(1196, 366);
             label7.Name = "label7";
             label7.Size = new Size(184, 20);
             label7.TabIndex = 71;
@@ -333,9 +336,9 @@
             // rectangleFullWhite1
             // 
             rectangleFullWhite1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleFullWhite1.Location = new Point(1179, 332);
+            rectangleFullWhite1.Location = new Point(1179, 345);
             rectangleFullWhite1.Name = "rectangleFullWhite1";
-            rectangleFullWhite1.Size = new Size(404, 144);
+            rectangleFullWhite1.Size = new Size(404, 162);
             rectangleFullWhite1.TabIndex = 70;
             // 
             // cornGraph2
@@ -344,35 +347,61 @@
             cornGraph2.Location = new Point(813, 230);
             cornGraph2.Name = "cornGraph2";
             cornGraph2.PanCursor = Cursors.Hand;
-            cornGraph2.Size = new Size(334, 233);
+            cornGraph2.Size = new Size(334, 257);
             cornGraph2.TabIndex = 73;
             cornGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             cornGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
             cornGraph2.ZoomVerticalCursor = Cursors.SizeNS;
             // 
-            // plotView1
-            // 
-            plotView1.BackColor = Color.White;
-            plotView1.Location = new Point(34, 550);
-            plotView1.Name = "plotView1";
-            plotView1.PanCursor = Cursors.Hand;
-            plotView1.Size = new Size(718, 349);
-            plotView1.TabIndex = 74;
-            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
-            // 
             // plotView2
             // 
             plotView2.BackColor = Color.White;
-            plotView2.Location = new Point(808, 550);
+            plotView2.Location = new Point(808, 578);
             plotView2.Name = "plotView2";
             plotView2.PanCursor = Cursors.Hand;
-            plotView2.Size = new Size(755, 349);
+            plotView2.Size = new Size(755, 321);
             plotView2.TabIndex = 75;
             plotView2.ZoomHorizontalCursor = Cursors.SizeWE;
             plotView2.ZoomRectangleCursor = Cursors.SizeNWSE;
             plotView2.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // dgvCornProd
+            // 
+            dgvCornProd.AllowUserToAddRows = false;
+            dgvCornProd.AllowUserToDeleteRows = false;
+            dgvCornProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCornProd.BackgroundColor = Color.White;
+            dgvCornProd.BorderStyle = BorderStyle.None;
+            dgvCornProd.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCornProd.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCornProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCornProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCornProd.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCornProd.GridColor = Color.FromArgb(239, 239, 239);
+            dgvCornProd.Location = new Point(34, 578);
+            dgvCornProd.Name = "dgvCornProd";
+            dgvCornProd.ReadOnly = true;
+            dgvCornProd.RowHeadersVisible = false;
+            dgvCornProd.RowHeadersWidth = 51;
+            dgvCornProd.RowTemplate.Height = 40;
+            dgvCornProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCornProd.Size = new Size(718, 321);
+            dgvCornProd.TabIndex = 76;
             // 
             // AnalyticsCropsCornView
             // 
@@ -380,8 +409,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
+            Controls.Add(dgvCornProd);
             Controls.Add(plotView2);
-            Controls.Add(plotView1);
             Controls.Add(cornGraph2);
             Controls.Add(labelTotalWhiteCorn);
             Controls.Add(label7);
@@ -413,6 +442,7 @@
             Name = "AnalyticsCropsCornView";
             Text = "AnalyticsCropsCornView";
             Load += AnalyticsCropsCornView_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCornProd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -447,7 +477,7 @@
         private Label label7;
         private RectangleFullWhite rectangleFullWhite1;
         private OxyPlot.WindowsForms.PlotView cornGraph2;
-        private OxyPlot.WindowsForms.PlotView plotView1;
         private OxyPlot.WindowsForms.PlotView plotView2;
+        private DataGridView dgvCornProd;
     }
 }

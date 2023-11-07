@@ -30,6 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             panelMenu = new Panel();
+            panelSettingsSubMenu = new Panel();
+            btnBackupRestore = new FontAwesome.Sharp.IconButton();
+            btnSettingsAudit = new FontAwesome.Sharp.IconButton();
             btnSettings = new FontAwesome.Sharp.IconButton();
             btnUsers = new FontAwesome.Sharp.IconButton();
             btnActivities = new FontAwesome.Sharp.IconButton();
@@ -64,6 +67,7 @@
             panelDesktop = new Panel();
             toolTip1 = new ToolTip(components);
             panelMenu.SuspendLayout();
+            panelSettingsSubMenu.SuspendLayout();
             panelReportsSubMenu.SuspendLayout();
             panelCropsSubMenu.SuspendLayout();
             panel2.SuspendLayout();
@@ -76,6 +80,7 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = Color.FromArgb(43, 121, 223);
+            panelMenu.Controls.Add(panelSettingsSubMenu);
             panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnUsers);
             panelMenu.Controls.Add(btnActivities);
@@ -96,6 +101,67 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(320, 753);
             panelMenu.TabIndex = 0;
+            // 
+            // panelSettingsSubMenu
+            // 
+            panelSettingsSubMenu.BackColor = Color.FromArgb(38, 109, 200);
+            panelSettingsSubMenu.Controls.Add(btnBackupRestore);
+            panelSettingsSubMenu.Controls.Add(btnSettingsAudit);
+            panelSettingsSubMenu.Dock = DockStyle.Top;
+            panelSettingsSubMenu.Location = new Point(0, 1042);
+            panelSettingsSubMenu.Name = "panelSettingsSubMenu";
+            panelSettingsSubMenu.Size = new Size(299, 102);
+            panelSettingsSubMenu.TabIndex = 24;
+            // 
+            // btnBackupRestore
+            // 
+            btnBackupRestore.Dock = DockStyle.Top;
+            btnBackupRestore.FlatAppearance.BorderSize = 0;
+            btnBackupRestore.FlatStyle = FlatStyle.Flat;
+            btnBackupRestore.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBackupRestore.ForeColor = Color.White;
+            btnBackupRestore.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnBackupRestore.IconColor = Color.White;
+            btnBackupRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBackupRestore.IconSize = 32;
+            btnBackupRestore.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBackupRestore.Location = new Point(0, 51);
+            btnBackupRestore.Margin = new Padding(3, 4, 3, 4);
+            btnBackupRestore.Name = "btnBackupRestore";
+            btnBackupRestore.Padding = new Padding(40, 0, 0, 0);
+            btnBackupRestore.Size = new Size(299, 51);
+            btnBackupRestore.TabIndex = 17;
+            btnBackupRestore.Tag = "Backup & Restore";
+            btnBackupRestore.Text = "Backup and Restore";
+            btnBackupRestore.TextAlign = ContentAlignment.MiddleLeft;
+            btnBackupRestore.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBackupRestore.UseVisualStyleBackColor = true;
+            btnBackupRestore.Click += btnBackupRestore_Click;
+            // 
+            // btnSettingsAudit
+            // 
+            btnSettingsAudit.Dock = DockStyle.Top;
+            btnSettingsAudit.FlatAppearance.BorderSize = 0;
+            btnSettingsAudit.FlatStyle = FlatStyle.Flat;
+            btnSettingsAudit.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSettingsAudit.ForeColor = Color.White;
+            btnSettingsAudit.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnSettingsAudit.IconColor = Color.White;
+            btnSettingsAudit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSettingsAudit.IconSize = 32;
+            btnSettingsAudit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSettingsAudit.Location = new Point(0, 0);
+            btnSettingsAudit.Margin = new Padding(3, 4, 3, 4);
+            btnSettingsAudit.Name = "btnSettingsAudit";
+            btnSettingsAudit.Padding = new Padding(40, 0, 0, 0);
+            btnSettingsAudit.Size = new Size(299, 51);
+            btnSettingsAudit.TabIndex = 16;
+            btnSettingsAudit.Tag = "Audit Logs";
+            btnSettingsAudit.Text = "Audit Logs";
+            btnSettingsAudit.TextAlign = ContentAlignment.MiddleLeft;
+            btnSettingsAudit.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSettingsAudit.UseVisualStyleBackColor = true;
+            btnSettingsAudit.Click += btnSettingsAudit_Click;
             // 
             // btnSettings
             // 
@@ -516,7 +582,7 @@
             btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLogout.IconSize = 32;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(0, 1042);
+            btnLogout.Location = new Point(0, 1144);
             btnLogout.Margin = new Padding(3, 4, 3, 4);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(13, 0, 0, 0);
@@ -757,6 +823,7 @@
             Load += HomeView_Load;
             Resize += HomeView_Resize;
             panelMenu.ResumeLayout(false);
+            panelSettingsSubMenu.ResumeLayout(false);
             panelReportsSubMenu.ResumeLayout(false);
             panelCropsSubMenu.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -803,5 +870,8 @@
         public FontAwesome.Sharp.IconButton btnSettings;
         public FontAwesome.Sharp.IconButton btnReportsRice;
         public FontAwesome.Sharp.IconButton btnReportsHVC;
+        private Panel panelSettingsSubMenu;
+        public FontAwesome.Sharp.IconButton btnBackupRestore;
+        public FontAwesome.Sharp.IconButton btnSettingsAudit;
     }
 }

@@ -385,7 +385,7 @@ namespace AgRecords.Model
             }
         }
 
-        public DataTable CountRsbsaRegBrgy()
+        public DataTable CountRsbsaRegBrgy(string interval_type)
         {
             try
             {
@@ -393,9 +393,9 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    string query = "CALL sp_chartCountRsbsaRegBrgy()";
+                    string query = "CALL sp_chartCountRsbsaRegBrgy(?)";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
-
+                    command.Parameters.AddWithValue("interval_type", interval_type);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     return dataTable;
@@ -867,6 +867,28 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable GetCornProduction()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_dataCornProduction()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading corn production: " + ex.Message, ex);
+            }
+        }
+
         public DataTable CountCornFarmerBarangay()
         {
             try
@@ -1088,6 +1110,52 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable TotalStandingHvc()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartTotalStandingHvc()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading total standing HVC: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable HvcStageProgression(string month, string week)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_chartHvcProgression(@month, @week)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@month", month);
+                    command.Parameters.AddWithValue("@week", week);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading farmer commodity: " + ex.Message, ex);
+            }
+        }
+
         // ---------------- Letters -----------------------
 
 
@@ -1139,6 +1207,7 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error loading summary: " + ex.Message, ex);
             }
         }
+        
         //public DataTable LoadWeeklyActivitiesDtaGrid()
         //{
         //    try

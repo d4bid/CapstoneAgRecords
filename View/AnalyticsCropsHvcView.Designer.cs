@@ -57,9 +57,8 @@
             hvcGraph5 = new OxyPlot.WindowsForms.PlotView();
             label7 = new Label();
             rectangleFullWhite4 = new RectangleFullWhite();
-            hvcGraph6 = new OxyPlot.WindowsForms.PlotView();
-            label8 = new Label();
-            rectangleFullWhite6 = new RectangleFullWhite();
+            cmbMonth = new ComboBox();
+            cmbWeek = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvHvc).BeginInit();
             SuspendLayout();
             // 
@@ -169,9 +168,9 @@
             label6.ForeColor = Color.FromArgb(0, 35, 76);
             label6.Location = new Point(627, 30);
             label6.Name = "label6";
-            label6.Size = new Size(138, 20);
+            label6.Size = new Size(147, 20);
             label6.TabIndex = 29;
-            label6.Text = "Total Area Planted";
+            label6.Text = "Total Standing Crop";
             // 
             // rectangleFullYellow2
             // 
@@ -220,6 +219,7 @@
             // 
             // rectangleFullWhite1
             // 
+            rectangleFullWhite1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite1.Location = new Point(1258, 12);
             rectangleFullWhite1.Name = "rectangleFullWhite1";
             rectangleFullWhite1.Size = new Size(325, 465);
@@ -328,9 +328,9 @@
             label5.ForeColor = Color.FromArgb(0, 35, 76);
             label5.Location = new Point(34, 511);
             label5.Name = "label5";
-            label5.Size = new Size(189, 20);
+            label5.Size = new Size(239, 20);
             label5.TabIndex = 52;
-            label5.Text = "Area Planted by HVC type";
+            label5.Text = "Total Standing Crop by HVC Type";
             // 
             // rectangleFullWhite3
             // 
@@ -341,11 +341,12 @@
             // 
             // hvcGraph5
             // 
+            hvcGraph5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             hvcGraph5.BackColor = Color.White;
             hvcGraph5.Location = new Point(627, 550);
             hvcGraph5.Name = "hvcGraph5";
             hvcGraph5.PanCursor = Cursors.Hand;
-            hvcGraph5.Size = new Size(596, 346);
+            hvcGraph5.Size = new Size(940, 346);
             hvcGraph5.TabIndex = 56;
             hvcGraph5.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph5.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -359,47 +360,42 @@
             label7.ForeColor = Color.FromArgb(0, 35, 76);
             label7.Location = new Point(627, 511);
             label7.Name = "label7";
-            label7.Size = new Size(208, 20);
+            label7.Size = new Size(172, 20);
             label7.TabIndex = 55;
-            label7.Text = "Area Harvested by HVC type";
+            label7.Text = "Crop Stage Progression";
             // 
             // rectangleFullWhite4
             // 
             rectangleFullWhite4.Location = new Point(605, 492);
             rectangleFullWhite4.Name = "rectangleFullWhite4";
-            rectangleFullWhite4.Size = new Size(636, 422);
+            rectangleFullWhite4.Size = new Size(978, 422);
             rectangleFullWhite4.TabIndex = 54;
             // 
-            // hvcGraph6
+            // cmbMonth
             // 
-            hvcGraph6.BackColor = Color.White;
-            hvcGraph6.Location = new Point(1279, 550);
-            hvcGraph6.Name = "hvcGraph6";
-            hvcGraph6.PanCursor = Cursors.Hand;
-            hvcGraph6.Size = new Size(288, 346);
-            hvcGraph6.TabIndex = 59;
-            hvcGraph6.ZoomHorizontalCursor = Cursors.SizeWE;
-            hvcGraph6.ZoomRectangleCursor = Cursors.SizeNWSE;
-            hvcGraph6.ZoomVerticalCursor = Cursors.SizeNS;
+            cmbMonth.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cmbMonth.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMonth.FlatStyle = FlatStyle.Flat;
+            cmbMonth.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbMonth.FormattingEnabled = true;
+            cmbMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
+            cmbMonth.Location = new Point(1356, 508);
+            cmbMonth.Name = "cmbMonth";
+            cmbMonth.Size = new Size(119, 28);
+            cmbMonth.TabIndex = 89;
+            cmbMonth.SelectedIndexChanged += cmbMonth_SelectedIndexChanged;
             // 
-            // label8
+            // cmbWeek
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.White;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(0, 35, 76);
-            label8.Location = new Point(1279, 511);
-            label8.Name = "label8";
-            label8.Size = new Size(164, 20);
-            label8.TabIndex = 58;
-            label8.Text = "Number of HVC Types";
-            // 
-            // rectangleFullWhite6
-            // 
-            rectangleFullWhite6.Location = new Point(1258, 492);
-            rectangleFullWhite6.Name = "rectangleFullWhite6";
-            rectangleFullWhite6.Size = new Size(327, 422);
-            rectangleFullWhite6.TabIndex = 57;
+            cmbWeek.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cmbWeek.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbWeek.FlatStyle = FlatStyle.Flat;
+            cmbWeek.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbWeek.FormattingEnabled = true;
+            cmbWeek.Location = new Point(1481, 508);
+            cmbWeek.Name = "cmbWeek";
+            cmbWeek.Size = new Size(86, 28);
+            cmbWeek.TabIndex = 90;
             // 
             // AnalyticsCropsHvcView
             // 
@@ -407,9 +403,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(hvcGraph6);
-            Controls.Add(label8);
-            Controls.Add(rectangleFullWhite6);
+            Controls.Add(cmbWeek);
+            Controls.Add(cmbMonth);
             Controls.Add(hvcGraph5);
             Controls.Add(label7);
             Controls.Add(rectangleFullWhite4);
@@ -474,8 +469,7 @@
         private OxyPlot.WindowsForms.PlotView hvcGraph5;
         private Label label7;
         private RectangleFullWhite rectangleFullWhite4;
-        private OxyPlot.WindowsForms.PlotView hvcGraph6;
-        private Label label8;
-        private RectangleFullWhite rectangleFullWhite6;
+        private ComboBox cmbMonth;
+        private ComboBox cmbWeek;
     }
 }

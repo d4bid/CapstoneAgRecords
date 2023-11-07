@@ -638,7 +638,6 @@ namespace AgRecords.Controller
             return model;
         }
 
-
         public DataTable PieCountCommodityBarangay(string brgy)
         {
             try
@@ -678,7 +677,7 @@ namespace AgRecords.Controller
             // Create a line series to display the data points
             var lineSeries = new LineSeries
             {
-                Title = "Weekly Counts",
+                Title = "Count",
                 StrokeThickness = 2
             };
 
@@ -701,11 +700,11 @@ namespace AgRecords.Controller
             return model;
         }
 
-        public DataTable LineCountRsbsaRegBrgy()
+        public DataTable LineCountRsbsaRegBrgy(string interval)
         {
             try
             {
-                DataTable dataTable = analyticsModel.CountRsbsaRegBrgy();
+                DataTable dataTable = analyticsModel.CountRsbsaRegBrgy(interval);
                 return dataTable;
             }
             catch (ApplicationException ex)
@@ -1352,6 +1351,20 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable ShowCornProduction()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.GetCornProduction();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Data Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
         public PlotModel CreateBarChartCorn1(DataTable data)
         {
             var model = new PlotModel();
@@ -1507,6 +1520,161 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateBarChartHvc1(DataTable data)
+        {
+            var model = new PlotModel();
+            var barSeries = new BarSeries
+            {
+                Title = "Total Size",
+                StrokeColor = OxyColors.Black,
+                StrokeThickness = 1,
+                FillColor = OxyColor.FromRgb(0, 109, 104)
+            };
+
+            // Create a Y-axis for crop types
+            var cropAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Crop Type"
+            };
+
+            // Create an X-axis for the total size
+            var sizeAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Total Size (ha)"
+            };
+
+            model.Axes.Add(cropAxis);
+            model.Axes.Add(sizeAxis);
+
+            foreach (DataRow row in data.Rows)
+            {
+                string crop = row["Crop"].ToString();
+                double totalSize = Convert.ToDouble(row["TotalSize"]);
+
+                barSeries.Items.Add(new BarItem { Value = totalSize });
+                cropAxis.Labels.Add(crop);
+            }
+
+            model.Series.Add(barSeries);
+
+            return model;
+        }
+
+        public DataTable BarTotalStandingHvc()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.TotalStandingHvc();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public PlotModel CreateHvcProgressionChart(DataTable data)
+        {
+            var model = new PlotModel();
+
+            // Define a dictionary to map stage IDs to their corresponding names
+            var stageNames = new Dictionary<string, string>
+    {
+        { "1", "Newly Transplanted" },
+        { "2", "Vegetative" },
+        { "3", "Reproductive" },
+        { "4", "Maturity/Harvestable" }
+    };
+
+            // Create a category axis for stages on the X-axis
+            var stageAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Stage"
+            };
+
+            // Map stage IDs to their corresponding names for the X-axis labels
+            stageAxis.Labels.AddRange(stageNames.Values);
+
+            model.Axes.Add(stageAxis);
+
+            // Create a linear axis for the Y-axis to show the crop names
+            var cropAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Crop"
+            };
+
+            // Retrieve the list of unique crop names from the data
+            var cropNames = data.AsEnumerable().Select(row => row.Field<string>("Crop")).Distinct().ToList();
+
+            // Map crop names to the Y-axis labels
+            cropAxis.Labels.AddRange(cropNames);
+
+            model.Axes.Add(cropAxis);
+
+            foreach (string cropName in cropNames)
+            {
+                var lineSeries = new LineSeries
+                {
+                    Title = cropName,
+                    MarkerType = MarkerType.Circle,
+                    MarkerSize = 4,
+                    MarkerStroke = OxyColor.FromRgb(0, 109, 104),
+                    MarkerFill = OxyColor.FromRgb(0, 109, 104)
+                };
+
+                string currentStage = data.Select($"Crop = '{cropName}'").FirstOrDefault()?["Stage"].ToString();
+
+                for (int stageIndex = 1; stageIndex <= 4; stageIndex++)
+                {
+                    string stageId = stageIndex.ToString();
+                    int cropIndex = cropAxis.Labels.IndexOf(cropName);
+
+                    // Check if the stageId matches the currentStage
+                    if (stageId == currentStage)
+                    {
+                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), cropIndex));
+                    }
+                    // If stageIndex is less than the currentStage, add a data point with a value of 0
+                    else if (stageIndex < int.Parse(currentStage))
+                    {
+                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), 0));
+                    }
+                    // If stageIndex is greater than the currentStage, add a data point with a value of cropIndex
+                    else
+                    {
+                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), cropIndex));
+                    }
+                }
+
+
+                model.Series.Add(lineSeries);
+            }
+
+            return model;
+        }
+
+
+
+
+        public DataTable LineHvcProgression(string month, string week)
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.HvcStageProgression(month, week);
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "HVC Progression Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
         }

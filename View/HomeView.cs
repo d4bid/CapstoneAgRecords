@@ -690,5 +690,43 @@ namespace AgRecords.View
 
             HideSubMenu();
         }
+
+        private void btnSettingsAudit_Click(object sender, EventArgs e)
+        {
+            AuditLogsView auditLogsView = new AuditLogsView(panelDesktop);
+            //userView.formRefresh();
+            auditLogsView.TopLevel = false;
+            auditLogsView.FormBorderStyle = FormBorderStyle.None;
+            auditLogsView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(auditLogsView);
+            auditLogsView.Show();
+
+            ActivateButton(btnSettings, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new AuditLogsView(panelDesktop));
+            lblTitle.Text = "Settings \u23F5 Audit Logs";
+
+            HideSubMenu();
+        }
+
+        private void btnBackupRestore_Click(object sender, EventArgs e)
+        {
+            BackupAndRestoreView backupAndRestoreView = new BackupAndRestoreView(panelDesktop);
+            //userView.formRefresh();
+            backupAndRestoreView.TopLevel = false;
+            backupAndRestoreView.FormBorderStyle = FormBorderStyle.None;
+            backupAndRestoreView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(backupAndRestoreView);
+            backupAndRestoreView.Show();
+
+            ActivateButton(btnSettings, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new BackupAndRestoreView(panelDesktop));
+            lblTitle.Text = "Settingss \u23F5 Backup and Restore";
+
+            HideSubMenu();
+        }
     }
 }
