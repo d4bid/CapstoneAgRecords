@@ -187,6 +187,7 @@
             btnSettings.TextAlign = ContentAlignment.MiddleLeft;
             btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSettings.UseVisualStyleBackColor = true;
+            btnSettings.Click += btnSettings_Click;
             // 
             // btnUsers
             // 

@@ -14,9 +14,11 @@ namespace AgRecords.View
     {
         private Panel parentPanel;
 
-        public AuditLogsView()
+        public AuditLogsView(Control parentControl)
         {
             InitializeComponent();
+
+            this.parentPanel = parentControl as Panel;
         }
     }
 }

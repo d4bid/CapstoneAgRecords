@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgRecords.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,11 @@ namespace AgRecords.View
     {
         private Panel parentPanel;
 
-        public BackupAndRestoreView()
+        public BackupAndRestoreView(Control parentControl)
         {
             InitializeComponent();
+
+            this.parentPanel = parentControl as Panel;
         }
     }
 }

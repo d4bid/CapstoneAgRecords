@@ -728,5 +728,26 @@ namespace AgRecords.View
 
             HideSubMenu();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            // Check if the menu is collapsed
+            if (panelMenu.Width < 200)
+            {
+                // Expand the menu
+                panelMenu.Width = 300;
+                btnHome.Visible = true;
+                btnMenu.Dock = DockStyle.None;
+                btnMenu.Location = new Point(254, 1);
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+            }
+
+            ShowSubMenu(panelSettingsSubMenu);
+        }
     }
 }
