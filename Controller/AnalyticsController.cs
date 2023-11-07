@@ -633,17 +633,11 @@ namespace AgRecords.Controller
                     }
                 }
             }
-
-            // Set the border color to undefined to remove the borders
-            pieSeries.Stroke = OxyColors.Undefined;
-
-            model.Axes.Add(new CategoryAxis()); // Remove labels
-            model.Axes.Add(new LinearAxis { Position = AxisPosition.None }); // Remove the Y-axis
-
             model.Series.Add(pieSeries);
 
             return model;
         }
+
 
         public DataTable PieCountCommodityBarangay(string brgy)
         {
@@ -918,6 +912,20 @@ namespace AgRecords.Controller
             }
         }
 
+        public DataTable ShowRiceProduction()
+        {
+            try
+            {
+                DataTable dataTable = analyticsModel.GetRiceProduction();
+                return dataTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Data Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
         public PlotModel CreatePieChartRice1(DataTable data)
         {
             var model = new PlotModel();
@@ -1146,6 +1154,129 @@ namespace AgRecords.Controller
                 MessageBox.Show(ex.Message, "Graph Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
+        }
+
+        // FORECASTING
+
+        public PlotModel CreateLineSeriesChartRiceForecast(List<int> years, List<double> forecastedProduction)
+        {
+            // Create a new PlotModel
+            var model = new PlotModel();
+
+            // Create a LineSeries for forecasted production
+            var forecastedProductionSeries = new LineSeries
+            {
+                Title = "Forecasted Production",
+                MarkerType = MarkerType.Circle, // Set the point marker as circles
+                MarkerSize = 4,
+                MarkerStroke = OxyColor.FromRgb(0, 109, 104),
+                MarkerFill = OxyColor.FromRgb(43, 121, 223),
+                LineStyle = LineStyle.Solid // Set the line style to Solid for a continuous line
+            };
+
+            // Add forecasted data points to the series
+            for (int i = 0; i < forecastedProduction.Count; i++)
+            {
+                forecastedProductionSeries.Points.Add(new DataPoint(i, forecastedProduction[i]));
+            }
+
+            // Add the series to the model
+            model.Series.Add(forecastedProductionSeries);
+
+            // Create a StringAxis for the x-axis to display whole years
+            var xAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Year"
+            };
+
+            // Add the years as labels to the x-axis
+            foreach (int year in years)
+            {
+                xAxis.Labels.Add(year.ToString());
+            }
+
+            model.Axes.Add(xAxis);
+
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "Production" });
+
+            return model;
+        }
+
+
+        public ProductionData Forecasting()
+        {
+            // Initialize with the current year
+            int currentYear = DateTime.Now.Year;
+
+            // Define initial historical data for the years 2019 to 2021 as a basis for forecasting
+            List<int> historicalYears = new List<int> { 2019, 2020, 2021 };
+            List<double> historicalProduction = new List<double> { 46977.84, 42632.51, 49218.22 };
+
+            // Create lists to store forecasted data
+            List<int> forecastedYears = new List<int>();
+            List<double> forecastedProduction = new List<double>();
+
+            for (int i = 0; i < 4; i++)
+            {
+                // Get the past year as the actual data from the database
+                int pastYear = currentYear - 1;
+                double actualPastYear = GetRiceProductionActual(pastYear);
+
+                // Calculate the weighted moving average forecast for the current year
+                double forecastCurrentYear = CalculateWeightedMovingAverage(historicalYears, historicalProduction, currentYear);
+
+                // Update the dataset with the forecasted production for the current year
+                historicalYears.Add(currentYear);
+                historicalProduction.Add(forecastCurrentYear);
+
+                // Store the forecasted year and production
+                forecastedYears.Add(currentYear);
+                forecastedProduction.Add(forecastCurrentYear);
+
+                // Move to the next year and update the historical data for the next iteration
+                currentYear++;
+                historicalYears.RemoveAt(0);
+                historicalProduction.RemoveAt(0);
+            }
+
+            // Return historical and forecasted data
+            return new ProductionData
+            {
+                Years = forecastedYears,
+                ForecastedProduction = forecastedProduction
+            };
+        }
+
+        // Database actual data retrieval
+        public double GetRiceProductionActual(int year)
+        {
+           return analyticsModel.RiceProductionActual(year);
+        }
+
+        // Weighted Moving Average calculation
+        static double CalculateWeightedMovingAverage(List<int> years, List<double> production, int yearToForecast)
+        {
+            int n = years.Count;
+            int windowSize = 3;  // Adjust the window size as needed
+            double forecast = 0;
+
+            if (n >= windowSize)
+            {
+                double weightedSum = 0;
+                double weightSum = 0;
+
+                for (int i = n - windowSize; i < n; i++)
+                {
+                    double weight = (i - (n - windowSize) + 1);
+                    weightedSum += production[i] * weight;
+                    weightSum += weight;
+                }
+
+                forecast = weightedSum / weightSum;
+            }
+
+            return forecast;
         }
 
         // ---------------- CORN --------------------

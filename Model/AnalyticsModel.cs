@@ -561,6 +561,28 @@ namespace AgRecords.Model
             }
         }
 
+        public DataTable GetRiceProduction()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_dataRiceProduction()";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading rice production: " + ex.Message, ex);
+            }
+        }
+
         public DataTable CountRiceFarmerBarangay()
         {
             try
@@ -648,6 +670,38 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error loading rice farm data: " + ex.Message, ex);
             }
         }
+
+        // Forecasting
+        public double RiceProductionActual(int year)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_chartRiceProduction(@year);", db.GetConnection());
+                    command.Parameters.AddWithValue("@year", year);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        if (double.TryParse(result.ToString(), out double production))
+                        {
+                            return production;
+                        }
+                    }
+
+                    return 0.0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
 
         // ---------------- CORN -----------------------
 
