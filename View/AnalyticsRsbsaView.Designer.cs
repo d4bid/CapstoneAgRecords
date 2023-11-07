@@ -289,10 +289,10 @@
             // 
             rsbsa1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rsbsa1.BackColor = Color.White;
-            rsbsa1.Location = new Point(1090, 69);
+            rsbsa1.Location = new Point(1118, 83);
             rsbsa1.Name = "rsbsa1";
             rsbsa1.PanCursor = Cursors.Hand;
-            rsbsa1.Size = new Size(471, 430);
+            rsbsa1.Size = new Size(424, 416);
             rsbsa1.TabIndex = 31;
             rsbsa1.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -304,7 +304,7 @@
             cmbBrgy1.FlatStyle = FlatStyle.Flat;
             cmbBrgy1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbBrgy1.FormattingEnabled = true;
-            cmbBrgy1.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
+            cmbBrgy1.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             cmbBrgy1.Location = new Point(1382, 22);
             cmbBrgy1.Name = "cmbBrgy1";
             cmbBrgy1.Size = new Size(179, 28);
@@ -318,11 +318,11 @@
             labelTotalWeeklyReg.BackColor = Color.White;
             labelTotalWeeklyReg.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalWeeklyReg.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalWeeklyReg.Location = new Point(58, 74);
+            labelTotalWeeklyReg.Location = new Point(106, 74);
             labelTotalWeeklyReg.Name = "labelTotalWeeklyReg";
-            labelTotalWeeklyReg.Size = new Size(186, 106);
+            labelTotalWeeklyReg.Size = new Size(91, 106);
             labelTotalWeeklyReg.TabIndex = 86;
-            labelTotalWeeklyReg.Text = "###";
+            labelTotalWeeklyReg.Text = "0";
             // 
             // panel1
             // 

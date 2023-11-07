@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using OxyPlot;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,11 @@ namespace AgRecords.View
         {
             labelTotalRiceFarmers.Text = analyticsController.CountRiceFarmers();
             labelTotalRiceLandArea.Text = analyticsController.TotalRiceLandArea() + " ha";
-            labelTotalRiceBarangay.Text = analyticsController.TotalBarangayRice() + " ha";
+            labelTotalRiceBarangay.Text = analyticsController.TotalBarangayRice();
             labelTotalAreaPlanted.Text = analyticsController.TotalRiceAreaPlanted() + " ha";
+
+            DataTable coopTable = analyticsController.ShowRiceProduction();
+            dgvRiceProd.DataSource = coopTable;
 
             DataTable data1 = analyticsController.PieCountRiceFarmerSex();
 
@@ -75,6 +79,10 @@ namespace AgRecords.View
                 // Set the pie chart model to the PlotView control
                 riceGraph5.Model = lineChart;
             }
+
+            ProductionData productionData = analyticsController.Forecasting();
+            riceGraph7.Model = analyticsController.CreateLineSeriesChartRiceForecast(productionData.Years, productionData.ForecastedProduction);
+
         }
 
         private void riceGraph1_Click(object sender, EventArgs e)
