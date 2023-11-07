@@ -676,7 +676,10 @@ namespace AgRecords.Model
                         farmerInfo.withGovId = reader["withGovId"].ToString();
                         farmerInfo.govIdType = reader["govIdType"].ToString();
                         farmerInfo.govIdNo = reader["govIdNo"].ToString();
-                        farmerInfo.birthDate = DateTime.Parse(reader["birthDate"].ToString());
+                        if (reader["birthDate"] != DBNull.Value)
+                        {
+                            farmerInfo.birthDate = DateTime.Parse(reader["birthDate"].ToString());
+                        }
                         farmerInfo.birthMunicipality = reader["birthMunicipality"].ToString();
                         farmerInfo.birthProvince = reader["birthProvince"].ToString();
                         farmerInfo.birthCountry = reader["birthCountry"].ToString();

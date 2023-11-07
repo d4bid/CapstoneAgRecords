@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCancel = new Button();
             label3 = new Label();
@@ -65,6 +65,7 @@
             cbMunicipality = new CheckBox();
             cbStreet = new CheckBox();
             panel5 = new Panel();
+            cbIsMultipleSheet = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -77,6 +78,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(cbIsMultipleSheet);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(comboBoxFilterCommodity);
@@ -274,24 +276,24 @@
             dgvRSBSAExport.BackgroundColor = Color.White;
             dgvRSBSAExport.BorderStyle = BorderStyle.None;
             dgvRSBSAExport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRSBSAExport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle4;
             dgvRSBSAExport.Dock = DockStyle.Fill;
             dgvRSBSAExport.GridColor = Color.FromArgb(239, 239, 239);
             dgvRSBSAExport.Location = new Point(10, 10);
@@ -524,6 +526,18 @@
             panel5.Size = new Size(1595, 10);
             panel5.TabIndex = 32;
             // 
+            // cbIsMultipleSheet
+            // 
+            cbIsMultipleSheet.AutoSize = true;
+            cbIsMultipleSheet.Checked = true;
+            cbIsMultipleSheet.CheckState = CheckState.Checked;
+            cbIsMultipleSheet.Location = new Point(1057, 50);
+            cbIsMultipleSheet.Name = "cbIsMultipleSheet";
+            cbIsMultipleSheet.Size = new Size(229, 24);
+            cbIsMultipleSheet.TabIndex = 39;
+            cbIsMultipleSheet.Text = "Multiple Sheet (per Barangay)";
+            cbIsMultipleSheet.UseVisualStyleBackColor = true;
+            // 
             // RSBSAExportView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -588,5 +602,6 @@
         private CheckBox cbHVC;
         private CheckBox cbCorn;
         private CheckBox cbRice;
+        private CheckBox cbIsMultipleSheet;
     }
 }

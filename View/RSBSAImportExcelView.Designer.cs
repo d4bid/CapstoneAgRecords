@@ -137,6 +137,7 @@
             labelProgress.Size = new Size(37, 17);
             labelProgress.TabIndex = 7;
             labelProgress.Text = "Load";
+            labelProgress.Visible = false;
             // 
             // panel1
             // 

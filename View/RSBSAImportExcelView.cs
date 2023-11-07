@@ -77,44 +77,37 @@ namespace AgRecords.View
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            StringBuilder failedRecords = new StringBuilder();
-            int totalRows = 0;
-            string userId = userModel.FindUserIDByFullName(fullName);
-
-
-            // Count rows that meet the condition
-            foreach (DataRow row in ((DataTable)dgvRSBSAtoImport.DataSource).Rows)
+            if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("RSBSA REFERENCE NUMBER"))
             {
-                if (row["RSBSA REFERENCE NUMBER"] != null && row["RSBSA REFERENCE NUMBER"].ToString().StartsWith("02-50"))
+                int totalRows = 0;
+                string userId = userModel.FindUserIDByFullName(fullName);
+
+                // Count rows that meet the condition
+                foreach (DataRow row in ((DataTable)dgvRSBSAtoImport.DataSource).Rows)
                 {
-                    totalRows++;
-                }
-            }
-
-            // Set the ProgressBar properties
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = totalRows;
-            progressBar1.Value = 0;
-
-            // Iterate through DataTable rows and insert into the database
-            foreach (DataRow row in ((DataTable)dgvRSBSAtoImport.DataSource).Rows)
-            {
-                // Check if the value in the first column starts with '02-50'
-                if (row["RSBSA REFERENCE NUMBER"] != null && row["RSBSA REFERENCE NUMBER"].ToString().StartsWith("02-50"))
-                {
-                    string[] dateFormats = { "M/d/yyyy h:mm:ss tt", "M/d/yyyy" };
-                    DateTime excelDate;
-
-                    if (DateTime.TryParseExact(row["BIRTHDATE (MM/DD/CCYY)"].ToString(), dateFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out excelDate))
+                    if (row["RSBSA REFERENCE NUMBER"] != null && row["RSBSA REFERENCE NUMBER"].ToString().StartsWith("02-50"))
                     {
+                        totalRows++;
+                    }
+                }
+
+                // Set the ProgressBar properties
+                progressBar1.Minimum = 0;
+                progressBar1.Maximum = totalRows;
+                progressBar1.Value = 0;
+                labelProgress.Visible = true;
+
+                // Iterate through DataTable rows and insert into the database
+                foreach (DataRow row in ((DataTable)dgvRSBSAtoImport.DataSource).Rows)
+                {
+                    // Check if the value in the first column starts with '02-50'
+                    if (row["RSBSA REFERENCE NUMBER"] != null && row["RSBSA REFERENCE NUMBER"].ToString().StartsWith("02-50"))
+                    {
+                        string[] dateFormats = { "M/d/yyyy h:mm:ss tt", "M/d/yyyy" };
+                        DateTime? excelDate = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("BIRTHDATE (MM/DD/CCYY)") && DateTime.TryParseExact(row["BIRTHDATE (MM/DD/CCYY)"]?.ToString(), dateFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate) ? parsedDate : (DateTime?)null;
+
                         StringBuilder sb = new StringBuilder();
                         RSBSA rsbsa = new RSBSA();
-
-                        // Convert the date to the database format "yyyy-MM-dd"
-                        string databaseDate = excelDate.ToString("yyyy-MM-dd");
-
-                        string lastNameQualifier = row.Table.Columns.Contains("LAST NAME / QUALIFIER") ? row["LAST NAME / QUALIFIER"].ToString() : null;
-                        string lastName = row.Table.Columns.Contains("LAST NAME") ? row["LAST NAME"].ToString() : null;
 
                         if (rsbsaModel.CheckRefNoExistence(row["RSBSA REFERENCE NUMBER"].ToString()))
                         {
@@ -124,60 +117,62 @@ namespace AgRecords.View
                             RSBSAModel rsbsaModel = new RSBSAModel();
                             string getRsbsaId = rsbsaModel.GetRSBSAIDByRefNo(row["RSBSA REFERENCE NUMBER"].ToString());
 
-                            // Farmer with the provided details does not exist in the database
-
                             //Farmer Info
                             rsbsa.rsbsaId = getRsbsaId;
                             rsbsa.rsbsaIdLGU = row["RSBSA REFERENCE NUMBER"].ToString();
                             //rsbsa.rsbsaIdLGU = row["RSBSA REFERENCE NUMBER"].ToString();
-                            rsbsa.surname = lastNameQualifier ?? lastName;
-                            rsbsa.firstname = row["FIRST \nNAME"].ToString();
-                            rsbsa.middlename = row["MIDDLE \nNAME"].ToString();
-                            rsbsa.extname = row["EXT. NAME"].ToString();
-                            rsbsa.withGovId = !string.IsNullOrWhiteSpace(row["ID \nNUMBER"].ToString()) ? "Yes" : "No";
-                            rsbsa.govIdNo = row["ID \nNUMBER"].ToString();
-                            rsbsa.govIdType = row["ID NO. \nTYPE"].ToString();
-                            rsbsa.contactNo = row["MOBILE NO."].ToString();
-                            rsbsa.addrStreet = row["PERMANENT ADDRESS 1\n- NO., STREET"].ToString();
-                            rsbsa.addrBrgy = row["PERMANENT ADDRESS 2\n- BRGY/VILL"].ToString();
-                            rsbsa.addrMunicipality = row["PERMANENT \nCITY"].ToString();
-                            rsbsa.addrProvince = row["PERMANENT \nPROVINCE"].ToString();
+                            rsbsa.surname = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("LAST NAME") ? row["LAST NAME"]?.ToString() : null;
+                            rsbsa.firstname = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("FIRST NAME") ? row["FIRST NAME"]?.ToString() : null;
+                            rsbsa.middlename = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("MIDDLE NAME") ? row["MIDDLE NAME"]?.ToString() : null;
+                            rsbsa.extname = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("EXT. NAME") ? row["EXT. NAME"]?.ToString() : null;
+                            rsbsa.withGovId = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("ID NUMBER") ? !string.IsNullOrWhiteSpace(row["ID NUMBER"]?.ToString()) ? "Yes" : "No" : null;
+                            rsbsa.govIdNo = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("ID NUMBER") ? row["ID NUMBER"]?.ToString() : null;
+                            rsbsa.govIdType = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("ID NO. TYPE") ? row["ID NO. TYPE"]?.ToString() : null;
+                            rsbsa.contactNo = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("MOBILE NO.") ? row["MOBILE NO."]?.ToString() : null;
+                            rsbsa.addrStreet = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT ADDRESS 1- NO., STREET") ? row["PERMANENT ADDRESS 1- NO., STREET"]?.ToString() : null;
+                            rsbsa.addrBrgy = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT ADDRESS 2- BRGY/VILL") ? row["PERMANENT ADDRESS 2- BRGY/VILL"]?.ToString() : null;
                             rsbsa.birthDate = excelDate;
-                            rsbsa.birthMunicipality = row["PLACE OF \nBIRTH"].ToString();
-                            rsbsa.maidenName = row["MOTHER'S \nMAIDEN NAME"].ToString();
-                            rsbsa.sex = (row["GENDER"].ToString().Equals("F", StringComparison.OrdinalIgnoreCase)) ? "FEMALE" : rsbsa.sex;
-                            rsbsa.sex = (row["GENDER"].ToString().Equals("M", StringComparison.OrdinalIgnoreCase)) ? "MALE" : rsbsa.sex;
+                            rsbsa.addrMunicipality = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT CITY") ? row["PERMANENT CITY"]?.ToString() : null;
+                            rsbsa.addrProvince = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT PROVINCE") ? row["PERMANENT PROVINCE"]?.ToString() : null;
+                            rsbsa.birthMunicipality = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PLACE OF BIRTH") ? row["PLACE OF BIRTH"]?.ToString() : null;
+
+                            // Handle gender property
+                            string gender = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("GENDER") ? row["GENDER"]?.ToString() : null;
+                            rsbsa.sex = gender != null && (gender.Equals("F", StringComparison.OrdinalIgnoreCase) || gender.Equals("M", StringComparison.OrdinalIgnoreCase)) ? gender.ToUpper() : null;
 
                             string nonParcel;
                             int parsedValue = 0;
 
-                            //if value is integer...
-                            if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
+                            if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("# OF FARM PARCEL"))
                             {
-                                // Parsing successful, set rsbsa.farmParcelCount to the parsed value
-                                rsbsa.farmParcelCount = parsedValue;
-                                rsbsa.isFarmer = "Yes";
-                            }
-                            else //if value is string
-                            {
-                                // Parsing failed, get the text and pass it to nonParcel
-                                nonParcel = row["# OF FARM PARCEL"].ToString();
-                                rsbsa.farmParcelCount = 0;
-
-                                if (nonParcel.Contains("FARMWORKER", StringComparison.OrdinalIgnoreCase))
+                                //if value is integer...
+                                if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
                                 {
-                                    rsbsa.isLaborer = "Yes";
-                                    rsbsa.otherLaborWork = nonParcel;
-                                }
-                                else if (nonParcel.Contains("RAIS", StringComparison.OrdinalIgnoreCase))
-                                {
+                                    // Parsing successful, set rsbsa.farmParcelCount to the parsed value
+                                    rsbsa.farmParcelCount = parsedValue;
                                     rsbsa.isFarmer = "Yes";
-                                    rsbsa.hasLivestocks = nonParcel;
                                 }
-                                else if (nonParcel.Contains("YOUTH", StringComparison.OrdinalIgnoreCase))
+                                else //if value is string
                                 {
-                                    rsbsa.isAgriYouth = "Yes";
-                                    rsbsa.otherAgriYouthAct = nonParcel;
+                                    // Parsing failed, get the text and pass it to nonParcel
+                                    nonParcel = row["# OF FARM PARCEL"].ToString();
+                                    rsbsa.farmParcelCount = 0;
+
+                                    if (nonParcel.Contains("FARMWORKER", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        rsbsa.isLaborer = "Yes";
+                                        rsbsa.otherLaborWork = nonParcel;
+                                    }
+                                    else if (nonParcel.Contains("RAIS", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        rsbsa.isFarmer = "Yes";
+                                        rsbsa.hasLivestocks = nonParcel;
+                                    }
+                                    else if (nonParcel.Contains("YOUTH", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        rsbsa.isAgriYouth = "Yes";
+                                        rsbsa.otherAgriYouthAct = nonParcel;
+                                    }
                                 }
                             }
 
@@ -186,66 +181,80 @@ namespace AgRecords.View
                             rsbsa.dateModified = DateTime.Now;
                             rsbsa.lastModifier = username;
 
-                            //Initialize farmparcel
-                            FarmParcel farmParcel = new FarmParcel();
-                            farmParcel.farmParcelNo = "1";
-                            farmParcel.rsbsaId = getRsbsaId;
-                            farmParcel.farmLocBrgy = row["PERMANENT ADDRESS 2\n- BRGY/VILL"].ToString();
-                            farmParcel.farmLocMunicipality = row["PERMANENT \nCITY"].ToString();
-                            farmParcel.farmSize = row["TOTAL FARM AREA (Ha)"] != null && Double.TryParse(row["TOTAL FARM AREA (Ha)"].ToString(), out double farmArea) ? farmArea : 0.0;
-
-                            farmParcel.Crops = new List<FarmParcelCrop>();
-
-                            if (double.TryParse(row["RICE"].ToString(), out double riceArea))
+                            if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("# OF FARM PARCEL"))
                             {
-                                FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                farmParcelCrop.commodityType = "Rice";
-                                farmParcelCrop.landSize = riceArea;
-                                farmParcelCrop.farmParcelNo = "1";
-                                farmParcelCrop.rsbsaId = getRsbsaId;
-                                farmParcel.Crops.Add(farmParcelCrop);
-                                rsbsa.isRiceFarmer = "Yes";
-
-                            }
-
-                            if (double.TryParse(row["CORN"].ToString(), out double cornArea))
-                            {
-                                FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                farmParcelCrop.commodityType = "Corn";
-                                farmParcelCrop.landSize = cornArea;
-                                farmParcelCrop.farmParcelNo = "1";
-                                farmParcelCrop.rsbsaId = getRsbsaId;
-                                farmParcel.Crops.Add(farmParcelCrop);
-                                rsbsa.isCornFarmer = "Yes";
-
-                            }
-
-                            if (double.TryParse(row["HVC"].ToString(), out double hvcArea))
-                            {
-                                FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                farmParcelCrop.commodityType = "HVC";
-                                farmParcelCrop.landSize = hvcArea;
-                                farmParcelCrop.farmParcelNo = "1";
-                                farmParcelCrop.rsbsaId = getRsbsaId;
-                                farmParcel.Crops.Add(farmParcelCrop);
-                                rsbsa.otherCrops = "HVC";
-
-                            }
-
-                            if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("AGRI-FISHERY"))
-                            {
-                                if (double.TryParse(row["AGRI-FISHERY"].ToString(), out double agriFisheryArea))
+                                if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
                                 {
-                                    FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                    farmParcelCrop.commodityType = "Agri-Fishery";
-                                    farmParcelCrop.landSize = agriFisheryArea;
-                                    farmParcelCrop.farmParcelNo = "1";
-                                    farmParcelCrop.rsbsaId = getRsbsaId;
-                                    farmParcel.Crops.Add(farmParcelCrop);
+                                    //Initialize farmparcel
+                                    FarmParcel farmParcel = new FarmParcel();
+                                    farmParcel.farmParcelNo = "1";
+                                    farmParcel.rsbsaId = getRsbsaId;
+                                    farmParcel.farmLocBrgy = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT ADDRESS 2- BRGY/VILL") ? row["PERMANENT ADDRESS 2- BRGY/VILL"]?.ToString() : null;
+                                    farmParcel.farmLocMunicipality = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT CITY") ? row["PERMANENT CITY"]?.ToString() : null;
+                                    farmParcel.farmSize = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("TOTAL FARM AREA (Ha)") && Double.TryParse(row["TOTAL FARM AREA (Ha)"]?.ToString(), out double farmArea) ? farmArea : 0.0;
+
+                                    farmParcel.Crops = new List<FarmParcelCrop>();
+
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("RICE"))
+                                    {
+                                        if (double.TryParse(row["RICE"].ToString(), out double riceArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "Rice";
+                                            farmParcelCrop.landSize = riceArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getRsbsaId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                            rsbsa.isRiceFarmer = "Yes";
+
+                                        }
+                                    }
+                                    
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
+                                    {
+                                        if (double.TryParse(row["CORN"].ToString(), out double cornArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "Corn";
+                                            farmParcelCrop.landSize = cornArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getRsbsaId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                            rsbsa.isCornFarmer = "Yes";
+
+                                        }
+                                    }
+                                    
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
+                                    {
+                                        if (double.TryParse(row["HVC"].ToString(), out double hvcArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "HVC";
+                                            farmParcelCrop.landSize = hvcArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getRsbsaId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                            rsbsa.otherCrops = "HVC";
+
+                                        }
+                                    }
+
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("AGRI-FISHERY"))
+                                    {
+                                        if (double.TryParse(row["AGRI-FISHERY"].ToString(), out double agriFisheryArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "Agri-Fishery";
+                                            farmParcelCrop.landSize = agriFisheryArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getRsbsaId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                        }
+
+                                        rsbsa.farmParcels.Add(farmParcel);
+                                    }
                                 }
-
-                                rsbsa.farmParcels.Add(farmParcel);
-
                             }
 
                             if (await rsbsaModel.EditRSBSARecord(rsbsa))
@@ -257,66 +266,67 @@ namespace AgRecords.View
                                     labelProgress.Text = $"Saving: {progressBar1.Value} of {totalRows}";
                                 }
                             }
-
                         }
                         else
                         {
                             RSBSAModel rsbsaModel = new RSBSAModel();
                             string getNextRSBSAId = rsbsaModel.GenerateRSBSAId();
 
-                            // Farmer with the provided details does not exist in the database
-
                             //Farmer Info
                             rsbsa.rsbsaId = getNextRSBSAId;
                             rsbsa.rsbsaIdLGU = row["RSBSA REFERENCE NUMBER"].ToString();
-                            rsbsa.surname = lastNameQualifier ?? lastName;
-                            rsbsa.firstname = row["FIRST \nNAME"].ToString();
-                            rsbsa.middlename = row["MIDDLE \nNAME"].ToString();
-                            rsbsa.extname = row["EXT. NAME"].ToString();
-                            rsbsa.withGovId = !string.IsNullOrWhiteSpace(row["ID \nNUMBER"].ToString()) ? "Yes" : "No";
-                            rsbsa.govIdNo = row["ID \nNUMBER"].ToString();
-                            rsbsa.govIdType = row["ID NO. \nTYPE"].ToString();
-                            rsbsa.contactNo = row["MOBILE NO."].ToString();
-                            rsbsa.addrStreet = row["PERMANENT ADDRESS 1\n- NO., STREET"].ToString();
-                            rsbsa.addrBrgy = row["PERMANENT ADDRESS 2\n- BRGY/VILL"].ToString();
-                            rsbsa.addrMunicipality = row["PERMANENT \nCITY"].ToString();
-                            rsbsa.addrProvince = row["PERMANENT \nPROVINCE"].ToString();
+                            rsbsa.surname = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("LAST NAME") ? row["LAST NAME"]?.ToString() : null;
+                            rsbsa.firstname = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("FIRST NAME") ? row["FIRST NAME"]?.ToString() : null;
+                            rsbsa.middlename = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("MIDDLE NAME") ? row["MIDDLE NAME"]?.ToString() : null;
+                            rsbsa.extname = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("EXT. NAME") ? row["EXT. NAME"]?.ToString() : null;
+                            rsbsa.withGovId = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("ID NUMBER") ? !string.IsNullOrWhiteSpace(row["ID NUMBER"]?.ToString()) ? "Yes" : "No" : null;
+                            rsbsa.govIdNo = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("ID NUMBER") ? row["ID NUMBER"]?.ToString() : null;
+                            rsbsa.govIdType = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("ID NO. TYPE") ? row["ID NO. TYPE"]?.ToString() : null;
+                            rsbsa.contactNo = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("MOBILE NO.") ? row["MOBILE NO."]?.ToString() : null;
+                            rsbsa.addrStreet = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT ADDRESS 1- NO., STREET") ? row["PERMANENT ADDRESS 1- NO., STREET"]?.ToString() : null;
+                            rsbsa.addrBrgy = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT ADDRESS 2- BRGY/VILL") ? row["PERMANENT ADDRESS 2- BRGY/VILL"]?.ToString() : null;
                             rsbsa.birthDate = excelDate;
-                            rsbsa.birthMunicipality = row["PLACE OF \nBIRTH"].ToString();
-                            rsbsa.maidenName = row["MOTHER'S \nMAIDEN NAME"].ToString();
-                            rsbsa.sex = (row["GENDER"].ToString().Equals("F", StringComparison.OrdinalIgnoreCase)) ? "FEMALE" : rsbsa.sex;
-                            rsbsa.sex = (row["GENDER"].ToString().Equals("M", StringComparison.OrdinalIgnoreCase)) ? "MALE" : rsbsa.sex;
+                            rsbsa.addrMunicipality = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT CITY") ? row["PERMANENT CITY"]?.ToString() : null;
+                            rsbsa.addrProvince = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT PROVINCE") ? row["PERMANENT PROVINCE"]?.ToString() : null;
+                            rsbsa.birthMunicipality = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PLACE OF BIRTH") ? row["PLACE OF BIRTH"]?.ToString() : null;
+
+                            // Handle gender property
+                            string gender = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("GENDER") ? row["GENDER"]?.ToString() : null;
+                            rsbsa.sex = gender != null && (gender.Equals("F", StringComparison.OrdinalIgnoreCase) || gender.Equals("M", StringComparison.OrdinalIgnoreCase)) ? gender.ToUpper() : null;
 
                             string nonParcel;
                             int parsedValue = 0;
 
-                            //if value is integer...
-                            if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
+                            if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("# OF FARM PARCEL"))
                             {
-                                // Parsing successful, set rsbsa.farmParcelCount to the parsed value
-                                rsbsa.farmParcelCount = parsedValue;
-                                rsbsa.isFarmer = "Yes";
-                            }
-                            else //if value is string
-                            {
-                                // Parsing failed, get the text and pass it to nonParcel
-                                nonParcel = row["# OF FARM PARCEL"].ToString();
-                                rsbsa.farmParcelCount = 0;
-
-                                if (nonParcel.Contains("FARMWORKER", StringComparison.OrdinalIgnoreCase))
+                                //if value is integer...
+                                if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
                                 {
-                                    rsbsa.isLaborer = "Yes";
-                                    rsbsa.otherLaborWork = nonParcel;
-                                }
-                                else if (nonParcel.Contains("RAIS", StringComparison.OrdinalIgnoreCase))
-                                {
+                                    // Parsing successful, set rsbsa.farmParcelCount to the parsed value
+                                    rsbsa.farmParcelCount = parsedValue;
                                     rsbsa.isFarmer = "Yes";
-                                    rsbsa.hasLivestocks = nonParcel;
                                 }
-                                else if (nonParcel.Contains("YOUTH", StringComparison.OrdinalIgnoreCase))
+                                else //if value is string
                                 {
-                                    rsbsa.isAgriYouth = "Yes";
-                                    rsbsa.otherAgriYouthAct = nonParcel;
+                                    // Parsing failed, get the text and pass it to nonParcel
+                                    nonParcel = row["# OF FARM PARCEL"].ToString();
+                                    rsbsa.farmParcelCount = 0;
+
+                                    if (nonParcel.Contains("FARMWORKER", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        rsbsa.isLaborer = "Yes";
+                                        rsbsa.otherLaborWork = nonParcel;
+                                    }
+                                    else if (nonParcel.Contains("RAIS", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        rsbsa.isFarmer = "Yes";
+                                        rsbsa.hasLivestocks = nonParcel;
+                                    }
+                                    else if (nonParcel.Contains("YOUTH", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        rsbsa.isAgriYouth = "Yes";
+                                        rsbsa.otherAgriYouthAct = nonParcel;
+                                    }
                                 }
                             }
 
@@ -325,68 +335,80 @@ namespace AgRecords.View
                             rsbsa.dateCreated = DateTime.Now;
                             rsbsa.userId = userId;
 
-                            if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
+
+                            if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("# OF FARM PARCEL"))
                             {
-                                //Initialize farmparcel
-                                FarmParcel farmParcel = new FarmParcel();
-                                farmParcel.farmParcelNo = "1";
-                                farmParcel.rsbsaId = getNextRSBSAId;
-                                farmParcel.farmLocBrgy = row["PERMANENT ADDRESS 2\n- BRGY/VILL"].ToString();
-                                farmParcel.farmLocMunicipality = row["PERMANENT \nCITY"].ToString();
-                                farmParcel.farmSize = row["TOTAL FARM AREA (Ha)"] != null && Double.TryParse(row["TOTAL FARM AREA (Ha)"].ToString(), out double farmArea) ? farmArea : 0.0;
-                                farmParcel.Crops = new List<FarmParcelCrop>();
-
-                                if (double.TryParse(row["RICE"].ToString(), out double riceArea))
+                                if (int.TryParse(row["# OF FARM PARCEL"].ToString(), out parsedValue))
                                 {
-                                    FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                    farmParcelCrop.commodityType = "Rice";
-                                    farmParcelCrop.landSize = riceArea;
-                                    farmParcelCrop.farmParcelNo = "1";
-                                    farmParcelCrop.rsbsaId = getNextRSBSAId;
-                                    farmParcel.Crops.Add(farmParcelCrop);
-                                    rsbsa.isRiceFarmer = "Yes";
+                                    //Initialize farmparcel
+                                    FarmParcel farmParcel = new FarmParcel();
+                                    farmParcel.farmParcelNo = "1";
+                                    farmParcel.rsbsaId = getNextRSBSAId;
+                                    farmParcel.farmLocBrgy = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT ADDRESS 2- BRGY/VILL") ? row["PERMANENT ADDRESS 2- BRGY/VILL"]?.ToString() : null;
+                                    farmParcel.farmLocMunicipality = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("PERMANENT CITY") ? row["PERMANENT CITY"]?.ToString() : null;
+                                    farmParcel.farmSize = ((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("TOTAL FARM AREA (Ha)") && Double.TryParse(row["TOTAL FARM AREA (Ha)"]?.ToString(), out double farmArea) ? farmArea : 0.0;
 
-                                }
+                                    farmParcel.Crops = new List<FarmParcelCrop>();
 
-                                if (double.TryParse(row["CORN"].ToString(), out double cornArea))
-                                {
-                                    FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                    farmParcelCrop.commodityType = "Corn";
-                                    farmParcelCrop.landSize = cornArea;
-                                    farmParcelCrop.farmParcelNo = "1";
-                                    farmParcelCrop.rsbsaId = getNextRSBSAId;
-                                    farmParcel.Crops.Add(farmParcelCrop);
-                                    rsbsa.isCornFarmer = "Yes";
-
-                                }
-
-                                if (double.TryParse(row["HVC"].ToString(), out double hvcArea))
-                                {
-                                    FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                    farmParcelCrop.commodityType = "HVC";
-                                    farmParcelCrop.landSize = hvcArea;
-                                    farmParcelCrop.farmParcelNo = "1";
-                                    farmParcelCrop.rsbsaId = getNextRSBSAId;
-                                    farmParcel.Crops.Add(farmParcelCrop);
-                                    rsbsa.otherCrops = "HVC";
-
-                                }
-
-                                if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("AGRI-FISHERY"))
-                                {
-                                    if (double.TryParse(row["AGRI-FISHERY"].ToString(), out double agriFisheryArea))
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("RICE"))
                                     {
-                                        FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
-                                        farmParcelCrop.commodityType = "Agri-Fishery";
-                                        farmParcelCrop.landSize = agriFisheryArea;
-                                        farmParcelCrop.farmParcelNo = "1";
-                                        farmParcelCrop.rsbsaId = getNextRSBSAId;
-                                        farmParcel.Crops.Add(farmParcelCrop);
-                                        rsbsa.isAquaculture = "Yes";
+                                        if (double.TryParse(row["RICE"].ToString(), out double riceArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "Rice";
+                                            farmParcelCrop.landSize = riceArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getNextRSBSAId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                            rsbsa.isRiceFarmer = "Yes";
+
+                                        }
                                     }
 
-                                    rsbsa.farmParcels.Add(farmParcel);
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
+                                    {
+                                        if (double.TryParse(row["CORN"].ToString(), out double cornArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "Corn";
+                                            farmParcelCrop.landSize = cornArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getNextRSBSAId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                            rsbsa.isCornFarmer = "Yes";
 
+                                        }
+                                    }
+
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
+                                    {
+                                        if (double.TryParse(row["HVC"].ToString(), out double hvcArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "HVC";
+                                            farmParcelCrop.landSize = hvcArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getNextRSBSAId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                            rsbsa.otherCrops = "HVC";
+
+                                        }
+                                    }
+
+                                    if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("AGRI-FISHERY"))
+                                    {
+                                        if (double.TryParse(row["AGRI-FISHERY"].ToString(), out double agriFisheryArea))
+                                        {
+                                            FarmParcelCrop farmParcelCrop = new FarmParcelCrop();
+                                            farmParcelCrop.commodityType = "Agri-Fishery";
+                                            farmParcelCrop.landSize = agriFisheryArea;
+                                            farmParcelCrop.farmParcelNo = "1";
+                                            farmParcelCrop.rsbsaId = getNextRSBSAId;
+                                            farmParcel.Crops.Add(farmParcelCrop);
+                                        }
+
+                                        rsbsa.farmParcels.Add(farmParcel);
+                                    }
                                 }
                             }
 
@@ -398,80 +420,22 @@ namespace AgRecords.View
                                     // Increment the ProgressBar value and update the label
                                     progressBar1.Value++;
                                     labelProgress.Text = $"Saving: {progressBar1.Value} of {totalRows}";
-                                    //foreach (FarmParcel farmParcel1 in rsbsa.farmParcels)
-                                    //{
-                                    //    sb.AppendLine($"Farm Parcel Number: {farmParcel1.farmParcelNo}");
-                                    //    sb.AppendLine($"Farm Location Brgy: {farmParcel1.farmLocBrgy}");
-                                    //    sb.AppendLine($"Farm Location Municipality: {farmParcel1.farmLocMunicipality}");
-                                    //    sb.AppendLine($"Farm Size: {farmParcel1.farmSize} Ha");
-
-                                    //    // Loop through crops in the current farm parcel and append crop information
-                                    //    foreach (FarmParcelCrop farmParcelCrop in farmParcel.Crops)
-                                    //    {
-                                    //        sb.AppendLine($"Crop Type: {farmParcelCrop.commodityType}");
-                                    //        sb.AppendLine($"Land Size: {farmParcelCrop.landSize}");
-                                    //        sb.AppendLine("----------------------");
-                                    //    }
-
-                                    //    sb.AppendLine("======================");
-                                    //}
-
-                                    //// Show the content in a message box
-                                    //MessageBox.Show(sb.ToString(), "Farm Parcel Information");
                                 }
                             }
                         }
                     }
-                    else
-                    {
-                        //If the birthdate is null, add RSBSA REFERENCE NUMBER to the failed records list
-                        failedRecords.AppendLine(row["RSBSA REFERENCE NUMBER"].ToString());
-
-                    }
                 }
-            }
-
-            if (failedRecords.Length > 0)
-            {
-                labelProgress.Text = $"Saving completed: {progressBar1.Value} of {totalRows}";
-
-                // Display a warning message without the StringBuilder content
-                DialogResult dialogResult = MessageBox.Show($"{progressBar1.Value} out of {totalRows} records are saved. Do you want to save the list of unsaved records in a text file?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    // Ask user to choose a location to save the file
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Text Files|*.txt";
-                    saveFileDialog.Title = "Save Failed RSBSA Records";
-
-                    // Set the preset file name with dynamic content from txtSheetName and current date
-                    string DateOnly = DateTime.Now.ToString("yyyyMMdd");
-                    saveFileDialog.FileName = $"FailedRSBSARecords({txtSheetName.Text}) - {DateOnly}.txt";
-
-                    saveFileDialog.ShowDialog();
-
-                    if (saveFileDialog.FileName != "")
-                    {
-                        // Create the additional lines of text
-                        string sheetName = $"[{txtSheetName.Text}]\n";
-                        string additionalText = $"Only {progressBar1.Value} out of {totalRows} is saved.\n" +
-                                                "NOTE: Try checking the birthday\n\n" +
-                                                $"List of unsaved records ({totalRows - progressBar1.Value}):";
-                        string divText = "----------------------------------\n";
-
-                        // Combine additional text with failed records and save to the selected text file
-                        File.WriteAllText(saveFileDialog.FileName, $"{sheetName}{additionalText}\n{divText}{failedRecords.ToString()}{divText}");
-                    }
-                }
-            }
-            else
-            {
                 // All rows are saved, update progress label
                 labelProgress.Text = $"Saving completed: {totalRows} of {totalRows}";
 
                 // Display a completion message
                 MessageBox.Show("RSBSA Records saved successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                labelProgress.Visible = false;
+                progressBar1.Value = 0;
+            }
+            else
+            {
+                MessageBox.Show("There is no existing RSBSA Record in the selected file.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
