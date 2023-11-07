@@ -28,10 +28,13 @@ namespace AgRecords.View
         {
             labelTotalCornFarmers.Text = analyticsController.CountCornFarmers();
             labelTotalCornLandArea.Text = analyticsController.TotalCornLandArea() + " ha";
-            labelTotalCornBarangay.Text = analyticsController.TotalBarangayCorn() + " ha";
+            labelTotalCornBarangay.Text = analyticsController.TotalBarangayCorn();
             labelTotalCornAreaPlanted.Text = analyticsController.TotalCornAreaPlanted() + " ha";
             labelTotalYellowCorn.Text = analyticsController.TotalCornAreaPlantedYellow() + " ha";
             labelTotalWhiteCorn.Text = analyticsController.TotalCornAreaPlantedWhite() + " ha";
+
+            DataTable coopTable = analyticsController.ShowCornProduction();
+            dgvCornProd.DataSource = coopTable;
 
             DataTable data2 = analyticsController.BarCountRiceFarmerBarangay();
 

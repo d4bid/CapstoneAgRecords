@@ -54,7 +54,7 @@
             cmbBrgy1 = new ComboBox();
             labelTotalWeeklyReg = new Label();
             panel1 = new Panel();
-            comboBox1 = new ComboBox();
+            cmbRegInterval = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -300,6 +300,7 @@
             // 
             // cmbBrgy1
             // 
+            cmbBrgy1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cmbBrgy1.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbBrgy1.FlatStyle = FlatStyle.Flat;
             cmbBrgy1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -333,17 +334,18 @@
             panel1.Size = new Size(297, 272);
             panel1.TabIndex = 87;
             // 
-            // comboBox1
+            // cmbRegInterval
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Weekly", "Yearly" });
-            comboBox1.Location = new Point(501, 185);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(179, 28);
-            comboBox1.TabIndex = 88;
+            cmbRegInterval.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRegInterval.FlatStyle = FlatStyle.Flat;
+            cmbRegInterval.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbRegInterval.FormattingEnabled = true;
+            cmbRegInterval.Items.AddRange(new object[] { "Weekly", "Monthly", "Yearly" });
+            cmbRegInterval.Location = new Point(564, 185);
+            cmbRegInterval.Name = "cmbRegInterval";
+            cmbRegInterval.Size = new Size(116, 28);
+            cmbRegInterval.TabIndex = 88;
+            cmbRegInterval.SelectedIndexChanged += cmbRegInterval_SelectedIndexChanged;
             // 
             // AnalyticsRsbsaView
             // 
@@ -351,7 +353,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbRegInterval);
             Controls.Add(panel1);
             Controls.Add(cmbBrgy1);
             Controls.Add(rsbsa1);
@@ -414,6 +416,6 @@
         private ComboBox cmbBrgy1;
         private Label labelTotalWeeklyReg;
         private Panel panel1;
-        private ComboBox comboBox1;
+        private ComboBox cmbRegInterval;
     }
 }

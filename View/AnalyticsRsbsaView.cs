@@ -46,6 +46,8 @@ namespace AgRecords.View
 
             cmbBrgy1.SelectedIndex = 0;
             string brgy = cmbBrgy1.Text;
+            cmbRegInterval.SelectedIndex = 2;
+            string interval = cmbRegInterval.Text;
 
             DataTable data1 = analyticsController.PieCountCommodityBarangay(brgy);
 
@@ -69,7 +71,7 @@ namespace AgRecords.View
                 rsbsa4.Model = barChart;
             }
 
-            DataTable data3 = analyticsController.LineCountRsbsaRegBrgy();
+            DataTable data3 = analyticsController.LineCountRsbsaRegBrgy(interval);
 
             if (data3 != null)
             {
@@ -105,6 +107,22 @@ namespace AgRecords.View
 
                 // Set the pie chart model to the PlotView control
                 rsbsa1.Model = pieChart;
+            }
+        }
+
+        private void cmbRegInterval_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string interval = cmbRegInterval.Text;
+
+            DataTable data3 = analyticsController.LineCountRsbsaRegBrgy(interval);
+
+            if (data3 != null)
+            {
+                // Create the pie chart model
+                PlotModel lineChart = analyticsController.CreateLineChartRsbsa1(data3);
+
+                // Set the pie chart model to the PlotView control
+                rsbsa3.Model = lineChart;
             }
         }
     }
