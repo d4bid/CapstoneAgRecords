@@ -213,6 +213,9 @@ namespace AgRecords.Controller
                     userRole = userRole,
                     userActive = userActive
                 };
+                MessageBox.Show(userJobTitle, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
 
                 if (user.userPhoto == null)
                 {
