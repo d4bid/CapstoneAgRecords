@@ -244,9 +244,9 @@
             label9.ForeColor = Color.FromArgb(0, 35, 76);
             label9.Location = new Point(733, 193);
             label9.Name = "label9";
-            label9.Size = new Size(136, 20);
+            label9.Size = new Size(210, 20);
             label9.TabIndex = 27;
-            label9.Text = "Farming Activities";
+            label9.Text = "Total Registration This Week";
             // 
             // rsbsa3
             // 

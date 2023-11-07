@@ -198,13 +198,13 @@
             // 
             comboBoxAction.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAction.FlatStyle = FlatStyle.Flat;
-            comboBoxAction.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxAction.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxAction.FormattingEnabled = true;
             comboBoxAction.Items.AddRange(new object[] { "Pending", "Archived" });
-            comboBoxAction.Location = new Point(115, 135);
+            comboBoxAction.Location = new Point(115, 137);
             comboBoxAction.Margin = new Padding(3, 4, 3, 4);
             comboBoxAction.Name = "comboBoxAction";
-            comboBoxAction.Size = new Size(603, 33);
+            comboBoxAction.Size = new Size(603, 31);
             comboBoxAction.TabIndex = 3;
             // 
             // label4
@@ -232,13 +232,13 @@
             // 
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.FlatStyle = FlatStyle.Flat;
-            comboBoxType.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxType.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Incoming", "Outgoing", "Internal" });
-            comboBoxType.Location = new Point(115, 83);
+            comboBoxType.Location = new Point(115, 85);
             comboBoxType.Margin = new Padding(3, 4, 3, 4);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(603, 33);
+            comboBoxType.Size = new Size(603, 31);
             comboBoxType.TabIndex = 2;
             // 
             // txtBoxTitle

@@ -137,8 +137,8 @@ namespace AgRecords.View
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            //ReleaseCapture();
+            //SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void AdjustForm()
@@ -160,6 +160,7 @@ namespace AgRecords.View
         {
             panelCropsSubMenu.Visible = false;
             panelReportsSubMenu.Visible = false;
+            panelSettingsSubMenu.Visible = false;
         }
 
         //Hide Submenu
@@ -170,6 +171,8 @@ namespace AgRecords.View
                 panelCropsSubMenu.Visible = false;
             if (panelReportsSubMenu.Visible == true)
                 panelReportsSubMenu.Visible = false;
+            if (panelSettingsSubMenu.Visible == true)
+                panelSettingsSubMenu.Visible = false;
         }
 
         //Show Submenu
@@ -287,6 +290,27 @@ namespace AgRecords.View
         private void HomeView_Load(object sender, EventArgs e)
         {
             AdjustForm();
+
+            if (lblUserRole.Text == "Crop Reporter" || lblUserRole.Text == "Admin")
+            {
+                btnCrops.Visible = true;
+                btnRice.Visible = true;
+                btnCorn.Visible = true;
+                btnVegetable.Visible = true;
+                panelCropsSubMenu.Visible = true;
+
+                HideSubMenu();
+            }
+            else
+            {
+                btnCrops.Visible = false;
+                btnRice.Visible = false;
+                btnCorn.Visible = false;
+                btnVegetable.Visible = false;
+                panelCropsSubMenu.Visible = false;
+
+                HideSubMenu();
+            }
 
             MainView mainView = new MainView(panelDesktop);
             mainView.TopLevel = false;

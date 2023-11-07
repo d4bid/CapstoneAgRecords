@@ -399,10 +399,10 @@
             panelPersonalInfo.Controls.Add(panelContactDetails);
             panelPersonalInfo.Controls.Add(panelAddress);
             panelPersonalInfo.Controls.Add(panelPersonalDetails);
-            panelPersonalInfo.Dock = DockStyle.Top;
+            panelPersonalInfo.Dock = DockStyle.Fill;
             panelPersonalInfo.Location = new Point(0, 160);
             panelPersonalInfo.Name = "panelPersonalInfo";
-            panelPersonalInfo.Size = new Size(1595, 767);
+            panelPersonalInfo.Size = new Size(1595, 766);
             panelPersonalInfo.TabIndex = 0;
             // 
             // panelFarmProfile
@@ -425,6 +425,7 @@
             panelFarmLand.Controls.Add(panel19);
             panelFarmLand.Controls.Add(panel12);
             panelFarmLand.Controls.Add(panelDocument);
+            panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
             panelFarmLand.Size = new Size(1595, 767);
@@ -436,7 +437,7 @@
             panel19.Dock = DockStyle.Fill;
             panel19.Location = new Point(0, 927);
             panel19.Name = "panel19";
-            panel19.Padding = new Padding(10);
+            panel19.Padding = new Padding(10, 11, 10, 11);
             panel19.Size = new Size(1595, 0);
             panel19.TabIndex = 0;
             // 
@@ -444,7 +445,7 @@
             // 
             flowLayoutPanelParcels.AutoScroll = true;
             flowLayoutPanelParcels.Dock = DockStyle.Fill;
-            flowLayoutPanelParcels.Location = new Point(10, 10);
+            flowLayoutPanelParcels.Location = new Point(10, 11);
             flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
             flowLayoutPanelParcels.Size = new Size(1575, 0);
             flowLayoutPanelParcels.TabIndex = 0;
@@ -538,6 +539,7 @@
             // 
             // panelFarmersInRotation
             // 
+            panelFarmersInRotation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelFarmersInRotation.BorderStyle = BorderStyle.FixedSingle;
             panelFarmersInRotation.Controls.Add(txtRotatingFarmer3);
             panelFarmersInRotation.Controls.Add(txtRotatingFarmer2);
@@ -710,13 +712,14 @@
             btnAddDocsControl.IconChar = FontAwesome.Sharp.IconChar.Add;
             btnAddDocsControl.IconColor = Color.FromArgb(0, 35, 76);
             btnAddDocsControl.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAddDocsControl.IconSize = 30;
+            btnAddDocsControl.IconSize = 28;
             btnAddDocsControl.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddDocsControl.Location = new Point(1394, 38);
+            btnAddDocsControl.Location = new Point(1404, 38);
             btnAddDocsControl.Name = "btnAddDocsControl";
-            btnAddDocsControl.Size = new Size(187, 34);
+            btnAddDocsControl.Size = new Size(176, 36);
             btnAddDocsControl.TabIndex = 0;
             btnAddDocsControl.Text = "Add Document";
+            btnAddDocsControl.TextAlign = ContentAlignment.MiddleRight;
             btnAddDocsControl.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddDocsControl.UseVisualStyleBackColor = false;
             btnAddDocsControl.Click += btnAddDocsControl_Click;
@@ -1692,6 +1695,7 @@
             // 
             // panelCoop
             // 
+            panelCoop.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelCoop.Controls.Add(rbAssociationNo);
             panelCoop.Controls.Add(rbAssociationYes);
             panelCoop.Location = new Point(368, 343);
@@ -1905,7 +1909,7 @@
             txtIndigenous.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtIndigenous.BorderStyle = BorderStyle.None;
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtIndigenous.Location = new Point(129, 145);
+            txtIndigenous.Location = new Point(129, 147);
             txtIndigenous.Name = "txtIndigenous";
             txtIndigenous.Size = new Size(368, 27);
             txtIndigenous.TabIndex = 4;
@@ -1925,7 +1929,7 @@
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAssociation.Location = new Point(129, 385);
             txtAssociation.Name = "txtAssociation";
-            txtAssociation.Size = new Size(368, 27);
+            txtAssociation.Size = new Size(369, 27);
             txtAssociation.TabIndex = 9;
             txtAssociation.TextChanged += AllCaps;
             txtAssociation.Enter += SelectedPanel;
@@ -3252,7 +3256,7 @@
             cbAddBrgy.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbAddBrgy.Location = new Point(452, 65);
+            cbAddBrgy.Location = new Point(452, 64);
             cbAddBrgy.Name = "cbAddBrgy";
             cbAddBrgy.Size = new Size(183, 31);
             cbAddBrgy.TabIndex = 8;
@@ -3820,9 +3824,8 @@
             txtBoxRSBSAIdLGU.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtBoxRSBSAIdLGU.Location = new Point(561, 39);
             txtBoxRSBSAIdLGU.Name = "txtBoxRSBSAIdLGU";
-            txtBoxRSBSAIdLGU.Size = new Size(174, 24);
+            txtBoxRSBSAIdLGU.Size = new Size(293, 24);
             txtBoxRSBSAIdLGU.TabIndex = 95;
-            txtBoxRSBSAIdLGU.Text = "02-50-13-002-00";
             // 
             // btnCancel
             // 
@@ -4360,7 +4363,6 @@
         private FontAwesome.Sharp.IconButton btnAddFarmParcel;
         private Label labelParcelCount;
         private FlowLayoutPanel flowLayoutPanelDocs;
-        private FontAwesome.Sharp.IconButton btnAddDocsControl;
         private OpenFileDialog openFileDialog1;
         private Button btnCancel;
         private Panel panel12;
@@ -4371,5 +4373,6 @@
         private TextBox txtRotatingFarmer2;
         private TextBox txtRotatingFarmer1;
         private TextBox txtBoxRSBSAIdLGU;
+        private FontAwesome.Sharp.IconButton btnAddDocsControl;
     }
 }

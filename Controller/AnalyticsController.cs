@@ -617,11 +617,12 @@ namespace AgRecords.Controller
                 for (int i = 1; i < data.Columns.Count; i++)
                 {
                     string commodity = data.Columns[i].ColumnName;
-                    int count = Convert.ToInt32(row[commodity]);
+                    int count = Convert.IsDBNull(row[commodity]) ? 0 : Convert.ToInt32(row[commodity]);
 
-                    if (count > 0)
+                    if (commodityColors.TryGetValue(commodity, out OxyColor sliceColor))
                     {
-                        if (commodityColors.TryGetValue(commodity, out OxyColor sliceColor))
+                        // Check if the count is greater than zero
+                        if (count > 0)
                         {
                             var slice = new PieSlice(commodity, count)
                             {
@@ -630,9 +631,20 @@ namespace AgRecords.Controller
 
                             pieSeries.Slices.Add(slice);
                         }
+                        else
+                        {
+                            // If count is zero or negative, you can add an empty slice with a label
+                            var slice = new PieSlice(commodity, 0)
+                            {
+                                Fill = OxyColor.FromRgb(200, 200, 200), // A color for zero count
+                            };
+
+                            pieSeries.Slices.Add(slice);
+                        }
                     }
                 }
             }
+
             model.Series.Add(pieSeries);
 
             return model;
@@ -1039,7 +1051,6 @@ namespace AgRecords.Controller
 
             double areaPlanted = 0;
             double areaHarvested = 0;
-            double remaining = 0;
 
             if (data != null && data.Rows.Count > 0)
             {
@@ -1056,7 +1067,7 @@ namespace AgRecords.Controller
 
             // Calculate percentages
             var harvestedPercentage = areaPlanted > 0 ? (areaHarvested / areaPlanted) * 100 : 0;
-            var remainingPercentage = 100 - harvestedPercentage;
+            var remainingPercentage = areaPlanted > 0 ? 100 - harvestedPercentage : 0;
 
             var pieSeries = new PieSeries
             {
@@ -1075,7 +1086,7 @@ namespace AgRecords.Controller
             // Add the remaining slice
             pieSeries.Slices.Add(new PieSlice(null, remainingPercentage)
             {
-                Fill = OxyColor.FromRgb(255, 221, 100) // Color for remaining
+                Fill = areaPlanted == 0 ? OxyColor.FromRgb(43, 121, 223) : OxyColor.FromRgb(255, 221, 100) // Color for remaining
             });
 
             // Add the legend
@@ -1201,7 +1212,6 @@ namespace AgRecords.Controller
 
             return model;
         }
-
 
         public ProductionData Forecasting()
         {
@@ -1431,6 +1441,101 @@ namespace AgRecords.Controller
             }
         }
 
+        public PlotModel CreateLineSeriesChartCornForecast(List<int> years, List<double> forecastedProduction)
+        {
+            // Create a new PlotModel
+            var model = new PlotModel();
+
+            // Create a LineSeries for forecasted production
+            var forecastedProductionSeries = new LineSeries
+            {
+                Title = "Forecasted Production",
+                MarkerType = MarkerType.Circle, // Set the point marker as circles
+                MarkerSize = 4,
+                MarkerStroke = OxyColor.FromRgb(0, 109, 104),
+                MarkerFill = OxyColor.FromRgb(43, 121, 223),
+                LineStyle = LineStyle.Solid // Set the line style to Solid for a continuous line
+            };
+
+            // Add forecasted data points to the series
+            for (int i = 0; i < forecastedProduction.Count; i++)
+            {
+                forecastedProductionSeries.Points.Add(new DataPoint(i, forecastedProduction[i]));
+            }
+
+            // Add the series to the model
+            model.Series.Add(forecastedProductionSeries);
+
+            // Create a StringAxis for the x-axis to display whole years
+            var xAxis = new CategoryAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "Year"
+            };
+
+            // Add the years as labels to the x-axis
+            foreach (int year in years)
+            {
+                xAxis.Labels.Add(year.ToString());
+            }
+
+            model.Axes.Add(xAxis);
+
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "Production" });
+
+            return model;
+        }
+
+        public ProductionData CornForecasting()
+        {
+            // Initialize with the current year
+            int currentYear = DateTime.Now.Year;
+
+            // Define initial historical data for the years 2019 to 2021 as a basis for forecasting
+            List<int> historicalYears = new List<int> { 2019, 2020, 2021 };
+            List<double> historicalProduction = new List<double> { 30234.84, 36030.51, 35039.22 };
+
+            // Create lists to store forecasted data
+            List<int> forecastedYears = new List<int>();
+            List<double> forecastedProduction = new List<double>();
+
+            for (int i = 0; i < 4; i++)
+            {
+                // Get the past year as the actual data from the database
+                int pastYear = currentYear - 1;
+                double actualPastYear = GetCornProductionActual(pastYear);
+
+                // Calculate the weighted moving average forecast for the current year
+                double forecastCurrentYear = CalculateWeightedMovingAverage(historicalYears, historicalProduction, currentYear);
+
+                // Update the dataset with the forecasted production for the current year
+                historicalYears.Add(currentYear);
+                historicalProduction.Add(forecastCurrentYear);
+
+                // Store the forecasted year and production
+                forecastedYears.Add(currentYear);
+                forecastedProduction.Add(forecastCurrentYear);
+
+                // Move to the next year and update the historical data for the next iteration
+                currentYear++;
+                historicalYears.RemoveAt(0);
+                historicalProduction.RemoveAt(0);
+            }
+
+            // Return historical and forecasted data
+            return new ProductionData
+            {
+                Years = forecastedYears,
+                ForecastedProduction = forecastedProduction
+            };
+        }
+
+        // Database actual data retrieval
+        public double GetCornProductionActual(int year)
+        {
+            return analyticsModel.CornProductionActual(year);
+        }
+
 
         // ---------------- HVC --------------------
 
@@ -1586,12 +1691,12 @@ namespace AgRecords.Controller
 
             // Define a dictionary to map stage IDs to their corresponding names
             var stageNames = new Dictionary<string, string>
-    {
-        { "1", "Newly Transplanted" },
-        { "2", "Vegetative" },
-        { "3", "Reproductive" },
-        { "4", "Maturity/Harvestable" }
-    };
+            {
+                { "1", "Newly Transplanted" },
+                { "2", "Vegetative" },
+                { "3", "Reproductive" },
+                { "4", "Maturity/Harvestable" }
+            };
 
             // Create a category axis for stages on the X-axis
             var stageAxis = new CategoryAxis
@@ -1620,50 +1725,47 @@ namespace AgRecords.Controller
 
             model.Axes.Add(cropAxis);
 
+            // Create line series for each crop
             foreach (string cropName in cropNames)
             {
                 var lineSeries = new LineSeries
                 {
                     Title = cropName,
+                    Color = OxyColor.FromRgb(0, 109, 104), // Set the line color to red (255, 0, 0)
                     MarkerType = MarkerType.Circle,
                     MarkerSize = 4,
                     MarkerStroke = OxyColor.FromRgb(0, 109, 104),
                     MarkerFill = OxyColor.FromRgb(0, 109, 104)
                 };
 
-                string currentStage = data.Select($"Crop = '{cropName}'").FirstOrDefault()?["Stage"].ToString();
+                string previousStage = "1"; // Initialize with the first stage
 
+                // Iterate through stages to add points and connect with lines
                 for (int stageIndex = 1; stageIndex <= 4; stageIndex++)
                 {
                     string stageId = stageIndex.ToString();
-                    int cropIndex = cropAxis.Labels.IndexOf(cropName);
+                    var row = data.Select($"Crop = '{cropName}' AND Stage = '{stageId}'").FirstOrDefault();
 
-                    // Check if the stageId matches the currentStage
-                    if (stageId == currentStage)
+                    if (row != null)
                     {
-                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), cropIndex));
-                    }
-                    // If stageIndex is less than the currentStage, add a data point with a value of 0
-                    else if (stageIndex < int.Parse(currentStage))
-                    {
-                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), 0));
-                    }
-                    // If stageIndex is greater than the currentStage, add a data point with a value of cropIndex
-                    else
-                    {
-                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), cropIndex));
+                        // Add the point for the current stage
+                        lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[stageId]), cropAxis.Labels.IndexOf(cropName)));
+
+                        // Add a line connecting the previous stage to the current stage
+                        if (stageIndex > 1)
+                        {
+                            lineSeries.Points.Add(new DataPoint(stageAxis.Labels.IndexOf(stageNames[previousStage]), cropAxis.Labels.IndexOf(cropName)));
+                        }
+
+                        previousStage = stageId;
                     }
                 }
-
 
                 model.Series.Add(lineSeries);
             }
 
             return model;
         }
-
-
-
 
         public DataTable LineHvcProgression(string month, string week)
         {

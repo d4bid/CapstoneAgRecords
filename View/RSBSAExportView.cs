@@ -15,6 +15,8 @@ namespace AgRecords.View
 {
     public partial class RSBSAExportView : Form
     {
+        public event EventHandler FormClosed;
+
         RSBSAModel rsbsaModel = new RSBSAModel();
         UserModel userModel = new UserModel();
         private RSBSAController rsbsaController;
@@ -246,6 +248,12 @@ namespace AgRecords.View
         private void comboBoxFilterBrgy_SelectedIndexChanged(object sender, EventArgs e)
         {
             PerformSearch();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

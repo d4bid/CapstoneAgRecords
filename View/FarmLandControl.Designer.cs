@@ -234,14 +234,13 @@
             // 
             // cbFarmLocBarangay
             // 
-            cbFarmLocBarangay.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFarmLocBarangay.FlatStyle = FlatStyle.Flat;
-            cbFarmLocBarangay.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            cbFarmLocBarangay.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             cbFarmLocBarangay.FormattingEnabled = true;
             cbFarmLocBarangay.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbFarmLocBarangay.Location = new Point(250, 44);
+            cbFarmLocBarangay.Location = new Point(253, 44);
             cbFarmLocBarangay.Name = "cbFarmLocBarangay";
-            cbFarmLocBarangay.Size = new Size(394, 33);
+            cbFarmLocBarangay.Size = new Size(394, 31);
             cbFarmLocBarangay.TabIndex = 1;
             cbFarmLocBarangay.Enter += SelectedPanel;
             cbFarmLocBarangay.Leave += UnselectedPanel;

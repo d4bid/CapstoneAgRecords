@@ -933,6 +933,36 @@ namespace AgRecords.Model
             }
         }
 
+        // Forecasting
+        public double CornProductionActual(int year)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_chartCornProduction(@year);", db.GetConnection());
+                    command.Parameters.AddWithValue("@year", year);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        if (double.TryParse(result.ToString(), out double production))
+                        {
+                            return production;
+                        }
+                    }
+
+                    return 0.0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
 
         // ---------------- HVC -----------------------
 

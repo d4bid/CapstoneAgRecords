@@ -326,11 +326,11 @@
             dgvAss.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvAss.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvAss.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -338,8 +338,8 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvAss.DefaultCellStyle = dataGridViewCellStyle2;

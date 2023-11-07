@@ -76,9 +76,11 @@
             label12 = new Label();
             label8 = new Label();
             label6 = new Label();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)picBoxUser).BeginInit();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // openFileDialog1
@@ -124,7 +126,7 @@
             picBoxUser.BackgroundImageLayout = ImageLayout.Zoom;
             picBoxUser.BorderStyle = BorderStyle.FixedSingle;
             picBoxUser.Image = Properties.Resources.profile;
-            picBoxUser.Location = new Point(28, 33);
+            picBoxUser.Location = new Point(38, 42);
             picBoxUser.Name = "picBoxUser";
             picBoxUser.Size = new Size(300, 300);
             picBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -167,7 +169,7 @@
             btnBrowse.IconColor = Color.FromArgb(43, 121, 223);
             btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBrowse.IconSize = 30;
-            btnBrowse.Location = new Point(109, 354);
+            btnBrowse.Location = new Point(114, 370);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(150, 40);
             btnBrowse.TabIndex = 55;
@@ -179,6 +181,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(label18);
             groupBox1.Controls.Add(cmbJobTitle);
             groupBox1.Controls.Add(rectangleRound15);
@@ -656,6 +659,18 @@
             label6.TabIndex = 21;
             label6.Text = "UserID";
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(picBoxUser);
+            panel4.Controls.Add(btnBrowse);
+            panel4.Dock = DockStyle.Left;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Padding = new Padding(0, 0, 0, 10);
+            panel4.Size = new Size(379, 926);
+            panel4.TabIndex = 59;
+            // 
             // UserEditView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -663,11 +678,10 @@
             AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(1595, 926);
+            Controls.Add(panel4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
-            Controls.Add(btnBrowse);
             Controls.Add(btnBack);
-            Controls.Add(picBoxUser);
             Controls.Add(btnSave);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UserEditView";
@@ -678,6 +692,7 @@
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -730,5 +745,6 @@
         private Label label12;
         private Label label8;
         private Label label6;
+        private Panel panel4;
     }
 }

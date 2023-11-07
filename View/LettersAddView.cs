@@ -36,6 +36,8 @@ namespace AgRecords.View
             DateTime minDate = new DateTime(1900, 1, 1);
             dtpDateReceived.MaxDate = DateTime.Today;
             dtpDateReceived.MinDate = minDate;
+
+            comboBoxAction.SelectedIndex = 0;
         }
 
         private void listView1_KeyDown(object sender, KeyEventArgs e)
@@ -217,14 +219,16 @@ namespace AgRecords.View
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            // To remove an item(s) in the listView using button
+            List<ListViewItem> removedItems = new List<ListViewItem>();
+
+            // Find and remove the selected items from the ListView and imageDictionary.
             foreach (ListViewItem item in listViewLetters.SelectedItems)
             {
                 // Get the file name of the removed item.
                 string fileName = item.Text;
 
                 // Remove the item from the ListView.
-                listViewLetters.Items.Remove(item);
+                removedItems.Add(item);
 
                 // Remove the corresponding image from imageDictionary.
                 if (imageDictionary.ContainsKey(fileName))
@@ -233,6 +237,34 @@ namespace AgRecords.View
                     removedImage.Dispose(); // Dispose of the image to free up resources.
                     imageDictionary.Remove(fileName);
                 }
+            }
+
+            // Remove the selected items from the ListView.
+            foreach (var removedItem in removedItems)
+            {
+                listViewLetters.Items.Remove(removedItem);
+            }
+
+            // Renumber the remaining images in the ListView based on their current order.
+            int imageCounter = 1;
+            foreach (ListViewItem item in listViewLetters.Items)
+            {
+                string currentFileName = item.Text;
+                string[] parts = currentFileName.Split('-');
+                string newFileName = $"{labelLetterId.Text}-{imageCounter}";
+
+                if (currentFileName != newFileName)
+                {
+                    // Update the file name in the ListView and imageDictionary.
+                    item.Text = newFileName;
+                    item.ImageKey = newFileName;
+                    imageDictionary[newFileName] = imageDictionary[currentFileName];
+
+                    // Remove the old file name from the imageDictionary.
+                    imageDictionary.Remove(currentFileName);
+                }
+
+                imageCounter++;
             }
         }
 
@@ -247,14 +279,13 @@ namespace AgRecords.View
                 {
                     List<string> potentialDuplicates = new List<string>(); // Track potential duplicates.
 
+                    // Get the current image file names in the ListView.
+                    List<string> existingImageFileNames = listViewLetters.Items.Cast<ListViewItem>().Select(item => item.Text).ToList();
+
                     foreach (string filePath in openFileDialog.FileNames)
                     {
-                        // Get the file name without extension.
-                        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
-
-                        // Generate a new file name with the format "[existingID]-XX" where XX is the imageCounter.
-                        string newFileName = $"{labelLetterId.Text}-{imageCounter:D2}";
-                        imageCounter++; // Increment the counter for the next image.
+                        // Generate a new file name with the format "[existingID]-XX" where XX is the next available number.
+                        string newFileName = $"{labelLetterId.Text}-{GetNextImageNumber(existingImageFileNames)}";
 
                         // Check if the image is already in the imageDictionary.
                         if (!imageDictionary.ContainsKey(newFileName))
@@ -270,6 +301,9 @@ namespace AgRecords.View
                             ListViewItem item = new ListViewItem(newFileName);
                             item.ImageKey = newFileName; // Set the ImageKey to associate the image.
                             listViewLetters.Items.Add(item);
+
+                            // Add the new file name to the list of existing image file names.
+                            existingImageFileNames.Add(newFileName);
                         }
                         else
                         {
@@ -288,6 +322,19 @@ namespace AgRecords.View
                     }
                 }
             }
+        }
+
+        private int GetNextImageNumber(List<string> existingImageFileNames)
+        {
+            int nextNumber = 1;
+
+            // Find the next available image number.
+            while (existingImageFileNames.Contains($"{labelLetterId.Text}-{nextNumber}"))
+            {
+                nextNumber++;
+            }
+
+            return nextNumber;
         }
     }
 }

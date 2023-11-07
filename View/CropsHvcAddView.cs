@@ -34,7 +34,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
             ClearTextControls();
             DisplayDataTableFilter();
         }
@@ -73,8 +73,8 @@ namespace AgRecords.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
-            labelHvcStandingId.Visible = false;
+            btnUpdate.Enabled = false;
+            btnNew.Enabled = true;
 
             int cropTypeIndex = cmbCropType.SelectedIndex;
 
@@ -117,7 +117,7 @@ namespace AgRecords.View
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
 
             int cropTypeIndex = cmbCropType.SelectedIndex;
 
@@ -139,25 +139,15 @@ namespace AgRecords.View
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
-            btnNew.Visible = true;
+            btnUpdate.Enabled = false;
+            btnNew.Enabled = true;
             ClearTextControls();
         }
 
         private void dgvHvcStanding_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnUpdate.Visible = true;
-
-            if (labelCropStage.Text == "Newly Transplated")
-            {
-                btnUpdate.Enabled = true;
-                btnNew.Enabled = true;
-            }
-            else
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = false;
-            }
+            btnUpdate.Enabled = true;
+            btnNew.Enabled = false;
 
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)

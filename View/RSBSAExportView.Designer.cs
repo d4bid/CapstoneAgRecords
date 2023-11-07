@@ -86,9 +86,10 @@
             cbIsMultipleSheet.AutoSize = true;
             cbIsMultipleSheet.Checked = true;
             cbIsMultipleSheet.CheckState = CheckState.Checked;
-            cbIsMultipleSheet.Location = new Point(1057, 50);
+            cbIsMultipleSheet.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cbIsMultipleSheet.Location = new Point(244, 49);
             cbIsMultipleSheet.Name = "cbIsMultipleSheet";
-            cbIsMultipleSheet.Size = new Size(229, 24);
+            cbIsMultipleSheet.Size = new Size(236, 24);
             cbIsMultipleSheet.TabIndex = 39;
             cbIsMultipleSheet.Text = "Multiple Sheet (per Barangay)";
             cbIsMultipleSheet.UseVisualStyleBackColor = true;
@@ -109,6 +110,7 @@
             btnCancel.TabIndex = 33;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // label2
             // 
@@ -141,10 +143,11 @@
             // 
             // btnExport
             // 
+            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExport.BackColor = Color.FromArgb(43, 121, 223);
             btnExport.FlatAppearance.BorderSize = 0;
             btnExport.FlatStyle = FlatStyle.Flat;
-            btnExport.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExport.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnExport.ForeColor = Color.White;
             btnExport.Location = new Point(1292, 42);
             btnExport.Margin = new Padding(3, 4, 3, 4);

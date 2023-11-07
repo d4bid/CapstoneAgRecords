@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             cornGraph1 = new OxyPlot.WindowsForms.PlotView();
             label13 = new Label();
             rectangleFullWhite7 = new RectangleFullWhite();
@@ -58,7 +58,7 @@
             label7 = new Label();
             rectangleFullWhite1 = new RectangleFullWhite();
             cornGraph2 = new OxyPlot.WindowsForms.PlotView();
-            plotView2 = new OxyPlot.WindowsForms.PlotView();
+            cornGraph3 = new OxyPlot.WindowsForms.PlotView();
             dgvCornProd = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvCornProd).BeginInit();
             SuspendLayout();
@@ -353,17 +353,17 @@
             cornGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
             cornGraph2.ZoomVerticalCursor = Cursors.SizeNS;
             // 
-            // plotView2
+            // cornGraph3
             // 
-            plotView2.BackColor = Color.White;
-            plotView2.Location = new Point(808, 578);
-            plotView2.Name = "plotView2";
-            plotView2.PanCursor = Cursors.Hand;
-            plotView2.Size = new Size(755, 321);
-            plotView2.TabIndex = 75;
-            plotView2.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView2.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView2.ZoomVerticalCursor = Cursors.SizeNS;
+            cornGraph3.BackColor = Color.White;
+            cornGraph3.Location = new Point(808, 578);
+            cornGraph3.Name = "cornGraph3";
+            cornGraph3.PanCursor = Cursors.Hand;
+            cornGraph3.Size = new Size(755, 321);
+            cornGraph3.TabIndex = 75;
+            cornGraph3.ZoomHorizontalCursor = Cursors.SizeWE;
+            cornGraph3.ZoomRectangleCursor = Cursors.SizeNWSE;
+            cornGraph3.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // dgvCornProd
             // 
@@ -374,24 +374,24 @@
             dgvCornProd.BorderStyle = BorderStyle.None;
             dgvCornProd.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvCornProd.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCornProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCornProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCornProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCornProd.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCornProd.DefaultCellStyle = dataGridViewCellStyle4;
             dgvCornProd.GridColor = Color.FromArgb(239, 239, 239);
             dgvCornProd.Location = new Point(34, 578);
             dgvCornProd.Name = "dgvCornProd";
@@ -410,7 +410,7 @@
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
             Controls.Add(dgvCornProd);
-            Controls.Add(plotView2);
+            Controls.Add(cornGraph3);
             Controls.Add(cornGraph2);
             Controls.Add(labelTotalWhiteCorn);
             Controls.Add(label7);
@@ -477,7 +477,7 @@
         private Label label7;
         private RectangleFullWhite rectangleFullWhite1;
         private OxyPlot.WindowsForms.PlotView cornGraph2;
-        private OxyPlot.WindowsForms.PlotView plotView2;
+        private OxyPlot.WindowsForms.PlotView cornGraph3;
         private DataGridView dgvCornProd;
     }
 }

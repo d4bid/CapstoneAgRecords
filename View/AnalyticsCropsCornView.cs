@@ -1,4 +1,5 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using OxyPlot;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,9 @@ namespace AgRecords.View
                 // Set the pie chart model to the PlotView control
                 cornGraph2.Model = pieChart;
             }
+
+            ProductionData productionData = analyticsController.CornForecasting();
+            cornGraph3.Model = analyticsController.CreateLineSeriesChartCornForecast(productionData.Years, productionData.ForecastedProduction);
         }
     }
 }

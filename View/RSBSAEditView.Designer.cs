@@ -562,9 +562,8 @@
             txtBoxRSBSAIdLGU.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtBoxRSBSAIdLGU.Location = new Point(561, 38);
             txtBoxRSBSAIdLGU.Name = "txtBoxRSBSAIdLGU";
-            txtBoxRSBSAIdLGU.Size = new Size(174, 24);
+            txtBoxRSBSAIdLGU.Size = new Size(293, 24);
             txtBoxRSBSAIdLGU.TabIndex = 0;
-            txtBoxRSBSAIdLGU.Text = "02-50";
             // 
             // btnCancel
             // 
@@ -573,7 +572,7 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
-            btnCancel.Location = new Point(1277, 19);
+            btnCancel.Location = new Point(1294, 30);
             btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(130, 40);
@@ -589,7 +588,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(1137, 19);
+            btnSave.Location = new Point(1158, 30);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(130, 40);
             btnSave.TabIndex = 0;
@@ -840,6 +839,7 @@
             // 
             // panelFarmersInRotation
             // 
+            panelFarmersInRotation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelFarmersInRotation.BorderStyle = BorderStyle.FixedSingle;
             panelFarmersInRotation.Controls.Add(txtRotatingFarmer3);
             panelFarmersInRotation.Controls.Add(txtRotatingFarmer2);
@@ -1016,12 +1016,14 @@
             btnAddDocsControl.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAddDocsControl.IconSize = 30;
             btnAddDocsControl.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddDocsControl.Location = new Point(1285, 24);
+            btnAddDocsControl.Location = new Point(1396, 36);
             btnAddDocsControl.Name = "btnAddDocsControl";
-            btnAddDocsControl.Size = new Size(299, 39);
+            btnAddDocsControl.Size = new Size(176, 36);
             btnAddDocsControl.TabIndex = 0;
             btnAddDocsControl.TabStop = false;
             btnAddDocsControl.Text = "Add Document";
+            btnAddDocsControl.TextAlign = ContentAlignment.MiddleRight;
+            btnAddDocsControl.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAddDocsControl.UseVisualStyleBackColor = false;
             btnAddDocsControl.Click += btnAddDocsControl_Click;
             // 
@@ -1845,6 +1847,7 @@
             // 
             // panelEmergencyCon
             // 
+            panelEmergencyCon.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelEmergencyCon.BorderStyle = BorderStyle.FixedSingle;
             panelEmergencyCon.Controls.Add(txtEcContact);
             panelEmergencyCon.Controls.Add(txtEcName);
@@ -1860,6 +1863,7 @@
             // 
             // txtEcContact
             // 
+            txtEcContact.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtEcContact.BorderStyle = BorderStyle.None;
             txtEcContact.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtEcContact.Location = new Point(319, 67);
@@ -1925,6 +1929,7 @@
             // 
             // rectangleRound38
             // 
+            rectangleRound38.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound38.BackColor = Color.White;
             rectangleRound38.Location = new Point(310, 63);
             rectangleRound38.Margin = new Padding(2, 3, 2, 3);
@@ -1945,6 +1950,7 @@
             // 
             // panelAffiliations
             // 
+            panelAffiliations.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAffiliations.BorderStyle = BorderStyle.FixedSingle;
             panelAffiliations.Controls.Add(panelCoop);
             panelAffiliations.Controls.Add(panelGovId);
@@ -1981,6 +1987,7 @@
             // 
             // panelCoop
             // 
+            panelCoop.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelCoop.Controls.Add(rbAssociationNo);
             panelCoop.Controls.Add(rbAssociationYes);
             panelCoop.Location = new Point(368, 344);
@@ -2174,6 +2181,7 @@
             // 
             // txtGovIdNum
             // 
+            txtGovIdNum.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGovIdNum.BorderStyle = BorderStyle.None;
             txtGovIdNum.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(184, 288);
@@ -2187,9 +2195,10 @@
             // 
             // txtIndigenous
             // 
+            txtIndigenous.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtIndigenous.BorderStyle = BorderStyle.None;
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtIndigenous.Location = new Point(129, 145);
+            txtIndigenous.Location = new Point(129, 148);
             txtIndigenous.Name = "txtIndigenous";
             txtIndigenous.Size = new Size(368, 27);
             txtIndigenous.TabIndex = 4;
@@ -2200,6 +2209,7 @@
             // 
             // txtAssociation
             // 
+            txtAssociation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtAssociation.BorderStyle = BorderStyle.None;
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAssociation.Location = new Point(129, 385);
@@ -2213,12 +2223,13 @@
             // 
             // txtGovIdType
             // 
+            txtGovIdType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGovIdType.AutoCompleteCustomSource.AddRange(new string[] { "ALAY KAPWA ID", "BARANGAY CERT", "BFP ID", "BIR ID", "CERTIFICATE OF LIVE BIRTH", "DRIVER'S LICENSE", "DSWD ID", "GOV'T ID", "NATIONAL ID (PHILSYS)", "OEC", "OSCA ID", "PAG IBIG ID", "PASSPORT ID", "PHILHEALTH ID", "PRC ID", "PNP ID", "POSTAL ID", "RED CROSS ID", "SCHOOL ID", "SSS ID", "TIN ID", "UMID", "VETERAN'S ID", "VOTER'S CERT", "VOTER'S ID", "WOMANS CLUB" });
             txtGovIdType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtGovIdType.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtGovIdType.BorderStyle = BorderStyle.None;
             txtGovIdType.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtGovIdType.Location = new Point(184, 245);
+            txtGovIdType.Location = new Point(184, 247);
             txtGovIdType.Name = "txtGovIdType";
             txtGovIdType.Size = new Size(313, 27);
             txtGovIdType.TabIndex = 6;
@@ -2278,6 +2289,7 @@
             // 
             // rectangleRound40
             // 
+            rectangleRound40.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound40.BackColor = Color.White;
             rectangleRound40.Location = new Point(256, 101);
             rectangleRound40.Margin = new Padding(2, 3, 2, 3);
@@ -2288,6 +2300,7 @@
             // 
             // rectangleRound39
             // 
+            rectangleRound39.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound39.BackColor = Color.White;
             rectangleRound39.Location = new Point(174, 200);
             rectangleRound39.Margin = new Padding(2, 3, 2, 3);
@@ -2298,6 +2311,7 @@
             // 
             // rectangleRound37
             // 
+            rectangleRound37.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound37.BackColor = Color.White;
             rectangleRound37.Location = new Point(174, 243);
             rectangleRound37.Margin = new Padding(2, 3, 2, 3);
@@ -2308,6 +2322,7 @@
             // 
             // rectangleRound35
             // 
+            rectangleRound35.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound35.BackColor = Color.White;
             rectangleRound35.Location = new Point(174, 284);
             rectangleRound35.Margin = new Padding(2, 3, 2, 3);
@@ -2338,6 +2353,7 @@
             // 
             // rectangleRound34
             // 
+            rectangleRound34.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound34.BackColor = Color.White;
             rectangleRound34.Location = new Point(360, 340);
             rectangleRound34.Margin = new Padding(2, 3, 2, 3);
@@ -2348,6 +2364,7 @@
             // 
             // rectangleRound19
             // 
+            rectangleRound19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound19.BackColor = Color.White;
             rectangleRound19.Location = new Point(118, 381);
             rectangleRound19.Margin = new Padding(2, 3, 2, 3);
@@ -2389,11 +2406,12 @@
             // 
             // rectangleRound15
             // 
+            rectangleRound15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound15.BackColor = Color.White;
             rectangleRound15.Location = new Point(354, 43);
             rectangleRound15.Margin = new Padding(2, 3, 2, 3);
             rectangleRound15.Name = "rectangleRound15";
-            rectangleRound15.Size = new Size(158, 37);
+            rectangleRound15.Size = new Size(153, 37);
             rectangleRound15.TabIndex = 0;
             rectangleRound15.TabStop = false;
             // 
@@ -2409,6 +2427,7 @@
             // 
             // rectangleRound16
             // 
+            rectangleRound16.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound16.BackColor = Color.White;
             rectangleRound16.Location = new Point(119, 143);
             rectangleRound16.Margin = new Padding(2, 3, 2, 3);
@@ -3340,6 +3359,7 @@
             // 
             // panelContactDetails
             // 
+            panelContactDetails.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelContactDetails.BorderStyle = BorderStyle.FixedSingle;
             panelContactDetails.Controls.Add(txtLandNo);
             panelContactDetails.Controls.Add(txtMobNo);
@@ -3355,6 +3375,7 @@
             // 
             // txtLandNo
             // 
+            txtLandNo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtLandNo.BorderStyle = BorderStyle.None;
             txtLandNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtLandNo.Location = new Point(31, 135);
@@ -3367,6 +3388,7 @@
             // 
             // txtMobNo
             // 
+            txtMobNo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtMobNo.BorderStyle = BorderStyle.None;
             txtMobNo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtMobNo.Location = new Point(32, 63);
@@ -3389,6 +3411,7 @@
             // 
             // rectangleRound12
             // 
+            rectangleRound12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound12.BackColor = Color.White;
             rectangleRound12.Location = new Point(21, 131);
             rectangleRound12.Margin = new Padding(2, 3, 2, 3);
@@ -3420,6 +3443,7 @@
             // 
             // rectangleRound13
             // 
+            rectangleRound13.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound13.BackColor = Color.White;
             rectangleRound13.Location = new Point(21, 60);
             rectangleRound13.Margin = new Padding(2, 3, 2, 3);
@@ -3523,12 +3547,12 @@
             // 
             cbAddBrgy.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAddBrgy.FlatStyle = FlatStyle.Flat;
-            cbAddBrgy.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            cbAddBrgy.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
             cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cbAddBrgy.Location = new Point(451, 62);
+            cbAddBrgy.Location = new Point(451, 63);
             cbAddBrgy.Name = "cbAddBrgy";
-            cbAddBrgy.Size = new Size(183, 33);
+            cbAddBrgy.Size = new Size(183, 31);
             cbAddBrgy.TabIndex = 3;
             cbAddBrgy.Enter += SelectedPanel;
             cbAddBrgy.Leave += UnselectedPanel;
@@ -3715,12 +3739,12 @@
             // 
             cbSex.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSex.FlatStyle = FlatStyle.Flat;
-            cbSex.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            cbSex.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             cbSex.FormattingEnabled = true;
             cbSex.Items.AddRange(new object[] { "MALE ", "FEMALE" });
-            cbSex.Location = new Point(390, 133);
+            cbSex.Location = new Point(390, 134);
             cbSex.Name = "cbSex";
-            cbSex.Size = new Size(143, 33);
+            cbSex.Size = new Size(143, 31);
             cbSex.TabIndex = 5;
             cbSex.Enter += SelectedPanel;
             cbSex.Leave += UnselectedPanel;

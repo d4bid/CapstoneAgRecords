@@ -15,6 +15,7 @@ namespace AgRecords.View
 {
     public partial class RSBSAImportExcelView : Form
     {
+        public event EventHandler FormClosed;
 
         RSBSAModel rsbsaModel = new RSBSAModel();
         UserModel userModel = new UserModel();
@@ -209,7 +210,7 @@ namespace AgRecords.View
 
                                         }
                                     }
-                                    
+
                                     if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
                                     {
                                         if (double.TryParse(row["CORN"].ToString(), out double cornArea))
@@ -224,7 +225,7 @@ namespace AgRecords.View
 
                                         }
                                     }
-                                    
+
                                     if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
                                     {
                                         if (double.TryParse(row["HVC"].ToString(), out double hvcArea))
@@ -452,6 +453,12 @@ namespace AgRecords.View
         private void RSBSAImportExcelView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }
