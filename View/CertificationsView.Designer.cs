@@ -135,7 +135,7 @@
             // 
             txtBoxSearch.BorderStyle = BorderStyle.None;
             txtBoxSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxSearch.Location = new Point(47, 42);
+            txtBoxSearch.Location = new Point(48, 44);
             txtBoxSearch.Name = "txtBoxSearch";
             txtBoxSearch.PlaceholderText = "Search";
             txtBoxSearch.Size = new Size(291, 24);

@@ -631,10 +631,19 @@ namespace AgRecords.Controller
                 }
                 else if (rpr.riceSrId != null && rpr.month != null && rpr.week != null && rpr.year != null)
                 {
-                    if (riceModel.AddRicePlantingRep(rpr))
+                    int count = CheckRiceReportExist(rpr.month, rpr.week, rpr.year, rpr.season, rpr.seasonYear);
+
+                    if (count > 0)
                     {
-                        isDone = true;
-                        //MessageBox.Show("Rice Planting Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Rice Report already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        if (riceModel.AddRicePlantingRep(rpr))
+                        {
+                            isDone = true;
+                            //MessageBox.Show("Rice Planting Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
 
@@ -802,6 +811,11 @@ namespace AgRecords.Controller
                 MessageBox.Show(ex.Message, "Rice Harvesting Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
+        }
+
+        public int CheckRiceReportExist(string month, string week, string year, string season, string seasonYear)
+        {
+            return riceModel.CountRiceReportExist(month, week, year, season, seasonYear);
         }
 
         // PRINTING REPORTS

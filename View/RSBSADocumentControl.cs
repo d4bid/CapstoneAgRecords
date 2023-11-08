@@ -51,7 +51,7 @@ namespace AgRecords.View
 
                     pbDocPhoto.Image = selectedImage;
                 }
-                break; 
+                break;
             }
         }
 

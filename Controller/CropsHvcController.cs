@@ -63,6 +63,11 @@ namespace AgRecords.Controller
             }
         }
 
+        public int CheckHvcReportExist(string month, string week, string year)
+        {
+            return hvcModel.CountHvcReportExist(month, week, year);
+        }
+
         public void GenerateNewHvcID()
         {
             try
@@ -113,10 +118,19 @@ namespace AgRecords.Controller
                 }
                 else if (hr.hvcSrId != "" && hr.month != "" && hr.week != "" && hr.year != "")
                 {
-                    if (hvcModel.AddHvcStandingRep(hr))
+                    int count = CheckHvcReportExist(hr.month, hr.week, hr.year);
+
+                    if (count  > 0)
                     {
-                        isDone = true;
-                        userModel.InserActionLog(username, "Insert", "Crops HVC Report", $"{hvcSrId} added successfully.");
+                        MessageBox.Show("Report already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        if (hvcModel.AddHvcStandingRep(hr))
+                        {
+                            isDone = true;
+                            userModel.InserActionLog(username, "Insert", "Crops HVC Report", $"{hvcSrId} added successfully.");
+                        }
                     }
                 }
 

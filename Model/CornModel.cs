@@ -299,6 +299,64 @@ namespace AgRecords.Model
             }
         }
 
+        public int CountCornReportExist(string month, string week, string year, string season, string seasonYear)
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_checkCornReportExist(@month, @week, @year, @season, @seasonYear);", db.GetConnection());
+                    command.Parameters.AddWithValue("@month", month);
+                    command.Parameters.AddWithValue("@week", week);
+                    command.Parameters.AddWithValue("@year", year);
+                    command.Parameters.AddWithValue("@season", season);
+                    command.Parameters.AddWithValue("@seasonYear", seasonYear);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LoadCornPlantingEcoTotalDataGrid(string cornPrId, int colorId, int growthId, int seedId)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable dataTable = new DataTable();
+                    string query = "CALL sp_getCornPlantingEcoTotal(@cornPrId, @colorId, @growthId, @seedId)";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@cornPrId", cornPrId);
+                    command.Parameters.AddWithValue("@colorId", colorId);
+                    command.Parameters.AddWithValue("@growthId", growthId);
+                    command.Parameters.AddWithValue("@seedId", seedId);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error loading corn planting by ecological zone records: " + ex.Message, ex);
+            }
+        }
+
 
         // PLANTING
         public Boolean AddCornPlantingRep(CornReport cr)
@@ -472,7 +530,7 @@ namespace AgRecords.Model
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error loading rice harvesting records: " + ex.Message, ex);
+                throw new ApplicationException("Error loading corn planting records: " + ex.Message, ex);
             }
         }
 

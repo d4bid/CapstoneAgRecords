@@ -87,7 +87,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "ImageDisplayView";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Letter Page";
+            Text = "Document";
             Load += ImageDisplayView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

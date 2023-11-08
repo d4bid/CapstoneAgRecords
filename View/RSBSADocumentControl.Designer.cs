@@ -56,7 +56,7 @@
             // 
             cbDocType.FormattingEnabled = true;
             cbDocType.Items.AddRange(new object[] { "Certificate of Land Transfer", "Emancipation Patent", "Individual Certificate of Land", "Collective CLOA", "Co-Ownership CLOA", "Agricultural sales patent", "Homestead patent", "Free Patent", "Certificate of Title or Regular Title", "Ceritificate of Ancestral Domain Title", "Certificate of Ancestral Land Title", "Tax Declaration", "Barangay Certification" });
-            cbDocType.Location = new Point(28, 276);
+            cbDocType.Location = new Point(28, 318);
             cbDocType.Margin = new Padding(3, 4, 3, 4);
             cbDocType.Name = "cbDocType";
             cbDocType.Size = new Size(243, 28);
@@ -68,7 +68,7 @@
             pbDocPhoto.Location = new Point(28, 32);
             pbDocPhoto.Margin = new Padding(3, 4, 3, 4);
             pbDocPhoto.Name = "pbDocPhoto";
-            pbDocPhoto.Size = new Size(243, 166);
+            pbDocPhoto.Size = new Size(243, 208);
             pbDocPhoto.TabIndex = 32;
             pbDocPhoto.TabStop = false;
             pbDocPhoto.Click += pbDocPhoto_Click;
@@ -80,7 +80,7 @@
             btnBrowse.FlatAppearance.BorderSize = 0;
             btnBrowse.FlatStyle = FlatStyle.Flat;
             btnBrowse.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBrowse.Location = new Point(28, 206);
+            btnBrowse.Location = new Point(28, 248);
             btnBrowse.Margin = new Padding(3, 4, 3, 4);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(243, 31);
@@ -92,7 +92,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(28, 252);
+            label1.Location = new Point(28, 294);
             label1.Name = "label1";
             label1.Size = new Size(40, 20);
             label1.TabIndex = 34;
@@ -111,7 +111,7 @@
             Controls.Add(btnRemove);
             Margin = new Padding(3, 4, 3, 4);
             Name = "RSBSADocumentControl";
-            Size = new Size(304, 321);
+            Size = new Size(304, 365);
             Load += RSBSADocumentControl_Load;
             ((System.ComponentModel.ISupportInitialize)pbDocPhoto).EndInit();
             ResumeLayout(false);

@@ -169,10 +169,19 @@ namespace AgRecords.View
             string cornPrId = labelCornPrId.Text;
             int colorId = MapCornItemToValue(cmbCornType);
             int growthId = MapGrowthItemToValue(cmbGrowthStageFilter);
-            int seedId = MapGrowthItemToValue(cmbSeedType);
+            int seedId = MapSeedItemToValue(cmbSeedType);
 
-            DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoView(cornPrId, colorId, growthId, seedId);
-            dgvCornPlanting.DataSource = cornPlantingTable;
+            if (cbTotal.Checked)
+            {
+                DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoTotalView(cornPrId, colorId, growthId, seedId);
+                dgvCornPlanting.DataSource = cornPlantingTable;
+            }
+            else if (cbTotal.Checked == false)
+            {
+                DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoView(cornPrId, colorId, growthId, seedId);
+                dgvCornPlanting.DataSource = cornPlantingTable;
+            }
+
         }
 
         // Events
@@ -444,6 +453,18 @@ namespace AgRecords.View
                 PanelSelected.Panel_Leave(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
             }
 
+        }
+
+        private void cbTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTotal.Checked)
+            {
+                DisplayDataTableFilter();
+            }
+            else
+            {
+                DisplayDataTableFilter();
+            }
         }
     }
 }

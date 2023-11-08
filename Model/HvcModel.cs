@@ -303,6 +303,36 @@ namespace AgRecords.Model
             }
         }
 
+        public int CountHvcReportExist(string month, string week, string year)
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_checkHvcReportExist(@month, @week, @year);", db.GetConnection());
+                    command.Parameters.AddWithValue("@month", month);
+                    command.Parameters.AddWithValue("@week", week);
+                    command.Parameters.AddWithValue("@year", year);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
         // REPORT PRINTING
         public DataTable LoadStandingHvcPinakbetDataGrid(string hvcSrId)
         {

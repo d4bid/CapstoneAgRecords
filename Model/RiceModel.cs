@@ -986,6 +986,38 @@ namespace AgRecords.Model
             }
         }
 
+        public int CountRiceReportExist(string month, string week, string year, string season, string seasonYear)
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_checkRiceReportExist(@month, @week, @year, @season, @seasonYear);", db.GetConnection());
+                    command.Parameters.AddWithValue("@month", month);
+                    command.Parameters.AddWithValue("@week", week);
+                    command.Parameters.AddWithValue("@year", year);
+                    command.Parameters.AddWithValue("@season", season);
+                    command.Parameters.AddWithValue("@seasonYear", seasonYear);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
         // PRINTING REPORTS
         public DataTable LoadRicePlantingDataGrid(string riceSrId)
         {

@@ -79,6 +79,11 @@ namespace AgRecords.Controller
             }
         }
 
+        public int CheckCornReportExist(string month, string week, string year, string season, string seasonYear)
+        {
+            return cornModel.CountCornReportExist(month, week, year, season, seasonYear);
+        }
+
         // PLANTING ECO
         public bool AddCornPlantingEcoReport(string cornPrId, string season, string seasonYear, string month, string week, string year)
         {
@@ -127,11 +132,20 @@ namespace AgRecords.Controller
                 }
                 else if (cr.cornPrId != "" && cr.month != "" && cr.week != "" && cr.year != "")
                 {
-                    if (cornModel.AddCornPlantingEcoRep(cr))
+                    int count = CheckCornReportExist(cr.month, cr.week, cr.year, cr.season, cr.seasonYear);
+
+                    if ( count > 0)
                     {
-                        isDone = true;
-                        //MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        userModel.InserActionLog(username, "Insert", "Crops Corn Report", $"{cornPrId} added successfully.");
+                        MessageBox.Show("Rice Report already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        if (cornModel.AddCornPlantingEcoRep(cr))
+                        {
+                            isDone = true;
+                            //MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            userModel.InserActionLog(username, "Insert", "Crops Corn Report", $"{cornPrId} added successfully.");
+                        }
                     }
                 }
 
@@ -369,6 +383,20 @@ namespace AgRecords.Controller
             try
             {
                 DataTable cornPlantingTable = cornModel.LoadCornPlantingEcoDataGrid(cornPrId, colorId, growthId, seedId);
+                return cornPlantingTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Corn Planting By Ecological Zone Record Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+        public DataTable LoadCornPlantingEcoTotalView(string cornPrId, int colorId, int growthId, int seedId)
+        {
+            try
+            {
+                DataTable cornPlantingTable = cornModel.LoadCornPlantingEcoTotalDataGrid(cornPrId, colorId, growthId, seedId);
                 return cornPlantingTable;
             }
             catch (ApplicationException ex)

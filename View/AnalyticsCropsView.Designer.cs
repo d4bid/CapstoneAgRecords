@@ -42,8 +42,6 @@
             label6 = new Label();
             rectangleFullYellow2 = new RectangleFullYellow();
             rectangleFullGreen2 = new RectangleFullGreen();
-            label8 = new Label();
-            rectangleFullWhite4 = new RectangleFullWhite();
             label7 = new Label();
             rectangleFullWhite1 = new RectangleFullWhite();
             label9 = new Label();
@@ -61,7 +59,6 @@
             riceGraph4 = new OxyPlot.WindowsForms.PlotView();
             riceGraph5 = new OxyPlot.WindowsForms.PlotView();
             riceGraph7 = new OxyPlot.WindowsForms.PlotView();
-            riceGraph6 = new OxyPlot.WindowsForms.PlotView();
             panel1 = new Panel();
             panel2 = new Panel();
             dgvRiceProd = new DataGridView();
@@ -192,32 +189,13 @@
             rectangleFullGreen2.Size = new Size(334, 144);
             rectangleFullGreen2.TabIndex = 21;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.White;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(0, 35, 76);
-            label8.Location = new Point(34, 648);
-            label8.Name = "label8";
-            label8.Size = new Size(268, 20);
-            label8.TabIndex = 28;
-            label8.Text = "Comparative Data of Rice Production";
-            // 
-            // rectangleFullWhite4
-            // 
-            rectangleFullWhite4.Location = new Point(12, 628);
-            rectangleFullWhite4.Name = "rectangleFullWhite4";
-            rectangleFullWhite4.Size = new Size(686, 286);
-            rectangleFullWhite4.TabIndex = 27;
-            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(34, 347);
+            label7.Location = new Point(34, 643);
             label7.Name = "label7";
             label7.Size = new Size(119, 20);
             label7.TabIndex = 30;
@@ -225,9 +203,9 @@
             // 
             // rectangleFullWhite1
             // 
-            rectangleFullWhite1.Location = new Point(12, 332);
+            rectangleFullWhite1.Location = new Point(12, 628);
             rectangleFullWhite1.Name = "rectangleFullWhite1";
-            rectangleFullWhite1.Size = new Size(686, 278);
+            rectangleFullWhite1.Size = new Size(686, 286);
             rectangleFullWhite1.TabIndex = 29;
             // 
             // label9
@@ -274,7 +252,7 @@
             rectangleFullWhite5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite5.Location = new Point(1086, 12);
             rectangleFullWhite5.Name = "rectangleFullWhite5";
-            rectangleFullWhite5.Size = new Size(497, 304);
+            rectangleFullWhite5.Size = new Size(497, 596);
             rectangleFullWhite5.TabIndex = 35;
             // 
             // label11
@@ -314,7 +292,7 @@
             label13.BackColor = Color.White;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(0, 35, 76);
-            label13.Location = new Point(1108, 347);
+            label13.Location = new Point(35, 347);
             label13.Name = "label13";
             label13.Size = new Size(256, 20);
             label13.TabIndex = 40;
@@ -322,10 +300,9 @@
             // 
             // rectangleFullWhite7
             // 
-            rectangleFullWhite7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleFullWhite7.Location = new Point(1086, 332);
+            rectangleFullWhite7.Location = new Point(13, 332);
             rectangleFullWhite7.Name = "rectangleFullWhite7";
-            rectangleFullWhite7.Size = new Size(497, 278);
+            rectangleFullWhite7.Size = new Size(681, 278);
             rectangleFullWhite7.TabIndex = 39;
             // 
             // riceGraph1
@@ -348,7 +325,7 @@
             riceGraph2.Location = new Point(1108, 69);
             riceGraph2.Name = "riceGraph2";
             riceGraph2.PanCursor = Cursors.Hand;
-            riceGraph2.Size = new Size(458, 233);
+            riceGraph2.Size = new Size(458, 525);
             riceGraph2.TabIndex = 42;
             riceGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -368,12 +345,11 @@
             // 
             // riceGraph5
             // 
-            riceGraph5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             riceGraph5.BackColor = Color.White;
-            riceGraph5.Location = new Point(1107, 380);
+            riceGraph5.Location = new Point(34, 380);
             riceGraph5.Name = "riceGraph5";
             riceGraph5.PanCursor = Cursors.Hand;
-            riceGraph5.Size = new Size(459, 214);
+            riceGraph5.Size = new Size(643, 214);
             riceGraph5.TabIndex = 45;
             riceGraph5.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph5.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -391,18 +367,6 @@
             riceGraph7.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph7.ZoomRectangleCursor = Cursors.SizeNWSE;
             riceGraph7.ZoomVerticalCursor = Cursors.SizeNS;
-            // 
-            // riceGraph6
-            // 
-            riceGraph6.BackColor = Color.White;
-            riceGraph6.Location = new Point(29, 680);
-            riceGraph6.Name = "riceGraph6";
-            riceGraph6.PanCursor = Cursors.Hand;
-            riceGraph6.Size = new Size(648, 219);
-            riceGraph6.TabIndex = 47;
-            riceGraph6.ZoomHorizontalCursor = Cursors.SizeWE;
-            riceGraph6.ZoomRectangleCursor = Cursors.SizeNWSE;
-            riceGraph6.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // panel1
             // 
@@ -448,14 +412,14 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvRiceProd.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceProd.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRiceProd.Location = new Point(34, 380);
+            dgvRiceProd.Location = new Point(34, 676);
             dgvRiceProd.Name = "dgvRiceProd";
             dgvRiceProd.ReadOnly = true;
             dgvRiceProd.RowHeadersVisible = false;
             dgvRiceProd.RowHeadersWidth = 51;
             dgvRiceProd.RowTemplate.Height = 40;
             dgvRiceProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRiceProd.Size = new Size(643, 214);
+            dgvRiceProd.Size = new Size(643, 222);
             dgvRiceProd.TabIndex = 50;
             // 
             // AnalyticsCropsView
@@ -467,7 +431,6 @@
             Controls.Add(dgvRiceProd);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(riceGraph6);
             Controls.Add(riceGraph7);
             Controls.Add(riceGraph5);
             Controls.Add(riceGraph4);
@@ -485,8 +448,6 @@
             Controls.Add(rectangleFullWhite2);
             Controls.Add(label7);
             Controls.Add(rectangleFullWhite1);
-            Controls.Add(label8);
-            Controls.Add(rectangleFullWhite4);
             Controls.Add(labelTotalRiceBarangay);
             Controls.Add(label4);
             Controls.Add(labelTotalAreaPlanted);
@@ -521,8 +482,6 @@
         private Label label6;
         private RectangleFullYellow rectangleFullYellow2;
         private RectangleFullGreen rectangleFullGreen2;
-        private Label label8;
-        private RectangleFullWhite rectangleFullWhite4;
         private Label label7;
         private RectangleFullWhite rectangleFullWhite1;
         private Label label9;
@@ -540,7 +499,6 @@
         private OxyPlot.WindowsForms.PlotView riceGraph4;
         private OxyPlot.WindowsForms.PlotView riceGraph5;
         private OxyPlot.WindowsForms.PlotView riceGraph7;
-        private OxyPlot.WindowsForms.PlotView riceGraph6;
         private Panel panel1;
         private Panel panel2;
         private DataGridView dgvRiceProd;

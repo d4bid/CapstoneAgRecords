@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
@@ -68,11 +68,20 @@
             panelStandingAccomplishmentsHeader = new Panel();
             label46 = new Label();
             dgvHvcStanding = new DataGridView();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            checkBox1 = new CheckBox();
+            panel7 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panelStandingAccomplishments.SuspendLayout();
             panelStandingAccomplishmentsHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).BeginInit();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -136,9 +145,9 @@
             btnPrint.IconColor = Color.FromArgb(3, 0, 67);
             btnPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnPrint.IconSize = 30;
-            btnPrint.Location = new Point(1274, 24);
+            btnPrint.Location = new Point(1292, 24);
             btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(148, 40);
+            btnPrint.Size = new Size(130, 40);
             btnPrint.TabIndex = 54;
             btnPrint.Text = "Print";
             btnPrint.TextAlign = ContentAlignment.MiddleRight;
@@ -262,8 +271,9 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(panelStandingAccomplishments);
-            panel2.Controls.Add(dgvHvcStanding);
+            panel2.Controls.Add(panel7);
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(panel4);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 100);
             panel2.Name = "panel2";
@@ -272,7 +282,6 @@
             // 
             // panelStandingAccomplishments
             // 
-            panelStandingAccomplishments.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelStandingAccomplishments.BorderStyle = BorderStyle.FixedSingle;
             panelStandingAccomplishments.Controls.Add(labelHvcStandingId);
             panelStandingAccomplishments.Controls.Add(searchBox12);
@@ -292,9 +301,10 @@
             panelStandingAccomplishments.Controls.Add(btnClear);
             panelStandingAccomplishments.Controls.Add(btnNew);
             panelStandingAccomplishments.Controls.Add(panelStandingAccomplishmentsHeader);
-            panelStandingAccomplishments.Location = new Point(17, 14);
+            panelStandingAccomplishments.Dock = DockStyle.Fill;
+            panelStandingAccomplishments.Location = new Point(10, 10);
             panelStandingAccomplishments.Name = "panelStandingAccomplishments";
-            panelStandingAccomplishments.Size = new Size(1566, 205);
+            panelStandingAccomplishments.Size = new Size(1575, 185);
             panelStandingAccomplishments.TabIndex = 74;
             // 
             // labelHvcStandingId
@@ -418,7 +428,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(3, 0, 67);
-            btnUpdate.Location = new Point(1274, 47);
+            btnUpdate.Location = new Point(1281, 39);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(130, 39);
@@ -458,7 +468,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.ForeColor = Color.FromArgb(3, 0, 67);
-            btnClear.Location = new Point(1274, 141);
+            btnClear.Location = new Point(1281, 133);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(130, 39);
@@ -476,7 +486,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.FromArgb(3, 0, 67);
-            btnNew.Location = new Point(1274, 94);
+            btnNew.Location = new Point(1281, 86);
             btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(130, 39);
@@ -494,7 +504,7 @@
             panelStandingAccomplishmentsHeader.Dock = DockStyle.Top;
             panelStandingAccomplishmentsHeader.Location = new Point(0, 0);
             panelStandingAccomplishmentsHeader.Name = "panelStandingAccomplishmentsHeader";
-            panelStandingAccomplishmentsHeader.Size = new Size(1564, 29);
+            panelStandingAccomplishmentsHeader.Size = new Size(1573, 29);
             panelStandingAccomplishmentsHeader.TabIndex = 0;
             // 
             // label46
@@ -512,39 +522,89 @@
             // 
             dgvHvcStanding.AllowUserToAddRows = false;
             dgvHvcStanding.AllowUserToDeleteRows = false;
-            dgvHvcStanding.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvHvcStanding.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHvcStanding.BackgroundColor = Color.White;
             dgvHvcStanding.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvHvcStanding.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvHvcStanding.Dock = DockStyle.Fill;
             dgvHvcStanding.GridColor = Color.FromArgb(239, 239, 239);
-            dgvHvcStanding.Location = new Point(17, 239);
+            dgvHvcStanding.Location = new Point(10, 10);
             dgvHvcStanding.Name = "dgvHvcStanding";
             dgvHvcStanding.ReadOnly = true;
             dgvHvcStanding.RowHeadersVisible = false;
             dgvHvcStanding.RowHeadersWidth = 51;
             dgvHvcStanding.RowTemplate.Height = 40;
             dgvHvcStanding.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHvcStanding.Size = new Size(1566, 575);
+            dgvHvcStanding.Size = new Size(1575, 540);
             dgvHvcStanding.TabIndex = 23;
             dgvHvcStanding.CellDoubleClick += dgvHvcStanding_CellDoubleClick;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(panelStandingAccomplishments);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Padding = new Padding(10);
+            panel4.Size = new Size(1595, 205);
+            panel4.TabIndex = 82;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(panel6);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 205);
+            panel5.Name = "panel5";
+            panel5.Padding = new Padding(10);
+            panel5.Size = new Size(1595, 61);
+            panel5.TabIndex = 83;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(checkBox1);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(10, 10);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1575, 41);
+            panel6.TabIndex = 76;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox1.Location = new Point(1498, 7);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(68, 27);
+            checkBox1.TabIndex = 3;
+            checkBox1.Text = "Total";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(dgvHvcStanding);
+            panel7.Dock = DockStyle.Fill;
+            panel7.Location = new Point(0, 266);
+            panel7.Name = "panel7";
+            panel7.Padding = new Padding(10);
+            panel7.Size = new Size(1595, 560);
+            panel7.TabIndex = 84;
             // 
             // CropsHvcEditView
             // 
@@ -566,6 +626,11 @@
             panelStandingAccomplishmentsHeader.ResumeLayout(false);
             panelStandingAccomplishmentsHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).EndInit();
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -609,5 +674,10 @@
         private DataGridView dgvHvcStanding;
         private FontAwesome.Sharp.IconButton btnBack;
         private FontAwesome.Sharp.IconButton btnPrint;
+        private Panel panel4;
+        private Panel panel7;
+        private Panel panel5;
+        private Panel panel6;
+        private CheckBox checkBox1;
     }
 }

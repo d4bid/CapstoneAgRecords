@@ -671,6 +671,35 @@ namespace AgRecords.Model
             }
         }
 
+        public double RiceProductionActual()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_chartRiceAverageProduction();", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        if (double.TryParse(result.ToString(), out double production))
+                        {
+                            return production;
+                        }
+                    }
+
+                    return 0.0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
         // Forecasting
         public double RiceProductionActual(int year)
         {
@@ -701,6 +730,7 @@ namespace AgRecords.Model
                 throw new ApplicationException("Error getting value: " + ex.Message, ex);
             }
         }
+
 
 
         // ---------------- CORN -----------------------

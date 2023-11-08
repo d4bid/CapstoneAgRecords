@@ -85,10 +85,7 @@ namespace AgRecords.View
 
         public void ClearTextControls()
         {
-            cmbBrgy.SelectedIndex = -1;
-            cmbLandType.SelectedIndex = -1;
-            cmbSeedType.SelectedIndex = -1;
-            cmbCornType.SelectedIndex = -1;
+            cmbBrgy.SelectedIndex = 0;
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Now;
             labelCornPlantingId.Text = "";
@@ -211,8 +208,8 @@ namespace AgRecords.View
             string cornPrId = labelCornPrId.Text;
             int colorId = MapCornItemToValue(cmbCornType);
             int growthId = MapGrowthItemToValue(cmbGrowthStageFilter);
-            int seedId = MapGrowthItemToValue(cmbSeedType);
-            int landId = MapGrowthItemToValue(cmbLandType);
+            int seedId = MapSeedItemToValue(cmbSeedType);
+            int landId = MapLandItemToValue(cmbLandType);
 
             if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
@@ -221,8 +218,16 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
             {
-                DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoView(cornPrId, colorId, growthId, seedId);
-                dgvCornPlanting.DataSource = cornPlantingTable;
+                if (cbTotal.Checked)
+                {
+                    DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoTotalView(cornPrId, colorId, growthId, seedId);
+                    dgvCornPlanting.DataSource = cornPlantingTable;
+                }
+                else if (cbTotal.Checked == false)
+                {
+                    DataTable cornPlantingTable = cropsCornController.LoadCornPlantingEcoView(cornPrId, colorId, growthId, seedId);
+                    dgvCornPlanting.DataSource = cornPlantingTable;
+                }
             }
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
@@ -248,6 +253,10 @@ namespace AgRecords.View
                 txtSize.ForeColor = SystemColors.WindowText;
                 txtSize.BackColor = Color.White;
 
+                cbTotal.Visible = false;
+
+                panelLand.Visible = false;
+
                 labelGrowthStage.Text = "Newly Planted/Vegetative Stage";
                 labelSize.Text = "Size (ha)";
             }
@@ -263,6 +272,8 @@ namespace AgRecords.View
                 panelSeed.Visible = true;
 
                 panelGrowth.Visible = false;
+
+                cbTotal.Visible = false;
 
                 txtSize.ReadOnly = true;
                 txtSize.ForeColor = SystemColors.WindowText;
@@ -343,19 +354,23 @@ namespace AgRecords.View
                     break;
             }
 
-             float size = float.Parse(txtSize.Text);
+            float size = float.Parse(txtSize.Text);
             //float size = 0.00f;
             //if (!string.IsNullOrEmpty(txtSize.Text))
             //{
             //    size = float.Parse(txtSize.Text);
             //}
-            MessageBox.Show($"{txtAveYield}");
-            float yield = float.Parse(txtAveYield.Text);
+
             int cornPlantingEcoId = int.Parse(labelCornPlantingId.Text);
-            int cornHarvestingId = int.Parse(labelCornPlantingId.Text);
+
 
             if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
+                MessageBox.Show($"{txtAveYield}");
+                float yield = float.Parse(txtAveYield.Text);
+
+                int cornHarvestingId = int.Parse(labelCornPlantingId.Text);
+
                 if (cropsCornController.UpdateCornHarvesting(cornHarvestingId, yield))
                 {
                     FormRefresh();
@@ -386,7 +401,7 @@ namespace AgRecords.View
             int seedTypeId = seedTypeIndex + 1;
 
             int growthStageId = 1;
-               float size = 0.00f;
+            float size = 0.00f;
             if (!string.IsNullOrEmpty(txtSize.Text))
             {
                 size = float.Parse(txtSize.Text);
@@ -419,8 +434,8 @@ namespace AgRecords.View
 
                 if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
                 {
-                    btnNew.Visible = false;
-                    btnUpdate.Visible = false;
+                    btnNew.Enabled = false;
+                    btnUpdate.Enabled = false;
 
                     int cornPlantingId = Convert.ToInt32(row.Cells[0].Value);
 
@@ -587,26 +602,6 @@ namespace AgRecords.View
 
             HideControls();
 
-            DisplayDataTableFilter();
-        }
-
-        private void cmbCornTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DisplayDataTableFilter();
-        }
-
-        private void cmbGrowthStageFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DisplayDataTableFilter();
-        }
-
-        private void cmbSeedTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DisplayDataTableFilter();
-        }
-
-        private void cmbLandTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
             DisplayDataTableFilter();
         }
 
@@ -934,6 +929,38 @@ namespace AgRecords.View
                 PanelSelected.Panel_Leave(panelPlantingByEcoZone, panelPlantingByEcoZoneHeader);
             }
 
+        }
+
+        private void cmbCornType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayDataTableFilter();
+        }
+
+        private void cmbGrowthStageFilter_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            DisplayDataTableFilter();
+        }
+
+        private void cmbSeedType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayDataTableFilter();
+        }
+
+        private void cmbLandType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayDataTableFilter();
+        }
+
+        private void cbTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTotal.Checked)
+            {
+                DisplayDataTableFilter();
+            }
+            else
+            {
+                DisplayDataTableFilter();
+            }
         }
     }
 }

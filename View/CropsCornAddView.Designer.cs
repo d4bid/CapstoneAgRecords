@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             labelYear = new Label();
@@ -65,7 +65,6 @@
             label1 = new Label();
             boxGrowthFilter = new SearchBox();
             labelGrowthFilter = new Label();
-            cbGrandTotal = new CheckBox();
             cbTotal = new CheckBox();
             cmbSeedType = new ComboBox();
             label8 = new Label();
@@ -348,24 +347,24 @@
             dgvCornPlanting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCornPlanting.BackgroundColor = Color.White;
             dgvCornPlanting.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvCornPlanting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvCornPlanting.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvCornPlanting.DefaultCellStyle = dataGridViewCellStyle6;
             dgvCornPlanting.Dock = DockStyle.Fill;
             dgvCornPlanting.GridColor = Color.FromArgb(239, 239, 239);
             dgvCornPlanting.Location = new Point(10, 10);
@@ -400,7 +399,6 @@
             panel5.Controls.Add(label1);
             panel5.Controls.Add(boxGrowthFilter);
             panel5.Controls.Add(labelGrowthFilter);
-            panel5.Controls.Add(cbGrandTotal);
             panel5.Controls.Add(cbTotal);
             panel5.Controls.Add(cmbSeedType);
             panel5.Controls.Add(label8);
@@ -505,29 +503,17 @@
             labelGrowthFilter.TabIndex = 89;
             labelGrowthFilter.Text = "Growth Stage";
             // 
-            // cbGrandTotal
-            // 
-            cbGrandTotal.AutoSize = true;
-            cbGrandTotal.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            cbGrandTotal.Location = new Point(1430, 37);
-            cbGrandTotal.Name = "cbGrandTotal";
-            cbGrandTotal.Size = new Size(120, 27);
-            cbGrandTotal.TabIndex = 87;
-            cbGrandTotal.Text = "Grand Total";
-            cbGrandTotal.UseVisualStyleBackColor = true;
-            cbGrandTotal.Enter += SelectedPanel;
-            cbGrandTotal.Leave += UnselectedPanel;
-            // 
             // cbTotal
             // 
             cbTotal.AutoSize = true;
             cbTotal.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            cbTotal.Location = new Point(1296, 37);
+            cbTotal.Location = new Point(1480, 41);
             cbTotal.Name = "cbTotal";
             cbTotal.Size = new Size(68, 27);
             cbTotal.TabIndex = 3;
             cbTotal.Text = "Total";
             cbTotal.UseVisualStyleBackColor = true;
+            cbTotal.CheckedChanged += cbTotal_CheckedChanged;
             cbTotal.Enter += SelectedPanel;
             cbTotal.Leave += UnselectedPanel;
             // 
@@ -895,7 +881,6 @@
         private Panel panel4;
         private Panel panel7;
         private Panel panel5;
-        private CheckBox cbGrandTotal;
         private CheckBox cbTotal;
         private ComboBox cmbGrowthStageFilter;
         private SearchBox boxGrowthFilter;

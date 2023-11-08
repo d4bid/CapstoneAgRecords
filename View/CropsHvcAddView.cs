@@ -101,7 +101,7 @@ namespace AgRecords.View
                     break;
             }
 
-            
+
             float size = 0.00f;
             if (!string.IsNullOrEmpty(txtSize.Text))
             {
