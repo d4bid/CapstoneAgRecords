@@ -28,51 +28,65 @@ namespace AgRecords.View
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            if (string.IsNullOrEmpty(txtSheetName.Text))
             {
-                dgvRSBSAtoImport.DataSource = null;
-                openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                MessageBox.Show("Please insert a sheet name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    try
+                    dgvRSBSAtoImport.DataSource = null;
+                    openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        using (FileStream fs = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                        try
                         {
-                            using (IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(fs))
+                            using (FileStream fs = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                             {
-                                DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration() { ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true } });
-
-                                // Check if the DataSet contains tables and if those tables have rows
-                                if (result.Tables.Count > 0)
+                                using (IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(fs))
                                 {
-                                    if (string.IsNullOrEmpty(txtSheetName.Text))
+                                    DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration() { ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true } });
+
+                                    // Check if the DataSet contains tables and if those tables have rows
+                                    if (result.Tables.Count > 0)
                                     {
-                                        // Import all sheets if txtSheetName.Text is empty
-                                        dgvRSBSAtoImport.DataSource = result.Tables[0]; // Display the first sheet
-                                    }
-                                    else if (result.Tables.Contains(txtSheetName.Text))
-                                    {
-                                        // Import the specified sheet if it exists
-                                        dgvRSBSAtoImport.DataSource = result.Tables[txtSheetName.Text];
+                                        if (string.IsNullOrEmpty(txtSheetName.Text))
+                                        {
+                                            //DataTable combinedDataTable = new DataTable();
+                                            //foreach (DataTable table in result.Tables)
+                                            //{
+                                            //    combinedDataTable.Merge(table);
+                                            //}
+
+                                            //dgvRSBSAtoImport.DataSource = combinedDataTable;
+                                            MessageBox.Show($"No sheet selected.");
+
+                                        }
+                                        else if (result.Tables.Contains(txtSheetName.Text))
+                                        {
+                                            // Import the specified sheet if it exists
+                                            dgvRSBSAtoImport.DataSource = result.Tables[txtSheetName.Text];
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show($"Sheet '{txtSheetName.Text}' not found in the Excel file.");
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show($"Sheet '{txtSheetName.Text}' not found in the Excel file.");
+                                        MessageBox.Show("No data found in the Excel file.");
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No data found in the Excel file.");
-                                }
-                            } // Reader is automatically disposed of after this block
-                        } // FileStream is automatically closed and disposed of after this block
+                                } // Reader is automatically disposed of after this block
+                            } // FileStream is automatically closed and disposed of after this block
+                        }
+                        catch (IOException ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}\nPlease close the Excel file and try again.", "File In Use", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (IOException ex)
-                    {
-                        MessageBox.Show($"Error: {ex.Message}\nPlease close the Excel file and try again.", "File In Use", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            } // OpenFileDialog is automatically closed after this block
+                } // OpenFileDialog is automatically closed after this block
+            }
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -209,7 +223,7 @@ namespace AgRecords.View
 
                                         }
                                     }
-                                    
+
                                     if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
                                     {
                                         if (double.TryParse(row["CORN"].ToString(), out double cornArea))
@@ -224,7 +238,7 @@ namespace AgRecords.View
 
                                         }
                                     }
-                                    
+
                                     if (((DataTable)dgvRSBSAtoImport.DataSource).Columns.Contains("CORN"))
                                     {
                                         if (double.TryParse(row["HVC"].ToString(), out double hvcArea))

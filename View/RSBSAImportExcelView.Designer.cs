@@ -108,7 +108,6 @@
             txtSheetName.Name = "txtSheetName";
             txtSheetName.Size = new Size(218, 24);
             txtSheetName.TabIndex = 4;
-            txtSheetName.Text = "Sheet1";
             // 
             // label1
             // 
