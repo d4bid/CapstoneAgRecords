@@ -214,6 +214,7 @@
             txtBoxTags.Name = "txtBoxTags";
             txtBoxTags.Size = new Size(597, 27);
             txtBoxTags.TabIndex = 4;
+            txtBoxTags.KeyPress += txtBoxTags_KeyPress_1;
             // 
             // comboBoxType
             // 

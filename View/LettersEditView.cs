@@ -255,12 +255,7 @@ namespace AgRecords.View
 
         private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //setting the e.Handled to true removes the 'ding' sound
-            e.Handled = false;
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = RegisterTag(txtBoxTags.Text.Trim());
-            }
+            
         }
         private void AlphaNum(object sender, KeyPressEventArgs e)
         {
@@ -379,5 +374,14 @@ namespace AgRecords.View
             return nextNumber;
         }
 
+        private void txtBoxTags_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //setting the e.Handled to true removes the 'ding' sound
+            e.Handled = false;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = RegisterTag(txtBoxTags.Text.Trim());
+            }
+        }
     }
 }

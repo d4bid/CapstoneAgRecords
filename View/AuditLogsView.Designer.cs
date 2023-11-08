@@ -190,6 +190,7 @@
             Controls.Add(panel1);
             Name = "AuditLogsView";
             Text = "AuditLogsView";
+            Load += AuditLogsView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

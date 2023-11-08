@@ -17,10 +17,13 @@ namespace AgRecords.Controller
         private UserAddView userAddView;
         private UserEditView userEditView;
         private UserPasswordView userPasswordView;
+        private AuditLogsView auditLogsView;
+        private BackupAndRestoreView backupAndRestoreView;
 
         private UserModel userModel;
         private Boolean isDone = false; //for processing CRUD operations
-
+        private string fullName = HomeView.Instance.fullName.Text;
+        private string username = HomeView.Instance.username.Text;
 
         public UserController(UserView userView)
         {
@@ -45,6 +48,15 @@ namespace AgRecords.Controller
             this.userPasswordView = userPasswordView;
             userModel = new UserModel();
         }
+        public UserController(AuditLogsView auditLogsView)
+        {
+            this.auditLogsView = auditLogsView;
+            userModel = new UserModel();
+        }public UserController(BackupAndRestoreView backupAndRestoreView)
+        {
+            this.backupAndRestoreView = backupAndRestoreView;
+            userModel = new UserModel();
+        }
 
         public DataTable LoadUserView()
         {
@@ -60,6 +72,37 @@ namespace AgRecords.Controller
                 return null;
             }
             
+        }
+
+        public DataTable LoadUserLogsView()
+        {
+            try
+            {
+                DataTable logsTable = userModel.LoadUserLogsDataGrid();
+                return logsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "User Logs Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
+        }
+        public DataTable LoadBackupLogsView()
+        {
+            try
+            {
+                DataTable logsTable = userModel.LoadBackupLogsDataGrid();
+                return logsTable;
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Backup Logs Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+
         }
 
         public DataTable GetAllRoles()
@@ -158,6 +201,7 @@ namespace AgRecords.Controller
                                 {
                                     MessageBox.Show("Account created succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     isDone = true;
+                                    userModel.InserActionLog(username, "Insert", "User", $"{userId} added successfully.");
                                 }
                             }
                             else //cancel adding
@@ -182,6 +226,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Add User Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                userModel.InserActionLog(username, "Insert", "User", $"{userId} adding failed.");
 
                 return false;
             }
@@ -208,9 +253,6 @@ namespace AgRecords.Controller
                     userRole = userRole,
                     userActive = userActive
                 };
-                MessageBox.Show(userJobTitle, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-
 
                 if (user.userPhoto == null)
                 {
@@ -241,6 +283,7 @@ namespace AgRecords.Controller
                         {
                             MessageBox.Show("Account updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isDone = true;
+                            userModel.InserActionLog(username, "Update", "User", $"{userId} updated successfully.");
                         }
                     }
                     else //cancel updating
@@ -255,7 +298,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Update User Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Update", "User", $"{userId} update failed.");
                 return false;
             }
 
@@ -293,6 +336,7 @@ namespace AgRecords.Controller
                                 if (userModel.UpdateUserPassword(user))
                                 {
                                     MessageBox.Show("Account password updated succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    userModel.InserActionLog(username, "Update", "User", $"{userId} password updated successfully.");
                                     isDone = true;
                                 }
                             }
@@ -318,7 +362,7 @@ namespace AgRecords.Controller
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message, "Update Password Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                userModel.InserActionLog(username, "Update", "User", $"{userId} password update failed.");
                 return false;
             }
         }
@@ -331,7 +375,7 @@ namespace AgRecords.Controller
             }
             catch (ApplicationException ex)
             {
-                MessageBox.Show(ex.Message, "Finding Nemo Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Finding Account Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return null;
             }

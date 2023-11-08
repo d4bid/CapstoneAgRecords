@@ -91,7 +91,7 @@
             cbIsMultipleSheet.Name = "cbIsMultipleSheet";
             cbIsMultipleSheet.Size = new Size(236, 24);
             cbIsMultipleSheet.TabIndex = 39;
-            cbIsMultipleSheet.Text = "Multiple Sheet (per Barangay)";
+            cbIsMultipleSheet.Text = "Multiple Sheets (per Barangay)";
             cbIsMultipleSheet.UseVisualStyleBackColor = true;
             // 
             // btnCancel
