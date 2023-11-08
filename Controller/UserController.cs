@@ -130,11 +130,6 @@ namespace AgRecords.Controller
                     MessageBox.Show("Last name is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userRole != "Admin" && user.userJobTitle == "")
-                {
-                    MessageBox.Show("Position is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
                 else if (user.userRole == "")
                 {
                     MessageBox.Show("User Role is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -150,7 +145,7 @@ namespace AgRecords.Controller
                     MessageBox.Show("Password is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userPhoto != null && user.userFirstname != "" && user.userLastname != "" && user.userContact != "" && user.username != "" && user.userPassword != "")
+                else if (user.userPhoto != null && user.userFirstname != "" && user.userLastname != "" && user.username != "" && user.userPassword != "")
                 {
                     if (Regex.IsMatch(user.userPassword, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$"))
                     {
@@ -232,17 +227,12 @@ namespace AgRecords.Controller
                     MessageBox.Show("Last name is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userRole != "Admin" && user.userJobTitle == "")
-                {
-                    MessageBox.Show("Position is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
                 else if (user.userRole == "")
                 {
                     MessageBox.Show("User Role is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (user.userPhoto != null && user.userFirstname != "" && user.userLastname != "" && user.userContact != "")
+                else if (user.userPhoto != null && user.userFirstname != "" && user.userLastname != "")
                 {
                     DialogResult result = MessageBox.Show("Are you sure you want to update this user?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes) //proceed to updating the user

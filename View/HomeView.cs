@@ -312,6 +312,27 @@ namespace AgRecords.View
                 HideSubMenu();
             }
 
+            if (lblUserRole.Text == "Admin")
+            {
+                btnSettings.Visible = true;
+                btnSettingsAudit.Visible = true;
+                btnBackupRestore.Visible = true;
+
+                btnUsers.Visible = true;
+
+                HideSubMenu();
+            }
+            else
+            {
+                btnSettings.Visible = false;
+                btnSettingsAudit.Visible = false;
+                btnBackupRestore.Visible = false;
+
+                btnUsers.Visible = false;
+
+                HideSubMenu();
+            }
+
             MainView mainView = new MainView(panelDesktop);
             mainView.TopLevel = false;
             mainView.FormBorderStyle = FormBorderStyle.None;
