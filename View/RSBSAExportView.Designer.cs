@@ -84,12 +84,10 @@
             // cbIsMultipleSheet
             // 
             cbIsMultipleSheet.AutoSize = true;
-            cbIsMultipleSheet.Checked = true;
-            cbIsMultipleSheet.CheckState = CheckState.Checked;
             cbIsMultipleSheet.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbIsMultipleSheet.Location = new Point(244, 49);
             cbIsMultipleSheet.Name = "cbIsMultipleSheet";
-            cbIsMultipleSheet.Size = new Size(236, 24);
+            cbIsMultipleSheet.Size = new Size(242, 24);
             cbIsMultipleSheet.TabIndex = 39;
             cbIsMultipleSheet.Text = "Multiple Sheets (per Barangay)";
             cbIsMultipleSheet.UseVisualStyleBackColor = true;

@@ -166,7 +166,7 @@ namespace AgRecords.View
                         filterExpression = $"[RSBSA ID] LIKE '%{searchValue}%' OR [FIRST NAME] LIKE '%{searchValue}%' OR " +
                                            $"[LAST NAME] LIKE '%{searchValue}%' OR " +
                                            $"CONVERT([NO. OF FARM PARCEL], System.String) LIKE '%{searchValue}%' OR " +
-                                           $"CONVERT([Birthdate], System.String) LIKE '%{searchValue}%'";
+                                           $"CONVERT([Birth Date], System.String) LIKE '%{searchValue}%'";
                         break;
                 }
             }
