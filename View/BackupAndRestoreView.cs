@@ -103,7 +103,7 @@ namespace AgRecords.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Restoration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                userModel.InserActionLog(username, "Restore", "Settings", "Backup restoration failed.");
+                userModel.InserActionLog(username, "Backup", "Settings", "Backup restoration failed.");
             }
         }
 
