@@ -64,6 +64,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
+            dtpLogDate.MaxDate = DateTime.Today;
             btnUpdate.Enabled = false;
             ClearTextControls();
 

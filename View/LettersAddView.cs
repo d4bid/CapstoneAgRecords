@@ -33,9 +33,6 @@ namespace AgRecords.View
         private void LettersAddView_Load(object sender, EventArgs e)
         {
             formRefresh();
-            DateTime minDate = new DateTime(1900, 1, 1);
-            dtpDateReceived.MaxDate = DateTime.Today;
-            dtpDateReceived.MinDate = minDate;
 
             comboBoxAction.SelectedIndex = 0;
         }

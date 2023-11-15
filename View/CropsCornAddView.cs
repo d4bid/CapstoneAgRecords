@@ -37,6 +37,8 @@ namespace AgRecords.View
             btnUpdate.Visible = false;
             ClearTextControls();
             DisplayDataTableFilter();
+
+            dtpLogDate.MaxDate = DateTime.Today;
         }
 
         public void ClearTextControls()
