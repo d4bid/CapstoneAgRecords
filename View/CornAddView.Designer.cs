@@ -157,6 +157,7 @@
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(195, 33);
             cmbMonth.TabIndex = 67;
+            cmbMonth.SelectedIndexChanged += cmbMonth_SelectedIndexChanged;
             // 
             // searchBox4
             // 

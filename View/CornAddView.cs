@@ -72,6 +72,13 @@ namespace AgRecords.View
 
             // Optionally, you can set an initial selection
             cmbSeasonYear.SelectedIndex = 0;
+
+            // Add the items to the cmbSeasonYear ComboBox
+            cmbSeasonYearH.Items.Add(pastYearItem);
+            cmbSeasonYearH.Items.Add(futureYearItem);
+
+            // Optionally, you can set an initial selection
+            cmbSeasonYearH.SelectedIndex = 0;
         }
 
         // Events

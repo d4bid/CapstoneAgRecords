@@ -47,6 +47,12 @@
             searchBox3 = new SearchBox();
             panel3 = new Panel();
             panel2 = new Panel();
+            panel7 = new Panel();
+            dgvHvcStanding = new DataGridView();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            cbTotal = new CheckBox();
+            panel4 = new Panel();
             panelStandingAccomplishments = new Panel();
             labelHvcStandingId = new Label();
             searchBox12 = new SearchBox();
@@ -67,21 +73,15 @@
             btnNew = new Button();
             panelStandingAccomplishmentsHeader = new Panel();
             label46 = new Label();
-            dgvHvcStanding = new DataGridView();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            checkBox1 = new CheckBox();
-            panel7 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panelStandingAccomplishments.SuspendLayout();
-            panelStandingAccomplishmentsHeader.SuspendLayout();
+            panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).BeginInit();
-            panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            panel7.SuspendLayout();
+            panel4.SuspendLayout();
+            panelStandingAccomplishments.SuspendLayout();
+            panelStandingAccomplishmentsHeader.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -279,6 +279,96 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1595, 826);
             panel2.TabIndex = 29;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(dgvHvcStanding);
+            panel7.Dock = DockStyle.Fill;
+            panel7.Location = new Point(0, 266);
+            panel7.Name = "panel7";
+            panel7.Padding = new Padding(10);
+            panel7.Size = new Size(1595, 560);
+            panel7.TabIndex = 84;
+            // 
+            // dgvHvcStanding
+            // 
+            dgvHvcStanding.AllowUserToAddRows = false;
+            dgvHvcStanding.AllowUserToDeleteRows = false;
+            dgvHvcStanding.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHvcStanding.BackgroundColor = Color.White;
+            dgvHvcStanding.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvHvcStanding.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvHvcStanding.Dock = DockStyle.Fill;
+            dgvHvcStanding.GridColor = Color.FromArgb(239, 239, 239);
+            dgvHvcStanding.Location = new Point(10, 10);
+            dgvHvcStanding.Name = "dgvHvcStanding";
+            dgvHvcStanding.ReadOnly = true;
+            dgvHvcStanding.RowHeadersVisible = false;
+            dgvHvcStanding.RowHeadersWidth = 51;
+            dgvHvcStanding.RowTemplate.Height = 40;
+            dgvHvcStanding.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvHvcStanding.Size = new Size(1575, 540);
+            dgvHvcStanding.TabIndex = 23;
+            dgvHvcStanding.CellDoubleClick += dgvHvcStanding_CellDoubleClick;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(panel6);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 205);
+            panel5.Name = "panel5";
+            panel5.Padding = new Padding(10);
+            panel5.Size = new Size(1595, 61);
+            panel5.TabIndex = 83;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(cbTotal);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(10, 10);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1575, 41);
+            panel6.TabIndex = 76;
+            // 
+            // cbTotal
+            // 
+            cbTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cbTotal.AutoSize = true;
+            cbTotal.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbTotal.Location = new Point(1461, 7);
+            cbTotal.Name = "cbTotal";
+            cbTotal.Size = new Size(68, 27);
+            cbTotal.TabIndex = 3;
+            cbTotal.Text = "Total";
+            cbTotal.UseVisualStyleBackColor = true;
+            cbTotal.CheckedChanged += cbTotal_CheckedChanged;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(panelStandingAccomplishments);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Padding = new Padding(10);
+            panel4.Size = new Size(1595, 205);
+            panel4.TabIndex = 82;
             // 
             // panelStandingAccomplishments
             // 
@@ -518,94 +608,6 @@
             label46.TabIndex = 28;
             label46.Text = "STANDING ACCOMPLISHMENTS";
             // 
-            // dgvHvcStanding
-            // 
-            dgvHvcStanding.AllowUserToAddRows = false;
-            dgvHvcStanding.AllowUserToDeleteRows = false;
-            dgvHvcStanding.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvHvcStanding.BackgroundColor = Color.White;
-            dgvHvcStanding.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvHvcStanding.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dgvHvcStanding.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvHvcStanding.DefaultCellStyle = dataGridViewCellStyle6;
-            dgvHvcStanding.Dock = DockStyle.Fill;
-            dgvHvcStanding.GridColor = Color.FromArgb(239, 239, 239);
-            dgvHvcStanding.Location = new Point(10, 10);
-            dgvHvcStanding.Name = "dgvHvcStanding";
-            dgvHvcStanding.ReadOnly = true;
-            dgvHvcStanding.RowHeadersVisible = false;
-            dgvHvcStanding.RowHeadersWidth = 51;
-            dgvHvcStanding.RowTemplate.Height = 40;
-            dgvHvcStanding.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHvcStanding.Size = new Size(1575, 540);
-            dgvHvcStanding.TabIndex = 23;
-            dgvHvcStanding.CellDoubleClick += dgvHvcStanding_CellDoubleClick;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(panelStandingAccomplishments);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Padding = new Padding(10);
-            panel4.Size = new Size(1595, 205);
-            panel4.TabIndex = 82;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(panel6);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 205);
-            panel5.Name = "panel5";
-            panel5.Padding = new Padding(10);
-            panel5.Size = new Size(1595, 61);
-            panel5.TabIndex = 83;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(checkBox1);
-            panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(10, 10);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(1575, 41);
-            panel6.TabIndex = 76;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(1498, 7);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(68, 27);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Total";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(dgvHvcStanding);
-            panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(0, 266);
-            panel7.Name = "panel7";
-            panel7.Padding = new Padding(10);
-            panel7.Size = new Size(1595, 560);
-            panel7.TabIndex = 84;
-            // 
             // CropsHvcEditView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -621,16 +623,16 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).EndInit();
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel4.ResumeLayout(false);
             panelStandingAccomplishments.ResumeLayout(false);
             panelStandingAccomplishments.PerformLayout();
             panelStandingAccomplishmentsHeader.ResumeLayout(false);
             panelStandingAccomplishmentsHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvHvcStanding).EndInit();
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -678,6 +680,6 @@
         private Panel panel7;
         private Panel panel5;
         private Panel panel6;
-        private CheckBox checkBox1;
+        private CheckBox cbTotal;
     }
 }

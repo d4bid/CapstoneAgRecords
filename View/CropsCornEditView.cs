@@ -88,7 +88,7 @@ namespace AgRecords.View
         {
             cmbBrgy.SelectedIndex = 0;
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelCornPlantingId.Text = "";
         }
 

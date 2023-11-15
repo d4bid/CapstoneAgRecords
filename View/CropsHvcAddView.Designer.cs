@@ -50,7 +50,7 @@
             dgvHvcStanding = new DataGridView();
             panel4 = new Panel();
             panel6 = new Panel();
-            checkBox1 = new CheckBox();
+            cbTotal = new CheckBox();
             panel7 = new Panel();
             panelStandingAccomplishments = new Panel();
             labelHvcStandingId = new Label();
@@ -314,23 +314,25 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(checkBox1);
+            panel6.Controls.Add(cbTotal);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(10, 10);
             panel6.Name = "panel6";
             panel6.Size = new Size(1575, 41);
             panel6.TabIndex = 76;
             // 
-            // checkBox1
+            // cbTotal
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(1464, 12);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(68, 27);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Total";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cbTotal.AutoSize = true;
+            cbTotal.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbTotal.Location = new Point(1460, 8);
+            cbTotal.Name = "cbTotal";
+            cbTotal.Size = new Size(68, 27);
+            cbTotal.TabIndex = 3;
+            cbTotal.Text = "Total";
+            cbTotal.UseVisualStyleBackColor = true;
+            cbTotal.CheckedChanged += cbTotal_CheckedChanged;
             // 
             // panel7
             // 
@@ -654,7 +656,7 @@
         private Panel panel5;
         private Panel panel4;
         private Panel panel6;
-        private CheckBox checkBox1;
+        private CheckBox cbTotal;
         private Panel panel7;
     }
 }
