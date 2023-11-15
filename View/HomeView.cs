@@ -26,6 +26,7 @@ namespace AgRecords.View
         public static HomeView Instance;
         public Label fullName;
         public Label username;
+        public Label role;
 
         public HomeView()
         {
@@ -39,6 +40,7 @@ namespace AgRecords.View
             Instance = this;
             fullName = lblFullname;
             username = lblUsername;
+            role = lblUserRole;
         }
 
         //FORM STYLE
