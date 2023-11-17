@@ -27,6 +27,7 @@ namespace AgRecords.View
         public Label fullName;
         public Label username;
         public Label role;
+        public Label title;
 
         public HomeView()
         {
@@ -41,6 +42,7 @@ namespace AgRecords.View
             fullName = lblFullname;
             username = lblUsername;
             role = lblUserRole;
+            title = lblTitle;
         }
 
         //FORM STYLE
@@ -795,6 +797,44 @@ namespace AgRecords.View
             }
 
             ShowSubMenu(panelSettingsSubMenu);
+        }
+
+        private void btnManageData_Click(object sender, EventArgs e)
+        {
+            SettingsManageDataView manageDataView = new SettingsManageDataView(panelDesktop);
+            //userView.formRefresh();
+            manageDataView.TopLevel = false;
+            manageDataView.FormBorderStyle = FormBorderStyle.None;
+            manageDataView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(manageDataView);
+            manageDataView.Show();
+
+            ActivateButton(btnSettings, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new SettingsManageDataView(panelDesktop));
+            lblTitle.Text = "Settingss \u23F5 Manage Data";
+
+            HideSubMenu();
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            SettingsAboutView aboutView = new SettingsAboutView(panelDesktop);
+            //userView.formRefresh();
+            aboutView.TopLevel = false;
+            aboutView.FormBorderStyle = FormBorderStyle.None;
+            aboutView.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Clear();
+            panelDesktop.Controls.Add(aboutView);
+            aboutView.Show();
+
+            ActivateButton(btnSettings, Color.FromArgb(43, 121, 223));
+            OpenChildForm(new SettingsAboutView(panelDesktop));
+            lblTitle.Text = "Settingss \u23F5 About";
+
+            HideSubMenu();
         }
     }
 }
