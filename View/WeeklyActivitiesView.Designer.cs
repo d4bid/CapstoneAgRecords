@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnPrint = new FontAwesome.Sharp.IconButton();
             cmbColumn = new ComboBox();
@@ -222,24 +222,24 @@
             dgvSummary.BackgroundColor = Color.White;
             dgvSummary.BorderStyle = BorderStyle.None;
             dgvSummary.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvSummary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvSummary.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvSummary.DefaultCellStyle = dataGridViewCellStyle8;
             dgvSummary.Dock = DockStyle.Fill;
             dgvSummary.GridColor = Color.FromArgb(239, 239, 239);
             dgvSummary.Location = new Point(10, 10);
@@ -281,7 +281,6 @@
             dtpTo1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpTo1.Format = DateTimePickerFormat.Short;
             dtpTo1.Location = new Point(296, 22);
-            dtpTo1.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
             dtpTo1.Name = "dtpTo1";
             dtpTo1.RightToLeft = RightToLeft.No;
             dtpTo1.Size = new Size(150, 28);
@@ -304,7 +303,6 @@
             dtpFrom1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpFrom1.Format = DateTimePickerFormat.Short;
             dtpFrom1.Location = new Point(74, 22);
-            dtpFrom1.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
             dtpFrom1.Name = "dtpFrom1";
             dtpFrom1.RightToLeft = RightToLeft.No;
             dtpFrom1.Size = new Size(150, 28);
@@ -343,24 +341,24 @@
             dgvActivities.BackgroundColor = Color.White;
             dgvActivities.BorderStyle = BorderStyle.None;
             dgvActivities.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvActivities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvActivities.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvActivities.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvActivities.DefaultCellStyle = dataGridViewCellStyle6;
             dgvActivities.Dock = DockStyle.Fill;
             dgvActivities.GridColor = Color.FromArgb(239, 239, 239);
             dgvActivities.Location = new Point(10, 77);
@@ -401,12 +399,11 @@
             dtpTo.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpTo.Format = DateTimePickerFormat.Short;
             dtpTo.Location = new Point(286, 20);
-            dtpTo.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
             dtpTo.Name = "dtpTo";
             dtpTo.RightToLeft = RightToLeft.No;
             dtpTo.Size = new Size(150, 28);
             dtpTo.TabIndex = 56;
-            dtpTo.Value = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpTo.Value = new DateTime(2023, 11, 14, 0, 0, 0, 0);
             dtpTo.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label3
@@ -424,12 +421,11 @@
             dtpFrom.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtpFrom.Format = DateTimePickerFormat.Short;
             dtpFrom.Location = new Point(64, 20);
-            dtpFrom.MaxDate = new DateTime(2023, 11, 5, 0, 0, 0, 0);
             dtpFrom.Name = "dtpFrom";
             dtpFrom.RightToLeft = RightToLeft.No;
             dtpFrom.Size = new Size(150, 28);
             dtpFrom.TabIndex = 54;
-            dtpFrom.Value = new DateTime(2023, 11, 5, 0, 0, 0, 0);
+            dtpFrom.Value = new DateTime(2023, 11, 14, 0, 0, 0, 0);
             dtpFrom.ValueChanged += dtpFrom_ValueChanged;
             // 
             // panel4

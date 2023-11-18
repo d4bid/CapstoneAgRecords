@@ -64,6 +64,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
+            dtpLogDate.MaxDate = DateTime.Today;
             btnUpdate.Enabled = false;
             ClearTextControls();
 
@@ -87,7 +88,7 @@ namespace AgRecords.View
         {
             cmbBrgy.SelectedIndex = 0;
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelCornPlantingId.Text = "";
         }
 

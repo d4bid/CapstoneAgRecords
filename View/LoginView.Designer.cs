@@ -137,10 +137,10 @@
             panelRight.Controls.Add(lblUsername);
             panelRight.Controls.Add(btnMin);
             panelRight.Controls.Add(btnExit);
-            panelRight.Dock = DockStyle.Right;
-            panelRight.Location = new Point(377, 0);
+            panelRight.Dock = DockStyle.Fill;
+            panelRight.Location = new Point(379, 0);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(423, 500);
+            panelRight.Size = new Size(421, 500);
             panelRight.TabIndex = 1;
             // 
             // btnConfig
@@ -329,7 +329,7 @@
             btnMin.IconColor = Color.FromArgb(43, 121, 223);
             btnMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMin.IconSize = 20;
-            btnMin.Location = new Point(355, 5);
+            btnMin.Location = new Point(353, 5);
             btnMin.Name = "btnMin";
             btnMin.Size = new Size(30, 20);
             btnMin.TabIndex = 16;
@@ -347,7 +347,7 @@
             btnExit.IconColor = Color.FromArgb(43, 121, 223);
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnExit.IconSize = 20;
-            btnExit.Location = new Point(388, 5);
+            btnExit.Location = new Point(386, 5);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(30, 20);
             btnExit.TabIndex = 15;

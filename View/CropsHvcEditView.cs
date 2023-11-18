@@ -34,7 +34,9 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            btnUpdate.Visible = false;
+            dtpLogDate.MaxDate = DateTime.Today;
+
+            btnUpdate.Enabled = false;
             ClearTextControls();
 
             btnNew.Enabled = true;
@@ -47,7 +49,7 @@ namespace AgRecords.View
         {
             cmbCropType.SelectedIndex = -1;
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelHvcStandingId.Text = "";
             labelCropStage.Text = "Newly Transplanted";
         }
@@ -56,8 +58,16 @@ namespace AgRecords.View
         {
             string hvcSrId = labelHvcSrId.Text;
 
-            DataTable hvcStandingTable = cropsHvcController.LoadHvcStandingView(hvcSrId);
-            dgvHvcStanding.DataSource = hvcStandingTable;
+            if (cbTotal.Checked)
+            {
+                DataTable hvcStandingTable = cropsHvcController.LoadHvcStandingTotalView(hvcSrId);
+                dgvHvcStanding.DataSource = hvcStandingTable;
+            }
+            else if (cbTotal.Checked == false)
+            {
+                DataTable hvcStandingTable = cropsHvcController.LoadHvcStandingView(hvcSrId);
+                dgvHvcStanding.DataSource = hvcStandingTable;
+            }
         }
 
         private void CropsHvcEditView_Load(object sender, EventArgs e)
@@ -66,12 +76,14 @@ namespace AgRecords.View
 
             btnUpdate.Enabled = false;
 
+            cbTotal.Checked = true;
+
             DisplayDataTableFilter();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
             labelHvcStandingId.Visible = false;
 
             int cropTypeIndex = cmbCropType.SelectedIndex;
@@ -110,7 +122,7 @@ namespace AgRecords.View
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
 
             int cropTypeIndex = cmbCropType.SelectedIndex;
 
@@ -132,25 +144,14 @@ namespace AgRecords.View
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            btnUpdate.Visible = false;
-            btnNew.Visible = true;
+            btnUpdate.Enabled = false;
+            btnNew.Enabled = true;
             ClearTextControls();
         }
 
         private void dgvHvcStanding_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnUpdate.Visible = true;
-
-            if (labelCropStage.Text == "Newly Transplanted")
-            {
-                btnUpdate.Enabled = true;
-                btnNew.Enabled = true;
-            }
-            else
-            {
-                btnUpdate.Enabled = false;
-                btnNew.Enabled = false;
-            }
+            btnUpdate.Enabled = true;
 
             // Check if the user clicked on a cell in a row, not on the header row
             if (e.RowIndex >= 0)
@@ -309,6 +310,18 @@ namespace AgRecords.View
                 PanelSelected.Panel_Leave(panelStandingAccomplishments, panelStandingAccomplishmentsHeader);
             }
 
+        }
+
+        private void cbTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTotal.Checked)
+            {
+                DisplayDataTableFilter();
+            }
+            else if (cbTotal.Checked == false)
+            {
+                DisplayDataTableFilter();
+            }
         }
     }
 }

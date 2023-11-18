@@ -34,6 +34,8 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
+            dtpLogDate.MaxDate = DateTime.Today;
+
             btnUpdate.Enabled = false;
             ClearTextControls();
             DisplayDataTableFilter();
@@ -43,7 +45,7 @@ namespace AgRecords.View
         {
             cmbCropType.SelectedIndex = -1;
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelHvcStandingId.Text = "";
             labelCropStage.Text = "Newly Transplanted";
         }
@@ -52,8 +54,16 @@ namespace AgRecords.View
         {
             string hvcSrId = labelHvcSrId.Text;
 
-            DataTable hvcStandingTable = cropsHvcController.LoadHvcStandingView(hvcSrId);
-            dgvHvcStanding.DataSource = hvcStandingTable;
+            if (cbTotal.Checked)
+            {
+                DataTable hvcStandingTable = cropsHvcController.LoadHvcStandingTotalView(hvcSrId);
+                dgvHvcStanding.DataSource = hvcStandingTable;
+            }
+            else if (cbTotal.Checked == false)
+            {
+                DataTable hvcStandingTable = cropsHvcController.LoadHvcStandingView(hvcSrId);
+                dgvHvcStanding.DataSource = hvcStandingTable;
+            }
         }
 
         private void CropsHvcAddView_Load(object sender, EventArgs e)
@@ -225,6 +235,18 @@ namespace AgRecords.View
                 PanelSelected.Panel_Leave(panelStandingAccomplishments, panelStandingAccomplishmentsHeader);
             }
 
+        }
+
+        private void cbTotal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTotal.Checked)
+            {
+                DisplayDataTableFilter();
+            }
+            else if (cbTotal.Checked == false)
+            {
+                DisplayDataTableFilter();
+            }
         }
     }
 }

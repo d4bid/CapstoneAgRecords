@@ -31,8 +31,11 @@
             components = new System.ComponentModel.Container();
             panelMenu = new Panel();
             panelSettingsSubMenu = new Panel();
-            btnBackupRestore = new FontAwesome.Sharp.IconButton();
+            btnAbout = new FontAwesome.Sharp.IconButton();
+            btnHelp = new FontAwesome.Sharp.IconButton();
             btnSettingsAudit = new FontAwesome.Sharp.IconButton();
+            btnBackupRestore = new FontAwesome.Sharp.IconButton();
+            btnManageData = new FontAwesome.Sharp.IconButton();
             btnSettings = new FontAwesome.Sharp.IconButton();
             btnUsers = new FontAwesome.Sharp.IconButton();
             btnActivities = new FontAwesome.Sharp.IconButton();
@@ -105,13 +108,90 @@
             // panelSettingsSubMenu
             // 
             panelSettingsSubMenu.BackColor = Color.FromArgb(38, 109, 200);
-            panelSettingsSubMenu.Controls.Add(btnBackupRestore);
+            panelSettingsSubMenu.Controls.Add(btnAbout);
+            panelSettingsSubMenu.Controls.Add(btnHelp);
             panelSettingsSubMenu.Controls.Add(btnSettingsAudit);
+            panelSettingsSubMenu.Controls.Add(btnBackupRestore);
+            panelSettingsSubMenu.Controls.Add(btnManageData);
             panelSettingsSubMenu.Dock = DockStyle.Top;
             panelSettingsSubMenu.Location = new Point(0, 1042);
             panelSettingsSubMenu.Name = "panelSettingsSubMenu";
-            panelSettingsSubMenu.Size = new Size(299, 102);
+            panelSettingsSubMenu.Size = new Size(299, 255);
             panelSettingsSubMenu.TabIndex = 24;
+            // 
+            // btnAbout
+            // 
+            btnAbout.Dock = DockStyle.Top;
+            btnAbout.FlatAppearance.BorderSize = 0;
+            btnAbout.FlatStyle = FlatStyle.Flat;
+            btnAbout.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAbout.ForeColor = Color.White;
+            btnAbout.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAbout.IconColor = Color.White;
+            btnAbout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAbout.IconSize = 32;
+            btnAbout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAbout.Location = new Point(0, 204);
+            btnAbout.Margin = new Padding(3, 4, 3, 4);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Padding = new Padding(40, 0, 0, 0);
+            btnAbout.Size = new Size(299, 51);
+            btnAbout.TabIndex = 20;
+            btnAbout.Tag = "About";
+            btnAbout.Text = "About";
+            btnAbout.TextAlign = ContentAlignment.MiddleLeft;
+            btnAbout.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
+            // 
+            // btnHelp
+            // 
+            btnHelp.Dock = DockStyle.Top;
+            btnHelp.FlatAppearance.BorderSize = 0;
+            btnHelp.FlatStyle = FlatStyle.Flat;
+            btnHelp.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHelp.ForeColor = Color.White;
+            btnHelp.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnHelp.IconColor = Color.White;
+            btnHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHelp.IconSize = 32;
+            btnHelp.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHelp.Location = new Point(0, 153);
+            btnHelp.Margin = new Padding(3, 4, 3, 4);
+            btnHelp.Name = "btnHelp";
+            btnHelp.Padding = new Padding(40, 0, 0, 0);
+            btnHelp.Size = new Size(299, 51);
+            btnHelp.TabIndex = 18;
+            btnHelp.Tag = "Help";
+            btnHelp.Text = "Help";
+            btnHelp.TextAlign = ContentAlignment.MiddleLeft;
+            btnHelp.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHelp.UseVisualStyleBackColor = true;
+            // 
+            // btnSettingsAudit
+            // 
+            btnSettingsAudit.Dock = DockStyle.Top;
+            btnSettingsAudit.FlatAppearance.BorderSize = 0;
+            btnSettingsAudit.FlatStyle = FlatStyle.Flat;
+            btnSettingsAudit.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSettingsAudit.ForeColor = Color.White;
+            btnSettingsAudit.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnSettingsAudit.IconColor = Color.White;
+            btnSettingsAudit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSettingsAudit.IconSize = 32;
+            btnSettingsAudit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSettingsAudit.Location = new Point(0, 102);
+            btnSettingsAudit.Margin = new Padding(3, 4, 3, 4);
+            btnSettingsAudit.Name = "btnSettingsAudit";
+            btnSettingsAudit.Padding = new Padding(40, 0, 0, 0);
+            btnSettingsAudit.Size = new Size(299, 51);
+            btnSettingsAudit.TabIndex = 16;
+            btnSettingsAudit.Tag = "Audit Logs";
+            btnSettingsAudit.Text = "Audit Logs";
+            btnSettingsAudit.TextAlign = ContentAlignment.MiddleLeft;
+            btnSettingsAudit.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSettingsAudit.UseVisualStyleBackColor = true;
+            btnSettingsAudit.Click += btnSettingsAudit_Click;
             // 
             // btnBackupRestore
             // 
@@ -131,37 +211,37 @@
             btnBackupRestore.Padding = new Padding(40, 0, 0, 0);
             btnBackupRestore.Size = new Size(299, 51);
             btnBackupRestore.TabIndex = 17;
-            btnBackupRestore.Tag = "Backup & Restore";
+            btnBackupRestore.Tag = "Backup and Restore";
             btnBackupRestore.Text = "Backup and Restore";
             btnBackupRestore.TextAlign = ContentAlignment.MiddleLeft;
             btnBackupRestore.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBackupRestore.UseVisualStyleBackColor = true;
             btnBackupRestore.Click += btnBackupRestore_Click;
             // 
-            // btnSettingsAudit
+            // btnManageData
             // 
-            btnSettingsAudit.Dock = DockStyle.Top;
-            btnSettingsAudit.FlatAppearance.BorderSize = 0;
-            btnSettingsAudit.FlatStyle = FlatStyle.Flat;
-            btnSettingsAudit.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSettingsAudit.ForeColor = Color.White;
-            btnSettingsAudit.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnSettingsAudit.IconColor = Color.White;
-            btnSettingsAudit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSettingsAudit.IconSize = 32;
-            btnSettingsAudit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettingsAudit.Location = new Point(0, 0);
-            btnSettingsAudit.Margin = new Padding(3, 4, 3, 4);
-            btnSettingsAudit.Name = "btnSettingsAudit";
-            btnSettingsAudit.Padding = new Padding(40, 0, 0, 0);
-            btnSettingsAudit.Size = new Size(299, 51);
-            btnSettingsAudit.TabIndex = 16;
-            btnSettingsAudit.Tag = "Audit Logs";
-            btnSettingsAudit.Text = "Audit Logs";
-            btnSettingsAudit.TextAlign = ContentAlignment.MiddleLeft;
-            btnSettingsAudit.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettingsAudit.UseVisualStyleBackColor = true;
-            btnSettingsAudit.Click += btnSettingsAudit_Click;
+            btnManageData.Dock = DockStyle.Top;
+            btnManageData.FlatAppearance.BorderSize = 0;
+            btnManageData.FlatStyle = FlatStyle.Flat;
+            btnManageData.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnManageData.ForeColor = Color.White;
+            btnManageData.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnManageData.IconColor = Color.White;
+            btnManageData.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnManageData.IconSize = 32;
+            btnManageData.ImageAlign = ContentAlignment.MiddleLeft;
+            btnManageData.Location = new Point(0, 0);
+            btnManageData.Margin = new Padding(3, 4, 3, 4);
+            btnManageData.Name = "btnManageData";
+            btnManageData.Padding = new Padding(40, 0, 0, 0);
+            btnManageData.Size = new Size(299, 51);
+            btnManageData.TabIndex = 19;
+            btnManageData.Tag = "Manage Data";
+            btnManageData.Text = "Manage Data";
+            btnManageData.TextAlign = ContentAlignment.MiddleLeft;
+            btnManageData.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnManageData.UseVisualStyleBackColor = true;
+            btnManageData.Click += btnManageData_Click;
             // 
             // btnSettings
             // 
@@ -583,7 +663,7 @@
             btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLogout.IconSize = 32;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(0, 1144);
+            btnLogout.Location = new Point(0, 1297);
             btnLogout.Margin = new Padding(3, 4, 3, 4);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(13, 0, 0, 0);
@@ -874,5 +954,8 @@
         private Panel panelSettingsSubMenu;
         public FontAwesome.Sharp.IconButton btnBackupRestore;
         public FontAwesome.Sharp.IconButton btnSettingsAudit;
+        public FontAwesome.Sharp.IconButton btnAbout;
+        public FontAwesome.Sharp.IconButton btnManageData;
+        public FontAwesome.Sharp.IconButton btnHelp;
     }
 }

@@ -19,6 +19,8 @@ namespace AgRecords.View
         private string brgy = "";
         private string commType = "";
 
+        private string role = HomeView.Instance.role.Text;
+
         public RsbsaView(Control parentControl)
         {
             InitializeComponent();
@@ -29,6 +31,17 @@ namespace AgRecords.View
         private void RsbsaView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+
+            if (role == "Enumerator" || role == "Admin")
+            {
+                btnAdd.Visible = true;
+                dgvRsbsa.CellDoubleClick += dgvRsbsa_CellDoubleClick;
+            }
+            else
+            {
+                btnAdd.Visible = false;
+                dgvRsbsa.CellDoubleClick -= dgvRsbsa_CellDoubleClick;
+            }
         }
 
         public void FormRefresh()

@@ -37,6 +37,8 @@ namespace AgRecords.View
             btnUpdate.Visible = false;
             ClearTextControls();
             DisplayDataTableFilter();
+
+            dtpLogDate.MaxDate = DateTime.Today;
         }
 
         public void ClearTextControls()
@@ -47,7 +49,7 @@ namespace AgRecords.View
             cmbSeedType.SelectedIndex = -1;
             cmbCornType.SelectedIndex = -1;
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelCornPlantingId.Text = "";
             labelGrowthStage.Text = "Newly Planted/Seedling Stage";
         }

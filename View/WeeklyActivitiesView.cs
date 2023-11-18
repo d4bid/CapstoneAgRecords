@@ -48,6 +48,8 @@ namespace AgRecords.View
             dtpFrom.Value = oneWeekAgo;
             dtpFrom1.Value = oneWeekAgo;
 
+            dtpTo.MaxDate = DateTime.Today;
+            dtpTo1.MaxDate = DateTime.Today;
 
             changeDateTable();
             changeSummaryTable();

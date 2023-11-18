@@ -210,7 +210,6 @@ namespace AgRecords.Controller
             }
         }
 
-
         public void GenerateNewRiceStandID()
         {
             try

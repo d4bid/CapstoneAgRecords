@@ -72,6 +72,13 @@ namespace AgRecords.View
 
             // Optionally, you can set an initial selection
             cmbSeasonYear.SelectedIndex = 0;
+
+            // Add the items to the cmbSeasonYear ComboBox
+            cmbSeasonYearH.Items.Add(pastYearItem);
+            cmbSeasonYearH.Items.Add(futureYearItem);
+
+            // Optionally, you can set an initial selection
+            cmbSeasonYearH.SelectedIndex = 0;
         }
 
         // Events
@@ -95,7 +102,7 @@ namespace AgRecords.View
         {
             if (cropsCornController.AddCornPlantingEcoReport(labelCornPrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
                 cropsCornController.AddCornPlantingReport(labelCornPrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text) &&
-                cropsCornController.AddCornHarvestingReport(labelCornPrId.Text, cmbSeason.Text, cmbSeasonYear.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
+                cropsCornController.AddCornHarvestingReport(labelCornPrId.Text, cmbSeasonH.Text, cmbSeasonYearH.Text, cmbMonth.Text, cmbWeek.Text, textboxYear.Text))
             {
                 // Trigger the event when the "Save" button is clicked
                 SaveButtonClicked?.Invoke(this, EventArgs.Empty);
