@@ -34,6 +34,8 @@
             rectangleBlue1 = new RectangleBlue();
             lblUsername = new Label();
             btnExit = new FontAwesome.Sharp.IconButton();
+            btnRestore = new FontAwesome.Sharp.IconButton();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnCancel
@@ -43,7 +45,7 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(407, 393);
+            btnCancel.Location = new Point(408, 130);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(344, 34);
             btnCancel.TabIndex = 4;
@@ -58,7 +60,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(34, 393);
+            btnSave.Location = new Point(44, 130);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(344, 34);
             btnSave.TabIndex = 5;
@@ -113,11 +115,41 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
+            // btnRestore
+            // 
+            btnRestore.FlatAppearance.BorderSize = 0;
+            btnRestore.FlatAppearance.MouseDownBackColor = Color.White;
+            btnRestore.FlatAppearance.MouseOverBackColor = Color.White;
+            btnRestore.FlatStyle = FlatStyle.Flat;
+            btnRestore.IconChar = FontAwesome.Sharp.IconChar.Database;
+            btnRestore.IconColor = Color.FromArgb(43, 121, 223);
+            btnRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRestore.IconSize = 100;
+            btnRestore.Location = new Point(150, 311);
+            btnRestore.Name = "btnRestore";
+            btnRestore.Size = new Size(100, 100);
+            btnRestore.TabIndex = 48;
+            btnRestore.UseVisualStyleBackColor = true;
+            btnRestore.Click += btnRestore_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(43, 121, 223);
+            label1.Location = new Point(127, 275);
+            label1.Name = "label1";
+            label1.Size = new Size(144, 23);
+            label1.TabIndex = 49;
+            label1.Text = "Restore Database";
+            // 
             // SystemConfig
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 500);
+            Controls.Add(label1);
+            Controls.Add(btnRestore);
             Controls.Add(btnExit);
             Controls.Add(txtServerAddress);
             Controls.Add(rectangleBlue1);
@@ -141,5 +173,7 @@
         private RectangleBlue rectangleBlue1;
         private Label lblUsername;
         private FontAwesome.Sharp.IconButton btnExit;
+        private FontAwesome.Sharp.IconButton btnRestore;
+        private Label label1;
     }
 }
