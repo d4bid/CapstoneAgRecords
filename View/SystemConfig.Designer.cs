@@ -77,7 +77,6 @@
             txtServerAddress.Name = "txtServerAddress";
             txtServerAddress.Size = new Size(333, 26);
             txtServerAddress.TabIndex = 44;
-            txtServerAddress.Text = "192.168.1.1";
             // 
             // rectangleBlue1
             // 
