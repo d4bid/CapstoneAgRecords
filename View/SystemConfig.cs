@@ -29,12 +29,12 @@ namespace AgRecords.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ServerIPAddress = txtServerAddress.Text;
-            Properties.Settings.Default.Save();
+            Settings.Default.ServerIPAddress = txtServerAddress.Text;
+            Settings.Default.Save();
 
             // Close the form
             DialogResult = DialogResult.OK;
-            Close();
+            Application.Restart();
         }
 
         private void SystemConfig_Load(object sender, EventArgs e)
