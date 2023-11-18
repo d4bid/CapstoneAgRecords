@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AgRecords.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Threading.Tasks;
@@ -10,7 +11,12 @@ namespace AgRecords.Model
         // Connect to MySql
         private MySqlConnection connection;
 
-        public DatabaseConnection(string server = "localhost", string database = "agrecords_db", string username = "root", string password = "")
+        // Use null as the default value for server, and set it inside the constructor
+        public DatabaseConnection() : this(Settings.Default.ServerIPAddress)
+        {
+        }
+
+        public DatabaseConnection(string server, string database = "agrecords_db", string username = "root", string password = "")
         {
             string connectionString = $"server={server};database={database};uid={username};pwd={password};";
             connection = new MySqlConnection(connectionString);

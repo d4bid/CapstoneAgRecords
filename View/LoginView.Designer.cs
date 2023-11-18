@@ -34,6 +34,7 @@
             label3 = new Label();
             label4 = new Label();
             panelRight = new Panel();
+            btnConfig = new FontAwesome.Sharp.IconButton();
             btnShowPass = new FontAwesome.Sharp.IconButton();
             btnHidePass = new FontAwesome.Sharp.IconButton();
             txtPassword = new TextBox();
@@ -120,6 +121,7 @@
             // panelRight
             // 
             panelRight.BackColor = Color.White;
+            panelRight.Controls.Add(btnConfig);
             panelRight.Controls.Add(btnShowPass);
             panelRight.Controls.Add(btnHidePass);
             panelRight.Controls.Add(txtPassword);
@@ -140,6 +142,23 @@
             panelRight.Name = "panelRight";
             panelRight.Size = new Size(423, 500);
             panelRight.TabIndex = 1;
+            // 
+            // btnConfig
+            // 
+            btnConfig.FlatAppearance.BorderSize = 0;
+            btnConfig.FlatAppearance.MouseDownBackColor = Color.White;
+            btnConfig.FlatAppearance.MouseOverBackColor = Color.White;
+            btnConfig.FlatStyle = FlatStyle.Flat;
+            btnConfig.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            btnConfig.IconColor = Color.FromArgb(43, 121, 223);
+            btnConfig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnConfig.IconSize = 30;
+            btnConfig.Location = new Point(386, 468);
+            btnConfig.Name = "btnConfig";
+            btnConfig.Size = new Size(25, 20);
+            btnConfig.TabIndex = 45;
+            btnConfig.UseVisualStyleBackColor = true;
+            btnConfig.Click += btnConfig_Click;
             // 
             // btnShowPass
             // 
@@ -382,5 +401,6 @@
         private RectangleBlue rectangleBlue2;
         private RectangleBlue rectangleBlue1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconButton btnConfig;
     }
 }

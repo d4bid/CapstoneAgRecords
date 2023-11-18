@@ -1,5 +1,6 @@
 using AgRecords.Controller;
 using AgRecords.Model;
+using AgRecords.Properties;
 using AgRecords.View;
 
 namespace AgRecords
@@ -110,6 +111,18 @@ namespace AgRecords
             }
 
             this.Hide();
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            using (SystemConfig configForm = new SystemConfig())
+            {
+                DialogResult result = configForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                }
+            }
         }
     }
 }
