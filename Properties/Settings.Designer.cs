@@ -25,7 +25,7 @@ namespace AgRecords.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
         public string ServerIPAddress {
             get {
                 return ((string)(this["ServerIPAddress"]));

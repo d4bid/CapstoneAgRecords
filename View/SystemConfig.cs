@@ -29,12 +29,36 @@ namespace AgRecords.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Settings.Default.ServerIPAddress = txtServerAddress.Text;
-            Settings.Default.Save();
+            // Validate the connection
+            DatabaseConnection testConnection = new DatabaseConnection(txtServerAddress.Text);
 
-            // Close the form
-            DialogResult = DialogResult.OK;
-            Application.Restart();
+            if (testConnection.ValidateConnection())
+            {
+                // Connection is valid, save the settings
+                if (Settings.Default.ServerIPAddress != txtServerAddress.Text)
+                {
+
+                    // Save the new IP address
+                    Settings.Default.ServerIPAddress = txtServerAddress.Text;
+                    Settings.Default.Save();
+
+                    // IP address has changed, inform the user
+                    MessageBox.Show("The system will restart to apply the changes.", "System Restart", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Restart the application
+                    Application.Restart();
+                }
+                else
+                {
+                    // IP address has not changed, save the settings without restart
+                    Settings.Default.Save();
+                    MessageBox.Show("No changes were made.", "No Changes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Unable to connect to the database using the provided server address.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SystemConfig_Load(object sender, EventArgs e)

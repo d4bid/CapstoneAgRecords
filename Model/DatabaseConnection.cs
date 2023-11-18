@@ -24,9 +24,16 @@ namespace AgRecords.Model
 
         public void Open()
         {
-            if (connection.State != ConnectionState.Open)
+            try
             {
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("DATABASE ERROR: " + ex.Message, ex);
             }
         }
 
@@ -35,6 +42,23 @@ namespace AgRecords.Model
             if (connection.State != ConnectionState.Closed)
             {
                 connection.Close();
+            }
+        }
+
+        public bool ValidateConnection()
+        {
+            try
+            {
+                using (var testConnection = new MySqlConnection(connection.ConnectionString))
+                {
+                    testConnection.Open();
+                    return true;
+                }
+            }
+            catch (MySqlException)
+            {
+                // Connection failed
+                return false;
             }
         }
 
