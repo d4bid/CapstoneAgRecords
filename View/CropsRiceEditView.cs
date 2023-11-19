@@ -72,6 +72,8 @@ namespace AgRecords.View
         public void FormRefresh()
         {
             dtpLogDate.MaxDate = DateTime.Today;
+            dtpLogDate.Value = DateTime.Today;
+            
 
             btnUpdate.Enabled = false;
             ClearStandingLogsTextControls();
@@ -109,7 +111,7 @@ namespace AgRecords.View
         public void ClearStandingLogsTextControls()
         {
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelRiceStandingLogsId.Text = "";
             txtAveYield.Text = "";
         }
@@ -252,7 +254,8 @@ namespace AgRecords.View
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
                 cbTotal.Visible = false;
-                cbGrandTotal.Visible = true;
+                cbGrandTotal.Visible = false;
+                DisplayHarvestingDataTableFilter();
 
                 labelAveYield.Visible = true;
                 boxAveYield.Visible = true;
@@ -310,15 +313,6 @@ namespace AgRecords.View
 
                 if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
                 {
-                    if (labelGrowthStage.Text == "Newly Planted/Seedling Stage")
-                    {
-                        btnUpdate.Enabled = true;
-                    }
-                    else
-                    {
-                        btnUpdate.Enabled = false;
-                    }
-
                     int riceStandingLogsId = Convert.ToInt32(row.Cells[0].Value);
 
                     labelRiceStandingLogsId.Text = riceStandingLogsId.ToString();
@@ -693,10 +687,16 @@ namespace AgRecords.View
             {
                 cbGrandTotal.Checked = false;
                 DisplayStandingDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick -= dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = false;
             }
             else
             {
                 DisplayStandingDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = true;
             }
         }
 
@@ -706,10 +706,16 @@ namespace AgRecords.View
             {
                 cbTotal.Checked = false;
                 DisplayStandingDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick -= dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = false;
             }
             else
             {
                 DisplayStandingDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick += dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = true;
             }
         }
 

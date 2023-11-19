@@ -208,8 +208,6 @@ namespace AgRecords.View
             cmbLandType.SelectedIndex = 0;
             cmbSeedType.SelectedIndex = 0;
             cmbGrowthStageFilter.SelectedIndex = 0;
-
-
         }
 
         private void dgvCornPlanting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -462,10 +460,16 @@ namespace AgRecords.View
             if (cbTotal.Checked)
             {
                 DisplayDataTableFilter();
+
+                dgvCornPlanting.CellDoubleClick -= dgvCornPlanting_CellDoubleClick;
+                dgvCornPlanting.Columns[0].Visible = false;
             }
             else
             {
                 DisplayDataTableFilter();
+
+                dgvCornPlanting.CellDoubleClick += dgvCornPlanting_CellDoubleClick;
+                dgvCornPlanting.Columns[0].Visible = true;
             }
         }
     }

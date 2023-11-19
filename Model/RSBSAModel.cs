@@ -44,6 +44,27 @@ namespace AgRecords.Model
             }
         }
 
+        // Barangay
+        public DataTable GetAllSolanoBarangay()
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+                    DataTable rolesTable = new DataTable();
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_solano_barangay;", db.GetConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(rolesTable);
+                    return rolesTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting barangay: " + ex.Message, ex);
+            }
+        }
+
         public DataTable LoadRSBSADataGrid()
         {
             try

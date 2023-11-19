@@ -55,7 +55,7 @@ namespace AgRecords.View
             cmbBrgy.SelectedIndex = 0;
             //cmbGrowthStage.SelectedIndex = -1;
             txtSize.Text = "";
-            dtpLogDate.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Today;
             labelRiceStandingLogsId.Text = "";
             labelGrowthStage.Text = "Newly Planted/Seedling Stage";
         }
@@ -359,10 +359,16 @@ namespace AgRecords.View
             {
                 cbTotal.Checked = false;
                 DisplayDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick -= dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = false;
             }
             else
             {
                 DisplayDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick -= dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = false;
             }
         }
 
@@ -372,10 +378,16 @@ namespace AgRecords.View
             {
                 cbGrandTotal.Checked = false;
                 DisplayDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick -= dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = false;
             }
             else
             {
                 DisplayDataTableFilter();
+
+                dgvRiceStandLogs.CellDoubleClick -= dgvRiceStandLogs_CellDoubleClick;
+                dgvRiceStandLogs.Columns[0].Visible = false;
             }
         }
 
