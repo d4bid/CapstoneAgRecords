@@ -33,7 +33,7 @@ namespace AgRecords.View
 
         public void CountFisherfolk(string countFisherfolk)
         {
-            labelFisherfolks.Text = countFisherfolk.ToString();
+            //labelFisherfolks.Text = countFisherfolk.ToString();
         }
 
         private void AnalyticsRsbsaView_Load(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace AgRecords.View
             analyticsController.CountFisherfolk();
 
             labelTotalFarmers.Text = analyticsController.CountRsbsaFarmers();
-            labelTotalWeeklyReg.Text = analyticsController.CountRsbsaWeeklyReg();
+            //labelTotalWeeklyReg.Text = analyticsController.CountRsbsaWeeklyReg();
 
             cmbBrgy1.SelectedIndex = 0;
             string brgy = cmbBrgy1.Text;

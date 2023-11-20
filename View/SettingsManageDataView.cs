@@ -20,5 +20,15 @@ namespace AgRecords.View
 
             this.parentPanel = parentControl as Panel;
         }
+
+        private void btnRiceBrgySave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
