@@ -68,7 +68,7 @@
             labelTotalHvcLandArea.BackColor = Color.FromArgb(0, 109, 104);
             labelTotalHvcLandArea.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalHvcLandArea.ForeColor = Color.White;
-            labelTotalHvcLandArea.Location = new Point(328, 69);
+            labelTotalHvcLandArea.Location = new Point(326, 69);
             labelTotalHvcLandArea.Name = "labelTotalHvcLandArea";
             labelTotalHvcLandArea.Size = new Size(55, 62);
             labelTotalHvcLandArea.TabIndex = 26;
@@ -80,7 +80,7 @@
             label2.BackColor = Color.FromArgb(0, 109, 104);
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(328, 30);
+            label2.Location = new Point(326, 30);
             label2.Name = "label2";
             label2.Size = new Size(153, 20);
             label2.TabIndex = 25;
@@ -119,7 +119,7 @@
             // 
             // rectangleFullGreen1
             // 
-            rectangleFullGreen1.Location = new Point(311, 12);
+            rectangleFullGreen1.Location = new Point(306, 12);
             rectangleFullGreen1.Name = "rectangleFullGreen1";
             rectangleFullGreen1.Size = new Size(280, 144);
             rectangleFullGreen1.TabIndex = 21;
@@ -130,7 +130,7 @@
             labelTotalHvcBarangay.BackColor = Color.FromArgb(0, 109, 104);
             labelTotalHvcBarangay.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalHvcBarangay.ForeColor = Color.White;
-            labelTotalHvcBarangay.Location = new Point(924, 69);
+            labelTotalHvcBarangay.Location = new Point(913, 69);
             labelTotalHvcBarangay.Name = "labelTotalHvcBarangay";
             labelTotalHvcBarangay.Size = new Size(55, 62);
             labelTotalHvcBarangay.TabIndex = 32;
@@ -142,7 +142,7 @@
             label4.BackColor = Color.FromArgb(0, 109, 104);
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(924, 30);
+            label4.Location = new Point(913, 30);
             label4.Name = "label4";
             label4.Size = new Size(276, 20);
             label4.TabIndex = 31;
@@ -154,7 +154,7 @@
             labelTotalAreaPlanted.BackColor = Color.FromArgb(255, 221, 100);
             labelTotalAreaPlanted.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalAreaPlanted.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalAreaPlanted.Location = new Point(627, 69);
+            labelTotalAreaPlanted.Location = new Point(621, 69);
             labelTotalAreaPlanted.Name = "labelTotalAreaPlanted";
             labelTotalAreaPlanted.Size = new Size(55, 62);
             labelTotalAreaPlanted.TabIndex = 30;
@@ -166,7 +166,7 @@
             label6.BackColor = Color.FromArgb(255, 221, 100);
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(0, 35, 76);
-            label6.Location = new Point(627, 30);
+            label6.Location = new Point(621, 30);
             label6.Name = "label6";
             label6.Size = new Size(147, 20);
             label6.TabIndex = 29;
@@ -174,25 +174,25 @@
             // 
             // rectangleFullYellow2
             // 
-            rectangleFullYellow2.Location = new Point(610, 12);
+            rectangleFullYellow2.Location = new Point(600, 12);
             rectangleFullYellow2.Name = "rectangleFullYellow2";
             rectangleFullYellow2.Size = new Size(280, 144);
             rectangleFullYellow2.TabIndex = 28;
             // 
             // rectangleFullGreen2
             // 
-            rectangleFullGreen2.Location = new Point(907, 12);
+            rectangleFullGreen2.Location = new Point(894, 12);
             rectangleFullGreen2.Name = "rectangleFullGreen2";
-            rectangleFullGreen2.Size = new Size(334, 144);
+            rectangleFullGreen2.Size = new Size(325, 144);
             rectangleFullGreen2.TabIndex = 27;
             // 
             // hvcGraph1
             // 
             hvcGraph1.BackColor = Color.White;
-            hvcGraph1.Location = new Point(34, 231);
+            hvcGraph1.Location = new Point(622, 231);
             hvcGraph1.Name = "hvcGraph1";
             hvcGraph1.PanCursor = Cursors.Hand;
-            hvcGraph1.Size = new Size(535, 233);
+            hvcGraph1.Size = new Size(239, 233);
             hvcGraph1.TabIndex = 44;
             hvcGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -204,7 +204,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 35, 76);
-            label9.Location = new Point(34, 192);
+            label9.Location = new Point(622, 192);
             label9.Name = "label9";
             label9.Size = new Size(150, 20);
             label9.TabIndex = 43;
@@ -212,24 +212,22 @@
             // 
             // rectangleFullWhite2
             // 
-            rectangleFullWhite2.Location = new Point(12, 173);
+            rectangleFullWhite2.Location = new Point(600, 170);
             rectangleFullWhite2.Name = "rectangleFullWhite2";
-            rectangleFullWhite2.Size = new Size(579, 304);
+            rectangleFullWhite2.Size = new Size(280, 304);
             rectangleFullWhite2.TabIndex = 42;
             // 
             // rectangleFullWhite1
             // 
-            rectangleFullWhite1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleFullWhite1.Location = new Point(1258, 12);
+            rectangleFullWhite1.Location = new Point(894, 170);
             rectangleFullWhite1.Name = "rectangleFullWhite1";
-            rectangleFullWhite1.Size = new Size(325, 465);
+            rectangleFullWhite1.Size = new Size(325, 304);
             rectangleFullWhite1.TabIndex = 45;
             // 
             // dgvHvc
             // 
             dgvHvc.AllowUserToAddRows = false;
             dgvHvc.AllowUserToDeleteRows = false;
-            dgvHvc.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvHvc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHvc.BackgroundColor = Color.White;
             dgvHvc.BorderStyle = BorderStyle.None;
@@ -255,14 +253,14 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvHvc.DefaultCellStyle = dataGridViewCellStyle2;
             dgvHvc.GridColor = Color.FromArgb(239, 239, 239);
-            dgvHvc.Location = new Point(1279, 69);
+            dgvHvc.Location = new Point(913, 227);
             dgvHvc.Name = "dgvHvc";
             dgvHvc.ReadOnly = true;
             dgvHvc.RowHeadersVisible = false;
             dgvHvc.RowHeadersWidth = 51;
             dgvHvc.RowTemplate.Height = 40;
             dgvHvc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHvc.Size = new Size(288, 395);
+            dgvHvc.Size = new Size(286, 237);
             dgvHvc.TabIndex = 47;
             // 
             // label3
@@ -271,7 +269,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(0, 35, 76);
-            label3.Location = new Point(1279, 30);
+            label3.Location = new Point(912, 188);
             label3.Name = "label3";
             label3.Size = new Size(196, 20);
             label3.TabIndex = 46;
@@ -280,10 +278,10 @@
             // hvcGraph2
             // 
             hvcGraph2.BackColor = Color.White;
-            hvcGraph2.Location = new Point(627, 231);
+            hvcGraph2.Location = new Point(34, 227);
             hvcGraph2.Name = "hvcGraph2";
             hvcGraph2.PanCursor = Cursors.Hand;
-            hvcGraph2.Size = new Size(596, 233);
+            hvcGraph2.Size = new Size(521, 669);
             hvcGraph2.TabIndex = 50;
             hvcGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -295,7 +293,7 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.FromArgb(0, 35, 76);
-            label11.Location = new Point(626, 192);
+            label11.Location = new Point(33, 188);
             label11.Name = "label11";
             label11.Size = new Size(278, 20);
             label11.TabIndex = 49;
@@ -303,18 +301,19 @@
             // 
             // rectangleFullWhite5
             // 
-            rectangleFullWhite5.Location = new Point(605, 174);
+            rectangleFullWhite5.Location = new Point(12, 170);
             rectangleFullWhite5.Name = "rectangleFullWhite5";
-            rectangleFullWhite5.Size = new Size(636, 304);
+            rectangleFullWhite5.Size = new Size(574, 744);
             rectangleFullWhite5.TabIndex = 48;
             // 
             // hvcGraph3
             // 
+            hvcGraph3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             hvcGraph3.BackColor = Color.White;
-            hvcGraph3.Location = new Point(34, 550);
+            hvcGraph3.Location = new Point(1247, 70);
             hvcGraph3.Name = "hvcGraph3";
             hvcGraph3.PanCursor = Cursors.Hand;
-            hvcGraph3.Size = new Size(535, 346);
+            hvcGraph3.Size = new Size(320, 394);
             hvcGraph3.TabIndex = 53;
             hvcGraph3.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph3.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -326,7 +325,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 35, 76);
-            label5.Location = new Point(34, 511);
+            label5.Location = new Point(1247, 31);
             label5.Name = "label5";
             label5.Size = new Size(239, 20);
             label5.TabIndex = 52;
@@ -334,9 +333,10 @@
             // 
             // rectangleFullWhite3
             // 
-            rectangleFullWhite3.Location = new Point(12, 492);
+            rectangleFullWhite3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rectangleFullWhite3.Location = new Point(1233, 12);
             rectangleFullWhite3.Name = "rectangleFullWhite3";
-            rectangleFullWhite3.Size = new Size(579, 422);
+            rectangleFullWhite3.Size = new Size(350, 462);
             rectangleFullWhite3.TabIndex = 51;
             // 
             // hvcGraph5
@@ -358,7 +358,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(627, 511);
+            label7.Location = new Point(626, 511);
             label7.Name = "label7";
             label7.Size = new Size(172, 20);
             label7.TabIndex = 55;
@@ -366,9 +366,9 @@
             // 
             // rectangleFullWhite4
             // 
-            rectangleFullWhite4.Location = new Point(605, 492);
+            rectangleFullWhite4.Location = new Point(600, 488);
             rectangleFullWhite4.Name = "rectangleFullWhite4";
-            rectangleFullWhite4.Size = new Size(978, 422);
+            rectangleFullWhite4.Size = new Size(983, 426);
             rectangleFullWhite4.TabIndex = 54;
             // 
             // cmbMonth

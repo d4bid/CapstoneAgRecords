@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             labelTotalRiceLandArea = new Label();
             label2 = new Label();
             labelTotalRiceFarmers = new Label();
@@ -71,7 +71,7 @@
             labelTotalRiceLandArea.BackColor = Color.FromArgb(0, 109, 104);
             labelTotalRiceLandArea.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalRiceLandArea.ForeColor = Color.White;
-            labelTotalRiceLandArea.Location = new Point(353, 61);
+            labelTotalRiceLandArea.Location = new Point(362, 64);
             labelTotalRiceLandArea.Name = "labelTotalRiceLandArea";
             labelTotalRiceLandArea.Size = new Size(47, 54);
             labelTotalRiceLandArea.TabIndex = 20;
@@ -83,7 +83,7 @@
             label2.BackColor = Color.FromArgb(0, 109, 104);
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(353, 27);
+            label2.Location = new Point(362, 30);
             label2.Name = "label2";
             label2.Size = new Size(152, 20);
             label2.TabIndex = 19;
@@ -95,7 +95,7 @@
             labelTotalRiceFarmers.BackColor = Color.FromArgb(255, 221, 100);
             labelTotalRiceFarmers.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalRiceFarmers.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalRiceFarmers.Location = new Point(26, 61);
+            labelTotalRiceFarmers.Location = new Point(29, 64);
             labelTotalRiceFarmers.Name = "labelTotalRiceFarmers";
             labelTotalRiceFarmers.Size = new Size(47, 54);
             labelTotalRiceFarmers.TabIndex = 18;
@@ -107,7 +107,7 @@
             label1.BackColor = Color.FromArgb(255, 221, 100);
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(0, 35, 76);
-            label1.Location = new Point(26, 27);
+            label1.Location = new Point(29, 30);
             label1.Name = "label1";
             label1.Size = new Size(138, 20);
             label1.TabIndex = 17;
@@ -115,14 +115,14 @@
             // 
             // rectangleFullYellow1
             // 
-            rectangleFullYellow1.Location = new Point(9, 9);
+            rectangleFullYellow1.Location = new Point(12, 12);
             rectangleFullYellow1.Name = "rectangleFullYellow1";
             rectangleFullYellow1.Size = new Size(315, 130);
             rectangleFullYellow1.TabIndex = 16;
             // 
             // rectangleFullGreen1
             // 
-            rectangleFullGreen1.Location = new Point(332, 9);
+            rectangleFullGreen1.Location = new Point(341, 12);
             rectangleFullGreen1.Name = "rectangleFullGreen1";
             rectangleFullGreen1.Size = new Size(315, 130);
             rectangleFullGreen1.TabIndex = 15;
@@ -133,7 +133,7 @@
             labelTotalRiceBarangay.BackColor = Color.FromArgb(0, 109, 104);
             labelTotalRiceBarangay.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalRiceBarangay.ForeColor = Color.White;
-            labelTotalRiceBarangay.Location = new Point(26, 199);
+            labelTotalRiceBarangay.Location = new Point(29, 207);
             labelTotalRiceBarangay.Name = "labelTotalRiceBarangay";
             labelTotalRiceBarangay.Size = new Size(47, 54);
             labelTotalRiceBarangay.TabIndex = 26;
@@ -145,7 +145,7 @@
             label4.BackColor = Color.FromArgb(0, 109, 104);
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(26, 166);
+            label4.Location = new Point(29, 174);
             label4.Name = "label4";
             label4.Size = new Size(275, 20);
             label4.TabIndex = 25;
@@ -157,7 +157,7 @@
             labelTotalAreaPlanted.BackColor = Color.FromArgb(255, 221, 100);
             labelTotalAreaPlanted.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelTotalAreaPlanted.ForeColor = Color.FromArgb(0, 35, 76);
-            labelTotalAreaPlanted.Location = new Point(349, 200);
+            labelTotalAreaPlanted.Location = new Point(358, 208);
             labelTotalAreaPlanted.Name = "labelTotalAreaPlanted";
             labelTotalAreaPlanted.Size = new Size(47, 54);
             labelTotalAreaPlanted.TabIndex = 24;
@@ -169,7 +169,7 @@
             label6.BackColor = Color.FromArgb(255, 221, 100);
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(0, 35, 76);
-            label6.Location = new Point(349, 166);
+            label6.Location = new Point(358, 174);
             label6.Name = "label6";
             label6.Size = new Size(138, 20);
             label6.TabIndex = 23;
@@ -177,14 +177,14 @@
             // 
             // rectangleFullYellow2
             // 
-            rectangleFullYellow2.Location = new Point(332, 148);
+            rectangleFullYellow2.Location = new Point(341, 156);
             rectangleFullYellow2.Name = "rectangleFullYellow2";
             rectangleFullYellow2.Size = new Size(315, 130);
             rectangleFullYellow2.TabIndex = 22;
             // 
             // rectangleFullGreen2
             // 
-            rectangleFullGreen2.Location = new Point(9, 148);
+            rectangleFullGreen2.Location = new Point(12, 156);
             rectangleFullGreen2.Name = "rectangleFullGreen2";
             rectangleFullGreen2.Size = new Size(315, 130);
             rectangleFullGreen2.TabIndex = 21;
@@ -195,7 +195,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(31, 645);
+            label7.Location = new Point(37, 656);
             label7.Name = "label7";
             label7.Size = new Size(119, 20);
             label7.TabIndex = 30;
@@ -203,9 +203,9 @@
             // 
             // rectangleFullWhite1
             // 
-            rectangleFullWhite1.Location = new Point(9, 626);
+            rectangleFullWhite1.Location = new Point(12, 637);
             rectangleFullWhite1.Name = "rectangleFullWhite1";
-            rectangleFullWhite1.Size = new Size(638, 290);
+            rectangleFullWhite1.Size = new Size(644, 277);
             rectangleFullWhite1.TabIndex = 29;
             // 
             // label9
@@ -214,7 +214,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 35, 76);
-            label9.Location = new Point(677, 28);
+            label9.Location = new Point(692, 31);
             label9.Name = "label9";
             label9.Size = new Size(149, 20);
             label9.TabIndex = 32;
@@ -222,9 +222,9 @@
             // 
             // rectangleFullWhite2
             // 
-            rectangleFullWhite2.Location = new Point(655, 9);
+            rectangleFullWhite2.Location = new Point(670, 12);
             rectangleFullWhite2.Name = "rectangleFullWhite2";
-            rectangleFullWhite2.Size = new Size(469, 269);
+            rectangleFullWhite2.Size = new Size(428, 274);
             rectangleFullWhite2.TabIndex = 31;
             // 
             // label10
@@ -233,7 +233,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 35, 76);
-            label10.Location = new Point(677, 645);
+            label10.Location = new Point(692, 656);
             label10.Name = "label10";
             label10.Size = new Size(166, 20);
             label10.TabIndex = 34;
@@ -241,17 +241,17 @@
             // 
             // rectangleFullWhite3
             // 
-            rectangleFullWhite3.Location = new Point(655, 626);
+            rectangleFullWhite3.Location = new Point(670, 637);
             rectangleFullWhite3.Name = "rectangleFullWhite3";
-            rectangleFullWhite3.Size = new Size(469, 290);
+            rectangleFullWhite3.Size = new Size(428, 277);
             rectangleFullWhite3.TabIndex = 33;
             // 
             // rectangleFullWhite5
             // 
             rectangleFullWhite5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleFullWhite5.Location = new Point(1132, 9);
+            rectangleFullWhite5.Location = new Point(1112, 12);
             rectangleFullWhite5.Name = "rectangleFullWhite5";
-            rectangleFullWhite5.Size = new Size(505, 907);
+            rectangleFullWhite5.Size = new Size(520, 902);
             rectangleFullWhite5.TabIndex = 35;
             // 
             // label11
@@ -260,7 +260,7 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.FromArgb(0, 35, 76);
-            label11.Location = new Point(1145, 27);
+            label11.Location = new Point(1138, 30);
             label11.Name = "label11";
             label11.Size = new Size(277, 20);
             label11.TabIndex = 36;
@@ -272,7 +272,7 @@
             label12.BackColor = Color.White;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.FromArgb(0, 35, 76);
-            label12.Location = new Point(677, 304);
+            label12.Location = new Point(692, 315);
             label12.Name = "label12";
             label12.Size = new Size(222, 20);
             label12.TabIndex = 38;
@@ -280,9 +280,9 @@
             // 
             // rectangleFullWhite6
             // 
-            rectangleFullWhite6.Location = new Point(655, 289);
+            rectangleFullWhite6.Location = new Point(670, 300);
             rectangleFullWhite6.Name = "rectangleFullWhite6";
-            rectangleFullWhite6.Size = new Size(469, 329);
+            rectangleFullWhite6.Size = new Size(428, 322);
             rectangleFullWhite6.TabIndex = 37;
             // 
             // label13
@@ -291,7 +291,7 @@
             label13.BackColor = Color.White;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(0, 35, 76);
-            label13.Location = new Point(34, 304);
+            label13.Location = new Point(37, 315);
             label13.Name = "label13";
             label13.Size = new Size(313, 20);
             label13.TabIndex = 40;
@@ -299,18 +299,18 @@
             // 
             // rectangleFullWhite7
             // 
-            rectangleFullWhite7.Location = new Point(9, 289);
+            rectangleFullWhite7.Location = new Point(12, 300);
             rectangleFullWhite7.Name = "rectangleFullWhite7";
-            rectangleFullWhite7.Size = new Size(638, 329);
+            rectangleFullWhite7.Size = new Size(644, 322);
             rectangleFullWhite7.TabIndex = 39;
             // 
             // riceGraph1
             // 
             riceGraph1.BackColor = Color.White;
-            riceGraph1.Location = new Point(667, 67);
+            riceGraph1.Location = new Point(692, 70);
             riceGraph1.Name = "riceGraph1";
             riceGraph1.PanCursor = Cursors.Hand;
-            riceGraph1.Size = new Size(439, 195);
+            riceGraph1.Size = new Size(390, 200);
             riceGraph1.TabIndex = 41;
             riceGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -321,10 +321,10 @@
             // 
             riceGraph2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             riceGraph2.BackColor = Color.White;
-            riceGraph2.Location = new Point(1145, 67);
+            riceGraph2.Location = new Point(1138, 67);
             riceGraph2.Name = "riceGraph2";
             riceGraph2.PanCursor = Cursors.Hand;
-            riceGraph2.Size = new Size(484, 833);
+            riceGraph2.Size = new Size(474, 833);
             riceGraph2.TabIndex = 42;
             riceGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -333,10 +333,10 @@
             // riceGraph4
             // 
             riceGraph4.BackColor = Color.White;
-            riceGraph4.Location = new Point(677, 347);
+            riceGraph4.Location = new Point(692, 361);
             riceGraph4.Name = "riceGraph4";
             riceGraph4.PanCursor = Cursors.Hand;
-            riceGraph4.Size = new Size(429, 258);
+            riceGraph4.Size = new Size(390, 245);
             riceGraph4.TabIndex = 44;
             riceGraph4.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph4.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -345,10 +345,10 @@
             // riceGraph5
             // 
             riceGraph5.BackColor = Color.White;
-            riceGraph5.Location = new Point(33, 337);
+            riceGraph5.Location = new Point(36, 348);
             riceGraph5.Name = "riceGraph5";
             riceGraph5.PanCursor = Cursors.Hand;
-            riceGraph5.Size = new Size(590, 268);
+            riceGraph5.Size = new Size(596, 258);
             riceGraph5.TabIndex = 45;
             riceGraph5.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph5.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -357,10 +357,10 @@
             // riceGraph7
             // 
             riceGraph7.BackColor = Color.White;
-            riceGraph7.Location = new Point(677, 682);
+            riceGraph7.Location = new Point(692, 687);
             riceGraph7.Name = "riceGraph7";
             riceGraph7.PanCursor = Cursors.Hand;
-            riceGraph7.Size = new Size(429, 219);
+            riceGraph7.Size = new Size(390, 213);
             riceGraph7.TabIndex = 46;
             riceGraph7.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph7.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -369,7 +369,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 109, 104);
-            panel1.Location = new Point(718, 325);
+            panel1.Location = new Point(733, 336);
             panel1.Name = "panel1";
             panel1.Size = new Size(71, 2);
             panel1.TabIndex = 48;
@@ -377,7 +377,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 221, 100);
-            panel2.Location = new Point(841, 325);
+            panel2.Location = new Point(856, 336);
             panel2.Name = "panel2";
             panel2.Size = new Size(52, 2);
             panel2.TabIndex = 49;
@@ -391,33 +391,33 @@
             dgvRiceProd.BorderStyle = BorderStyle.None;
             dgvRiceProd.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvRiceProd.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRiceProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvRiceProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvRiceProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRiceProd.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvRiceProd.DefaultCellStyle = dataGridViewCellStyle8;
             dgvRiceProd.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRiceProd.Location = new Point(31, 682);
+            dgvRiceProd.Location = new Point(37, 687);
             dgvRiceProd.Name = "dgvRiceProd";
             dgvRiceProd.ReadOnly = true;
             dgvRiceProd.RowHeadersVisible = false;
             dgvRiceProd.RowHeadersWidth = 51;
             dgvRiceProd.RowTemplate.Height = 40;
             dgvRiceProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRiceProd.Size = new Size(592, 218);
+            dgvRiceProd.Size = new Size(595, 213);
             dgvRiceProd.TabIndex = 50;
             // 
             // AnalyticsCropsView

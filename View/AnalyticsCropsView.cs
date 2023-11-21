@@ -1,6 +1,7 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
 using OxyPlot;
+using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,22 @@ namespace AgRecords.View
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
+            riceGraph1.ContextMenuStrip = new ContextMenuStrip();
+            riceGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph1));
+
+            riceGraph2.ContextMenuStrip = new ContextMenuStrip();
+            riceGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph2));
+
+            riceGraph4.ContextMenuStrip = new ContextMenuStrip();
+            riceGraph4.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph4));
+
+            riceGraph5.ContextMenuStrip = new ContextMenuStrip();
+            riceGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph5));
+
+            riceGraph7.ContextMenuStrip = new ContextMenuStrip();
+            riceGraph7.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph7));
         }
 
         private void AnalyticsCropsView_Load(object sender, EventArgs e)
@@ -83,6 +100,22 @@ namespace AgRecords.View
             ProductionData productionData = analyticsController.Forecasting();
             riceGraph7.Model = analyticsController.CreateLineSeriesChartRiceForecast(productionData.Years, productionData.ForecastedProduction);
 
+        }
+
+        private void SaveAsImage_Click(PlotView plotView)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
+                }
+            }
         }
 
         private void riceGraph1_Click(object sender, EventArgs e)

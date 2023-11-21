@@ -1,5 +1,7 @@
 ﻿using AgRecords.Controller;
+using AgRecords.Model;
 using OxyPlot;
+using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +25,19 @@ namespace AgRecords.View
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
+            hvcGraph1.ContextMenuStrip = new ContextMenuStrip();
+            hvcGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(hvcGraph1));
+
+            hvcGraph2.ContextMenuStrip = new ContextMenuStrip();
+            hvcGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(hvcGraph2));
+
+            hvcGraph3.ContextMenuStrip = new ContextMenuStrip();
+            hvcGraph3.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(hvcGraph3));
+
+            hvcGraph5.ContextMenuStrip = new ContextMenuStrip();
+            hvcGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(hvcGraph5));
         }
 
         private void AnalyticsCropsHvcView_Load(object sender, EventArgs e)
@@ -165,6 +180,22 @@ namespace AgRecords.View
 
                 // Set the pie chart model to the PlotView control
                 hvcGraph5.Model = lineChart;
+            }
+        }
+
+        private void SaveAsImage_Click(PlotView plotView)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
+                }
             }
         }
     }

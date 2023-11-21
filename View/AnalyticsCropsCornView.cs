@@ -1,6 +1,7 @@
 ﻿using AgRecords.Controller;
 using AgRecords.Model;
 using OxyPlot;
+using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,16 @@ namespace AgRecords.View
             InitializeComponent();
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
+            cornGraph1.ContextMenuStrip = new ContextMenuStrip();
+            cornGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(cornGraph1));
+
+            cornGraph2.ContextMenuStrip = new ContextMenuStrip();
+            cornGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(cornGraph2));
+
+            cornGraph3.ContextMenuStrip = new ContextMenuStrip();
+            cornGraph3.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(cornGraph3));
         }
 
         private void AnalyticsCropsCornView_Load(object sender, EventArgs e)
@@ -61,6 +72,22 @@ namespace AgRecords.View
 
             ProductionData productionData = analyticsController.CornForecasting();
             cornGraph3.Model = analyticsController.CreateLineSeriesChartCornForecast(productionData.Years, productionData.ForecastedProduction);
+        }
+
+        private void SaveAsImage_Click(PlotView plotView)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
+                }
+            }
         }
     }
 }

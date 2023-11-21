@@ -48,6 +48,16 @@
             rsbsa1 = new OxyPlot.WindowsForms.PlotView();
             cmbBrgy1 = new ComboBox();
             cmbRegInterval = new ComboBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            label3 = new Label();
+            label4 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             SuspendLayout();
             // 
             // labelFarmers
@@ -118,7 +128,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 35, 76);
-            label5.Location = new Point(29, 697);
+            label5.Location = new Point(29, 647);
             label5.Name = "label5";
             label5.Size = new Size(192, 20);
             label5.TabIndex = 19;
@@ -127,9 +137,9 @@
             // rectangleFullWhite1
             // 
             rectangleFullWhite1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rectangleFullWhite1.Location = new Point(12, 678);
+            rectangleFullWhite1.Location = new Point(12, 628);
             rectangleFullWhite1.Name = "rectangleFullWhite1";
-            rectangleFullWhite1.Size = new Size(1571, 236);
+            rectangleFullWhite1.Size = new Size(1571, 286);
             rectangleFullWhite1.TabIndex = 18;
             // 
             // label6
@@ -148,7 +158,7 @@
             // 
             rectangleFullWhite2.Location = new Point(660, 12);
             rectangleFullWhite2.Name = "rectangleFullWhite2";
-            rectangleFullWhite2.Size = new Size(492, 652);
+            rectangleFullWhite2.Size = new Size(492, 602);
             rectangleFullWhite2.TabIndex = 20;
             // 
             // label7
@@ -168,7 +178,7 @@
             rectangleFullWhite3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite3.Location = new Point(1166, 12);
             rectangleFullWhite3.Name = "rectangleFullWhite3";
-            rectangleFullWhite3.Size = new Size(417, 652);
+            rectangleFullWhite3.Size = new Size(417, 602);
             rectangleFullWhite3.TabIndex = 22;
             // 
             // label8
@@ -187,17 +197,17 @@
             // 
             rectangleFullWhite4.Location = new Point(12, 156);
             rectangleFullWhite4.Name = "rectangleFullWhite4";
-            rectangleFullWhite4.Size = new Size(634, 508);
+            rectangleFullWhite4.Size = new Size(634, 458);
             rectangleFullWhite4.TabIndex = 24;
             // 
             // rsbsa3
             // 
             rsbsa3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rsbsa3.BackColor = Color.White;
-            rsbsa3.Location = new Point(26, 734);
+            rsbsa3.Location = new Point(26, 679);
             rsbsa3.Name = "rsbsa3";
             rsbsa3.PanCursor = Cursors.Hand;
-            rsbsa3.Size = new Size(1542, 176);
+            rsbsa3.Size = new Size(1542, 231);
             rsbsa3.TabIndex = 28;
             rsbsa3.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa3.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -209,7 +219,7 @@
             rsbsa4.Location = new Point(682, 64);
             rsbsa4.Name = "rsbsa4";
             rsbsa4.PanCursor = Cursors.Hand;
-            rsbsa4.Size = new Size(447, 581);
+            rsbsa4.Size = new Size(447, 535);
             rsbsa4.TabIndex = 29;
             rsbsa4.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa4.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -222,7 +232,7 @@
             rsbsa5.Location = new Point(1189, 64);
             rsbsa5.Name = "rsbsa5";
             rsbsa5.PanCursor = Cursors.Hand;
-            rsbsa5.Size = new Size(379, 581);
+            rsbsa5.Size = new Size(379, 535);
             rsbsa5.TabIndex = 30;
             rsbsa5.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa5.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -234,7 +244,7 @@
             rsbsa1.Location = new Point(26, 208);
             rsbsa1.Name = "rsbsa1";
             rsbsa1.PanCursor = Cursors.Hand;
-            rsbsa1.Size = new Size(600, 437);
+            rsbsa1.Size = new Size(600, 355);
             rsbsa1.TabIndex = 31;
             rsbsa1.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -261,11 +271,111 @@
             cmbRegInterval.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbRegInterval.FormattingEnabled = true;
             cmbRegInterval.Items.AddRange(new object[] { "Weekly", "Monthly", "Yearly" });
-            cmbRegInterval.Location = new Point(1452, 700);
+            cmbRegInterval.Location = new Point(1452, 645);
             cmbRegInterval.Name = "cmbRegInterval";
             cmbRegInterval.Size = new Size(116, 28);
             cmbRegInterval.TabIndex = 88;
             cmbRegInterval.SelectedIndexChanged += cmbRegInterval_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(6, 76, 76);
+            panel1.Location = new Point(64, 577);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(20, 20);
+            panel1.TabIndex = 89;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 109, 104);
+            panel2.Location = new Point(167, 577);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(20, 20);
+            panel2.TabIndex = 90;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(57, 137, 137);
+            panel3.Location = new Point(269, 577);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(20, 20);
+            panel3.TabIndex = 91;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(107, 167, 167);
+            panel4.Location = new Point(366, 577);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(20, 20);
+            panel4.TabIndex = 92;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(206, 226, 226);
+            panel5.Location = new Point(501, 577);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(20, 20);
+            panel5.TabIndex = 93;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(90, 577);
+            label3.Name = "label3";
+            label3.Size = new Size(37, 20);
+            label3.TabIndex = 94;
+            label3.Text = "Rice";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(193, 577);
+            label4.Name = "label4";
+            label4.Size = new Size(42, 20);
+            label4.TabIndex = 95;
+            label4.Text = "Corn";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.White;
+            label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(295, 577);
+            label9.Name = "label9";
+            label9.Size = new Size(39, 20);
+            label9.TabIndex = 96;
+            label9.Text = "HVC";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.White;
+            label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.Black;
+            label10.Location = new Point(392, 577);
+            label10.Name = "label10";
+            label10.Size = new Size(77, 20);
+            label10.TabIndex = 97;
+            label10.Text = "Livestocks";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.White;
+            label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(527, 577);
+            label11.Name = "label11";
+            label11.Size = new Size(59, 20);
+            label11.TabIndex = 98;
+            label11.Text = "Poultry";
             // 
             // AnalyticsRsbsaView
             // 
@@ -273,6 +383,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(cmbRegInterval);
             Controls.Add(cmbBrgy1);
             Controls.Add(rsbsa1);
@@ -322,5 +442,15 @@
         private OxyPlot.WindowsForms.PlotView rsbsa1;
         private ComboBox cmbBrgy1;
         private ComboBox cmbRegInterval;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Label label3;
+        private Label label4;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }

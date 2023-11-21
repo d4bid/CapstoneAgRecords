@@ -601,13 +601,14 @@ namespace AgRecords.Controller
             var model = new PlotModel();
             var pieSeries = new PieSeries();
 
+
             var commodityColors = new Dictionary<string, OxyColor>
             {
-                { "Rice", OxyColor.FromRgb(1, 97, 94) },   // Green
-                { "Corn", OxyColor.FromRgb(1, 108, 104) },  // Dark Green
-                { "HVC", OxyColor.FromRgb(26, 123, 119) },  // Green
-                { "Livestocks", OxyColor.FromRgb(52, 137, 134) }, // Greenish Blue
-                { "Poultry", OxyColor.FromRgb(78, 151, 149) } // Light Green
+                { "Rice", OxyColor.FromRgb(6, 76, 76) },   // Green
+                { "Corn", OxyColor.FromRgb(0, 109, 104) },  // Dark Green
+                { "HVC", OxyColor.FromRgb(57, 137, 137) },  // Green
+                { "Livestocks", OxyColor.FromRgb(107, 167, 167) }, // Greenish Blue
+                { "Poultry", OxyColor.FromRgb(206, 226, 226) } // Light Green
             };
 
             foreach (DataRow row in data.Rows)
@@ -644,6 +645,8 @@ namespace AgRecords.Controller
                     }
                 }
             }
+
+            pieSeries.InsideLabelFormat = string.Empty;
 
             model.Series.Add(pieSeries);
 
@@ -734,7 +737,7 @@ namespace AgRecords.Controller
             var categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Left,
-                Title = "Barangay",
+                //Title = "Barangay",
                 IsTickCentered = true
             };
 
@@ -742,7 +745,7 @@ namespace AgRecords.Controller
             var valueAxis = new LinearAxis
             {
                 Position = AxisPosition.Bottom,
-                Title = "Count"
+                //Title = "Count"
             };
 
             // Add the axes to the model
@@ -755,10 +758,10 @@ namespace AgRecords.Controller
             // Define the custom ARGB colors
             var customColors = new OxyColor[]
             {
-        OxyColor.FromArgb(255, 0, 35, 76), // ARGB format
-        OxyColor.FromArgb(255, 255, 221, 100),
-        OxyColor.FromArgb(255, 0, 109, 104),
-        OxyColor.FromArgb(255, 43, 121, 223)
+                OxyColor.FromArgb(255, 0, 35, 76), // ARGB format
+                OxyColor.FromArgb(255, 255, 221, 100),
+                OxyColor.FromArgb(255, 0, 109, 104),
+                OxyColor.FromArgb(255, 43, 121, 223)
             };
 
             // Create a list to keep track of added barangays

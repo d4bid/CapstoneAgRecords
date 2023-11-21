@@ -1,5 +1,6 @@
 ﻿using AgRecords.Controller;
 using OxyPlot;
+using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,19 @@ namespace AgRecords.View
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
+            rsbsa1.ContextMenuStrip = new ContextMenuStrip();
+            rsbsa1.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler1);
+
+            rsbsa4.ContextMenuStrip = new ContextMenuStrip();
+            rsbsa4.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler4);
+
+            rsbsa3.ContextMenuStrip = new ContextMenuStrip();
+            rsbsa3.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler3);
+
+            rsbsa5.ContextMenuStrip = new ContextMenuStrip();
+            rsbsa5.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler5);
         }
 
         public void CountFarmer(string countFarmer)
@@ -123,6 +137,42 @@ namespace AgRecords.View
 
                 // Set the pie chart model to the PlotView control
                 rsbsa3.Model = lineChart;
+            }
+        }
+
+        private void SaveAsImage_ClickHandler1(object sender, EventArgs e)
+        {
+            SaveAsImage_Click(rsbsa1);
+        }
+
+        private void SaveAsImage_ClickHandler4(object sender, EventArgs e)
+        {
+            SaveAsImage_Click(rsbsa4);
+        }
+
+        private void SaveAsImage_ClickHandler3(object sender, EventArgs e)
+        {
+            SaveAsImage_Click(rsbsa3);
+        }
+
+        private void SaveAsImage_ClickHandler5(object sender, EventArgs e)
+        {
+            SaveAsImage_Click(rsbsa5);
+        }
+
+        private void SaveAsImage_Click(PlotView plotView)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
+                }
             }
         }
     }
