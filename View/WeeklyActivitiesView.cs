@@ -51,6 +51,9 @@ namespace AgRecords.View
             dtpTo.MaxDate = DateTime.Today;
             dtpTo1.MaxDate = DateTime.Today;
 
+            dtpTo.Value = DateTime.Today;
+            dtpTo1.Value = DateTime.Today;
+
             changeDateTable();
             changeSummaryTable();
 

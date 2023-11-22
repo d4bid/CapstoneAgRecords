@@ -888,5 +888,21 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        // Barangay
+
+        public DataTable GetAllRiceBarangay()
+        {
+            try
+            {
+                return riceModel.GetAllRiceBarangay();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Barangay Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
     }
 }

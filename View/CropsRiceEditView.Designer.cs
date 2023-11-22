@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnBack = new FontAwesome.Sharp.IconButton();
             btnPrint = new FontAwesome.Sharp.IconButton();
@@ -377,24 +377,24 @@
             dgvRiceStandLogs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiceStandLogs.BackgroundColor = Color.White;
             dgvRiceStandLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRiceStandLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiceStandLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRiceStandLogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRiceStandLogs.Dock = DockStyle.Fill;
             dgvRiceStandLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvRiceStandLogs.Location = new Point(10, 10);
@@ -789,6 +789,7 @@
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(170, 28);
             dtpLogDate.TabIndex = 53;
+            dtpLogDate.Value = new DateTime(2023, 11, 19, 21, 20, 26, 0);
             // 
             // panelStandingAccomplishmentsHeader
             // 

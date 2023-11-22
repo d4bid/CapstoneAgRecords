@@ -69,6 +69,20 @@ namespace AgRecords.Controller
             rsbsaModel = new RSBSAModel();
         }
 
+        public DataTable GetAllSolanoBarangay()
+        {
+            try
+            {
+                return rsbsaModel.GetAllSolanoBarangay();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Barangay Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
+
         public void GenerateNewRSBSAId()
         {
             try

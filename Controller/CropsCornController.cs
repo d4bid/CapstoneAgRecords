@@ -884,5 +884,20 @@ namespace AgRecords.Controller
                 return null;
             }
         }
+
+        // Barangay
+        public DataTable GetAllCornBarangay()
+        {
+            try
+            {
+                return cornModel.GetAllCornBarangay();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message, "Barangay Loading Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return null;
+            }
+        }
     }
 }

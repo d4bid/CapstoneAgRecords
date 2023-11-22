@@ -242,10 +242,16 @@ namespace AgRecords.View
             if (cbTotal.Checked)
             {
                 DisplayDataTableFilter();
+
+                dgvHvcStanding.CellDoubleClick -= dgvHvcStanding_CellDoubleClick;
+                dgvHvcStanding.Columns[0].Visible = false;
             }
             else if (cbTotal.Checked == false)
             {
                 DisplayDataTableFilter();
+
+                dgvHvcStanding.CellDoubleClick += dgvHvcStanding_CellDoubleClick;
+                dgvHvcStanding.Columns[0].Visible = false;
             }
         }
     }

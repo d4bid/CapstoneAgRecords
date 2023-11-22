@@ -957,10 +957,16 @@ namespace AgRecords.View
             if (cbTotal.Checked)
             {
                 DisplayDataTableFilter();
+
+                dgvCornPlanting.CellDoubleClick -= dgvCornPlanting_CellDoubleClick;
+                dgvCornPlanting.Columns[0].Visible = false;
             }
             else
             {
                 DisplayDataTableFilter();
+
+                dgvCornPlanting.CellDoubleClick += dgvCornPlanting_CellDoubleClick;
+                dgvCornPlanting.Columns[0].Visible = true;
             }
         }
     }
