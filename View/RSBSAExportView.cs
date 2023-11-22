@@ -46,113 +46,123 @@ namespace AgRecords.View
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if (cbIsMultipleSheet.Checked == false)
+            try
             {
-                // Create a SaveFileDialog instance
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-                saveFileDialog.Title = "Export to Excel";
-                saveFileDialog.FileName = "ExportedData.xlsx"; // Default file name
-
-                // Show the SaveFileDialog and wait for the user to select a file
-                DialogResult result = saveFileDialog.ShowDialog();
-
-                // If the user clicked OK, export the data
-                if (result == DialogResult.OK)
+                if (cbIsMultipleSheet.Checked == false)
                 {
-                    // Create a new Excel package and a worksheet
-                    ExcelPackage package = new ExcelPackage();
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
+                    // Create a SaveFileDialog instance
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                    saveFileDialog.Title = "Export to Excel";
+                    saveFileDialog.FileName = "ExportedData.xlsx"; // Default file name
 
-                    // Get the visible column headers from the DataGridView and add them to the worksheet
-                    int columnIndex = 1;
-                    for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
-                    {
-                        if (dgvRSBSAExport.Columns[i].Visible)
-                        {
-                            worksheet.Cells[1, columnIndex].Value = dgvRSBSAExport.Columns[i].HeaderText;
-                            columnIndex++;
-                        }
-                    }
+                    // Show the SaveFileDialog and wait for the user to select a file
+                    DialogResult result = saveFileDialog.ShowDialog();
 
-                    // Get the visible data from the DataGridView and add it to the worksheet
-                    for (int i = 0; i < dgvRSBSAExport.Rows.Count; i++)
+                    // If the user clicked OK, export the data
+                    if (result == DialogResult.OK)
                     {
-                        columnIndex = 1;
-                        for (int j = 0; j < dgvRSBSAExport.Columns.Count; j++)
+                        // Create a new Excel package and a worksheet
+                        ExcelPackage package = new ExcelPackage();
+                        ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+                        // Get the visible column headers from the DataGridView and add them to the worksheet
+                        int columnIndex = 1;
+                        for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
                         {
-                            if (dgvRSBSAExport.Columns[j].Visible)
+                            if (dgvRSBSAExport.Columns[i].Visible)
                             {
-                                worksheet.Cells[i + 2, columnIndex].Value = dgvRSBSAExport.Rows[i].Cells[j].Value.ToString();
+                                worksheet.Cells[1, columnIndex].Value = dgvRSBSAExport.Columns[i].HeaderText;
                                 columnIndex++;
                             }
                         }
-                    }
 
-                    // Save the Excel package to the selected file location
-                    package.SaveAs(new FileInfo(saveFileDialog.FileName));
-
-                    // Inform the user that the data has been exported successfully
-                    MessageBox.Show("Data exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                // Create a SaveFileDialog instance
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-                saveFileDialog.Title = "Export to Excel";
-                saveFileDialog.FileName = "ExportedData.xlsx"; // Default file name
-
-                // Show the SaveFileDialog and wait for the user to select a file
-                DialogResult result = saveFileDialog.ShowDialog();
-
-                // If the user clicked OK, export the data to multiple sheets
-                if (result == DialogResult.OK)
-                {
-                    // Create a new Excel package
-                    ExcelPackage package = new ExcelPackage();
-
-                    // Group data by Barangay and create separate sheets
-                    var groupedData = dgvRSBSAExport.Rows.Cast<DataGridViewRow>()
-                        .GroupBy(row => row.Cells["PERMANENT ADDRESS 2- BRGY/VILL"].Value.ToString());
-
-                    foreach (var group in groupedData)
-                    {
-                        string barangayName = group.Key;
-
-                        // Create a worksheet for the current barangay
-                        ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(barangayName);
-
-                        // Add column headers to the worksheet
-                        for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
+                        // Get the visible data from the DataGridView and add it to the worksheet
+                        for (int i = 0; i < dgvRSBSAExport.Rows.Count; i++)
                         {
-                            worksheet.Cells[1, i + 1].Value = dgvRSBSAExport.Columns[i].HeaderText;
-                        }
-
-                        // Add data rows to the worksheet
-                        int rowIndex = 2;
-                        foreach (var row in group)
-                        {
-                            for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
+                            columnIndex = 1;
+                            for (int j = 0; j < dgvRSBSAExport.Columns.Count; j++)
                             {
-                                worksheet.Cells[rowIndex, i + 1].Value = row.Cells[i].Value?.ToString();
+                                if (dgvRSBSAExport.Columns[j].Visible)
+                                {
+                                    worksheet.Cells[i + 2, columnIndex].Value = dgvRSBSAExport.Rows[i].Cells[j].Value.ToString();
+                                    columnIndex++;
+                                }
                             }
-                            rowIndex++;
                         }
+
+                        // Save the Excel package to the selected file location
+                        package.SaveAs(new FileInfo(saveFileDialog.FileName));
+
+                        // Inform the user that the data has been exported successfully
+                        MessageBox.Show("Data exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                }
+                else
+                {
+                    // Create a SaveFileDialog instance
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                    saveFileDialog.Title = "Export to Excel";
+                    saveFileDialog.FileName = "ExportedData.xlsx"; // Default file name
 
-                    // Save the Excel package to the selected file location
-                    package.SaveAs(new FileInfo(saveFileDialog.FileName));
+                    // Show the SaveFileDialog and wait for the user to select a file
+                    DialogResult result = saveFileDialog.ShowDialog();
 
-                    // Inform the user that the data has been exported successfully
-                    MessageBox.Show("Data exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    userModel.InserActionLog(username, "Export", "RSBSA", $"Excel exported successfully.");
+                    // If the user clicked OK, export the data to multiple sheets
+                    if (result == DialogResult.OK)
+                    {
+                        // Create a new Excel package
+                        ExcelPackage package = new ExcelPackage();
+
+                        // Group data by Barangay and create separate sheets
+                        var groupedData = dgvRSBSAExport.Rows.Cast<DataGridViewRow>()
+                            .GroupBy(row => row.Cells["PERMANENT ADDRESS 2- BRGY/VILL"].Value.ToString());
+
+                        foreach (var group in groupedData)
+                        {
+                            string barangayName = group.Key;
+
+                            // Check if the barangayName is not empty before adding a worksheet
+                            if (!string.IsNullOrEmpty(barangayName))
+                            {
+                                // Create a worksheet for the current barangay
+                                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(barangayName);
+
+                                // Add column headers to the worksheet
+                                for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
+                                {
+                                    worksheet.Cells[1, i + 1].Value = dgvRSBSAExport.Columns[i].HeaderText;
+                                }
+
+                                // Add data rows to the worksheet
+                                int rowIndex = 2;
+                                foreach (var row in group)
+                                {
+                                    for (int i = 0; i < dgvRSBSAExport.Columns.Count; i++)
+                                    {
+                                        worksheet.Cells[rowIndex, i + 1].Value = row.Cells[i].Value?.ToString();
+                                    }
+                                    rowIndex++;
+                                }
+                            }
+                        }
+
+                        // Save the Excel package to the selected file location
+                        package.SaveAs(new FileInfo(saveFileDialog.FileName));
+
+                        // Inform the user that the data has been exported successfully
+                        MessageBox.Show("Data exported successfully!", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        userModel.InserActionLog(username, "Export", "RSBSA", $"Excel exported successfully.");
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // You may want to log the exception details for further analysis
+            }
         }
-
 
         private void cbMunicipality_CheckedChanged(object sender, EventArgs e)
         {
