@@ -331,13 +331,13 @@ namespace AgRecords.Model
                 using (DatabaseConnection db = new DatabaseConnection())
                 {
                     db.Open();
-                    List<string> list = new List<string>();
-                    list.Add("tbl_user_logs");
+                    //List<string> list = new List<string>();
+                    //list.Add("tbl_user_logs");
 
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = db.GetConnection();
                     MySqlBackup mb = new MySqlBackup(cmd);
-                    mb.ExportInfo.ExcludeTables = list;
+                    //mb.ExportInfo.ExcludeTables = list;
                     mb.ExportToFile(filepath);
 
                     return true;
@@ -358,6 +358,39 @@ namespace AgRecords.Model
                     db.Open();
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = db.GetConnection();
+                    MySqlBackup mb = new MySqlBackup(cmd);
+                    mb.ImportFromFile(filepath);
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Restore Error: " + ex.Message, ex);
+            }
+        }
+
+        private string connectionString = "server=localhost;uid=root;pwd=;";
+
+        public Boolean RestoreDroppedDatabase(string filepath)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Create the 'agrecords_db' database if it doesn't exist
+                    using (MySqlCommand createDbCommand = new MySqlCommand("CREATE DATABASE IF NOT EXISTS agrecords_db", connection))
+                    {
+                        createDbCommand.ExecuteNonQuery();
+                    }
+
+                    // Set the database to 'agrecords_db' in the connection string
+                    connection.ChangeDatabase("agrecords_db");
+
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = connection;
                     MySqlBackup mb = new MySqlBackup(cmd);
                     mb.ImportFromFile(filepath);
 

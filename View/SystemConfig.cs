@@ -15,6 +15,10 @@ namespace AgRecords.View
 {
     public partial class SystemConfig : Form
     {
+
+        UserModel userModel = new UserModel();
+
+
         public SystemConfig()
         {
             InitializeComponent();
@@ -89,7 +93,10 @@ namespace AgRecords.View
 
                 if (restore.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("SQL file restored succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (userModel.RestoreDroppedDatabase(restore.FileName))
+                    {
+                        MessageBox.Show("SQL file restored succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
