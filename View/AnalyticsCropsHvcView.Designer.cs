@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             labelTotalHvcLandArea = new Label();
             label2 = new Label();
             labelTotalHvcFarmers = new Label();
@@ -59,7 +59,15 @@
             rectangleFullWhite4 = new RectangleFullWhite();
             cmbMonth = new ComboBox();
             cmbWeek = new ComboBox();
+            panelGraph2 = new Panel();
+            panelGraph1 = new Panel();
+            panelGraph3 = new Panel();
+            panelGraph5 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvHvc).BeginInit();
+            panelGraph2.SuspendLayout();
+            panelGraph1.SuspendLayout();
+            panelGraph3.SuspendLayout();
+            panelGraph5.SuspendLayout();
             SuspendLayout();
             // 
             // labelTotalHvcLandArea
@@ -189,10 +197,10 @@
             // hvcGraph1
             // 
             hvcGraph1.BackColor = Color.White;
-            hvcGraph1.Location = new Point(622, 231);
+            hvcGraph1.Location = new Point(3, 47);
             hvcGraph1.Name = "hvcGraph1";
             hvcGraph1.PanCursor = Cursors.Hand;
-            hvcGraph1.Size = new Size(239, 233);
+            hvcGraph1.Size = new Size(274, 229);
             hvcGraph1.TabIndex = 44;
             hvcGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -204,7 +212,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 35, 76);
-            label9.Location = new Point(622, 192);
+            label9.Location = new Point(18, 12);
             label9.Name = "label9";
             label9.Size = new Size(150, 20);
             label9.TabIndex = 43;
@@ -233,25 +241,25 @@
             dgvHvc.BorderStyle = BorderStyle.None;
             dgvHvc.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvHvc.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvHvc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvHvc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvHvc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHvc.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvHvc.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvHvc.DefaultCellStyle = dataGridViewCellStyle4;
             dgvHvc.GridColor = Color.FromArgb(239, 239, 239);
             dgvHvc.Location = new Point(913, 227);
             dgvHvc.Name = "dgvHvc";
@@ -260,7 +268,7 @@
             dgvHvc.RowHeadersWidth = 51;
             dgvHvc.RowTemplate.Height = 40;
             dgvHvc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvHvc.Size = new Size(286, 237);
+            dgvHvc.Size = new Size(286, 229);
             dgvHvc.TabIndex = 47;
             // 
             // label3
@@ -278,10 +286,10 @@
             // hvcGraph2
             // 
             hvcGraph2.BackColor = Color.White;
-            hvcGraph2.Location = new Point(34, 227);
+            hvcGraph2.Location = new Point(8, 47);
             hvcGraph2.Name = "hvcGraph2";
             hvcGraph2.PanCursor = Cursors.Hand;
-            hvcGraph2.Size = new Size(521, 669);
+            hvcGraph2.Size = new Size(540, 669);
             hvcGraph2.TabIndex = 50;
             hvcGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -293,7 +301,7 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.FromArgb(0, 35, 76);
-            label11.Location = new Point(33, 188);
+            label11.Location = new Point(8, 12);
             label11.Name = "label11";
             label11.Size = new Size(278, 20);
             label11.TabIndex = 49;
@@ -308,12 +316,11 @@
             // 
             // hvcGraph3
             // 
-            hvcGraph3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             hvcGraph3.BackColor = Color.White;
-            hvcGraph3.Location = new Point(1247, 70);
+            hvcGraph3.Location = new Point(14, 36);
             hvcGraph3.Name = "hvcGraph3";
             hvcGraph3.PanCursor = Cursors.Hand;
-            hvcGraph3.Size = new Size(320, 394);
+            hvcGraph3.Size = new Size(320, 408);
             hvcGraph3.TabIndex = 53;
             hvcGraph3.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph3.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -325,7 +332,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 35, 76);
-            label5.Location = new Point(1247, 31);
+            label5.Location = new Point(14, 6);
             label5.Name = "label5";
             label5.Size = new Size(239, 20);
             label5.TabIndex = 52;
@@ -343,10 +350,10 @@
             // 
             hvcGraph5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             hvcGraph5.BackColor = Color.White;
-            hvcGraph5.Location = new Point(627, 550);
+            hvcGraph5.Location = new Point(15, 41);
             hvcGraph5.Name = "hvcGraph5";
             hvcGraph5.PanCursor = Cursors.Hand;
-            hvcGraph5.Size = new Size(940, 346);
+            hvcGraph5.Size = new Size(949, 347);
             hvcGraph5.TabIndex = 56;
             hvcGraph5.ZoomHorizontalCursor = Cursors.SizeWE;
             hvcGraph5.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -358,7 +365,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(626, 511);
+            label7.Location = new Point(18, 10);
             label7.Name = "label7";
             label7.Size = new Size(172, 20);
             label7.TabIndex = 55;
@@ -379,7 +386,7 @@
             cmbMonth.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            cmbMonth.Location = new Point(1356, 508);
+            cmbMonth.Location = new Point(749, 7);
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(119, 28);
             cmbMonth.TabIndex = 89;
@@ -392,10 +399,52 @@
             cmbWeek.FlatStyle = FlatStyle.Flat;
             cmbWeek.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbWeek.FormattingEnabled = true;
-            cmbWeek.Location = new Point(1481, 508);
+            cmbWeek.Location = new Point(878, 7);
             cmbWeek.Name = "cmbWeek";
             cmbWeek.Size = new Size(86, 28);
             cmbWeek.TabIndex = 90;
+            // 
+            // panelGraph2
+            // 
+            panelGraph2.BackColor = Color.White;
+            panelGraph2.Controls.Add(label11);
+            panelGraph2.Controls.Add(hvcGraph2);
+            panelGraph2.Location = new Point(21, 180);
+            panelGraph2.Name = "panelGraph2";
+            panelGraph2.Size = new Size(557, 726);
+            panelGraph2.TabIndex = 91;
+            // 
+            // panelGraph1
+            // 
+            panelGraph1.BackColor = Color.White;
+            panelGraph1.Controls.Add(label9);
+            panelGraph1.Controls.Add(hvcGraph1);
+            panelGraph1.Location = new Point(600, 180);
+            panelGraph1.Name = "panelGraph1";
+            panelGraph1.Size = new Size(280, 288);
+            panelGraph1.TabIndex = 92;
+            // 
+            // panelGraph3
+            // 
+            panelGraph3.BackColor = Color.White;
+            panelGraph3.Controls.Add(label5);
+            panelGraph3.Controls.Add(hvcGraph3);
+            panelGraph3.Location = new Point(1233, 20);
+            panelGraph3.Name = "panelGraph3";
+            panelGraph3.Size = new Size(350, 448);
+            panelGraph3.TabIndex = 94;
+            // 
+            // panelGraph5
+            // 
+            panelGraph5.BackColor = Color.White;
+            panelGraph5.Controls.Add(cmbMonth);
+            panelGraph5.Controls.Add(label7);
+            panelGraph5.Controls.Add(hvcGraph5);
+            panelGraph5.Controls.Add(cmbWeek);
+            panelGraph5.Location = new Point(603, 503);
+            panelGraph5.Name = "panelGraph5";
+            panelGraph5.Size = new Size(980, 403);
+            panelGraph5.TabIndex = 94;
             // 
             // AnalyticsCropsHvcView
             // 
@@ -403,22 +452,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(cmbWeek);
-            Controls.Add(cmbMonth);
-            Controls.Add(hvcGraph5);
-            Controls.Add(label7);
+            Controls.Add(panelGraph5);
+            Controls.Add(panelGraph3);
+            Controls.Add(panelGraph1);
+            Controls.Add(panelGraph2);
             Controls.Add(rectangleFullWhite4);
-            Controls.Add(hvcGraph3);
-            Controls.Add(label5);
             Controls.Add(rectangleFullWhite3);
-            Controls.Add(hvcGraph2);
-            Controls.Add(label11);
             Controls.Add(rectangleFullWhite5);
             Controls.Add(dgvHvc);
             Controls.Add(label3);
             Controls.Add(rectangleFullWhite1);
-            Controls.Add(hvcGraph1);
-            Controls.Add(label9);
             Controls.Add(rectangleFullWhite2);
             Controls.Add(labelTotalHvcBarangay);
             Controls.Add(label4);
@@ -436,6 +479,14 @@
             Text = "AnalyticsCropsHvcView";
             Load += AnalyticsCropsHvcView_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHvc).EndInit();
+            panelGraph2.ResumeLayout(false);
+            panelGraph2.PerformLayout();
+            panelGraph1.ResumeLayout(false);
+            panelGraph1.PerformLayout();
+            panelGraph3.ResumeLayout(false);
+            panelGraph3.PerformLayout();
+            panelGraph5.ResumeLayout(false);
+            panelGraph5.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -471,5 +522,9 @@
         private RectangleFullWhite rectangleFullWhite4;
         private ComboBox cmbMonth;
         private ComboBox cmbWeek;
+        private Panel panelGraph2;
+        private Panel panelGraph1;
+        private Panel panelGraph3;
+        private Panel panelGraph5;
     }
 }

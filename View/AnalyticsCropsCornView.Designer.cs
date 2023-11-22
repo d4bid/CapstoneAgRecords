@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             cornGraph1 = new OxyPlot.WindowsForms.PlotView();
             label13 = new Label();
             rectangleFullWhite7 = new RectangleFullWhite();
@@ -60,16 +60,25 @@
             dgvCornProd = new DataGridView();
             rectangleFullWhite4 = new RectangleFullWhite();
             label8 = new Label();
+            panelGraph2 = new Panel();
+            panelGraph1 = new Panel();
+            panelDgv = new Panel();
+            panelGraph3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvCornProd).BeginInit();
+            panelGraph2.SuspendLayout();
+            panelGraph1.SuspendLayout();
+            panelDgv.SuspendLayout();
+            panelGraph3.SuspendLayout();
             SuspendLayout();
             // 
             // cornGraph1
             // 
+            cornGraph1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cornGraph1.BackColor = Color.White;
-            cornGraph1.Location = new Point(1069, 67);
+            cornGraph1.Location = new Point(21, 42);
             cornGraph1.Name = "cornGraph1";
             cornGraph1.PanCursor = Cursors.Hand;
-            cornGraph1.Size = new Size(495, 831);
+            cornGraph1.Size = new Size(495, 834);
             cornGraph1.TabIndex = 68;
             cornGraph1.ZoomHorizontalCursor = Cursors.SizeWE;
             cornGraph1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -100,7 +109,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 35, 76);
-            label10.Location = new Point(29, 701);
+            label10.Location = new Point(17, 6);
             label10.Name = "label10";
             label10.Size = new Size(166, 20);
             label10.TabIndex = 61;
@@ -119,7 +128,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 35, 76);
-            label9.Location = new Point(1069, 30);
+            label9.Location = new Point(21, 8);
             label9.Name = "label9";
             label9.Size = new Size(281, 20);
             label9.TabIndex = 59;
@@ -127,6 +136,7 @@
             // 
             // rectangleFullWhite2
             // 
+            rectangleFullWhite2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleFullWhite2.Location = new Point(1047, 12);
             rectangleFullWhite2.Name = "rectangleFullWhite2";
             rectangleFullWhite2.Size = new Size(536, 901);
@@ -269,7 +279,7 @@
             label12.BackColor = Color.White;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.FromArgb(0, 35, 76);
-            label12.Location = new Point(29, 317);
+            label12.Location = new Point(17, 10);
             label12.Name = "label12";
             label12.Size = new Size(153, 20);
             label12.TabIndex = 65;
@@ -321,10 +331,10 @@
             // cornGraph2
             // 
             cornGraph2.BackColor = Color.White;
-            cornGraph2.Location = new Point(29, 358);
+            cornGraph2.Location = new Point(17, 51);
             cornGraph2.Name = "cornGraph2";
             cornGraph2.PanCursor = Cursors.Hand;
-            cornGraph2.Size = new Size(296, 289);
+            cornGraph2.Size = new Size(295, 289);
             cornGraph2.TabIndex = 73;
             cornGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             cornGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -333,10 +343,10 @@
             // cornGraph3
             // 
             cornGraph3.BackColor = Color.White;
-            cornGraph3.Location = new Point(26, 733);
+            cornGraph3.Location = new Point(17, 41);
             cornGraph3.Name = "cornGraph3";
             cornGraph3.PanCursor = Cursors.Hand;
-            cornGraph3.Size = new Size(988, 165);
+            cornGraph3.Size = new Size(988, 171);
             cornGraph3.TabIndex = 75;
             cornGraph3.ZoomHorizontalCursor = Cursors.SizeWE;
             cornGraph3.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -351,26 +361,26 @@
             dgvCornProd.BorderStyle = BorderStyle.None;
             dgvCornProd.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvCornProd.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCornProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCornProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCornProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvCornProd.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCornProd.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCornProd.GridColor = Color.FromArgb(239, 239, 239);
-            dgvCornProd.Location = new Point(374, 358);
+            dgvCornProd.Location = new Point(17, 51);
             dgvCornProd.Name = "dgvCornProd";
             dgvCornProd.ReadOnly = true;
             dgvCornProd.RowHeadersVisible = false;
@@ -393,11 +403,52 @@
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(0, 35, 76);
-            label8.Location = new Point(374, 317);
+            label8.Location = new Point(17, 10);
             label8.Name = "label8";
             label8.Size = new Size(123, 20);
             label8.TabIndex = 55;
             label8.Text = "Corn Production";
+            // 
+            // panelGraph2
+            // 
+            panelGraph2.BackColor = Color.White;
+            panelGraph2.Controls.Add(cornGraph2);
+            panelGraph2.Controls.Add(label12);
+            panelGraph2.Location = new Point(12, 307);
+            panelGraph2.Name = "panelGraph2";
+            panelGraph2.Size = new Size(331, 350);
+            panelGraph2.TabIndex = 94;
+            // 
+            // panelGraph1
+            // 
+            panelGraph1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelGraph1.BackColor = Color.White;
+            panelGraph1.Controls.Add(label9);
+            panelGraph1.Controls.Add(cornGraph1);
+            panelGraph1.Location = new Point(1047, 22);
+            panelGraph1.Name = "panelGraph1";
+            panelGraph1.Size = new Size(536, 883);
+            panelGraph1.TabIndex = 95;
+            // 
+            // panelDgv
+            // 
+            panelDgv.BackColor = Color.White;
+            panelDgv.Controls.Add(label8);
+            panelDgv.Controls.Add(dgvCornProd);
+            panelDgv.Location = new Point(357, 307);
+            panelDgv.Name = "panelDgv";
+            panelDgv.Size = new Size(676, 350);
+            panelDgv.TabIndex = 96;
+            // 
+            // panelGraph3
+            // 
+            panelGraph3.BackColor = Color.White;
+            panelGraph3.Controls.Add(label10);
+            panelGraph3.Controls.Add(cornGraph3);
+            panelGraph3.Location = new Point(12, 686);
+            panelGraph3.Name = "panelGraph3";
+            panelGraph3.Size = new Size(1021, 219);
+            panelGraph3.TabIndex = 100;
             // 
             // AnalyticsCropsCornView
             // 
@@ -405,23 +456,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(dgvCornProd);
-            Controls.Add(cornGraph3);
-            Controls.Add(cornGraph2);
+            Controls.Add(panelGraph3);
+            Controls.Add(panelDgv);
+            Controls.Add(panelGraph1);
+            Controls.Add(panelGraph2);
             Controls.Add(labelTotalWhiteCorn);
             Controls.Add(label7);
             Controls.Add(rectangleFullWhite1);
             Controls.Add(labelTotalYellowCorn);
-            Controls.Add(cornGraph1);
             Controls.Add(label13);
             Controls.Add(rectangleFullWhite7);
-            Controls.Add(label12);
             Controls.Add(rectangleFullWhite6);
-            Controls.Add(label10);
             Controls.Add(rectangleFullWhite3);
-            Controls.Add(label9);
             Controls.Add(rectangleFullWhite2);
-            Controls.Add(label8);
             Controls.Add(rectangleFullWhite4);
             Controls.Add(labelTotalCornAreaPlanted);
             Controls.Add(label4);
@@ -439,6 +486,14 @@
             Text = "AnalyticsCropsCornView";
             Load += AnalyticsCropsCornView_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCornProd).EndInit();
+            panelGraph2.ResumeLayout(false);
+            panelGraph2.PerformLayout();
+            panelGraph1.ResumeLayout(false);
+            panelGraph1.PerformLayout();
+            panelDgv.ResumeLayout(false);
+            panelDgv.PerformLayout();
+            panelGraph3.ResumeLayout(false);
+            panelGraph3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -475,5 +530,9 @@
         private DataGridView dgvCornProd;
         private RectangleFullWhite rectangleFullWhite4;
         private Label label8;
+        private Panel panelGraph2;
+        private Panel panelGraph1;
+        private Panel panelDgv;
+        private Panel panelGraph3;
     }
 }

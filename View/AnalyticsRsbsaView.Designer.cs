@@ -58,6 +58,14 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            panelGraph1 = new Panel();
+            panelGraph4 = new Panel();
+            panelGraph5 = new Panel();
+            panelGraph3 = new Panel();
+            panelGraph1.SuspendLayout();
+            panelGraph4.SuspendLayout();
+            panelGraph5.SuspendLayout();
+            panelGraph3.SuspendLayout();
             SuspendLayout();
             // 
             // labelFarmers
@@ -128,7 +136,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 35, 76);
-            label5.Location = new Point(29, 647);
+            label5.Location = new Point(11, 15);
             label5.Name = "label5";
             label5.Size = new Size(192, 20);
             label5.TabIndex = 19;
@@ -148,7 +156,7 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(0, 35, 76);
-            label6.Location = new Point(681, 30);
+            label6.Location = new Point(22, 9);
             label6.Name = "label6";
             label6.Size = new Size(216, 20);
             label6.TabIndex = 21;
@@ -167,7 +175,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(1189, 30);
+            label7.Location = new Point(20, 9);
             label7.Name = "label7";
             label7.Size = new Size(178, 20);
             label7.TabIndex = 23;
@@ -187,7 +195,7 @@
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(0, 35, 76);
-            label8.Location = new Point(29, 177);
+            label8.Location = new Point(14, 10);
             label8.Name = "label8";
             label8.Size = new Size(260, 20);
             label8.TabIndex = 25;
@@ -204,10 +212,10 @@
             // 
             rsbsa3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rsbsa3.BackColor = Color.White;
-            rsbsa3.Location = new Point(26, 679);
+            rsbsa3.Location = new Point(11, 46);
             rsbsa3.Name = "rsbsa3";
             rsbsa3.PanCursor = Cursors.Hand;
-            rsbsa3.Size = new Size(1542, 231);
+            rsbsa3.Size = new Size(1555, 217);
             rsbsa3.TabIndex = 28;
             rsbsa3.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa3.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -216,10 +224,10 @@
             // rsbsa4
             // 
             rsbsa4.BackColor = Color.White;
-            rsbsa4.Location = new Point(682, 64);
+            rsbsa4.Location = new Point(22, 45);
             rsbsa4.Name = "rsbsa4";
             rsbsa4.PanCursor = Cursors.Hand;
-            rsbsa4.Size = new Size(447, 535);
+            rsbsa4.Size = new Size(447, 533);
             rsbsa4.TabIndex = 29;
             rsbsa4.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa4.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -229,10 +237,10 @@
             // 
             rsbsa5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rsbsa5.BackColor = Color.White;
-            rsbsa5.Location = new Point(1189, 64);
+            rsbsa5.Location = new Point(20, 43);
             rsbsa5.Name = "rsbsa5";
             rsbsa5.PanCursor = Cursors.Hand;
-            rsbsa5.Size = new Size(379, 535);
+            rsbsa5.Size = new Size(382, 535);
             rsbsa5.TabIndex = 30;
             rsbsa5.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa5.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -241,10 +249,10 @@
             // rsbsa1
             // 
             rsbsa1.BackColor = Color.White;
-            rsbsa1.Location = new Point(26, 208);
+            rsbsa1.Location = new Point(14, 48);
             rsbsa1.Name = "rsbsa1";
             rsbsa1.PanCursor = Cursors.Hand;
-            rsbsa1.Size = new Size(600, 355);
+            rsbsa1.Size = new Size(604, 350);
             rsbsa1.TabIndex = 31;
             rsbsa1.ZoomHorizontalCursor = Cursors.SizeWE;
             rsbsa1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -257,7 +265,7 @@
             cmbBrgy1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbBrgy1.FormattingEnabled = true;
             cmbBrgy1.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            cmbBrgy1.Location = new Point(501, 174);
+            cmbBrgy1.Location = new Point(493, 7);
             cmbBrgy1.Name = "cmbBrgy1";
             cmbBrgy1.Size = new Size(125, 28);
             cmbBrgy1.TabIndex = 85;
@@ -271,7 +279,7 @@
             cmbRegInterval.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cmbRegInterval.FormattingEnabled = true;
             cmbRegInterval.Items.AddRange(new object[] { "Weekly", "Monthly", "Yearly" });
-            cmbRegInterval.Location = new Point(1452, 645);
+            cmbRegInterval.Location = new Point(1440, 12);
             cmbRegInterval.Name = "cmbRegInterval";
             cmbRegInterval.Size = new Size(116, 28);
             cmbRegInterval.TabIndex = 88;
@@ -280,7 +288,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(6, 76, 76);
-            panel1.Location = new Point(64, 577);
+            panel1.Location = new Point(56, 413);
             panel1.Name = "panel1";
             panel1.Size = new Size(20, 20);
             panel1.TabIndex = 89;
@@ -288,7 +296,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 109, 104);
-            panel2.Location = new Point(167, 577);
+            panel2.Location = new Point(159, 413);
             panel2.Name = "panel2";
             panel2.Size = new Size(20, 20);
             panel2.TabIndex = 90;
@@ -296,7 +304,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(57, 137, 137);
-            panel3.Location = new Point(269, 577);
+            panel3.Location = new Point(261, 413);
             panel3.Name = "panel3";
             panel3.Size = new Size(20, 20);
             panel3.TabIndex = 91;
@@ -304,7 +312,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(107, 167, 167);
-            panel4.Location = new Point(366, 577);
+            panel4.Location = new Point(358, 413);
             panel4.Name = "panel4";
             panel4.Size = new Size(20, 20);
             panel4.TabIndex = 92;
@@ -312,7 +320,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(206, 226, 226);
-            panel5.Location = new Point(501, 577);
+            panel5.Location = new Point(493, 413);
             panel5.Name = "panel5";
             panel5.Size = new Size(20, 20);
             panel5.TabIndex = 93;
@@ -323,7 +331,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(90, 577);
+            label3.Location = new Point(82, 413);
             label3.Name = "label3";
             label3.Size = new Size(37, 20);
             label3.TabIndex = 94;
@@ -335,7 +343,7 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(193, 577);
+            label4.Location = new Point(185, 413);
             label4.Name = "label4";
             label4.Size = new Size(42, 20);
             label4.TabIndex = 95;
@@ -347,7 +355,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(295, 577);
+            label9.Location = new Point(287, 413);
             label9.Name = "label9";
             label9.Size = new Size(39, 20);
             label9.TabIndex = 96;
@@ -359,7 +367,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(392, 577);
+            label10.Location = new Point(384, 413);
             label10.Name = "label10";
             label10.Size = new Size(77, 20);
             label10.TabIndex = 97;
@@ -371,11 +379,65 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(527, 577);
+            label11.Location = new Point(519, 413);
             label11.Name = "label11";
             label11.Size = new Size(59, 20);
             label11.TabIndex = 98;
             label11.Text = "Poultry";
+            // 
+            // panelGraph1
+            // 
+            panelGraph1.BackColor = Color.White;
+            panelGraph1.Controls.Add(rsbsa1);
+            panelGraph1.Controls.Add(label8);
+            panelGraph1.Controls.Add(label11);
+            panelGraph1.Controls.Add(cmbBrgy1);
+            panelGraph1.Controls.Add(label10);
+            panelGraph1.Controls.Add(panel1);
+            panelGraph1.Controls.Add(label9);
+            panelGraph1.Controls.Add(panel2);
+            panelGraph1.Controls.Add(label4);
+            panelGraph1.Controls.Add(panel3);
+            panelGraph1.Controls.Add(label3);
+            panelGraph1.Controls.Add(panel4);
+            panelGraph1.Controls.Add(panel5);
+            panelGraph1.Location = new Point(12, 166);
+            panelGraph1.Name = "panelGraph1";
+            panelGraph1.Size = new Size(634, 440);
+            panelGraph1.TabIndex = 99;
+            // 
+            // panelGraph4
+            // 
+            panelGraph4.BackColor = Color.White;
+            panelGraph4.Controls.Add(label6);
+            panelGraph4.Controls.Add(rsbsa4);
+            panelGraph4.Location = new Point(660, 21);
+            panelGraph4.Name = "panelGraph4";
+            panelGraph4.Size = new Size(492, 585);
+            panelGraph4.TabIndex = 100;
+            // 
+            // panelGraph5
+            // 
+            panelGraph5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelGraph5.BackColor = Color.White;
+            panelGraph5.Controls.Add(label7);
+            panelGraph5.Controls.Add(rsbsa5);
+            panelGraph5.Location = new Point(1166, 21);
+            panelGraph5.Name = "panelGraph5";
+            panelGraph5.Size = new Size(417, 585);
+            panelGraph5.TabIndex = 101;
+            // 
+            // panelGraph3
+            // 
+            panelGraph3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelGraph3.BackColor = Color.White;
+            panelGraph3.Controls.Add(label5);
+            panelGraph3.Controls.Add(rsbsa3);
+            panelGraph3.Controls.Add(cmbRegInterval);
+            panelGraph3.Location = new Point(12, 637);
+            panelGraph3.Name = "panelGraph3";
+            panelGraph3.Size = new Size(1571, 270);
+            panelGraph3.TabIndex = 102;
             // 
             // AnalyticsRsbsaView
             // 
@@ -383,29 +445,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(cmbRegInterval);
-            Controls.Add(cmbBrgy1);
-            Controls.Add(rsbsa1);
-            Controls.Add(rsbsa5);
-            Controls.Add(rsbsa4);
-            Controls.Add(rsbsa3);
-            Controls.Add(label8);
+            Controls.Add(panelGraph3);
+            Controls.Add(panelGraph5);
+            Controls.Add(panelGraph4);
+            Controls.Add(panelGraph1);
             Controls.Add(rectangleFullWhite4);
-            Controls.Add(label7);
             Controls.Add(rectangleFullWhite3);
-            Controls.Add(label6);
             Controls.Add(rectangleFullWhite2);
-            Controls.Add(label5);
             Controls.Add(rectangleFullWhite1);
             Controls.Add(labelFarmers);
             Controls.Add(label2);
@@ -416,6 +462,14 @@
             Name = "AnalyticsRsbsaView";
             Text = "AnalyticsRsbsaView";
             Load += AnalyticsRsbsaView_Load;
+            panelGraph1.ResumeLayout(false);
+            panelGraph1.PerformLayout();
+            panelGraph4.ResumeLayout(false);
+            panelGraph4.PerformLayout();
+            panelGraph5.ResumeLayout(false);
+            panelGraph5.PerformLayout();
+            panelGraph3.ResumeLayout(false);
+            panelGraph3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -452,5 +506,9 @@
         private Label label9;
         private Label label10;
         private Label label11;
+        private Panel panelGraph1;
+        private Panel panelGraph4;
+        private Panel panelGraph5;
+        private Panel panelGraph3;
     }
 }

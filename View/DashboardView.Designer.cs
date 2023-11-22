@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             rectangleFullGreen1 = new RectangleFullGreen();
             rectangleFullYellow1 = new RectangleFullYellow();
             barChart1 = new OxyPlot.WindowsForms.PlotView();
@@ -55,13 +55,17 @@
             label3 = new Label();
             label5 = new Label();
             label10 = new Label();
-            label11 = new Label();
+            labelNoBarangay = new Label();
             dgvAss = new DataGridView();
             dgvLetters = new DataGridView();
             panel1 = new Panel();
+            panelGraph1 = new Panel();
+            panelGraph2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvAss).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLetters).BeginInit();
             panel1.SuspendLayout();
+            panelGraph1.SuspendLayout();
+            panelGraph2.SuspendLayout();
             SuspendLayout();
             // 
             // rectangleFullGreen1
@@ -81,7 +85,7 @@
             // barChart1
             // 
             barChart1.BackColor = Color.White;
-            barChart1.Location = new Point(30, 69);
+            barChart1.Location = new Point(18, 45);
             barChart1.Name = "barChart1";
             barChart1.PanCursor = Cursors.Hand;
             barChart1.Size = new Size(484, 474);
@@ -89,6 +93,7 @@
             barChart1.ZoomHorizontalCursor = Cursors.SizeWE;
             barChart1.ZoomRectangleCursor = Cursors.SizeNWSE;
             barChart1.ZoomVerticalCursor = Cursors.SizeNS;
+            barChart1.Click += barChart1_Click;
             // 
             // rectangleFullWhite1
             // 
@@ -151,11 +156,12 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(0, 35, 76);
-            label4.Location = new Point(30, 34);
+            label4.Location = new Point(18, 11);
             label4.Name = "label4";
             label4.Size = new Size(244, 20);
             label4.TabIndex = 9;
             label4.Text = "Number of Farmers Per Barangay";
+            label4.Click += label4_Click;
             // 
             // labelGaiNonFarming
             // 
@@ -222,10 +228,10 @@
             // pieChart1
             // 
             pieChart1.BackColor = Color.White;
-            pieChart1.Location = new Point(568, 228);
+            pieChart1.Location = new Point(17, 49);
             pieChart1.Name = "pieChart1";
             pieChart1.PanCursor = Cursors.Hand;
-            pieChart1.Size = new Size(650, 321);
+            pieChart1.Size = new Size(650, 310);
             pieChart1.TabIndex = 17;
             pieChart1.ZoomHorizontalCursor = Cursors.SizeWE;
             pieChart1.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -237,7 +243,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(568, 193);
+            label7.Location = new Point(17, 14);
             label7.Name = "label7";
             label7.Size = new Size(260, 20);
             label7.TabIndex = 18;
@@ -303,18 +309,18 @@
             label10.TabIndex = 27;
             label10.Text = "No. of Barangays";
             // 
-            // label11
+            // labelNoBarangay
             // 
-            label11.Anchor = AnchorStyles.None;
-            label11.AutoSize = true;
-            label11.BackColor = Color.White;
-            label11.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(0, 35, 76);
-            label11.Location = new Point(86, 69);
-            label11.Name = "label11";
-            label11.Size = new Size(137, 106);
-            label11.TabIndex = 28;
-            label11.Text = "22";
+            labelNoBarangay.Anchor = AnchorStyles.None;
+            labelNoBarangay.AutoSize = true;
+            labelNoBarangay.BackColor = Color.White;
+            labelNoBarangay.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNoBarangay.ForeColor = Color.FromArgb(0, 35, 76);
+            labelNoBarangay.Location = new Point(86, 69);
+            labelNoBarangay.Name = "labelNoBarangay";
+            labelNoBarangay.Size = new Size(137, 106);
+            labelNoBarangay.TabIndex = 28;
+            labelNoBarangay.Text = "22";
             // 
             // dgvAss
             // 
@@ -325,24 +331,24 @@
             dgvAss.BorderStyle = BorderStyle.None;
             dgvAss.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvAss.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvAss.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvAss.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvAss.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvAss.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvAss.DefaultCellStyle = dataGridViewCellStyle6;
             dgvAss.GridColor = Color.FromArgb(239, 239, 239);
             dgvAss.Location = new Point(30, 636);
             dgvAss.Name = "dgvAss";
@@ -364,24 +370,24 @@
             dgvLetters.BorderStyle = BorderStyle.None;
             dgvLetters.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvLetters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvLetters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvLetters.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvLetters.DefaultCellStyle = dataGridViewCellStyle8;
             dgvLetters.GridColor = Color.FromArgb(239, 239, 239);
             dgvLetters.Location = new Point(1266, 228);
             dgvLetters.Name = "dgvLetters";
@@ -397,11 +403,31 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label11);
+            panel1.Controls.Add(labelNoBarangay);
             panel1.Location = new Point(1266, 645);
             panel1.Name = "panel1";
             panel1.Size = new Size(304, 249);
             panel1.TabIndex = 31;
+            // 
+            // panelGraph1
+            // 
+            panelGraph1.BackColor = Color.White;
+            panelGraph1.Controls.Add(label4);
+            panelGraph1.Controls.Add(barChart1);
+            panelGraph1.Location = new Point(12, 19);
+            panelGraph1.Name = "panelGraph1";
+            panelGraph1.Size = new Size(518, 538);
+            panelGraph1.TabIndex = 102;
+            // 
+            // panelGraph2
+            // 
+            panelGraph2.BackColor = Color.White;
+            panelGraph2.Controls.Add(label7);
+            panelGraph2.Controls.Add(pieChart1);
+            panelGraph2.Location = new Point(547, 179);
+            panelGraph2.Name = "panelGraph2";
+            panelGraph2.Size = new Size(686, 378);
+            panelGraph2.TabIndex = 103;
             // 
             // DashboardView
             // 
@@ -409,6 +435,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1595, 926);
+            Controls.Add(panelGraph2);
+            Controls.Add(panelGraph1);
             Controls.Add(panel1);
             Controls.Add(dgvLetters);
             Controls.Add(dgvAss);
@@ -417,8 +445,6 @@
             Controls.Add(label3);
             Controls.Add(label8);
             Controls.Add(label9);
-            Controls.Add(label7);
-            Controls.Add(pieChart1);
             Controls.Add(rectangleFullWhite5);
             Controls.Add(rectangleFullWhite4);
             Controls.Add(rectangleFullWhite3);
@@ -426,12 +452,10 @@
             Controls.Add(labelGaiNonFarming);
             Controls.Add(label6);
             Controls.Add(rectangleFullYellow2);
-            Controls.Add(label4);
             Controls.Add(labelGaiFarming);
             Controls.Add(label2);
             Controls.Add(labelTotalFarmers);
             Controls.Add(label1);
-            Controls.Add(barChart1);
             Controls.Add(rectangleFullYellow1);
             Controls.Add(rectangleFullGreen1);
             Controls.Add(rectangleFullWhite1);
@@ -442,6 +466,10 @@
             ((System.ComponentModel.ISupportInitialize)dgvLetters).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelGraph1.ResumeLayout(false);
+            panelGraph1.PerformLayout();
+            panelGraph2.ResumeLayout(false);
+            panelGraph2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -470,9 +498,11 @@
         private Label label3;
         private Label label5;
         private Label label10;
-        private Label label11;
+        private Label labelNoBarangay;
         private DataGridView dgvAss;
         private DataGridView dgvLetters;
         private Panel panel1;
+        private Panel panelGraph1;
+        private Panel panelGraph2;
     }
 }

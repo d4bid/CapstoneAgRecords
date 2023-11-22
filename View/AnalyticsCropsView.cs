@@ -28,19 +28,96 @@ namespace AgRecords.View
 
             // Add a ContextMenuStrip to the PlotView to handle the right-click event
             riceGraph1.ContextMenuStrip = new ContextMenuStrip();
-            riceGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph1));
+            riceGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph1));
+            riceGraph1.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph1));
 
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph1.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph1));
+            panelGraph1.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph1));
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
             riceGraph2.ContextMenuStrip = new ContextMenuStrip();
-            riceGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph2));
+            riceGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph2));
+            riceGraph2.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph2));
 
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph2.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph2));
+            panelGraph2.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph2));
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
             riceGraph4.ContextMenuStrip = new ContextMenuStrip();
-            riceGraph4.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph4));
+            riceGraph4.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph4));
+            riceGraph4.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph4));
 
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph4.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph4.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph4));
+            panelGraph4.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph4));
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
             riceGraph5.ContextMenuStrip = new ContextMenuStrip();
-            riceGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph5));
+            riceGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph5));
+            riceGraph5.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph5));
 
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph5.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph5));
+            panelGraph5.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph5));
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
             riceGraph7.ContextMenuStrip = new ContextMenuStrip();
-            riceGraph7.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(riceGraph7));
+            riceGraph7.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph7));
+            riceGraph7.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph7));
+
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph7.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph7.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph7));
+            panelGraph7.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(riceGraph7));
+
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelDgv.ContextMenuStrip = new ContextMenuStrip();
+            panelDgv.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelDgv));
+        }
+
+        private void SaveAsImage_Click(Control control)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    // Create a bitmap to composite all controls in the selected panel
+                    using (Bitmap bmp = new Bitmap(control.Width, control.Height))
+                    {
+                        control.DrawToBitmap(bmp, new Rectangle(0, 0, control.Width, control.Height));
+
+                        // Save the bitmap as an image
+                        bmp.Save(saveFileDialog.FileName);
+                    }
+                }
+            }
+        }
+
+        private void SaveGraphAsImage_Click(PlotView plotView)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
+                }
+            }
         }
 
         private void AnalyticsCropsView_Load(object sender, EventArgs e)
@@ -102,23 +179,12 @@ namespace AgRecords.View
 
         }
 
-        private void SaveAsImage_Click(PlotView plotView)
+        private void riceGraph1_Click(object sender, EventArgs e)
         {
-            // Display a SaveFileDialog to get the file path
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-            {
-                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
-                saveFileDialog.Title = "Save as Image";
-                saveFileDialog.ShowDialog();
 
-                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
-                {
-                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
-                }
-            }
         }
 
-        private void riceGraph1_Click(object sender, EventArgs e)
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }

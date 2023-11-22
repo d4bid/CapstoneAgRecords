@@ -74,11 +74,9 @@
             panel10 = new Panel();
             panel11 = new Panel();
             dgvCert = new DataGridView();
-            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             panel7.SuspendLayout();
             groupBox1.SuspendLayout();
             panel5.SuspendLayout();
@@ -86,7 +84,6 @@
             panel10.SuspendLayout();
             panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCert).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // txtReferenceNumber
@@ -322,7 +319,6 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(dataGridView1);
             flowLayoutPanel1.Location = new Point(12, 6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(799, 683);
@@ -579,16 +575,6 @@
             dgvCert.Size = new Size(734, 626);
             dgvCert.TabIndex = 25;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(300, 188);
-            dataGridView1.TabIndex = 0;
-            // 
             // CertificationsAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -611,7 +597,6 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel9.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
             panel7.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -622,7 +607,6 @@
             panel10.PerformLayout();
             panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCert).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -671,6 +655,5 @@
         private TextBox txtAmount;
         private Label label8;
         private RectangleBlue rectangleBlue8;
-        private DataGridView dataGridView1;
     }
 }

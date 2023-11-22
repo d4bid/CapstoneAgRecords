@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             labelTotalRiceLandArea = new Label();
             label2 = new Label();
             labelTotalRiceFarmers = new Label();
@@ -62,7 +62,19 @@
             panel1 = new Panel();
             panel2 = new Panel();
             dgvRiceProd = new DataGridView();
+            panelGraph2 = new Panel();
+            panelGraph4 = new Panel();
+            panelGraph1 = new Panel();
+            panelGraph5 = new Panel();
+            panelGraph7 = new Panel();
+            panelDgv = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvRiceProd).BeginInit();
+            panelGraph2.SuspendLayout();
+            panelGraph4.SuspendLayout();
+            panelGraph1.SuspendLayout();
+            panelGraph5.SuspendLayout();
+            panelGraph7.SuspendLayout();
+            panelDgv.SuspendLayout();
             SuspendLayout();
             // 
             // labelTotalRiceLandArea
@@ -195,7 +207,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 35, 76);
-            label7.Location = new Point(37, 656);
+            label7.Location = new Point(17, 10);
             label7.Name = "label7";
             label7.Size = new Size(119, 20);
             label7.TabIndex = 30;
@@ -214,7 +226,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 35, 76);
-            label9.Location = new Point(692, 31);
+            label9.Location = new Point(22, 10);
             label9.Name = "label9";
             label9.Size = new Size(149, 20);
             label9.TabIndex = 32;
@@ -233,7 +245,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 35, 76);
-            label10.Location = new Point(692, 656);
+            label10.Location = new Point(22, 10);
             label10.Name = "label10";
             label10.Size = new Size(166, 20);
             label10.TabIndex = 34;
@@ -260,7 +272,7 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.FromArgb(0, 35, 76);
-            label11.Location = new Point(1138, 30);
+            label11.Location = new Point(16, 10);
             label11.Name = "label11";
             label11.Size = new Size(277, 20);
             label11.TabIndex = 36;
@@ -272,7 +284,7 @@
             label12.BackColor = Color.White;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.FromArgb(0, 35, 76);
-            label12.Location = new Point(692, 315);
+            label12.Location = new Point(22, 7);
             label12.Name = "label12";
             label12.Size = new Size(222, 20);
             label12.TabIndex = 38;
@@ -291,7 +303,7 @@
             label13.BackColor = Color.White;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(0, 35, 76);
-            label13.Location = new Point(37, 315);
+            label13.Location = new Point(17, 7);
             label13.Name = "label13";
             label13.Size = new Size(313, 20);
             label13.TabIndex = 40;
@@ -307,7 +319,7 @@
             // riceGraph1
             // 
             riceGraph1.BackColor = Color.White;
-            riceGraph1.Location = new Point(692, 70);
+            riceGraph1.Location = new Point(22, 47);
             riceGraph1.Name = "riceGraph1";
             riceGraph1.PanCursor = Cursors.Hand;
             riceGraph1.Size = new Size(390, 200);
@@ -321,10 +333,10 @@
             // 
             riceGraph2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             riceGraph2.BackColor = Color.White;
-            riceGraph2.Location = new Point(1138, 67);
+            riceGraph2.Location = new Point(16, 44);
             riceGraph2.Name = "riceGraph2";
             riceGraph2.PanCursor = Cursors.Hand;
-            riceGraph2.Size = new Size(474, 833);
+            riceGraph2.Size = new Size(485, 836);
             riceGraph2.TabIndex = 42;
             riceGraph2.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph2.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -333,10 +345,10 @@
             // riceGraph4
             // 
             riceGraph4.BackColor = Color.White;
-            riceGraph4.Location = new Point(692, 361);
+            riceGraph4.Location = new Point(22, 55);
             riceGraph4.Name = "riceGraph4";
             riceGraph4.PanCursor = Cursors.Hand;
-            riceGraph4.Size = new Size(390, 245);
+            riceGraph4.Size = new Size(390, 244);
             riceGraph4.TabIndex = 44;
             riceGraph4.ZoomHorizontalCursor = Cursors.SizeWE;
             riceGraph4.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -345,7 +357,7 @@
             // riceGraph5
             // 
             riceGraph5.BackColor = Color.White;
-            riceGraph5.Location = new Point(36, 348);
+            riceGraph5.Location = new Point(24, 41);
             riceGraph5.Name = "riceGraph5";
             riceGraph5.PanCursor = Cursors.Hand;
             riceGraph5.Size = new Size(596, 258);
@@ -357,7 +369,7 @@
             // riceGraph7
             // 
             riceGraph7.BackColor = Color.White;
-            riceGraph7.Location = new Point(692, 687);
+            riceGraph7.Location = new Point(22, 41);
             riceGraph7.Name = "riceGraph7";
             riceGraph7.PanCursor = Cursors.Hand;
             riceGraph7.Size = new Size(390, 213);
@@ -369,7 +381,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 109, 104);
-            panel1.Location = new Point(733, 336);
+            panel1.Location = new Point(63, 30);
             panel1.Name = "panel1";
             panel1.Size = new Size(71, 2);
             panel1.TabIndex = 48;
@@ -377,7 +389,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 221, 100);
-            panel2.Location = new Point(856, 336);
+            panel2.Location = new Point(186, 30);
             panel2.Name = "panel2";
             panel2.Size = new Size(52, 2);
             panel2.TabIndex = 49;
@@ -391,26 +403,26 @@
             dgvRiceProd.BorderStyle = BorderStyle.None;
             dgvRiceProd.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvRiceProd.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvRiceProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRiceProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRiceProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvRiceProd.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRiceProd.DefaultCellStyle = dataGridViewCellStyle4;
             dgvRiceProd.GridColor = Color.FromArgb(239, 239, 239);
-            dgvRiceProd.Location = new Point(37, 687);
+            dgvRiceProd.Location = new Point(24, 41);
             dgvRiceProd.Name = "dgvRiceProd";
             dgvRiceProd.ReadOnly = true;
             dgvRiceProd.RowHeadersVisible = false;
@@ -420,31 +432,87 @@
             dgvRiceProd.Size = new Size(595, 213);
             dgvRiceProd.TabIndex = 50;
             // 
+            // panelGraph2
+            // 
+            panelGraph2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelGraph2.BackColor = Color.White;
+            panelGraph2.Controls.Add(label11);
+            panelGraph2.Controls.Add(riceGraph2);
+            panelGraph2.Location = new Point(1112, 20);
+            panelGraph2.Name = "panelGraph2";
+            panelGraph2.Size = new Size(520, 888);
+            panelGraph2.TabIndex = 102;
+            // 
+            // panelGraph4
+            // 
+            panelGraph4.BackColor = Color.White;
+            panelGraph4.Controls.Add(riceGraph4);
+            panelGraph4.Controls.Add(label12);
+            panelGraph4.Controls.Add(panel1);
+            panelGraph4.Controls.Add(panel2);
+            panelGraph4.Location = new Point(670, 308);
+            panelGraph4.Name = "panelGraph4";
+            panelGraph4.Size = new Size(428, 306);
+            panelGraph4.TabIndex = 103;
+            // 
+            // panelGraph1
+            // 
+            panelGraph1.BackColor = Color.White;
+            panelGraph1.Controls.Add(label9);
+            panelGraph1.Controls.Add(riceGraph1);
+            panelGraph1.Location = new Point(670, 20);
+            panelGraph1.Name = "panelGraph1";
+            panelGraph1.Size = new Size(428, 258);
+            panelGraph1.TabIndex = 104;
+            // 
+            // panelGraph5
+            // 
+            panelGraph5.BackColor = Color.White;
+            panelGraph5.Controls.Add(label13);
+            panelGraph5.Controls.Add(riceGraph5);
+            panelGraph5.Location = new Point(12, 308);
+            panelGraph5.Name = "panelGraph5";
+            panelGraph5.Size = new Size(644, 306);
+            panelGraph5.TabIndex = 105;
+            panelGraph5.Paint += panel5_Paint;
+            // 
+            // panelGraph7
+            // 
+            panelGraph7.BackColor = Color.White;
+            panelGraph7.Controls.Add(label10);
+            panelGraph7.Controls.Add(riceGraph7);
+            panelGraph7.Location = new Point(670, 646);
+            panelGraph7.Name = "panelGraph7";
+            panelGraph7.Size = new Size(428, 262);
+            panelGraph7.TabIndex = 106;
+            // 
+            // panelDgv
+            // 
+            panelDgv.BackColor = Color.White;
+            panelDgv.Controls.Add(label7);
+            panelDgv.Controls.Add(dgvRiceProd);
+            panelDgv.Location = new Point(12, 646);
+            panelDgv.Name = "panelDgv";
+            panelDgv.Size = new Size(644, 262);
+            panelDgv.TabIndex = 107;
+            // 
             // AnalyticsCropsView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1644, 926);
-            Controls.Add(dgvRiceProd);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(riceGraph7);
-            Controls.Add(riceGraph5);
-            Controls.Add(riceGraph4);
-            Controls.Add(riceGraph2);
-            Controls.Add(riceGraph1);
-            Controls.Add(label13);
+            Controls.Add(panelDgv);
+            Controls.Add(panelGraph7);
+            Controls.Add(panelGraph5);
+            Controls.Add(panelGraph1);
+            Controls.Add(panelGraph4);
+            Controls.Add(panelGraph2);
             Controls.Add(rectangleFullWhite7);
-            Controls.Add(label12);
             Controls.Add(rectangleFullWhite6);
-            Controls.Add(label11);
             Controls.Add(rectangleFullWhite5);
-            Controls.Add(label10);
             Controls.Add(rectangleFullWhite3);
-            Controls.Add(label9);
             Controls.Add(rectangleFullWhite2);
-            Controls.Add(label7);
             Controls.Add(rectangleFullWhite1);
             Controls.Add(labelTotalRiceBarangay);
             Controls.Add(label4);
@@ -462,6 +530,18 @@
             Text = "AnalyticsCropsView";
             Load += AnalyticsCropsView_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRiceProd).EndInit();
+            panelGraph2.ResumeLayout(false);
+            panelGraph2.PerformLayout();
+            panelGraph4.ResumeLayout(false);
+            panelGraph4.PerformLayout();
+            panelGraph1.ResumeLayout(false);
+            panelGraph1.PerformLayout();
+            panelGraph5.ResumeLayout(false);
+            panelGraph5.PerformLayout();
+            panelGraph7.ResumeLayout(false);
+            panelGraph7.PerformLayout();
+            panelDgv.ResumeLayout(false);
+            panelDgv.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -500,5 +580,11 @@
         private Panel panel1;
         private Panel panel2;
         private DataGridView dgvRiceProd;
+        private Panel panelGraph2;
+        private Panel panelGraph4;
+        private Panel panelGraph1;
+        private Panel panelGraph5;
+        private Panel panelGraph7;
+        private Panel panelDgv;
     }
 }

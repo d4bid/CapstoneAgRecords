@@ -28,16 +28,83 @@ namespace AgRecords.View
 
             // Add a ContextMenuStrip to the PlotView to handle the right-click event
             rsbsa1.ContextMenuStrip = new ContextMenuStrip();
-            rsbsa1.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler1);
+            rsbsa1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph1));
+            rsbsa1.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa1));
 
-            rsbsa4.ContextMenuStrip = new ContextMenuStrip();
-            rsbsa4.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler4);
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph1.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph1.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph1));
+            panelGraph1.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa1));
 
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
             rsbsa3.ContextMenuStrip = new ContextMenuStrip();
-            rsbsa3.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler3);
+            rsbsa3.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph3));
+            rsbsa3.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa3));
 
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph3.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph3.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph3));
+            panelGraph3.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa3));
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
+            rsbsa4.ContextMenuStrip = new ContextMenuStrip();
+            rsbsa4.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph4));
+            rsbsa4.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa4));
+
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph4.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph4.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph4));
+            panelGraph4.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa4));
+
+            // Add a ContextMenuStrip to the PlotView to handle the right-click event
             rsbsa5.ContextMenuStrip = new ContextMenuStrip();
-            rsbsa5.ContextMenuStrip.Items.Add("Save as Image", null, SaveAsImage_ClickHandler5);
+            rsbsa5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph5));
+            rsbsa5.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa5));
+
+            // Add a ContextMenuStrip to each panel to handle the right-click event
+            panelGraph5.ContextMenuStrip = new ContextMenuStrip();
+            panelGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph5));
+            panelGraph5.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa5));
+
+        }
+
+        private void SaveAsImage_Click(Control control)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    // Create a bitmap to composite all controls in the selected panel
+                    using (Bitmap bmp = new Bitmap(control.Width, control.Height))
+                    {
+                        control.DrawToBitmap(bmp, new Rectangle(0, 0, control.Width, control.Height));
+
+                        // Save the bitmap as an image
+                        bmp.Save(saveFileDialog.FileName);
+                    }
+                }
+            }
+        }
+
+        private void SaveGraphAsImage_Click(PlotView plotView)
+        {
+            // Display a SaveFileDialog to get the file path
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|BMP Image|*.bmp";
+                saveFileDialog.Title = "Save as Image";
+                saveFileDialog.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                {
+                    OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
+                }
+            }
         }
 
         public void CountFarmer(string countFarmer)
