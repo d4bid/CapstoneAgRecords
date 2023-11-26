@@ -154,43 +154,12 @@ namespace AgRecords.Controller
                     headName = headName
                 };
 
-                if (cert.rsbsaIdLGU == "")
-                {
-                    MessageBox.Show("Reference Number is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                }
-                else if (cert.orderNumber == "")
+                if (certModel.AddCertificate(cert))
                 {
-                    MessageBox.Show("O.R. No. is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (cert.name == "")
-                {
-                    MessageBox.Show("Farmer's name is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (cert.barangay == "")
-                {
-                    MessageBox.Show("Farmer's Address is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (cert.employeeName == "")
-                {
-                    MessageBox.Show("Agricultural Technologist/Agriculturist's name is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else if (position == "")
-                {
-                    MessageBox.Show("Employee's Position is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (cert.rsbsaIdLGU != "" && cert.orderNumber != "" && cert.name != "" && cert.barangay != "" && cert.employeeName != "" && cert.farmLocBrgy != "" && position != "")
-                {
-                    if (certModel.AddCertificate(cert))
-                    {
-                        isDone = true;
-                        //MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        userModel.InserActionLog(username, "Generate", "Certificate", $"{referenceNumber} with O.R. No. {orNo} generated successfully.");
-                    }
+                    isDone = true;
+                    //MessageBox.Show("Rice Standing Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    userModel.InserActionLog(username, "Generate", "Certificate", $"{referenceNumber} with O.R. No. {orNo} generated successfully.");
                 }
 
                 // Return true to indicate a successful operation

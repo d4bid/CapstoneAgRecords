@@ -4009,7 +4009,7 @@
             cbSex.FlatStyle = FlatStyle.Flat;
             cbSex.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             cbSex.FormattingEnabled = true;
-            cbSex.Items.AddRange(new object[] { "MALE ", "FEMALE" });
+            cbSex.Items.AddRange(new object[] { "MALE", "FEMALE" });
             cbSex.Location = new Point(1195, 73);
             cbSex.Name = "cbSex";
             cbSex.Size = new Size(155, 31);

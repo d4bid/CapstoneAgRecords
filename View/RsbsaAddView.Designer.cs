@@ -486,7 +486,7 @@
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
             panelDocument.Padding = new Padding(10);
-            panelDocument.Size = new Size(1595, 0);
+            panelDocument.Size = new Size(1595, 766);
             panelDocument.TabIndex = 0;
             // 
             // flowLayoutPanelDocs

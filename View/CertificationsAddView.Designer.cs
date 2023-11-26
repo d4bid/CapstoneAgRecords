@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             txtReferenceNumber = new TextBox();
             label4 = new Label();
             label6 = new Label();
             labelRsbsaId = new Label();
             panel1 = new Panel();
+            lblSex = new Label();
             txtAmount = new TextBox();
             label8 = new Label();
             rectangleBlue8 = new RectangleBlue();
@@ -46,7 +47,7 @@
             label2 = new Label();
             rectangleBlue1 = new RectangleBlue();
             rectangleBlue2 = new RectangleBlue();
-            rectangleBlue3 = new RectangleBlue();
+            boxOrNo = new RectangleBlue();
             panel3 = new Panel();
             panel2 = new Panel();
             panel9 = new Panel();
@@ -66,14 +67,18 @@
             groupBox2 = new GroupBox();
             label5 = new Label();
             txtPosition = new TextBox();
-            rectangleBlue7 = new RectangleBlue();
+            boxEmployeePosition = new RectangleBlue();
             cmbEmployee = new ComboBox();
             label7 = new Label();
-            rectangleBlue6 = new RectangleBlue();
+            boxEmployee = new RectangleBlue();
             panel6 = new Panel();
             panel10 = new Panel();
             panel11 = new Panel();
             dgvCert = new DataGridView();
+            rectangleRed1 = new RectangleRed();
+            rectangleRed2 = new RectangleRed();
+            rectangleRed3 = new RectangleRed();
+            rectangleRed4 = new RectangleRed();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
@@ -128,6 +133,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(lblSex);
             panel1.Controls.Add(txtAmount);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(rectangleBlue8);
@@ -143,13 +149,25 @@
             panel1.Controls.Add(label6);
             panel1.Controls.Add(rectangleBlue1);
             panel1.Controls.Add(rectangleBlue2);
-            panel1.Controls.Add(rectangleBlue3);
+            panel1.Controls.Add(boxOrNo);
+            panel1.Controls.Add(rectangleRed4);
+            panel1.Controls.Add(rectangleRed3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(0, 0, 0, 10);
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 36;
+            // 
+            // lblSex
+            // 
+            lblSex.AutoSize = true;
+            lblSex.Location = new Point(1082, 39);
+            lblSex.Name = "lblSex";
+            lblSex.Size = new Size(32, 20);
+            lblSex.TabIndex = 67;
+            lblSex.Text = "Sex";
+            lblSex.Visible = false;
             // 
             // txtAmount
             // 
@@ -191,7 +209,7 @@
             // labelClickCount
             // 
             labelClickCount.AutoSize = true;
-            labelClickCount.Location = new Point(1281, 13);
+            labelClickCount.Location = new Point(1082, 60);
             labelClickCount.Name = "labelClickCount";
             labelClickCount.Size = new Size(18, 20);
             labelClickCount.TabIndex = 63;
@@ -279,12 +297,12 @@
             rectangleBlue2.Size = new Size(346, 38);
             rectangleBlue2.TabIndex = 61;
             // 
-            // rectangleBlue3
+            // boxOrNo
             // 
-            rectangleBlue3.Location = new Point(636, 39);
-            rectangleBlue3.Name = "rectangleBlue3";
-            rectangleBlue3.Size = new Size(225, 38);
-            rectangleBlue3.TabIndex = 62;
+            boxOrNo.Location = new Point(636, 39);
+            boxOrNo.Name = "boxOrNo";
+            boxOrNo.Size = new Size(225, 38);
+            boxOrNo.TabIndex = 62;
             // 
             // panel3
             // 
@@ -444,10 +462,12 @@
             // 
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(txtPosition);
-            groupBox2.Controls.Add(rectangleBlue7);
+            groupBox2.Controls.Add(boxEmployeePosition);
             groupBox2.Controls.Add(cmbEmployee);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(rectangleBlue6);
+            groupBox2.Controls.Add(boxEmployee);
+            groupBox2.Controls.Add(rectangleRed1);
+            groupBox2.Controls.Add(rectangleRed2);
             groupBox2.Location = new Point(13, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(728, 106);
@@ -473,12 +493,12 @@
             txtPosition.Size = new Size(271, 24);
             txtPosition.TabIndex = 101;
             // 
-            // rectangleBlue7
+            // boxEmployeePosition
             // 
-            rectangleBlue7.Location = new Point(400, 46);
-            rectangleBlue7.Name = "rectangleBlue7";
-            rectangleBlue7.Size = new Size(301, 38);
-            rectangleBlue7.TabIndex = 102;
+            boxEmployeePosition.Location = new Point(400, 46);
+            boxEmployeePosition.Name = "boxEmployeePosition";
+            boxEmployeePosition.Size = new Size(301, 38);
+            boxEmployeePosition.TabIndex = 102;
             // 
             // cmbEmployee
             // 
@@ -499,12 +519,12 @@
             label7.TabIndex = 22;
             label7.Text = "Agricultural Technologist/Agriclturist";
             // 
-            // rectangleBlue6
+            // boxEmployee
             // 
-            rectangleBlue6.Location = new Point(19, 46);
-            rectangleBlue6.Name = "rectangleBlue6";
-            rectangleBlue6.Size = new Size(361, 38);
-            rectangleBlue6.TabIndex = 61;
+            boxEmployee.Location = new Point(19, 46);
+            boxEmployee.Name = "boxEmployee";
+            boxEmployee.Size = new Size(361, 38);
+            boxEmployee.TabIndex = 61;
             // 
             // panel6
             // 
@@ -545,24 +565,24 @@
             dgvCert.BackgroundColor = Color.White;
             dgvCert.BorderStyle = BorderStyle.None;
             dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvCert.DefaultCellStyle = dataGridViewCellStyle8;
             dgvCert.Dock = DockStyle.Fill;
             dgvCert.GridColor = Color.FromArgb(239, 239, 239);
             dgvCert.Location = new Point(10, 10);
@@ -574,6 +594,34 @@
             dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCert.Size = new Size(734, 626);
             dgvCert.TabIndex = 25;
+            // 
+            // rectangleRed1
+            // 
+            rectangleRed1.Location = new Point(19, 46);
+            rectangleRed1.Name = "rectangleRed1";
+            rectangleRed1.Size = new Size(361, 38);
+            rectangleRed1.TabIndex = 104;
+            // 
+            // rectangleRed2
+            // 
+            rectangleRed2.Location = new Point(400, 46);
+            rectangleRed2.Name = "rectangleRed2";
+            rectangleRed2.Size = new Size(301, 38);
+            rectangleRed2.TabIndex = 105;
+            // 
+            // rectangleRed3
+            // 
+            rectangleRed3.Location = new Point(878, 39);
+            rectangleRed3.Name = "rectangleRed3";
+            rectangleRed3.Size = new Size(159, 38);
+            rectangleRed3.TabIndex = 106;
+            // 
+            // rectangleRed4
+            // 
+            rectangleRed4.Location = new Point(636, 39);
+            rectangleRed4.Name = "rectangleRed4";
+            rectangleRed4.Size = new Size(225, 38);
+            rectangleRed4.TabIndex = 107;
             // 
             // CertificationsAddView
             // 
@@ -635,7 +683,7 @@
         private Label lblTempParcelCount;
         private RectangleBlue rectangleBlue1;
         private RectangleBlue rectangleBlue2;
-        private RectangleBlue rectangleBlue3;
+        private RectangleBlue boxOrNo;
         private RectangleBlue rectangleBlue4;
         private RectangleBlue rectangleBlue5;
         private Label labelClickCount;
@@ -647,13 +695,18 @@
         private DataGridView dgvCert;
         private GroupBox groupBox2;
         private Label label7;
-        private RectangleBlue rectangleBlue6;
+        private RectangleBlue boxEmployee;
         private ComboBox cmbEmployee;
         private Label label5;
         private TextBox txtPosition;
-        private RectangleBlue rectangleBlue7;
+        private RectangleBlue boxEmployeePosition;
         private TextBox txtAmount;
         private Label label8;
         private RectangleBlue rectangleBlue8;
+        private Label lblSex;
+        private RectangleRed rectangleRed4;
+        private RectangleRed rectangleRed3;
+        private RectangleRed rectangleRed1;
+        private RectangleRed rectangleRed2;
     }
 }

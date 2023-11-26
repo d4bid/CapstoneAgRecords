@@ -12,6 +12,7 @@ namespace AgRecords.Model
         public string? rsbsaId { get; set; }
         public string? rsbsaIdLGU { get; set; }
         public string? name { get; set; }
+        public string? sex { get; set; }
         public string? barangay { get; set; }
         public int? farmParcelCount { get; set; }
         public string? employeeName { get; set; }

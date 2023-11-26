@@ -69,6 +69,11 @@
             rbOwnershipTypeLessee = new RadioButton();
             rbOwnershipTypeTenant = new RadioButton();
             label5 = new Label();
+            rectangleRed5 = new RectangleRed();
+            rectangleRed1 = new RectangleRed();
+            rectangleRed2 = new RectangleRed();
+            rectangleRed4 = new RectangleRed();
+            rectangleRed3 = new RectangleRed();
             panelFarm = new Panel();
             gbFarmType = new GroupBox();
             cbAgriFisheryFarmType = new ComboBox();
@@ -127,11 +132,6 @@
             panelFarmHeader = new Panel();
             btnRemove = new FontAwesome.Sharp.IconButton();
             label7 = new Label();
-            rectangleRed1 = new RectangleRed();
-            rectangleRed2 = new RectangleRed();
-            rectangleRed3 = new RectangleRed();
-            rectangleRed4 = new RectangleRed();
-            rectangleRed5 = new RectangleRed();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
             panelFarmLandDescription.SuspendLayout();
@@ -646,6 +646,41 @@
             label5.Size = new Size(318, 20);
             label5.TabIndex = 96;
             label5.Text = "(Name of Land Owner, if not registered owner)";
+            // 
+            // rectangleRed5
+            // 
+            rectangleRed5.Location = new Point(23, 89);
+            rectangleRed5.Name = "rectangleRed5";
+            rectangleRed5.Size = new Size(619, 38);
+            rectangleRed5.TabIndex = 104;
+            // 
+            // rectangleRed1
+            // 
+            rectangleRed1.Location = new Point(239, 41);
+            rectangleRed1.Name = "rectangleRed1";
+            rectangleRed1.Size = new Size(415, 38);
+            rectangleRed1.TabIndex = 100;
+            // 
+            // rectangleRed2
+            // 
+            rectangleRed2.Location = new Point(239, 94);
+            rectangleRed2.Name = "rectangleRed2";
+            rectangleRed2.Size = new Size(415, 38);
+            rectangleRed2.TabIndex = 101;
+            // 
+            // rectangleRed4
+            // 
+            rectangleRed4.Location = new Point(237, 179);
+            rectangleRed4.Name = "rectangleRed4";
+            rectangleRed4.Size = new Size(199, 38);
+            rectangleRed4.TabIndex = 103;
+            // 
+            // rectangleRed3
+            // 
+            rectangleRed3.Location = new Point(237, 264);
+            rectangleRed3.Name = "rectangleRed3";
+            rectangleRed3.Size = new Size(199, 38);
+            rectangleRed3.TabIndex = 102;
             // 
             // panelFarm
             // 
@@ -1364,41 +1399,6 @@
             label7.Size = new Size(53, 25);
             label7.TabIndex = 28;
             label7.Text = "Farm";
-            // 
-            // rectangleRed1
-            // 
-            rectangleRed1.Location = new Point(239, 41);
-            rectangleRed1.Name = "rectangleRed1";
-            rectangleRed1.Size = new Size(415, 38);
-            rectangleRed1.TabIndex = 100;
-            // 
-            // rectangleRed2
-            // 
-            rectangleRed2.Location = new Point(239, 94);
-            rectangleRed2.Name = "rectangleRed2";
-            rectangleRed2.Size = new Size(415, 38);
-            rectangleRed2.TabIndex = 101;
-            // 
-            // rectangleRed3
-            // 
-            rectangleRed3.Location = new Point(237, 264);
-            rectangleRed3.Name = "rectangleRed3";
-            rectangleRed3.Size = new Size(199, 38);
-            rectangleRed3.TabIndex = 102;
-            // 
-            // rectangleRed4
-            // 
-            rectangleRed4.Location = new Point(237, 179);
-            rectangleRed4.Name = "rectangleRed4";
-            rectangleRed4.Size = new Size(199, 38);
-            rectangleRed4.TabIndex = 103;
-            // 
-            // rectangleRed5
-            // 
-            rectangleRed5.Location = new Point(23, 89);
-            rectangleRed5.Name = "rectangleRed5";
-            rectangleRed5.Size = new Size(619, 38);
-            rectangleRed5.TabIndex = 104;
             // 
             // FarmLandControl
             // 

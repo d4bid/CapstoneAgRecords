@@ -120,6 +120,7 @@ namespace AgRecords.Model
                         cert.rsbsaId = reader["ID"].ToString();
                         cert.rsbsaIdLGU = reader["Reference Number"].ToString();
                         cert.name = reader["Name"].ToString();
+                        cert.sex = reader["Sex"].ToString();
                         cert.barangay = reader["Barangay"].ToString();
                         cert.farmParcelCount = Convert.ToInt32(reader["farmParcelCount"].ToString());
                     }
@@ -289,7 +290,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    string query = "SELECT `O.R. No.`, `Farm Info`, `Farm Address` FROM vw_get_all_cert WHERE `Reference Number` = @refNumber";
+                    string query = "SELECT `O.R. No.`, `Farm Info`, `Farm Address`, 'Employee', Date FROM vw_get_all_cert WHERE `Reference Number` = @refNumber";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@refNumber", refNumber);
 
