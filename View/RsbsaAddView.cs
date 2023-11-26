@@ -40,10 +40,12 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
+            panelPiAffiliations.Visible = false;
 
             rsbsaController.GenerateNewRSBSAId();
 
@@ -328,11 +330,13 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+            panelPiAffiliations.Visible = false;
 
             txtSurname.Focus();
         }
@@ -343,8 +347,10 @@ namespace AgRecords.View
             panelColorFp.Visible = true;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
@@ -358,8 +364,10 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = true;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
             panelDocument.Visible = false;
@@ -373,11 +381,28 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = true;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
             panelDocument.Visible = true;
+        }
+
+        private void btnAffiliations_Click(object sender, EventArgs e)
+        {
+            panelColorPi.Visible = false;
+            panelColorFp.Visible = false;
+            panelColorFl.Visible = false;
+            panelColorDoc.Visible = false;
+            panelColorAff.Visible = true;
+
+            panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
+            panelFarmProfile.Visible = false;
+            panelFarmLand.Visible = false;
+            panelDocument.Visible = false;
         }
 
         // End of Buttons/Tab
@@ -400,6 +425,7 @@ namespace AgRecords.View
             dtDateAdm.MinDate = minDate;
             txtSurname.Focus();
 
+            errorPiBirthDate.Visible = false;
         }
 
         private void rectangleRound42_Load(object sender, EventArgs e)
@@ -1283,6 +1309,25 @@ namespace AgRecords.View
             {
 
             }
+        }
+
+        private void panelAddress_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void errorPiHouseholdName_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boxPiHouseholdName_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void flowLayoutPanelParcels_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

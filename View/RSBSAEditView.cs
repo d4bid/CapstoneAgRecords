@@ -245,10 +245,12 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
+            panelPiAffiliations.Visible = false;
 
         }
 
@@ -258,11 +260,15 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
             panelFarmProfile.Visible = false;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+            panelPiAffiliations.Visible = false;
+
+            txtSurname.Focus();
         }
 
         private void btnFarmProfile_Click(object sender, EventArgs e)
@@ -271,11 +277,15 @@ namespace AgRecords.View
             panelColorFp.Visible = true;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = false;
             panelDocument.Visible = false;
+
+            cbLivelihoodFarmer.Focus();
         }
 
         private void btnFarmLand_Click(object sender, EventArgs e)
@@ -284,11 +294,15 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = true;
             panelColorDoc.Visible = false;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
             panelDocument.Visible = false;
+
+            btnAddFarmParcel.Focus();
         }
 
         private void btnDocuments_Click(object sender, EventArgs e)
@@ -297,11 +311,28 @@ namespace AgRecords.View
             panelColorFp.Visible = false;
             panelColorFl.Visible = false;
             panelColorDoc.Visible = true;
+            panelColorAff.Visible = false;
 
             panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
             panelFarmProfile.Visible = true;
             panelFarmLand.Visible = true;
             panelDocument.Visible = true;
+        }
+
+        private void btnAffiliations_Click(object sender, EventArgs e)
+        {
+            panelColorPi.Visible = false;
+            panelColorFp.Visible = false;
+            panelColorFl.Visible = false;
+            panelColorDoc.Visible = false;
+            panelColorAff.Visible = true;
+
+            panelPersonalInfo.Visible = true;
+            panelPiAffiliations.Visible = true;
+            panelFarmProfile.Visible = false;
+            panelFarmLand.Visible = false;
+            panelDocument.Visible = false;
         }
 
         private void RSBSAEditView_Load(object sender, EventArgs e)

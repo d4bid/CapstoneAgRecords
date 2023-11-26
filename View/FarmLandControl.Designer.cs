@@ -46,24 +46,24 @@
             txtFarmLocMunicipality = new TextBox();
             txtFarmLocBarangay = new TextBox();
             rectangleRound6 = new RectangleRound();
-            rectangleRound5 = new RectangleRound();
+            boxFlOwnershipDoc = new RectangleRound();
             rectangleRound4 = new RectangleRound();
-            rectangleRound3 = new RectangleRound();
+            boxFlTotalFarmArea = new RectangleRound();
             label51 = new Label();
             label52 = new Label();
             label53 = new Label();
             label55 = new Label();
             label56 = new Label();
             label4 = new Label();
-            rectangleRound2 = new RectangleRound();
+            boxFlMunicipality = new RectangleRound();
             label3 = new Label();
-            rectangleRound1 = new RectangleRound();
+            boxFlBarangay = new RectangleRound();
             panelFarmLandDescriptionHeader = new Panel();
             label1 = new Label();
             label2 = new Label();
             panelOwnershipType = new Panel();
             txtOwnerName = new TextBox();
-            rectangleRound7 = new RectangleRound();
+            boxFlLandOwner = new RectangleRound();
             rbOwnershipTypeOwner = new RadioButton();
             rbOwnershipTypeOthers = new RadioButton();
             rbOwnershipTypeLessee = new RadioButton();
@@ -127,6 +127,11 @@
             panelFarmHeader = new Panel();
             btnRemove = new FontAwesome.Sharp.IconButton();
             label7 = new Label();
+            rectangleRed1 = new RectangleRed();
+            rectangleRed2 = new RectangleRed();
+            rectangleRed3 = new RectangleRed();
+            rectangleRed4 = new RectangleRed();
+            rectangleRed5 = new RectangleRed();
             panel43.SuspendLayout();
             panel44.SuspendLayout();
             panelFarmLandDescription.SuspendLayout();
@@ -152,7 +157,7 @@
             panel43.Controls.Add(panel44);
             panel43.Location = new Point(3, 3);
             panel43.Name = "panel43";
-            panel43.Size = new Size(150, 505);
+            panel43.Size = new Size(147, 505);
             panel43.TabIndex = 0;
             // 
             // labelParcelNo
@@ -172,7 +177,7 @@
             panel44.Dock = DockStyle.Top;
             panel44.Location = new Point(0, 0);
             panel44.Name = "panel44";
-            panel44.Size = new Size(148, 29);
+            panel44.Size = new Size(145, 29);
             panel44.TabIndex = 0;
             // 
             // label46
@@ -212,24 +217,28 @@
             panelFarmLandDescription.Controls.Add(txtFarmLocMunicipality);
             panelFarmLandDescription.Controls.Add(txtFarmLocBarangay);
             panelFarmLandDescription.Controls.Add(rectangleRound6);
-            panelFarmLandDescription.Controls.Add(rectangleRound5);
+            panelFarmLandDescription.Controls.Add(boxFlOwnershipDoc);
             panelFarmLandDescription.Controls.Add(rectangleRound4);
-            panelFarmLandDescription.Controls.Add(rectangleRound3);
+            panelFarmLandDescription.Controls.Add(boxFlTotalFarmArea);
             panelFarmLandDescription.Controls.Add(label51);
             panelFarmLandDescription.Controls.Add(label52);
             panelFarmLandDescription.Controls.Add(label53);
             panelFarmLandDescription.Controls.Add(label55);
             panelFarmLandDescription.Controls.Add(label56);
             panelFarmLandDescription.Controls.Add(label4);
-            panelFarmLandDescription.Controls.Add(rectangleRound2);
+            panelFarmLandDescription.Controls.Add(boxFlMunicipality);
             panelFarmLandDescription.Controls.Add(label3);
-            panelFarmLandDescription.Controls.Add(rectangleRound1);
+            panelFarmLandDescription.Controls.Add(boxFlBarangay);
             panelFarmLandDescription.Controls.Add(panelFarmLandDescriptionHeader);
             panelFarmLandDescription.Controls.Add(label2);
             panelFarmLandDescription.Controls.Add(panelOwnershipType);
+            panelFarmLandDescription.Controls.Add(rectangleRed1);
+            panelFarmLandDescription.Controls.Add(rectangleRed2);
+            panelFarmLandDescription.Controls.Add(rectangleRed4);
+            panelFarmLandDescription.Controls.Add(rectangleRed3);
             panelFarmLandDescription.Location = new Point(158, 3);
             panelFarmLandDescription.Name = "panelFarmLandDescription";
-            panelFarmLandDescription.Size = new Size(670, 505);
+            panelFarmLandDescription.Size = new Size(666, 505);
             panelFarmLandDescription.TabIndex = 1;
             // 
             // cbFarmLocBarangay
@@ -382,15 +391,15 @@
             rectangleRound6.TabIndex = 0;
             rectangleRound6.TabStop = false;
             // 
-            // rectangleRound5
+            // boxFlOwnershipDoc
             // 
-            rectangleRound5.BackColor = Color.White;
-            rectangleRound5.Location = new Point(237, 264);
-            rectangleRound5.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound5.Name = "rectangleRound5";
-            rectangleRound5.Size = new Size(199, 38);
-            rectangleRound5.TabIndex = 0;
-            rectangleRound5.TabStop = false;
+            boxFlOwnershipDoc.BackColor = Color.White;
+            boxFlOwnershipDoc.Location = new Point(237, 264);
+            boxFlOwnershipDoc.Margin = new Padding(2, 3, 2, 3);
+            boxFlOwnershipDoc.Name = "boxFlOwnershipDoc";
+            boxFlOwnershipDoc.Size = new Size(199, 38);
+            boxFlOwnershipDoc.TabIndex = 0;
+            boxFlOwnershipDoc.TabStop = false;
             // 
             // rectangleRound4
             // 
@@ -402,15 +411,15 @@
             rectangleRound4.TabIndex = 0;
             rectangleRound4.TabStop = false;
             // 
-            // rectangleRound3
+            // boxFlTotalFarmArea
             // 
-            rectangleRound3.BackColor = Color.White;
-            rectangleRound3.Location = new Point(237, 179);
-            rectangleRound3.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound3.Name = "rectangleRound3";
-            rectangleRound3.Size = new Size(199, 38);
-            rectangleRound3.TabIndex = 0;
-            rectangleRound3.TabStop = false;
+            boxFlTotalFarmArea.BackColor = Color.White;
+            boxFlTotalFarmArea.Location = new Point(237, 179);
+            boxFlTotalFarmArea.Margin = new Padding(2, 3, 2, 3);
+            boxFlTotalFarmArea.Name = "boxFlTotalFarmArea";
+            boxFlTotalFarmArea.Size = new Size(199, 38);
+            boxFlTotalFarmArea.TabIndex = 0;
+            boxFlTotalFarmArea.TabStop = false;
             // 
             // label51
             // 
@@ -466,41 +475,41 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(142, 102);
+            label4.Location = new Point(136, 102);
             label4.Name = "label4";
-            label4.Size = new Size(90, 20);
+            label4.Size = new Size(100, 20);
             label4.TabIndex = 0;
-            label4.Text = "Municipality";
+            label4.Text = "Municipality *";
             // 
-            // rectangleRound2
+            // boxFlMunicipality
             // 
-            rectangleRound2.BackColor = Color.White;
-            rectangleRound2.Location = new Point(239, 94);
-            rectangleRound2.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound2.Name = "rectangleRound2";
-            rectangleRound2.Size = new Size(415, 38);
-            rectangleRound2.TabIndex = 0;
-            rectangleRound2.TabStop = false;
+            boxFlMunicipality.BackColor = Color.White;
+            boxFlMunicipality.Location = new Point(239, 94);
+            boxFlMunicipality.Margin = new Padding(2, 3, 2, 3);
+            boxFlMunicipality.Name = "boxFlMunicipality";
+            boxFlMunicipality.Size = new Size(415, 38);
+            boxFlMunicipality.TabIndex = 0;
+            boxFlMunicipality.TabStop = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(142, 51);
+            label3.Location = new Point(136, 51);
             label3.Name = "label3";
-            label3.Size = new Size(71, 20);
+            label3.Size = new Size(81, 20);
             label3.TabIndex = 0;
-            label3.Text = "Barangay";
+            label3.Text = "Barangay *";
             // 
-            // rectangleRound1
+            // boxFlBarangay
             // 
-            rectangleRound1.BackColor = Color.White;
-            rectangleRound1.Location = new Point(239, 41);
-            rectangleRound1.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound1.Name = "rectangleRound1";
-            rectangleRound1.Size = new Size(415, 38);
-            rectangleRound1.TabIndex = 0;
-            rectangleRound1.TabStop = false;
+            boxFlBarangay.BackColor = Color.White;
+            boxFlBarangay.Location = new Point(239, 41);
+            boxFlBarangay.Margin = new Padding(2, 3, 2, 3);
+            boxFlBarangay.Name = "boxFlBarangay";
+            boxFlBarangay.Size = new Size(415, 38);
+            boxFlBarangay.TabIndex = 0;
+            boxFlBarangay.TabStop = false;
             // 
             // panelFarmLandDescriptionHeader
             // 
@@ -509,7 +518,7 @@
             panelFarmLandDescriptionHeader.Dock = DockStyle.Top;
             panelFarmLandDescriptionHeader.Location = new Point(0, 0);
             panelFarmLandDescriptionHeader.Name = "panelFarmLandDescriptionHeader";
-            panelFarmLandDescriptionHeader.Size = new Size(668, 29);
+            panelFarmLandDescriptionHeader.Size = new Size(664, 29);
             panelFarmLandDescriptionHeader.TabIndex = 0;
             // 
             // label1
@@ -536,15 +545,16 @@
             // panelOwnershipType
             // 
             panelOwnershipType.Controls.Add(txtOwnerName);
-            panelOwnershipType.Controls.Add(rectangleRound7);
+            panelOwnershipType.Controls.Add(boxFlLandOwner);
             panelOwnershipType.Controls.Add(rbOwnershipTypeOwner);
             panelOwnershipType.Controls.Add(rbOwnershipTypeOthers);
             panelOwnershipType.Controls.Add(rbOwnershipTypeLessee);
             panelOwnershipType.Controls.Add(rbOwnershipTypeTenant);
             panelOwnershipType.Controls.Add(label5);
+            panelOwnershipType.Controls.Add(rectangleRed5);
             panelOwnershipType.Location = new Point(10, 353);
             panelOwnershipType.Name = "panelOwnershipType";
-            panelOwnershipType.Size = new Size(655, 142);
+            panelOwnershipType.Size = new Size(651, 142);
             panelOwnershipType.TabIndex = 7;
             // 
             // txtOwnerName
@@ -560,15 +570,15 @@
             txtOwnerName.KeyPress += AlphaOnly;
             txtOwnerName.Leave += UnselectedPanel;
             // 
-            // rectangleRound7
+            // boxFlLandOwner
             // 
-            rectangleRound7.BackColor = Color.White;
-            rectangleRound7.Location = new Point(23, 89);
-            rectangleRound7.Margin = new Padding(2, 3, 2, 3);
-            rectangleRound7.Name = "rectangleRound7";
-            rectangleRound7.Size = new Size(619, 38);
-            rectangleRound7.TabIndex = 0;
-            rectangleRound7.TabStop = false;
+            boxFlLandOwner.BackColor = Color.White;
+            boxFlLandOwner.Location = new Point(23, 89);
+            boxFlLandOwner.Margin = new Padding(2, 3, 2, 3);
+            boxFlLandOwner.Name = "boxFlLandOwner";
+            boxFlLandOwner.Size = new Size(619, 38);
+            boxFlLandOwner.TabIndex = 0;
+            boxFlLandOwner.TabStop = false;
             // 
             // rbOwnershipTypeOwner
             // 
@@ -656,7 +666,7 @@
             panelFarm.Controls.Add(panelFarmHeader);
             panelFarm.Location = new Point(833, 3);
             panelFarm.Name = "panelFarm";
-            panelFarm.Size = new Size(728, 505);
+            panelFarm.Size = new Size(722, 505);
             panelFarm.TabIndex = 2;
             // 
             // gbFarmType
@@ -744,7 +754,7 @@
             groupBox7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox7.Location = new Point(566, 58);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(148, 437);
+            groupBox7.Size = new Size(142, 437);
             groupBox7.TabIndex = 83;
             groupBox7.TabStop = false;
             // 
@@ -755,7 +765,7 @@
             txtRemarks.Location = new Point(6, 18);
             txtRemarks.Multiline = true;
             txtRemarks.Name = "txtRemarks";
-            txtRemarks.Size = new Size(136, 404);
+            txtRemarks.Size = new Size(130, 404);
             txtRemarks.TabIndex = 5;
             txtRemarks.Enter += SelectedPanel;
             txtRemarks.Leave += UnselectedPanel;
@@ -1325,17 +1335,18 @@
             panelFarmHeader.Dock = DockStyle.Top;
             panelFarmHeader.Location = new Point(0, 0);
             panelFarmHeader.Name = "panelFarmHeader";
-            panelFarmHeader.Size = new Size(726, 29);
+            panelFarmHeader.Size = new Size(720, 29);
             panelFarmHeader.TabIndex = 0;
             // 
             // btnRemove
             // 
+            btnRemove.FlatAppearance.BorderSize = 0;
             btnRemove.FlatStyle = FlatStyle.Flat;
             btnRemove.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             btnRemove.IconColor = Color.White;
             btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRemove.IconSize = 30;
-            btnRemove.Location = new Point(697, 2);
+            btnRemove.Location = new Point(681, 2);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(25, 25);
             btnRemove.TabIndex = 29;
@@ -1354,6 +1365,41 @@
             label7.TabIndex = 28;
             label7.Text = "Farm";
             // 
+            // rectangleRed1
+            // 
+            rectangleRed1.Location = new Point(239, 41);
+            rectangleRed1.Name = "rectangleRed1";
+            rectangleRed1.Size = new Size(415, 38);
+            rectangleRed1.TabIndex = 100;
+            // 
+            // rectangleRed2
+            // 
+            rectangleRed2.Location = new Point(239, 94);
+            rectangleRed2.Name = "rectangleRed2";
+            rectangleRed2.Size = new Size(415, 38);
+            rectangleRed2.TabIndex = 101;
+            // 
+            // rectangleRed3
+            // 
+            rectangleRed3.Location = new Point(237, 264);
+            rectangleRed3.Name = "rectangleRed3";
+            rectangleRed3.Size = new Size(199, 38);
+            rectangleRed3.TabIndex = 102;
+            // 
+            // rectangleRed4
+            // 
+            rectangleRed4.Location = new Point(237, 179);
+            rectangleRed4.Name = "rectangleRed4";
+            rectangleRed4.Size = new Size(199, 38);
+            rectangleRed4.TabIndex = 103;
+            // 
+            // rectangleRed5
+            // 
+            rectangleRed5.Location = new Point(23, 89);
+            rectangleRed5.Name = "rectangleRed5";
+            rectangleRed5.Size = new Size(619, 38);
+            rectangleRed5.TabIndex = 104;
+            // 
             // FarmLandControl
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
@@ -1366,7 +1412,7 @@
             Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(3, 5, 3, 5);
             Name = "FarmLandControl";
-            Size = new Size(1565, 511);
+            Size = new Size(1559, 511);
             Load += FarmLandControl_Load;
             panel43.ResumeLayout(false);
             panel43.PerformLayout();
@@ -1405,21 +1451,21 @@
         private Panel panel44;
         private Label label46;
         private Panel panelFarmLandDescription;
-        private RectangleRound rectangleRound1;
+        public RectangleRound boxFlBarangay;
         private Panel panelFarmLandDescriptionHeader;
         private Label label1;
         private Label label2;
-        private RectangleRound rectangleRound2;
+        public RectangleRound boxFlMunicipality;
         private Label label3;
         private Label label4;
-        private RectangleRound rectangleRound3;
+        public RectangleRound boxFlTotalFarmArea;
         private TextBox txtOwnerName;
         private Label label51;
         private Label label52;
         private Label label53;
         private Label label55;
         private RectangleRound rectangleRound4;
-        private RectangleRound rectangleRound5;
+        public RectangleRound boxFlOwnershipDoc;
         private RectangleRound rectangleRound6;
         private CheckBox cbAgrarianNo;
         private CheckBox cbAgrarianYes;
@@ -1483,7 +1529,7 @@
         private GroupBox groupBox7;
         private TextBox txtRemarks;
         private FontAwesome.Sharp.IconButton btnRemove;
-        private RectangleRound rectangleRound7;
+        public RectangleRound boxFlLandOwner;
         private ComboBox cbFarmLocBarangay;
         private Panel panel5;
         private Panel panel6;
@@ -1505,5 +1551,10 @@
         private TextBox txtLivestockHeadCount2;
         private TextBox txtLivestockHeadCount1;
         private ComboBox cbLiveStock1;
+        private RectangleRed rectangleRed1;
+        private RectangleRed rectangleRed4;
+        private RectangleRed rectangleRed3;
+        private RectangleRed rectangleRed5;
+        private RectangleRed rectangleRed2;
     }
 }
