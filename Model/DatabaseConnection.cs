@@ -12,11 +12,17 @@ namespace AgRecords.Model
         private MySqlConnection connection;
 
         // Use null as the default value for server, and set it inside the constructor
-        public DatabaseConnection() : this(Settings.Default.ServerIPAddress)
+        public DatabaseConnection() : this(Settings.Default.ServerIPAddress, Settings.Default.database, Settings.Default.username, Settings.Default.password)
         {
         }
 
-        public DatabaseConnection(string server, string database = "agrecords_db", string username = "root", string password = "")  
+        //public DatabaseConnection(string server, string database = "agrecords_db", string username = "root", string password = "")  
+        //{
+        //    string connectionString = $"server={server};database={database};uid={username};pwd={password};";
+        //    connection = new MySqlConnection(connectionString);
+        //}
+
+        public DatabaseConnection(string server, string database, string username, string password)
         {
             string connectionString = $"server={server};database={database};uid={username};pwd={password};";
             connection = new MySqlConnection(connectionString);
