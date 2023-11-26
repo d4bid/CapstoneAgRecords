@@ -24,6 +24,21 @@ namespace AgRecords
             this.BackColor = Color.FromArgb(5, 93, 96); //Border color
 
             //this.AcceptButton = btnLogin;
+
+
+            //if database connection is not working, display system config
+            DatabaseConnection dbCheck = new DatabaseConnection();
+            if (!dbCheck.ValidateConnection())
+            {
+                using (SystemConfig configForm = new SystemConfig())
+                {
+                    DialogResult result = configForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                    }
+                }
+            }
         }
 
         private void btnMin_Click(object sender, EventArgs e)
@@ -44,6 +59,19 @@ namespace AgRecords
             lblError.Visible = false;
             controller.ResetLoginTable();
             txtUsername.Select();
+
+            DatabaseConnection dbCheck = new DatabaseConnection();
+            if (dbCheck.ValidateConnection())
+            {
+                using (SystemConfig configForm = new SystemConfig())
+                {
+                    DialogResult result = configForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                    }
+                }
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

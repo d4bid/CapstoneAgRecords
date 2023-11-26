@@ -5,5 +5,20 @@
     <Setting Name="ServerIPAddress" Type="System.String" Scope="User">
       <Value Profile="(Default)">localhost</Value>
     </Setting>
+    <Setting Name="username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">agrecords_db</Value>
+    </Setting>
+    <Setting Name="adminPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">admin</Value>
+    </Setting>
+    <Setting Name="devPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">agrecords</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

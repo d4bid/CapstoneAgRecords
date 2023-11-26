@@ -370,9 +370,8 @@ namespace AgRecords.Model
             }
         }
 
-        private string connectionString = "server=localhost;uid=root;pwd=;";
 
-        public Boolean RestoreDroppedDatabase(string filepath)
+        public Boolean RestoreDroppedDatabase(string filepath, string connectionString)
         {
             try
             {
