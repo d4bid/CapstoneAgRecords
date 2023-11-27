@@ -345,6 +345,12 @@ namespace AgRecords.View
             dtDateAdm.MaxDate = DateTime.Today;
             dtpBirthDate.MinDate = minDate;
             dtDateAdm.MinDate = minDate;
+
+            RSBSAModel rsbsaModel = new RSBSAModel();
+            DataTable brgyDT = rsbsaModel.GetAllActiveSolanoBarangay();
+            cbAddBrgy.DataSource = brgyDT;
+            cbAddBrgy.DisplayMember = "brgyName";
+            cbAddBrgy.ValueMember = "brgyName";
         }
 
         //codes from add view

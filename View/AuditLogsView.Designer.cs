@@ -104,6 +104,7 @@
             txtBoxSearch.PlaceholderText = "Search";
             txtBoxSearch.Size = new Size(297, 24);
             txtBoxSearch.TabIndex = 17;
+            txtBoxSearch.TextChanged += txtBoxSearch_TextChanged;
             // 
             // searchBox1
             // 

@@ -164,7 +164,7 @@ namespace AgRecords.Controller
 
                             MessageBox.Show("Letter saved succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             isDone = true;
-                            userModel.InserActionLog(username, "Insert", "Letter", $"{letterId} added successfully.");
+                            userModel.InserActionLog(username, "Insert", $"{letter.letterType} Letter", $"{letterId} added successfully.");
                         }
                     }
                     else //cancel saving
