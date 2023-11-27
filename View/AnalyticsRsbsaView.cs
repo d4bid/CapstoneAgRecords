@@ -87,9 +87,7 @@ namespace AgRecords.View
             labelTotalFarmers.Text = analyticsController.CountRsbsaFarmers();
             //labelTotalWeeklyReg.Text = analyticsController.CountRsbsaWeeklyReg();
 
-            cmbBrgy1.SelectedIndex = 0;
             string brgy = cmbBrgy1.Text;
-            cmbRegInterval.SelectedIndex = 2;
             string interval = cmbRegInterval.Text;
 
             DataTable data1 = analyticsController.PieCountCommodityBarangay(brgy);
@@ -196,7 +194,7 @@ namespace AgRecords.View
 
             cmbBrgy1.SelectedIndex = 0;
             string brgy = cmbBrgy1.Text;
-            cmbRegInterval.SelectedIndex = 2;
+            cmbRegInterval.SelectedIndex = 0;
             string interval = cmbRegInterval.Text;
 
             DataTable data1 = analyticsController.PieCountCommodityBarangay(brgy);

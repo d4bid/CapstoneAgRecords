@@ -13,9 +13,16 @@ namespace AgRecords.View
 {
     public partial class RestoreBackupPasswordView : Form
     {
+        // Form style
+        private int borderSize = 2;
+        private int attempt = 0;
+
         public RestoreBackupPasswordView()
         {
             InitializeComponent();
+
+            this.Padding = new Padding(borderSize); //Border size
+            this.BackColor = Color.FromArgb(5, 93, 96); //Border color
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

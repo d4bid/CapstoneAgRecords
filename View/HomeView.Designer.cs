@@ -438,7 +438,6 @@
             // 
             btnReports.Dock = DockStyle.Top;
             btnReports.FlatAppearance.BorderSize = 0;
-            btnReports.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnReports.FlatStyle = FlatStyle.Flat;
             btnReports.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReports.ForeColor = Color.White;
@@ -464,7 +463,6 @@
             // 
             btnCertifications.Dock = DockStyle.Top;
             btnCertifications.FlatAppearance.BorderSize = 0;
-            btnCertifications.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnCertifications.FlatStyle = FlatStyle.Flat;
             btnCertifications.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCertifications.ForeColor = Color.White;
@@ -490,7 +488,6 @@
             // 
             btnLetters.Dock = DockStyle.Top;
             btnLetters.FlatAppearance.BorderSize = 0;
-            btnLetters.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnLetters.FlatStyle = FlatStyle.Flat;
             btnLetters.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLetters.ForeColor = Color.White;
@@ -604,7 +601,6 @@
             // 
             btnCrops.Dock = DockStyle.Top;
             btnCrops.FlatAppearance.BorderSize = 0;
-            btnCrops.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnCrops.FlatStyle = FlatStyle.Flat;
             btnCrops.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrops.ForeColor = Color.White;
@@ -680,7 +676,6 @@
             // 
             btnDashoard.Dock = DockStyle.Top;
             btnDashoard.FlatAppearance.BorderSize = 0;
-            btnDashoard.FlatAppearance.MouseDownBackColor = Color.FromArgb(38, 109, 200);
             btnDashoard.FlatStyle = FlatStyle.Flat;
             btnDashoard.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnDashoard.ForeColor = Color.White;
@@ -701,6 +696,7 @@
             btnDashoard.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDashoard.UseVisualStyleBackColor = true;
             btnDashoard.Click += btnDashoard_Click;
+            btnDashoard.MouseDown += btnDashoard_MouseDown;
             // 
             // panel2
             // 

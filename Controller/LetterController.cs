@@ -18,6 +18,8 @@ namespace AgRecords.Controller
         private LettersView lettersView;
         private LettersAddView lettersAddView;
         private LettersEditView lettersEditView;
+        private MainView mainView;
+        private DashboardView dashboardView;
 
 
         private LetterModel letterModel;
@@ -43,6 +45,18 @@ namespace AgRecords.Controller
         public LetterController(LettersEditView lettersEditView)
         {
             this.lettersEditView = lettersEditView;
+            letterModel = new LetterModel();
+        }
+
+        public LetterController(MainView mainView)
+        {
+            this.mainView = mainView;
+            letterModel = new LetterModel();
+        }
+
+        public LetterController(DashboardView dashboardView)
+        {
+            this.dashboardView = dashboardView;
             letterModel = new LetterModel();
         }
 
@@ -375,6 +389,12 @@ namespace AgRecords.Controller
             }
 
             return dt;
+        }
+
+        public bool UpdateLetterStatus()
+        {
+            isDone = letterModel.UpdateLetterStatus();
+            return isDone;
         }
 
     }

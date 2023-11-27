@@ -15,6 +15,7 @@ namespace AgRecords.View
     {
         private Panel parentPanel;
         private AnalyticsController analyticsController;
+        private LetterController letterController;
 
         public MainView(Control parentControl)
         {
@@ -22,6 +23,7 @@ namespace AgRecords.View
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+            letterController = new LetterController(this);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -33,6 +35,8 @@ namespace AgRecords.View
         {
             DataTable lettersTable = analyticsController.LoadLetterNotif();
             dgvNotif.DataSource = lettersTable;
+
+            letterController.UpdateLetterStatus();
         }
 
         private void label3_Click(object sender, EventArgs e)
