@@ -19,12 +19,16 @@ namespace AgRecords.View
         private Panel parentPanel;
         private AnalyticsController analyticsController;
 
+        private System.Windows.Forms.Timer dgvRefreshTimer;
+
         public AnalyticsCropsHvcView(Control parentControl)
         {
             InitializeComponent();
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            this.FormClosing += AnalyticsCropsHvcView_FormClosing;
 
             //// Add a ContextMenuStrip to the PlotView to handle the right-click event
             //hvcGraph1.ContextMenuStrip = new ContextMenuStrip();
@@ -83,6 +87,14 @@ namespace AgRecords.View
             panelGraph5.ContextMenuStrip = new ContextMenuStrip();
             panelGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph5));
             panelGraph5.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(hvcGraph5));
+
+            // Initialize and configure the timer
+            dgvRefreshTimer = new System.Windows.Forms.Timer();
+            dgvRefreshTimer.Interval = 1000; // Set the interval to 1000 milliseconds (1 second)
+            dgvRefreshTimer.Tick += DgvRefreshTimer_Tick;
+
+            // Start the timer
+            dgvRefreshTimer.Start();
         }
 
         private void SaveAsImage_Click(Control control)
@@ -313,6 +325,86 @@ namespace AgRecords.View
 
         private void label5_Click(object sender, EventArgs e)
         {
+        }
+
+        // Event handler for the timer tick
+        private void DgvRefreshTimer_Tick(object sender, EventArgs e)
+        {
+            // Call the method to refresh your DataGridView here
+            FormRefresh();
+        }
+
+        private void FormRefresh()
+        {
+            // Get the current month
+            string currentMonth = DateTime.Now.ToString("MMMM");
+
+            // Find and set the index in the ComboBox
+            int selectedIndex = cmbMonth.FindStringExact(currentMonth);
+
+            if (selectedIndex != -1)
+            {
+                cmbMonth.SelectedIndex = selectedIndex;
+            }
+
+            cmbWeek.SelectedIndex = 0;
+
+            labelTotalHvcFarmers.Text = analyticsController.CountHvcFarmers();
+            labelTotalHvcLandArea.Text = analyticsController.TotalHvcLandArea() + " ha";
+            labelTotalHvcBarangay.Text = analyticsController.TotalBarangayHvc();
+            labelTotalAreaPlanted.Text = analyticsController.TotalHvcAreaPlanted() + " ha";
+
+            DataTable coopTable = analyticsController.ListHvc();
+            dgvHvc.DataSource = coopTable;
+
+            DataTable data1 = analyticsController.PieCountHvcFarmerSex();
+
+            if (data1 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChartRice1(data1);
+
+                // Set the pie chart model to the PlotView control
+                hvcGraph1.Model = pieChart;
+            }
+
+            DataTable data2 = analyticsController.BarCountHvcFarmerBarangay();
+
+            if (data2 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChartCorn1(data2);
+
+                // Set the pie chart model to the PlotView control
+                hvcGraph2.Model = barChart;
+            }
+
+            DataTable data3 = analyticsController.BarTotalStandingHvc();
+
+            if (data3 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChartHvc1(data3);
+
+                // Set the pie chart model to the PlotView control
+                hvcGraph3.Model = barChart;
+            }
+
+            DataTable data5 = analyticsController.LineHvcProgression(cmbMonth.Text, cmbWeek.Text);
+
+            if (data5 != null)
+            {
+                // Create the pie chart model
+                PlotModel lineChart = analyticsController.CreateHvcProgressionChart(data5);
+
+                // Set the pie chart model to the PlotView control
+                hvcGraph5.Model = lineChart;
+            }
+        }
+
+        private void AnalyticsCropsHvcView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dgvRefreshTimer.Stop();
         }
     }
 }

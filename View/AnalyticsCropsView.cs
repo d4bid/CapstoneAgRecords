@@ -19,12 +19,16 @@ namespace AgRecords.View
         private Panel parentPanel;
         private AnalyticsController analyticsController;
 
+        private System.Windows.Forms.Timer dgvRefreshTimer;
+
         public AnalyticsCropsView(Control parentControl)
         {
             InitializeComponent();
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            this.FormClosing += AnalyticsCropsView_FormClosing;
 
             // Add a ContextMenuStrip to the PlotView to handle the right-click event
             riceGraph1.ContextMenuStrip = new ContextMenuStrip();
@@ -79,6 +83,14 @@ namespace AgRecords.View
             // Add a ContextMenuStrip to each panel to handle the right-click event
             panelDgv.ContextMenuStrip = new ContextMenuStrip();
             panelDgv.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelDgv));
+
+            // Initialize and configure the timer
+            dgvRefreshTimer = new System.Windows.Forms.Timer();
+            dgvRefreshTimer.Interval = 1000; // Set the interval to 1000 milliseconds (1 second)
+            dgvRefreshTimer.Tick += DgvRefreshTimer_Tick;
+
+            // Start the timer
+            dgvRefreshTimer.Start();
         }
 
         private void SaveAsImage_Click(Control control)
@@ -187,6 +199,75 @@ namespace AgRecords.View
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void AnalyticsCropsView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dgvRefreshTimer.Stop();
+        }
+
+        private void FormRefresh()
+        {
+            labelTotalRiceFarmers.Text = analyticsController.CountRiceFarmers();
+            labelTotalRiceLandArea.Text = analyticsController.TotalRiceLandArea() + " ha";
+            labelTotalRiceBarangay.Text = analyticsController.TotalBarangayRice();
+            labelTotalAreaPlanted.Text = analyticsController.TotalRiceAreaPlanted() + " ha";
+
+            DataTable coopTable = analyticsController.ShowRiceProduction();
+            dgvRiceProd.DataSource = coopTable;
+
+            DataTable data1 = analyticsController.PieCountRiceFarmerSex();
+
+            if (data1 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChartRice1(data1);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph1.Model = pieChart;
+            }
+
+            DataTable data2 = analyticsController.BarCountRiceFarmerBarangay();
+
+            if (data2 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChartRice1(data2);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph2.Model = barChart;
+            }
+
+            DataTable data4 = analyticsController.PieCountHarvestedOutOfPlanted();
+
+            if (data4 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreateCircularProgressChartRice1(data4);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph4.Model = pieChart;
+            }
+
+            DataTable data5 = analyticsController.BarTotalRiceLandAreaPerFarmType();
+
+            if (data5 != null)
+            {
+                // Create the pie chart model
+                PlotModel lineChart = analyticsController.CreateBarChartRiceLandArea(data5);
+
+                // Set the pie chart model to the PlotView control
+                riceGraph5.Model = lineChart;
+            }
+
+            ProductionData productionData = analyticsController.Forecasting();
+            riceGraph7.Model = analyticsController.CreateLineSeriesChartRiceForecast(productionData.Years, productionData.ForecastedProduction);
+        }
+
+        private void DgvRefreshTimer_Tick(object sender, EventArgs e)
+        {
+            // Call the method to refresh your DataGridView here
+            FormRefresh();
         }
     }
 }

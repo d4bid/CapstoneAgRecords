@@ -484,6 +484,7 @@
             Controls.Add(rectangleFullGreen1);
             Name = "AnalyticsCropsCornView";
             Text = "AnalyticsCropsCornView";
+            FormClosing += AnalyticsCropsCornView_FormClosing;
             Load += AnalyticsCropsCornView_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCornProd).EndInit();
             panelGraph2.ResumeLayout(false);

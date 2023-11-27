@@ -18,6 +18,8 @@ namespace AgRecords.View
         private Panel parentPanel;
         private AnalyticsController analyticsController;
 
+        private System.Windows.Forms.Timer dgvRefreshTimer;
+
         public AnalyticsRsbsaView(Control parentControl)
         {
             InitializeComponent();
@@ -25,6 +27,8 @@ namespace AgRecords.View
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            this.FormClosing += AnalyticsRsbsaView_FormClosing;
 
             // Add a ContextMenuStrip to the PlotView to handle the right-click event
             rsbsa1.ContextMenuStrip = new ContextMenuStrip();
@@ -66,6 +70,71 @@ namespace AgRecords.View
             panelGraph5.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph5));
             panelGraph5.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(rsbsa5));
 
+            // Initialize and configure the timer
+            dgvRefreshTimer = new System.Windows.Forms.Timer();
+            dgvRefreshTimer.Interval = 1000; // Set the interval to 1000 milliseconds (1 second)
+            dgvRefreshTimer.Tick += DgvRefreshTimer_Tick;
+
+            // Start the timer
+            dgvRefreshTimer.Start();
+        }
+
+        public void FormRefresh()
+        {
+            analyticsController.CountFarmer();
+            analyticsController.CountFisherfolk();
+
+            labelTotalFarmers.Text = analyticsController.CountRsbsaFarmers();
+            //labelTotalWeeklyReg.Text = analyticsController.CountRsbsaWeeklyReg();
+
+            cmbBrgy1.SelectedIndex = 0;
+            string brgy = cmbBrgy1.Text;
+            cmbRegInterval.SelectedIndex = 2;
+            string interval = cmbRegInterval.Text;
+
+            DataTable data1 = analyticsController.PieCountCommodityBarangay(brgy);
+
+            if (data1 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChartRsbsa2(data1);
+
+                // Set the pie chart model to the PlotView control
+                rsbsa1.Model = pieChart;
+            }
+
+            DataTable data2 = analyticsController.BarCountFarmerBrgy();
+
+            if (data2 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChartRsbsa1(data2);
+
+                // Set the pie chart model to the PlotView control
+                rsbsa4.Model = barChart;
+            }
+
+            DataTable data3 = analyticsController.LineCountRsbsaRegBrgy(interval);
+
+            if (data3 != null)
+            {
+                // Create the pie chart model
+                PlotModel lineChart = analyticsController.CreateLineChartRsbsa1(data3);
+
+                // Set the pie chart model to the PlotView control
+                rsbsa3.Model = lineChart;
+            }
+
+            DataTable data5 = analyticsController.BarCountLivelihoodBarangay();
+
+            if (data5 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateGroupedBarChartRsbsa1(data5);
+
+                // Set the pie chart model to the PlotView control
+                rsbsa5.Model = barChart;
+            }
         }
 
         private void SaveAsImage_Click(Control control)
@@ -241,6 +310,18 @@ namespace AgRecords.View
                     OxyPlot.WindowsForms.PngExporter.Export(plotView.Model, saveFileDialog.FileName, plotView.Width, plotView.Height);
                 }
             }
+        }
+
+        // Event handler for the timer tick
+        private void DgvRefreshTimer_Tick(object sender, EventArgs e)
+        {
+            // Call the method to refresh your DataGridView here
+            FormRefresh();
+        }
+
+        private void AnalyticsRsbsaView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dgvRefreshTimer.Stop();
         }
     }
 }

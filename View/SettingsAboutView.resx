@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>AgRecords is a comprehensive system developed as a capstone project by a group of students at 
+Saint Mary’s University. This innovative solution is designed specifically for the Municipal Agricultural Office, 
+aiming to enhance efficiency, streamline processes, and contribute to the sustainable development of 
+agricultural practices within the community.</value>
+  </data>
 </root>
