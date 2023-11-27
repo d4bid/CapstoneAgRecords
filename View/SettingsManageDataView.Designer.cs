@@ -36,24 +36,24 @@
             panel5 = new Panel();
             panel9 = new Panel();
             panel10 = new Panel();
-            comboBox2 = new ComboBox();
+            comboBoxFilter = new ComboBox();
+            searchBox1 = new SearchBox();
+            label1 = new Label();
+            comboBoxStatus = new ComboBox();
             searchBox4 = new SearchBox();
             label5 = new Label();
-            dgvCert = new DataGridView();
-            button3 = new Button();
-            textBox2 = new TextBox();
+            dgvBarangay = new DataGridView();
+            btnAdd = new Button();
+            txtBarangay = new TextBox();
             searchBox3 = new SearchBox();
             label4 = new Label();
             panel11 = new Panel();
             label6 = new Label();
-            comboBox1 = new ComboBox();
-            searchBox1 = new SearchBox();
-            label1 = new Label();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCert).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBarangay).BeginInit();
             panel11.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,15 +105,15 @@
             // panel10
             // 
             panel10.BorderStyle = BorderStyle.FixedSingle;
-            panel10.Controls.Add(comboBox1);
+            panel10.Controls.Add(comboBoxFilter);
             panel10.Controls.Add(searchBox1);
             panel10.Controls.Add(label1);
-            panel10.Controls.Add(comboBox2);
+            panel10.Controls.Add(comboBoxStatus);
             panel10.Controls.Add(searchBox4);
             panel10.Controls.Add(label5);
-            panel10.Controls.Add(dgvCert);
-            panel10.Controls.Add(button3);
-            panel10.Controls.Add(textBox2);
+            panel10.Controls.Add(dgvBarangay);
+            panel10.Controls.Add(btnAdd);
+            panel10.Controls.Add(txtBarangay);
             panel10.Controls.Add(searchBox3);
             panel10.Controls.Add(label4);
             panel10.Controls.Add(panel11);
@@ -124,17 +124,46 @@
             panel10.TabIndex = 75;
             panel10.Paint += panel10_Paint;
             // 
-            // comboBox2
+            // comboBoxFilter
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Enabled", "Disabled" });
-            comboBox2.Location = new Point(503, 84);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(205, 33);
-            comboBox2.TabIndex = 96;
+            comboBoxFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFilter.FlatStyle = FlatStyle.Flat;
+            comboBoxFilter.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxFilter.FormattingEnabled = true;
+            comboBoxFilter.Items.AddRange(new object[] { "Barangay", "Rice Farm Barangay", "Corn Farm Barangay" });
+            comboBoxFilter.Location = new Point(933, 84);
+            comboBoxFilter.Name = "comboBoxFilter";
+            comboBoxFilter.Size = new Size(367, 33);
+            comboBoxFilter.TabIndex = 99;
+            comboBoxFilter.SelectedIndexChanged += comboBoxFilter_SelectedIndexChanged;
+            // 
+            // searchBox1
+            // 
+            searchBox1.Location = new Point(927, 81);
+            searchBox1.Name = "searchBox1";
+            searchBox1.Size = new Size(377, 39);
+            searchBox1.TabIndex = 101;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(927, 59);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 20);
+            label1.TabIndex = 100;
+            label1.Text = "Filter";
+            // 
+            // comboBoxStatus
+            // 
+            comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxStatus.FlatStyle = FlatStyle.Flat;
+            comboBoxStatus.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBoxStatus.FormattingEnabled = true;
+            comboBoxStatus.Items.AddRange(new object[] { "Enabled", "Disabled" });
+            comboBoxStatus.Location = new Point(503, 84);
+            comboBoxStatus.Name = "comboBoxStatus";
+            comboBoxStatus.Size = new Size(205, 33);
+            comboBoxStatus.TabIndex = 96;
             // 
             // searchBox4
             // 
@@ -152,13 +181,13 @@
             label5.TabIndex = 97;
             label5.Text = "Status";
             // 
-            // dgvCert
+            // dgvBarangay
             // 
-            dgvCert.AllowUserToAddRows = false;
-            dgvCert.AllowUserToDeleteRows = false;
-            dgvCert.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCert.BackgroundColor = Color.White;
-            dgvCert.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvBarangay.AllowUserToAddRows = false;
+            dgvBarangay.AllowUserToDeleteRows = false;
+            dgvBarangay.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBarangay.BackgroundColor = Color.White;
+            dgvBarangay.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -167,8 +196,8 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvCert.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBarangay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvBarangay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -176,42 +205,44 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCert.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCert.GridColor = Color.FromArgb(239, 239, 239);
-            dgvCert.Location = new Point(90, 145);
-            dgvCert.Name = "dgvCert";
-            dgvCert.ReadOnly = true;
-            dgvCert.RowHeadersVisible = false;
-            dgvCert.RowHeadersWidth = 51;
-            dgvCert.RowTemplate.Height = 40;
-            dgvCert.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCert.Size = new Size(1384, 642);
-            dgvCert.TabIndex = 95;
+            dgvBarangay.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvBarangay.GridColor = Color.FromArgb(239, 239, 239);
+            dgvBarangay.Location = new Point(90, 145);
+            dgvBarangay.Name = "dgvBarangay";
+            dgvBarangay.ReadOnly = true;
+            dgvBarangay.RowHeadersVisible = false;
+            dgvBarangay.RowHeadersWidth = 51;
+            dgvBarangay.RowTemplate.Height = 40;
+            dgvBarangay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBarangay.Size = new Size(1384, 642);
+            dgvBarangay.TabIndex = 95;
+            dgvBarangay.CellDoubleClick += dgvBarangay_CellDoubleClick;
             // 
-            // button3
+            // btnAdd
             // 
-            button3.BackColor = Color.FromArgb(43, 121, 223);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(1344, 81);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(130, 39);
-            button3.TabIndex = 94;
-            button3.Text = "Add Item";
-            button3.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = Color.FromArgb(43, 121, 223);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(1313, 81);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(161, 39);
+            btnAdd.TabIndex = 94;
+            btnAdd.Text = "Add Barangay";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // textBox2
+            // txtBarangay
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI Semibold", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(103, 87);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Enter new item";
-            textBox2.Size = new Size(368, 26);
-            textBox2.TabIndex = 2;
+            txtBarangay.BorderStyle = BorderStyle.None;
+            txtBarangay.Font = new Font("Segoe UI Semibold", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBarangay.Location = new Point(103, 87);
+            txtBarangay.Name = "txtBarangay";
+            txtBarangay.PlaceholderText = "Enter new barangay";
+            txtBarangay.Size = new Size(368, 26);
+            txtBarangay.TabIndex = 2;
             // 
             // searchBox3
             // 
@@ -250,34 +281,6 @@
             label6.TabIndex = 28;
             label6.Text = "BARANGAY";
             // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Barangay", "Rice Farm Barangay", "Corn Farm Barangay", "HVC Type" });
-            comboBox1.Location = new Point(936, 84);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(367, 33);
-            comboBox1.TabIndex = 99;
-            // 
-            // searchBox1
-            // 
-            searchBox1.Location = new Point(930, 81);
-            searchBox1.Name = "searchBox1";
-            searchBox1.Size = new Size(377, 39);
-            searchBox1.TabIndex = 101;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(930, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 20);
-            label1.TabIndex = 100;
-            label1.Text = "Filter";
-            // 
             // SettingsManageDataView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -294,7 +297,7 @@
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCert).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBarangay).EndInit();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             ResumeLayout(false);
@@ -311,17 +314,17 @@
         private Panel panel5;
         private Panel panel9;
         private Panel panel10;
-        private Button button3;
-        private TextBox textBox2;
+        private Button btnAdd;
+        private TextBox txtBarangay;
         private SearchBox searchBox3;
         private Label label4;
         private Panel panel11;
         private Label label6;
-        private DataGridView dgvCert;
-        private ComboBox comboBox2;
+        private DataGridView dgvBarangay;
+        private ComboBox comboBoxStatus;
         private SearchBox searchBox4;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxFilter;
         private SearchBox searchBox1;
         private Label label1;
     }

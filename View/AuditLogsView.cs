@@ -34,5 +34,10 @@ namespace AgRecords.View
             DataTable logsTable = userController.LoadUserLogsView();
             dgvLogs.DataSource = logsTable;
         }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

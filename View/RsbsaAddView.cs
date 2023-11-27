@@ -426,6 +426,12 @@ namespace AgRecords.View
             txtSurname.Focus();
 
             errorPiBirthDate.Visible = false;
+
+            RSBSAModel rsbsaModel = new RSBSAModel();
+            DataTable brgyDT = rsbsaModel.GetAllActiveSolanoBarangay();
+            cbAddBrgy.DataSource = brgyDT;
+            cbAddBrgy.DisplayMember = "brgyName";
+            cbAddBrgy.ValueMember = "brgyName";
         }
 
         private void rectangleRound42_Load(object sender, EventArgs e)

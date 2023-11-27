@@ -3121,7 +3121,6 @@
             cbAddBrgy.FlatStyle = FlatStyle.Flat;
             cbAddBrgy.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold, GraphicsUnit.Point);
             cbAddBrgy.FormattingEnabled = true;
-            cbAddBrgy.Items.AddRange(new object[] { "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMONAL", "CONCEPCION", "CURIFANG", "DADAP", "LACTAWAN", "OSMEÑA", "P.D GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
             cbAddBrgy.Location = new Point(461, 69);
             cbAddBrgy.Name = "cbAddBrgy";
             cbAddBrgy.Size = new Size(276, 31);

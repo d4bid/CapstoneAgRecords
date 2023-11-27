@@ -44,8 +44,7 @@ namespace AgRecords.Model
             }
         }
 
-        // Barangay
-        public DataTable GetAllSolanoBarangay()
+        public DataTable GetAllActiveSolanoBarangay()
         {
             try
             {
@@ -53,7 +52,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable rolesTable = new DataTable();
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_solano_barangay;", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM vw_get_all_active_solano_brgy;", db.GetConnection());
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(rolesTable);
                     return rolesTable;
