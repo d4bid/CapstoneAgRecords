@@ -836,5 +836,18 @@ namespace AgRecords.View
 
             HideSubMenu();
         }
+
+        private void btnDashoard_MouseDown(object sender, MouseEventArgs e)
+        {
+            //if (currentBtn != null && currentBtn.Name == "btnDashboard")
+            //{
+            //    btnDashoard.BackColor = Color.FromArgb(230, 198, 90);
+            //    btnDashoard.ForeColor = Color.FromArgb(0, 35, 76);
+            //}
+            //else
+            //{
+            //    btnDashoard.BackColor = Color.FromArgb(39, 108, 200);
+            //}
+        }
     }
 }

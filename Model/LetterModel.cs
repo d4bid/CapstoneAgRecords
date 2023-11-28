@@ -501,7 +501,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
 
-                    string query = "CALL sp_updateLetter()";
+                    string query = "CALL sp_updateLetterStatus()";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
 
                     command.ExecuteNonQuery();

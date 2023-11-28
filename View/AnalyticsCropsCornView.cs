@@ -19,11 +19,15 @@ namespace AgRecords.View
         private Panel parentPanel;
         private AnalyticsController analyticsController;
 
+        private System.Windows.Forms.Timer dgvRefreshTimer;
+
         public AnalyticsCropsCornView(Control parentControl)
         {
             InitializeComponent();
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            this.FormClosing += AnalyticsCropsCornView_FormClosing;
 
             // Add a ContextMenuStrip to the PlotView to handle the right-click event
             cornGraph1.ContextMenuStrip = new ContextMenuStrip();
@@ -59,6 +63,13 @@ namespace AgRecords.View
             panelDgv.ContextMenuStrip = new ContextMenuStrip();
             panelDgv.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelDgv));
 
+            // Initialize and configure the timer
+            dgvRefreshTimer = new System.Windows.Forms.Timer();
+            dgvRefreshTimer.Interval = 1000; // Set the interval to 1000 milliseconds (1 second)
+            dgvRefreshTimer.Tick += DgvRefreshTimer_Tick;
+
+            // Start the timer
+            dgvRefreshTimer.Start();
         }
 
         private void AnalyticsCropsCornView_Load(object sender, EventArgs e)
@@ -138,5 +149,54 @@ namespace AgRecords.View
             }
         }
 
+        // Event handler for the timer tick
+        private void DgvRefreshTimer_Tick(object sender, EventArgs e)
+        {
+            // Call the method to refresh your DataGridView here
+            FormRefresh();
+        }
+
+        private void FormRefresh()
+        {
+            labelTotalCornFarmers.Text = analyticsController.CountCornFarmers();
+            labelTotalCornLandArea.Text = analyticsController.TotalCornLandArea() + " ha";
+            labelTotalCornBarangay.Text = analyticsController.TotalBarangayCorn();
+            labelTotalCornAreaPlanted.Text = analyticsController.TotalCornAreaPlanted() + " ha";
+            labelTotalYellowCorn.Text = analyticsController.TotalCornAreaPlantedYellow() + " ha";
+            labelTotalWhiteCorn.Text = analyticsController.TotalCornAreaPlantedWhite() + " ha";
+
+            DataTable coopTable = analyticsController.ShowCornProduction();
+            dgvCornProd.DataSource = coopTable;
+
+            DataTable data2 = analyticsController.BarCountRiceFarmerBarangay();
+
+            if (data2 != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChartCorn1(data2);
+
+                // Set the pie chart model to the PlotView control
+                cornGraph1.Model = barChart;
+            }
+
+            DataTable data1 = analyticsController.PieCountRiceFarmerSex();
+
+            if (data1 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChartRice1(data1);
+
+                // Set the pie chart model to the PlotView control
+                cornGraph2.Model = pieChart;
+            }
+
+            ProductionData productionData = analyticsController.CornForecasting();
+            cornGraph3.Model = analyticsController.CreateLineSeriesChartCornForecast(productionData.Years, productionData.ForecastedProduction);
+        }
+
+        private void AnalyticsCropsCornView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dgvRefreshTimer.Stop();
+        }
     }
 }

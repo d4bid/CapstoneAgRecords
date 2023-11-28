@@ -461,6 +461,7 @@
             Controls.Add(rectangleFullGreen1);
             Name = "AnalyticsRsbsaView";
             Text = "AnalyticsRsbsaView";
+            FormClosing += AnalyticsRsbsaView_FormClosing;
             Load += AnalyticsRsbsaView_Load;
             panelGraph1.ResumeLayout(false);
             panelGraph1.PerformLayout();

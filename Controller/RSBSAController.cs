@@ -459,6 +459,8 @@ namespace AgRecords.Controller
 
                     )
                 {
+                    MessageBox.Show("Please fill in the necessary fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     if (string.IsNullOrEmpty(rsbsa.surname))
                     {
                         rsbsaAddView.boxPiSurname.Visible = false;
@@ -1145,6 +1147,8 @@ namespace AgRecords.Controller
 
                     )
                 {
+                    MessageBox.Show("Please fill in the necessary fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     if (string.IsNullOrEmpty(rsbsa.surname))
                     {
                         rsbsaEditView.boxPiSurname.Visible = false;

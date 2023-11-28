@@ -19,12 +19,16 @@ namespace AgRecords.View
         private Panel parentPanel;
         private AnalyticsController analyticsController;
 
+        private System.Windows.Forms.Timer dgvRefreshTimer;
+
         public DashboardView(Control parentControl)
         {
             InitializeComponent();
 
             this.parentPanel = parentControl as Panel;
             analyticsController = new AnalyticsController(this);
+
+            this.FormClosing += DashboardView_FormClosing;
 
             // Add a ContextMenuStrip to the PlotView to handle the right-click event
             barChart1.ContextMenuStrip = new ContextMenuStrip();
@@ -46,6 +50,14 @@ namespace AgRecords.View
             panelGraph2.ContextMenuStrip = new ContextMenuStrip();
             panelGraph2.ContextMenuStrip.Items.Add("Save as Image", null, (sender, e) => SaveAsImage_Click(panelGraph2));
             panelGraph2.ContextMenuStrip.Items.Add("Save Graph As Image", null, (sender, e) => SaveGraphAsImage_Click(pieChart1));
+
+            // Initialize and configure the timer
+            dgvRefreshTimer = new System.Windows.Forms.Timer();
+            dgvRefreshTimer.Interval = 1000; // Set the interval to 1000 milliseconds (1 second)
+            dgvRefreshTimer.Tick += DgvRefreshTimer_Tick;
+
+            // Start the timer
+            dgvRefreshTimer.Start();
         }
 
         private void SaveAsImage_Click(Control control)
@@ -110,6 +122,45 @@ namespace AgRecords.View
             labelGaiNonFarming.Text = "₱" + avgGaiNonFarming.ToString();
         }
 
+        public void FormRefresh()
+        {
+            analyticsController.AvgGaiFarming();
+            analyticsController.AvgGaiNonFarming();
+            labelTotalFarmers.Text = analyticsController.CountRsbsaFarmers();
+
+            // A
+            DataTable coopTable = analyticsController.CountCoopFarmerBarangay();
+            dgvAss.DataSource = coopTable;
+
+            // B
+            DataTable lettersTable = analyticsController.LoadRecentLetters();
+            dgvLetters.DataSource = lettersTable;
+
+            // 1
+            DataTable data = analyticsController.BarCountFarmerBarangay();
+
+            if (data != null)
+            {
+                // Create the pie chart model
+                PlotModel barChart = analyticsController.CreateBarChart1(data);
+
+                // Set the pie chart model to the PlotView control
+                barChart1.Model = barChart;
+            }
+
+            // 2
+            DataTable data1 = analyticsController.PieCountFarmerCommodity();
+
+            if (data1 != null)
+            {
+                // Create the pie chart model
+                PlotModel pieChart = analyticsController.CreatePieChart1(data1);
+
+                // Set the pie chart model to the PlotView control
+                pieChart1.Model = pieChart;
+            }
+        }
+
         // Triggers
 
         private void DashboardView_Load(object sender, EventArgs e)
@@ -161,6 +212,18 @@ namespace AgRecords.View
 
         private void label4_Click(object sender, EventArgs e)
         {
+        }
+
+        private void DashboardView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dgvRefreshTimer.Stop();
+        }
+
+        // Event handler for the timer tick
+        private void DgvRefreshTimer_Tick(object sender, EventArgs e)
+        {
+            // Call the method to refresh your DataGridView here
+            FormRefresh();
         }
     }
 }

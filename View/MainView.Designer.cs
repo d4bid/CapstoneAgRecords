@@ -189,9 +189,9 @@
             label5.ForeColor = Color.FromArgb(0, 35, 76);
             label5.Location = new Point(32, 588);
             label5.Name = "label5";
-            label5.Size = new Size(172, 20);
+            label5.Size = new Size(131, 20);
             label5.TabIndex = 36;
-            label5.Text = "Recently Added Letters";
+            label5.Text = "Upcoming Events";
             // 
             // rectangleFullWhite3
             // 
