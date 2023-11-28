@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            cmbColumn = new ComboBox();
+            cmbFilter = new ComboBox();
             searchBox2 = new SearchBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtBoxSearch = new TextBox();
@@ -49,7 +49,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(cmbColumn);
+            panel1.Controls.Add(cmbFilter);
             panel1.Controls.Add(searchBox2);
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(txtBoxSearch);
@@ -62,17 +62,18 @@
             panel1.Size = new Size(1595, 90);
             panel1.TabIndex = 22;
             // 
-            // cmbColumn
+            // cmbFilter
             // 
-            cmbColumn.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbColumn.FlatStyle = FlatStyle.Flat;
-            cmbColumn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbColumn.FormattingEnabled = true;
-            cmbColumn.Items.AddRange(new object[] { "All", "ID", "Month", "Week", "Year", "Created By", "Date" });
-            cmbColumn.Location = new Point(400, 40);
-            cmbColumn.Name = "cmbColumn";
-            cmbColumn.Size = new Size(237, 28);
-            cmbColumn.TabIndex = 16;
+            cmbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFilter.FlatStyle = FlatStyle.Flat;
+            cmbFilter.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbFilter.FormattingEnabled = true;
+            cmbFilter.Items.AddRange(new object[] { "All", "Username", "Section", "Timestamp" });
+            cmbFilter.Location = new Point(400, 40);
+            cmbFilter.Name = "cmbFilter";
+            cmbFilter.Size = new Size(237, 28);
+            cmbFilter.TabIndex = 16;
+            cmbFilter.SelectedIndexChanged += cmbFilter_SelectedIndexChanged;
             // 
             // searchBox2
             // 
@@ -99,7 +100,7 @@
             // 
             txtBoxSearch.BorderStyle = BorderStyle.None;
             txtBoxSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtBoxSearch.Location = new Point(57, 40);
+            txtBoxSearch.Location = new Point(61, 44);
             txtBoxSearch.Name = "txtBoxSearch";
             txtBoxSearch.PlaceholderText = "Search";
             txtBoxSearch.Size = new Size(297, 24);
@@ -150,24 +151,24 @@
             dgvLogs.BackgroundColor = Color.White;
             dgvLogs.BorderStyle = BorderStyle.None;
             dgvLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvLogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvLogs.DefaultCellStyle = dataGridViewCellStyle4;
             dgvLogs.Dock = DockStyle.Fill;
             dgvLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvLogs.Location = new Point(10, 10);
@@ -203,7 +204,7 @@
         #endregion
 
         private Panel panel1;
-        private ComboBox cmbColumn;
+        private ComboBox cmbFilter;
         private SearchBox searchBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private TextBox txtBoxSearch;
