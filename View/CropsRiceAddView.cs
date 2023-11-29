@@ -150,6 +150,8 @@ namespace AgRecords.View
         {
             FormRefresh();
 
+            HomeView.Instance.title.Text = "Crops \u23F5 Rice \u23F5 Add Standing Rice";
+
             cbTotal.Checked = true;
 
             cmbFarmType.SelectedIndex = 0;

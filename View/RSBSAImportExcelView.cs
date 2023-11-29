@@ -467,7 +467,7 @@ namespace AgRecords.View
 
         private void RSBSAImportExcelView_Load(object sender, EventArgs e)
         {
-
+            HomeView.Instance.title.Text = "RSBSA \u23F5 Import RSBSA";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

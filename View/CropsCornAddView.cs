@@ -190,6 +190,8 @@ namespace AgRecords.View
 
         private void CropsCornAddView_Load(object sender, EventArgs e)
         {
+            HomeView.Instance.title.Text = "Crops \u23F5 Corn \u23F5 Add Planting by Ecological Zone Corn";
+
             string cornPrId = labelCornPrId.Text;
 
             CornReport cp = cropsCornController.GetCornPlantingEcoReportById(cornPrId);

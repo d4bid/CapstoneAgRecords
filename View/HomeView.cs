@@ -321,20 +321,31 @@ namespace AgRecords.View
                 btnSettings.Visible = true;
                 btnSettingsAudit.Visible = true;
                 btnBackupRestore.Visible = true;
+                btnManageData.Visible = true;
 
                 btnUsers.Visible = true;
+
+                panelSettingsSubMenu.Size = new Size(299, 255);
 
                 HideSubMenu();
             }
             else
             {
-                btnSettings.Visible = false;
+                btnSettings.Visible = true;
                 btnSettingsAudit.Visible = false;
                 btnBackupRestore.Visible = false;
+                btnManageData.Visible = false;
 
                 btnUsers.Visible = false;
 
+                panelSettingsSubMenu.Size = new Size(299, 102);
+
                 HideSubMenu();
+            }
+
+            if (lblUserRole.Text == "Admin")
+            {
+
             }
 
             MainView mainView = new MainView(panelDesktop);

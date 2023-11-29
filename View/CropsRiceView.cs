@@ -84,6 +84,8 @@ namespace AgRecords.View
         {
             FormRefresh();
 
+            HomeView.Instance.title.Text = "Crops \u23F5 Rice";
+
             cmbColumn.Text = "All";
             cmbReportType.Text = "Standing";
 

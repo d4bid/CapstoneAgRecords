@@ -61,7 +61,7 @@ namespace AgRecords.View
 
         private void UserEditView_Load(object sender, EventArgs e)
         {
-
+            HomeView.Instance.title.Text = "User Accounts \u23F5 Edit User";
         }
 
         // METHODS

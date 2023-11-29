@@ -34,6 +34,8 @@ namespace AgRecords.View
         {
             formRefresh();
 
+            HomeView.Instance.title.Text = "Letters \u23F5 Edit Letter";
+
             comboBoxAction.SelectedIndex = 0;
         }
 

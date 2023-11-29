@@ -340,6 +340,8 @@ namespace AgRecords.View
             FormRefresh();
             disableObjects();
 
+            HomeView.Instance.title.Text = "RSBSA \u23F5 Edit RSBSA";
+
             DateTime minDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Today;
             dtDateAdm.MaxDate = DateTime.Today;

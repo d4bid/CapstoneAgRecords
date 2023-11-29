@@ -241,6 +241,8 @@ namespace AgRecords.View
         {
             if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
+                HomeView.Instance.title.Text = "Crops \u23F5 Corn \u23F5 Edit Planting Corn";
+
                 btnNew.Enabled = false;
                 btnUpdate.Enabled = false;
 
@@ -263,6 +265,8 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
+                HomeView.Instance.title.Text = "Crops \u23F5 Corn \u23F5 Edit Harvesting Corn";
+
                 btnNew.Enabled = true;
                 btnUpdate.Enabled = true;
 
@@ -286,6 +290,8 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "PLANTING BY ECOLOGICAL ZONE ACCOMPLISHMENTS")
             {
+                HomeView.Instance.title.Text = "Crops \u23F5 Corn \u23F5 Edit Planting by Ecological Zone Corn";
+
                 btnNew.Visible = true;
                 btnUpdate.Visible = true;
 

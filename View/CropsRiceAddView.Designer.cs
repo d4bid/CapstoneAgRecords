@@ -118,8 +118,8 @@
             btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
             btnCancel.FlatAppearance.BorderSize = 2;
-            btnCancel.FlatAppearance.MouseDownBackColor = Color.White;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.White;
+            btnCancel.FlatAppearance.MouseDownBackColor = Color.FromArgb(234, 242, 252);
+            btnCancel.FlatAppearance.MouseOverBackColor = Color.FromArgb(234, 242, 252);
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
