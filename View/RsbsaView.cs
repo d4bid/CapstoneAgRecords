@@ -159,10 +159,10 @@ namespace AgRecords.View
 
         private void txtBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            getBarangay(comboBoxFilterBrgy);
-            getCommType(comboBoxFilterCommodity);
-            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
-            dgvRsbsa.DataSource = dt;
+            //getBarangay(comboBoxFilterBrgy);
+            //getCommType(comboBoxFilterCommodity);
+            //DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+            //dgvRsbsa.DataSource = dt;
 
 
         }
@@ -247,6 +247,14 @@ namespace AgRecords.View
             parentPanel.Controls.Clear();
             parentPanel.Controls.Add(exportView);
             exportView.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            getBarangay(comboBoxFilterBrgy);
+            getCommType(comboBoxFilterCommodity);
+            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+            dgvRsbsa.DataSource = dt;
         }
     }
 }
