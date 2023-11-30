@@ -138,7 +138,7 @@ namespace AgRecords.View
             if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, txtMiddlename.Text, txtExtension.Text,
                     txtTitle.Text, cmbJobTitle.Text, comboBoxGender.Text,
                     txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto, txtBoxUsername.Text,
-                    txtBoxPassword.Text, txtBoxConfirmPassword.Text, lblUsernameExists.Text))
+                    txtBoxPassword.Text, txtBoxConfirmPassword.Text, lblUsernameExists.Visible.ToString()))
             {
                 //if success, return to user view
                 this.Close();

@@ -183,7 +183,7 @@ namespace AgRecords.Controller
                     MessageBox.Show("Username is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
-                else if (unameValidation != "")
+                else if (unameValidation == "True")
                 {
                     MessageBox.Show("Username already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
