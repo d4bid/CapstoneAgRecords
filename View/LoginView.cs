@@ -125,17 +125,11 @@ namespace AgRecords
 
         public void NavigateToDashboard(UserAccount user)
         {
-            if (user.userRole == "Admin")
+            if (user.userRole != "")
             {
                 HomeView adminDashboardView = new HomeView();
                 adminDashboardView.SetUserInfo(user);
                 adminDashboardView.Show();
-            }
-            else if (user.userRole == "User" || user.userRole == "User")
-            {
-                HomeView userDashboard = new HomeView();
-                userDashboard.SetUserInfo(user);
-                userDashboard.Show();
             }
 
             this.Hide();
