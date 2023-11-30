@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
             panelLeft = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -51,6 +52,7 @@
             lblUsername = new Label();
             btnMin = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
+            timer1 = new System.Windows.Forms.Timer(components);
             panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -355,6 +357,11 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
             // LoginView
             // 
             AcceptButton = btnLogin;
@@ -404,5 +411,6 @@
         private RectangleBlue rectangleBlue1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnConfig;
+        private System.Windows.Forms.Timer timer1;
     }
 }
