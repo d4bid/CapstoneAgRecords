@@ -73,7 +73,7 @@ namespace AgRecords.View
         {
             dtpLogDate.MaxDate = DateTime.Today;
             dtpLogDate.Value = DateTime.Today;
-            
+
 
             btnUpdate.Enabled = false;
             ClearStandingLogsTextControls();
@@ -226,6 +226,8 @@ namespace AgRecords.View
 
             if (labelArea.Text == "PLANTING ACCOMPLISHMENTS")
             {
+                HomeView.Instance.title.Text = "Crops \u23F5 Rice \u23F5 Planting Rice";
+
                 cbTotal.Visible = false;
                 cbGrandTotal.Visible = false;
                 DisplayPlantingDataTableFilter();
@@ -236,9 +238,12 @@ namespace AgRecords.View
 
                 label9.Visible = false;
                 dtpLogDate.Visible = false;
+
             }
             else if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
             {
+                HomeView.Instance.title.Text = "Crops \u23F5 Rice \u23F5 Edit Standing Rice";
+
                 cbTotal.Visible = true;
                 cbGrandTotal.Visible = true;
                 cbTotal.Checked = true;
@@ -253,6 +258,8 @@ namespace AgRecords.View
             }
             else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
             {
+                HomeView.Instance.title.Text = "Crops \u23F5 Rice \u23F5 Edit Harvesting Rice";
+
                 cbTotal.Visible = false;
                 cbGrandTotal.Visible = false;
                 DisplayHarvestingDataTableFilter();
@@ -263,6 +270,8 @@ namespace AgRecords.View
 
                 label9.Visible = false;
                 dtpLogDate.Visible = false;
+
+                btnNew.Visible = false;
             }
         }
 

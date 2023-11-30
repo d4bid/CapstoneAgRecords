@@ -104,7 +104,7 @@ namespace AgRecords.View
 
         private void LettersEditView_Load(object sender, EventArgs e)
         {
-
+            HomeView.Instance.title.Text = "Letters \u23F5 Add Letter";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

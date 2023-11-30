@@ -68,6 +68,8 @@ namespace AgRecords.View
 
         private void CropsHvcAddView_Load(object sender, EventArgs e)
         {
+            HomeView.Instance.title.Text = "Crops \u23F5 HVC \u23F5 Add Standing HVC";
+
             string hvcSrId = labelHvcSrId.Text;
 
             HvcReport hp = cropsHvcController.GetHvcStandingReportById(hvcSrId);

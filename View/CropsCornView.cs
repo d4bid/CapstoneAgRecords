@@ -78,6 +78,8 @@ namespace AgRecords.View
             cmbColumn.Text = "All";
             cmbReportType.Text = "Planting By Ecological Zone";
 
+            HomeView.Instance.title.Text = "Crops \u23F5 Corn";
+
             DisplayDataTableFilter();
         }
 

@@ -29,6 +29,8 @@ namespace AgRecords.View
         private void UserAddView_Load(object sender, EventArgs e)
         {
             FormRefresh();
+
+            HomeView.Instance.title.Text = "User Accounts \u23F5 Add User";
         }
 
         public void FormRefresh()

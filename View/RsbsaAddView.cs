@@ -411,6 +411,8 @@ namespace AgRecords.View
         {
             FormRefresh();
 
+            HomeView.Instance.title.Text = "RSBSA \u23F5 Add RSBSA";
+
             radiobuttonsPreAnswer_PersonalInfo();
             comboboxesPreAnswer_PersonalInfo();
             disableObjects();

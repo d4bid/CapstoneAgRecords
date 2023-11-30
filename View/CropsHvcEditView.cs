@@ -72,6 +72,8 @@ namespace AgRecords.View
 
         private void CropsHvcEditView_Load(object sender, EventArgs e)
         {
+            HomeView.Instance.title.Text = "Crops \u23F5 HVC \u23F5 Edit Standing HVC";
+
             FormRefresh();
 
             btnUpdate.Enabled = false;

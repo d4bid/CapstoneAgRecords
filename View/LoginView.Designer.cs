@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
             panelLeft = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             pictureBox1 = new PictureBox();
@@ -116,7 +117,7 @@
             label4.Name = "label4";
             label4.Size = new Size(72, 17);
             label4.TabIndex = 13;
-            label4.Text = "Version 1.0";
+            label4.Text = "Version 2.1";
             // 
             // panelRight
             // 
@@ -365,6 +366,7 @@
             Controls.Add(panelLeft);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

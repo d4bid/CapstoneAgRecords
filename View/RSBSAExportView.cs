@@ -32,6 +32,8 @@ namespace AgRecords.View
 
         private void RSBSAExportView_Load(object sender, EventArgs e)
         {
+            HomeView.Instance.title.Text = "RSBSA \u23F5 Export RSBSA";
+
             FormRefresh();
         }
 

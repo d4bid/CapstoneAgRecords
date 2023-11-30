@@ -97,6 +97,8 @@ namespace AgRecords.View
             cmbColumn.Text = "All";
 
             DisplayDataTableFilter();
+
+            HomeView.Instance.title.Text = "Crops \u23F5 HVC";
         }
 
         private void dgvHvc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

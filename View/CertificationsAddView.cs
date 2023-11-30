@@ -17,6 +17,7 @@ using System.Globalization;
 using OxyPlot;
 using MySqlX.XDevAPI.Relational;
 using AgRecords.Utilities;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace AgRecords.View
 {
@@ -80,6 +81,8 @@ namespace AgRecords.View
 
         private void CertificationsAddView_Load(object sender, EventArgs e)
         {
+            HomeView.Instance.title.Text = "Certifications \u23F5 Add Certification";
+
             // Call the GetEmployees method from your controller
             System.Data.DataTable employeeTable = certController.GetEmployees();
 
@@ -98,6 +101,8 @@ namespace AgRecords.View
 
             System.Data.DataTable certTable = certController.LoadCertificatesByRsbsaNumberView(txtReferenceNumber.Text);
             dgvCert.DataSource = certTable;
+
+            cmbPosition.SelectedIndex = 0;
         }
 
         private void CertificationsFarmControl_RemoveButtonClick(object sender, EventArgs e)
@@ -111,7 +116,7 @@ namespace AgRecords.View
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (txtOrNo.Text == "" || cmbEmployee.Text == "" || txtPosition.Text == "")
+            if (txtOrNo.Text == "" || cmbEmployee.Text == "" || cmbPosition.Text == "")
             {
                 if (txtOrNo.Text == "")
                 {
@@ -131,7 +136,7 @@ namespace AgRecords.View
                     boxEmployee.Visible = true;
                 }
 
-                if (txtPosition.Text == "")
+                if (cmbPosition.Text == "")
                 {
                     boxEmployeePosition.Visible = false;
                 }
@@ -307,7 +312,7 @@ namespace AgRecords.View
                 string head = cert.headName;
 
                 string empName = cmbEmployee.Text;
-                string empPosition = txtPosition.Text;
+                string empPosition = cmbPosition.Text;
 
                 if (float.TryParse(txtAmount.Text, out float amount))
                 {
@@ -400,10 +405,6 @@ namespace AgRecords.View
                     }
                 }
             }
-
-            
-
-            
         }
 
         private void FindAndReplace(Document doc, string findText, string replaceText)
@@ -430,5 +431,55 @@ namespace AgRecords.View
             TextboxValidation.TextBox_AllCaps(sender, e);
         }
 
+        private void CertificationsAddView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //// Replace placeholders with form values
+            //string referenceNumber = txtReferenceNumber.Text;
+            //string orNumber = txtOrNo.Text;
+            //string farmerName = txtName.Text;
+            //string farmerAddress = txtBarangay.Text;
+
+            //Certifications cert = certController.GetEmployeeInfoByUsername(username);
+            ////string empName = cert.employeeName;
+            ////string empPosition = cert.employeePosition;
+            //string head = cert.headName;
+
+            //string empName = cmbEmployee.Text;
+            //string empPosition = cmbPosition.Text;
+
+            //// Collect data from CertificationsFarmControl instances into a list
+            //List<Certifications> farmDataList = new List<Certifications>();
+
+            //foreach (Control control in flowLayoutPanel1.Controls)
+            //{
+            //    if (control is CertificationsFarmControl certFarmControl)
+            //    {
+            //        string farmInfo = certFarmControl.txtFarmInfo.Text;
+            //        string farmAddress = certFarmControl.txtFarmAddress.Text;
+            //        string farmParcel = certFarmControl.labelParcelNo.Text;
+
+            //        Certifications cert2 = new Certifications
+            //        {
+            //            orderNumber = orNumber, // Assign the same orderNumber as the main certificate
+            //            farmParcelNo = farmParcel,
+            //            farmInfo = farmInfo,
+            //            farmLocBrgy = farmAddress,
+            //        };
+
+            //        farmDataList.Add(cert2);
+            //    }
+            //}
+
+            //// Call the AddCertificate method in the controller
+            //if (certController.AddCertificate(orNumber, referenceNumber, farmerName, farmerAddress, DateTime.Now, empName, head, empPosition))
+            //{
+            //    // Call the AddFarmInfo method in the controller
+            //    if (certController.AddFarmInfo(farmDataList))
+            //    {
+            //        this.Close();
+            //        FormClosed?.Invoke(this, EventArgs.Empty);
+            //    }
+            //}
+        }
     }
 }
