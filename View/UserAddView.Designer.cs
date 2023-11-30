@@ -88,6 +88,7 @@
             btnBrowse = new FontAwesome.Sharp.IconButton();
             btnBack = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
+            lblUsernameExists = new Label();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             panel1.SuspendLayout();
@@ -132,7 +133,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(385, 13);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -478,6 +479,7 @@
             txtBoxUsername.Name = "txtBoxUsername";
             txtBoxUsername.Size = new Size(366, 26);
             txtBoxUsername.TabIndex = 25;
+            txtBoxUsername.TextChanged += txtBoxUsername_TextChanged;
             // 
             // txtBoxPassword
             // 
@@ -529,6 +531,7 @@
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox3.BackColor = Color.White;
+            groupBox3.Controls.Add(lblUsernameExists);
             groupBox3.Controls.Add(comboBoxRole);
             groupBox3.Controls.Add(panel1);
             groupBox3.Controls.Add(comboBoxStatus);
@@ -543,7 +546,7 @@
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label6);
-            groupBox3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(385, 402);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
@@ -571,7 +574,7 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panelPassStrength);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(26, 176);
+            panel1.Location = new Point(20, 176);
             panel1.Name = "panel1";
             panel1.Size = new Size(580, 234);
             panel1.TabIndex = 34;
@@ -791,6 +794,18 @@
             panel4.Size = new Size(379, 926);
             panel4.TabIndex = 58;
             // 
+            // lblUsernameExists
+            // 
+            lblUsernameExists.AutoSize = true;
+            lblUsernameExists.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsernameExists.ForeColor = Color.FromArgb(207, 92, 96);
+            lblUsernameExists.Location = new Point(202, 158);
+            lblUsernameExists.Name = "lblUsernameExists";
+            lblUsernameExists.Size = new Size(152, 17);
+            lblUsernameExists.TabIndex = 41;
+            lblUsernameExists.Text = "Username already exist.";
+            lblUsernameExists.Visible = false;
+            // 
             // UserAddView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -885,5 +900,6 @@
         private Label label9;
         private Label label18;
         private Panel panel4;
+        private Label lblUsernameExists;
     }
 }

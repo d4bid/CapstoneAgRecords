@@ -138,7 +138,7 @@ namespace AgRecords.View
             if (userController.AddUser(txtBoxUserId.Text, txtBoxFirstName.Text, txtBoxLastName.Text, txtMiddlename.Text, txtExtension.Text,
                     txtTitle.Text, cmbJobTitle.Text, comboBoxGender.Text,
                     txtBoxContact.Text, comboBoxStatus.Text, comboBoxRole.SelectedValue.ToString(), userPhoto, txtBoxUsername.Text,
-                    txtBoxPassword.Text, txtBoxConfirmPassword.Text))
+                    txtBoxPassword.Text, txtBoxConfirmPassword.Text, lblUsernameExists.Text))
             {
                 //if success, return to user view
                 this.Close();
@@ -154,6 +154,30 @@ namespace AgRecords.View
         private void btnBrowse_Click_1(object sender, EventArgs e)
         {
             getUserPhoto();
+        }
+
+        private void txtBoxUsername_TextChanged(object sender, EventArgs e)
+        {
+            string username = txtBoxUsername.Text;
+
+            // Check if the username already exists
+            if (IsUsernameExists(username))
+            {
+                lblUsernameExists.Visible = true;
+            }
+            else
+            {
+                lblUsernameExists.Visible = false;
+            }
+        }
+
+        private bool IsUsernameExists(string username)
+        {
+            // Call a method to check if the username already exists in the database
+            // You can implement this method using your data access logic
+            // For example, you can add a method in your model to check the username existence
+            UserModel userModel = new UserModel();
+            return userModel.IsUsernameExists(username);
         }
     }
 }

@@ -136,7 +136,7 @@ namespace AgRecords.Controller
 
         public bool AddUser(string userId, string userFirstName, string userLastName, string userMiddlename, string userExtension, 
             string userTitle, string userJobTitle, string userGender, string userContact, string userActive, string userRole, 
-            byte[] userPhoto, string username, string userPassword, string confirmPassword)
+            byte[] userPhoto, string username, string userPassword, string confirmPassword, string unameValidation)
         {
             try
             {
@@ -181,6 +181,11 @@ namespace AgRecords.Controller
                 else if (user.username == "")
                 {
                     MessageBox.Show("Username is required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (unameValidation != "")
+                {
+                    MessageBox.Show("Username already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else if (user.userPassword == "")

@@ -99,6 +99,32 @@ namespace AgRecords.Model
             }
         }
 
+        public bool IsUsernameExists(string username)
+        {
+            try
+            {
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    string query = "SELECT COUNT(*) FROM tbl_users WHERE username = @username";
+                    MySqlCommand command = new MySqlCommand(query, db.GetConnection());
+                    command.Parameters.AddWithValue("@username", username);
+
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    // If count is greater than 0, the username already exists
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception as needed (logging, throwing a custom exception, etc.)
+                throw new ApplicationException("Error checking username existence: " + ex.Message, ex);
+            }
+        }
+
+
 
         //add user account
         public Boolean AddUserAccount(UserAccount user)
