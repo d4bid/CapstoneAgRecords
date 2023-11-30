@@ -26,6 +26,9 @@ namespace AgRecords.View
             InitializeComponent();
             rsbsaController = new RSBSAController(this);
             this.parentPanel = parentControl as Panel;
+
+            comboBoxFilterBrgy.SelectedIndex = 0;
+            comboBoxFilterCommodity.SelectedIndex = 0;
         }
 
         private void RsbsaView_Load(object sender, EventArgs e)
@@ -47,13 +50,6 @@ namespace AgRecords.View
         public void FormRefresh()
         {
             comboBoxSearchCategory.SelectedIndex = 0;
-            comboBoxFilterBrgy.SelectedIndex = 0;
-            comboBoxFilterCommodity.SelectedIndex = 0;
-
-            DataTable rsbasaTable = rsbsaController.LoadRSBSAView();
-            dgvRsbsa.DataSource = rsbasaTable;
-
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -157,51 +153,65 @@ namespace AgRecords.View
             }
         }
 
-        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        private void LoadData()
         {
-            //getBarangay(comboBoxFilterBrgy);
-            //getCommType(comboBoxFilterCommodity);
-            //DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
-            //dgvRsbsa.DataSource = dt;
+            getBarangay(comboBoxFilterBrgy);
+            getCommType(comboBoxFilterCommodity);
 
-            if (txtBoxSearch.Text == "")
+            // Set a limit for the number of rows to fetch/display
+            int limit = 50; // You can adjust this value based on your preference
+
+            // Fetch all rows
+            var queryResult = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType).AsEnumerable();
+
+            // Check if there are any rows in the result
+            if (queryResult.Any())
             {
-                getBarangay(comboBoxFilterBrgy);
-                getCommType(comboBoxFilterCommodity);
-                DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+                // Check if the number of rows is less than the limit
+                if (queryResult.Count() < limit)
+                {
+                    // If fewer rows than the limit, take all rows
+                    limit = queryResult.Count();
+                }
+
+                // Fetch only the required subset of data
+                DataTable dt = queryResult.Skip(0)  // You can adjust the starting index based on the current page
+                                         .Take(limit)
+                                         .CopyToDataTable();
+
                 dgvRsbsa.DataSource = dt;
             }
+            else
+            {
+                // Handle the case when there are no rows in the result
+                // For example, display a message or clear the DataGridView
+                dgvRsbsa.DataSource = null;
+            }
+        }
 
 
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxSearch.Text == "")
+            {
+                LoadData();
+            }
         }
 
         private void comboBoxSearchCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getBarangay(comboBoxFilterBrgy);
-            getCommType(comboBoxFilterCommodity);
-            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
-            dgvRsbsa.DataSource = dt;
-
-
+            LoadData();
         }
 
         private void comboBoxFilterBrgy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getBarangay(comboBoxFilterBrgy);
-            getCommType(comboBoxFilterCommodity);
-            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
-            dgvRsbsa.DataSource = dt;
-
-
+            LoadData();
         }
 
         private void comboBoxFilterCommodity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getBarangay(comboBoxFilterBrgy);
-            getCommType(comboBoxFilterCommodity);
-            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
-            dgvRsbsa.DataSource = dt;
-
+            LoadData();
         }
 
         public string getBarangay(ComboBox comboBox)
@@ -259,10 +269,7 @@ namespace AgRecords.View
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            getBarangay(comboBoxFilterBrgy);
-            getCommType(comboBoxFilterCommodity);
-            DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
-            dgvRsbsa.DataSource = dt;
+            LoadData();
         }
     }
 }
