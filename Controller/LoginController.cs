@@ -21,43 +21,32 @@ namespace AgRecords.Controller
 
         public void ValidateUser(string username, string password)
         {
-            try
-            {
-                UserAccount user = model.GetUserAccount(username, password);
+            UserAccount user = model.GetUserAccount(username, password);
 
-                if (user == null)
+            if (user == null)
+            {
+                userModel.InserActionLog(username, "Login", "Account", $"Login failed, invalid username or password ({username})");
+                view.ShowError();
+                //model.AuditLoginFailed(username);
+            }
+            else
+            {
+                bool isActive = model.CheckUserActive(user.username);
+
+                if (isActive)
                 {
-                    userModel.InserActionLog(username, "Login", "Account", $"Login failed, invalid username or password ({username})");
-                    view.ShowError();
-                    //model.AuditLoginFailed(username);
+                    userModel.InserActionLog(username, "Login", "Account", $"Login success ({username})");
+                    view.NavigateToDashboard(user);
+                    // Audit login success
+                    //model.AuditLoginSuccess(user.username);
+                    model.UpdateLoginStatus(user.username);
                 }
                 else
                 {
-                    bool isActive = model.CheckUserActive(user.username);
-
-                    if (isActive)
-                    {
-                        userModel.InserActionLog(username, "Login", "Account", $"Login success ({username})");
-                        view.NavigateToDashboard(user);
-                        // Audit login success
-                        //model.AuditLoginSuccess(user.username);
-                        model.UpdateLoginStatus(user.username);
-                    }
-                    else
-                    {
-                        userModel.InserActionLog(username, "Login", "Account", $"Login failed, account is inactive ({username})");
-                        view.ShowInactiveError();
-                        //model.AuditLoginFailed(user.username);
-                    }
+                    userModel.InserActionLog(username, "Login", "Account", $"Login failed, account is inactive ({username})");
+                    view.ShowInactiveError();
+                    //model.AuditLoginFailed(user.username);
                 }
-            }
-            catch (Exception ex)
-            {
-                // Handle the exception, e.g., log it or show a generic error message
-                //userModel.InserActionLog(username, "Login", "Account", $"Error during login ({username}): {ex.Message}");
-                //view.ShowServerError(); // Display a generic server error message to the user
-                MessageBox.Show(ex.Message, "Server Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
         }
 
