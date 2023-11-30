@@ -268,5 +268,64 @@ namespace AgRecords.View
             this.Close();
             FormClosed?.Invoke(this, EventArgs.Empty);
         }
+
+        private void cbId_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["ID NUMBER"].Visible = cbId.Checked;
+        }
+
+        private void cbIdType_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["ID TYPE"].Visible = cbIdType.Checked;
+
+        }
+
+        private void cbTin_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["TIN"].Visible = cbTin.Checked;
+
+        }
+
+        private void cbGender_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["GENDER"].Visible = cbGender.Checked;
+
+        }
+
+        private void cbEmail_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["EMAIL"].Visible = cbEmail.Checked;
+
+        }
+
+        private void cbProfession_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["PROFESSION"].Visible = cbProfession.Checked;
+
+        }
+
+        private void cbSalary_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["GROSS SALARY"].Visible = cbSalary.Checked;
+
+        }
+
+        private void cbFundSource_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["SOURCE OF FUNDS"].Visible = cbFundSource.Checked;
+
+        }
+
+        private void cbMMaiden_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["MOTHER'S MAIDEN NAME"].Visible = cbMMaiden.Checked;
+
+        }
+
+        private void cbNationality_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvRSBSAExport.Columns["NATIONALITY"].Visible = cbNationality.Checked;
+
+        }
     }
 }
