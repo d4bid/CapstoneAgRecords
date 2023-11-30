@@ -24,21 +24,21 @@ namespace AgRecords
             this.BackColor = Color.FromArgb(5, 93, 96); //Border color
 
             //this.AcceptButton = btnLogin;
-
+            timer1.Start();
 
             //if database connection is not working, display system config
-            DatabaseConnection dbCheck = new DatabaseConnection();
-            if (!dbCheck.ValidateConnection())
-            {
-                using (SystemConfig configForm = new SystemConfig())
-                {
-                    DialogResult result = configForm.ShowDialog();
+            //DatabaseConnection dbCheck = new DatabaseConnection();
+            //if (!dbCheck.ValidateConnection())
+            //{
+            //    using (SystemConfig configForm = new SystemConfig())
+            //    {
+            //        DialogResult result = configForm.ShowDialog();
 
-                    if (result == DialogResult.OK)
-                    {
-                    }
-                }
-            }
+            //        if (result == DialogResult.OK)
+            //        {
+            //        }
+            //    }
+            //}
         }
 
         private void btnMin_Click(object sender, EventArgs e)
@@ -60,18 +60,18 @@ namespace AgRecords
             controller.ResetLoginTable();
             txtUsername.Select();
 
-            DatabaseConnection dbCheck = new DatabaseConnection();
-            if (dbCheck.ValidateConnection())
-            {
-                using (SystemConfig configForm = new SystemConfig())
-                {
-                    DialogResult result = configForm.ShowDialog();
+            //DatabaseConnection dbCheck = new DatabaseConnection();
+            //if (dbCheck.ValidateConnection())
+            //{
+            //    using (SystemConfig configForm = new SystemConfig())
+            //    {
+            //        DialogResult result = configForm.ShowDialog();
 
-                    if (result == DialogResult.OK)
-                    {
-                    }
-                }
-            }
+            //        if (result == DialogResult.OK)
+            //        {
+            //        }
+            //    }
+            //}
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -149,6 +149,35 @@ namespace AgRecords
 
                 if (result == DialogResult.OK)
                 {
+                }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DatabaseConnection dbCheck = new DatabaseConnection();
+            if (!dbCheck.ValidateConnection())
+            {
+                // Stop the timer to prevent further checks
+                timer1.Stop();
+
+                // Show the configuration form
+                using (SystemConfig configForm = new SystemConfig())
+                {
+                    DialogResult result = configForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        // Resume the timer if needed
+                        timer1.Start();
+                    }
+                    else
+                    {
+                        // Handle the case where the user closes the configuration form without saving
+                        // You may want to exit the application or take appropriate action
+                        timer1.Start();
+
+                    }
                 }
             }
         }
