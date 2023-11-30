@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeView));
             panelMenu = new Panel();
             panelSettingsSubMenu = new Panel();
             btnAbout = new FontAwesome.Sharp.IconButton();
@@ -123,6 +124,7 @@
             // 
             btnAbout.Dock = DockStyle.Top;
             btnAbout.FlatAppearance.BorderSize = 0;
+            btnAbout.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnAbout.FlatStyle = FlatStyle.Flat;
             btnAbout.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnAbout.ForeColor = Color.White;
@@ -148,6 +150,7 @@
             // 
             btnHelp.Dock = DockStyle.Top;
             btnHelp.FlatAppearance.BorderSize = 0;
+            btnHelp.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnHelp.FlatStyle = FlatStyle.Flat;
             btnHelp.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnHelp.ForeColor = Color.White;
@@ -172,6 +175,7 @@
             // 
             btnSettingsAudit.Dock = DockStyle.Top;
             btnSettingsAudit.FlatAppearance.BorderSize = 0;
+            btnSettingsAudit.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnSettingsAudit.FlatStyle = FlatStyle.Flat;
             btnSettingsAudit.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSettingsAudit.ForeColor = Color.White;
@@ -197,6 +201,7 @@
             // 
             btnBackupRestore.Dock = DockStyle.Top;
             btnBackupRestore.FlatAppearance.BorderSize = 0;
+            btnBackupRestore.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnBackupRestore.FlatStyle = FlatStyle.Flat;
             btnBackupRestore.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnBackupRestore.ForeColor = Color.White;
@@ -222,6 +227,7 @@
             // 
             btnManageData.Dock = DockStyle.Top;
             btnManageData.FlatAppearance.BorderSize = 0;
+            btnManageData.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnManageData.FlatStyle = FlatStyle.Flat;
             btnManageData.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnManageData.ForeColor = Color.White;
@@ -338,6 +344,7 @@
             // 
             btnReportsHVC.Dock = DockStyle.Top;
             btnReportsHVC.FlatAppearance.BorderSize = 0;
+            btnReportsHVC.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnReportsHVC.FlatStyle = FlatStyle.Flat;
             btnReportsHVC.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReportsHVC.ForeColor = Color.White;
@@ -363,6 +370,7 @@
             // 
             btnReportsRice.Dock = DockStyle.Top;
             btnReportsRice.FlatAppearance.BorderSize = 0;
+            btnReportsRice.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnReportsRice.FlatStyle = FlatStyle.Flat;
             btnReportsRice.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReportsRice.ForeColor = Color.White;
@@ -388,6 +396,7 @@
             // 
             btnReportsCorn.Dock = DockStyle.Top;
             btnReportsCorn.FlatAppearance.BorderSize = 0;
+            btnReportsCorn.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnReportsCorn.FlatStyle = FlatStyle.Flat;
             btnReportsCorn.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReportsCorn.ForeColor = Color.White;
@@ -413,6 +422,7 @@
             // 
             btnReportsRsbsa.Dock = DockStyle.Top;
             btnReportsRsbsa.FlatAppearance.BorderSize = 0;
+            btnReportsRsbsa.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnReportsRsbsa.FlatStyle = FlatStyle.Flat;
             btnReportsRsbsa.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReportsRsbsa.ForeColor = Color.White;
@@ -526,6 +536,7 @@
             // 
             btnVegetable.Dock = DockStyle.Top;
             btnVegetable.FlatAppearance.BorderSize = 0;
+            btnVegetable.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnVegetable.FlatStyle = FlatStyle.Flat;
             btnVegetable.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnVegetable.ForeColor = Color.White;
@@ -551,6 +562,7 @@
             // 
             btnCorn.Dock = DockStyle.Top;
             btnCorn.FlatAppearance.BorderSize = 0;
+            btnCorn.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnCorn.FlatStyle = FlatStyle.Flat;
             btnCorn.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCorn.ForeColor = Color.White;
@@ -576,6 +588,7 @@
             // 
             btnRice.Dock = DockStyle.Top;
             btnRice.FlatAppearance.BorderSize = 0;
+            btnRice.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 134, 226);
             btnRice.FlatStyle = FlatStyle.Flat;
             btnRice.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnRice.ForeColor = Color.White;
@@ -892,6 +905,7 @@
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(1026, 651);
             Name = "HomeView";

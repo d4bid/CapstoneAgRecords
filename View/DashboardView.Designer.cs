@@ -369,7 +369,7 @@
             dgvLetters.BackgroundColor = Color.White;
             dgvLetters.BorderStyle = BorderStyle.None;
             dgvLetters.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvLetters.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -383,8 +383,8 @@
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(234, 242, 252);
             dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             dgvLetters.DefaultCellStyle = dataGridViewCellStyle4;
