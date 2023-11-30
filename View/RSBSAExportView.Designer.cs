@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             cbIsMultipleSheet = new CheckBox();
             btnCancel = new Button();
@@ -57,6 +57,16 @@
             cbMunicipality = new CheckBox();
             cbStreet = new CheckBox();
             panel5 = new Panel();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
+            checkBox7 = new CheckBox();
+            checkBox8 = new CheckBox();
+            checkBox9 = new CheckBox();
+            checkBox10 = new CheckBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRSBSAExport).BeginInit();
@@ -170,10 +180,10 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(dgvRSBSAExport);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 260);
+            panel2.Location = new Point(0, 387);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(10);
-            panel2.Size = new Size(1595, 666);
+            panel2.Size = new Size(1595, 539);
             panel2.TabIndex = 30;
             // 
             // dgvRSBSAExport
@@ -184,24 +194,24 @@
             dgvRSBSAExport.BackgroundColor = Color.White;
             dgvRSBSAExport.BorderStyle = BorderStyle.None;
             dgvRSBSAExport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRSBSAExport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle4;
             dgvRSBSAExport.Dock = DockStyle.Fill;
             dgvRSBSAExport.GridColor = Color.FromArgb(239, 239, 239);
             dgvRSBSAExport.Location = new Point(10, 10);
@@ -211,7 +221,7 @@
             dgvRSBSAExport.RowHeadersWidth = 51;
             dgvRSBSAExport.RowTemplate.Height = 40;
             dgvRSBSAExport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRSBSAExport.Size = new Size(1575, 646);
+            dgvRSBSAExport.Size = new Size(1575, 519);
             dgvRSBSAExport.TabIndex = 24;
             // 
             // panel4
@@ -222,7 +232,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 115);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1595, 135);
+            panel4.Size = new Size(1595, 262);
             panel4.TabIndex = 31;
             // 
             // groupBox1
@@ -233,7 +243,7 @@
             groupBox1.Controls.Add(cbRice);
             groupBox1.Controls.Add(cbFarmParcelNo);
             groupBox1.Controls.Add(cbTotalFarmArea);
-            groupBox1.Location = new Point(755, 6);
+            groupBox1.Location = new Point(1018, 6);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(565, 116);
             groupBox1.TabIndex = 38;
@@ -320,6 +330,16 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(checkBox10);
+            groupBox2.Controls.Add(checkBox9);
+            groupBox2.Controls.Add(checkBox8);
+            groupBox2.Controls.Add(checkBox7);
+            groupBox2.Controls.Add(checkBox6);
+            groupBox2.Controls.Add(checkBox5);
+            groupBox2.Controls.Add(checkBox4);
+            groupBox2.Controls.Add(checkBox3);
+            groupBox2.Controls.Add(checkBox2);
+            groupBox2.Controls.Add(checkBox1);
             groupBox2.Controls.Add(cbMobileNo);
             groupBox2.Controls.Add(cbBirthDate);
             groupBox2.Controls.Add(cbPlaceOfBirth);
@@ -329,7 +349,7 @@
             groupBox2.Controls.Add(cbStreet);
             groupBox2.Location = new Point(10, 6);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(723, 116);
+            groupBox2.Size = new Size(1002, 228);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             groupBox2.Text = "Farmer Info";
@@ -429,10 +449,130 @@
             // 
             panel5.BackColor = Color.FromArgb(239, 239, 239);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 250);
+            panel5.Location = new Point(0, 377);
             panel5.Name = "panel5";
             panel5.Size = new Size(1595, 10);
             panel5.TabIndex = 32;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(25, 121);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(70, 24);
+            checkBox1.TabIndex = 9;
+            checkBox1.Text = "Street";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Checked = true;
+            checkBox2.CheckState = CheckState.Checked;
+            checkBox2.Location = new Point(161, 121);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(70, 24);
+            checkBox2.TabIndex = 10;
+            checkBox2.Text = "Street";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Checked = true;
+            checkBox3.CheckState = CheckState.Checked;
+            checkBox3.Location = new Point(312, 121);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(70, 24);
+            checkBox3.TabIndex = 11;
+            checkBox3.Text = "Street";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Checked = true;
+            checkBox4.CheckState = CheckState.Checked;
+            checkBox4.Location = new Point(608, 76);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(70, 24);
+            checkBox4.TabIndex = 12;
+            checkBox4.Text = "Street";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Checked = true;
+            checkBox5.CheckState = CheckState.Checked;
+            checkBox5.Location = new Point(25, 160);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(70, 24);
+            checkBox5.TabIndex = 13;
+            checkBox5.Text = "Street";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Checked = true;
+            checkBox6.CheckState = CheckState.Checked;
+            checkBox6.Location = new Point(161, 160);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(70, 24);
+            checkBox6.TabIndex = 14;
+            checkBox6.Text = "Street";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Checked = true;
+            checkBox7.CheckState = CheckState.Checked;
+            checkBox7.Location = new Point(312, 160);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(70, 24);
+            checkBox7.TabIndex = 15;
+            checkBox7.Text = "Street";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            checkBox8.AutoSize = true;
+            checkBox8.Checked = true;
+            checkBox8.CheckState = CheckState.Checked;
+            checkBox8.Location = new Point(483, 121);
+            checkBox8.Name = "checkBox8";
+            checkBox8.Size = new Size(70, 24);
+            checkBox8.TabIndex = 16;
+            checkBox8.Text = "Street";
+            checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            checkBox9.AutoSize = true;
+            checkBox9.Checked = true;
+            checkBox9.CheckState = CheckState.Checked;
+            checkBox9.Location = new Point(608, 38);
+            checkBox9.Name = "checkBox9";
+            checkBox9.Size = new Size(70, 24);
+            checkBox9.TabIndex = 17;
+            checkBox9.Text = "Street";
+            checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            checkBox10.AutoSize = true;
+            checkBox10.Checked = true;
+            checkBox10.CheckState = CheckState.Checked;
+            checkBox10.Location = new Point(483, 76);
+            checkBox10.Name = "checkBox10";
+            checkBox10.Size = new Size(70, 24);
+            checkBox10.TabIndex = 18;
+            checkBox10.Text = "Street";
+            checkBox10.UseVisualStyleBackColor = true;
             // 
             // RSBSAExportView
             // 
@@ -498,5 +638,15 @@
         private CheckBox cbCorn;
         private CheckBox cbRice;
         private CheckBox cbIsMultipleSheet;
+        private CheckBox checkBox10;
+        private CheckBox checkBox9;
+        private CheckBox checkBox8;
+        private CheckBox checkBox7;
+        private CheckBox checkBox6;
+        private CheckBox checkBox5;
+        private CheckBox checkBox4;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
     }
 }

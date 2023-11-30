@@ -164,6 +164,14 @@ namespace AgRecords.View
             //DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
             //dgvRsbsa.DataSource = dt;
 
+            if (txtBoxSearch.Text == "")
+            {
+                getBarangay(comboBoxFilterBrgy);
+                getCommType(comboBoxFilterCommodity);
+                DataTable dt = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType);
+                dgvRsbsa.DataSource = dt;
+            }
+
 
         }
 
