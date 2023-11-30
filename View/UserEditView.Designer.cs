@@ -110,7 +110,7 @@
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(1311, 866);
             btnSave.Margin = new Padding(3, 4, 3, 4);
@@ -209,7 +209,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(385, 13);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -515,7 +515,7 @@
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label6);
-            groupBox3.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox3.Location = new Point(385, 402);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
@@ -567,6 +567,7 @@
             txtBoxUsername.Location = new Point(211, 123);
             txtBoxUsername.Margin = new Padding(3, 4, 3, 4);
             txtBoxUsername.Name = "txtBoxUsername";
+            txtBoxUsername.ReadOnly = true;
             txtBoxUsername.Size = new Size(366, 26);
             txtBoxUsername.TabIndex = 25;
             // 

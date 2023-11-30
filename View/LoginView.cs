@@ -44,7 +44,7 @@ namespace AgRecords
         private void btnMin_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Maximized;
+                this.WindowState = FormWindowState.Minimized;
             else
                 this.WindowState = FormWindowState.Normal;
         }
