@@ -23,6 +23,8 @@ namespace AgRecords.View
             certController = new CertificationsController(this);
             this.parentPanel = parentControl as Panel;
 
+            comboBoxFilterBrgy.SelectedIndex = 0;
+
         }
 
         // Methods
@@ -48,10 +50,9 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            DataTable certTable = certController.LoadFarmerView();
-            dgvCert.DataSource = certTable;
+            //DataTable certTable = certController.LoadFarmerView();
+            //dgvCert.DataSource = certTable;
 
-            comboBoxFilterBrgy.SelectedIndex = 0;
             comboBoxSearchCategory.SelectedIndex = 0;
 
         }
@@ -81,24 +82,6 @@ namespace AgRecords.View
                     parentPanel.Controls.Clear();
                     parentPanel.Controls.Add(certificationsAddView);
                     certificationsAddView.Show();
-
-
-                    //DATE TEST
-                    //// Create a StringBuilder to concatenate the information
-                    //// Loop through the certList and concatenate information into the message
-                    //foreach (Certifications item in certList)
-                    //{
-                    //    StringBuilder message = new StringBuilder();
-                    //    message.AppendLine($"RsbsaId: {item.rsbsaId}");
-                    //    message.AppendLine($"RsbsaIdLGU: {item.rsbsaIdLGU}");
-                    //    message.AppendLine($"FarmParcelNo: {item.farmParcelNo}");
-                    //    message.AppendLine($"FarmLocBrgy: {item.farmLocBrgy}");
-                    //    message.AppendLine($"CommodityType: {item.commodityType}");
-                    //    message.AppendLine($"LandSize: {item.landSize}");
-                    //    message.AppendLine($"HeadCount: {item.headCount}");
-                    //    message.AppendLine("----------------------"); // Separate entries with dashes
-                    //    MessageBox.Show(message.ToString(), "Certifications Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //}
                 }
             }
 
@@ -129,15 +112,42 @@ namespace AgRecords.View
                                   ? comboBoxFilterBrgy.SelectedItem.ToString()
                                   : string.Empty;
 
-            // Filter the DataGridView based on search criteria
-            (dgvCert.DataSource as DataTable).DefaultView.RowFilter =
-                GetSearchFilterExpression(searchValue, selectedCategory, selectedBrgy);
+            // Get the original DataTable (assuming it's directly loaded in FormRefresh)
+            DataTable certTable = certController.LoadFarmerView();
+
+            // Filter the DataTable based on search criteria
+            DataView dv = certTable.DefaultView;
+            dv.RowFilter = GetSearchFilterExpression(searchValue, selectedCategory, selectedBrgy);
+
+            // Set a limit for the number of rows to fetch/display
+            int limit = 20; // You can adjust this value based on your preference
+
+            // Check if there are any rows in the result
+            if (dv.Count > 0)
+            {
+                // Check if the number of rows is less than the limit
+                if (dv.Count < limit)
+                {
+                    // If fewer rows than the limit, take all rows
+                    limit = dv.Count;
+                }
+
+                // Create a new DataTable with the filtered rows
+                DataTable dt = dv.ToTable().AsEnumerable().Take(limit).CopyToDataTable();
+
+                // Set the filtered DataTable as the DataSource for dgvCert
+                dgvCert.DataSource = dt;
+            }
+            else
+            {
+                // Handle the case when there are no rows in the result for dgvCert
+                // For example, display a message or clear the DataGridView
+                dgvCert.DataSource = null;
+            }
         }
-
-
         private string GetSearchFilterExpression(string searchValue, string selectedCategory, string selectedBrgy)
         {
-            string filterExpression = "";
+            List<string> filters = new List<string>();
 
             // Create filter expression based on selected category and search value
             if (!string.IsNullOrEmpty(searchValue))
@@ -145,28 +155,28 @@ namespace AgRecords.View
                 switch (selectedCategory)
                 {
                     case "RSBSA ID":
-                        filterExpression = $"CONVERT([RSBSA ID], System.String) LIKE '%{searchValue}%'";
+                        filters.Add($"CONVERT([RSBSA ID], System.String) LIKE '%{searchValue}%'");
                         break;
                     case "FIRST NAME":
-                        filterExpression = $"[First Name] LIKE '%{searchValue}%'";
+                        filters.Add($"[First Name] LIKE '%{searchValue}%'");
                         break;
                     case "LAST NAME":
-                        filterExpression = $"[Last Name] LIKE '%{searchValue}%'";
+                        filters.Add($"[Last Name] LIKE '%{searchValue}%'");
                         break;
                     case "NO. OF FARM PARCEL":
                         // Convert integer column to string before performing 'LIKE' comparison
-                        filterExpression = $"CONVERT([No. of Farm Parcel], System.String) LIKE '%{searchValue}%'";
+                        filters.Add($"CONVERT([No. of Farm Parcel], System.String) LIKE '%{searchValue}%'");
                         break;
                     case "BIRTHDATE":
                         // Format the search value as a string and perform partial matching with 'LIKE' operator
                         string formattedSearchDate = searchValue;
-                        filterExpression = $"CONVERT([Birthdate], System.String) LIKE '%{formattedSearchDate}%'";
+                        filters.Add($"CONVERT([Birthdate], System.String) LIKE '%{formattedSearchDate}%'");
                         break;
                     default:
-                        filterExpression = $"[RSBSA ID] LIKE '%{searchValue}%' OR [FIRST NAME] LIKE '%{searchValue}%' OR " +
-                                           $"[LAST NAME] LIKE '%{searchValue}%' OR " +
-                                           $"CONVERT([NO. OF FARM PARCEL], System.String) LIKE '%{searchValue}%' OR " +
-                                           $"CONVERT([Birthdate], System.String) LIKE '%{searchValue}%'";
+                        filters.Add($"([RSBSA ID] LIKE '%{searchValue}%' OR [First Name] LIKE '%{searchValue}%' OR " +
+                                    $"[Last Name] LIKE '%{searchValue}%' OR " +
+                                    $"CONVERT([No. of Farm Parcel], System.String) LIKE '%{searchValue}%' OR " +
+                                    $"CONVERT([Birthdate], System.String) LIKE '%{searchValue}%')");
                         break;
                 }
             }
@@ -174,19 +184,13 @@ namespace AgRecords.View
             // Add additional filtering based on selected barangay if applicable
             if (!string.IsNullOrEmpty(selectedBrgy) && selectedBrgy != "ALL")
             {
-                if (!string.IsNullOrEmpty(filterExpression))
-                {
-                    filterExpression += $" AND [Barangay] = '{selectedBrgy}'";
-                }
-                else
-                {
-                    filterExpression = $"[Barangay] = '{selectedBrgy}'";
-                }
+                filters.Add($"[Barangay] = '{selectedBrgy}'");
             }
+
+            // Combine filters with AND condition
+            string filterExpression = string.Join(" AND ", filters);
 
             return filterExpression;
         }
-
-
     }
 }
