@@ -35,8 +35,17 @@ namespace AgRecords.View
             DataTable userTable = userController.LoadUserView();
             dgvUsers.DataSource = userTable;
 
+            // Adjust the column width for the image in column index 0
+            dgvUsers.Columns[0].Width = 80; // Set an appropriate width
+
+            // Adjust the row height to accommodate the image
+            dgvUsers.RowTemplate.Height = 80; // Set an appropriate height
+
+            // Set the ImageLayout property for the first column
+
             comboBoxSearchCategory.SelectedIndex = 0;
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

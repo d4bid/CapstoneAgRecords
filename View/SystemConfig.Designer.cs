@@ -172,6 +172,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(btnConfig);
             panel2.Controls.Add(txtUsername);
             panel2.Controls.Add(label2);
@@ -187,7 +188,6 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(lblUsername);
             panel2.Controls.Add(btnSave);
-            panel2.Controls.Add(txtPassword);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
