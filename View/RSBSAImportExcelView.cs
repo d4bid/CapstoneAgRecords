@@ -348,6 +348,8 @@ namespace AgRecords.View
                             rsbsa.farmParcels = new List<FarmParcel>();
                             rsbsa.dateImported = DateTime.Now;
                             rsbsa.dateCreated = DateTime.Now;
+                            rsbsa.dateModified = DateTime.Now;
+                            rsbsa.lastModifier = username;
                             rsbsa.userId = userId;
 
 

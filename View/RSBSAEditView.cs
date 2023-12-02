@@ -36,6 +36,12 @@ namespace AgRecords.View
             dtDateAdm.Value = rsbsaInfo.dateCreated;
             currentRSBSAId = labelRsbsaId;
 
+            string lblDateCreated = rsbsaInfo.dateCreated.ToString();
+            string lblDateUpdated = rsbsaInfo.dateModified.ToString();
+
+            labelDateAdded.Text = $"Date Added: {lblDateCreated}";
+            labelDateModified.Text = $"Last Updated: {lblDateUpdated}";
+
             //Farmer Info
             if (farmerInfo != null)
             {

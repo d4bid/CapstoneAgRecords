@@ -390,7 +390,7 @@ namespace AgRecords.Model
                 {
                     await db.OpenAsync();
 
-                    string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, @dateImported, " +
+                    string query = "CALL sp_addNewRSBSARecord(@rsbsaId, @rsbsaIdLGU, @rsbsaIdRegion, @dateCreated, @userId, @dateImported, @dateModified, " +
                                     "@farmerImg, @surname, @firstname, @middlename, @extname, @sex, @addrPurok, @addrStreet, @addrBrgy, " +
                                     "@addrMunicipality, @addrProvince, @addrRegion, @educAttainment, @contactNo, @landlineNo, " +
                                     "@withGovId, @govIdType, @govIdNo, @birthDate, @birthMunicipality, @birthProvince, " +
@@ -412,6 +412,7 @@ namespace AgRecords.Model
                     command.Parameters.AddWithValue("@dateCreated", rsbsa.dateCreated);
                     command.Parameters.AddWithValue("@userId", rsbsa.userId);
                     command.Parameters.AddWithValue("@dateImported", rsbsa.dateImported);
+                    command.Parameters.AddWithValue("@dateModified", rsbsa.dateCreated);
 
                     //for farmer info table
                     byte[] farmerImgBytes = ConvertImageToByteArray(rsbsa.farmerImg);
@@ -637,6 +638,7 @@ namespace AgRecords.Model
                         rsbsaInfo.rsbsaIdLGU = reader["rsbsaIdLGU"].ToString();
                         rsbsaInfo.userId = reader["userId"].ToString();
                         rsbsaInfo.dateCreated = DateTime.Parse(reader["dateCreated"].ToString());
+                        rsbsaInfo.dateModified = DateTime.Parse(reader["dateModified"].ToString());
                        // rsbsaInfo.dateImported = DateTime.Parse(reader["dateImported"].ToString());
                     }
 

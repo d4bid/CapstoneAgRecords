@@ -57,6 +57,8 @@
             panel1 = new Panel();
             pbFarmerPhoto = new PictureBox();
             panelPersonalInfo = new Panel();
+            labelDateModified = new Label();
+            labelDateAdded = new Label();
             panelPiAffiliations = new Panel();
             panelFarmProfile = new Panel();
             panelFarmLand = new Panel();
@@ -352,8 +354,6 @@
             rectangleRed1 = new RectangleRed();
             rectangleRed2 = new RectangleRed();
             rectangleRed3 = new RectangleRed();
-            labelDateAdded = new Label();
-            labelDateModified = new Label();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel28.SuspendLayout();
@@ -764,6 +764,24 @@
             panelPersonalInfo.Name = "panelPersonalInfo";
             panelPersonalInfo.Size = new Size(1595, 767);
             panelPersonalInfo.TabIndex = 0;
+            // 
+            // labelDateModified
+            // 
+            labelDateModified.AutoSize = true;
+            labelDateModified.Location = new Point(1228, 736);
+            labelDateModified.Name = "labelDateModified";
+            labelDateModified.Size = new Size(100, 20);
+            labelDateModified.TabIndex = 14;
+            labelDateModified.Text = "Last Updated:";
+            // 
+            // labelDateAdded
+            // 
+            labelDateAdded.AutoSize = true;
+            labelDateAdded.Location = new Point(896, 736);
+            labelDateAdded.Name = "labelDateAdded";
+            labelDateAdded.Size = new Size(93, 20);
+            labelDateAdded.TabIndex = 13;
+            labelDateAdded.Text = "Date Added:";
             // 
             // panelPiAffiliations
             // 
@@ -4213,24 +4231,6 @@
             rectangleRed3.Name = "rectangleRed3";
             rectangleRed3.Size = new Size(174, 39);
             rectangleRed3.TabIndex = 8;
-            // 
-            // labelDateAdded
-            // 
-            labelDateAdded.AutoSize = true;
-            labelDateAdded.Location = new Point(896, 736);
-            labelDateAdded.Name = "labelDateAdded";
-            labelDateAdded.Size = new Size(93, 20);
-            labelDateAdded.TabIndex = 13;
-            labelDateAdded.Text = "Date Added:";
-            // 
-            // labelDateModified
-            // 
-            labelDateModified.AutoSize = true;
-            labelDateModified.Location = new Point(1228, 736);
-            labelDateModified.Name = "labelDateModified";
-            labelDateModified.Size = new Size(266, 20);
-            labelDateModified.TabIndex = 14;
-            labelDateModified.Text = "Last Updated on something something";
             // 
             // RSBSAEditView
             // 
