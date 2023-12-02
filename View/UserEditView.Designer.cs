@@ -109,8 +109,10 @@
             btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 109, 201);
+            btnSave.FlatAppearance.MouseOverBackColor = Color.FromArgb(39, 109, 201);
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(1311, 866);
             btnSave.Margin = new Padding(3, 4, 3, 4);

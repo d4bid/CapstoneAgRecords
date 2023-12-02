@@ -67,6 +67,7 @@
             txtBoxConfirmPassword = new TextBox();
             lblConfirmPassword = new Label();
             groupBox3 = new GroupBox();
+            lblUsernameExists = new Label();
             comboBoxRole = new ComboBox();
             panel1 = new Panel();
             panelPassConfirm = new Panel();
@@ -88,7 +89,6 @@
             btnBrowse = new FontAwesome.Sharp.IconButton();
             btnBack = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
-            lblUsernameExists = new Label();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             panel1.SuspendLayout();
@@ -415,6 +415,8 @@
             btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 109, 201);
+            btnSave.FlatAppearance.MouseOverBackColor = Color.FromArgb(39, 109, 201);
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
@@ -453,7 +455,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(29, 19);
+            label7.Location = new Point(27, 19);
             label7.Name = "label7";
             label7.Size = new Size(70, 20);
             label7.TabIndex = 23;
@@ -555,6 +557,18 @@
             groupBox3.TabIndex = 9;
             groupBox3.TabStop = false;
             // 
+            // lblUsernameExists
+            // 
+            lblUsernameExists.AutoSize = true;
+            lblUsernameExists.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsernameExists.ForeColor = Color.FromArgb(207, 92, 96);
+            lblUsernameExists.Location = new Point(202, 158);
+            lblUsernameExists.Name = "lblUsernameExists";
+            lblUsernameExists.Size = new Size(152, 17);
+            lblUsernameExists.TabIndex = 41;
+            lblUsernameExists.Text = "Username already exist.";
+            lblUsernameExists.Visible = false;
+            // 
             // comboBoxRole
             // 
             comboBoxRole.BackColor = Color.White;
@@ -562,7 +576,7 @@
             comboBoxRole.FlatStyle = FlatStyle.Flat;
             comboBoxRole.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxRole.FormattingEnabled = true;
-            comboBoxRole.Location = new Point(841, 116);
+            comboBoxRole.Location = new Point(841, 117);
             comboBoxRole.Margin = new Padding(3, 4, 3, 4);
             comboBoxRole.Name = "comboBoxRole";
             comboBoxRole.Size = new Size(264, 31);
@@ -574,7 +588,7 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panelPassStrength);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(20, 176);
+            panel1.Location = new Point(25, 175);
             panel1.Name = "panel1";
             panel1.Size = new Size(580, 234);
             panel1.TabIndex = 34;
@@ -603,7 +617,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(29, 15);
+            label13.Location = new Point(27, 16);
             label13.Name = "label13";
             label13.Size = new Size(62, 20);
             label13.TabIndex = 23;
@@ -653,7 +667,7 @@
             comboBoxStatus.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-            comboBoxStatus.Location = new Point(841, 71);
+            comboBoxStatus.Location = new Point(841, 72);
             comboBoxStatus.Margin = new Padding(3, 4, 3, 4);
             comboBoxStatus.Name = "comboBoxStatus";
             comboBoxStatus.Size = new Size(264, 31);
@@ -740,8 +754,8 @@
             // 
             btnBrowse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnBrowse.FlatAppearance.BorderSize = 2;
-            btnBrowse.FlatAppearance.MouseDownBackColor = Color.White;
-            btnBrowse.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBrowse.FlatAppearance.MouseDownBackColor = Color.FromArgb(234, 242, 252);
+            btnBrowse.FlatAppearance.MouseOverBackColor = Color.FromArgb(234, 242, 252);
             btnBrowse.FlatStyle = FlatStyle.Flat;
             btnBrowse.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnBrowse.ForeColor = Color.FromArgb(43, 121, 223);
@@ -763,8 +777,8 @@
             // 
             btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnBack.FlatAppearance.BorderSize = 2;
-            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
-            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.FromArgb(234, 242, 252);
+            btnBack.FlatAppearance.MouseOverBackColor = Color.FromArgb(234, 242, 252);
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnBack.ForeColor = Color.FromArgb(43, 121, 223);
@@ -793,18 +807,6 @@
             panel4.Padding = new Padding(0, 0, 0, 10);
             panel4.Size = new Size(379, 926);
             panel4.TabIndex = 58;
-            // 
-            // lblUsernameExists
-            // 
-            lblUsernameExists.AutoSize = true;
-            lblUsernameExists.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUsernameExists.ForeColor = Color.FromArgb(207, 92, 96);
-            lblUsernameExists.Location = new Point(202, 158);
-            lblUsernameExists.Name = "lblUsernameExists";
-            lblUsernameExists.Size = new Size(152, 17);
-            lblUsernameExists.TabIndex = 41;
-            lblUsernameExists.Text = "Username already exist.";
-            lblUsernameExists.Visible = false;
             // 
             // UserAddView
             // 

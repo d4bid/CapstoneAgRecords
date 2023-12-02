@@ -54,6 +54,8 @@ namespace AgRecords.View
             btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAdd.BackColor = Color.FromArgb(43, 121, 223);
             btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 109, 201);
+            btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(39, 109, 201);
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;

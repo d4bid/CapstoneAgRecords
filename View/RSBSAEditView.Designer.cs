@@ -352,6 +352,8 @@
             rectangleRed1 = new RectangleRed();
             rectangleRed2 = new RectangleRed();
             rectangleRed3 = new RectangleRed();
+            labelDateAdded = new Label();
+            labelDateModified = new Label();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel28.SuspendLayout();
@@ -749,6 +751,8 @@
             // panelPersonalInfo
             // 
             panelPersonalInfo.BackgroundImageLayout = ImageLayout.Stretch;
+            panelPersonalInfo.Controls.Add(labelDateModified);
+            panelPersonalInfo.Controls.Add(labelDateAdded);
             panelPersonalInfo.Controls.Add(panelPiAffiliations);
             panelPersonalInfo.Controls.Add(panelEduc);
             panelPersonalInfo.Controls.Add(panelBirthDetails);
@@ -773,7 +777,7 @@
             panelPiAffiliations.Dock = DockStyle.Top;
             panelPiAffiliations.Location = new Point(0, 0);
             panelPiAffiliations.Name = "panelPiAffiliations";
-            panelPiAffiliations.Size = new Size(1595, 766);
+            panelPiAffiliations.Size = new Size(1595, 0);
             panelPiAffiliations.TabIndex = 12;
             // 
             // panelFarmProfile
@@ -788,7 +792,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 766);
+            panelFarmProfile.Size = new Size(1595, 0);
             panelFarmProfile.TabIndex = 0;
             // 
             // panelFarmLand
@@ -799,7 +803,7 @@
             panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1595, 766);
+            panelFarmLand.Size = new Size(1595, 0);
             panelFarmLand.TabIndex = 0;
             // 
             // panelDocument
@@ -809,7 +813,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 766);
+            panelDocument.Size = new Size(1595, 0);
             panelDocument.TabIndex = 0;
             // 
             // flowLayoutPanelDocs
@@ -818,7 +822,7 @@
             flowLayoutPanelDocs.Dock = DockStyle.Fill;
             flowLayoutPanelDocs.Location = new Point(0, 128);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1595, 638);
+            flowLayoutPanelDocs.Size = new Size(1595, 0);
             flowLayoutPanelDocs.TabIndex = 0;
             // 
             // panel14
@@ -4210,6 +4214,24 @@
             rectangleRed3.Size = new Size(174, 39);
             rectangleRed3.TabIndex = 8;
             // 
+            // labelDateAdded
+            // 
+            labelDateAdded.AutoSize = true;
+            labelDateAdded.Location = new Point(896, 736);
+            labelDateAdded.Name = "labelDateAdded";
+            labelDateAdded.Size = new Size(93, 20);
+            labelDateAdded.TabIndex = 13;
+            labelDateAdded.Text = "Date Added:";
+            // 
+            // labelDateModified
+            // 
+            labelDateModified.AutoSize = true;
+            labelDateModified.Location = new Point(1228, 736);
+            labelDateModified.Name = "labelDateModified";
+            labelDateModified.Size = new Size(266, 20);
+            labelDateModified.TabIndex = 14;
+            labelDateModified.Text = "Last Updated on something something";
+            // 
             // RSBSAEditView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -4230,6 +4252,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbFarmerPhoto).EndInit();
             panelPersonalInfo.ResumeLayout(false);
+            panelPersonalInfo.PerformLayout();
             panelPiAffiliations.ResumeLayout(false);
             panelFarmProfile.ResumeLayout(false);
             panelFarmLand.ResumeLayout(false);
@@ -4659,5 +4682,7 @@
         private RectangleRed rectangleRed23;
         private RectangleRed rectangleRed24;
         private RectangleRed rectangleRed25;
+        private Label labelDateModified;
+        private Label labelDateAdded;
     }
 }
