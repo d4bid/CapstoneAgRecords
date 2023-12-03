@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnSearch = new Button();
             btnExport = new FontAwesome.Sharp.IconButton();
             btnImport = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
@@ -59,7 +58,6 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(btnExport);
             panel1.Controls.Add(btnImport);
             panel1.Controls.Add(label3);
@@ -81,23 +79,6 @@
             panel1.Padding = new Padding(0, 0, 0, 11);
             panel1.Size = new Size(1595, 91);
             panel1.TabIndex = 20;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.BackColor = Color.FromArgb(43, 121, 223);
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Popup;
-            btnSearch.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(376, 36);
-            btnSearch.Margin = new Padding(3, 4, 3, 4);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(79, 40);
-            btnSearch.TabIndex = 57;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = false;
-            btnSearch.Click += btnSearch_Click;
             // 
             // btnExport
             // 
@@ -150,7 +131,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(883, 14);
+            label3.Location = new Point(756, 14);
             label3.Name = "label3";
             label3.Size = new Size(87, 20);
             label3.TabIndex = 20;
@@ -163,7 +144,7 @@
             comboBoxFilterCommodity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterCommodity.FormattingEnabled = true;
             comboBoxFilterCommodity.Items.AddRange(new object[] { "ALL", "Rice", "Corn", "HVC" });
-            comboBoxFilterCommodity.Location = new Point(890, 42);
+            comboBoxFilterCommodity.Location = new Point(763, 42);
             comboBoxFilterCommodity.Name = "comboBoxFilterCommodity";
             comboBoxFilterCommodity.Size = new Size(174, 28);
             comboBoxFilterCommodity.TabIndex = 18;
@@ -171,7 +152,7 @@
             // 
             // searchBox4
             // 
-            searchBox4.Location = new Point(883, 37);
+            searchBox4.Location = new Point(756, 37);
             searchBox4.Name = "searchBox4";
             searchBox4.Size = new Size(184, 39);
             searchBox4.TabIndex = 19;
@@ -179,7 +160,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(689, 14);
+            label2.Location = new Point(562, 14);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 17;
@@ -192,7 +173,7 @@
             comboBoxFilterBrgy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFilterBrgy.FormattingEnabled = true;
             comboBoxFilterBrgy.Items.AddRange(new object[] { "ALL", "AGGUB", "BAGAHABAG", "BANGAAN", "BANGAR", "BASCARAN", "COMMUNAL", "CONCEPCION CALALABANGAN", "CURIFANG", "DADAP", "LACTAWAN", "OSMENA", "PILAR D. GALIMA", "POBLACION NORTH", "POBLACION SOUTH", "QUEZON", "QUIRINO", "ROXAS", "SAN JUAN", "SAN LUIS", "TUCAL", "UDDIAWAN", "WACAL" });
-            comboBoxFilterBrgy.Location = new Point(695, 42);
+            comboBoxFilterBrgy.Location = new Point(568, 42);
             comboBoxFilterBrgy.Name = "comboBoxFilterBrgy";
             comboBoxFilterBrgy.Size = new Size(174, 28);
             comboBoxFilterBrgy.TabIndex = 11;
@@ -200,7 +181,7 @@
             // 
             // searchBox3
             // 
-            searchBox3.Location = new Point(689, 37);
+            searchBox3.Location = new Point(562, 37);
             searchBox3.Name = "searchBox3";
             searchBox3.Size = new Size(184, 39);
             searchBox3.TabIndex = 16;
@@ -212,7 +193,7 @@
             comboBoxSearchCategory.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSearchCategory.FormattingEnabled = true;
             comboBoxSearchCategory.Items.AddRange(new object[] { "ALL", "ID", "FIRST NAME", "MIDDLE NAME", "SURNAME" });
-            comboBoxSearchCategory.Location = new Point(491, 42);
+            comboBoxSearchCategory.Location = new Point(364, 42);
             comboBoxSearchCategory.Name = "comboBoxSearchCategory";
             comboBoxSearchCategory.Size = new Size(183, 28);
             comboBoxSearchCategory.TabIndex = 9;
@@ -220,7 +201,7 @@
             // 
             // searchBox2
             // 
-            searchBox2.Location = new Point(486, 37);
+            searchBox2.Location = new Point(359, 37);
             searchBox2.Name = "searchBox2";
             searchBox2.Size = new Size(191, 39);
             searchBox2.TabIndex = 15;
@@ -260,7 +241,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(486, 14);
+            label1.Location = new Point(359, 14);
             label1.Name = "label1";
             label1.Size = new Size(69, 20);
             label1.TabIndex = 13;
@@ -347,7 +328,6 @@
             // 
             // RsbsaView
             // 
-            AcceptButton = btnSearch;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
@@ -387,6 +367,5 @@
         private FontAwesome.Sharp.IconButton btnImport;
         private Panel panel3;
         private Panel panel2;
-        private Button btnSearch;
     }
 }
