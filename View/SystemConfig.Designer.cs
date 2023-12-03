@@ -38,6 +38,7 @@
             label1 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
+            txtPassword = new TextBox();
             btnConfig = new FontAwesome.Sharp.IconButton();
             txtUsername = new TextBox();
             label2 = new Label();
@@ -48,7 +49,6 @@
             rectangleBlue4 = new RectangleBlue();
             rectangleBlue3 = new RectangleBlue();
             label4 = new Label();
-            txtPassword = new TextBox();
             panel3 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -194,6 +194,16 @@
             panel2.Size = new Size(437, 500);
             panel2.TabIndex = 51;
             // 
+            // txtPassword
+            // 
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Segoe UI", 11.7F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.Location = new Point(49, 298);
+            txtPassword.Margin = new Padding(5, 3, 3, 3);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(333, 26);
+            txtPassword.TabIndex = 54;
+            // 
             // btnConfig
             // 
             btnConfig.FlatAppearance.BorderSize = 0;
@@ -296,16 +306,6 @@
             label4.TabIndex = 58;
             label4.Text = "Database";
             // 
-            // txtPassword
-            // 
-            txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("Segoe UI", 11.7F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(49, 298);
-            txtPassword.Margin = new Padding(5, 3, 3, 3);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(333, 26);
-            txtPassword.TabIndex = 54;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(43, 121, 223);
@@ -329,7 +329,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "SystemConfig";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "SystemConfig";
+            Text = "System Configuration";
             Load += SystemConfig_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
