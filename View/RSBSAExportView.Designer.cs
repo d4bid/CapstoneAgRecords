@@ -207,8 +207,8 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle2;

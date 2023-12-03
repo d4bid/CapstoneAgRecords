@@ -303,7 +303,6 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvRsbsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRsbsa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRsbsa.ColumnHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
