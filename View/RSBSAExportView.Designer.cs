@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             cbIsMultipleSheet = new CheckBox();
             btnCancel = new Button();
@@ -194,25 +194,26 @@
             dgvRSBSAExport.BackgroundColor = Color.White;
             dgvRSBSAExport.BorderStyle = BorderStyle.None;
             dgvRSBSAExport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRSBSAExport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRSBSAExport.Dock = DockStyle.Fill;
+            dgvRSBSAExport.EnableHeadersVisualStyles = false;
             dgvRSBSAExport.GridColor = Color.FromArgb(239, 239, 239);
             dgvRSBSAExport.Location = new Point(10, 10);
             dgvRSBSAExport.Name = "dgvRSBSAExport";
@@ -244,9 +245,9 @@
             groupBox1.Controls.Add(cbRice);
             groupBox1.Controls.Add(cbFarmParcelNo);
             groupBox1.Controls.Add(cbTotalFarmArea);
-            groupBox1.Location = new Point(1018, 6);
+            groupBox1.Location = new Point(969, 6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(565, 150);
+            groupBox1.Size = new Size(614, 150);
             groupBox1.TabIndex = 38;
             groupBox1.TabStop = false;
             groupBox1.Text = "Farm Info";
@@ -256,7 +257,7 @@
             cbAgriFishery.AutoSize = true;
             cbAgriFishery.Checked = true;
             cbAgriFishery.CheckState = CheckState.Checked;
-            cbAgriFishery.Location = new Point(448, 76);
+            cbAgriFishery.Location = new Point(193, 115);
             cbAgriFishery.Name = "cbAgriFishery";
             cbAgriFishery.Size = new Size(110, 24);
             cbAgriFishery.TabIndex = 6;
@@ -269,7 +270,7 @@
             cbHVC.AutoSize = true;
             cbHVC.Checked = true;
             cbHVC.CheckState = CheckState.Checked;
-            cbHVC.Location = new Point(340, 76);
+            cbHVC.Location = new Point(25, 115);
             cbHVC.Name = "cbHVC";
             cbHVC.Size = new Size(60, 24);
             cbHVC.TabIndex = 5;
@@ -350,7 +351,7 @@
             groupBox2.Controls.Add(cbStreet);
             groupBox2.Location = new Point(10, 6);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(989, 150);
+            groupBox2.Size = new Size(938, 150);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             groupBox2.Text = "Farmer Info";
