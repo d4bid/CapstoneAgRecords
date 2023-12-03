@@ -318,7 +318,7 @@
             dgvRsbsa.ReadOnly = true;
             dgvRsbsa.RowHeadersVisible = false;
             dgvRsbsa.RowHeadersWidth = 51;
-            dgvRsbsa.RowTemplate.Height = 25;
+            dgvRsbsa.RowTemplate.Height = 40;
             dgvRsbsa.ScrollBars = ScrollBars.Vertical;
             dgvRsbsa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRsbsa.Size = new Size(1575, 805);
