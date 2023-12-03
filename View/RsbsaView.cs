@@ -159,7 +159,7 @@ namespace AgRecords.View
             getCommType(comboBoxFilterCommodity);
 
             // Set a limit for the number of rows to fetch/display
-            int limit = 20; // You can adjust this value based on your preference
+            int limit = 18; // You can adjust this value based on your preference
 
             // Fetch all rows
             var queryResult = rsbsaController.SearchRSBSA(txtBoxSearch.Text, comboBoxSearchCategory.Text, brgy, commType).AsEnumerable();
@@ -193,10 +193,7 @@ namespace AgRecords.View
 
         private void txtBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            if (txtBoxSearch.Text == "")
-            {
-                LoadData();
-            }
+            LoadData();
         }
 
         private void comboBoxSearchCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -265,11 +262,6 @@ namespace AgRecords.View
             parentPanel.Controls.Clear();
             parentPanel.Controls.Add(exportView);
             exportView.Show();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            LoadData();
         }
     }
 }
