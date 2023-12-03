@@ -50,8 +50,11 @@ namespace AgRecords.View
         {
             string filterText = txtBoxSearch.Text.Trim();
             string selectedFilter = cmbFilter.SelectedItem.ToString();
+            int rowLimit = 50;
 
-            DataView dv = ((DataTable)dgvLogs.DataSource).DefaultView;
+            DataTable logsTable = userController.LoadUserLogsView().Copy(); // Copy to avoid modifying the original DataTable
+
+            DataView dv = logsTable.DefaultView;
 
             if (!string.IsNullOrEmpty(filterText))
             {
@@ -71,7 +74,7 @@ namespace AgRecords.View
                         break;
                     default:
                         // "All" or any other case
-                        filterExpression = $"CONVERT(ID, 'System.String') LIKE '%{filterText}%' OR Username LIKE '%{filterText}%' OR Section LIKE '%{filterText}%' OR Description LIKE '%{filterText}%' OR Device LIKE '%{filterText}%' OR CONVERT(Timestamp, 'System.String') LIKE '%{filterText}%'";
+                        filterExpression = $"CONVERT(ID, 'System.String') LIKE '%{filterText}%' OR Username LIKE '%{filterText}%' OR Action LIKE '%{filterText}%' OR Section LIKE '%{filterText}%' OR Description LIKE '%{filterText}%' OR Device LIKE '%{filterText}%' OR CONVERT(Timestamp, 'System.String') LIKE '%{filterText}%'";
                         break;
                 }
 
@@ -82,7 +85,22 @@ namespace AgRecords.View
                 // If the filter text is empty, remove the filter
                 dv.RowFilter = string.Empty;
             }
+
+            // Sort by Timestamp in descending order
+            dv.Sort = "Timestamp DESC";
+
+            // Limit the number of rows to 50
+            DataTable limitedTable = dv.ToTable();
+            if (limitedTable.Rows.Count > rowLimit)
+            {
+                limitedTable = limitedTable.AsEnumerable().Take(rowLimit).CopyToDataTable();
+            }
+
+            dgvLogs.DataSource = limitedTable;
         }
+
+
+
 
     }
 }
