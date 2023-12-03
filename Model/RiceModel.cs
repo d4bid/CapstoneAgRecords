@@ -919,7 +919,9 @@ namespace AgRecords.Model
                         rh.brgyId = (int)reader["brgyId"];
                         rh.farmTypeId = (int)reader["farmTypeId"];
                         rh.seedTypeId = (int)reader["seedTypeId"];
-                        rh.yield = (float)reader["yield"];
+                        //rh.yield = (float)reader["yield"];
+                        object yieldValue = reader["yield"];
+                        rh.yield = yieldValue != DBNull.Value ? Convert.ToSingle(yieldValue) : 0.0f;
                         rh.size = (float)reader["size"];
                     }
 

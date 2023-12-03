@@ -43,11 +43,7 @@ namespace AgRecords.View
 
         public void ClearTextControls()
         {
-            cmbBrgy.SelectedIndex = -1;
-            cmbLandType.SelectedIndex = -1;
             //cmbGrowthStage.SelectedIndex = -1;
-            cmbSeedType.SelectedIndex = -1;
-            cmbCornType.SelectedIndex = -1;
             txtSize.Text = "";
             dtpLogDate.Value = DateTime.Today;
             labelCornPlantingId.Text = "";
@@ -210,6 +206,8 @@ namespace AgRecords.View
             cmbLandType.SelectedIndex = 0;
             cmbSeedType.SelectedIndex = 0;
             cmbGrowthStageFilter.SelectedIndex = 0;
+
+            cbTotal.Checked = true;
         }
 
         private void dgvCornPlanting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

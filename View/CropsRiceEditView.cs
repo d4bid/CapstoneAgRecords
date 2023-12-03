@@ -271,7 +271,7 @@ namespace AgRecords.View
                 label9.Visible = false;
                 dtpLogDate.Visible = false;
 
-                btnNew.Visible = false;
+                btnNew.Enabled = false;
             }
         }
 
@@ -322,6 +322,7 @@ namespace AgRecords.View
 
                 if (labelArea.Text == "STANDING ACCOMPLISHMENTS")
                 {
+                    btnUpdate.Enabled = true;
                     int riceStandingLogsId = Convert.ToInt32(row.Cells[0].Value);
 
                     labelRiceStandingLogsId.Text = riceStandingLogsId.ToString();

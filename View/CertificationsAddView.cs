@@ -364,11 +364,7 @@ namespace AgRecords.View
 
                 DialogResult result = MessageBox.Show("Do you want to continue generating certificate?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes)
-                {
-                    this.WindowState = FormWindowState.Maximized;
-                }
-                else
+                if (result == DialogResult.No)
                 {
                     // Collect data from CertificationsFarmControl instances into a list
                     List<Certifications> farmDataList = new List<Certifications>();
@@ -403,6 +399,10 @@ namespace AgRecords.View
                             FormClosed?.Invoke(this, EventArgs.Empty);
                         }
                     }
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Maximized;
                 }
             }
         }
