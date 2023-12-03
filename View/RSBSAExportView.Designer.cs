@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             cbIsMultipleSheet = new CheckBox();
             btnCancel = new Button();
@@ -194,24 +194,24 @@
             dgvRSBSAExport.BackgroundColor = Color.White;
             dgvRSBSAExport.BorderStyle = BorderStyle.None;
             dgvRSBSAExport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRSBSAExport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRSBSAExport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvRSBSAExport.DefaultCellStyle = dataGridViewCellStyle4;
             dgvRSBSAExport.Dock = DockStyle.Fill;
             dgvRSBSAExport.GridColor = Color.FromArgb(239, 239, 239);
             dgvRSBSAExport.Location = new Point(10, 10);
@@ -237,6 +237,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(cbAgriFishery);
             groupBox1.Controls.Add(cbHVC);
             groupBox1.Controls.Add(cbCorn);
@@ -349,7 +350,7 @@
             groupBox2.Controls.Add(cbStreet);
             groupBox2.Location = new Point(10, 6);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1002, 150);
+            groupBox2.Size = new Size(989, 150);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             groupBox2.Text = "Farmer Info";
@@ -359,7 +360,7 @@
             cbTin.AutoSize = true;
             cbTin.Checked = true;
             cbTin.CheckState = CheckState.Checked;
-            cbTin.Location = new Point(711, 76);
+            cbTin.Location = new Point(749, 76);
             cbTin.Name = "cbTin";
             cbTin.Size = new Size(51, 24);
             cbTin.TabIndex = 18;
@@ -372,7 +373,7 @@
             cbId.AutoSize = true;
             cbId.Checked = true;
             cbId.CheckState = CheckState.Checked;
-            cbId.Location = new Point(608, 38);
+            cbId.Location = new Point(630, 38);
             cbId.Name = "cbId";
             cbId.Size = new Size(70, 24);
             cbId.TabIndex = 17;
@@ -411,7 +412,7 @@
             cbMMaiden.AutoSize = true;
             cbMMaiden.Checked = true;
             cbMMaiden.CheckState = CheckState.Checked;
-            cbMMaiden.Location = new Point(608, 115);
+            cbMMaiden.Location = new Point(630, 115);
             cbMMaiden.Name = "cbMMaiden";
             cbMMaiden.Size = new Size(186, 24);
             cbMMaiden.TabIndex = 14;
@@ -437,7 +438,7 @@
             cbIdType.AutoSize = true;
             cbIdType.Checked = true;
             cbIdType.CheckState = CheckState.Checked;
-            cbIdType.Location = new Point(711, 38);
+            cbIdType.Location = new Point(749, 38);
             cbIdType.Name = "cbIdType";
             cbIdType.Size = new Size(81, 24);
             cbIdType.TabIndex = 12;
@@ -476,7 +477,7 @@
             cbGender.AutoSize = true;
             cbGender.Checked = true;
             cbGender.CheckState = CheckState.Checked;
-            cbGender.Location = new Point(608, 76);
+            cbGender.Location = new Point(630, 76);
             cbGender.Name = "cbGender";
             cbGender.Size = new Size(79, 24);
             cbGender.TabIndex = 9;
