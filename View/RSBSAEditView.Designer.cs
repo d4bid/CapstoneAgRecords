@@ -57,8 +57,6 @@
             panel1 = new Panel();
             pbFarmerPhoto = new PictureBox();
             panelPersonalInfo = new Panel();
-            labelDateModified = new Label();
-            labelDateAdded = new Label();
             panelPiAffiliations = new Panel();
             panelFarmProfile = new Panel();
             panelFarmLand = new Panel();
@@ -268,6 +266,8 @@
             rectangleRed15 = new RectangleRed();
             rectangleRed16 = new RectangleRed();
             rectangleRed17 = new RectangleRed();
+            labelDateModified = new Label();
+            labelDateAdded = new Label();
             panelEduc = new Panel();
             rbNone = new RadioButton();
             rbEducPostGraduate = new RadioButton();
@@ -630,6 +630,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
             btnCancel.FlatAppearance.BorderSize = 2;
             btnCancel.FlatStyle = FlatStyle.Flat;
@@ -646,6 +647,7 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
@@ -751,9 +753,9 @@
             // panelPersonalInfo
             // 
             panelPersonalInfo.BackgroundImageLayout = ImageLayout.Stretch;
+            panelPersonalInfo.Controls.Add(panelPiAffiliations);
             panelPersonalInfo.Controls.Add(labelDateModified);
             panelPersonalInfo.Controls.Add(labelDateAdded);
-            panelPersonalInfo.Controls.Add(panelPiAffiliations);
             panelPersonalInfo.Controls.Add(panelEduc);
             panelPersonalInfo.Controls.Add(panelBirthDetails);
             panelPersonalInfo.Controls.Add(panelContactDetails);
@@ -764,24 +766,6 @@
             panelPersonalInfo.Name = "panelPersonalInfo";
             panelPersonalInfo.Size = new Size(1595, 767);
             panelPersonalInfo.TabIndex = 0;
-            // 
-            // labelDateModified
-            // 
-            labelDateModified.AutoSize = true;
-            labelDateModified.Location = new Point(1228, 736);
-            labelDateModified.Name = "labelDateModified";
-            labelDateModified.Size = new Size(100, 20);
-            labelDateModified.TabIndex = 14;
-            labelDateModified.Text = "Last Updated:";
-            // 
-            // labelDateAdded
-            // 
-            labelDateAdded.AutoSize = true;
-            labelDateAdded.Location = new Point(896, 736);
-            labelDateAdded.Name = "labelDateAdded";
-            labelDateAdded.Size = new Size(93, 20);
-            labelDateAdded.TabIndex = 13;
-            labelDateAdded.Text = "Date Added:";
             // 
             // panelPiAffiliations
             // 
@@ -795,7 +779,7 @@
             panelPiAffiliations.Dock = DockStyle.Top;
             panelPiAffiliations.Location = new Point(0, 0);
             panelPiAffiliations.Name = "panelPiAffiliations";
-            panelPiAffiliations.Size = new Size(1595, 0);
+            panelPiAffiliations.Size = new Size(1595, 766);
             panelPiAffiliations.TabIndex = 12;
             // 
             // panelFarmProfile
@@ -810,7 +794,7 @@
             panelFarmProfile.Dock = DockStyle.Top;
             panelFarmProfile.Location = new Point(0, 0);
             panelFarmProfile.Name = "panelFarmProfile";
-            panelFarmProfile.Size = new Size(1595, 0);
+            panelFarmProfile.Size = new Size(1595, 766);
             panelFarmProfile.TabIndex = 0;
             // 
             // panelFarmLand
@@ -855,9 +839,9 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.Controls.Add(panelPlantingByEcoZoneHeader);
             panel3.Controls.Add(btnAddDocsControl);
-            panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
             panel3.Size = new Size(1575, 108);
@@ -913,16 +897,16 @@
             panel19.Location = new Point(0, 163);
             panel19.Name = "panel19";
             panel19.Padding = new Padding(10, 11, 10, 11);
-            panel19.Size = new Size(1595, 363);
+            panel19.Size = new Size(1595, 600);
             panel19.TabIndex = 0;
             // 
             // flowLayoutPanelParcels
             // 
+            flowLayoutPanelParcels.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanelParcels.AutoScroll = true;
-            flowLayoutPanelParcels.Dock = DockStyle.Fill;
             flowLayoutPanelParcels.Location = new Point(10, 11);
             flowLayoutPanelParcels.Name = "flowLayoutPanelParcels";
-            flowLayoutPanelParcels.Size = new Size(1575, 341);
+            flowLayoutPanelParcels.Size = new Size(1575, 578);
             flowLayoutPanelParcels.TabIndex = 0;
             // 
             // panel12
@@ -1152,6 +1136,7 @@
             // 
             // panelAnnuanIncome
             // 
+            panelAnnuanIncome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAnnuanIncome.BorderStyle = BorderStyle.FixedSingle;
             panelAnnuanIncome.Controls.Add(txtNonFarmingIncome);
             panelAnnuanIncome.Controls.Add(txtFarmingIncome);
@@ -1256,6 +1241,7 @@
             // 
             // panelForAgriYouth
             // 
+            panelForAgriYouth.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelForAgriYouth.BorderStyle = BorderStyle.FixedSingle;
             panelForAgriYouth.Controls.Add(txtInvolvementOthers);
             panelForAgriYouth.Controls.Add(cbInvolvementOthers);
@@ -1362,6 +1348,7 @@
             // 
             // boxInvolvementType
             // 
+            boxInvolvementType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boxInvolvementType.BackColor = Color.White;
             boxInvolvementType.Location = new Point(16, 72);
             boxInvolvementType.Margin = new Padding(2, 3, 2, 3);
@@ -1382,6 +1369,7 @@
             // 
             // rectangleRed25
             // 
+            rectangleRed25.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRed25.Location = new Point(16, 72);
             rectangleRed25.Name = "rectangleRed25";
             rectangleRed25.Size = new Size(321, 309);
@@ -1901,6 +1889,7 @@
             // 
             // panelMainLivelihood
             // 
+            panelMainLivelihood.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelMainLivelihood.BorderStyle = BorderStyle.FixedSingle;
             panelMainLivelihood.Controls.Add(cbLivelihoodFisherfolk);
             panelMainLivelihood.Controls.Add(cbLivelihoodAgriyouth);
@@ -1972,6 +1961,7 @@
             // 
             // boxMainLivelihood
             // 
+            boxMainLivelihood.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boxMainLivelihood.BackColor = Color.White;
             boxMainLivelihood.Location = new Point(19, 48);
             boxMainLivelihood.Margin = new Padding(5, 3, 5, 3);
@@ -2003,6 +1993,7 @@
             // 
             // rectangleRed21
             // 
+            rectangleRed21.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRed21.Location = new Point(19, 48);
             rectangleRed21.Name = "rectangleRed21";
             rectangleRed21.Size = new Size(1534, 45);
@@ -2180,6 +2171,7 @@
             // 
             // txtEcContact
             // 
+            txtEcContact.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtEcContact.BorderStyle = BorderStyle.None;
             txtEcContact.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtEcContact.Location = new Point(536, 73);
@@ -2245,6 +2237,7 @@
             // 
             // rectangleRound38
             // 
+            rectangleRound38.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound38.BackColor = Color.White;
             rectangleRound38.Location = new Point(527, 67);
             rectangleRound38.Margin = new Padding(2, 3, 2, 3);
@@ -2385,6 +2378,7 @@
             // 
             // panelAffiliations
             // 
+            panelAffiliations.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAffiliations.BorderStyle = BorderStyle.FixedSingle;
             panelAffiliations.Controls.Add(panelCoop);
             panelAffiliations.Controls.Add(panelGovId);
@@ -2618,6 +2612,7 @@
             // 
             // txtGovIdNum
             // 
+            txtGovIdNum.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGovIdNum.BorderStyle = BorderStyle.None;
             txtGovIdNum.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGovIdNum.Location = new Point(287, 417);
@@ -2631,6 +2626,7 @@
             // 
             // txtIndigenous
             // 
+            txtIndigenous.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtIndigenous.BorderStyle = BorderStyle.None;
             txtIndigenous.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtIndigenous.Location = new Point(287, 234);
@@ -2644,6 +2640,7 @@
             // 
             // txtAssociation
             // 
+            txtAssociation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtAssociation.BorderStyle = BorderStyle.None;
             txtAssociation.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtAssociation.Location = new Point(287, 545);
@@ -2657,6 +2654,7 @@
             // 
             // txtGovIdType
             // 
+            txtGovIdType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGovIdType.AutoCompleteCustomSource.AddRange(new string[] { "ALAY KAPWA ID", "BARANGAY CERT", "BFP ID", "BIR ID", "CERTIFICATE OF LIVE BIRTH", "DRIVER'S LICENSE", "DSWD ID", "GOV'T ID", "NATIONAL ID (PHILSYS)", "OEC", "OSCA ID", "PAG IBIG ID", "PASSPORT ID", "PHILHEALTH ID", "PRC ID", "PNP ID", "POSTAL ID", "RED CROSS ID", "SCHOOL ID", "SSS ID", "TIN ID", "UMID", "VETERAN'S ID", "VOTER'S CERT", "VOTER'S ID", "WOMANS CLUB" });
             txtGovIdType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtGovIdType.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -2703,6 +2701,7 @@
             // 
             // rectangleRoundPWD
             // 
+            rectangleRoundPWD.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRoundPWD.BackColor = Color.White;
             rectangleRoundPWD.Location = new Point(276, 43);
             rectangleRoundPWD.Margin = new Padding(2, 3, 2, 3);
@@ -2722,6 +2721,7 @@
             // 
             // rectangleRound40
             // 
+            rectangleRound40.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound40.BackColor = Color.White;
             rectangleRound40.Location = new Point(276, 174);
             rectangleRound40.Margin = new Padding(2, 3, 2, 3);
@@ -2732,6 +2732,7 @@
             // 
             // rectangleRound39
             // 
+            rectangleRound39.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound39.BackColor = Color.White;
             rectangleRound39.Location = new Point(276, 306);
             rectangleRound39.Margin = new Padding(2, 3, 2, 3);
@@ -2742,6 +2743,7 @@
             // 
             // boxPiGovId
             // 
+            boxPiGovId.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boxPiGovId.BackColor = Color.White;
             boxPiGovId.Location = new Point(276, 358);
             boxPiGovId.Margin = new Padding(2, 3, 2, 3);
@@ -2752,6 +2754,7 @@
             // 
             // boxPiGovIdNumber
             // 
+            boxPiGovIdNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boxPiGovIdNumber.BackColor = Color.White;
             boxPiGovIdNumber.Location = new Point(277, 411);
             boxPiGovIdNumber.Margin = new Padding(2, 3, 2, 3);
@@ -2782,6 +2785,7 @@
             // 
             // rectangleRound34
             // 
+            rectangleRound34.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound34.BackColor = Color.White;
             rectangleRound34.Location = new Point(377, 490);
             rectangleRound34.Margin = new Padding(2, 3, 2, 3);
@@ -2792,6 +2796,7 @@
             // 
             // boxPiFarmAss
             // 
+            boxPiFarmAss.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boxPiFarmAss.BackColor = Color.White;
             boxPiFarmAss.Location = new Point(277, 539);
             boxPiFarmAss.Margin = new Padding(2, 3, 2, 3);
@@ -2833,6 +2838,7 @@
             // 
             // rectangleRound15
             // 
+            rectangleRound15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRound15.BackColor = Color.White;
             rectangleRound15.Location = new Point(276, 97);
             rectangleRound15.Margin = new Padding(2, 3, 2, 3);
@@ -2853,6 +2859,7 @@
             // 
             // boxPiIp
             // 
+            boxPiIp.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boxPiIp.BackColor = Color.White;
             boxPiIp.Location = new Point(276, 228);
             boxPiIp.Margin = new Padding(2, 3, 2, 3);
@@ -2873,6 +2880,7 @@
             // 
             // rectangleRed11
             // 
+            rectangleRed11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRed11.Location = new Point(277, 539);
             rectangleRed11.Name = "rectangleRed11";
             rectangleRed11.Size = new Size(544, 38);
@@ -2880,6 +2888,7 @@
             // 
             // rectangleRed12
             // 
+            rectangleRed12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRed12.Location = new Point(277, 411);
             rectangleRed12.Name = "rectangleRed12";
             rectangleRed12.Size = new Size(544, 38);
@@ -2887,6 +2896,7 @@
             // 
             // rectangleRed13
             // 
+            rectangleRed13.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRed13.Location = new Point(276, 358);
             rectangleRed13.Name = "rectangleRed13";
             rectangleRed13.Size = new Size(544, 38);
@@ -2894,6 +2904,7 @@
             // 
             // rectangleRed14
             // 
+            rectangleRed14.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rectangleRed14.Location = new Point(276, 228);
             rectangleRed14.Name = "rectangleRed14";
             rectangleRed14.Size = new Size(545, 38);
@@ -3237,8 +3248,30 @@
             rectangleRed17.Size = new Size(346, 38);
             rectangleRed17.TabIndex = 9;
             // 
+            // labelDateModified
+            // 
+            labelDateModified.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelDateModified.AutoSize = true;
+            labelDateModified.Location = new Point(1312, 724);
+            labelDateModified.Name = "labelDateModified";
+            labelDateModified.Size = new Size(100, 20);
+            labelDateModified.TabIndex = 14;
+            labelDateModified.Text = "Last Updated:";
+            // 
+            // labelDateAdded
+            // 
+            labelDateAdded.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelDateAdded.AutoSize = true;
+            labelDateAdded.Location = new Point(1021, 724);
+            labelDateAdded.Name = "labelDateAdded";
+            labelDateAdded.Size = new Size(93, 20);
+            labelDateAdded.TabIndex = 13;
+            labelDateAdded.Text = "Date Added:";
+            labelDateAdded.Click += labelDateAdded_Click;
+            // 
             // panelEduc
             // 
+            panelEduc.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelEduc.BorderStyle = BorderStyle.FixedSingle;
             panelEduc.Controls.Add(rbNone);
             panelEduc.Controls.Add(rbEducPostGraduate);
@@ -3404,6 +3437,7 @@
             // 
             // panelBirthDetails
             // 
+            panelBirthDetails.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelBirthDetails.BorderStyle = BorderStyle.FixedSingle;
             panelBirthDetails.Controls.Add(txtBirthCountry);
             panelBirthDetails.Controls.Add(txtBirthProvince);
@@ -3719,6 +3753,7 @@
             // 
             // panelAddress
             // 
+            panelAddress.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelAddress.BorderStyle = BorderStyle.FixedSingle;
             panelAddress.Controls.Add(txtAddRegion);
             panelAddress.Controls.Add(txtAddPurok);
@@ -4000,6 +4035,7 @@
             // 
             // panelPersonalDetails
             // 
+            panelPersonalDetails.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelPersonalDetails.BorderStyle = BorderStyle.FixedSingle;
             panelPersonalDetails.Controls.Add(cbSex);
             panelPersonalDetails.Controls.Add(txtExtname);

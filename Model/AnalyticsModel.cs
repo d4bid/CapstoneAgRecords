@@ -221,6 +221,33 @@ namespace AgRecords.Model
             }
         }
 
+        public string CountTotalBarangay()
+        {
+            try
+            {
+
+                using (DatabaseConnection db = new DatabaseConnection())
+                {
+                    db.Open();
+
+                    MySqlCommand command = new MySqlCommand("CALL sp_dataCountTotalBarangay();", db.GetConnection());
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString(); // Convert the result to a string
+                    }
+
+                    return "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
         // CHARTS
 
         public DataTable CountFarmerBarangay()

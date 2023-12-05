@@ -1408,5 +1408,10 @@ namespace AgRecords.View
         {
 
         }
+
+        private void labelDateAdded_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

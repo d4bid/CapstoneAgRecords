@@ -176,6 +176,18 @@ namespace AgRecords.Controller
             }
         }
 
+        public string CountTotalBarangay()
+        {
+            try
+            {
+                return analyticsModel.CountTotalBarangay();
+            }
+            catch (ApplicationException ex)
+            {
+                throw new ApplicationException("Error getting value: " + ex.Message, ex);
+            }
+        }
+
         public DataTable BarCountDailyActivities()
         {
             try
