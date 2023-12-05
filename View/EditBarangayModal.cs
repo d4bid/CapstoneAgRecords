@@ -14,6 +14,8 @@ namespace AgRecords.View
 {
     public partial class EditBarangayModal : Form
     {
+        // Form style
+        private int borderSize = 2;
         public EditBarangayModal(string brgyId, string brgyType, string brgyName, string status)
         {
             InitializeComponent();
@@ -23,6 +25,9 @@ namespace AgRecords.View
             lblBrgyType.Text = brgyType;
             txtBarangay.Text = brgyName;
             comboBoxStatus.Text = status;
+
+            this.Padding = new Padding(borderSize); //Border size
+            this.BackColor = Color.FromArgb(5, 93, 96); //Border color
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -88,6 +93,11 @@ namespace AgRecords.View
             {
                 MessageBox.Show("Error updating barangay: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

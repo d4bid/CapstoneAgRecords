@@ -170,6 +170,7 @@
             btnHelp.TextAlign = ContentAlignment.MiddleLeft;
             btnHelp.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHelp.UseVisualStyleBackColor = true;
+            btnHelp.Click += btnHelp_Click;
             // 
             // btnSettingsAudit
             // 

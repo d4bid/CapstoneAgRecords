@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AgRecords - User%27s Manual.pdf" />
     <None Remove="View\CropsHvcAddView.cs~RF166f6524.TMP" />
   </ItemGroup>
 
@@ -31,6 +32,10 @@
       <Isolated>false</Isolated>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AgRecords - User's Manual.pdf" />
   </ItemGroup>
 
   <ItemGroup>

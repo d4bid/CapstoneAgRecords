@@ -267,7 +267,7 @@ namespace AgRecords.View
             {
                 HomeView.Instance.title.Text = "Crops \u23F5 Corn \u23F5 Edit Harvesting Corn";
 
-                btnNew.Enabled = true;
+                btnNew.Enabled = false;
                 btnUpdate.Enabled = true;
 
                 labelAveYield.Enabled = true;
@@ -552,9 +552,7 @@ namespace AgRecords.View
                 }
                 else if (labelArea.Text == "HARVESTING ACCOMPLISHMENTS")
                 {
-                    btnNew.Visible = false;
                     btnNew.Enabled = false;
-                    btnUpdate.Visible = true;
                     btnUpdate.Enabled = true;
 
                     int cornHarvestingId = Convert.ToInt32(row.Cells[0].Value);

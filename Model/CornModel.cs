@@ -672,7 +672,8 @@ namespace AgRecords.Model
                         ch.seedTypeId = (int)reader["seedTypeId"];
                         ch.colorTypeId = (int)reader["colorTypeId"];
                         ch.size = (float)reader["size"];
-                        ch.yield = (float)reader["yield"];
+                        object yieldValue = reader["yield"];
+                        ch.yield = yieldValue != DBNull.Value ? Convert.ToSingle(yieldValue) : 0.0f;
                     }
 
                     reader.Close();

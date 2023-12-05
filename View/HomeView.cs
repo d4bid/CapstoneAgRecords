@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -864,6 +866,40 @@ namespace AgRecords.View
             //{
             //    btnDashoard.BackColor = Color.FromArgb(39, 108, 200);
             //}
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            string pdfFileName = "AgRecords - User's Manual.pdf";
+
+            try
+            {
+                using (Stream pdfStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("AgRecords." + pdfFileName))
+                {
+                    if (pdfStream != null)
+                    {
+                        byte[] pdfData = new byte[pdfStream.Length];
+                        pdfStream.Read(pdfData, 0, (int)pdfStream.Length);
+
+                        string tempPdfFile = Path.Combine(Path.GetTempPath(), pdfFileName);
+                        File.WriteAllBytes(tempPdfFile, pdfData);
+
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = tempPdfFile,
+                            UseShellExecute = true
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("PDF file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while opening the PDF file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

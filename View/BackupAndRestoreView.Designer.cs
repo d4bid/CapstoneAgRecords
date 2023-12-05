@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel4 = new Panel();
             btnRestore = new FontAwesome.Sharp.IconButton();
@@ -43,6 +43,8 @@
             dgvLogs = new DataGridView();
             panel7 = new Panel();
             label7 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -50,6 +52,8 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLogs).BeginInit();
             panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -67,6 +71,7 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
+            panel4.Controls.Add(iconPictureBox2);
             panel4.Controls.Add(btnRestore);
             panel4.Controls.Add(label2);
             panel4.Dock = DockStyle.Fill;
@@ -90,7 +95,7 @@
             btnRestore.IconColor = Color.FromArgb(3, 0, 67);
             btnRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRestore.IconSize = 30;
-            btnRestore.Location = new Point(326, 154);
+            btnRestore.Location = new Point(311, 253);
             btnRestore.Name = "btnRestore";
             btnRestore.Size = new Size(169, 49);
             btnRestore.TabIndex = 59;
@@ -124,6 +129,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(iconPictureBox1);
             panel2.Controls.Add(btnBackup);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Left;
@@ -147,7 +153,7 @@
             btnBackup.IconColor = Color.FromArgb(3, 0, 67);
             btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBackup.IconSize = 30;
-            btnBackup.Location = new Point(299, 154);
+            btnBackup.Location = new Point(320, 253);
             btnBackup.Name = "btnBackup";
             btnBackup.Size = new Size(169, 49);
             btnBackup.TabIndex = 58;
@@ -201,24 +207,24 @@
             dgvLogs.BackgroundColor = Color.White;
             dgvLogs.BorderStyle = BorderStyle.None;
             dgvLogs.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 121, 223);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(43, 121, 223);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 221, 100);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(0, 35, 76);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvLogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 221, 100);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 35, 76);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvLogs.DefaultCellStyle = dataGridViewCellStyle6;
             dgvLogs.Dock = DockStyle.Fill;
             dgvLogs.GridColor = Color.FromArgb(239, 239, 239);
             dgvLogs.Location = new Point(10, 59);
@@ -255,6 +261,36 @@
             label7.TabIndex = 56;
             label7.Text = "Logs";
             // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.White;
+            iconPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            iconPictureBox1.ForeColor = Color.FromArgb(43, 121, 223);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            iconPictureBox1.IconColor = Color.FromArgb(43, 121, 223);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 169;
+            iconPictureBox1.Location = new Point(320, 64);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(169, 169);
+            iconPictureBox1.TabIndex = 59;
+            iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.White;
+            iconPictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            iconPictureBox2.ForeColor = Color.FromArgb(43, 121, 223);
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Download;
+            iconPictureBox2.IconColor = Color.FromArgb(43, 121, 223);
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 169;
+            iconPictureBox2.Location = new Point(311, 64);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(169, 169);
+            iconPictureBox2.TabIndex = 60;
+            iconPictureBox2.TabStop = false;
+            // 
             // BackupAndRestoreView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -276,6 +312,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvLogs).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -294,5 +332,7 @@
         private Label label1;
         private FontAwesome.Sharp.IconButton btnBackup;
         private FontAwesome.Sharp.IconButton btnRestore;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

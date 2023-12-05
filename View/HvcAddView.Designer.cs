@@ -179,7 +179,7 @@
             btnCancel.FlatAppearance.BorderColor = Color.FromArgb(43, 121, 223);
             btnCancel.FlatAppearance.BorderSize = 2;
             btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.FromArgb(43, 121, 223);
             btnCancel.Location = new Point(301, 344);
             btnCancel.Margin = new Padding(3, 4, 3, 4);
@@ -195,7 +195,7 @@
             btnSave.BackColor = Color.FromArgb(43, 121, 223);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Roboto Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(165, 344);
             btnSave.Margin = new Padding(3, 4, 3, 4);
