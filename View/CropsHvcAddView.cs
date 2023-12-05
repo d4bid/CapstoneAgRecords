@@ -81,6 +81,8 @@ namespace AgRecords.View
             }
 
             FormRefresh();
+
+            cbTotal.Checked = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -608,6 +608,8 @@ namespace AgRecords.View
             HideControls();
 
             DisplayDataTableFilter();
+
+            cbTotal.Checked = true;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
