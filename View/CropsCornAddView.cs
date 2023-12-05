@@ -34,7 +34,7 @@ namespace AgRecords.View
 
         public void FormRefresh()
         {
-            btnUpdate.Visible = false;
+            btnUpdate.Enabled = false;
             ClearTextControls();
             DisplayDataTableFilter();
 
