@@ -805,7 +805,7 @@
             panelFarmLand.Dock = DockStyle.Top;
             panelFarmLand.Location = new Point(0, 0);
             panelFarmLand.Name = "panelFarmLand";
-            panelFarmLand.Size = new Size(1595, 0);
+            panelFarmLand.Size = new Size(1595, 766);
             panelFarmLand.TabIndex = 0;
             // 
             // panelDocument
@@ -815,7 +815,7 @@
             panelDocument.Dock = DockStyle.Top;
             panelDocument.Location = new Point(0, 0);
             panelDocument.Name = "panelDocument";
-            panelDocument.Size = new Size(1595, 0);
+            panelDocument.Size = new Size(1595, 766);
             panelDocument.TabIndex = 0;
             // 
             // flowLayoutPanelDocs
@@ -824,7 +824,7 @@
             flowLayoutPanelDocs.Dock = DockStyle.Fill;
             flowLayoutPanelDocs.Location = new Point(0, 128);
             flowLayoutPanelDocs.Name = "flowLayoutPanelDocs";
-            flowLayoutPanelDocs.Size = new Size(1595, 0);
+            flowLayoutPanelDocs.Size = new Size(1595, 638);
             flowLayoutPanelDocs.TabIndex = 0;
             // 
             // panel14

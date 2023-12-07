@@ -290,7 +290,7 @@ namespace AgRecords.Model
                 {
                     db.Open();
                     DataTable dataTable = new DataTable();
-                    string query = "SELECT DISTINCT `O.R. No.`, `Farm Info`, `Farm Address`, `Employee`, DATE FROM vw_get_all_cert WHERE `Reference Number` = @refNumber";
+                    string query = "SELECT `O.R. No.`, `Farm Info`, `Farm Address`, `Employee`, DATE FROM vw_get_all_cert WHERE `Reference Number` = @refNumber";
                     MySqlCommand command = new MySqlCommand(query, db.GetConnection());
                     command.Parameters.AddWithValue("@refNumber", refNumber);
 

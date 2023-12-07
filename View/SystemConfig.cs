@@ -113,6 +113,7 @@ namespace AgRecords.View
                             if (userModel.RestoreDroppedDatabase(restore.FileName, connectionString))
                             {
                                 MessageBox.Show("SQL file restored succesfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Application.Restart();
                             }
                         }
                     }

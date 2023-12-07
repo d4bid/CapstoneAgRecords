@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>AgRecords.ico</ApplicationIcon>
+    <PackageIcon>AgRecords-9.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,7 +37,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="AgRecords.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="AgRecords - User's Manual.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Downloads\AgRecords-1,AgRecords-2,AgRecords-3\AgRecords-9.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
