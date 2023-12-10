@@ -288,12 +288,14 @@
             // 
             btnLogin.BackColor = Color.FromArgb(43, 121, 223);
             btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 109, 201);
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(39, 109, 201);
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
             btnLogin.Location = new Point(35, 391);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(344, 34);
+            btnLogin.Size = new Size(344, 36);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;

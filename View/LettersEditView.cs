@@ -255,7 +255,7 @@ namespace AgRecords.View
 
         private void txtBoxTags_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
         private void AlphaNum(object sender, KeyPressEventArgs e)
         {

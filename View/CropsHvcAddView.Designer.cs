@@ -110,8 +110,8 @@
             // 
             btnBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnBack.FlatAppearance.BorderSize = 2;
-            btnBack.FlatAppearance.MouseDownBackColor = Color.White;
-            btnBack.FlatAppearance.MouseOverBackColor = Color.White;
+            btnBack.FlatAppearance.MouseDownBackColor = Color.FromArgb(234, 242, 252);
+            btnBack.FlatAppearance.MouseOverBackColor = Color.FromArgb(234, 242, 252);
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnBack.ForeColor = Color.FromArgb(43, 121, 223);
